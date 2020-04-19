@@ -1,6 +1,8 @@
 Ziao!
 
-ROS_PO è il proetto ROS del corso di "Fondamenti di Robotica" di:
+Benvenuti in ROS_PO
+
+ROS_PO (ROS Paolo Ornitorinco) è il proetto ROS del corso di "Fondamenti di Robotica" di:
 
 Davide Maria Cardillo
 Francesco Ceresetti
