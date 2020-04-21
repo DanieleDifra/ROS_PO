@@ -2,7 +2,7 @@
 
 #define RUN_PERIOD_DEFAULT 0.1
 
-#define NAME_OF_THIS_NODE "my_ROS_node"
+#define NAME_OF_THIS_NODE "subscriber"
 
 #include "std_msgs/String.h" //vedi publisher.cpp
 
@@ -16,6 +16,8 @@ class Subscriber
     ros::Subscriber Subscriber;
     
     void MessageCallback(const std_msgs::String::ConstPtr& msg);
+    
+    bool shouldContinue;
     
   public:   
     void Prepare(void);
@@ -36,7 +38,7 @@ void Subscriber::Prepare(void)
    * tramite il topic "chat", successivamente indica la lunghezza della coda
    * e il metodo da chiamare  nel caso che in quel topic venga pubblicato un messaggio
    * "this" indica che il metodo si trovs nella classe Subscriber */
-  
+   this->shouldContinue=true;
    ROS_INFO("Il ROSpo Nodo %s è pronto a sfrezzare.", ros::this_node::getName().c_str());
 }
 
@@ -44,8 +46,11 @@ void Subscriber::Prepare(void)
 void Subscriber::RunContinuously(void)
 {
   ROS_INFO("Il ROSpo Nodo %s viazza continuativamente.", ros::this_node::getName().c_str());
-   
-  ros::spin();
+  while(this->shouldContinue){
+    ros::spinOnce();
+  }
+  
+  
   
   /* From ROS documentation:
    * "ros::spin() will not return until the node has been 
@@ -56,13 +61,20 @@ void Subscriber::RunContinuously(void)
 
 void Subscriber::MessageCallback(const std_msgs::String::ConstPtr& msg)
 {
-  ROS_INFO("Ho rizevuto: [%s]", msg->data.c_str());
+    ROS_INFO("Ho rizevuto: [%s]", msg->data.c_str());
+    if(!msg->data.compare(std::string("Stacca Stacca, ci stanno tracciando!")))
+    {
+        this->shouldContinue = false;
+
+    }
+  
 }
 
 void Subscriber::Shutdown(void)
 {
   ROS_INFO("Il ROSpo Nodo %s è stanco va a dormire.", ros::this_node::getName().c_str());
 }
+
 
 
 int main(int argc, char **argv)

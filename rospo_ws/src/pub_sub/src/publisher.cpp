@@ -1,5 +1,5 @@
 #include "ros/ros.h"
-
+#include "ros/master.h"
 #define RUN_PERIOD_DEFAULT 0.1
 
 #define NAME_OF_THIS_NODE "publisher"
@@ -57,7 +57,7 @@ void Publisher::RunPeriodically(float Period)
   
   ROS_INFO("Il ROSpo Nodo %s zira periodicamente (T=%.2fs, f=%.2fHz).", ros::this_node::getName().c_str(), Period, 1.0/Period);
   int count=0;
-  while (ros::ok())
+  while (ros::ok() && ros::master::check())
   {
     PeriodicTask(count);//!!!funzione chiamata periodicamente!!!
     count++;
@@ -81,6 +81,10 @@ void Publisher::PeriodicTask(int count)
 void Publisher::Shutdown(void)
 {
   ROS_INFO("Node %s shutting down.", ros::this_node::getName().c_str());
+  std_msgs::String msg;
+  msg.data=std::string("Stacca Stacca, ci stanno tracciando!");
+  Publisher.publish(msg);
+  ROS_INFO("Ho scritto al gnaro: '%s'",msg.data.c_str());
 }
 
 
