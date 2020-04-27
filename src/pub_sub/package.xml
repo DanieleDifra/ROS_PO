@@ -4,8 +4,7 @@
   <version>0.0.0</version>
   <description>The pub_sub package</description>
 
-  <maintainer email="luca1.franceschini@mail.polimi.it">luca</maintainer>
-
+  <maintainer email="lorenzo@todo.todo">lorenzo</maintainer>
   <license>TODO</license>
 <!--queste dipendenze sono standard--> 
   <buildtool_depend>catkin</buildtool_depend>

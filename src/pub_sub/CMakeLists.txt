@@ -15,3 +15,4 @@ add_dependencies(publisher pub_sub_generate_messages_cpp)#aggiunge una dipendenz
 add_executable(subscriber src/subscriber.cpp)
 target_link_libraries(subscriber ${catkin_LIBRARIES})
 add_dependencies(subscriber pub_sub_generate_messages_cpp)
+
