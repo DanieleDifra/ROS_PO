@@ -8,6 +8,9 @@
 #include "std_msgs/String.h" //include l'header del messaggio "std_msg::String"
 #include "std_msgs/Float32.h"
 
+#include <stdlib.h>
+#include <iostream>
+
 class Publisher 
 {
   private:
@@ -95,9 +98,40 @@ int main(int argc, char **argv)
   ros::init(argc, argv, NAME_OF_THIS_NODE);//chiama un metodo STATICO di ROS che inizializza il nodo e lo iscrive al master. Init è sempre la prima istruzione chiamare
   
   Publisher publisher; //crea un'istanza della classe "Publisher"
-   
-  publisher.Prepare(1,1);//chiama il metodo "Prepare" della classe "Publisher"
+  
+  if(argc==1)
+  {
+    ROS_INFO("Executing with standard parameters [1,1].");
+    publisher.Prepare(1,1);
+  } 
 
+  if(argc==2)
+  {
+    ROS_INFO("You have typed only 1 parameter!");
+    publisher.Shutdown();
+    return 0;
+  }
+
+  if(argc==3)
+  {
+    float y =strtof(argv[2],NULL);
+
+    if(y==0)
+    {
+      ROS_INFO("The second parameter can't be 0!");
+      publisher.Shutdown();
+      return 0;
+    }
+
+    else
+      publisher.Prepare(strtof(argv[1],NULL),strtof(argv[2],NULL));
+  }
+  if(argc>3)
+  {
+    ROS_INFO("You have typed more than 2 parameters!");
+    publisher.Shutdown();
+    return 0;
+  }
   publisher.RunPeriodically(publisher.RunPeriod);//chiama il metodo "RunPeriodically" della classe "Publisher" 
   
   publisher.Shutdown(); // chiama il metodo "Shutdown" della classe "Publisher"
