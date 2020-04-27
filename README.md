@@ -1,26 +1,30 @@
+# INTRODUZIONE #
+
 Ziao!
 
 Benvenuti in ROS_PO
 
-ROS_PO (ROS Paolo Ornitorinco) è il proetto ROS del corso di "Fondamenti di Robotica" di:
+ROS_PO (ROS Paolo Ornitorinco) è il proetto ROS del corso di "Fondamenti di Robotica"
 
-#################
+
 # INSTALLAZIONE #
-#################
 
-Clone the repository
+Clone the repository with
 
-Run
+```
+git clone https://DanieleDifra/ROS_PO
+```
 
-catkin_make 
+Remember that this repo is still private.
 
+Then run
 
+```
+catkin_make
+``` 
 
-
-
-############################
 # ROS_PO E' UN PROGETTO DI #
-############################
+
 
 Davide Maria Cardillo
 
