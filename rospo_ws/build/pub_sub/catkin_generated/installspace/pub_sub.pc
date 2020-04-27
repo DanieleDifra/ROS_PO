@@ -1,8 +1,0 @@
-prefix=/home/ros/ROS_PO/rospo_ws/install
-
-Name: pub_sub
-Description: Description of pub_sub
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

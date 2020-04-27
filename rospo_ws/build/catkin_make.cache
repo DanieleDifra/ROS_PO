@@ -1,2 +1,0 @@
-pub_sub
--DCATKIN_DEVEL_PREFIX=/home/ros/ROS_PO/rospo_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ros/ROS_PO/rospo_ws/install -G Unix Makefiles
