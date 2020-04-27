@@ -9,6 +9,8 @@
 /home/ros/ROS_PO/rospo_ws/src/pub_sub/src/publisher.cpp
 ros/ros.h
 /home/ros/ROS_PO/rospo_ws/src/pub_sub/src/ros/ros.h
+ros/master.h
+/home/ros/ROS_PO/rospo_ws/src/pub_sub/src/ros/master.h
 std_msgs/String.h
 /home/ros/ROS_PO/rospo_ws/src/pub_sub/src/std_msgs/String.h
 
