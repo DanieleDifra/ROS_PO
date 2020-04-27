@@ -2,9 +2,9 @@
 <package format="2">
   <name>pub_sub</name>
   <version>0.0.0</version>
-  <description>The pub_sub package</description>
+  <description>Il nostro primo ROS_PO pacchetto</description>
 
-  <maintainer email="lorenzo@todo.todo">lorenzo</maintainer>
+  <maintainer email="ROS_PO@todo.todo">daniele_davide_francesco_luca_paolo</maintainer>
   <license>TODO</license>
 <!--queste dipendenze sono standard--> 
   <buildtool_depend>catkin</buildtool_depend>

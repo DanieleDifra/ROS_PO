@@ -5,7 +5,7 @@
 #define NAME_OF_THIS_NODE "subscriber"
 
 #include "std_msgs/String.h" //include l'header del messaggio "std_msg::String"
-
+#include "std_msgs/Float32.h"
 
 class Subscriber 
 {
@@ -14,7 +14,7 @@ class Subscriber
     
 	ros::Subscriber Subscriber; //ATTRIBUTO oggetto publisher
 	
-	void MessageCallback(const std_msgs::String::ConstPtr& msg);
+	void MessageCallback(const std_msgs::Float32::ConstPtr& msg);
     
     
   public:
@@ -34,7 +34,7 @@ void Subscriber::Prepare(void)
 {
 /*indica al master che questo nodo vuole iscriversi al topic "chat", indicando anche la lunghezza della coda e il metodo da eseguire
   nel caso in quel topic venga pubblicato un messaggio. This indica che il metodo si trova nella classe Subscriber*/
-  Subscriber = Handle.subscribe("chat", 1000, &Subscriber::MessageCallback, this);
+  Subscriber = Handle.subscribe("risultato", 1000, &Subscriber::MessageCallback, this);
    
   ROS_INFO("Node %s ready to run.", ros::this_node::getName().c_str()); 
 
@@ -48,9 +48,9 @@ void Subscriber::RunContinuously(void)
   
 }
 
-void Subscriber::MessageCallback(const std_msgs::String::ConstPtr& msg)//viene chiamata ogni qualvolta si riceve un messaggio
+void Subscriber::MessageCallback(const std_msgs::Float32::ConstPtr& msg)//viene chiamata ogni qualvolta si riceve un messaggio
 {
-	ROS_INFO("I heard: [%s]", msg->data.c_str());
+	ROS_INFO("I heard: [%f]", msg->data);
 }
 
 void Subscriber::Shutdown(void)
