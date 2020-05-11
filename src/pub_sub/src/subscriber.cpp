@@ -4,7 +4,7 @@
  
 #define NAME_OF_THIS_NODE "subscriber"
 
-#include "std_msgs/String.h" //include l'header del messaggio "std_msg::String"
+//#include "std_msgs/String.h" //include l'header del messaggio "std_msg::String"
 #include "std_msgs/Float32.h"
 
 class Subscriber 
@@ -12,7 +12,7 @@ class Subscriber
   private:
     ros::NodeHandle Handle; //handler per abilitare la chiamata ai metodi di ROS
     
-	ros::Subscriber Subscriber; //ATTRIBUTO oggetto publisher
+	  ros::Subscriber Subscriber; //ATTRIBUTO oggetto publisher
 	
 	void MessageCallback(const std_msgs::Float32::ConstPtr& msg);
     

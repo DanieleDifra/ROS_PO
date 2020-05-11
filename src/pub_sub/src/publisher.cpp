@@ -5,11 +5,11 @@
  
 #define NAME_OF_THIS_NODE "publisher"
 
-#include "std_msgs/String.h" //include l'header del messaggio "std_msg::String"
+//#include "std_msgs/String.h" //include l'header del messaggio "std_msg::String"
 #include "std_msgs/Float32.h"
 
 #include <stdlib.h>
-#include <iostream>
+
 
 class Publisher 
 {
@@ -61,7 +61,7 @@ void Publisher::RunPeriodically(float Period)
   while (ros::ok())//il ciclo gira finchè roscore è attivo
   {
     PeriodicTask(count);
-	count++;
+	  count++;
     ros::spinOnce();//alla fine di ogni loop serve per farlo ripartire
     LoopRate.sleep();//addormenta il ciclo per il periodo indicato precedentemente
   }
