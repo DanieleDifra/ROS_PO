@@ -43,10 +43,12 @@ qtcreator-*
 /planning/src
 
 *~
-
 # Emacs
 .#*
 
 # Catkin custom files
 CATKIN_IGNORE
 /.idea
+
+*.DS_Store
+.DS_Store
