@@ -23,7 +23,7 @@
     type="rviz"
     args="-d $(find edo_robot_simulation)/urdf.rviz" />
 
-  <!-- Run the kinematic simulator -->
+  <!-- Run the kinematic simulator 
   <node pkg="kinsim_2link_planar" type="kinsim_2link_planar_node" name="kinsim_2link_planar">
     <rosparam param="q1_initial">0</rosparam>
     <rosparam param="q2_initial">0</rosparam>
@@ -32,5 +32,5 @@
     <rosparam param="q5_initial">0</rosparam>
     <rosparam param="q6_initial">0</rosparam>
   </node>
-  
+  -->
 </launch>
