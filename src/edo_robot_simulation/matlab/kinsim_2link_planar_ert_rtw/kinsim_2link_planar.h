@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.122
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 12 22:47:11 2020
+// C/C++ source code generated on : Tue May 12 23:09:10 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -20,12 +20,20 @@
 #define RTW_HEADER_kinsim_2link_planar_h_
 #include <math.h>
 #include <string.h>
+#include <float.h>
 #include <stddef.h>
 #include "rtwtypes.h"
+#include "rtw_extmode.h"
+#include "sysran_types.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
+#include "dt_info.h"
+#include "ext_work.h"
 #include "slros_initialize.h"
 #include "kinsim_2link_planar_types.h"
+
+// Shared type includes
+#include "multiword_types.h"
 #include "rt_defines.h"
 #include "rt_nonfinite.h"
 #include "rtGetInf.h"
@@ -61,6 +69,10 @@
 
 #ifndef rtmSetDerivCacheNeedsReset
 # define rtmSetDerivCacheNeedsReset(rtm, val) ((rtm)->derivCacheNeedsReset = (val))
+#endif
+
+#ifndef rtmGetFinalTime
+# define rtmGetFinalTime(rtm)          ((rtm)->Timing.tFinal)
 #endif
 
 #ifndef rtmGetIntgData
@@ -103,6 +115,10 @@
 # define rtmSetPeriodicContStateRanges(rtm, val) ((rtm)->periodicContStateRanges = (val))
 #endif
 
+#ifndef rtmGetRTWExtModeInfo
+# define rtmGetRTWExtModeInfo(rtm)     ((rtm)->extModeInfo)
+#endif
+
 #ifndef rtmGetZCCacheNeedsReset
 # define rtmGetZCCacheNeedsReset(rtm)  ((rtm)->zCCacheNeedsReset)
 #endif
@@ -141,6 +157,10 @@
 
 #ifndef rtmGetT
 # define rtmGetT(rtm)                  (rtmGetTPtr((rtm))[0])
+#endif
+
+#ifndef rtmGetTFinal
+# define rtmGetTFinal(rtm)             ((rtm)->Timing.tFinal)
 #endif
 
 #ifndef rtmGetTPtr
@@ -206,6 +226,7 @@ typedef struct {
   ros_slros_internal_block_Publ_T obj_nr;// '<S7>/SinkBlock'
   ros_slros_internal_block_Subs_T obj_pp;// '<S10>/SourceBlock'
   int_T Integrator_IWORK;              // '<Root>/Integrator'
+  int8_T EnabledSubsystem_SubsysRanBC; // '<S10>/Enabled Subsystem'
 } DW_kinsim_2link_planar_T;
 
 // Continuous states (default storage)
@@ -256,6 +277,7 @@ struct P_kinsim_2link_planar_T_ {
 // Real-time Model Data Structure
 struct tag_RTM_kinsim_2link_planar_T {
   const char_T *errorStatus;
+  RTWExtModeInfo *extModeInfo;
   RTWSolverInfo solverInfo;
   X_kinsim_2link_planar_T *contStates;
   int_T *periodicContStateIndices;
@@ -276,10 +298,20 @@ struct tag_RTM_kinsim_2link_planar_T {
   //  dwork, sample times, etc.
 
   struct {
+    uint32_T checksums[4];
     int_T numContStates;
     int_T numPeriodicContStates;
     int_T numSampTimes;
   } Sizes;
+
+  //
+  //  SpecialInfo:
+  //  The following substructure contains special information
+  //  related to other components that are dependent on RTW.
+
+  struct {
+    const void *mappingInfo;
+  } SpecialInfo;
 
   //
   //  Timing:
@@ -291,6 +323,7 @@ struct tag_RTM_kinsim_2link_planar_T {
     time_T stepSize0;
     uint32_T clockTick1;
     boolean_T firstInitCondFlag;
+    time_T tFinal;
     SimTimeStep simTimeStep;
     boolean_T stopRequestedFlag;
     time_T *t;

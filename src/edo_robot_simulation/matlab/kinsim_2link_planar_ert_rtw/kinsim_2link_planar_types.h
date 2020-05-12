@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.122
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 12 22:47:11 2020
+// C/C++ source code generated on : Tue May 12 23:09:10 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -19,6 +19,7 @@
 #ifndef RTW_HEADER_kinsim_2link_planar_types_h_
 #define RTW_HEADER_kinsim_2link_planar_types_h_
 #include "rtwtypes.h"
+#include "multiword_types.h"
 
 // Model Code Variants
 #ifndef DEFINED_TYPEDEF_FOR_SL_Bus_ROSVariableLengthArrayInfo_

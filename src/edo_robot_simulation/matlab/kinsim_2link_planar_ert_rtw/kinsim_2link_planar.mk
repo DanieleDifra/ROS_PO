@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'kinsim_2link_planar'. 
 ## 
 ## Makefile     : kinsim_2link_planar.mk
-## Generated on : Tue May 12 22:47:25 2020
+## Generated on : Tue May 12 23:09:38 2020
 ## MATLAB Coder version: 5.0 (R2020a)
 ## 
 ## Build Info:
@@ -153,7 +153,7 @@ BUILD_TYPE = "Top-Level Standalone Executable"
 ## INCLUDE PATHS
 ###########################################################################
 
-INCLUDES_BUILDINFO = -I$(START_DIR) -I$(START_DIR)/kinsim_2link_planar_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_ROOT)/toolbox/ros/slros/include -I$(MATLAB_ROOT)/toolbox/target/codertarget/rtos/inc
+INCLUDES_BUILDINFO = -I$(START_DIR) -I$(START_DIR)/kinsim_2link_planar_ert_rtw -I$(MATLAB_ROOT)/extern/include -I$(MATLAB_ROOT)/simulink/include -I$(MATLAB_ROOT)/rtw/c/src -I$(MATLAB_ROOT)/rtw/c/src/ext_mode/common -I$(MATLAB_ROOT)/rtw/c/ert -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src -I$(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils -I$(MATLAB_ROOT)/toolbox/ros/slros/include -I$(MATLAB_ROOT)/toolbox/target/codertarget/rtos/inc
 
 INCLUDES = $(INCLUDES_BUILDINFO)
 
@@ -161,10 +161,10 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ## DEFINES
 ###########################################################################
 
-DEFINES_ = -DMODEL=kinsim_2link_planar -DNUMST=2 -DNCSTATES=6 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0 -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTID01EQ=1 -DTERMFCN=1 -DONESTEPFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0 -DROS_PROJECT -DMW_SCHED_OTHER -DSTACK_SIZE=64 -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -DRT=RT
-DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTERMFCN=1 -DONESTEPFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0
+DEFINES_ = -DMODEL=kinsim_2link_planar -DNUMST=2 -DNCSTATES=6 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0 -DON_TARGET_WAIT_FOR_START=1 -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTID01EQ=1 -DTERMFCN=1 -DONESTEPFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DEXT_MODE=1 -DINTEGER_CODE=0 -DMT=0 -DROS_PROJECT -DMW_SCHED_OTHER -DSTACK_SIZE=64 -D__MW_TARGET_USE_HARDWARE_RESOURCES_H__ -DRT=RT
+DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTERMFCN=1 -DONESTEPFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DEXT_MODE=1 -DINTEGER_CODE=0 -DMT=0
 DEFINES_CUSTOM = 
-DEFINES_OPTS = -DTID01EQ=1
+DEFINES_OPTS = -DON_TARGET_WAIT_FOR_START=1 -DTID01EQ=1
 DEFINES_SKIPFORSIL = -DROS_PROJECT -DMW_SCHED_OTHER -DSTACK_SIZE=64
 DEFINES_STANDARD = -DMODEL=kinsim_2link_planar -DNUMST=2 -DNCSTATES=6 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0
 
@@ -174,7 +174,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/kinsim_2link_planar_ert_rtw/kinsim_2link_planar.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/kinsim_2link_planar_data.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/rtGetInf.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/rtGetNaN.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/rt_nonfinite.cpp $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/slros_busmsg_conversion.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/slros_initialize.cpp $(MATLAB_ROOT)/toolbox/ros/slros/src/slros_generic_param.cpp
+SRCS = $(START_DIR)/kinsim_2link_planar_ert_rtw/kinsim_2link_planar.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/kinsim_2link_planar_data.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/rtGetInf.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/rtGetNaN.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/rt_nonfinite.cpp $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_svr.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/updown.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_work.c $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/rtiostream_utils.c $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/rtiostream_interface.c $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/rtiostreamtcpip/rtiostream_tcpip.c $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/slros_busmsg_conversion.cpp $(START_DIR)/kinsim_2link_planar_ert_rtw/slros_initialize.cpp $(MATLAB_ROOT)/toolbox/ros/slros/src/slros_generic_param.cpp
 
 MAIN_SRC = $(START_DIR)/kinsim_2link_planar_ert_rtw/ert_main.cpp
 
@@ -184,7 +184,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = kinsim_2link_planar.cpp.o kinsim_2link_planar_data.cpp.o rtGetInf.cpp.o rtGetNaN.cpp.o rt_nonfinite.cpp.o linuxinitialize.cpp.o slros_busmsg_conversion.cpp.o slros_initialize.cpp.o slros_generic_param.cpp.o
+OBJS = kinsim_2link_planar.cpp.o kinsim_2link_planar_data.cpp.o rtGetInf.cpp.o rtGetNaN.cpp.o rt_nonfinite.cpp.o ext_svr.c.o updown.c.o ext_work.c.o rtiostream_utils.c.o rtiostream_interface.c.o rtiostream_tcpip.c.o linuxinitialize.cpp.o slros_busmsg_conversion.cpp.o slros_initialize.cpp.o slros_generic_param.cpp.o
 
 MAIN_OBJ = ert_main.cpp.o
 
@@ -395,6 +395,30 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MAIN_OBJ)
 	$(CPP) $(CPPFLAGS) -o $@ $<
 
 
+%.c.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/%.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+
+%.s.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/%.s
+	$(AS) $(ASFLAGS) -o $@ $<
+
+
+%.cpp.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/%.cpp
+	$(CPP) $(CPPFLAGS) -o $@ $<
+
+
+%.c.o : $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/%.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+
+%.s.o : $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/%.s
+	$(AS) $(ASFLAGS) -o $@ $<
+
+
+%.cpp.o : $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/%.cpp
+	$(CPP) $(CPPFLAGS) -o $@ $<
+
+
 ert_main.cpp.o : $(START_DIR)/kinsim_2link_planar_ert_rtw/ert_main.cpp
 	$(CPP) $(CPPFLAGS) -o $@ $<
 
@@ -417,6 +441,30 @@ rtGetNaN.cpp.o : $(START_DIR)/kinsim_2link_planar_ert_rtw/rtGetNaN.cpp
 
 rt_nonfinite.cpp.o : $(START_DIR)/kinsim_2link_planar_ert_rtw/rt_nonfinite.cpp
 	$(CPP) $(CPPFLAGS) -o $@ $<
+
+
+ext_svr.c.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_svr.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+
+updown.c.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/updown.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+
+ext_work.c.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/ext_work.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+
+rtiostream_utils.c.o : $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/utils/rtiostream_utils.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+
+rtiostream_interface.c.o : $(MATLAB_ROOT)/rtw/c/src/ext_mode/common/rtiostream_interface.c
+	$(CC) $(CFLAGS) -o $@ $<
+
+
+rtiostream_tcpip.c.o : $(MATLAB_ROOT)/toolbox/coder/rtiostream/src/rtiostreamtcpip/rtiostream_tcpip.c
+	$(CC) $(CFLAGS) -o $@ $<
 
 
 linuxinitialize.cpp.o : $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.cpp

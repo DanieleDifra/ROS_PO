@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.122
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 12 22:47:11 2020
+// C/C++ source code generated on : Tue May 12 23:09:10 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -18,6 +18,7 @@
 //
 #include "kinsim_2link_planar.h"
 #include "kinsim_2link_planar_private.h"
+#include "kinsim_2link_planar_dt.h"
 
 // Block signals (default storage)
 B_kinsim_2link_planar_T kinsim_2link_planar_B;
@@ -309,6 +310,8 @@ void kinsim_2link_planar_step(void)
       (&kinsim_2link_planar_M->solverInfo);
   }
 
+  // Reset subsysRan breadcrumbs
+  srClearBC(kinsim_2link_planar_DW.EnabledSubsystem_SubsysRanBC);
   if (rtmIsMajorTimeStep(kinsim_2link_planar_M)) {
     // Outputs for Atomic SubSystem: '<Root>/Subscribe'
     // MATLABSystem: '<S10>/SourceBlock' incorporates:
@@ -362,6 +365,7 @@ void kinsim_2link_planar_step(void)
       kinsim_2link_planar_B.In1.TimeFromStart.Sec =
         kinsim_2link_planar_B.b_varargout_2_TimeFromStart_Sec;
       kinsim_2link_planar_B.In1.TimeFromStart.Nsec = kinsim_2link_planar_B.sy;
+      srUpdateBC(kinsim_2link_planar_DW.EnabledSubsystem_SubsysRanBC);
     }
 
     // End of MATLABSystem: '<S10>/SourceBlock'
@@ -827,9 +831,36 @@ void kinsim_2link_planar_step(void)
   if (rtmIsMajorTimeStep(kinsim_2link_planar_M)) {
     // Update for Integrator: '<Root>/Integrator'
     kinsim_2link_planar_DW.Integrator_IWORK = 0;
+
+    // External mode
+    rtExtModeUploadCheckTrigger(2);
+
+    {                                  // Sample time: [0.0s, 0.0s]
+      rtExtModeUpload(0, (real_T)kinsim_2link_planar_M->Timing.t[0]);
+    }
+
+    if (rtmIsMajorTimeStep(kinsim_2link_planar_M)) {// Sample time: [0.05s, 0.0s] 
+      rtExtModeUpload(1, (real_T)((kinsim_2link_planar_M->Timing.clockTick1) *
+        0.05));
+    }
   }                                    // end MajorTimeStep
 
   if (rtmIsMajorTimeStep(kinsim_2link_planar_M)) {
+    // signal main to stop simulation
+    {                                  // Sample time: [0.0s, 0.0s]
+      if ((rtmGetTFinal(kinsim_2link_planar_M)!=-1) &&
+          !((rtmGetTFinal(kinsim_2link_planar_M)-
+             ((kinsim_2link_planar_M->Timing.clockTick1) * 0.05)) >
+            ((kinsim_2link_planar_M->Timing.clockTick1) * 0.05) * (DBL_EPSILON)))
+      {
+        rtmSetErrorStatus(kinsim_2link_planar_M, "Simulation finished");
+      }
+
+      if (rtmGetStopRequested(kinsim_2link_planar_M)) {
+        rtmSetErrorStatus(kinsim_2link_planar_M, "Simulation finished");
+      }
+    }
+
     rt_ertODEUpdateContinuousStates(&kinsim_2link_planar_M->solverInfo);
 
     // Update absolute time for base rate
@@ -913,8 +944,65 @@ void kinsim_2link_planar_initialize(void)
                     (&kinsim_2link_planar_M->intgData));
   rtsiSetSolverName(&kinsim_2link_planar_M->solverInfo,"ode3");
   rtmSetTPtr(kinsim_2link_planar_M, &kinsim_2link_planar_M->Timing.tArray[0]);
+  rtmSetTFinal(kinsim_2link_planar_M, -1);
   kinsim_2link_planar_M->Timing.stepSize0 = 0.05;
   rtmSetFirstInitCond(kinsim_2link_planar_M, 1);
+
+  // External mode info
+  kinsim_2link_planar_M->Sizes.checksums[0] = (3253106006U);
+  kinsim_2link_planar_M->Sizes.checksums[1] = (1111772405U);
+  kinsim_2link_planar_M->Sizes.checksums[2] = (1627745148U);
+  kinsim_2link_planar_M->Sizes.checksums[3] = (2534738041U);
+
+  {
+    static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
+    static RTWExtModeInfo rt_ExtModeInfo;
+    static const sysRanDType *systemRan[20];
+    kinsim_2link_planar_M->extModeInfo = (&rt_ExtModeInfo);
+    rteiSetSubSystemActiveVectorAddresses(&rt_ExtModeInfo, systemRan);
+    systemRan[0] = &rtAlwaysEnabled;
+    systemRan[1] = &rtAlwaysEnabled;
+    systemRan[2] = &rtAlwaysEnabled;
+    systemRan[3] = &rtAlwaysEnabled;
+    systemRan[4] = &rtAlwaysEnabled;
+    systemRan[5] = &rtAlwaysEnabled;
+    systemRan[6] = &rtAlwaysEnabled;
+    systemRan[7] = &rtAlwaysEnabled;
+    systemRan[8] = &rtAlwaysEnabled;
+    systemRan[9] = &rtAlwaysEnabled;
+    systemRan[10] = &rtAlwaysEnabled;
+    systemRan[11] = &rtAlwaysEnabled;
+    systemRan[12] = (sysRanDType *)
+      &kinsim_2link_planar_DW.EnabledSubsystem_SubsysRanBC;
+    systemRan[13] = &rtAlwaysEnabled;
+    systemRan[14] = &rtAlwaysEnabled;
+    systemRan[15] = &rtAlwaysEnabled;
+    systemRan[16] = &rtAlwaysEnabled;
+    systemRan[17] = &rtAlwaysEnabled;
+    systemRan[18] = &rtAlwaysEnabled;
+    systemRan[19] = &rtAlwaysEnabled;
+    rteiSetModelMappingInfoPtr(kinsim_2link_planar_M->extModeInfo,
+      &kinsim_2link_planar_M->SpecialInfo.mappingInfo);
+    rteiSetChecksumsPtr(kinsim_2link_planar_M->extModeInfo,
+                        kinsim_2link_planar_M->Sizes.checksums);
+    rteiSetTPtr(kinsim_2link_planar_M->extModeInfo, rtmGetTPtr
+                (kinsim_2link_planar_M));
+  }
+
+  // data type transition information
+  {
+    static DataTypeTransInfo dtInfo;
+    kinsim_2link_planar_M->SpecialInfo.mappingInfo = (&dtInfo);
+    dtInfo.numDataTypes = 25;
+    dtInfo.dataTypeSizes = &rtDataTypeSizes[0];
+    dtInfo.dataTypeNames = &rtDataTypeNames[0];
+
+    // Block I/O transition table
+    dtInfo.BTransTable = &rtBTransTable;
+
+    // Parameters transition table
+    dtInfo.PTransTable = &rtPTransTable;
+  }
 
   {
     char_T tmp[18];
