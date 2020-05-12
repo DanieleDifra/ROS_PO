@@ -107,6 +107,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["kinsim_2link_planar:16:59"] = {rtwname: "<S10>/Out1"};
 	this.rtwnameHashMap["<S10>/Out2"] = {sid: "kinsim_2link_planar:16:60"};
 	this.sidHashMap["kinsim_2link_planar:16:60"] = {rtwname: "<S10>/Out2"};
+	this.rtwnameHashMap["<S11>/Constant"] = {sid: "kinsim_2link_planar:89"};
+	this.sidHashMap["kinsim_2link_planar:89"] = {rtwname: "<S11>/Constant"};
 	this.rtwnameHashMap["<S11>/Get Parameter"] = {sid: "kinsim_2link_planar:61"};
 	this.sidHashMap["kinsim_2link_planar:61"] = {rtwname: "<S11>/Get Parameter"};
 	this.rtwnameHashMap["<S11>/Get Parameter1"] = {sid: "kinsim_2link_planar:65"};
@@ -123,6 +125,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["kinsim_2link_planar:66"] = {rtwname: "<S11>/Mux"};
 	this.rtwnameHashMap["<S11>/initial_configuration"] = {sid: "kinsim_2link_planar:63"};
 	this.sidHashMap["kinsim_2link_planar:63"] = {rtwname: "<S11>/initial_configuration"};
+	this.rtwnameHashMap["<S11>/Out1"] = {sid: "kinsim_2link_planar:91"};
+	this.sidHashMap["kinsim_2link_planar:91"] = {rtwname: "<S11>/Out1"};
 	this.rtwnameHashMap["<S12>/In1"] = {sid: "kinsim_2link_planar:16:53"};
 	this.sidHashMap["kinsim_2link_planar:16:53"] = {rtwname: "<S12>/In1"};
 	this.rtwnameHashMap["<S12>/Enable"] = {sid: "kinsim_2link_planar:16:54"};

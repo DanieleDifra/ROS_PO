@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinsim_2link_planar'.
 //
-// Model version                  : 1.120
+// Model version                  : 1.122
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 12 21:46:34 2020
+// C/C++ source code generated on : Tue May 12 22:47:11 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -272,6 +272,7 @@ static void matlabCodegenHandle_matlabCodeg(ros_slros_internal_block_Publ_T *obj
 // Model step function
 void kinsim_2link_planar_step(void)
 {
+  uint32_T b_varargout_2_Positions_SL_Info;
   uint32_T b_varargout_2_Velocities_SL_Inf;
   uint32_T b_varargout_2_Velocities_SL_I_0;
   uint32_T b_varargout_2_Accelerations_SL_;
@@ -279,14 +280,13 @@ void kinsim_2link_planar_step(void)
   uint32_T b_varargout_2_Effort_SL_Info_Cu;
   uint32_T b_varargout_2_Effort_SL_Info_Re;
   boolean_T b_varargout_1;
-  int32_T i;
-  int32_T T_data_tmp;
-  int32_T T_data_tmp_0;
-  int32_T A_tmp;
   int32_T T_tmp;
+  int32_T A_tmp;
+  int32_T T_tmp_0;
+  int32_T J_tmp;
   static const char_T h[7] = { 'j', 'o', 'i', 'n', 't', '_', '1' };
 
-  static const char_T i_0[7] = { 'j', 'o', 'i', 'n', 't', '_', '2' };
+  static const char_T i[7] = { 'j', 'o', 'i', 'n', 't', '_', '2' };
 
   static const char_T j[7] = { 'j', 'o', 'i', 'n', 't', '_', '3' };
 
@@ -317,7 +317,7 @@ void kinsim_2link_planar_step(void)
     kinsim_2link_pl_SystemCore_step(&b_varargout_1,
       kinsim_2link_planar_B.b_varargout_2_Positions,
       &kinsim_2link_planar_B.b_varargout_2_Positions_SL_Info,
-      &kinsim_2link_planar_B.b_varargout_2_Positions_SL_In_f,
+      &b_varargout_2_Positions_SL_Info,
       kinsim_2link_planar_B.b_varargout_2_Velocities,
       &b_varargout_2_Velocities_SL_Inf, &b_varargout_2_Velocities_SL_I_0,
       kinsim_2link_planar_B.b_varargout_2_Accelerations,
@@ -334,7 +334,7 @@ void kinsim_2link_planar_step(void)
       kinsim_2link_planar_B.In1.Positions_SL_Info.CurrentLength =
         kinsim_2link_planar_B.b_varargout_2_Positions_SL_Info;
       kinsim_2link_planar_B.In1.Positions_SL_Info.ReceivedLength =
-        kinsim_2link_planar_B.b_varargout_2_Positions_SL_In_f;
+        b_varargout_2_Positions_SL_Info;
       kinsim_2link_planar_B.In1.Velocities_SL_Info.CurrentLength =
         b_varargout_2_Velocities_SL_Inf;
       kinsim_2link_planar_B.In1.Velocities_SL_Info.ReceivedLength =
@@ -388,7 +388,7 @@ void kinsim_2link_planar_step(void)
   ParamGet_kinsim_2link_planar_86.get_parameter(&kinsim_2link_planar_B.value);
 
   // MATLABSystem: '<S11>/Get Parameter1'
-  ParamGet_kinsim_2link_planar_65.get_parameter(&kinsim_2link_planar_B.value_k);
+  ParamGet_kinsim_2link_planar_65.get_parameter(&kinsim_2link_planar_B.value_c);
 
   // Integrator: '<Root>/Integrator' incorporates:
   //   MATLABSystem: '<S11>/Get Parameter'
@@ -407,23 +407,27 @@ void kinsim_2link_planar_step(void)
     kinsim_2link_planar_X.Integrator_CSTATE[3] =
       kinsim_2link_planar_B.eulShaped_idx_2;
     kinsim_2link_planar_X.Integrator_CSTATE[4] = kinsim_2link_planar_B.value;
-    kinsim_2link_planar_X.Integrator_CSTATE[5] = kinsim_2link_planar_B.value_k;
+    kinsim_2link_planar_X.Integrator_CSTATE[5] = kinsim_2link_planar_B.value_c;
   }
 
   // MATLAB Function: '<Root>/MATLAB Function' incorporates:
   //   Constant: '<Root>/Constant'
   //   Integrator: '<Root>/Integrator'
 
-  for (i = 0; i < 6; i++) {
+  memset(&kinsim_2link_planar_B.T[0], 0, 96U * sizeof(real_T));
+  for (kinsim_2link_planar_B.i = 0; kinsim_2link_planar_B.i < 6;
+       kinsim_2link_planar_B.i++) {
     kinsim_2link_planar_B.b_varargout_2_TimeFromStart_Sec = sin
-      (kinsim_2link_planar_X.Integrator_CSTATE[i]);
-    kinsim_2link_planar_B.sy = cos(kinsim_2link_planar_X.Integrator_CSTATE[i]);
-    kinsim_2link_planar_B.eulShaped_idx_2 = kinsim_2link_planar_P.dh[i + 12];
+      (kinsim_2link_planar_X.Integrator_CSTATE[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.sy = cos
+      (kinsim_2link_planar_X.Integrator_CSTATE[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.eulShaped_idx_2 =
+      kinsim_2link_planar_P.dh[kinsim_2link_planar_B.i + 12];
     kinsim_2link_planar_B.eulShaped_idx_1 = cos
       (kinsim_2link_planar_B.eulShaped_idx_2);
     kinsim_2link_planar_B.eulShaped_idx_2 = sin
       (kinsim_2link_planar_B.eulShaped_idx_2);
-    A_tmp = i << 4;
+    A_tmp = kinsim_2link_planar_B.i << 4;
     kinsim_2link_planar_B.A[A_tmp] = kinsim_2link_planar_B.sy;
     kinsim_2link_planar_B.A[A_tmp + 4] =
       -kinsim_2link_planar_B.b_varargout_2_TimeFromStart_Sec *
@@ -431,7 +435,8 @@ void kinsim_2link_planar_step(void)
     kinsim_2link_planar_B.A[A_tmp + 8] =
       kinsim_2link_planar_B.b_varargout_2_TimeFromStart_Sec *
       kinsim_2link_planar_B.eulShaped_idx_2;
-    kinsim_2link_planar_B.value = kinsim_2link_planar_P.dh[i + 6];
+    kinsim_2link_planar_B.value =
+      kinsim_2link_planar_P.dh[kinsim_2link_planar_B.i + 6];
     kinsim_2link_planar_B.A[A_tmp + 12] = kinsim_2link_planar_B.value *
       kinsim_2link_planar_B.sy;
     kinsim_2link_planar_B.A[A_tmp + 1] =
@@ -445,102 +450,102 @@ void kinsim_2link_planar_step(void)
     kinsim_2link_planar_B.A[A_tmp + 2] = 0.0;
     kinsim_2link_planar_B.A[A_tmp + 6] = kinsim_2link_planar_B.eulShaped_idx_2;
     kinsim_2link_planar_B.A[A_tmp + 10] = kinsim_2link_planar_B.eulShaped_idx_1;
-    kinsim_2link_planar_B.A[A_tmp + 14] = kinsim_2link_planar_P.dh[i];
+    kinsim_2link_planar_B.A[A_tmp + 14] =
+      kinsim_2link_planar_P.dh[kinsim_2link_planar_B.i];
     kinsim_2link_planar_B.A[A_tmp + 3] = 0.0;
     kinsim_2link_planar_B.A[A_tmp + 7] = 0.0;
     kinsim_2link_planar_B.A[A_tmp + 11] = 0.0;
     kinsim_2link_planar_B.A[A_tmp + 15] = 1.0;
   }
 
-  for (i = 0; i < 4; i++) {
-    T_data_tmp = i << 2;
-    kinsim_2link_planar_B.T_data[T_data_tmp] =
-      kinsim_2link_planar_B.A[T_data_tmp];
-    T_data_tmp_0 = T_data_tmp + 1;
-    kinsim_2link_planar_B.T_data[T_data_tmp_0] =
-      kinsim_2link_planar_B.A[T_data_tmp_0];
-    T_data_tmp_0 = T_data_tmp + 2;
-    kinsim_2link_planar_B.T_data[T_data_tmp_0] =
-      kinsim_2link_planar_B.A[T_data_tmp_0];
-    T_data_tmp += 3;
-    kinsim_2link_planar_B.T_data[T_data_tmp] =
-      kinsim_2link_planar_B.A[T_data_tmp];
+  for (kinsim_2link_planar_B.i = 0; kinsim_2link_planar_B.i < 4;
+       kinsim_2link_planar_B.i++) {
+    A_tmp = kinsim_2link_planar_B.i << 2;
+    kinsim_2link_planar_B.T[A_tmp] = kinsim_2link_planar_B.A[A_tmp];
+    T_tmp = A_tmp + 1;
+    kinsim_2link_planar_B.T[T_tmp] = kinsim_2link_planar_B.A[T_tmp];
+    T_tmp = A_tmp + 2;
+    kinsim_2link_planar_B.T[T_tmp] = kinsim_2link_planar_B.A[T_tmp];
+    A_tmp += 3;
+    kinsim_2link_planar_B.T[A_tmp] = kinsim_2link_planar_B.A[A_tmp];
   }
 
-  for (A_tmp = 0; A_tmp < 5; A_tmp++) {
-    for (i = 0; i < 4; i++) {
-      for (T_data_tmp = 0; T_data_tmp < 4; T_data_tmp++) {
-        T_data_tmp_0 = T_data_tmp << 2;
-        T_tmp = i + T_data_tmp_0;
-        kinsim_2link_planar_B.T[T_tmp] = 0.0;
-        T_data_tmp_0 += (A_tmp + 1) << 4;
-        kinsim_2link_planar_B.T[T_tmp] += kinsim_2link_planar_B.A[T_data_tmp_0] *
-          kinsim_2link_planar_B.T_data[i];
-        kinsim_2link_planar_B.T[T_tmp] += kinsim_2link_planar_B.A[T_data_tmp_0 +
-          1] * kinsim_2link_planar_B.T_data[i + 4];
-        kinsim_2link_planar_B.T[T_tmp] += kinsim_2link_planar_B.A[T_data_tmp_0 +
-          2] * kinsim_2link_planar_B.T_data[i + 8];
-        kinsim_2link_planar_B.T[T_tmp] += kinsim_2link_planar_B.A[T_data_tmp_0 +
-          3] * kinsim_2link_planar_B.T_data[i + 12];
+  for (kinsim_2link_planar_B.b_i = 0; kinsim_2link_planar_B.b_i < 5;
+       kinsim_2link_planar_B.b_i++) {
+    for (kinsim_2link_planar_B.i = 0; kinsim_2link_planar_B.i < 4;
+         kinsim_2link_planar_B.i++) {
+      for (J_tmp = 0; J_tmp < 4; J_tmp++) {
+        A_tmp = J_tmp << 2;
+        T_tmp = kinsim_2link_planar_B.i + A_tmp;
+        kinsim_2link_planar_B.T_m[T_tmp] = 0.0;
+        A_tmp += (kinsim_2link_planar_B.b_i + 1) << 4;
+        T_tmp_0 = (kinsim_2link_planar_B.b_i << 4) + kinsim_2link_planar_B.i;
+        kinsim_2link_planar_B.T_m[T_tmp] += kinsim_2link_planar_B.A[A_tmp] *
+          kinsim_2link_planar_B.T[T_tmp_0];
+        kinsim_2link_planar_B.T_m[T_tmp] += kinsim_2link_planar_B.A[A_tmp + 1] *
+          kinsim_2link_planar_B.T[T_tmp_0 + 4];
+        kinsim_2link_planar_B.T_m[T_tmp] += kinsim_2link_planar_B.A[A_tmp + 2] *
+          kinsim_2link_planar_B.T[T_tmp_0 + 8];
+        kinsim_2link_planar_B.T_m[T_tmp] += kinsim_2link_planar_B.A[A_tmp + 3] *
+          kinsim_2link_planar_B.T[T_tmp_0 + 12];
       }
     }
 
-    for (i = 0; i < 4; i++) {
-      T_data_tmp = i << 2;
-      T_data_tmp_0 = T_data_tmp + ((A_tmp + 1) << 4);
-      kinsim_2link_planar_B.T_data[T_data_tmp_0] =
-        kinsim_2link_planar_B.T[T_data_tmp];
-      kinsim_2link_planar_B.T_data[T_data_tmp_0 + 1] =
-        kinsim_2link_planar_B.T[T_data_tmp + 1];
-      kinsim_2link_planar_B.T_data[T_data_tmp_0 + 2] =
-        kinsim_2link_planar_B.T[T_data_tmp + 2];
-      kinsim_2link_planar_B.T_data[T_data_tmp_0 + 3] =
-        kinsim_2link_planar_B.T[T_data_tmp + 3];
+    for (kinsim_2link_planar_B.i = 0; kinsim_2link_planar_B.i < 4;
+         kinsim_2link_planar_B.i++) {
+      A_tmp = kinsim_2link_planar_B.i << 2;
+      T_tmp = A_tmp + ((kinsim_2link_planar_B.b_i + 1) << 4);
+      kinsim_2link_planar_B.T[T_tmp] = kinsim_2link_planar_B.T_m[A_tmp];
+      kinsim_2link_planar_B.T[T_tmp + 1] = kinsim_2link_planar_B.T_m[A_tmp + 1];
+      kinsim_2link_planar_B.T[T_tmp + 2] = kinsim_2link_planar_B.T_m[A_tmp + 2];
+      kinsim_2link_planar_B.T[T_tmp + 3] = kinsim_2link_planar_B.T_m[A_tmp + 3];
     }
   }
 
-  kinsim_2link_planar_B.sy = sqrt(kinsim_2link_planar_B.T_data[80] *
-    kinsim_2link_planar_B.T_data[80] + kinsim_2link_planar_B.T_data[81] *
-    kinsim_2link_planar_B.T_data[81]);
+  kinsim_2link_planar_B.sy = sqrt(kinsim_2link_planar_B.T[80] *
+    kinsim_2link_planar_B.T[80] + kinsim_2link_planar_B.T[81] *
+    kinsim_2link_planar_B.T[81]);
   kinsim_2link_planar_B.b_varargout_2_TimeFromStart_Sec = rt_atan2d_snf
-    (kinsim_2link_planar_B.T_data[86], kinsim_2link_planar_B.T_data[90]);
-  kinsim_2link_planar_B.cartPos[4] = rt_atan2d_snf
-    (-kinsim_2link_planar_B.T_data[82], kinsim_2link_planar_B.sy);
-  kinsim_2link_planar_B.cartPos[3] = rt_atan2d_snf(kinsim_2link_planar_B.T_data
-    [81], kinsim_2link_planar_B.T_data[80]);
+    (kinsim_2link_planar_B.T[86], kinsim_2link_planar_B.T[90]);
+  kinsim_2link_planar_B.cartPos[4] = rt_atan2d_snf(-kinsim_2link_planar_B.T[82],
+    kinsim_2link_planar_B.sy);
+  kinsim_2link_planar_B.cartPos[3] = rt_atan2d_snf(kinsim_2link_planar_B.T[81],
+    kinsim_2link_planar_B.T[80]);
   if (kinsim_2link_planar_B.sy < 2.2204460492503131E-15) {
     kinsim_2link_planar_B.T_size[0] = 1;
     kinsim_2link_planar_B.T_size[1] = 1;
     kinsim_2link_planar_B.T_size[2] = 1;
-    kinsim_2link_planar_B.T_size_m[0] = 1;
-    kinsim_2link_planar_B.T_size_m[1] = 1;
-    kinsim_2link_planar_B.T_size_m[2] = 1;
     kinsim_2link_planar_B.T_size_c[0] = 1;
     kinsim_2link_planar_B.T_size_c[1] = 1;
     kinsim_2link_planar_B.T_size_c[2] = 1;
-    kinsim_2link_planar_B.T_data_c = -kinsim_2link_planar_B.T_data[89];
-    kinsim_2link_planar_B.T_data_b = kinsim_2link_planar_B.T_data[85];
-    kinsim_2link_planar_B.T_data_p = -kinsim_2link_planar_B.T_data[82];
-    kinsim_2link_planar_atan2(&kinsim_2link_planar_B.T_data_c,
+    kinsim_2link_planar_B.T_size_k[0] = 1;
+    kinsim_2link_planar_B.T_size_k[1] = 1;
+    kinsim_2link_planar_B.T_size_k[2] = 1;
+    kinsim_2link_planar_B.T_data = -kinsim_2link_planar_B.T[89];
+    kinsim_2link_planar_B.T_data_b = kinsim_2link_planar_B.T[85];
+    kinsim_2link_planar_B.T_data_p = -kinsim_2link_planar_B.T[82];
+    kinsim_2link_planar_atan2(&kinsim_2link_planar_B.T_data,
       kinsim_2link_planar_B.T_size, &kinsim_2link_planar_B.T_data_b,
-      kinsim_2link_planar_B.T_size_m, &kinsim_2link_planar_B.tmp_data,
+      kinsim_2link_planar_B.T_size_c, &kinsim_2link_planar_B.tmp_data,
       kinsim_2link_planar_B.tmp_size);
     kinsim_2link_planar_B.sy_size[0] = 1;
     kinsim_2link_planar_B.sy_size[1] = 1;
     kinsim_2link_planar_B.sy_size[2] = 1;
-    kinsim_2link_planar_B.T_data_c = kinsim_2link_planar_B.sy;
+    kinsim_2link_planar_B.T_data = kinsim_2link_planar_B.sy;
     kinsim_2link_planar_atan2(&kinsim_2link_planar_B.T_data_p,
-      kinsim_2link_planar_B.T_size_c, &kinsim_2link_planar_B.T_data_c,
+      kinsim_2link_planar_B.T_size_k, &kinsim_2link_planar_B.T_data,
       kinsim_2link_planar_B.sy_size, &kinsim_2link_planar_B.T_data_b,
       kinsim_2link_planar_B.T_size);
     A_tmp = kinsim_2link_planar_B.tmp_size[2];
-    for (i = 0; i < A_tmp; i++) {
+    for (kinsim_2link_planar_B.i = 0; kinsim_2link_planar_B.i < A_tmp;
+         kinsim_2link_planar_B.i++) {
       kinsim_2link_planar_B.b_varargout_2_TimeFromStart_Sec =
         kinsim_2link_planar_B.tmp_data;
     }
 
     A_tmp = kinsim_2link_planar_B.T_size[2];
-    for (i = 0; i < A_tmp; i++) {
+    for (kinsim_2link_planar_B.i = 0; kinsim_2link_planar_B.i < A_tmp;
+         kinsim_2link_planar_B.i++) {
       kinsim_2link_planar_B.cartPos[4] = kinsim_2link_planar_B.T_data_b;
     }
 
@@ -548,43 +553,53 @@ void kinsim_2link_planar_step(void)
   }
 
   memset(&kinsim_2link_planar_B.J[0], 0, 36U * sizeof(real_T));
-  kinsim_2link_planar_B.J[0] = 0.0 * kinsim_2link_planar_B.T_data[94] -
-    kinsim_2link_planar_B.T_data[93];
-  kinsim_2link_planar_B.J[1] = kinsim_2link_planar_B.T_data[92] - 0.0 *
-    kinsim_2link_planar_B.T_data[94];
-  kinsim_2link_planar_B.J[2] = 0.0 * kinsim_2link_planar_B.T_data[93] - 0.0 *
-    kinsim_2link_planar_B.T_data[92];
+  kinsim_2link_planar_B.J[0] = 0.0 * kinsim_2link_planar_B.T[94] -
+    kinsim_2link_planar_B.T[93];
+  kinsim_2link_planar_B.J[1] = kinsim_2link_planar_B.T[92] - 0.0 *
+    kinsim_2link_planar_B.T[94];
+  kinsim_2link_planar_B.J[2] = 0.0 * kinsim_2link_planar_B.T[93] - 0.0 *
+    kinsim_2link_planar_B.T[92];
   kinsim_2link_planar_B.J[3] = 0.0;
   kinsim_2link_planar_B.J[4] = 0.0;
   kinsim_2link_planar_B.J[5] = 1.0;
-  kinsim_2link_planar_B.sy = kinsim_2link_planar_B.T_data[92] -
-    kinsim_2link_planar_B.T_data[12];
-  kinsim_2link_planar_B.eulShaped_idx_1 = kinsim_2link_planar_B.T_data[93] -
-    kinsim_2link_planar_B.T_data[13];
-  kinsim_2link_planar_B.eulShaped_idx_2 = kinsim_2link_planar_B.T_data[94] -
-    kinsim_2link_planar_B.T_data[14];
-  for (i = 0; i < 5; i++) {
-    A_tmp = i + 1;
-    T_data_tmp = 6 * (i + 1);
-    kinsim_2link_planar_B.J[T_data_tmp + 3] = kinsim_2link_planar_B.T_data[8];
-    kinsim_2link_planar_B.J[T_data_tmp + 4] = kinsim_2link_planar_B.T_data[9];
-    kinsim_2link_planar_B.J[T_data_tmp + 5] = kinsim_2link_planar_B.T_data[10];
-    kinsim_2link_planar_B.J[6 * A_tmp] = kinsim_2link_planar_B.T_data[9] *
-      kinsim_2link_planar_B.eulShaped_idx_2 - kinsim_2link_planar_B.T_data[10] *
+  for (kinsim_2link_planar_B.i = 0; kinsim_2link_planar_B.i < 5;
+       kinsim_2link_planar_B.i++) {
+    A_tmp = kinsim_2link_planar_B.i + 1;
+    T_tmp_0 = kinsim_2link_planar_B.i << 4;
+    kinsim_2link_planar_B.sy = kinsim_2link_planar_B.T[92] -
+      kinsim_2link_planar_B.T[T_tmp_0 + 12];
+    T_tmp = 6 * (kinsim_2link_planar_B.i + 1);
+    kinsim_2link_planar_B.b_i = T_tmp_0 + 8;
+    kinsim_2link_planar_B.J[T_tmp + 3] =
+      kinsim_2link_planar_B.T[kinsim_2link_planar_B.b_i];
+    kinsim_2link_planar_B.eulShaped_idx_1 = kinsim_2link_planar_B.T[93] -
+      kinsim_2link_planar_B.T[T_tmp_0 + 13];
+    J_tmp = T_tmp_0 + 9;
+    kinsim_2link_planar_B.J[T_tmp + 4] = kinsim_2link_planar_B.T[J_tmp];
+    kinsim_2link_planar_B.eulShaped_idx_2 = kinsim_2link_planar_B.T[94] -
+      kinsim_2link_planar_B.T[T_tmp_0 + 14];
+    T_tmp_0 += 10;
+    kinsim_2link_planar_B.J[T_tmp + 5] = kinsim_2link_planar_B.T[T_tmp_0];
+    kinsim_2link_planar_B.J[6 * A_tmp] = kinsim_2link_planar_B.T[J_tmp] *
+      kinsim_2link_planar_B.eulShaped_idx_2 - kinsim_2link_planar_B.T[T_tmp_0] *
       kinsim_2link_planar_B.eulShaped_idx_1;
-    kinsim_2link_planar_B.J[6 * A_tmp + 1] = kinsim_2link_planar_B.T_data[10] *
-      kinsim_2link_planar_B.sy - kinsim_2link_planar_B.T_data[8] *
+    kinsim_2link_planar_B.J[6 * A_tmp + 1] = kinsim_2link_planar_B.T[T_tmp_0] *
+      kinsim_2link_planar_B.sy -
+      kinsim_2link_planar_B.T[kinsim_2link_planar_B.b_i] *
       kinsim_2link_planar_B.eulShaped_idx_2;
-    kinsim_2link_planar_B.J[6 * A_tmp + 2] = kinsim_2link_planar_B.T_data[8] *
-      kinsim_2link_planar_B.eulShaped_idx_1 - kinsim_2link_planar_B.T_data[9] *
+    kinsim_2link_planar_B.J[6 * A_tmp + 2] =
+      kinsim_2link_planar_B.T[kinsim_2link_planar_B.b_i] *
+      kinsim_2link_planar_B.eulShaped_idx_1 - kinsim_2link_planar_B.T[J_tmp] *
       kinsim_2link_planar_B.sy;
   }
 
-  for (i = 0; i < 6; i++) {
-    kinsim_2link_planar_B.cartVel[i] = 0.0;
-    for (T_data_tmp = 0; T_data_tmp < 6; T_data_tmp++) {
-      kinsim_2link_planar_B.cartVel[i] += kinsim_2link_planar_B.J[6 * T_data_tmp
-        + i] * kinsim_2link_planar_B.In1.Velocities[T_data_tmp];
+  for (kinsim_2link_planar_B.i = 0; kinsim_2link_planar_B.i < 6;
+       kinsim_2link_planar_B.i++) {
+    kinsim_2link_planar_B.cartVel[kinsim_2link_planar_B.i] = 0.0;
+    for (J_tmp = 0; J_tmp < 6; J_tmp++) {
+      kinsim_2link_planar_B.cartVel[kinsim_2link_planar_B.i] +=
+        kinsim_2link_planar_B.J[6 * J_tmp + kinsim_2link_planar_B.i] *
+        kinsim_2link_planar_B.In1.Velocities[J_tmp];
     }
   }
 
@@ -602,11 +617,15 @@ void kinsim_2link_planar_step(void)
   kinsim_2link_planar_B.dv[2] = 1.0;
   kinsim_2link_planar_B.dv[5] = 0.0;
   kinsim_2link_planar_B.dv[8] = cos(kinsim_2link_planar_B.cartPos[4]);
-  for (i = 0; i < 3; i++) {
-    kinsim_2link_planar_B.dv1[i] = kinsim_2link_planar_B.dv[i + 6] *
-      kinsim_2link_planar_B.cartVel[5] + (kinsim_2link_planar_B.dv[i + 3] *
-      kinsim_2link_planar_B.cartVel[4] + kinsim_2link_planar_B.dv[i] *
-      kinsim_2link_planar_B.cartVel[3]);
+  for (kinsim_2link_planar_B.i = 0; kinsim_2link_planar_B.i < 3;
+       kinsim_2link_planar_B.i++) {
+    kinsim_2link_planar_B.dv1[kinsim_2link_planar_B.i] =
+      kinsim_2link_planar_B.dv[kinsim_2link_planar_B.i + 6] *
+      kinsim_2link_planar_B.cartVel[5] +
+      (kinsim_2link_planar_B.dv[kinsim_2link_planar_B.i + 3] *
+       kinsim_2link_planar_B.cartVel[4] +
+       kinsim_2link_planar_B.dv[kinsim_2link_planar_B.i] *
+       kinsim_2link_planar_B.cartVel[3]);
   }
 
   // Clock: '<Root>/Clock1' incorporates:
@@ -648,13 +667,13 @@ void kinsim_2link_planar_step(void)
   kinsim_2link_planar_B.msg_d.Position_SL_Info.CurrentLength = 6U;
   kinsim_2link_planar_B.msg_d.Velocity_SL_Info.CurrentLength = 6U;
   kinsim_2link_planar_B.msg_d.Name[0].Data_SL_Info.CurrentLength = 7U;
-  kinsim_2link_planar_B.msg_d.Position[0] = kinsim_2link_planar_B.T_data[92];
+  kinsim_2link_planar_B.msg_d.Position[0] = kinsim_2link_planar_B.T[92];
   kinsim_2link_planar_B.msg_d.Velocity[0] = kinsim_2link_planar_B.cartVel[0];
   kinsim_2link_planar_B.msg_d.Name[1].Data_SL_Info.CurrentLength = 7U;
-  kinsim_2link_planar_B.msg_d.Position[1] = kinsim_2link_planar_B.T_data[93];
+  kinsim_2link_planar_B.msg_d.Position[1] = kinsim_2link_planar_B.T[93];
   kinsim_2link_planar_B.msg_d.Velocity[1] = kinsim_2link_planar_B.cartVel[1];
   kinsim_2link_planar_B.msg_d.Name[2].Data_SL_Info.CurrentLength = 7U;
-  kinsim_2link_planar_B.msg_d.Position[2] = kinsim_2link_planar_B.T_data[94];
+  kinsim_2link_planar_B.msg_d.Position[2] = kinsim_2link_planar_B.T[94];
   kinsim_2link_planar_B.msg_d.Velocity[2] = kinsim_2link_planar_B.cartVel[2];
   kinsim_2link_planar_B.msg_d.Name[3].Data_SL_Info.CurrentLength = 7U;
   kinsim_2link_planar_B.msg_d.Position[3] = kinsim_2link_planar_B.cartPos[3];
@@ -662,25 +681,32 @@ void kinsim_2link_planar_step(void)
   kinsim_2link_planar_B.msg_d.Name[4].Data_SL_Info.CurrentLength = 7U;
   kinsim_2link_planar_B.msg_d.Position[4] = kinsim_2link_planar_B.cartPos[4];
   kinsim_2link_planar_B.msg_d.Velocity[4] = kinsim_2link_planar_B.dv1[1];
-  for (i = 0; i < 7; i++) {
-    kinsim_2link_planar_B.b.f1[i] = h[i];
-    kinsim_2link_planar_B.c.f1[i] = i_0[i];
-    kinsim_2link_planar_B.d.f1[i] = j[i];
-    kinsim_2link_planar_B.e.f1[i] = k[i];
-    kinsim_2link_planar_B.f.f1[i] = l[i];
-    kinsim_2link_planar_B.g.f1[i] = m[i];
-    kinsim_2link_planar_B.msg_d.Name[0].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.b.f1[i]);
-    kinsim_2link_planar_B.msg_d.Name[1].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.c.f1[i]);
-    kinsim_2link_planar_B.msg_d.Name[2].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.d.f1[i]);
-    kinsim_2link_planar_B.msg_d.Name[3].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.e.f1[i]);
-    kinsim_2link_planar_B.msg_d.Name[4].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.f.f1[i]);
-    kinsim_2link_planar_B.msg_d.Name[5].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.g.f1[i]);
+  for (kinsim_2link_planar_B.i = 0; kinsim_2link_planar_B.i < 7;
+       kinsim_2link_planar_B.i++) {
+    kinsim_2link_planar_B.b.f1[kinsim_2link_planar_B.i] =
+      h[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.c.f1[kinsim_2link_planar_B.i] =
+      i[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.d.f1[kinsim_2link_planar_B.i] =
+      j[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.e.f1[kinsim_2link_planar_B.i] =
+      k[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.f.f1[kinsim_2link_planar_B.i] =
+      l[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.g.f1[kinsim_2link_planar_B.i] =
+      m[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.msg_d.Name[0].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.b.f1[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.msg_d.Name[1].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.c.f1[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.msg_d.Name[2].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.d.f1[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.msg_d.Name[3].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.e.f1[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.msg_d.Name[4].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.f.f1[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.msg_d.Name[5].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.g.f1[kinsim_2link_planar_B.i]);
   }
 
   kinsim_2link_planar_B.msg_d.Name[5].Data_SL_Info.CurrentLength = 7U;
@@ -733,25 +759,32 @@ void kinsim_2link_planar_step(void)
     kinsim_2link_planar_X.Integrator_CSTATE[4];
   kinsim_2link_planar_B.msg_d.Velocity[4] =
     kinsim_2link_planar_B.In1.Velocities[4];
-  for (i = 0; i < 7; i++) {
-    kinsim_2link_planar_B.b.f1[i] = h[i];
-    kinsim_2link_planar_B.c.f1[i] = i_0[i];
-    kinsim_2link_planar_B.d.f1[i] = j[i];
-    kinsim_2link_planar_B.e.f1[i] = k[i];
-    kinsim_2link_planar_B.f.f1[i] = l[i];
-    kinsim_2link_planar_B.g.f1[i] = m[i];
-    kinsim_2link_planar_B.msg_d.Name[0].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.b.f1[i]);
-    kinsim_2link_planar_B.msg_d.Name[1].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.c.f1[i]);
-    kinsim_2link_planar_B.msg_d.Name[2].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.d.f1[i]);
-    kinsim_2link_planar_B.msg_d.Name[3].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.e.f1[i]);
-    kinsim_2link_planar_B.msg_d.Name[4].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.f.f1[i]);
-    kinsim_2link_planar_B.msg_d.Name[5].Data[i] = static_cast<uint8_T>
-      (kinsim_2link_planar_B.g.f1[i]);
+  for (kinsim_2link_planar_B.i = 0; kinsim_2link_planar_B.i < 7;
+       kinsim_2link_planar_B.i++) {
+    kinsim_2link_planar_B.b.f1[kinsim_2link_planar_B.i] =
+      h[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.c.f1[kinsim_2link_planar_B.i] =
+      i[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.d.f1[kinsim_2link_planar_B.i] =
+      j[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.e.f1[kinsim_2link_planar_B.i] =
+      k[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.f.f1[kinsim_2link_planar_B.i] =
+      l[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.g.f1[kinsim_2link_planar_B.i] =
+      m[kinsim_2link_planar_B.i];
+    kinsim_2link_planar_B.msg_d.Name[0].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.b.f1[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.msg_d.Name[1].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.c.f1[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.msg_d.Name[2].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.d.f1[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.msg_d.Name[3].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.e.f1[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.msg_d.Name[4].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.f.f1[kinsim_2link_planar_B.i]);
+    kinsim_2link_planar_B.msg_d.Name[5].Data[kinsim_2link_planar_B.i] =
+      static_cast<uint8_T>(kinsim_2link_planar_B.g.f1[kinsim_2link_planar_B.i]);
   }
 
   kinsim_2link_planar_B.msg_d.Name[5].Data_SL_Info.CurrentLength = 7U;

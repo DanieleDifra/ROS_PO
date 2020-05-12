@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinsim_2link_planar'.
 //
-// Model version                  : 1.120
+// Model version                  : 1.122
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 12 21:46:34 2020
+// C/C++ source code generated on : Tue May 12 22:47:11 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -157,9 +157,9 @@ typedef struct {
   real_T b_varargout_2_Accelerations[128];
   real_T b_varargout_2_Effort[128];
   real_T A[96];
+  real_T T[96];
   real_T J[36];
-  real_T T_data[16];
-  real_T T[16];
+  real_T T_m[16];
   real_T dv[9];
   real_T cartVel[6];                   // '<Root>/MATLAB Function'
   real_T cartPos[6];                   // '<Root>/MATLAB Function'
@@ -167,15 +167,15 @@ typedef struct {
   real_T dv1[3];
   SL_Bus_kinsim_2link_planar_rosgraph_msgs_Clock msg_l;// '<Root>/Assign to Time msg' 
   int32_T T_size[3];
-  int32_T T_size_m[3];
-  int32_T tmp_size[3];
   int32_T T_size_c[3];
+  int32_T tmp_size[3];
+  int32_T T_size_k[3];
   int32_T sy_size[3];
   real_T sy;
   real_T value;
-  real_T value_k;
+  real_T value_c;
   real_T b_varargout_2_TimeFromStart_Sec;
-  real_T T_data_c;
+  real_T T_data;
   real_T T_data_b;
   real_T tmp_data;
   real_T T_data_p;
@@ -188,8 +188,9 @@ typedef struct {
   cell_wrap_0_kinsim_2link_plan_T e;
   cell_wrap_0_kinsim_2link_plan_T f;
   cell_wrap_0_kinsim_2link_plan_T g;
+  int32_T i;
+  int32_T b_i;
   uint32_T b_varargout_2_Positions_SL_Info;
-  uint32_T b_varargout_2_Positions_SL_In_f;
 } B_kinsim_2link_planar_T;
 
 // Block states (default storage) for system '<Root>'
@@ -360,6 +361,12 @@ extern "C" {
 
 }
 #endif
+
+//-
+//  These blocks were eliminated from the model due to optimizations:
+//
+//  Block '<S11>/Constant' : Unused code path elimination
+
 
 //-
 //  The generated code includes comments that allow you to trace directly
