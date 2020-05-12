@@ -1,11 +1,6 @@
 <launch>
   <arg
     name="model" />
-
-  <arg
-    name="gui"
-    default="True" />
-
   <param 
   name="use_sim_time" 
   value="true"/>
@@ -15,10 +10,6 @@
   textfile="$(find edo_robot_simulation)/robots/edo_sim_original.urdf" />
     
   <!-- Run the robot state publisher node -->
-  <node
-    name="joint_state_publisher_gui"
-    pkg="joint_state_publisher_gui"
-    type="joint_state_publisher_gui" />
   <node
     name="robot_state_publisher"
     pkg="robot_state_publisher"
@@ -34,11 +25,12 @@
 
   <!-- Run the kinematic simulator -->
   <node pkg="kinsim_2link_planar" type="kinsim_2link_planar_node" name="kinsim_2link_planar">
-    <rosparam param="q1_initial"> 0.7840</rosparam>
-    <rosparam param="q2_initial">-1.5708</rosparam>
-    <rosparam param="q3_initial">-1.5708</rosparam>
-    <rosparam param="q4_initial">-1.5708</rosparam>
-    <rosparam param="q5_initial">-1.5708</rosparam>
-    <rosparam param="q6_initial">-1.5708</rosparam>
+    <rosparam param="q1_initial">0</rosparam>
+    <rosparam param="q2_initial">0</rosparam>
+    <rosparam param="q3_initial">0</rosparam>
+    <rosparam param="q4_initial">0</rosparam>
+    <rosparam param="q5_initial">0</rosparam>
+    <rosparam param="q6_initial">0</rosparam>
   </node>
+  
 </launch>
