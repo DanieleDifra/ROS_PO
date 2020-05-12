@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinsim_2link_planar'.
 //
-// Model version                  : 1.122
+// Model version                  : 1.123
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 12 22:47:11 2020
+// C/C++ source code generated on : Wed May 13 01:26:11 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -163,7 +163,6 @@ typedef struct {
   real_T dv[9];
   real_T cartVel[6];                   // '<Root>/MATLAB Function'
   real_T cartPos[6];                   // '<Root>/MATLAB Function'
-  char_T cv[32];
   real_T dv1[3];
   SL_Bus_kinsim_2link_planar_rosgraph_msgs_Clock msg_l;// '<Root>/Assign to Time msg' 
   int32_T T_size[3];
@@ -361,12 +360,6 @@ extern "C" {
 
 }
 #endif
-
-//-
-//  These blocks were eliminated from the model due to optimizations:
-//
-//  Block '<S11>/Constant' : Unused code path elimination
-
 
 //-
 //  The generated code includes comments that allow you to trace directly

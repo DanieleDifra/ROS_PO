@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinsim_2link_planar'.
 //
-// Model version                  : 1.122
+// Model version                  : 1.123
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 12 23:09:10 2020
+// C/C++ source code generated on : Wed May 13 01:26:11 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -38,7 +38,6 @@ sem_t stopSem;
 sem_t baserateTaskSem;
 pthread_t schedulerThread;
 pthread_t baseRateThread;
-pthread_t backgroundThread;
 void *threadJoinStatus;
 int terminatingmodel = 0;
 void *baseRateTask(void *arg)
@@ -47,25 +46,9 @@ void *baseRateTask(void *arg)
     !rtmGetStopRequested(kinsim_2link_planar_M);
   while (runModel) {
     sem_wait(&baserateTaskSem);
-
-    // External mode
-    {
-      boolean_T rtmStopReq = false;
-      rtExtModePauseIfNeeded(kinsim_2link_planar_M->extModeInfo, 2, &rtmStopReq);
-      if (rtmStopReq) {
-        rtmSetStopRequested(kinsim_2link_planar_M, true);
-      }
-
-      if (rtmGetStopRequested(kinsim_2link_planar_M) == true) {
-        rtmSetErrorStatus(kinsim_2link_planar_M, "Simulation finished");
-        break;
-      }
-    }
-
     kinsim_2link_planar_step();
 
     // Get model outputs here
-    rtExtModeCheckEndTrigger();
     stopRequested = !((rtmGetErrorStatus(kinsim_2link_planar_M) == (NULL)) &&
                       !rtmGetStopRequested(kinsim_2link_planar_M));
     runModel = !stopRequested;
@@ -90,34 +73,13 @@ void *terminateTask(void *arg)
 
   {
     runModel = 0;
-
-    // Wait for background task to complete
-    CHECK_STATUS(pthread_join(backgroundThread, &threadJoinStatus), 0,
-                 "pthread_join");
   }
 
   // Disable rt_OneStep() here
 
   // Terminate model
   kinsim_2link_planar_terminate();
-  rtExtModeShutdown(2);
   sem_post(&stopSem);
-  return NULL;
-}
-
-void *backgroundTask(void *arg)
-{
-  while (runModel) {
-    // External mode
-    {
-      boolean_T rtmStopReq = false;
-      rtExtModeOneStep(kinsim_2link_planar_M->extModeInfo, 2, &rtmStopReq);
-      if (rtmStopReq) {
-        rtmSetStopRequested(kinsim_2link_planar_M, true);
-      }
-    }
-  }
-
   return NULL;
 }
 
@@ -128,24 +90,9 @@ int main(int argc, char **argv)
   void slros_node_init(int argc, char** argv);
   slros_node_init(argc, argv);
   rtmSetErrorStatus(kinsim_2link_planar_M, 0);
-  rtExtModeParseArgs(argc, (const char_T **)argv, NULL);
 
   // Initialize model
   kinsim_2link_planar_initialize();
-
-  // External mode
-  rtSetTFinalForExtMode(&rtmGetTFinal(kinsim_2link_planar_M));
-  rtExtModeCheckInit(2);
-
-  {
-    boolean_T rtmStopReq = false;
-    rtExtModeWaitForStartPkt(kinsim_2link_planar_M->extModeInfo, 2, &rtmStopReq);
-    if (rtmStopReq) {
-      rtmSetStopRequested(kinsim_2link_planar_M, true);
-    }
-  }
-
-  rtERTExtModeStartMsg();
 
   // Call RTOS Initialization function
   myRTOSInit(0.05, 0);

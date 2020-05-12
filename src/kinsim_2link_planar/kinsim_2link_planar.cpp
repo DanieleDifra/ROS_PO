@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinsim_2link_planar'.
 //
-// Model version                  : 1.122
+// Model version                  : 1.123
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 12 22:47:11 2020
+// C/C++ source code generated on : Wed May 13 01:26:11 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -920,41 +920,36 @@ void kinsim_2link_planar_initialize(void)
     char_T tmp[18];
     char_T tmp_0[14];
     char_T tmp_1[7];
+    char_T tmp_2[12];
     int32_T i;
-    static const char_T tmp_2[17] = { '/', 'j', 'o', 'i', 'n', 't', '_', 't',
+    static const char_T tmp_3[17] = { '/', 'j', 'o', 'i', 'n', 't', '_', 't',
       'r', 'a', 'j', 'e', 'c', 't', 'o', 'r', 'y' };
 
-    static const char_T tmp_3[17] = { '/', 'c', 'a', 'r', 't', 'e', 's', 'i',
+    static const char_T tmp_4[17] = { '/', 'c', 'a', 'r', 't', 'e', 's', 'i',
       'a', 'n', '_', 's', 't', 'a', 't', 'e', 's' };
 
-    static const char_T tmp_4[13] = { '/', 'j', 'o', 'i', 'n', 't', '_', 's',
+    static const char_T tmp_5[13] = { '/', 'j', 'o', 'i', 'n', 't', '_', 's',
       't', 'a', 't', 'e', 's' };
 
-    static const char_T tmp_5[6] = { '/', 'c', 'l', 'o', 'c', 'k' };
+    static const char_T tmp_6[6] = { '/', 'c', 'l', 'o', 'c', 'k' };
 
-    static const char_T tmp_6[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '1',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_7[11] = { '/', 'q', '1', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
-    static const char_T tmp_7[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '2',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_8[11] = { '/', 'q', '2', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
-    static const char_T tmp_8[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '3',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_9[11] = { '/', 'q', '3', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
-    static const char_T tmp_9[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '4',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_a[11] = { '/', 'q', '4', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
-    static const char_T tmp_a[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '5',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_b[11] = { '/', 'q', '5', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
-    static const char_T tmp_b[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '6',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_c[11] = { '/', 'q', '6', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
     // InitializeConditions for Integrator: '<Root>/Integrator'
     if (rtmIsFirstInitCond(kinsim_2link_planar_M)) {
@@ -981,7 +976,7 @@ void kinsim_2link_planar_initialize(void)
     kinsim_2link_planar_DW.obj_pp.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_pp.isInitialized = 1;
     for (i = 0; i < 17; i++) {
-      tmp[i] = tmp_2[i];
+      tmp[i] = tmp_3[i];
     }
 
     tmp[17] = '\x00';
@@ -996,7 +991,7 @@ void kinsim_2link_planar_initialize(void)
     kinsim_2link_planar_DW.obj_m.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_m.isInitialized = 1;
     for (i = 0; i < 17; i++) {
-      tmp[i] = tmp_3[i];
+      tmp[i] = tmp_4[i];
     }
 
     tmp[17] = '\x00';
@@ -1011,7 +1006,7 @@ void kinsim_2link_planar_initialize(void)
     kinsim_2link_planar_DW.obj_nr.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_nr.isInitialized = 1;
     for (i = 0; i < 13; i++) {
-      tmp_0[i] = tmp_4[i];
+      tmp_0[i] = tmp_5[i];
     }
 
     tmp_0[13] = '\x00';
@@ -1026,7 +1021,7 @@ void kinsim_2link_planar_initialize(void)
     kinsim_2link_planar_DW.obj_f.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_f.isInitialized = 1;
     for (i = 0; i < 6; i++) {
-      tmp_1[i] = tmp_5[i];
+      tmp_1[i] = tmp_6[i];
     }
 
     tmp_1[6] = '\x00';
@@ -1039,14 +1034,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter'
     kinsim_2link_planar_DW.obj.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_6[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_7[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_61.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_61.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_61.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_61.set_initial_value(0.78539816339744828);
+    ParamGet_kinsim_2link_planar_61.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter'
@@ -1054,14 +1049,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter2'
     kinsim_2link_planar_DW.obj_p.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_p.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_7[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_8[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_85.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_85.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_85.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_85.set_initial_value(-0.78539816339744828);
+    ParamGet_kinsim_2link_planar_85.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_p.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter2'
@@ -1069,14 +1064,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter5'
     kinsim_2link_planar_DW.obj_n.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_n.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_8[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_9[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_88.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_88.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_88.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_88.set_initial_value(-0.78539816339744828);
+    ParamGet_kinsim_2link_planar_88.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_n.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter5'
@@ -1084,14 +1079,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter4'
     kinsim_2link_planar_DW.obj_e.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_e.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_9[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_a[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_87.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_87.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_87.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_87.set_initial_value(-0.78539816339744828);
+    ParamGet_kinsim_2link_planar_87.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_e.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter4'
@@ -1099,14 +1094,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter3'
     kinsim_2link_planar_DW.obj_l.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_l.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_a[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_b[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_86.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_86.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_86.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_86.set_initial_value(-0.78539816339744828);
+    ParamGet_kinsim_2link_planar_86.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_l.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter3'
@@ -1114,14 +1109,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter1'
     kinsim_2link_planar_DW.obj_ng.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_ng.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_b[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_c[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_65.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_65.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_65.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_65.set_initial_value(-0.78539816339744828);
+    ParamGet_kinsim_2link_planar_65.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_ng.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter1'

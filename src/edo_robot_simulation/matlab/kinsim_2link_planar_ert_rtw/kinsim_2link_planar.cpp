@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinsim_2link_planar'.
 //
-// Model version                  : 1.122
+// Model version                  : 1.123
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 12 23:09:10 2020
+// C/C++ source code generated on : Wed May 13 01:26:11 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -18,7 +18,6 @@
 //
 #include "kinsim_2link_planar.h"
 #include "kinsim_2link_planar_private.h"
-#include "kinsim_2link_planar_dt.h"
 
 // Block signals (default storage)
 B_kinsim_2link_planar_T kinsim_2link_planar_B;
@@ -310,8 +309,6 @@ void kinsim_2link_planar_step(void)
       (&kinsim_2link_planar_M->solverInfo);
   }
 
-  // Reset subsysRan breadcrumbs
-  srClearBC(kinsim_2link_planar_DW.EnabledSubsystem_SubsysRanBC);
   if (rtmIsMajorTimeStep(kinsim_2link_planar_M)) {
     // Outputs for Atomic SubSystem: '<Root>/Subscribe'
     // MATLABSystem: '<S10>/SourceBlock' incorporates:
@@ -365,7 +362,6 @@ void kinsim_2link_planar_step(void)
       kinsim_2link_planar_B.In1.TimeFromStart.Sec =
         kinsim_2link_planar_B.b_varargout_2_TimeFromStart_Sec;
       kinsim_2link_planar_B.In1.TimeFromStart.Nsec = kinsim_2link_planar_B.sy;
-      srUpdateBC(kinsim_2link_planar_DW.EnabledSubsystem_SubsysRanBC);
     }
 
     // End of MATLABSystem: '<S10>/SourceBlock'
@@ -831,36 +827,9 @@ void kinsim_2link_planar_step(void)
   if (rtmIsMajorTimeStep(kinsim_2link_planar_M)) {
     // Update for Integrator: '<Root>/Integrator'
     kinsim_2link_planar_DW.Integrator_IWORK = 0;
-
-    // External mode
-    rtExtModeUploadCheckTrigger(2);
-
-    {                                  // Sample time: [0.0s, 0.0s]
-      rtExtModeUpload(0, (real_T)kinsim_2link_planar_M->Timing.t[0]);
-    }
-
-    if (rtmIsMajorTimeStep(kinsim_2link_planar_M)) {// Sample time: [0.05s, 0.0s] 
-      rtExtModeUpload(1, (real_T)((kinsim_2link_planar_M->Timing.clockTick1) *
-        0.05));
-    }
   }                                    // end MajorTimeStep
 
   if (rtmIsMajorTimeStep(kinsim_2link_planar_M)) {
-    // signal main to stop simulation
-    {                                  // Sample time: [0.0s, 0.0s]
-      if ((rtmGetTFinal(kinsim_2link_planar_M)!=-1) &&
-          !((rtmGetTFinal(kinsim_2link_planar_M)-
-             ((kinsim_2link_planar_M->Timing.clockTick1) * 0.05)) >
-            ((kinsim_2link_planar_M->Timing.clockTick1) * 0.05) * (DBL_EPSILON)))
-      {
-        rtmSetErrorStatus(kinsim_2link_planar_M, "Simulation finished");
-      }
-
-      if (rtmGetStopRequested(kinsim_2link_planar_M)) {
-        rtmSetErrorStatus(kinsim_2link_planar_M, "Simulation finished");
-      }
-    }
-
     rt_ertODEUpdateContinuousStates(&kinsim_2link_planar_M->solverInfo);
 
     // Update absolute time for base rate
@@ -944,105 +913,43 @@ void kinsim_2link_planar_initialize(void)
                     (&kinsim_2link_planar_M->intgData));
   rtsiSetSolverName(&kinsim_2link_planar_M->solverInfo,"ode3");
   rtmSetTPtr(kinsim_2link_planar_M, &kinsim_2link_planar_M->Timing.tArray[0]);
-  rtmSetTFinal(kinsim_2link_planar_M, -1);
   kinsim_2link_planar_M->Timing.stepSize0 = 0.05;
   rtmSetFirstInitCond(kinsim_2link_planar_M, 1);
-
-  // External mode info
-  kinsim_2link_planar_M->Sizes.checksums[0] = (3253106006U);
-  kinsim_2link_planar_M->Sizes.checksums[1] = (1111772405U);
-  kinsim_2link_planar_M->Sizes.checksums[2] = (1627745148U);
-  kinsim_2link_planar_M->Sizes.checksums[3] = (2534738041U);
-
-  {
-    static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
-    static RTWExtModeInfo rt_ExtModeInfo;
-    static const sysRanDType *systemRan[20];
-    kinsim_2link_planar_M->extModeInfo = (&rt_ExtModeInfo);
-    rteiSetSubSystemActiveVectorAddresses(&rt_ExtModeInfo, systemRan);
-    systemRan[0] = &rtAlwaysEnabled;
-    systemRan[1] = &rtAlwaysEnabled;
-    systemRan[2] = &rtAlwaysEnabled;
-    systemRan[3] = &rtAlwaysEnabled;
-    systemRan[4] = &rtAlwaysEnabled;
-    systemRan[5] = &rtAlwaysEnabled;
-    systemRan[6] = &rtAlwaysEnabled;
-    systemRan[7] = &rtAlwaysEnabled;
-    systemRan[8] = &rtAlwaysEnabled;
-    systemRan[9] = &rtAlwaysEnabled;
-    systemRan[10] = &rtAlwaysEnabled;
-    systemRan[11] = &rtAlwaysEnabled;
-    systemRan[12] = (sysRanDType *)
-      &kinsim_2link_planar_DW.EnabledSubsystem_SubsysRanBC;
-    systemRan[13] = &rtAlwaysEnabled;
-    systemRan[14] = &rtAlwaysEnabled;
-    systemRan[15] = &rtAlwaysEnabled;
-    systemRan[16] = &rtAlwaysEnabled;
-    systemRan[17] = &rtAlwaysEnabled;
-    systemRan[18] = &rtAlwaysEnabled;
-    systemRan[19] = &rtAlwaysEnabled;
-    rteiSetModelMappingInfoPtr(kinsim_2link_planar_M->extModeInfo,
-      &kinsim_2link_planar_M->SpecialInfo.mappingInfo);
-    rteiSetChecksumsPtr(kinsim_2link_planar_M->extModeInfo,
-                        kinsim_2link_planar_M->Sizes.checksums);
-    rteiSetTPtr(kinsim_2link_planar_M->extModeInfo, rtmGetTPtr
-                (kinsim_2link_planar_M));
-  }
-
-  // data type transition information
-  {
-    static DataTypeTransInfo dtInfo;
-    kinsim_2link_planar_M->SpecialInfo.mappingInfo = (&dtInfo);
-    dtInfo.numDataTypes = 25;
-    dtInfo.dataTypeSizes = &rtDataTypeSizes[0];
-    dtInfo.dataTypeNames = &rtDataTypeNames[0];
-
-    // Block I/O transition table
-    dtInfo.BTransTable = &rtBTransTable;
-
-    // Parameters transition table
-    dtInfo.PTransTable = &rtPTransTable;
-  }
 
   {
     char_T tmp[18];
     char_T tmp_0[14];
     char_T tmp_1[7];
+    char_T tmp_2[12];
     int32_T i;
-    static const char_T tmp_2[17] = { '/', 'j', 'o', 'i', 'n', 't', '_', 't',
+    static const char_T tmp_3[17] = { '/', 'j', 'o', 'i', 'n', 't', '_', 't',
       'r', 'a', 'j', 'e', 'c', 't', 'o', 'r', 'y' };
 
-    static const char_T tmp_3[17] = { '/', 'c', 'a', 'r', 't', 'e', 's', 'i',
+    static const char_T tmp_4[17] = { '/', 'c', 'a', 'r', 't', 'e', 's', 'i',
       'a', 'n', '_', 's', 't', 'a', 't', 'e', 's' };
 
-    static const char_T tmp_4[13] = { '/', 'j', 'o', 'i', 'n', 't', '_', 's',
+    static const char_T tmp_5[13] = { '/', 'j', 'o', 'i', 'n', 't', '_', 's',
       't', 'a', 't', 'e', 's' };
 
-    static const char_T tmp_5[6] = { '/', 'c', 'l', 'o', 'c', 'k' };
+    static const char_T tmp_6[6] = { '/', 'c', 'l', 'o', 'c', 'k' };
 
-    static const char_T tmp_6[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '1',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_7[11] = { '/', 'q', '1', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
-    static const char_T tmp_7[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '2',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_8[11] = { '/', 'q', '2', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
-    static const char_T tmp_8[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '3',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_9[11] = { '/', 'q', '3', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
-    static const char_T tmp_9[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '4',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_a[11] = { '/', 'q', '4', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
-    static const char_T tmp_a[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '5',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_b[11] = { '/', 'q', '5', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
-    static const char_T tmp_b[31] = { '/', 'k', 'i', 'n', 's', 'i', 'm', '_',
-      '2', 'l', 'i', 'n', 'k', '_', 'p', 'l', 'a', 'n', 'a', 'r', '/', 'q', '6',
-      '_', 'i', 'n', 'i', 't', 'i', 'a', 'l' };
+    static const char_T tmp_c[11] = { '/', 'q', '6', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
     // InitializeConditions for Integrator: '<Root>/Integrator'
     if (rtmIsFirstInitCond(kinsim_2link_planar_M)) {
@@ -1069,7 +976,7 @@ void kinsim_2link_planar_initialize(void)
     kinsim_2link_planar_DW.obj_pp.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_pp.isInitialized = 1;
     for (i = 0; i < 17; i++) {
-      tmp[i] = tmp_2[i];
+      tmp[i] = tmp_3[i];
     }
 
     tmp[17] = '\x00';
@@ -1084,7 +991,7 @@ void kinsim_2link_planar_initialize(void)
     kinsim_2link_planar_DW.obj_m.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_m.isInitialized = 1;
     for (i = 0; i < 17; i++) {
-      tmp[i] = tmp_3[i];
+      tmp[i] = tmp_4[i];
     }
 
     tmp[17] = '\x00';
@@ -1099,7 +1006,7 @@ void kinsim_2link_planar_initialize(void)
     kinsim_2link_planar_DW.obj_nr.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_nr.isInitialized = 1;
     for (i = 0; i < 13; i++) {
-      tmp_0[i] = tmp_4[i];
+      tmp_0[i] = tmp_5[i];
     }
 
     tmp_0[13] = '\x00';
@@ -1114,7 +1021,7 @@ void kinsim_2link_planar_initialize(void)
     kinsim_2link_planar_DW.obj_f.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_f.isInitialized = 1;
     for (i = 0; i < 6; i++) {
-      tmp_1[i] = tmp_5[i];
+      tmp_1[i] = tmp_6[i];
     }
 
     tmp_1[6] = '\x00';
@@ -1127,14 +1034,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter'
     kinsim_2link_planar_DW.obj.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_6[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_7[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_61.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_61.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_61.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_61.set_initial_value(0.78539816339744828);
+    ParamGet_kinsim_2link_planar_61.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter'
@@ -1142,14 +1049,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter2'
     kinsim_2link_planar_DW.obj_p.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_p.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_7[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_8[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_85.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_85.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_85.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_85.set_initial_value(-0.78539816339744828);
+    ParamGet_kinsim_2link_planar_85.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_p.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter2'
@@ -1157,14 +1064,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter5'
     kinsim_2link_planar_DW.obj_n.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_n.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_8[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_9[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_88.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_88.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_88.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_88.set_initial_value(-0.78539816339744828);
+    ParamGet_kinsim_2link_planar_88.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_n.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter5'
@@ -1172,14 +1079,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter4'
     kinsim_2link_planar_DW.obj_e.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_e.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_9[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_a[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_87.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_87.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_87.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_87.set_initial_value(-0.78539816339744828);
+    ParamGet_kinsim_2link_planar_87.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_e.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter4'
@@ -1187,14 +1094,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter3'
     kinsim_2link_planar_DW.obj_l.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_l.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_a[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_b[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_86.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_86.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_86.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_86.set_initial_value(-0.78539816339744828);
+    ParamGet_kinsim_2link_planar_86.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_l.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter3'
@@ -1202,14 +1109,14 @@ void kinsim_2link_planar_initialize(void)
     // Start for MATLABSystem: '<S11>/Get Parameter1'
     kinsim_2link_planar_DW.obj_ng.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_ng.isInitialized = 1;
-    for (i = 0; i < 31; i++) {
-      kinsim_2link_planar_B.cv[i] = tmp_b[i];
+    for (i = 0; i < 11; i++) {
+      tmp_2[i] = tmp_c[i];
     }
 
-    kinsim_2link_planar_B.cv[31] = '\x00';
-    ParamGet_kinsim_2link_planar_65.initialize(kinsim_2link_planar_B.cv);
+    tmp_2[11] = '\x00';
+    ParamGet_kinsim_2link_planar_65.initialize(tmp_2);
     ParamGet_kinsim_2link_planar_65.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_kinsim_2link_planar_65.set_initial_value(-0.78539816339744828);
+    ParamGet_kinsim_2link_planar_65.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_ng.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S11>/Get Parameter1'
