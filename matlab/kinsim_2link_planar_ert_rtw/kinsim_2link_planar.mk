@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'kinsim_2link_planar'. 
 ## 
 ## Makefile     : kinsim_2link_planar.mk
-## Generated on : Wed May 13 01:14:56 2020
+## Generated on : Wed May 13 18:39:41 2020
 ## MATLAB Coder version: 5.0 (R2020a)
 ## 
 ## Build Info:
@@ -23,11 +23,11 @@
 
 PRODUCT_NAME              = kinsim_2link_planar
 MAKEFILE                  = kinsim_2link_planar.mk
-MATLAB_ROOT               = /usr/local/MATLAB/R2020a
-MATLAB_BIN                = /usr/local/MATLAB/R2020a/bin
-MATLAB_ARCH_BIN           = $(MATLAB_BIN)/glnxa64
+MATLAB_ROOT               = /Applications/MATLAB_R2020a.app
+MATLAB_BIN                = /Applications/MATLAB_R2020a.app/bin
+MATLAB_ARCH_BIN           = $(MATLAB_BIN)/maci64
 MASTER_ANCHOR_DIR         = 
-START_DIR                 = /home/paolo/ROS_PO_LOCAL/src/edo_robot_simulation/matlab
+START_DIR                 = /Users/luca/Documents/PoliMi/ROS_PO/matlab
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
