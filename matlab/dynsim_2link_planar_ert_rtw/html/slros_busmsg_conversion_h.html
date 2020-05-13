@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="./js/coder_app.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="./rtwreport_utils.js"></script>
+<script type="text/javascript" src="./rtwannotate.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/coder_app.css"/>
+</head>
+<body onload="srcFileOnload();">
+<pre id="code">
+<table class="code" id="codeTbl">
+<tr name="1" id="1">
+<td><a id="l1" class='ln'>1</a></td><td><span class="pp">#ifndef</span> <a id="1c9" class="tk">_SLROS_BUSMSG_CONVERSION_H_</a></td></tr>
+<tr name="2" id="2">
+<td><a id="l2" class='ln'>2</a></td><td><span class="pp">#define</span> <a id="2c9" class="tk">_SLROS_BUSMSG_CONVERSION_H_</a></td></tr>
+<tr name="3" id="3">
+<td><a id="l3" class='ln'>3</a></td><td></td></tr>
+<tr name="4" id="4">
+<td><a id="l4" class='ln'>4</a></td><td><span class="pp">#include &lt;ros/ros.h&gt;</span></td></tr>
+<tr name="5" id="5">
+<td><a id="l5" class='ln'>5</a></td><td><span class="pp">#include &lt;geometry_msgs/Point.h&gt;</span></td></tr>
+<tr name="6" id="6">
+<td><a id="l6" class='ln'>6</a></td><td><span class="pp">#include &lt;geometry_msgs/Pose.h&gt;</span></td></tr>
+<tr name="7" id="7">
+<td><a id="l7" class='ln'>7</a></td><td><span class="pp">#include &lt;geometry_msgs/PoseStamped.h&gt;</span></td></tr>
+<tr name="8" id="8">
+<td><a id="l8" class='ln'>8</a></td><td><span class="pp">#include &lt;geometry_msgs/Quaternion.h&gt;</span></td></tr>
+<tr name="9" id="9">
+<td><a id="l9" class='ln'>9</a></td><td><span class="pp">#include &lt;geometry_msgs/Twist.h&gt;</span></td></tr>
+<tr name="10" id="10">
+<td><a id="l10" class='ln'>10</a></td><td><span class="pp">#include &lt;geometry_msgs/TwistStamped.h&gt;</span></td></tr>
+<tr name="11" id="11">
+<td><a id="l11" class='ln'>11</a></td><td><span class="pp">#include &lt;geometry_msgs/Vector3.h&gt;</span></td></tr>
+<tr name="12" id="12">
+<td><a id="l12" class='ln'>12</a></td><td><span class="pp">#include &lt;ros/time.h&gt;</span></td></tr>
+<tr name="13" id="13">
+<td><a id="l13" class='ln'>13</a></td><td><span class="pp">#include &lt;rosgraph_msgs/Clock.h&gt;</span></td></tr>
+<tr name="14" id="14">
+<td><a id="l14" class='ln'>14</a></td><td><span class="pp">#include &lt;sensor_msgs/JointState.h&gt;</span></td></tr>
+<tr name="15" id="15">
+<td><a id="l15" class='ln'>15</a></td><td><span class="pp">#include &lt;std_msgs/Float64MultiArray.h&gt;</span></td></tr>
+<tr name="16" id="16">
+<td><a id="l16" class='ln'>16</a></td><td><span class="pp">#include &lt;std_msgs/Header.h&gt;</span></td></tr>
+<tr name="17" id="17">
+<td><a id="l17" class='ln'>17</a></td><td><span class="pp">#include &lt;std_msgs/MultiArrayDimension.h&gt;</span></td></tr>
+<tr name="18" id="18">
+<td><a id="l18" class='ln'>18</a></td><td><span class="pp">#include &lt;std_msgs/MultiArrayLayout.h&gt;</span></td></tr>
+<tr name="19" id="19">
+<td><a id="l19" class='ln'>19</a></td><td><span class="pp">#include "dynsim_2link_planar_types.h"</span></td></tr>
+<tr name="20" id="20">
+<td><a id="l20" class='ln'>20</a></td><td><span class="pp">#include "slros_msgconvert_utils.h"</span></td></tr>
+<tr name="21" id="21">
+<td><a id="l21" class='ln'>21</a></td><td></td></tr>
+<tr name="22" id="22">
+<td><a id="l22" class='ln'>22</a></td><td></td></tr>
+<tr name="23" id="23">
+<td><a id="l23" class='ln'>23</a></td><td><span class="kw">void</span> <a id="23c6" class="tk">convertFromBus</a>(<a id="23c21" class="tk">geometry_msgs</a>::<a id="23c36" class="tk">Point</a><a id="23c41" class="tk">*</a> <a id="23c43" class="tk">msgPtr</a>, <a id="23c51" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_Point</a> <span class="kw">const</span><a id="23c103" class="tk">*</a> <a id="23c105" class="tk">busPtr</a>);</td></tr>
+<tr name="24" id="24">
+<td><a id="l24" class='ln'>24</a></td><td><span class="kw">void</span> <a id="24c6" class="tk">convertToBus</a>(<a id="24c19" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_Point</a><a id="24c65" class="tk">*</a> <a id="24c67" class="tk">busPtr</a>, <a id="24c75" class="tk">geometry_msgs</a>::<a id="24c90" class="tk">Point</a> <span class="kw">const</span><a id="24c101" class="tk">*</a> <a id="24c103" class="tk">msgPtr</a>);</td></tr>
+<tr name="25" id="25">
+<td><a id="l25" class='ln'>25</a></td><td></td></tr>
+<tr name="26" id="26">
+<td><a id="l26" class='ln'>26</a></td><td><span class="kw">void</span> <a id="26c6" class="tk">convertFromBus</a>(<a id="26c21" class="tk">geometry_msgs</a>::<a id="26c36" class="tk">Pose</a><a id="26c40" class="tk">*</a> <a id="26c42" class="tk">msgPtr</a>, <a id="26c50" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_Pose</a> <span class="kw">const</span><a id="26c101" class="tk">*</a> <a id="26c103" class="tk">busPtr</a>);</td></tr>
+<tr name="27" id="27">
+<td><a id="l27" class='ln'>27</a></td><td><span class="kw">void</span> <a id="27c6" class="tk">convertToBus</a>(<a id="27c19" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_Pose</a><a id="27c64" class="tk">*</a> <a id="27c66" class="tk">busPtr</a>, <a id="27c74" class="tk">geometry_msgs</a>::<a id="27c89" class="tk">Pose</a> <span class="kw">const</span><a id="27c99" class="tk">*</a> <a id="27c101" class="tk">msgPtr</a>);</td></tr>
+<tr name="28" id="28">
+<td><a id="l28" class='ln'>28</a></td><td></td></tr>
+<tr name="29" id="29">
+<td><a id="l29" class='ln'>29</a></td><td><span class="kw">void</span> <a id="29c6" class="tk">convertFromBus</a>(<a id="29c21" class="tk">geometry_msgs</a>::<a id="29c36" class="tk">PoseStamped</a><a id="29c47" class="tk">*</a> <a id="29c49" class="tk">msgPtr</a>, <a id="29c57" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_PoseStamped</a> <span class="kw">const</span><a id="29c115" class="tk">*</a> <a id="29c117" class="tk">busPtr</a>);</td></tr>
+<tr name="30" id="30">
+<td><a id="l30" class='ln'>30</a></td><td><span class="kw">void</span> <a id="30c6" class="tk">convertToBus</a>(<a id="30c19" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_PoseStamped</a><a id="30c71" class="tk">*</a> <a id="30c73" class="tk">busPtr</a>, <a id="30c81" class="tk">geometry_msgs</a>::<a id="30c96" class="tk">PoseStamped</a> <span class="kw">const</span><a id="30c113" class="tk">*</a> <a id="30c115" class="tk">msgPtr</a>);</td></tr>
+<tr name="31" id="31">
+<td><a id="l31" class='ln'>31</a></td><td></td></tr>
+<tr name="32" id="32">
+<td><a id="l32" class='ln'>32</a></td><td><span class="kw">void</span> <a id="32c6" class="tk">convertFromBus</a>(<a id="32c21" class="tk">geometry_msgs</a>::<a id="32c36" class="tk">Quaternion</a><a id="32c46" class="tk">*</a> <a id="32c48" class="tk">msgPtr</a>, <a id="32c56" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_Quaternion</a> <span class="kw">const</span><a id="32c113" class="tk">*</a> <a id="32c115" class="tk">busPtr</a>);</td></tr>
+<tr name="33" id="33">
+<td><a id="l33" class='ln'>33</a></td><td><span class="kw">void</span> <a id="33c6" class="tk">convertToBus</a>(<a id="33c19" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_Quaternion</a><a id="33c70" class="tk">*</a> <a id="33c72" class="tk">busPtr</a>, <a id="33c80" class="tk">geometry_msgs</a>::<a id="33c95" class="tk">Quaternion</a> <span class="kw">const</span><a id="33c111" class="tk">*</a> <a id="33c113" class="tk">msgPtr</a>);</td></tr>
+<tr name="34" id="34">
+<td><a id="l34" class='ln'>34</a></td><td></td></tr>
+<tr name="35" id="35">
+<td><a id="l35" class='ln'>35</a></td><td><span class="kw">void</span> <a id="35c6" class="tk">convertFromBus</a>(<a id="35c21" class="tk">geometry_msgs</a>::<a id="35c36" class="tk">Twist</a><a id="35c41" class="tk">*</a> <a id="35c43" class="tk">msgPtr</a>, <a id="35c51" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_Twist</a> <span class="kw">const</span><a id="35c103" class="tk">*</a> <a id="35c105" class="tk">busPtr</a>);</td></tr>
+<tr name="36" id="36">
+<td><a id="l36" class='ln'>36</a></td><td><span class="kw">void</span> <a id="36c6" class="tk">convertToBus</a>(<a id="36c19" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_Twist</a><a id="36c65" class="tk">*</a> <a id="36c67" class="tk">busPtr</a>, <a id="36c75" class="tk">geometry_msgs</a>::<a id="36c90" class="tk">Twist</a> <span class="kw">const</span><a id="36c101" class="tk">*</a> <a id="36c103" class="tk">msgPtr</a>);</td></tr>
+<tr name="37" id="37">
+<td><a id="l37" class='ln'>37</a></td><td></td></tr>
+<tr name="38" id="38">
+<td><a id="l38" class='ln'>38</a></td><td><span class="kw">void</span> <a id="38c6" class="tk">convertFromBus</a>(<a id="38c21" class="tk">geometry_msgs</a>::<a id="38c36" class="tk">TwistStamped</a><a id="38c48" class="tk">*</a> <a id="38c50" class="tk">msgPtr</a>, <a id="38c58" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_TwistStamped</a> <span class="kw">const</span><a id="38c117" class="tk">*</a> <a id="38c119" class="tk">busPtr</a>);</td></tr>
+<tr name="39" id="39">
+<td><a id="l39" class='ln'>39</a></td><td><span class="kw">void</span> <a id="39c6" class="tk">convertToBus</a>(<a id="39c19" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_TwistStamped</a><a id="39c72" class="tk">*</a> <a id="39c74" class="tk">busPtr</a>, <a id="39c82" class="tk">geometry_msgs</a>::<a id="39c97" class="tk">TwistStamped</a> <span class="kw">const</span><a id="39c115" class="tk">*</a> <a id="39c117" class="tk">msgPtr</a>);</td></tr>
+<tr name="40" id="40">
+<td><a id="l40" class='ln'>40</a></td><td></td></tr>
+<tr name="41" id="41">
+<td><a id="l41" class='ln'>41</a></td><td><span class="kw">void</span> <a id="41c6" class="tk">convertFromBus</a>(<a id="41c21" class="tk">geometry_msgs</a>::<a id="41c36" class="tk">Vector3</a><a id="41c43" class="tk">*</a> <a id="41c45" class="tk">msgPtr</a>, <a id="41c53" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_Vector3</a> <span class="kw">const</span><a id="41c107" class="tk">*</a> <a id="41c109" class="tk">busPtr</a>);</td></tr>
+<tr name="42" id="42">
+<td><a id="l42" class='ln'>42</a></td><td><span class="kw">void</span> <a id="42c6" class="tk">convertToBus</a>(<a id="42c19" class="tk">SL_Bus_dynsim_2link_planar_geometry_msgs_Vector3</a><a id="42c67" class="tk">*</a> <a id="42c69" class="tk">busPtr</a>, <a id="42c77" class="tk">geometry_msgs</a>::<a id="42c92" class="tk">Vector3</a> <span class="kw">const</span><a id="42c105" class="tk">*</a> <a id="42c107" class="tk">msgPtr</a>);</td></tr>
+<tr name="43" id="43">
+<td><a id="l43" class='ln'>43</a></td><td></td></tr>
+<tr name="44" id="44">
+<td><a id="l44" class='ln'>44</a></td><td><span class="kw">void</span> <a id="44c6" class="tk">convertFromBus</a>(<a id="44c21" class="tk">ros</a>::<a id="44c26" class="tk">Time</a><a id="44c30" class="tk">*</a> <a id="44c32" class="tk">msgPtr</a>, <a id="44c40" class="tk">SL_Bus_dynsim_2link_planar_ros_time_Time</a> <span class="kw">const</span><a id="44c86" class="tk">*</a> <a id="44c88" class="tk">busPtr</a>);</td></tr>
+<tr name="45" id="45">
+<td><a id="l45" class='ln'>45</a></td><td><span class="kw">void</span> <a id="45c6" class="tk">convertToBus</a>(<a id="45c19" class="tk">SL_Bus_dynsim_2link_planar_ros_time_Time</a><a id="45c59" class="tk">*</a> <a id="45c61" class="tk">busPtr</a>, <a id="45c69" class="tk">ros</a>::<a id="45c74" class="tk">Time</a> <span class="kw">const</span><a id="45c84" class="tk">*</a> <a id="45c86" class="tk">msgPtr</a>);</td></tr>
+<tr name="46" id="46">
+<td><a id="l46" class='ln'>46</a></td><td></td></tr>
+<tr name="47" id="47">
+<td><a id="l47" class='ln'>47</a></td><td><span class="kw">void</span> <a id="47c6" class="tk">convertFromBus</a>(<a id="47c21" class="tk">rosgraph_msgs</a>::<a id="47c36" class="tk">Clock</a><a id="47c41" class="tk">*</a> <a id="47c43" class="tk">msgPtr</a>, <a id="47c51" class="tk">SL_Bus_dynsim_2link_planar_rosgraph_msgs_Clock</a> <span class="kw">const</span><a id="47c103" class="tk">*</a> <a id="47c105" class="tk">busPtr</a>);</td></tr>
+<tr name="48" id="48">
+<td><a id="l48" class='ln'>48</a></td><td><span class="kw">void</span> <a id="48c6" class="tk">convertToBus</a>(<a id="48c19" class="tk">SL_Bus_dynsim_2link_planar_rosgraph_msgs_Clock</a><a id="48c65" class="tk">*</a> <a id="48c67" class="tk">busPtr</a>, <a id="48c75" class="tk">rosgraph_msgs</a>::<a id="48c90" class="tk">Clock</a> <span class="kw">const</span><a id="48c101" class="tk">*</a> <a id="48c103" class="tk">msgPtr</a>);</td></tr>
+<tr name="49" id="49">
+<td><a id="l49" class='ln'>49</a></td><td></td></tr>
+<tr name="50" id="50">
+<td><a id="l50" class='ln'>50</a></td><td><span class="kw">void</span> <a id="50c6" class="tk">convertFromBus</a>(<a id="50c21" class="tk">sensor_msgs</a>::<a id="50c34" class="tk">JointState</a><a id="50c44" class="tk">*</a> <a id="50c46" class="tk">msgPtr</a>, <a id="50c54" class="tk">SL_Bus_dynsim_2link_planar_sensor_msgs_JointState</a> <span class="kw">const</span><a id="50c109" class="tk">*</a> <a id="50c111" class="tk">busPtr</a>);</td></tr>
+<tr name="51" id="51">
+<td><a id="l51" class='ln'>51</a></td><td><span class="kw">void</span> <a id="51c6" class="tk">convertToBus</a>(<a id="51c19" class="tk">SL_Bus_dynsim_2link_planar_sensor_msgs_JointState</a><a id="51c68" class="tk">*</a> <a id="51c70" class="tk">busPtr</a>, <a id="51c78" class="tk">sensor_msgs</a>::<a id="51c91" class="tk">JointState</a> <span class="kw">const</span><a id="51c107" class="tk">*</a> <a id="51c109" class="tk">msgPtr</a>);</td></tr>
+<tr name="52" id="52">
+<td><a id="l52" class='ln'>52</a></td><td></td></tr>
+<tr name="53" id="53">
+<td><a id="l53" class='ln'>53</a></td><td><span class="kw">void</span> <a id="53c6" class="tk">convertFromBus</a>(<a id="53c21" class="tk">std_msgs</a>::<a id="53c31" class="tk">Float64MultiArray</a><a id="53c48" class="tk">*</a> <a id="53c50" class="tk">msgPtr</a>, <a id="53c58" class="tk">SL_Bus_dynsim_2link_planar_std_msgs_Float64MultiArray</a> <span class="kw">const</span><a id="53c117" class="tk">*</a> <a id="53c119" class="tk">busPtr</a>);</td></tr>
+<tr name="54" id="54">
+<td><a id="l54" class='ln'>54</a></td><td><span class="kw">void</span> <a id="54c6" class="tk">convertToBus</a>(<a id="54c19" class="tk">SL_Bus_dynsim_2link_planar_std_msgs_Float64MultiArray</a><a id="54c72" class="tk">*</a> <a id="54c74" class="tk">busPtr</a>, <a id="54c82" class="tk">std_msgs</a>::<a id="54c92" class="tk">Float64MultiArray</a> <span class="kw">const</span><a id="54c115" class="tk">*</a> <a id="54c117" class="tk">msgPtr</a>);</td></tr>
+<tr name="55" id="55">
+<td><a id="l55" class='ln'>55</a></td><td></td></tr>
+<tr name="56" id="56">
+<td><a id="l56" class='ln'>56</a></td><td><span class="kw">void</span> <a id="56c6" class="tk">convertFromBus</a>(<a id="56c21" class="tk">std_msgs</a>::<a id="56c31" class="tk">Header</a><a id="56c37" class="tk">*</a> <a id="56c39" class="tk">msgPtr</a>, <a id="56c47" class="tk">SL_Bus_dynsim_2link_planar_std_msgs_Header</a> <span class="kw">const</span><a id="56c95" class="tk">*</a> <a id="56c97" class="tk">busPtr</a>);</td></tr>
+<tr name="57" id="57">
+<td><a id="l57" class='ln'>57</a></td><td><span class="kw">void</span> <a id="57c6" class="tk">convertToBus</a>(<a id="57c19" class="tk">SL_Bus_dynsim_2link_planar_std_msgs_Header</a><a id="57c61" class="tk">*</a> <a id="57c63" class="tk">busPtr</a>, <a id="57c71" class="tk">std_msgs</a>::<a id="57c81" class="tk">Header</a> <span class="kw">const</span><a id="57c93" class="tk">*</a> <a id="57c95" class="tk">msgPtr</a>);</td></tr>
+<tr name="58" id="58">
+<td><a id="l58" class='ln'>58</a></td><td></td></tr>
+<tr name="59" id="59">
+<td><a id="l59" class='ln'>59</a></td><td><span class="kw">void</span> <a id="59c6" class="tk">convertFromBus</a>(<a id="59c21" class="tk">std_msgs</a>::<a id="59c31" class="tk">MultiArrayDimension</a><a id="59c50" class="tk">*</a> <a id="59c52" class="tk">msgPtr</a>, <a id="59c60" class="tk">SL_Bus_dynsim_2link_planar_std_msgs_MultiArrayDimension</a> <span class="kw">const</span><a id="59c121" class="tk">*</a> <a id="59c123" class="tk">busPtr</a>);</td></tr>
+<tr name="60" id="60">
+<td><a id="l60" class='ln'>60</a></td><td><span class="kw">void</span> <a id="60c6" class="tk">convertToBus</a>(<a id="60c19" class="tk">SL_Bus_dynsim_2link_planar_std_msgs_MultiArrayDimension</a><a id="60c74" class="tk">*</a> <a id="60c76" class="tk">busPtr</a>, <a id="60c84" class="tk">std_msgs</a>::<a id="60c94" class="tk">MultiArrayDimension</a> <span class="kw">const</span><a id="60c119" class="tk">*</a> <a id="60c121" class="tk">msgPtr</a>);</td></tr>
+<tr name="61" id="61">
+<td><a id="l61" class='ln'>61</a></td><td></td></tr>
+<tr name="62" id="62">
+<td><a id="l62" class='ln'>62</a></td><td><span class="kw">void</span> <a id="62c6" class="tk">convertFromBus</a>(<a id="62c21" class="tk">std_msgs</a>::<a id="62c31" class="tk">MultiArrayLayout</a><a id="62c47" class="tk">*</a> <a id="62c49" class="tk">msgPtr</a>, <a id="62c57" class="tk">SL_Bus_dynsim_2link_planar_std_msgs_MultiArrayLayout</a> <span class="kw">const</span><a id="62c115" class="tk">*</a> <a id="62c117" class="tk">busPtr</a>);</td></tr>
+<tr name="63" id="63">
+<td><a id="l63" class='ln'>63</a></td><td><span class="kw">void</span> <a id="63c6" class="tk">convertToBus</a>(<a id="63c19" class="tk">SL_Bus_dynsim_2link_planar_std_msgs_MultiArrayLayout</a><a id="63c71" class="tk">*</a> <a id="63c73" class="tk">busPtr</a>, <a id="63c81" class="tk">std_msgs</a>::<a id="63c91" class="tk">MultiArrayLayout</a> <span class="kw">const</span><a id="63c113" class="tk">*</a> <a id="63c115" class="tk">msgPtr</a>);</td></tr>
+<tr name="64" id="64">
+<td><a id="l64" class='ln'>64</a></td><td></td></tr>
+<tr name="65" id="65">
+<td><a id="l65" class='ln'>65</a></td><td></td></tr>
+<tr name="66" id="66">
+<td><a id="l66" class='ln'>66</a></td><td><span class="pp">#endif</span></td></tr>
+<tr name="67" id="67">
+<td><a id="l67" class='ln'>67</a></td><td></td></tr>
+</table>
+</pre>
+</body>
+</html>
