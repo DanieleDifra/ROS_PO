@@ -4,8 +4,10 @@
 #include <ros/ros.h>
 #include <geometry_msgs/Point.h>
 #include <geometry_msgs/Pose.h>
+#include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/Quaternion.h>
 #include <geometry_msgs/Twist.h>
+#include <geometry_msgs/TwistStamped.h>
 #include <geometry_msgs/Vector3.h>
 #include <ros/duration.h>
 #include <ros/time.h>
@@ -23,11 +25,17 @@ void convertToBus(SL_Bus_kinsim_2link_planar_geometry_msgs_Point* busPtr, geomet
 void convertFromBus(geometry_msgs::Pose* msgPtr, SL_Bus_kinsim_2link_planar_geometry_msgs_Pose const* busPtr);
 void convertToBus(SL_Bus_kinsim_2link_planar_geometry_msgs_Pose* busPtr, geometry_msgs::Pose const* msgPtr);
 
+void convertFromBus(geometry_msgs::PoseStamped* msgPtr, SL_Bus_kinsim_2link_planar_geometry_msgs_PoseStamped const* busPtr);
+void convertToBus(SL_Bus_kinsim_2link_planar_geometry_msgs_PoseStamped* busPtr, geometry_msgs::PoseStamped const* msgPtr);
+
 void convertFromBus(geometry_msgs::Quaternion* msgPtr, SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion const* busPtr);
 void convertToBus(SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion* busPtr, geometry_msgs::Quaternion const* msgPtr);
 
 void convertFromBus(geometry_msgs::Twist* msgPtr, SL_Bus_kinsim_2link_planar_geometry_msgs_Twist const* busPtr);
 void convertToBus(SL_Bus_kinsim_2link_planar_geometry_msgs_Twist* busPtr, geometry_msgs::Twist const* msgPtr);
+
+void convertFromBus(geometry_msgs::TwistStamped* msgPtr, SL_Bus_kinsim_2link_planar_geometry_msgs_TwistStamped const* busPtr);
+void convertToBus(SL_Bus_kinsim_2link_planar_geometry_msgs_TwistStamped* busPtr, geometry_msgs::TwistStamped const* msgPtr);
 
 void convertFromBus(geometry_msgs::Vector3* msgPtr, SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3 const* busPtr);
 void convertToBus(SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3* busPtr, geometry_msgs::Vector3 const* msgPtr);

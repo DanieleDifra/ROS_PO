@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinsim_2link_planar'.
 //
-// Model version                  : 1.124
+// Model version                  : 1.125
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 13 15:54:45 2020
+// C/C++ source code generated on : Wed May 13 16:45:29 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -423,7 +423,7 @@ static void ki_rigidBodyJoint_get_JointAxis(const
   int32_T exitg1;
   for (kinsim_2link_planar_B.b_kstr_o = 0; kinsim_2link_planar_B.b_kstr_o < 8;
        kinsim_2link_planar_B.b_kstr_o++) {
-    kinsim_2link_planar_B.b_l[kinsim_2link_planar_B.b_kstr_o] =
+    kinsim_2link_planar_B.b_h[kinsim_2link_planar_B.b_kstr_o] =
       tmp[kinsim_2link_planar_B.b_kstr_o];
   }
 
@@ -435,7 +435,7 @@ static void ki_rigidBodyJoint_get_JointAxis(const
       if (kinsim_2link_planar_B.b_kstr_o - 1 < 8) {
         kinsim_2link_planar_B.kstr_e = kinsim_2link_planar_B.b_kstr_o - 1;
         if (obj->Type->data[kinsim_2link_planar_B.kstr_e] !=
-            kinsim_2link_planar_B.b_l[kinsim_2link_planar_B.kstr_e]) {
+            kinsim_2link_planar_B.b_h[kinsim_2link_planar_B.kstr_e]) {
           exitg1 = 1;
         } else {
           kinsim_2link_planar_B.b_kstr_o++;
@@ -453,7 +453,7 @@ static void ki_rigidBodyJoint_get_JointAxis(const
   } else {
     for (kinsim_2link_planar_B.b_kstr_o = 0; kinsim_2link_planar_B.b_kstr_o < 9;
          kinsim_2link_planar_B.b_kstr_o++) {
-      kinsim_2link_planar_B.b_o[kinsim_2link_planar_B.b_kstr_o] =
+      kinsim_2link_planar_B.b_b[kinsim_2link_planar_B.b_kstr_o] =
         tmp_0[kinsim_2link_planar_B.b_kstr_o];
     }
 
@@ -465,7 +465,7 @@ static void ki_rigidBodyJoint_get_JointAxis(const
         if (kinsim_2link_planar_B.b_kstr_o - 1 < 9) {
           kinsim_2link_planar_B.kstr_e = kinsim_2link_planar_B.b_kstr_o - 1;
           if (obj->Type->data[kinsim_2link_planar_B.kstr_e] !=
-              kinsim_2link_planar_B.b_o[kinsim_2link_planar_B.kstr_e]) {
+              kinsim_2link_planar_B.b_b[kinsim_2link_planar_B.kstr_e]) {
             exitg1 = 1;
           } else {
             kinsim_2link_planar_B.b_kstr_o++;
@@ -612,7 +612,7 @@ static void RigidBodyTree_forwardKinematics(n_robotics_manip_internal_Rig_T *obj
     } else {
       for (kinsim_2link_planar_B.b_kstr = 0; kinsim_2link_planar_B.b_kstr < 8;
            kinsim_2link_planar_B.b_kstr++) {
-        kinsim_2link_planar_B.b_bs[kinsim_2link_planar_B.b_kstr] =
+        kinsim_2link_planar_B.b_l[kinsim_2link_planar_B.b_kstr] =
           tmp_1[kinsim_2link_planar_B.b_kstr];
       }
 
@@ -624,7 +624,7 @@ static void RigidBodyTree_forwardKinematics(n_robotics_manip_internal_Rig_T *obj
           if (kinsim_2link_planar_B.b_kstr - 1 < 8) {
             kinsim_2link_planar_B.loop_ub_p = kinsim_2link_planar_B.b_kstr - 1;
             if (switch_expression->data[kinsim_2link_planar_B.loop_ub_p] !=
-                kinsim_2link_planar_B.b_bs[kinsim_2link_planar_B.loop_ub_p]) {
+                kinsim_2link_planar_B.b_l[kinsim_2link_planar_B.loop_ub_p]) {
               exitg1 = 1;
             } else {
               kinsim_2link_planar_B.b_kstr++;
@@ -689,31 +689,31 @@ static void RigidBodyTree_forwardKinematics(n_robotics_manip_internal_Rig_T *obj
         kinsim_2link_planar_B.k;
       kinsim_2link_planar_B.tempR_tmp = kinsim_2link_planar_B.v[1] *
         kinsim_2link_planar_B.v[0] * (1.0 - kinsim_2link_planar_B.k);
-      kinsim_2link_planar_B.tempR_tmp_e = kinsim_2link_planar_B.v[2] *
+      kinsim_2link_planar_B.tempR_tmp_b = kinsim_2link_planar_B.v[2] *
         kinsim_2link_planar_B.sth;
       kinsim_2link_planar_B.tempR[1] = kinsim_2link_planar_B.tempR_tmp -
-        kinsim_2link_planar_B.tempR_tmp_e;
-      kinsim_2link_planar_B.tempR_tmp_b = kinsim_2link_planar_B.v[2] *
+        kinsim_2link_planar_B.tempR_tmp_b;
+      kinsim_2link_planar_B.tempR_tmp_j = kinsim_2link_planar_B.v[2] *
         kinsim_2link_planar_B.v[0] * (1.0 - kinsim_2link_planar_B.k);
-      kinsim_2link_planar_B.tempR_tmp_j = kinsim_2link_planar_B.v[1] *
+      kinsim_2link_planar_B.tempR_tmp_f = kinsim_2link_planar_B.v[1] *
         kinsim_2link_planar_B.sth;
-      kinsim_2link_planar_B.tempR[2] = kinsim_2link_planar_B.tempR_tmp_b +
-        kinsim_2link_planar_B.tempR_tmp_j;
+      kinsim_2link_planar_B.tempR[2] = kinsim_2link_planar_B.tempR_tmp_j +
+        kinsim_2link_planar_B.tempR_tmp_f;
       kinsim_2link_planar_B.tempR[3] = kinsim_2link_planar_B.tempR_tmp +
-        kinsim_2link_planar_B.tempR_tmp_e;
+        kinsim_2link_planar_B.tempR_tmp_b;
       kinsim_2link_planar_B.tempR[4] = kinsim_2link_planar_B.v[1] *
         kinsim_2link_planar_B.v[1] * (1.0 - kinsim_2link_planar_B.k) +
         kinsim_2link_planar_B.k;
       kinsim_2link_planar_B.tempR_tmp = kinsim_2link_planar_B.v[2] *
         kinsim_2link_planar_B.v[1] * (1.0 - kinsim_2link_planar_B.k);
-      kinsim_2link_planar_B.tempR_tmp_e = kinsim_2link_planar_B.v[0] *
+      kinsim_2link_planar_B.tempR_tmp_b = kinsim_2link_planar_B.v[0] *
         kinsim_2link_planar_B.sth;
       kinsim_2link_planar_B.tempR[5] = kinsim_2link_planar_B.tempR_tmp -
-        kinsim_2link_planar_B.tempR_tmp_e;
-      kinsim_2link_planar_B.tempR[6] = kinsim_2link_planar_B.tempR_tmp_b -
-        kinsim_2link_planar_B.tempR_tmp_j;
+        kinsim_2link_planar_B.tempR_tmp_b;
+      kinsim_2link_planar_B.tempR[6] = kinsim_2link_planar_B.tempR_tmp_j -
+        kinsim_2link_planar_B.tempR_tmp_f;
       kinsim_2link_planar_B.tempR[7] = kinsim_2link_planar_B.tempR_tmp +
-        kinsim_2link_planar_B.tempR_tmp_e;
+        kinsim_2link_planar_B.tempR_tmp_b;
       kinsim_2link_planar_B.tempR[8] = kinsim_2link_planar_B.v[2] *
         kinsim_2link_planar_B.v[2] * (1.0 - kinsim_2link_planar_B.k) +
         kinsim_2link_planar_B.k;
@@ -1176,7 +1176,7 @@ static void RigidBodyTree_geometricJacobian(n_robotics_manip_internal_Rig_T *obj
   if (0 <= kinsim_2link_planar_B.c_c) {
     for (kinsim_2link_planar_B.ret_m = 0; kinsim_2link_planar_B.ret_m < 5;
          kinsim_2link_planar_B.ret_m++) {
-      kinsim_2link_planar_B.b_iz[kinsim_2link_planar_B.ret_m] =
+      kinsim_2link_planar_B.b_i[kinsim_2link_planar_B.ret_m] =
         tmp_0[kinsim_2link_planar_B.ret_m];
     }
   }
@@ -1204,7 +1204,7 @@ static void RigidBodyTree_geometricJacobian(n_robotics_manip_internal_Rig_T *obj
         if (kinsim_2link_planar_B.ret_m - 1 < 5) {
           kinsim_2link_planar_B.kstr = kinsim_2link_planar_B.ret_m - 1;
           if (bname->data[kinsim_2link_planar_B.kstr] !=
-              kinsim_2link_planar_B.b_iz[kinsim_2link_planar_B.kstr]) {
+              kinsim_2link_planar_B.b_i[kinsim_2link_planar_B.kstr]) {
             exitg1 = 1;
           } else {
             kinsim_2link_planar_B.ret_m++;
@@ -1398,11 +1398,11 @@ static void RigidBodyTree_geometricJacobian(n_robotics_manip_internal_Rig_T *obj
         kinsim_2link_planar_B.coffset_tmp = kinsim_2link_planar_B.ret_m * 6 - 1;
         for (kinsim_2link_planar_B.kstr = 0; kinsim_2link_planar_B.kstr < 6;
              kinsim_2link_planar_B.kstr++) {
-          kinsim_2link_planar_B.s_d = 0.0;
+          kinsim_2link_planar_B.s_e = 0.0;
           for (kinsim_2link_planar_B.loop_ub_m = 0;
                kinsim_2link_planar_B.loop_ub_m < 6;
                kinsim_2link_planar_B.loop_ub_m++) {
-            kinsim_2link_planar_B.s_d +=
+            kinsim_2link_planar_B.s_e +=
               kinsim_2link_planar_B.X[kinsim_2link_planar_B.loop_ub_m * 6 +
               kinsim_2link_planar_B.kstr] * b->data
               [(kinsim_2link_planar_B.coffset_tmp +
@@ -1411,7 +1411,7 @@ static void RigidBodyTree_geometricJacobian(n_robotics_manip_internal_Rig_T *obj
 
           JacSlice->data[(kinsim_2link_planar_B.coffset_tmp +
                           kinsim_2link_planar_B.kstr) + 1] =
-            kinsim_2link_planar_B.s_d;
+            kinsim_2link_planar_B.s_e;
         }
       }
 
@@ -1487,10 +1487,10 @@ static void RigidBodyTree_geometricJacobian(n_robotics_manip_internal_Rig_T *obj
     kinsim_2link_planar_B.coffset_tmp = kinsim_2link_planar_B.ret_m * 6 - 1;
     for (kinsim_2link_planar_B.b_i_o = 0; kinsim_2link_planar_B.b_i_o < 6;
          kinsim_2link_planar_B.b_i_o++) {
-      kinsim_2link_planar_B.s_d = 0.0;
+      kinsim_2link_planar_B.s_e = 0.0;
       for (kinsim_2link_planar_B.loop_ub_m = 0; kinsim_2link_planar_B.loop_ub_m <
            6; kinsim_2link_planar_B.loop_ub_m++) {
-        kinsim_2link_planar_B.s_d +=
+        kinsim_2link_planar_B.s_e +=
           kinsim_2link_planar_B.X[kinsim_2link_planar_B.loop_ub_m * 6 +
           kinsim_2link_planar_B.b_i_o] * b->data
           [(kinsim_2link_planar_B.coffset_tmp + kinsim_2link_planar_B.loop_ub_m)
@@ -1498,7 +1498,7 @@ static void RigidBodyTree_geometricJacobian(n_robotics_manip_internal_Rig_T *obj
       }
 
       Jac->data[(kinsim_2link_planar_B.coffset_tmp + kinsim_2link_planar_B.b_i_o)
-        + 1] = kinsim_2link_planar_B.s_d;
+        + 1] = kinsim_2link_planar_B.s_e;
     }
   }
 
@@ -1516,7 +1516,7 @@ static void rigidBodyJoint_get_JointAxis_l(const c_rigidBodyJoint_kinsim_2li_l_T
   int32_T exitg1;
   for (kinsim_2link_planar_B.b_kstr_p = 0; kinsim_2link_planar_B.b_kstr_p < 8;
        kinsim_2link_planar_B.b_kstr_p++) {
-    kinsim_2link_planar_B.b_bn[kinsim_2link_planar_B.b_kstr_p] =
+    kinsim_2link_planar_B.b_d[kinsim_2link_planar_B.b_kstr_p] =
       tmp[kinsim_2link_planar_B.b_kstr_p];
   }
 
@@ -1528,7 +1528,7 @@ static void rigidBodyJoint_get_JointAxis_l(const c_rigidBodyJoint_kinsim_2li_l_T
       if (kinsim_2link_planar_B.b_kstr_p - 1 < 8) {
         kinsim_2link_planar_B.kstr_p = kinsim_2link_planar_B.b_kstr_p - 1;
         if (obj->Type->data[kinsim_2link_planar_B.kstr_p] !=
-            kinsim_2link_planar_B.b_bn[kinsim_2link_planar_B.kstr_p]) {
+            kinsim_2link_planar_B.b_d[kinsim_2link_planar_B.kstr_p]) {
           exitg1 = 1;
         } else {
           kinsim_2link_planar_B.b_kstr_p++;
@@ -1546,7 +1546,7 @@ static void rigidBodyJoint_get_JointAxis_l(const c_rigidBodyJoint_kinsim_2li_l_T
   } else {
     for (kinsim_2link_planar_B.b_kstr_p = 0; kinsim_2link_planar_B.b_kstr_p < 9;
          kinsim_2link_planar_B.b_kstr_p++) {
-      kinsim_2link_planar_B.b_b[kinsim_2link_planar_B.b_kstr_p] =
+      kinsim_2link_planar_B.b_n[kinsim_2link_planar_B.b_kstr_p] =
         tmp_0[kinsim_2link_planar_B.b_kstr_p];
     }
 
@@ -1558,7 +1558,7 @@ static void rigidBodyJoint_get_JointAxis_l(const c_rigidBodyJoint_kinsim_2li_l_T
         if (kinsim_2link_planar_B.b_kstr_p - 1 < 9) {
           kinsim_2link_planar_B.kstr_p = kinsim_2link_planar_B.b_kstr_p - 1;
           if (obj->Type->data[kinsim_2link_planar_B.kstr_p] !=
-              kinsim_2link_planar_B.b_b[kinsim_2link_planar_B.kstr_p]) {
+              kinsim_2link_planar_B.b_n[kinsim_2link_planar_B.kstr_p]) {
             exitg1 = 1;
           } else {
             kinsim_2link_planar_B.b_kstr_p++;
@@ -1599,7 +1599,7 @@ static void RigidBodyTree_forwardKinemati_l(n_robotics_manip_internal_R_l_T *obj
   static const char_T tmp_1[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
 
   int32_T exitg1;
-  kinsim_2link_planar_B.n_j = obj->NumBodies;
+  kinsim_2link_planar_B.n_n = obj->NumBodies;
   for (kinsim_2link_planar_B.b_kstr_k = 0; kinsim_2link_planar_B.b_kstr_k < 16;
        kinsim_2link_planar_B.b_kstr_k++) {
     kinsim_2link_planar_B.c_f1_c[kinsim_2link_planar_B.b_kstr_k] =
@@ -1608,7 +1608,7 @@ static void RigidBodyTree_forwardKinemati_l(n_robotics_manip_internal_R_l_T *obj
 
   kinsim_2link_planar_B.b_kstr_k = Ttree->size[0] * Ttree->size[1];
   Ttree->size[0] = 1;
-  kinsim_2link_planar_B.e_m = static_cast<int32_T>(kinsim_2link_planar_B.n_j);
+  kinsim_2link_planar_B.e_m = static_cast<int32_T>(kinsim_2link_planar_B.n_n);
   Ttree->size[1] = kinsim_2link_planar_B.e_m;
   k_emxEnsureCapacity_f_cell_wrap(Ttree, kinsim_2link_planar_B.b_kstr_k);
   if (kinsim_2link_planar_B.e_m != 0) {
@@ -1626,9 +1626,9 @@ static void RigidBodyTree_forwardKinemati_l(n_robotics_manip_internal_R_l_T *obj
     }
   }
 
-  kinsim_2link_planar_B.k_o = 1.0;
+  kinsim_2link_planar_B.k_i = 1.0;
   kinsim_2link_planar_B.ntilecols_h = static_cast<int32_T>
-    (kinsim_2link_planar_B.n_j) - 1;
+    (kinsim_2link_planar_B.n_n) - 1;
   kinsim_2link_pla_emxInit_char_T(&switch_expression, 2);
   if (0 <= kinsim_2link_planar_B.ntilecols_h) {
     for (kinsim_2link_planar_B.b_kstr_k = 0; kinsim_2link_planar_B.b_kstr_k < 5;
@@ -1642,15 +1642,15 @@ static void RigidBodyTree_forwardKinemati_l(n_robotics_manip_internal_R_l_T *obj
        kinsim_2link_planar_B.b_jtilecol_c <= kinsim_2link_planar_B.ntilecols_h;
        kinsim_2link_planar_B.b_jtilecol_c++) {
     body = obj->Bodies[kinsim_2link_planar_B.b_jtilecol_c];
-    kinsim_2link_planar_B.n_j = body->JointInternal.PositionNumber;
-    kinsim_2link_planar_B.n_j += kinsim_2link_planar_B.k_o;
-    if (kinsim_2link_planar_B.k_o > kinsim_2link_planar_B.n_j - 1.0) {
+    kinsim_2link_planar_B.n_n = body->JointInternal.PositionNumber;
+    kinsim_2link_planar_B.n_n += kinsim_2link_planar_B.k_i;
+    if (kinsim_2link_planar_B.k_i > kinsim_2link_planar_B.n_n - 1.0) {
       kinsim_2link_planar_B.e_m = 0;
       kinsim_2link_planar_B.d_m = 0;
     } else {
-      kinsim_2link_planar_B.e_m = static_cast<int32_T>(kinsim_2link_planar_B.k_o)
+      kinsim_2link_planar_B.e_m = static_cast<int32_T>(kinsim_2link_planar_B.k_i)
         - 1;
-      kinsim_2link_planar_B.d_m = static_cast<int32_T>(kinsim_2link_planar_B.n_j
+      kinsim_2link_planar_B.d_m = static_cast<int32_T>(kinsim_2link_planar_B.n_n
         - 1.0);
     }
 
@@ -1693,7 +1693,7 @@ static void RigidBodyTree_forwardKinemati_l(n_robotics_manip_internal_R_l_T *obj
     } else {
       for (kinsim_2link_planar_B.b_kstr_k = 0; kinsim_2link_planar_B.b_kstr_k <
            8; kinsim_2link_planar_B.b_kstr_k++) {
-        kinsim_2link_planar_B.b_h[kinsim_2link_planar_B.b_kstr_k] =
+        kinsim_2link_planar_B.b_bn[kinsim_2link_planar_B.b_kstr_k] =
           tmp_1[kinsim_2link_planar_B.b_kstr_k];
       }
 
@@ -1706,7 +1706,7 @@ static void RigidBodyTree_forwardKinemati_l(n_robotics_manip_internal_R_l_T *obj
             kinsim_2link_planar_B.loop_ub_pc = kinsim_2link_planar_B.b_kstr_k -
               1;
             if (switch_expression->data[kinsim_2link_planar_B.loop_ub_pc] !=
-                kinsim_2link_planar_B.b_h[kinsim_2link_planar_B.loop_ub_pc]) {
+                kinsim_2link_planar_B.b_bn[kinsim_2link_planar_B.loop_ub_pc]) {
               exitg1 = 1;
             } else {
               kinsim_2link_planar_B.b_kstr_k++;
@@ -1752,7 +1752,7 @@ static void RigidBodyTree_forwardKinemati_l(n_robotics_manip_internal_R_l_T *obj
           qvec[kinsim_2link_planar_B.e_data_g[0]];
       }
 
-      kinsim_2link_planar_B.k_o = 1.0 / sqrt
+      kinsim_2link_planar_B.k_i = 1.0 / sqrt
         ((kinsim_2link_planar_B.result_data_j[0] *
           kinsim_2link_planar_B.result_data_j[0] +
           kinsim_2link_planar_B.result_data_j[1] *
@@ -1760,46 +1760,46 @@ static void RigidBodyTree_forwardKinemati_l(n_robotics_manip_internal_R_l_T *obj
          kinsim_2link_planar_B.result_data_j[2] *
          kinsim_2link_planar_B.result_data_j[2]);
       kinsim_2link_planar_B.v_d[0] = kinsim_2link_planar_B.result_data_j[0] *
-        kinsim_2link_planar_B.k_o;
+        kinsim_2link_planar_B.k_i;
       kinsim_2link_planar_B.v_d[1] = kinsim_2link_planar_B.result_data_j[1] *
-        kinsim_2link_planar_B.k_o;
+        kinsim_2link_planar_B.k_i;
       kinsim_2link_planar_B.v_d[2] = kinsim_2link_planar_B.result_data_j[2] *
-        kinsim_2link_planar_B.k_o;
-      kinsim_2link_planar_B.k_o = cos(kinsim_2link_planar_B.result_data_j[3]);
-      kinsim_2link_planar_B.sth_n = sin(kinsim_2link_planar_B.result_data_j[3]);
+        kinsim_2link_planar_B.k_i;
+      kinsim_2link_planar_B.k_i = cos(kinsim_2link_planar_B.result_data_j[3]);
+      kinsim_2link_planar_B.sth_o = sin(kinsim_2link_planar_B.result_data_j[3]);
       kinsim_2link_planar_B.tempR_l[0] = kinsim_2link_planar_B.v_d[0] *
-        kinsim_2link_planar_B.v_d[0] * (1.0 - kinsim_2link_planar_B.k_o) +
-        kinsim_2link_planar_B.k_o;
-      kinsim_2link_planar_B.tempR_tmp_i = kinsim_2link_planar_B.v_d[1] *
-        kinsim_2link_planar_B.v_d[0] * (1.0 - kinsim_2link_planar_B.k_o);
-      kinsim_2link_planar_B.tempR_tmp_o = kinsim_2link_planar_B.v_d[2] *
-        kinsim_2link_planar_B.sth_n;
-      kinsim_2link_planar_B.tempR_l[1] = kinsim_2link_planar_B.tempR_tmp_i -
-        kinsim_2link_planar_B.tempR_tmp_o;
-      kinsim_2link_planar_B.tempR_tmp_n = kinsim_2link_planar_B.v_d[2] *
-        kinsim_2link_planar_B.v_d[0] * (1.0 - kinsim_2link_planar_B.k_o);
-      kinsim_2link_planar_B.tempR_tmp_m = kinsim_2link_planar_B.v_d[1] *
-        kinsim_2link_planar_B.sth_n;
-      kinsim_2link_planar_B.tempR_l[2] = kinsim_2link_planar_B.tempR_tmp_n +
+        kinsim_2link_planar_B.v_d[0] * (1.0 - kinsim_2link_planar_B.k_i) +
+        kinsim_2link_planar_B.k_i;
+      kinsim_2link_planar_B.tempR_tmp_n = kinsim_2link_planar_B.v_d[1] *
+        kinsim_2link_planar_B.v_d[0] * (1.0 - kinsim_2link_planar_B.k_i);
+      kinsim_2link_planar_B.tempR_tmp_m = kinsim_2link_planar_B.v_d[2] *
+        kinsim_2link_planar_B.sth_o;
+      kinsim_2link_planar_B.tempR_l[1] = kinsim_2link_planar_B.tempR_tmp_n -
         kinsim_2link_planar_B.tempR_tmp_m;
-      kinsim_2link_planar_B.tempR_l[3] = kinsim_2link_planar_B.tempR_tmp_i +
-        kinsim_2link_planar_B.tempR_tmp_o;
+      kinsim_2link_planar_B.tempR_tmp_c = kinsim_2link_planar_B.v_d[2] *
+        kinsim_2link_planar_B.v_d[0] * (1.0 - kinsim_2link_planar_B.k_i);
+      kinsim_2link_planar_B.tempR_tmp_md = kinsim_2link_planar_B.v_d[1] *
+        kinsim_2link_planar_B.sth_o;
+      kinsim_2link_planar_B.tempR_l[2] = kinsim_2link_planar_B.tempR_tmp_c +
+        kinsim_2link_planar_B.tempR_tmp_md;
+      kinsim_2link_planar_B.tempR_l[3] = kinsim_2link_planar_B.tempR_tmp_n +
+        kinsim_2link_planar_B.tempR_tmp_m;
       kinsim_2link_planar_B.tempR_l[4] = kinsim_2link_planar_B.v_d[1] *
-        kinsim_2link_planar_B.v_d[1] * (1.0 - kinsim_2link_planar_B.k_o) +
-        kinsim_2link_planar_B.k_o;
-      kinsim_2link_planar_B.tempR_tmp_i = kinsim_2link_planar_B.v_d[2] *
-        kinsim_2link_planar_B.v_d[1] * (1.0 - kinsim_2link_planar_B.k_o);
-      kinsim_2link_planar_B.tempR_tmp_o = kinsim_2link_planar_B.v_d[0] *
-        kinsim_2link_planar_B.sth_n;
-      kinsim_2link_planar_B.tempR_l[5] = kinsim_2link_planar_B.tempR_tmp_i -
-        kinsim_2link_planar_B.tempR_tmp_o;
-      kinsim_2link_planar_B.tempR_l[6] = kinsim_2link_planar_B.tempR_tmp_n -
+        kinsim_2link_planar_B.v_d[1] * (1.0 - kinsim_2link_planar_B.k_i) +
+        kinsim_2link_planar_B.k_i;
+      kinsim_2link_planar_B.tempR_tmp_n = kinsim_2link_planar_B.v_d[2] *
+        kinsim_2link_planar_B.v_d[1] * (1.0 - kinsim_2link_planar_B.k_i);
+      kinsim_2link_planar_B.tempR_tmp_m = kinsim_2link_planar_B.v_d[0] *
+        kinsim_2link_planar_B.sth_o;
+      kinsim_2link_planar_B.tempR_l[5] = kinsim_2link_planar_B.tempR_tmp_n -
         kinsim_2link_planar_B.tempR_tmp_m;
-      kinsim_2link_planar_B.tempR_l[7] = kinsim_2link_planar_B.tempR_tmp_i +
-        kinsim_2link_planar_B.tempR_tmp_o;
+      kinsim_2link_planar_B.tempR_l[6] = kinsim_2link_planar_B.tempR_tmp_c -
+        kinsim_2link_planar_B.tempR_tmp_md;
+      kinsim_2link_planar_B.tempR_l[7] = kinsim_2link_planar_B.tempR_tmp_n +
+        kinsim_2link_planar_B.tempR_tmp_m;
       kinsim_2link_planar_B.tempR_l[8] = kinsim_2link_planar_B.v_d[2] *
-        kinsim_2link_planar_B.v_d[2] * (1.0 - kinsim_2link_planar_B.k_o) +
-        kinsim_2link_planar_B.k_o;
+        kinsim_2link_planar_B.v_d[2] * (1.0 - kinsim_2link_planar_B.k_i) +
+        kinsim_2link_planar_B.k_i;
       for (kinsim_2link_planar_B.b_kstr_k = 0; kinsim_2link_planar_B.b_kstr_k <
            3; kinsim_2link_planar_B.b_kstr_k++) {
         kinsim_2link_planar_B.e_m = kinsim_2link_planar_B.b_kstr_k + 1;
@@ -1917,7 +1917,7 @@ static void RigidBodyTree_forwardKinemati_l(n_robotics_manip_internal_R_l_T *obj
       }
     }
 
-    kinsim_2link_planar_B.k_o = kinsim_2link_planar_B.n_j;
+    kinsim_2link_planar_B.k_i = kinsim_2link_planar_B.n_n;
     if (body->ParentIndex > 0.0) {
       for (kinsim_2link_planar_B.b_kstr_k = 0; kinsim_2link_planar_B.b_kstr_k <
            16; kinsim_2link_planar_B.b_kstr_k++) {
@@ -2009,7 +2009,7 @@ static void kinsim_2link_pl_SystemCore_step(boolean_T *varargout_1, real_T
     kinsim_2link_planar_B.b_varargout_2.TimeFromStart.Nsec;
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static boolean_T kinsim_2link_plana_anyNonFinite(const real_T x[16])
 {
   boolean_T b_p;
@@ -2027,24 +2027,24 @@ static boolean_T kinsim_2link_plana_anyNonFinite(const real_T x[16])
 static real_T kinsim_2link_plan_rt_hypotd_snf(real_T u0, real_T u1)
 {
   real_T y;
-  kinsim_2link_planar_B.a_j = fabs(u0);
+  kinsim_2link_planar_B.a_o = fabs(u0);
   y = fabs(u1);
-  if (kinsim_2link_planar_B.a_j < y) {
-    kinsim_2link_planar_B.a_j /= y;
-    y *= sqrt(kinsim_2link_planar_B.a_j * kinsim_2link_planar_B.a_j + 1.0);
-  } else if (kinsim_2link_planar_B.a_j > y) {
-    y /= kinsim_2link_planar_B.a_j;
-    y = sqrt(y * y + 1.0) * kinsim_2link_planar_B.a_j;
+  if (kinsim_2link_planar_B.a_o < y) {
+    kinsim_2link_planar_B.a_o /= y;
+    y *= sqrt(kinsim_2link_planar_B.a_o * kinsim_2link_planar_B.a_o + 1.0);
+  } else if (kinsim_2link_planar_B.a_o > y) {
+    y /= kinsim_2link_planar_B.a_o;
+    y = sqrt(y * y + 1.0) * kinsim_2link_planar_B.a_o;
   } else {
     if (!rtIsNaN(y)) {
-      y = kinsim_2link_planar_B.a_j * 1.4142135623730951;
+      y = kinsim_2link_planar_B.a_o * 1.4142135623730951;
     }
   }
 
   return y;
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static real_T kinsim_2link_planar_xzlangeM(const creal_T x[16])
 {
   real_T y;
@@ -2071,7 +2071,7 @@ static real_T kinsim_2link_planar_xzlangeM(const creal_T x[16])
   return y;
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_xzlascl(real_T cfrom, real_T cto, creal_T A[16])
 {
   real_T cfromc;
@@ -2105,7 +2105,7 @@ static void kinsim_2link_planar_xzlascl(real_T cfrom, real_T cto, creal_T A[16])
   }
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static real_T kinsim_2link_planar_xzlanhs(const creal_T A[16], int32_T ilo,
   int32_T ihi)
 {
@@ -2172,57 +2172,57 @@ static real_T kinsim_2link_planar_xzlanhs(const creal_T A[16], int32_T ilo,
   return f;
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_xzlartg_a(const creal_T f, const creal_T g,
   real_T *cs, creal_T *sn)
 {
   real_T gs_im;
   boolean_T guard1 = false;
-  kinsim_2link_planar_B.f2s_p = fabs(f.re);
-  kinsim_2link_planar_B.di_p = fabs(f.im);
-  kinsim_2link_planar_B.scale_c0 = kinsim_2link_planar_B.f2s_p;
-  if (kinsim_2link_planar_B.di_p > kinsim_2link_planar_B.f2s_p) {
-    kinsim_2link_planar_B.scale_c0 = kinsim_2link_planar_B.di_p;
+  kinsim_2link_planar_B.f2s_e = fabs(f.re);
+  kinsim_2link_planar_B.di_a = fabs(f.im);
+  kinsim_2link_planar_B.scale_p = kinsim_2link_planar_B.f2s_e;
+  if (kinsim_2link_planar_B.di_a > kinsim_2link_planar_B.f2s_e) {
+    kinsim_2link_planar_B.scale_p = kinsim_2link_planar_B.di_a;
   }
 
-  kinsim_2link_planar_B.gs_re_a = fabs(g.re);
+  kinsim_2link_planar_B.gs_re_o = fabs(g.re);
   gs_im = fabs(g.im);
-  if (gs_im > kinsim_2link_planar_B.gs_re_a) {
-    kinsim_2link_planar_B.gs_re_a = gs_im;
+  if (gs_im > kinsim_2link_planar_B.gs_re_o) {
+    kinsim_2link_planar_B.gs_re_o = gs_im;
   }
 
-  if (kinsim_2link_planar_B.gs_re_a > kinsim_2link_planar_B.scale_c0) {
-    kinsim_2link_planar_B.scale_c0 = kinsim_2link_planar_B.gs_re_a;
+  if (kinsim_2link_planar_B.gs_re_o > kinsim_2link_planar_B.scale_p) {
+    kinsim_2link_planar_B.scale_p = kinsim_2link_planar_B.gs_re_o;
   }
 
-  kinsim_2link_planar_B.fs_re_e = f.re;
-  kinsim_2link_planar_B.fs_im_a = f.im;
-  kinsim_2link_planar_B.gs_re_a = g.re;
+  kinsim_2link_planar_B.fs_re_i = f.re;
+  kinsim_2link_planar_B.fs_im_l = f.im;
+  kinsim_2link_planar_B.gs_re_o = g.re;
   gs_im = g.im;
   guard1 = false;
-  if (kinsim_2link_planar_B.scale_c0 >= 7.4428285367870146E+137) {
+  if (kinsim_2link_planar_B.scale_p >= 7.4428285367870146E+137) {
     do {
-      kinsim_2link_planar_B.fs_re_e *= 1.3435752215134178E-138;
-      kinsim_2link_planar_B.fs_im_a *= 1.3435752215134178E-138;
-      kinsim_2link_planar_B.gs_re_a *= 1.3435752215134178E-138;
+      kinsim_2link_planar_B.fs_re_i *= 1.3435752215134178E-138;
+      kinsim_2link_planar_B.fs_im_l *= 1.3435752215134178E-138;
+      kinsim_2link_planar_B.gs_re_o *= 1.3435752215134178E-138;
       gs_im *= 1.3435752215134178E-138;
-      kinsim_2link_planar_B.scale_c0 *= 1.3435752215134178E-138;
-    } while (!(kinsim_2link_planar_B.scale_c0 < 7.4428285367870146E+137));
+      kinsim_2link_planar_B.scale_p *= 1.3435752215134178E-138;
+    } while (!(kinsim_2link_planar_B.scale_p < 7.4428285367870146E+137));
 
     guard1 = true;
-  } else if (kinsim_2link_planar_B.scale_c0 <= 1.3435752215134178E-138) {
+  } else if (kinsim_2link_planar_B.scale_p <= 1.3435752215134178E-138) {
     if ((g.re == 0.0) && (g.im == 0.0)) {
       *cs = 1.0;
       sn->re = 0.0;
       sn->im = 0.0;
     } else {
       do {
-        kinsim_2link_planar_B.fs_re_e *= 7.4428285367870146E+137;
-        kinsim_2link_planar_B.fs_im_a *= 7.4428285367870146E+137;
-        kinsim_2link_planar_B.gs_re_a *= 7.4428285367870146E+137;
+        kinsim_2link_planar_B.fs_re_i *= 7.4428285367870146E+137;
+        kinsim_2link_planar_B.fs_im_l *= 7.4428285367870146E+137;
+        kinsim_2link_planar_B.gs_re_o *= 7.4428285367870146E+137;
         gs_im *= 7.4428285367870146E+137;
-        kinsim_2link_planar_B.scale_c0 *= 7.4428285367870146E+137;
-      } while (!(kinsim_2link_planar_B.scale_c0 > 1.3435752215134178E-138));
+        kinsim_2link_planar_B.scale_p *= 7.4428285367870146E+137;
+      } while (!(kinsim_2link_planar_B.scale_p > 1.3435752215134178E-138));
 
       guard1 = true;
     }
@@ -2231,73 +2231,73 @@ static void kinsim_2link_planar_xzlartg_a(const creal_T f, const creal_T g,
   }
 
   if (guard1) {
-    kinsim_2link_planar_B.scale_c0 = kinsim_2link_planar_B.fs_re_e *
-      kinsim_2link_planar_B.fs_re_e + kinsim_2link_planar_B.fs_im_a *
-      kinsim_2link_planar_B.fs_im_a;
-    kinsim_2link_planar_B.g2_c = kinsim_2link_planar_B.gs_re_a *
-      kinsim_2link_planar_B.gs_re_a + gs_im * gs_im;
-    kinsim_2link_planar_B.x_a = kinsim_2link_planar_B.g2_c;
-    if (1.0 > kinsim_2link_planar_B.g2_c) {
+    kinsim_2link_planar_B.scale_p = kinsim_2link_planar_B.fs_re_i *
+      kinsim_2link_planar_B.fs_re_i + kinsim_2link_planar_B.fs_im_l *
+      kinsim_2link_planar_B.fs_im_l;
+    kinsim_2link_planar_B.g2_a = kinsim_2link_planar_B.gs_re_o *
+      kinsim_2link_planar_B.gs_re_o + gs_im * gs_im;
+    kinsim_2link_planar_B.x_a = kinsim_2link_planar_B.g2_a;
+    if (1.0 > kinsim_2link_planar_B.g2_a) {
       kinsim_2link_planar_B.x_a = 1.0;
     }
 
-    if (kinsim_2link_planar_B.scale_c0 <= kinsim_2link_planar_B.x_a *
+    if (kinsim_2link_planar_B.scale_p <= kinsim_2link_planar_B.x_a *
         2.0041683600089728E-292) {
       if ((f.re == 0.0) && (f.im == 0.0)) {
         *cs = 0.0;
-        kinsim_2link_planar_B.f2s_p = kinsim_2link_plan_rt_hypotd_snf
-          (kinsim_2link_planar_B.gs_re_a, gs_im);
-        sn->re = kinsim_2link_planar_B.gs_re_a / kinsim_2link_planar_B.f2s_p;
-        sn->im = -gs_im / kinsim_2link_planar_B.f2s_p;
+        kinsim_2link_planar_B.f2s_e = kinsim_2link_plan_rt_hypotd_snf
+          (kinsim_2link_planar_B.gs_re_o, gs_im);
+        sn->re = kinsim_2link_planar_B.gs_re_o / kinsim_2link_planar_B.f2s_e;
+        sn->im = -gs_im / kinsim_2link_planar_B.f2s_e;
       } else {
-        kinsim_2link_planar_B.scale_c0 = sqrt(kinsim_2link_planar_B.g2_c);
-        *cs = kinsim_2link_plan_rt_hypotd_snf(kinsim_2link_planar_B.fs_re_e,
-          kinsim_2link_planar_B.fs_im_a) / kinsim_2link_planar_B.scale_c0;
-        if (kinsim_2link_planar_B.di_p > kinsim_2link_planar_B.f2s_p) {
-          kinsim_2link_planar_B.f2s_p = kinsim_2link_planar_B.di_p;
+        kinsim_2link_planar_B.scale_p = sqrt(kinsim_2link_planar_B.g2_a);
+        *cs = kinsim_2link_plan_rt_hypotd_snf(kinsim_2link_planar_B.fs_re_i,
+          kinsim_2link_planar_B.fs_im_l) / kinsim_2link_planar_B.scale_p;
+        if (kinsim_2link_planar_B.di_a > kinsim_2link_planar_B.f2s_e) {
+          kinsim_2link_planar_B.f2s_e = kinsim_2link_planar_B.di_a;
         }
 
-        if (kinsim_2link_planar_B.f2s_p > 1.0) {
-          kinsim_2link_planar_B.f2s_p = kinsim_2link_plan_rt_hypotd_snf(f.re,
+        if (kinsim_2link_planar_B.f2s_e > 1.0) {
+          kinsim_2link_planar_B.f2s_e = kinsim_2link_plan_rt_hypotd_snf(f.re,
             f.im);
-          kinsim_2link_planar_B.fs_re_e = f.re / kinsim_2link_planar_B.f2s_p;
-          kinsim_2link_planar_B.fs_im_a = f.im / kinsim_2link_planar_B.f2s_p;
+          kinsim_2link_planar_B.fs_re_i = f.re / kinsim_2link_planar_B.f2s_e;
+          kinsim_2link_planar_B.fs_im_l = f.im / kinsim_2link_planar_B.f2s_e;
         } else {
-          kinsim_2link_planar_B.fs_re_e = 7.4428285367870146E+137 * f.re;
-          kinsim_2link_planar_B.di_p = 7.4428285367870146E+137 * f.im;
-          kinsim_2link_planar_B.f2s_p = kinsim_2link_plan_rt_hypotd_snf
-            (kinsim_2link_planar_B.fs_re_e, kinsim_2link_planar_B.di_p);
-          kinsim_2link_planar_B.fs_re_e /= kinsim_2link_planar_B.f2s_p;
-          kinsim_2link_planar_B.fs_im_a = kinsim_2link_planar_B.di_p /
-            kinsim_2link_planar_B.f2s_p;
+          kinsim_2link_planar_B.fs_re_i = 7.4428285367870146E+137 * f.re;
+          kinsim_2link_planar_B.di_a = 7.4428285367870146E+137 * f.im;
+          kinsim_2link_planar_B.f2s_e = kinsim_2link_plan_rt_hypotd_snf
+            (kinsim_2link_planar_B.fs_re_i, kinsim_2link_planar_B.di_a);
+          kinsim_2link_planar_B.fs_re_i /= kinsim_2link_planar_B.f2s_e;
+          kinsim_2link_planar_B.fs_im_l = kinsim_2link_planar_B.di_a /
+            kinsim_2link_planar_B.f2s_e;
         }
 
-        kinsim_2link_planar_B.gs_re_a /= kinsim_2link_planar_B.scale_c0;
-        gs_im = -gs_im / kinsim_2link_planar_B.scale_c0;
-        sn->re = kinsim_2link_planar_B.fs_re_e * kinsim_2link_planar_B.gs_re_a -
-          kinsim_2link_planar_B.fs_im_a * gs_im;
-        sn->im = kinsim_2link_planar_B.fs_re_e * gs_im +
-          kinsim_2link_planar_B.fs_im_a * kinsim_2link_planar_B.gs_re_a;
+        kinsim_2link_planar_B.gs_re_o /= kinsim_2link_planar_B.scale_p;
+        gs_im = -gs_im / kinsim_2link_planar_B.scale_p;
+        sn->re = kinsim_2link_planar_B.fs_re_i * kinsim_2link_planar_B.gs_re_o -
+          kinsim_2link_planar_B.fs_im_l * gs_im;
+        sn->im = kinsim_2link_planar_B.fs_re_i * gs_im +
+          kinsim_2link_planar_B.fs_im_l * kinsim_2link_planar_B.gs_re_o;
       }
     } else {
-      kinsim_2link_planar_B.f2s_p = sqrt(kinsim_2link_planar_B.g2_c /
-        kinsim_2link_planar_B.scale_c0 + 1.0);
-      kinsim_2link_planar_B.fs_re_e *= kinsim_2link_planar_B.f2s_p;
-      kinsim_2link_planar_B.fs_im_a *= kinsim_2link_planar_B.f2s_p;
-      *cs = 1.0 / kinsim_2link_planar_B.f2s_p;
-      kinsim_2link_planar_B.f2s_p = kinsim_2link_planar_B.scale_c0 +
-        kinsim_2link_planar_B.g2_c;
-      kinsim_2link_planar_B.fs_re_e /= kinsim_2link_planar_B.f2s_p;
-      kinsim_2link_planar_B.fs_im_a /= kinsim_2link_planar_B.f2s_p;
-      sn->re = kinsim_2link_planar_B.fs_re_e * kinsim_2link_planar_B.gs_re_a -
-        kinsim_2link_planar_B.fs_im_a * -gs_im;
-      sn->im = kinsim_2link_planar_B.fs_re_e * -gs_im +
-        kinsim_2link_planar_B.fs_im_a * kinsim_2link_planar_B.gs_re_a;
+      kinsim_2link_planar_B.f2s_e = sqrt(kinsim_2link_planar_B.g2_a /
+        kinsim_2link_planar_B.scale_p + 1.0);
+      kinsim_2link_planar_B.fs_re_i *= kinsim_2link_planar_B.f2s_e;
+      kinsim_2link_planar_B.fs_im_l *= kinsim_2link_planar_B.f2s_e;
+      *cs = 1.0 / kinsim_2link_planar_B.f2s_e;
+      kinsim_2link_planar_B.f2s_e = kinsim_2link_planar_B.scale_p +
+        kinsim_2link_planar_B.g2_a;
+      kinsim_2link_planar_B.fs_re_i /= kinsim_2link_planar_B.f2s_e;
+      kinsim_2link_planar_B.fs_im_l /= kinsim_2link_planar_B.f2s_e;
+      sn->re = kinsim_2link_planar_B.fs_re_i * kinsim_2link_planar_B.gs_re_o -
+        kinsim_2link_planar_B.fs_im_l * -gs_im;
+      sn->im = kinsim_2link_planar_B.fs_re_i * -gs_im +
+        kinsim_2link_planar_B.fs_im_l * kinsim_2link_planar_B.gs_re_o;
     }
   }
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_xzlartg(const creal_T f, const creal_T g, real_T
   *cs, creal_T *sn, creal_T *r)
 {
@@ -2306,9 +2306,9 @@ static void kinsim_2link_planar_xzlartg(const creal_T f, const creal_T g, real_T
   boolean_T guard1 = false;
   kinsim_2link_planar_B.f2s = fabs(f.re);
   kinsim_2link_planar_B.di = fabs(f.im);
-  kinsim_2link_planar_B.scale_a = kinsim_2link_planar_B.f2s;
+  kinsim_2link_planar_B.scale_j = kinsim_2link_planar_B.f2s;
   if (kinsim_2link_planar_B.di > kinsim_2link_planar_B.f2s) {
-    kinsim_2link_planar_B.scale_a = kinsim_2link_planar_B.di;
+    kinsim_2link_planar_B.scale_j = kinsim_2link_planar_B.di;
   }
 
   kinsim_2link_planar_B.gs_re = fabs(g.re);
@@ -2317,8 +2317,8 @@ static void kinsim_2link_planar_xzlartg(const creal_T f, const creal_T g, real_T
     kinsim_2link_planar_B.gs_re = kinsim_2link_planar_B.gs_im;
   }
 
-  if (kinsim_2link_planar_B.gs_re > kinsim_2link_planar_B.scale_a) {
-    kinsim_2link_planar_B.scale_a = kinsim_2link_planar_B.gs_re;
+  if (kinsim_2link_planar_B.gs_re > kinsim_2link_planar_B.scale_j) {
+    kinsim_2link_planar_B.scale_j = kinsim_2link_planar_B.gs_re;
   }
 
   kinsim_2link_planar_B.fs_re = f.re;
@@ -2328,19 +2328,19 @@ static void kinsim_2link_planar_xzlartg(const creal_T f, const creal_T g, real_T
   count = -1;
   rescaledir = 0;
   guard1 = false;
-  if (kinsim_2link_planar_B.scale_a >= 7.4428285367870146E+137) {
+  if (kinsim_2link_planar_B.scale_j >= 7.4428285367870146E+137) {
     do {
       count++;
       kinsim_2link_planar_B.fs_re *= 1.3435752215134178E-138;
       kinsim_2link_planar_B.fs_im *= 1.3435752215134178E-138;
       kinsim_2link_planar_B.gs_re *= 1.3435752215134178E-138;
       kinsim_2link_planar_B.gs_im *= 1.3435752215134178E-138;
-      kinsim_2link_planar_B.scale_a *= 1.3435752215134178E-138;
-    } while (!(kinsim_2link_planar_B.scale_a < 7.4428285367870146E+137));
+      kinsim_2link_planar_B.scale_j *= 1.3435752215134178E-138;
+    } while (!(kinsim_2link_planar_B.scale_j < 7.4428285367870146E+137));
 
     rescaledir = 1;
     guard1 = true;
-  } else if (kinsim_2link_planar_B.scale_a <= 1.3435752215134178E-138) {
+  } else if (kinsim_2link_planar_B.scale_j <= 1.3435752215134178E-138) {
     if ((g.re == 0.0) && (g.im == 0.0)) {
       *cs = 1.0;
       sn->re = 0.0;
@@ -2353,8 +2353,8 @@ static void kinsim_2link_planar_xzlartg(const creal_T f, const creal_T g, real_T
         kinsim_2link_planar_B.fs_im *= 7.4428285367870146E+137;
         kinsim_2link_planar_B.gs_re *= 7.4428285367870146E+137;
         kinsim_2link_planar_B.gs_im *= 7.4428285367870146E+137;
-        kinsim_2link_planar_B.scale_a *= 7.4428285367870146E+137;
-      } while (!(kinsim_2link_planar_B.scale_a > 1.3435752215134178E-138));
+        kinsim_2link_planar_B.scale_j *= 7.4428285367870146E+137;
+      } while (!(kinsim_2link_planar_B.scale_j > 1.3435752215134178E-138));
 
       rescaledir = -1;
       guard1 = true;
@@ -2364,7 +2364,7 @@ static void kinsim_2link_planar_xzlartg(const creal_T f, const creal_T g, real_T
   }
 
   if (guard1) {
-    kinsim_2link_planar_B.scale_a = kinsim_2link_planar_B.fs_re *
+    kinsim_2link_planar_B.scale_j = kinsim_2link_planar_B.fs_re *
       kinsim_2link_planar_B.fs_re + kinsim_2link_planar_B.fs_im *
       kinsim_2link_planar_B.fs_im;
     kinsim_2link_planar_B.g2 = kinsim_2link_planar_B.gs_re *
@@ -2375,7 +2375,7 @@ static void kinsim_2link_planar_xzlartg(const creal_T f, const creal_T g, real_T
       kinsim_2link_planar_B.x = 1.0;
     }
 
-    if (kinsim_2link_planar_B.scale_a <= kinsim_2link_planar_B.x *
+    if (kinsim_2link_planar_B.scale_j <= kinsim_2link_planar_B.x *
         2.0041683600089728E-292) {
       if ((f.re == 0.0) && (f.im == 0.0)) {
         *cs = 0.0;
@@ -2386,9 +2386,9 @@ static void kinsim_2link_planar_xzlartg(const creal_T f, const creal_T g, real_T
         sn->re = kinsim_2link_planar_B.gs_re / kinsim_2link_planar_B.f2s;
         sn->im = -kinsim_2link_planar_B.gs_im / kinsim_2link_planar_B.f2s;
       } else {
-        kinsim_2link_planar_B.scale_a = sqrt(kinsim_2link_planar_B.g2);
+        kinsim_2link_planar_B.scale_j = sqrt(kinsim_2link_planar_B.g2);
         *cs = kinsim_2link_plan_rt_hypotd_snf(kinsim_2link_planar_B.fs_re,
-          kinsim_2link_planar_B.fs_im) / kinsim_2link_planar_B.scale_a;
+          kinsim_2link_planar_B.fs_im) / kinsim_2link_planar_B.scale_j;
         if (kinsim_2link_planar_B.di > kinsim_2link_planar_B.f2s) {
           kinsim_2link_planar_B.f2s = kinsim_2link_planar_B.di;
         }
@@ -2407,9 +2407,9 @@ static void kinsim_2link_planar_xzlartg(const creal_T f, const creal_T g, real_T
             kinsim_2link_planar_B.f2s;
         }
 
-        kinsim_2link_planar_B.gs_re /= kinsim_2link_planar_B.scale_a;
+        kinsim_2link_planar_B.gs_re /= kinsim_2link_planar_B.scale_j;
         kinsim_2link_planar_B.gs_im = -kinsim_2link_planar_B.gs_im /
-          kinsim_2link_planar_B.scale_a;
+          kinsim_2link_planar_B.scale_j;
         sn->re = kinsim_2link_planar_B.fs_re * kinsim_2link_planar_B.gs_re -
           kinsim_2link_planar_B.fs_im * kinsim_2link_planar_B.gs_im;
         sn->im = kinsim_2link_planar_B.fs_re * kinsim_2link_planar_B.gs_im +
@@ -2419,11 +2419,11 @@ static void kinsim_2link_planar_xzlartg(const creal_T f, const creal_T g, real_T
       }
     } else {
       kinsim_2link_planar_B.f2s = sqrt(kinsim_2link_planar_B.g2 /
-        kinsim_2link_planar_B.scale_a + 1.0);
+        kinsim_2link_planar_B.scale_j + 1.0);
       r->re = kinsim_2link_planar_B.f2s * kinsim_2link_planar_B.fs_re;
       r->im = kinsim_2link_planar_B.f2s * kinsim_2link_planar_B.fs_im;
       *cs = 1.0 / kinsim_2link_planar_B.f2s;
-      kinsim_2link_planar_B.f2s = kinsim_2link_planar_B.scale_a +
+      kinsim_2link_planar_B.f2s = kinsim_2link_planar_B.scale_j +
         kinsim_2link_planar_B.g2;
       kinsim_2link_planar_B.fs_re = r->re / kinsim_2link_planar_B.f2s;
       kinsim_2link_planar_B.f2s = r->im / kinsim_2link_planar_B.f2s;
@@ -2448,7 +2448,7 @@ static void kinsim_2link_planar_xzlartg(const creal_T f, const creal_T g, real_T
   }
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
   creal_T Z[16], int32_T *info, creal_T alpha1[4], creal_T beta1[4])
 {
@@ -2681,7 +2681,7 @@ static void kinsim_2link_planar_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
                 kinsim_2link_planar_B.ai /= 0.5;
               }
 
-              kinsim_2link_planar_B.shift_im_f = kinsim_2link_planar_B.shift_re *
+              kinsim_2link_planar_B.shift_im_j = kinsim_2link_planar_B.shift_re *
                 kinsim_2link_planar_B.ad22.im + kinsim_2link_planar_B.shift_im *
                 kinsim_2link_planar_B.ad22.re;
               kinsim_2link_planar_B.shift_re = ((kinsim_2link_planar_B.t1_re *
@@ -2696,7 +2696,7 @@ static void kinsim_2link_planar_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
               kinsim_2link_planar_B.shift_im = ((kinsim_2link_planar_B.shift_im
                 + kinsim_2link_planar_B.shift_im) + (kinsim_2link_planar_B.absxr
                 * kinsim_2link_planar_B.ai + kinsim_2link_planar_B.absxi *
-                kinsim_2link_planar_B.ar)) - kinsim_2link_planar_B.shift_im_f;
+                kinsim_2link_planar_B.ar)) - kinsim_2link_planar_B.shift_im_j;
               if (kinsim_2link_planar_B.shift_im == 0.0) {
                 if (kinsim_2link_planar_B.shift_re < 0.0) {
                   kinsim_2link_planar_B.absxr = 0.0;
@@ -3152,7 +3152,7 @@ static void kinsim_2link_planar_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
   }
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
 {
   boolean_T lscalea;
@@ -3162,12 +3162,12 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
   kinsim_2link_planar_B.rworka[0] = 0.0;
   kinsim_2link_planar_B.rworka[2] = 0.0;
   kinsim_2link_planar_B.rworka[3] = 0.0;
-  kinsim_2link_planar_B.anorm_m = fabs(A[0].re) + fabs(A[0].im);
+  kinsim_2link_planar_B.anorm_h = fabs(A[0].re) + fabs(A[0].im);
   kinsim_2link_planar_B.rworka[1] = fabs(A[4].re) + fabs(A[4].im);
-  kinsim_2link_planar_B.ascale_j = (fabs(A[5].re) + fabs(A[5].im)) +
+  kinsim_2link_planar_B.ascale_c = (fabs(A[5].re) + fabs(A[5].im)) +
     kinsim_2link_planar_B.rworka[1];
-  if (kinsim_2link_planar_B.ascale_j > kinsim_2link_planar_B.anorm_m) {
-    kinsim_2link_planar_B.anorm_m = kinsim_2link_planar_B.ascale_j;
+  if (kinsim_2link_planar_B.ascale_c > kinsim_2link_planar_B.anorm_h) {
+    kinsim_2link_planar_B.anorm_h = kinsim_2link_planar_B.ascale_c;
   }
 
   kinsim_2link_planar_B.i_b = 0;
@@ -3177,10 +3177,10 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
     kinsim_2link_planar_B.i_b++;
   }
 
-  kinsim_2link_planar_B.ascale_j = (fabs(A[10].re) + fabs(A[10].im)) +
+  kinsim_2link_planar_B.ascale_c = (fabs(A[10].re) + fabs(A[10].im)) +
     kinsim_2link_planar_B.rworka[2];
-  if (kinsim_2link_planar_B.ascale_j > kinsim_2link_planar_B.anorm_m) {
-    kinsim_2link_planar_B.anorm_m = kinsim_2link_planar_B.ascale_j;
+  if (kinsim_2link_planar_B.ascale_c > kinsim_2link_planar_B.anorm_h) {
+    kinsim_2link_planar_B.anorm_h = kinsim_2link_planar_B.ascale_c;
   }
 
   kinsim_2link_planar_B.i_b = 0;
@@ -3190,18 +3190,18 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
     kinsim_2link_planar_B.i_b++;
   }
 
-  kinsim_2link_planar_B.ascale_j = (fabs(A[15].re) + fabs(A[15].im)) +
+  kinsim_2link_planar_B.ascale_c = (fabs(A[15].re) + fabs(A[15].im)) +
     kinsim_2link_planar_B.rworka[3];
-  if (kinsim_2link_planar_B.ascale_j > kinsim_2link_planar_B.anorm_m) {
-    kinsim_2link_planar_B.anorm_m = kinsim_2link_planar_B.ascale_j;
+  if (kinsim_2link_planar_B.ascale_c > kinsim_2link_planar_B.anorm_h) {
+    kinsim_2link_planar_B.anorm_h = kinsim_2link_planar_B.ascale_c;
   }
 
-  kinsim_2link_planar_B.ascale_j = kinsim_2link_planar_B.anorm_m;
-  if (2.2250738585072014E-308 > kinsim_2link_planar_B.anorm_m) {
-    kinsim_2link_planar_B.ascale_j = 2.2250738585072014E-308;
+  kinsim_2link_planar_B.ascale_c = kinsim_2link_planar_B.anorm_h;
+  if (2.2250738585072014E-308 > kinsim_2link_planar_B.anorm_h) {
+    kinsim_2link_planar_B.ascale_c = 2.2250738585072014E-308;
   }
 
-  kinsim_2link_planar_B.ascale_j = 1.0 / kinsim_2link_planar_B.ascale_j;
+  kinsim_2link_planar_B.ascale_c = 1.0 / kinsim_2link_planar_B.ascale_c;
   for (kinsim_2link_planar_B.i_b = 0; kinsim_2link_planar_B.i_b < 4;
        kinsim_2link_planar_B.i_b++) {
     kinsim_2link_planar_B.c_x_tmp_tmp = (3 - kinsim_2link_planar_B.i_b) << 2;
@@ -3209,41 +3209,41 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
       kinsim_2link_planar_B.i_b) + 3;
     kinsim_2link_planar_B.salpha_re = (fabs(A[kinsim_2link_planar_B.c_x_tmp].re)
       + fabs(A[kinsim_2link_planar_B.c_x_tmp].im)) *
-      kinsim_2link_planar_B.ascale_j;
+      kinsim_2link_planar_B.ascale_c;
     if (1.0 > kinsim_2link_planar_B.salpha_re) {
       kinsim_2link_planar_B.salpha_re = 1.0;
     }
 
     kinsim_2link_planar_B.temp = 1.0 / kinsim_2link_planar_B.salpha_re;
     kinsim_2link_planar_B.salpha_re = A[kinsim_2link_planar_B.c_x_tmp].re *
-      kinsim_2link_planar_B.temp * kinsim_2link_planar_B.ascale_j;
+      kinsim_2link_planar_B.temp * kinsim_2link_planar_B.ascale_c;
     kinsim_2link_planar_B.salpha_im = A[kinsim_2link_planar_B.c_x_tmp].im *
-      kinsim_2link_planar_B.temp * kinsim_2link_planar_B.ascale_j;
+      kinsim_2link_planar_B.temp * kinsim_2link_planar_B.ascale_c;
     kinsim_2link_planar_B.acoeff = kinsim_2link_planar_B.temp *
-      kinsim_2link_planar_B.ascale_j;
+      kinsim_2link_planar_B.ascale_c;
     lscalea = ((kinsim_2link_planar_B.temp >= 2.2250738585072014E-308) &&
                (kinsim_2link_planar_B.acoeff < 4.0083367200179456E-292));
     kinsim_2link_planar_B.dmin = fabs(kinsim_2link_planar_B.salpha_re) + fabs
       (kinsim_2link_planar_B.salpha_im);
     lscaleb = ((kinsim_2link_planar_B.dmin >= 2.2250738585072014E-308) &&
                (kinsim_2link_planar_B.dmin < 4.0083367200179456E-292));
-    kinsim_2link_planar_B.scale_h = 1.0;
+    kinsim_2link_planar_B.scale_c = 1.0;
     if (lscalea) {
-      kinsim_2link_planar_B.scale_h = kinsim_2link_planar_B.anorm_m;
-      if (2.4948003869184E+291 < kinsim_2link_planar_B.anorm_m) {
-        kinsim_2link_planar_B.scale_h = 2.4948003869184E+291;
+      kinsim_2link_planar_B.scale_c = kinsim_2link_planar_B.anorm_h;
+      if (2.4948003869184E+291 < kinsim_2link_planar_B.anorm_h) {
+        kinsim_2link_planar_B.scale_c = 2.4948003869184E+291;
       }
 
-      kinsim_2link_planar_B.scale_h *= 4.0083367200179456E-292 /
+      kinsim_2link_planar_B.scale_c *= 4.0083367200179456E-292 /
         kinsim_2link_planar_B.temp;
     }
 
     if (lscaleb) {
       kinsim_2link_planar_B.work2_idx_2_im = 4.0083367200179456E-292 /
         kinsim_2link_planar_B.dmin;
-      if (kinsim_2link_planar_B.work2_idx_2_im > kinsim_2link_planar_B.scale_h)
+      if (kinsim_2link_planar_B.work2_idx_2_im > kinsim_2link_planar_B.scale_c)
       {
-        kinsim_2link_planar_B.scale_h = kinsim_2link_planar_B.work2_idx_2_im;
+        kinsim_2link_planar_B.scale_c = kinsim_2link_planar_B.work2_idx_2_im;
       }
     }
 
@@ -3259,26 +3259,26 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
 
       kinsim_2link_planar_B.dmin = 1.0 / (2.2250738585072014E-308 *
         kinsim_2link_planar_B.work2_idx_2_im);
-      if (kinsim_2link_planar_B.dmin < kinsim_2link_planar_B.scale_h) {
-        kinsim_2link_planar_B.scale_h = kinsim_2link_planar_B.dmin;
+      if (kinsim_2link_planar_B.dmin < kinsim_2link_planar_B.scale_c) {
+        kinsim_2link_planar_B.scale_c = kinsim_2link_planar_B.dmin;
       }
 
       if (lscalea) {
-        kinsim_2link_planar_B.acoeff = kinsim_2link_planar_B.scale_h *
-          kinsim_2link_planar_B.temp * kinsim_2link_planar_B.ascale_j;
+        kinsim_2link_planar_B.acoeff = kinsim_2link_planar_B.scale_c *
+          kinsim_2link_planar_B.temp * kinsim_2link_planar_B.ascale_c;
       } else {
-        kinsim_2link_planar_B.acoeff *= kinsim_2link_planar_B.scale_h;
+        kinsim_2link_planar_B.acoeff *= kinsim_2link_planar_B.scale_c;
       }
 
-      kinsim_2link_planar_B.salpha_re *= kinsim_2link_planar_B.scale_h;
-      kinsim_2link_planar_B.salpha_im *= kinsim_2link_planar_B.scale_h;
+      kinsim_2link_planar_B.salpha_re *= kinsim_2link_planar_B.scale_c;
+      kinsim_2link_planar_B.salpha_im *= kinsim_2link_planar_B.scale_c;
     }
 
     memset(&kinsim_2link_planar_B.work1[0], 0, sizeof(creal_T) << 2U);
     kinsim_2link_planar_B.work1[3 - kinsim_2link_planar_B.i_b].re = 1.0;
     kinsim_2link_planar_B.work1[3 - kinsim_2link_planar_B.i_b].im = 0.0;
     kinsim_2link_planar_B.dmin = 2.2204460492503131E-16 *
-      kinsim_2link_planar_B.acoeff * kinsim_2link_planar_B.anorm_m;
+      kinsim_2link_planar_B.acoeff * kinsim_2link_planar_B.anorm_h;
     kinsim_2link_planar_B.temp = (fabs(kinsim_2link_planar_B.salpha_re) + fabs
       (kinsim_2link_planar_B.salpha_im)) * 2.2204460492503131E-16;
     if (kinsim_2link_planar_B.temp > kinsim_2link_planar_B.dmin) {
@@ -3313,17 +3313,17 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
       kinsim_2link_planar_B.d_re_tmp = d_re_tmp_tmp + work2_idx_1_re_tmp;
       kinsim_2link_planar_B.work2_idx_3_re = A[kinsim_2link_planar_B.d_re_tmp].
         re * kinsim_2link_planar_B.acoeff - kinsim_2link_planar_B.salpha_re;
-      kinsim_2link_planar_B.scale_h = A[kinsim_2link_planar_B.d_re_tmp].im *
+      kinsim_2link_planar_B.scale_c = A[kinsim_2link_planar_B.d_re_tmp].im *
         kinsim_2link_planar_B.acoeff - kinsim_2link_planar_B.salpha_im;
       if (fabs(kinsim_2link_planar_B.work2_idx_3_re) + fabs
-          (kinsim_2link_planar_B.scale_h) <= kinsim_2link_planar_B.dmin) {
+          (kinsim_2link_planar_B.scale_c) <= kinsim_2link_planar_B.dmin) {
         kinsim_2link_planar_B.work2_idx_3_re = kinsim_2link_planar_B.dmin;
-        kinsim_2link_planar_B.scale_h = 0.0;
+        kinsim_2link_planar_B.scale_c = 0.0;
       }
 
       kinsim_2link_planar_B.work2_idx_2_im = fabs
         (kinsim_2link_planar_B.work2_idx_3_re);
-      kinsim_2link_planar_B.work2_idx_3_im = fabs(kinsim_2link_planar_B.scale_h);
+      kinsim_2link_planar_B.work2_idx_3_im = fabs(kinsim_2link_planar_B.scale_c);
       kinsim_2link_planar_B.temp = kinsim_2link_planar_B.work2_idx_2_im +
         kinsim_2link_planar_B.work2_idx_3_im;
       if (kinsim_2link_planar_B.temp < 1.0) {
@@ -3345,22 +3345,22 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
         }
       }
 
-      if (kinsim_2link_planar_B.scale_h == 0.0) {
+      if (kinsim_2link_planar_B.scale_c == 0.0) {
         if (-kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im == 0.0) {
           kinsim_2link_planar_B.temp =
             -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re /
             kinsim_2link_planar_B.work2_idx_3_re;
-          kinsim_2link_planar_B.scale_h = 0.0;
+          kinsim_2link_planar_B.scale_c = 0.0;
         } else if (-kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re == 0.0) {
           kinsim_2link_planar_B.temp = 0.0;
-          kinsim_2link_planar_B.scale_h =
+          kinsim_2link_planar_B.scale_c =
             -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im /
             kinsim_2link_planar_B.work2_idx_3_re;
         } else {
           kinsim_2link_planar_B.temp =
             -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re /
             kinsim_2link_planar_B.work2_idx_3_re;
-          kinsim_2link_planar_B.scale_h =
+          kinsim_2link_planar_B.scale_c =
             -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im /
             kinsim_2link_planar_B.work2_idx_3_re;
         }
@@ -3368,71 +3368,71 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
         if (-kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re == 0.0) {
           kinsim_2link_planar_B.temp =
             -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im /
-            kinsim_2link_planar_B.scale_h;
-          kinsim_2link_planar_B.scale_h = 0.0;
+            kinsim_2link_planar_B.scale_c;
+          kinsim_2link_planar_B.scale_c = 0.0;
         } else if (-kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im == 0.0) {
           kinsim_2link_planar_B.temp = 0.0;
-          kinsim_2link_planar_B.scale_h =
+          kinsim_2link_planar_B.scale_c =
             -(-kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re /
-              kinsim_2link_planar_B.scale_h);
+              kinsim_2link_planar_B.scale_c);
         } else {
           kinsim_2link_planar_B.temp =
             -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im /
-            kinsim_2link_planar_B.scale_h;
-          kinsim_2link_planar_B.scale_h =
+            kinsim_2link_planar_B.scale_c;
+          kinsim_2link_planar_B.scale_c =
             -(-kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re /
-              kinsim_2link_planar_B.scale_h);
+              kinsim_2link_planar_B.scale_c);
         }
       } else if (kinsim_2link_planar_B.work2_idx_2_im >
                  kinsim_2link_planar_B.work2_idx_3_im) {
-        kinsim_2link_planar_B.work2_idx_2_im = kinsim_2link_planar_B.scale_h /
+        kinsim_2link_planar_B.work2_idx_2_im = kinsim_2link_planar_B.scale_c /
           kinsim_2link_planar_B.work2_idx_3_re;
-        kinsim_2link_planar_B.scale_h = kinsim_2link_planar_B.work2_idx_2_im *
-          kinsim_2link_planar_B.scale_h + kinsim_2link_planar_B.work2_idx_3_re;
+        kinsim_2link_planar_B.scale_c = kinsim_2link_planar_B.work2_idx_2_im *
+          kinsim_2link_planar_B.scale_c + kinsim_2link_planar_B.work2_idx_3_re;
         kinsim_2link_planar_B.temp = (kinsim_2link_planar_B.work2_idx_2_im *
           -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im +
           -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re) /
-          kinsim_2link_planar_B.scale_h;
-        kinsim_2link_planar_B.scale_h =
+          kinsim_2link_planar_B.scale_c;
+        kinsim_2link_planar_B.scale_c =
           (-kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im -
            kinsim_2link_planar_B.work2_idx_2_im *
            -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re) /
-          kinsim_2link_planar_B.scale_h;
+          kinsim_2link_planar_B.scale_c;
       } else if (kinsim_2link_planar_B.work2_idx_3_im ==
                  kinsim_2link_planar_B.work2_idx_2_im) {
         kinsim_2link_planar_B.work2_idx_3_re =
           kinsim_2link_planar_B.work2_idx_3_re > 0.0 ? 0.5 : -0.5;
-        kinsim_2link_planar_B.scale_h = kinsim_2link_planar_B.scale_h > 0.0 ?
+        kinsim_2link_planar_B.scale_c = kinsim_2link_planar_B.scale_c > 0.0 ?
           0.5 : -0.5;
         kinsim_2link_planar_B.temp =
           (-kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re *
            kinsim_2link_planar_B.work2_idx_3_re +
            -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im *
-           kinsim_2link_planar_B.scale_h) / kinsim_2link_planar_B.work2_idx_2_im;
-        kinsim_2link_planar_B.scale_h =
+           kinsim_2link_planar_B.scale_c) / kinsim_2link_planar_B.work2_idx_2_im;
+        kinsim_2link_planar_B.scale_c =
           (-kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im *
            kinsim_2link_planar_B.work2_idx_3_re -
            -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re *
-           kinsim_2link_planar_B.scale_h) / kinsim_2link_planar_B.work2_idx_2_im;
+           kinsim_2link_planar_B.scale_c) / kinsim_2link_planar_B.work2_idx_2_im;
       } else {
         kinsim_2link_planar_B.work2_idx_2_im =
-          kinsim_2link_planar_B.work2_idx_3_re / kinsim_2link_planar_B.scale_h;
-        kinsim_2link_planar_B.scale_h += kinsim_2link_planar_B.work2_idx_2_im *
+          kinsim_2link_planar_B.work2_idx_3_re / kinsim_2link_planar_B.scale_c;
+        kinsim_2link_planar_B.scale_c += kinsim_2link_planar_B.work2_idx_2_im *
           kinsim_2link_planar_B.work2_idx_3_re;
         kinsim_2link_planar_B.temp = (kinsim_2link_planar_B.work2_idx_2_im *
           -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re +
           -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im) /
-          kinsim_2link_planar_B.scale_h;
-        kinsim_2link_planar_B.scale_h = (kinsim_2link_planar_B.work2_idx_2_im *
+          kinsim_2link_planar_B.scale_c;
+        kinsim_2link_planar_B.scale_c = (kinsim_2link_planar_B.work2_idx_2_im *
           -kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im -
           (-kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re)) /
-          kinsim_2link_planar_B.scale_h;
+          kinsim_2link_planar_B.scale_c;
       }
 
       kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re =
         kinsim_2link_planar_B.temp;
       kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im =
-        kinsim_2link_planar_B.scale_h;
+        kinsim_2link_planar_B.scale_c;
       if (work2_idx_1_re_tmp + 1 > 1) {
         if (fabs(kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re) + fabs
             (kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im) > 1.0) {
@@ -3456,7 +3456,7 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
 
         kinsim_2link_planar_B.work2_idx_3_re = kinsim_2link_planar_B.acoeff *
           kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].re;
-        kinsim_2link_planar_B.scale_h = kinsim_2link_planar_B.acoeff *
+        kinsim_2link_planar_B.scale_c = kinsim_2link_planar_B.acoeff *
           kinsim_2link_planar_B.work1[work2_idx_1_re_tmp].im;
         kinsim_2link_planar_B.e_jr = 0;
         while (kinsim_2link_planar_B.e_jr <= work2_idx_1_re_tmp - 1) {
@@ -3465,11 +3465,11 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
           kinsim_2link_planar_B.work1[kinsim_2link_planar_B.e_jr].re +=
             A[kinsim_2link_planar_B.d_re_tmp].re *
             kinsim_2link_planar_B.work2_idx_3_re -
-            A[kinsim_2link_planar_B.d_re_tmp].im * kinsim_2link_planar_B.scale_h;
+            A[kinsim_2link_planar_B.d_re_tmp].im * kinsim_2link_planar_B.scale_c;
           kinsim_2link_planar_B.work1[kinsim_2link_planar_B.e_jr].im +=
             A[kinsim_2link_planar_B.d_re_tmp].im *
             kinsim_2link_planar_B.work2_idx_3_re +
-            A[kinsim_2link_planar_B.d_re_tmp].re * kinsim_2link_planar_B.scale_h;
+            A[kinsim_2link_planar_B.d_re_tmp].re * kinsim_2link_planar_B.scale_c;
           kinsim_2link_planar_B.e_jr++;
         }
       }
@@ -3481,7 +3481,7 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
     kinsim_2link_planar_B.salpha_im = 0.0;
     kinsim_2link_planar_B.acoeff = 0.0;
     kinsim_2link_planar_B.dmin = 0.0;
-    kinsim_2link_planar_B.scale_h = 0.0;
+    kinsim_2link_planar_B.scale_c = 0.0;
     kinsim_2link_planar_B.work2_idx_2_im = 0.0;
     kinsim_2link_planar_B.work2_idx_3_re = 0.0;
     kinsim_2link_planar_B.work2_idx_3_im = 0.0;
@@ -3506,7 +3506,7 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
         V[work2_idx_1_re_tmp].im *
         kinsim_2link_planar_B.work1[kinsim_2link_planar_B.c_x_tmp].re;
       work2_idx_1_re_tmp = kinsim_2link_planar_B.c_j_a + 2;
-      kinsim_2link_planar_B.scale_h += V[work2_idx_1_re_tmp].re *
+      kinsim_2link_planar_B.scale_c += V[work2_idx_1_re_tmp].re *
         kinsim_2link_planar_B.work1[kinsim_2link_planar_B.c_x_tmp].re -
         V[work2_idx_1_re_tmp].im *
         kinsim_2link_planar_B.work1[kinsim_2link_planar_B.c_x_tmp].im;
@@ -3534,7 +3534,7 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
       kinsim_2link_planar_B.temp = kinsim_2link_planar_B.f_y;
     }
 
-    kinsim_2link_planar_B.f_y = fabs(kinsim_2link_planar_B.scale_h) + fabs
+    kinsim_2link_planar_B.f_y = fabs(kinsim_2link_planar_B.scale_c) + fabs
       (kinsim_2link_planar_B.work2_idx_2_im);
     if (kinsim_2link_planar_B.f_y > kinsim_2link_planar_B.temp) {
       kinsim_2link_planar_B.temp = kinsim_2link_planar_B.f_y;
@@ -3561,7 +3561,7 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
       kinsim_2link_planar_B.d_re_tmp = ((3 - kinsim_2link_planar_B.i_b) << 2) +
         2;
       V[kinsim_2link_planar_B.d_re_tmp].re = kinsim_2link_planar_B.temp *
-        kinsim_2link_planar_B.scale_h;
+        kinsim_2link_planar_B.scale_c;
       V[kinsim_2link_planar_B.d_re_tmp].im = kinsim_2link_planar_B.temp *
         kinsim_2link_planar_B.work2_idx_2_im;
       kinsim_2link_planar_B.d_re_tmp = ((3 - kinsim_2link_planar_B.i_b) << 2) +
@@ -3586,7 +3586,7 @@ static void kinsim_2link_planar_xztgevc(const creal_T A[16], creal_T V[16])
   }
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
   alpha1[4], creal_T beta1[4], creal_T V[16])
 {
@@ -3872,7 +3872,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
               kinsim_2link_planar_B.mul + (A[kinsim_2link_planar_B.i_h].im *
               kinsim_2link_planar_B.s.re + A[kinsim_2link_planar_B.i_h].re *
               kinsim_2link_planar_B.s.im);
-            kinsim_2link_planar_B.d = A[kinsim_2link_planar_B.k_l].im;
+            kinsim_2link_planar_B.d_a = A[kinsim_2link_planar_B.k_l].im;
             kinsim_2link_planar_B.d1 = A[kinsim_2link_planar_B.k_l].re;
             A[kinsim_2link_planar_B.i_h].re = A[kinsim_2link_planar_B.i_h].re *
               kinsim_2link_planar_B.mul - (A[kinsim_2link_planar_B.k_l].re *
@@ -3880,7 +3880,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
               kinsim_2link_planar_B.s.im);
             A[kinsim_2link_planar_B.i_h].im = A[kinsim_2link_planar_B.i_h].im *
               kinsim_2link_planar_B.mul - (kinsim_2link_planar_B.s.re *
-              kinsim_2link_planar_B.d - kinsim_2link_planar_B.s.im *
+              kinsim_2link_planar_B.d_a - kinsim_2link_planar_B.s.im *
               kinsim_2link_planar_B.d1);
             A[kinsim_2link_planar_B.k_l].re = kinsim_2link_planar_B.atmp_re;
             A[kinsim_2link_planar_B.k_l].im = kinsim_2link_planar_B.atmp_im;
@@ -3904,7 +3904,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
               kinsim_2link_planar_B.s.re + A[kinsim_2link_planar_B.i_h].re *
               kinsim_2link_planar_B.s.im) + A[kinsim_2link_planar_B.k_l].im *
               kinsim_2link_planar_B.mul;
-            kinsim_2link_planar_B.d = A[kinsim_2link_planar_B.k_l].im;
+            kinsim_2link_planar_B.d_a = A[kinsim_2link_planar_B.k_l].im;
             kinsim_2link_planar_B.d1 = A[kinsim_2link_planar_B.k_l].re;
             A[kinsim_2link_planar_B.i_h].re = A[kinsim_2link_planar_B.i_h].re *
               kinsim_2link_planar_B.mul - (A[kinsim_2link_planar_B.k_l].re *
@@ -3912,7 +3912,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
               kinsim_2link_planar_B.s.im);
             A[kinsim_2link_planar_B.i_h].im = A[kinsim_2link_planar_B.i_h].im *
               kinsim_2link_planar_B.mul - (kinsim_2link_planar_B.s.re *
-              kinsim_2link_planar_B.d - kinsim_2link_planar_B.s.im *
+              kinsim_2link_planar_B.d_a - kinsim_2link_planar_B.s.im *
               kinsim_2link_planar_B.d1);
             A[kinsim_2link_planar_B.k_l].re = kinsim_2link_planar_B.atmp_re;
             A[kinsim_2link_planar_B.k_l].im = kinsim_2link_planar_B.atmp_im;
@@ -3929,7 +3929,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
             kinsim_2link_planar_B.s.re + V[kinsim_2link_planar_B.i_h].re *
             kinsim_2link_planar_B.s.im) + V[kinsim_2link_planar_B.k_l].im *
             kinsim_2link_planar_B.mul;
-          kinsim_2link_planar_B.d = V[kinsim_2link_planar_B.k_l].re;
+          kinsim_2link_planar_B.d_a = V[kinsim_2link_planar_B.k_l].re;
           V[kinsim_2link_planar_B.i_h].re = V[kinsim_2link_planar_B.i_h].re *
             kinsim_2link_planar_B.mul - (V[kinsim_2link_planar_B.k_l].re *
             kinsim_2link_planar_B.s.re + V[kinsim_2link_planar_B.k_l].im *
@@ -3937,7 +3937,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
           V[kinsim_2link_planar_B.i_h].im = V[kinsim_2link_planar_B.i_h].im *
             kinsim_2link_planar_B.mul - (V[kinsim_2link_planar_B.k_l].im *
             kinsim_2link_planar_B.s.re - kinsim_2link_planar_B.s.im *
-            kinsim_2link_planar_B.d);
+            kinsim_2link_planar_B.d_a);
           V[kinsim_2link_planar_B.k_l].re = kinsim_2link_planar_B.atmp_re;
           V[kinsim_2link_planar_B.k_l].im = kinsim_2link_planar_B.atmp_im;
           kinsim_2link_planar_B.nzcount = kinsim_2link_planar_B.i_h + 1;
@@ -3950,7 +3950,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
             kinsim_2link_planar_B.s.re + V[kinsim_2link_planar_B.nzcount].re *
             kinsim_2link_planar_B.s.im) + V[kinsim_2link_planar_B.jj].im *
             kinsim_2link_planar_B.mul;
-          kinsim_2link_planar_B.d = V[kinsim_2link_planar_B.jj].re;
+          kinsim_2link_planar_B.d_a = V[kinsim_2link_planar_B.jj].re;
           V[kinsim_2link_planar_B.nzcount].re = V[kinsim_2link_planar_B.nzcount]
             .re * kinsim_2link_planar_B.mul - (V[kinsim_2link_planar_B.jj].re *
             kinsim_2link_planar_B.s.re + V[kinsim_2link_planar_B.jj].im *
@@ -3958,7 +3958,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
           V[kinsim_2link_planar_B.nzcount].im = V[kinsim_2link_planar_B.nzcount]
             .im * kinsim_2link_planar_B.mul - (V[kinsim_2link_planar_B.jj].im *
             kinsim_2link_planar_B.s.re - kinsim_2link_planar_B.s.im *
-            kinsim_2link_planar_B.d);
+            kinsim_2link_planar_B.d_a);
           V[kinsim_2link_planar_B.jj].re = kinsim_2link_planar_B.atmp_re;
           V[kinsim_2link_planar_B.jj].im = kinsim_2link_planar_B.atmp_im;
           kinsim_2link_planar_B.nzcount = kinsim_2link_planar_B.i_h + 2;
@@ -3971,7 +3971,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
             kinsim_2link_planar_B.s.re + V[kinsim_2link_planar_B.nzcount].re *
             kinsim_2link_planar_B.s.im) + V[kinsim_2link_planar_B.jj].im *
             kinsim_2link_planar_B.mul;
-          kinsim_2link_planar_B.d = V[kinsim_2link_planar_B.jj].re;
+          kinsim_2link_planar_B.d_a = V[kinsim_2link_planar_B.jj].re;
           V[kinsim_2link_planar_B.nzcount].re = V[kinsim_2link_planar_B.nzcount]
             .re * kinsim_2link_planar_B.mul - (V[kinsim_2link_planar_B.jj].re *
             kinsim_2link_planar_B.s.re + V[kinsim_2link_planar_B.jj].im *
@@ -3979,7 +3979,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
           V[kinsim_2link_planar_B.nzcount].im = V[kinsim_2link_planar_B.nzcount]
             .im * kinsim_2link_planar_B.mul - (V[kinsim_2link_planar_B.jj].im *
             kinsim_2link_planar_B.s.re - kinsim_2link_planar_B.s.im *
-            kinsim_2link_planar_B.d);
+            kinsim_2link_planar_B.d_a);
           V[kinsim_2link_planar_B.jj].re = kinsim_2link_planar_B.atmp_re;
           V[kinsim_2link_planar_B.jj].im = kinsim_2link_planar_B.atmp_im;
           kinsim_2link_planar_B.i_h += 3;
@@ -3992,7 +3992,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
             kinsim_2link_planar_B.s.re + V[kinsim_2link_planar_B.i_h].re *
             kinsim_2link_planar_B.s.im) + V[kinsim_2link_planar_B.k_l].im *
             kinsim_2link_planar_B.mul;
-          kinsim_2link_planar_B.d = V[kinsim_2link_planar_B.k_l].re;
+          kinsim_2link_planar_B.d_a = V[kinsim_2link_planar_B.k_l].re;
           V[kinsim_2link_planar_B.i_h].re = V[kinsim_2link_planar_B.i_h].re *
             kinsim_2link_planar_B.mul - (V[kinsim_2link_planar_B.k_l].re *
             kinsim_2link_planar_B.s.re + V[kinsim_2link_planar_B.k_l].im *
@@ -4000,7 +4000,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
           V[kinsim_2link_planar_B.i_h].im = V[kinsim_2link_planar_B.i_h].im *
             kinsim_2link_planar_B.mul - (V[kinsim_2link_planar_B.k_l].im *
             kinsim_2link_planar_B.s.re - kinsim_2link_planar_B.s.im *
-            kinsim_2link_planar_B.d);
+            kinsim_2link_planar_B.d_a);
           V[kinsim_2link_planar_B.k_l].re = kinsim_2link_planar_B.atmp_re;
           V[kinsim_2link_planar_B.k_l].im = kinsim_2link_planar_B.atmp_im;
           kinsim_2link_planar_B.ii--;
@@ -4154,7 +4154,7 @@ static void kinsim_2link_planar_xzggev(creal_T A[16], int32_T *info, creal_T
   }
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static real_T kinsim_2link_planar_xnrm2(int32_T n, const real_T x[16], int32_T
   ix0)
 {
@@ -4188,7 +4188,7 @@ static real_T kinsim_2link_planar_xnrm2(int32_T n, const real_T x[16], int32_T
   return y;
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_xzlarf(int32_T m, int32_T n, int32_T iv0, real_T
   tau, real_T C[16], int32_T ic0, real_T work[4])
 {
@@ -4248,15 +4248,15 @@ static void kinsim_2link_planar_xzlarf(int32_T m, int32_T n, int32_T iv0, real_T
       kinsim_2link_planar_B.iac_h = ic0;
       while (kinsim_2link_planar_B.iac_h <= jy) {
         kinsim_2link_planar_B.ix_f = iv0;
-        kinsim_2link_planar_B.c = 0.0;
+        kinsim_2link_planar_B.c_p = 0.0;
         d = (kinsim_2link_planar_B.iac_h + kinsim_2link_planar_B.lastv) - 1;
         for (b_ia = kinsim_2link_planar_B.iac_h; b_ia <= d; b_ia++) {
-          kinsim_2link_planar_B.c += C[b_ia - 1] * C[kinsim_2link_planar_B.ix_f
-            - 1];
+          kinsim_2link_planar_B.c_p += C[b_ia - 1] *
+            C[kinsim_2link_planar_B.ix_f - 1];
           kinsim_2link_planar_B.ix_f++;
         }
 
-        work[kinsim_2link_planar_B.coltop] += kinsim_2link_planar_B.c;
+        work[kinsim_2link_planar_B.coltop] += kinsim_2link_planar_B.c_p;
         kinsim_2link_planar_B.coltop++;
         kinsim_2link_planar_B.iac_h += 4;
       }
@@ -4268,12 +4268,12 @@ static void kinsim_2link_planar_xzlarf(int32_T m, int32_T n, int32_T iv0, real_T
       kinsim_2link_planar_B.iac_h = 0;
       while (kinsim_2link_planar_B.iac_h <= kinsim_2link_planar_B.lastc_e) {
         if (work[jy] != 0.0) {
-          kinsim_2link_planar_B.c = work[jy] * -tau;
+          kinsim_2link_planar_B.c_p = work[jy] * -tau;
           kinsim_2link_planar_B.ix_f = iv0;
           d = kinsim_2link_planar_B.lastv + kinsim_2link_planar_B.coltop;
           for (b_ia = kinsim_2link_planar_B.coltop; b_ia < d; b_ia++) {
             C[b_ia] += C[kinsim_2link_planar_B.ix_f - 1] *
-              kinsim_2link_planar_B.c;
+              kinsim_2link_planar_B.c_p;
             kinsim_2link_planar_B.ix_f++;
           }
         }
@@ -4286,7 +4286,7 @@ static void kinsim_2link_planar_xzlarf(int32_T m, int32_T n, int32_T iv0, real_T
   }
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_xgehrd(real_T a[16], real_T tau[3])
 {
   int32_T exitg1;
@@ -4733,7 +4733,7 @@ static void kinsim_2link_planar_xgehrd(real_T a[16], real_T tau[3])
   a[11] = kinsim_2link_planar_B.alpha1;
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static real_T kinsim_2link_planar_xnrm2_l(int32_T n, const real_T x[3])
 {
   real_T y;
@@ -4772,7 +4772,7 @@ static real_T kinsim_2link_planar_xnrm2_l(int32_T n, const real_T x[3])
   return y;
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static real_T kinsim_2link_planar_xzlarfg(int32_T n, real_T *alpha1, real_T x[3])
 {
   real_T tau;
@@ -4832,7 +4832,7 @@ static real_T kinsim_2link_planar_xzlarfg(int32_T n, real_T *alpha1, real_T x[3]
   return tau;
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_xdlanv2(real_T *a, real_T *b, real_T *c, real_T *
   d, real_T *rt1r, real_T *rt1i, real_T *rt2r, real_T *rt2i, real_T *cs, real_T *
   sn)
@@ -4852,12 +4852,12 @@ static void kinsim_2link_planar_xdlanv2(real_T *a, real_T *b, real_T *c, real_T 
     *b = -*c;
     *c = 0.0;
   } else {
-    kinsim_2link_planar_B.tau_m = *a - *d;
-    if ((kinsim_2link_planar_B.tau_m == 0.0) && ((*b < 0.0) != (*c < 0.0))) {
+    kinsim_2link_planar_B.tau_j = *a - *d;
+    if ((kinsim_2link_planar_B.tau_j == 0.0) && ((*b < 0.0) != (*c < 0.0))) {
       *cs = 1.0;
       *sn = 0.0;
     } else {
-      kinsim_2link_planar_B.p = 0.5 * kinsim_2link_planar_B.tau_m;
+      kinsim_2link_planar_B.p = 0.5 * kinsim_2link_planar_B.tau_j;
       kinsim_2link_planar_B.bcmis = fabs(*b);
       kinsim_2link_planar_B.z = fabs(*c);
       tmp = rtIsNaN(kinsim_2link_planar_B.z);
@@ -4885,59 +4885,59 @@ static void kinsim_2link_planar_xdlanv2(real_T *a, real_T *b, real_T *c, real_T 
 
       kinsim_2link_planar_B.bcmis = kinsim_2link_planar_B.z * static_cast<real_T>
         (b_0) * static_cast<real_T>(c_0);
-      kinsim_2link_planar_B.scale_c = fabs(kinsim_2link_planar_B.p);
-      if ((!(kinsim_2link_planar_B.scale_c > kinsim_2link_planar_B.bcmax)) &&
+      kinsim_2link_planar_B.scale_m = fabs(kinsim_2link_planar_B.p);
+      if ((!(kinsim_2link_planar_B.scale_m > kinsim_2link_planar_B.bcmax)) &&
           (!rtIsNaN(kinsim_2link_planar_B.bcmax))) {
-        kinsim_2link_planar_B.scale_c = kinsim_2link_planar_B.bcmax;
+        kinsim_2link_planar_B.scale_m = kinsim_2link_planar_B.bcmax;
       }
 
       kinsim_2link_planar_B.z = kinsim_2link_planar_B.p /
-        kinsim_2link_planar_B.scale_c * kinsim_2link_planar_B.p +
-        kinsim_2link_planar_B.bcmax / kinsim_2link_planar_B.scale_c *
+        kinsim_2link_planar_B.scale_m * kinsim_2link_planar_B.p +
+        kinsim_2link_planar_B.bcmax / kinsim_2link_planar_B.scale_m *
         kinsim_2link_planar_B.bcmis;
       if (kinsim_2link_planar_B.z >= 8.8817841970012523E-16) {
         if (!(kinsim_2link_planar_B.p < 0.0)) {
-          kinsim_2link_planar_B.tau_m = sqrt(kinsim_2link_planar_B.scale_c) *
+          kinsim_2link_planar_B.tau_j = sqrt(kinsim_2link_planar_B.scale_m) *
             sqrt(kinsim_2link_planar_B.z);
         } else {
-          kinsim_2link_planar_B.tau_m = -(sqrt(kinsim_2link_planar_B.scale_c) *
+          kinsim_2link_planar_B.tau_j = -(sqrt(kinsim_2link_planar_B.scale_m) *
             sqrt(kinsim_2link_planar_B.z));
         }
 
         kinsim_2link_planar_B.z = kinsim_2link_planar_B.p +
-          kinsim_2link_planar_B.tau_m;
+          kinsim_2link_planar_B.tau_j;
         *a = *d + kinsim_2link_planar_B.z;
         *d -= kinsim_2link_planar_B.bcmax / kinsim_2link_planar_B.z *
           kinsim_2link_planar_B.bcmis;
-        kinsim_2link_planar_B.tau_m = kinsim_2link_plan_rt_hypotd_snf(*c,
+        kinsim_2link_planar_B.tau_j = kinsim_2link_plan_rt_hypotd_snf(*c,
           kinsim_2link_planar_B.z);
-        *cs = kinsim_2link_planar_B.z / kinsim_2link_planar_B.tau_m;
-        *sn = *c / kinsim_2link_planar_B.tau_m;
+        *cs = kinsim_2link_planar_B.z / kinsim_2link_planar_B.tau_j;
+        *sn = *c / kinsim_2link_planar_B.tau_j;
         *b -= *c;
         *c = 0.0;
       } else {
         kinsim_2link_planar_B.bcmax = *b + *c;
-        kinsim_2link_planar_B.tau_m = kinsim_2link_plan_rt_hypotd_snf
-          (kinsim_2link_planar_B.bcmax, kinsim_2link_planar_B.tau_m);
+        kinsim_2link_planar_B.tau_j = kinsim_2link_plan_rt_hypotd_snf
+          (kinsim_2link_planar_B.bcmax, kinsim_2link_planar_B.tau_j);
         *cs = sqrt((fabs(kinsim_2link_planar_B.bcmax) /
-                    kinsim_2link_planar_B.tau_m + 1.0) * 0.5);
+                    kinsim_2link_planar_B.tau_j + 1.0) * 0.5);
         if (!(kinsim_2link_planar_B.bcmax < 0.0)) {
           b_0 = 1;
         } else {
           b_0 = -1;
         }
 
-        *sn = -(kinsim_2link_planar_B.p / (kinsim_2link_planar_B.tau_m * *cs)) *
+        *sn = -(kinsim_2link_planar_B.p / (kinsim_2link_planar_B.tau_j * *cs)) *
           static_cast<real_T>(b_0);
         kinsim_2link_planar_B.p = *a * *cs + *b * *sn;
-        kinsim_2link_planar_B.tau_m = -*a * *sn + *b * *cs;
+        kinsim_2link_planar_B.tau_j = -*a * *sn + *b * *cs;
         kinsim_2link_planar_B.bcmax = *c * *cs + *d * *sn;
         kinsim_2link_planar_B.bcmis = -*c * *sn + *d * *cs;
-        *b = kinsim_2link_planar_B.tau_m * *cs + kinsim_2link_planar_B.bcmis *
+        *b = kinsim_2link_planar_B.tau_j * *cs + kinsim_2link_planar_B.bcmis *
           *sn;
         *c = -kinsim_2link_planar_B.p * *sn + kinsim_2link_planar_B.bcmax * *cs;
         kinsim_2link_planar_B.bcmax = ((kinsim_2link_planar_B.p * *cs +
-          kinsim_2link_planar_B.bcmax * *sn) + (-kinsim_2link_planar_B.tau_m *
+          kinsim_2link_planar_B.bcmax * *sn) + (-kinsim_2link_planar_B.tau_j *
           *sn + kinsim_2link_planar_B.bcmis * *cs)) * 0.5;
         *a = kinsim_2link_planar_B.bcmax;
         *d = kinsim_2link_planar_B.bcmax;
@@ -4954,17 +4954,17 @@ static void kinsim_2link_planar_xdlanv2(real_T *a, real_T *b, real_T *c, real_T 
                   kinsim_2link_planar_B.bcmis);
               }
 
-              kinsim_2link_planar_B.tau_m = 1.0 / sqrt(fabs(*b + *c));
+              kinsim_2link_planar_B.tau_j = 1.0 / sqrt(fabs(*b + *c));
               *a = kinsim_2link_planar_B.bcmax + kinsim_2link_planar_B.p;
               *d = kinsim_2link_planar_B.bcmax - kinsim_2link_planar_B.p;
               *b -= *c;
               *c = 0.0;
               kinsim_2link_planar_B.p = kinsim_2link_planar_B.z *
-                kinsim_2link_planar_B.tau_m;
-              kinsim_2link_planar_B.tau_m *= kinsim_2link_planar_B.bcmis;
+                kinsim_2link_planar_B.tau_j;
+              kinsim_2link_planar_B.tau_j *= kinsim_2link_planar_B.bcmis;
               kinsim_2link_planar_B.bcmax = *cs * kinsim_2link_planar_B.p - *sn *
-                kinsim_2link_planar_B.tau_m;
-              *sn = *cs * kinsim_2link_planar_B.tau_m + *sn *
+                kinsim_2link_planar_B.tau_j;
+              *sn = *cs * kinsim_2link_planar_B.tau_j + *sn *
                 kinsim_2link_planar_B.p;
               *cs = kinsim_2link_planar_B.bcmax;
             }
@@ -4991,7 +4991,7 @@ static void kinsim_2link_planar_xdlanv2(real_T *a, real_T *b, real_T *c, real_T 
   }
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_xrot(int32_T n, real_T x[16], int32_T ix0,
   int32_T iy0, real_T c, real_T s)
 {
@@ -5010,7 +5010,7 @@ static void kinsim_2link_planar_xrot(int32_T n, real_T x[16], int32_T ix0,
   }
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_xrot_g(int32_T n, real_T x[16], int32_T ix0,
   int32_T iy0, real_T c, real_T s)
 {
@@ -5031,7 +5031,7 @@ static void kinsim_2link_planar_xrot_g(int32_T n, real_T x[16], int32_T ix0,
   }
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static int32_T kinsim_2link_planar_eml_dlahqr(real_T h[16], real_T z[16])
 {
   int32_T info;
@@ -5503,7 +5503,7 @@ static int32_T kinsim_2link_planar_eml_dlahqr(real_T h[16], real_T z[16])
   return info;
 }
 
-// Function for MATLAB Function: '<S5>/MATLAB Function'
+// Function for MATLAB Function: '<S3>/MATLAB Function'
 static void kinsim_2link_planar_eig(const real_T A[16], creal_T V[16], creal_T
   D[4])
 {
@@ -7531,7 +7531,7 @@ static m_robotics_manip_internal_Rig_T *kins_RigidBody_RigidBody_li5a1l
     b_kstr = 0;
   } else {
     for (b_kstr = 0; b_kstr < 9; b_kstr++) {
-      kinsim_2link_planar_B.b_n[b_kstr] = tmp_3[b_kstr];
+      kinsim_2link_planar_B.b_bs[b_kstr] = tmp_3[b_kstr];
     }
 
     b_bool = false;
@@ -7542,7 +7542,7 @@ static m_robotics_manip_internal_Rig_T *kins_RigidBody_RigidBody_li5a1l
         if (b_kstr - 1 < 9) {
           loop_ub = b_kstr - 1;
           if (switch_expression->data[loop_ub] !=
-              kinsim_2link_planar_B.b_n[loop_ub]) {
+              kinsim_2link_planar_B.b_bs[loop_ub]) {
             exitg1 = 1;
           } else {
             b_kstr++;
@@ -8641,17 +8641,23 @@ void kinsim_2link_planar_step(void)
   l_robotics_manip_internal_R_l_T *obj_1;
   static const char_T tmp[6] = { 'l', 'i', 'n', 'k', '_', '6' };
 
-  static const char_T h[7] = { 'j', 'o', 'i', 'n', 't', '_', '1' };
+  static const char_T h[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
+    '1' };
 
-  static const char_T i[7] = { 'j', 'o', 'i', 'n', 't', '_', '2' };
+  static const char_T i[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
+    '2' };
 
-  static const char_T j[7] = { 'j', 'o', 'i', 'n', 't', '_', '3' };
+  static const char_T j[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
+    '3' };
 
-  static const char_T k[7] = { 'j', 'o', 'i', 'n', 't', '_', '4' };
+  static const char_T k[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
+    '4' };
 
-  static const char_T l[7] = { 'j', 'o', 'i', 'n', 't', '_', '5' };
+  static const char_T l[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
+    '5' };
 
-  static const char_T m[7] = { 'j', 'o', 'i', 'n', 't', '_', '6' };
+  static const char_T m[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
+    '6' };
 
   int32_T exitg1;
   boolean_T exitg2;
@@ -8668,31 +8674,31 @@ void kinsim_2link_planar_step(void)
       (&kinsim_2link_planar_M->solverInfo);
   }
 
-  // MATLABSystem: '<S13>/Get Parameter'
+  // MATLABSystem: '<S11>/Get Parameter'
   ParamGet_kinsim_2link_planar_61.get_parameter(&kinsim_2link_planar_B.bid2);
 
-  // MATLABSystem: '<S13>/Get Parameter2'
+  // MATLABSystem: '<S11>/Get Parameter2'
   ParamGet_kinsim_2link_planar_85.get_parameter(&kinsim_2link_planar_B.K13);
 
-  // MATLABSystem: '<S13>/Get Parameter5'
+  // MATLABSystem: '<S11>/Get Parameter5'
   ParamGet_kinsim_2link_planar_88.get_parameter(&kinsim_2link_planar_B.K14);
 
-  // MATLABSystem: '<S13>/Get Parameter4'
+  // MATLABSystem: '<S11>/Get Parameter4'
   ParamGet_kinsim_2link_planar_87.get_parameter(&kinsim_2link_planar_B.K23);
 
-  // MATLABSystem: '<S13>/Get Parameter3'
+  // MATLABSystem: '<S11>/Get Parameter3'
   ParamGet_kinsim_2link_planar_86.get_parameter(&kinsim_2link_planar_B.K24);
 
-  // MATLABSystem: '<S13>/Get Parameter1'
+  // MATLABSystem: '<S11>/Get Parameter1'
   ParamGet_kinsim_2link_planar_65.get_parameter(&kinsim_2link_planar_B.K34);
 
   // Integrator: '<Root>/Integrator' incorporates:
-  //   MATLABSystem: '<S13>/Get Parameter'
-  //   MATLABSystem: '<S13>/Get Parameter1'
-  //   MATLABSystem: '<S13>/Get Parameter2'
-  //   MATLABSystem: '<S13>/Get Parameter3'
-  //   MATLABSystem: '<S13>/Get Parameter4'
-  //   MATLABSystem: '<S13>/Get Parameter5'
+  //   MATLABSystem: '<S11>/Get Parameter'
+  //   MATLABSystem: '<S11>/Get Parameter1'
+  //   MATLABSystem: '<S11>/Get Parameter2'
+  //   MATLABSystem: '<S11>/Get Parameter3'
+  //   MATLABSystem: '<S11>/Get Parameter4'
+  //   MATLABSystem: '<S11>/Get Parameter5'
 
   if (kinsim_2link_planar_DW.Integrator_IWORK != 0) {
     kinsim_2link_planar_X.Integrator_CSTATE[0] = kinsim_2link_planar_B.bid2;
@@ -8706,13 +8712,13 @@ void kinsim_2link_planar_step(void)
   kinsim_2link_pla_emxInit_real_T(&b, 2);
   kinsim_2lin_emxInit_f_cell_wrap(&Ttree, 2);
 
-  // MATLABSystem: '<S14>/MATLAB System' incorporates:
+  // MATLABSystem: '<S13>/MATLAB System' incorporates:
   //   Integrator: '<Root>/Integrator'
 
   RigidBodyTree_geometricJacobian(&kinsim_2link_planar_DW.obj.TreeInternal,
     kinsim_2link_planar_X.Integrator_CSTATE, b);
 
-  // MATLABSystem: '<S15>/MATLAB System' incorporates:
+  // MATLABSystem: '<S14>/MATLAB System' incorporates:
   //   Integrator: '<Root>/Integrator'
 
   obj = &kinsim_2link_planar_DW.obj_b;
@@ -8730,7 +8736,7 @@ void kinsim_2link_planar_step(void)
   kinsim_2link_planar_B.T1_l[15] = 1;
   kinsim_2link_pla_emxInit_char_T(&bname, 2);
 
-  // MATLABSystem: '<S15>/MATLAB System'
+  // MATLABSystem: '<S14>/MATLAB System'
   kinsim_2link_planar_B.bid2 = -1.0;
   kinsim_2link_planar_B.ret = bname->size[0] * bname->size[1];
   bname->size[0] = 1;
@@ -8772,7 +8778,7 @@ void kinsim_2link_planar_step(void)
 
   kinsim_2link_pla_emxFree_char_T(&bname);
 
-  // MATLABSystem: '<S15>/MATLAB System'
+  // MATLABSystem: '<S14>/MATLAB System'
   if (kinsim_2link_planar_B.b_bool) {
     kinsim_2link_planar_B.bid2 = 0.0;
   } else {
@@ -8823,7 +8829,7 @@ void kinsim_2link_planar_step(void)
 
   kinsim_2lin_emxFree_f_cell_wrap(&Ttree);
 
-  // MATLABSystem: '<S15>/MATLAB System'
+  // MATLABSystem: '<S14>/MATLAB System'
   for (kinsim_2link_planar_B.ret = 0; kinsim_2link_planar_B.ret < 3;
        kinsim_2link_planar_B.ret++) {
     kinsim_2link_planar_B.R_f[3 * kinsim_2link_planar_B.ret] =
@@ -8892,8 +8898,8 @@ void kinsim_2link_planar_step(void)
 
   if (rtmIsMajorTimeStep(kinsim_2link_planar_M)) {
     // Outputs for Atomic SubSystem: '<Root>/Subscribe'
-    // MATLABSystem: '<S12>/SourceBlock' incorporates:
-    //   Inport: '<S17>/In1'
+    // MATLABSystem: '<S10>/SourceBlock' incorporates:
+    //   Inport: '<S16>/In1'
 
     kinsim_2link_pl_SystemCore_step(&kinsim_2link_planar_B.b_bool,
       kinsim_2link_planar_B.b_varargout_2_Positions,
@@ -8910,8 +8916,8 @@ void kinsim_2link_planar_step(void)
       &kinsim_2link_planar_B.b_varargout_2_Effort_SL_Info_Re,
       &kinsim_2link_planar_B.bid2, &kinsim_2link_planar_B.K13);
 
-    // Outputs for Enabled SubSystem: '<S12>/Enabled Subsystem' incorporates:
-    //   EnablePort: '<S17>/Enable'
+    // Outputs for Enabled SubSystem: '<S10>/Enabled Subsystem' incorporates:
+    //   EnablePort: '<S16>/Enable'
 
     if (kinsim_2link_planar_B.b_bool) {
       kinsim_2link_planar_B.In1.Positions_SL_Info.CurrentLength =
@@ -8946,13 +8952,13 @@ void kinsim_2link_planar_step(void)
       kinsim_2link_planar_B.In1.TimeFromStart.Nsec = kinsim_2link_planar_B.K13;
     }
 
-    // End of MATLABSystem: '<S12>/SourceBlock'
-    // End of Outputs for SubSystem: '<S12>/Enabled Subsystem'
+    // End of MATLABSystem: '<S10>/SourceBlock'
+    // End of Outputs for SubSystem: '<S10>/Enabled Subsystem'
     // End of Outputs for SubSystem: '<Root>/Subscribe'
   }
 
-  // Product: '<S5>/MatrixMultiply' incorporates:
-  //   MATLABSystem: '<S14>/MATLAB System'
+  // Product: '<S3>/MatrixMultiply' incorporates:
+  //   MATLABSystem: '<S13>/MATLAB System'
 
   for (kinsim_2link_planar_B.ret = 0; kinsim_2link_planar_B.ret < 6;
        kinsim_2link_planar_B.ret++) {
@@ -8968,10 +8974,10 @@ void kinsim_2link_planar_step(void)
     }
   }
 
-  // End of Product: '<S5>/MatrixMultiply'
+  // End of Product: '<S3>/MatrixMultiply'
   kinsim_2link_pla_emxFree_real_T(&b);
 
-  // MATLAB Function: '<S5>/MATLAB Function'
+  // MATLAB Function: '<S3>/MATLAB Function'
   kinsim_2link_planar_B.bid2 = kinsim_2link_planar_B.T2[4] +
     kinsim_2link_planar_B.T2[1];
   kinsim_2link_planar_B.K13 = kinsim_2link_planar_B.T2[8] +
@@ -9071,106 +9077,129 @@ void kinsim_2link_planar_step(void)
       re;
   }
 
-  // BusAssignment: '<Root>/Bus Assignment' incorporates:
-  //   MATLAB Function: '<S5>/MATLAB Function'
-
-  kinsim_2link_planar_B.BusAssignment.Position.X = kinsim_2link_planar_B.T2[12];
-  kinsim_2link_planar_B.BusAssignment.Position.Y = kinsim_2link_planar_B.T2[13];
-  kinsim_2link_planar_B.BusAssignment.Position.Z = kinsim_2link_planar_B.T2[14];
-  kinsim_2link_planar_B.BusAssignment.Orientation.X =
-    kinsim_2link_planar_B.cartOrn[0];
-  kinsim_2link_planar_B.BusAssignment.Orientation.Y =
-    kinsim_2link_planar_B.cartOrn[1];
-  kinsim_2link_planar_B.BusAssignment.Orientation.Z =
-    kinsim_2link_planar_B.cartOrn[2];
-  kinsim_2link_planar_B.BusAssignment.Orientation.W =
-    kinsim_2link_planar_B.cartOrn[3];
-
-  // Outputs for Atomic SubSystem: '<Root>/Publish2'
-  // MATLABSystem: '<S10>/SinkBlock'
-  Pub_kinsim_2link_planar_79.publish(&kinsim_2link_planar_B.BusAssignment);
-
-  // End of Outputs for SubSystem: '<Root>/Publish2'
-
-  // BusAssignment: '<Root>/Bus Assignment1' incorporates:
-  //   MATLAB Function: '<S5>/MATLAB Function'
-
-  kinsim_2link_planar_B.BusAssignment1.Linear.X =
-    kinsim_2link_planar_B.MatrixMultiply[3];
-  kinsim_2link_planar_B.BusAssignment1.Linear.Y =
-    kinsim_2link_planar_B.MatrixMultiply[4];
-  kinsim_2link_planar_B.BusAssignment1.Linear.Z =
-    kinsim_2link_planar_B.MatrixMultiply[5];
-  kinsim_2link_planar_B.BusAssignment1.Angular.X =
-    kinsim_2link_planar_B.MatrixMultiply[0];
-  kinsim_2link_planar_B.BusAssignment1.Angular.Y =
-    kinsim_2link_planar_B.MatrixMultiply[1];
-  kinsim_2link_planar_B.BusAssignment1.Angular.Z =
-    kinsim_2link_planar_B.MatrixMultiply[2];
-
-  // Outputs for Atomic SubSystem: '<Root>/Publish3'
-  // MATLABSystem: '<S11>/SinkBlock'
-  Pub_kinsim_2link_planar_101.publish(&kinsim_2link_planar_B.BusAssignment1);
-
-  // End of Outputs for SubSystem: '<Root>/Publish3'
-
   // Clock: '<Root>/Clock1' incorporates:
   //   Clock: '<Root>/Clock'
 
   kinsim_2link_planar_B.bid2 = kinsim_2link_planar_M->Timing.t[0];
 
-  // MATLAB Function: '<Root>/Assign to JointState msg' incorporates:
+  // MATLAB Function: '<S12>/MATLAB Function' incorporates:
   //   Clock: '<Root>/Clock1'
-  //   Constant: '<S6>/Constant'
-  //   Integrator: '<Root>/Integrator'
 
-  kinsim_2link_planar_B.msg = kinsim_2link_planar_P.Constant_Value;
   if (kinsim_2link_planar_B.bid2 < 0.0) {
+    // MATLAB Function: '<Root>/Assign to JointState msg'
     kinsim_2link_planar_B.K13 = ceil(kinsim_2link_planar_B.bid2);
   } else {
+    // MATLAB Function: '<Root>/Assign to JointState msg'
     kinsim_2link_planar_B.K13 = floor(kinsim_2link_planar_B.bid2);
   }
 
-  kinsim_2link_planar_B.msg.Header.Stamp.Sec = kinsim_2link_planar_B.K13;
-  kinsim_2link_planar_B.K13 = (kinsim_2link_planar_B.bid2 -
+  kinsim_2link_planar_B.K14 = (kinsim_2link_planar_B.bid2 -
     kinsim_2link_planar_B.K13) * 1.0E+9;
-  if (kinsim_2link_planar_B.K13 < 0.0) {
-    kinsim_2link_planar_B.msg.Header.Stamp.Nsec = ceil(kinsim_2link_planar_B.K13);
+  if (kinsim_2link_planar_B.K14 < 0.0) {
+    // MATLAB Function: '<Root>/Assign to JointState msg'
+    kinsim_2link_planar_B.K14 = ceil(kinsim_2link_planar_B.K14);
   } else {
-    kinsim_2link_planar_B.msg.Header.Stamp.Nsec = floor
-      (kinsim_2link_planar_B.K13);
+    // MATLAB Function: '<Root>/Assign to JointState msg'
+    kinsim_2link_planar_B.K14 = floor(kinsim_2link_planar_B.K14);
   }
 
+  // BusAssignment: '<S12>/Bus Assignment' incorporates:
+  //   Constant: '<S17>/Constant'
+  //   MATLAB Function: '<S12>/MATLAB Function'
+  //   MATLAB Function: '<S3>/MATLAB Function'
+
+  kinsim_2link_planar_B.BusAssignment = kinsim_2link_planar_P.Constant_Value_p;
+  kinsim_2link_planar_B.BusAssignment.Header.Stamp.Sec =
+    kinsim_2link_planar_B.K13;
+  kinsim_2link_planar_B.BusAssignment.Header.Stamp.Nsec =
+    kinsim_2link_planar_B.K14;
+  kinsim_2link_planar_B.BusAssignment.Pose.Position.X =
+    kinsim_2link_planar_B.T2[12];
+  kinsim_2link_planar_B.BusAssignment.Pose.Position.Y =
+    kinsim_2link_planar_B.T2[13];
+  kinsim_2link_planar_B.BusAssignment.Pose.Position.Z =
+    kinsim_2link_planar_B.T2[14];
+  kinsim_2link_planar_B.BusAssignment.Pose.Orientation.X =
+    kinsim_2link_planar_B.cartOrn[0];
+  kinsim_2link_planar_B.BusAssignment.Pose.Orientation.Y =
+    kinsim_2link_planar_B.cartOrn[1];
+  kinsim_2link_planar_B.BusAssignment.Pose.Orientation.Z =
+    kinsim_2link_planar_B.cartOrn[2];
+  kinsim_2link_planar_B.BusAssignment.Pose.Orientation.W =
+    kinsim_2link_planar_B.cartOrn[3];
+
+  // Outputs for Atomic SubSystem: '<Root>/Publish2'
+  // MATLABSystem: '<S8>/SinkBlock'
+  Pub_kinsim_2link_planar_79.publish(&kinsim_2link_planar_B.BusAssignment);
+
+  // End of Outputs for SubSystem: '<Root>/Publish2'
+
+  // BusAssignment: '<S12>/Bus Assignment1' incorporates:
+  //   Constant: '<S18>/Constant'
+  //   MATLAB Function: '<S12>/MATLAB Function'
+  //   MATLAB Function: '<S3>/MATLAB Function'
+
+  kinsim_2link_planar_B.BusAssignment1 = kinsim_2link_planar_P.Constant_Value_m;
+  kinsim_2link_planar_B.BusAssignment1.Header.Stamp.Sec =
+    kinsim_2link_planar_B.K13;
+  kinsim_2link_planar_B.BusAssignment1.Header.Stamp.Nsec =
+    kinsim_2link_planar_B.K14;
+  kinsim_2link_planar_B.BusAssignment1.Twist.Linear.X =
+    kinsim_2link_planar_B.MatrixMultiply[3];
+  kinsim_2link_planar_B.BusAssignment1.Twist.Linear.Y =
+    kinsim_2link_planar_B.MatrixMultiply[4];
+  kinsim_2link_planar_B.BusAssignment1.Twist.Linear.Z =
+    kinsim_2link_planar_B.MatrixMultiply[5];
+  kinsim_2link_planar_B.BusAssignment1.Twist.Angular.X =
+    kinsim_2link_planar_B.MatrixMultiply[0];
+  kinsim_2link_planar_B.BusAssignment1.Twist.Angular.Y =
+    kinsim_2link_planar_B.MatrixMultiply[1];
+  kinsim_2link_planar_B.BusAssignment1.Twist.Angular.Z =
+    kinsim_2link_planar_B.MatrixMultiply[2];
+
+  // Outputs for Atomic SubSystem: '<Root>/Publish3'
+  // MATLABSystem: '<S9>/SinkBlock'
+  Pub_kinsim_2link_planar_101.publish(&kinsim_2link_planar_B.BusAssignment1);
+
+  // End of Outputs for SubSystem: '<Root>/Publish3'
+
+  // MATLAB Function: '<Root>/Assign to JointState msg' incorporates:
+  //   Constant: '<S4>/Constant'
+  //   Integrator: '<Root>/Integrator'
+
+  kinsim_2link_planar_B.msg = kinsim_2link_planar_P.Constant_Value;
+  kinsim_2link_planar_B.msg.Header.Stamp.Sec = kinsim_2link_planar_B.K13;
+  kinsim_2link_planar_B.msg.Header.Stamp.Nsec = kinsim_2link_planar_B.K14;
   kinsim_2link_planar_B.msg.Name_SL_Info.CurrentLength = 6U;
   kinsim_2link_planar_B.msg.Position_SL_Info.CurrentLength = 6U;
   kinsim_2link_planar_B.msg.Velocity_SL_Info.CurrentLength = 6U;
-  kinsim_2link_planar_B.msg.Name[0].Data_SL_Info.CurrentLength = 7U;
+  kinsim_2link_planar_B.msg.Name[0].Data_SL_Info.CurrentLength = 11U;
   kinsim_2link_planar_B.msg.Position[0] =
     kinsim_2link_planar_X.Integrator_CSTATE[0];
   kinsim_2link_planar_B.msg.Velocity[0] = kinsim_2link_planar_B.In1.Velocities[0];
-  kinsim_2link_planar_B.msg.Name[1].Data_SL_Info.CurrentLength = 7U;
+  kinsim_2link_planar_B.msg.Name[1].Data_SL_Info.CurrentLength = 11U;
   kinsim_2link_planar_B.msg.Position[1] =
     kinsim_2link_planar_X.Integrator_CSTATE[1];
   kinsim_2link_planar_B.msg.Velocity[1] = kinsim_2link_planar_B.In1.Velocities[1];
-  kinsim_2link_planar_B.msg.Name[2].Data_SL_Info.CurrentLength = 7U;
+  kinsim_2link_planar_B.msg.Name[2].Data_SL_Info.CurrentLength = 11U;
   kinsim_2link_planar_B.msg.Position[2] =
     kinsim_2link_planar_X.Integrator_CSTATE[2];
   kinsim_2link_planar_B.msg.Velocity[2] = kinsim_2link_planar_B.In1.Velocities[2];
-  kinsim_2link_planar_B.msg.Name[3].Data_SL_Info.CurrentLength = 7U;
+  kinsim_2link_planar_B.msg.Name[3].Data_SL_Info.CurrentLength = 11U;
   kinsim_2link_planar_B.msg.Position[3] =
     kinsim_2link_planar_X.Integrator_CSTATE[3];
   kinsim_2link_planar_B.msg.Velocity[3] = kinsim_2link_planar_B.In1.Velocities[3];
-  kinsim_2link_planar_B.msg.Name[4].Data_SL_Info.CurrentLength = 7U;
+  kinsim_2link_planar_B.msg.Name[4].Data_SL_Info.CurrentLength = 11U;
   kinsim_2link_planar_B.msg.Position[4] =
     kinsim_2link_planar_X.Integrator_CSTATE[4];
   kinsim_2link_planar_B.msg.Velocity[4] = kinsim_2link_planar_B.In1.Velocities[4];
-  for (kinsim_2link_planar_B.ret = 0; kinsim_2link_planar_B.ret < 7;
+  for (kinsim_2link_planar_B.ret = 0; kinsim_2link_planar_B.ret < 11;
        kinsim_2link_planar_B.ret++) {
-    kinsim_2link_planar_B.b_i.f1[kinsim_2link_planar_B.ret] =
+    kinsim_2link_planar_B.b_o.f1[kinsim_2link_planar_B.ret] =
       h[kinsim_2link_planar_B.ret];
-    kinsim_2link_planar_B.c_l.f1[kinsim_2link_planar_B.ret] =
+    kinsim_2link_planar_B.c.f1[kinsim_2link_planar_B.ret] =
       i[kinsim_2link_planar_B.ret];
-    kinsim_2link_planar_B.d_o.f1[kinsim_2link_planar_B.ret] =
+    kinsim_2link_planar_B.d.f1[kinsim_2link_planar_B.ret] =
       j[kinsim_2link_planar_B.ret];
     kinsim_2link_planar_B.e.f1[kinsim_2link_planar_B.ret] =
       k[kinsim_2link_planar_B.ret];
@@ -9180,13 +9209,11 @@ void kinsim_2link_planar_step(void)
       m[kinsim_2link_planar_B.ret];
     kinsim_2link_planar_B.msg.Name[0].Data[kinsim_2link_planar_B.ret] =
       static_cast<uint8_T>
-      (kinsim_2link_planar_B.b_i.f1[kinsim_2link_planar_B.ret]);
+      (kinsim_2link_planar_B.b_o.f1[kinsim_2link_planar_B.ret]);
     kinsim_2link_planar_B.msg.Name[1].Data[kinsim_2link_planar_B.ret] =
-      static_cast<uint8_T>
-      (kinsim_2link_planar_B.c_l.f1[kinsim_2link_planar_B.ret]);
+      static_cast<uint8_T>(kinsim_2link_planar_B.c.f1[kinsim_2link_planar_B.ret]);
     kinsim_2link_planar_B.msg.Name[2].Data[kinsim_2link_planar_B.ret] =
-      static_cast<uint8_T>
-      (kinsim_2link_planar_B.d_o.f1[kinsim_2link_planar_B.ret]);
+      static_cast<uint8_T>(kinsim_2link_planar_B.d.f1[kinsim_2link_planar_B.ret]);
     kinsim_2link_planar_B.msg.Name[3].Data[kinsim_2link_planar_B.ret] =
       static_cast<uint8_T>(kinsim_2link_planar_B.e.f1[kinsim_2link_planar_B.ret]);
     kinsim_2link_planar_B.msg.Name[4].Data[kinsim_2link_planar_B.ret] =
@@ -9195,15 +9222,13 @@ void kinsim_2link_planar_step(void)
       static_cast<uint8_T>(kinsim_2link_planar_B.g.f1[kinsim_2link_planar_B.ret]);
   }
 
-  kinsim_2link_planar_B.msg.Name[5].Data_SL_Info.CurrentLength = 7U;
+  kinsim_2link_planar_B.msg.Name[5].Data_SL_Info.CurrentLength = 11U;
   kinsim_2link_planar_B.msg.Position[5] =
     kinsim_2link_planar_X.Integrator_CSTATE[5];
   kinsim_2link_planar_B.msg.Velocity[5] = kinsim_2link_planar_B.In1.Velocities[5];
 
-  // End of MATLAB Function: '<Root>/Assign to JointState msg'
-
   // Outputs for Atomic SubSystem: '<Root>/Publish'
-  // MATLABSystem: '<S8>/SinkBlock'
+  // MATLABSystem: '<S6>/SinkBlock'
   Pub_kinsim_2link_planar_22.publish(&kinsim_2link_planar_B.msg);
 
   // End of Outputs for SubSystem: '<Root>/Publish'
@@ -9216,18 +9241,18 @@ void kinsim_2link_planar_step(void)
   }
 
   kinsim_2link_planar_B.msg_l.Clock_.Sec = kinsim_2link_planar_B.K13;
-  kinsim_2link_planar_B.K13 = (kinsim_2link_planar_B.bid2 -
+  kinsim_2link_planar_B.K14 = (kinsim_2link_planar_B.bid2 -
     kinsim_2link_planar_B.K13) * 1.0E+9;
-  if (kinsim_2link_planar_B.K13 < 0.0) {
-    kinsim_2link_planar_B.msg_l.Clock_.Nsec = ceil(kinsim_2link_planar_B.K13);
+  if (kinsim_2link_planar_B.K14 < 0.0) {
+    kinsim_2link_planar_B.msg_l.Clock_.Nsec = ceil(kinsim_2link_planar_B.K14);
   } else {
-    kinsim_2link_planar_B.msg_l.Clock_.Nsec = floor(kinsim_2link_planar_B.K13);
+    kinsim_2link_planar_B.msg_l.Clock_.Nsec = floor(kinsim_2link_planar_B.K14);
   }
 
   // End of MATLAB Function: '<Root>/Assign to Time msg'
 
   // Outputs for Atomic SubSystem: '<Root>/Publish1'
-  // MATLABSystem: '<S9>/SinkBlock'
+  // MATLABSystem: '<S7>/SinkBlock'
   Pub_kinsim_2link_planar_50.publish(&kinsim_2link_planar_B.msg_l);
 
   // End of Outputs for SubSystem: '<Root>/Publish1'
@@ -9373,13 +9398,13 @@ void kinsim_2link_planar_initialize(void)
     // End of InitializeConditions for Integrator: '<Root>/Integrator'
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Subscribe'
-    // SystemInitialize for Enabled SubSystem: '<S12>/Enabled Subsystem'
-    // SystemInitialize for Outport: '<S17>/Out1'
+    // SystemInitialize for Enabled SubSystem: '<S10>/Enabled Subsystem'
+    // SystemInitialize for Outport: '<S16>/Out1'
     kinsim_2link_planar_B.In1 = kinsim_2link_planar_P.Out1_Y0;
 
-    // End of SystemInitialize for SubSystem: '<S12>/Enabled Subsystem'
+    // End of SystemInitialize for SubSystem: '<S10>/Enabled Subsystem'
 
-    // Start for MATLABSystem: '<S12>/SourceBlock'
+    // Start for MATLABSystem: '<S10>/SourceBlock'
     kinsim_2link_planar_DW.obj_pp.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_pp.isInitialized = 1;
     for (i = 0; i < 17; i++) {
@@ -9390,11 +9415,11 @@ void kinsim_2link_planar_initialize(void)
     Sub_kinsim_2link_planar_16.createSubscriber(kinsim_2link_planar_B.cv, 1);
     kinsim_2link_planar_DW.obj_pp.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S12>/SourceBlock'
+    // End of Start for MATLABSystem: '<S10>/SourceBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Subscribe'
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Publish2'
-    // Start for MATLABSystem: '<S10>/SinkBlock'
+    // Start for MATLABSystem: '<S8>/SinkBlock'
     kinsim_2link_planar_DW.obj_m.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_m.isInitialized = 1;
     for (i = 0; i < 14; i++) {
@@ -9405,11 +9430,11 @@ void kinsim_2link_planar_initialize(void)
     Pub_kinsim_2link_planar_79.createPublisher(kinsim_2link_planar_B.cv1, 1);
     kinsim_2link_planar_DW.obj_m.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/SinkBlock'
+    // End of Start for MATLABSystem: '<S8>/SinkBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Publish2'
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Publish3'
-    // Start for MATLABSystem: '<S11>/SinkBlock'
+    // Start for MATLABSystem: '<S9>/SinkBlock'
     kinsim_2link_planar_DW.obj_bs.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_bs.isInitialized = 1;
     for (i = 0; i < 14; i++) {
@@ -9420,11 +9445,11 @@ void kinsim_2link_planar_initialize(void)
     Pub_kinsim_2link_planar_101.createPublisher(kinsim_2link_planar_B.cv1, 1);
     kinsim_2link_planar_DW.obj_bs.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S11>/SinkBlock'
+    // End of Start for MATLABSystem: '<S9>/SinkBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Publish3'
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Publish'
-    // Start for MATLABSystem: '<S8>/SinkBlock'
+    // Start for MATLABSystem: '<S6>/SinkBlock'
     kinsim_2link_planar_DW.obj_nr.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_nr.isInitialized = 1;
     for (i = 0; i < 13; i++) {
@@ -9435,11 +9460,11 @@ void kinsim_2link_planar_initialize(void)
     Pub_kinsim_2link_planar_22.createPublisher(kinsim_2link_planar_B.cv2, 1);
     kinsim_2link_planar_DW.obj_nr.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S8>/SinkBlock'
+    // End of Start for MATLABSystem: '<S6>/SinkBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Publish'
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Publish1'
-    // Start for MATLABSystem: '<S9>/SinkBlock'
+    // Start for MATLABSystem: '<S7>/SinkBlock'
     kinsim_2link_planar_DW.obj_f.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_f.isInitialized = 1;
     for (i = 0; i < 6; i++) {
@@ -9450,10 +9475,10 @@ void kinsim_2link_planar_initialize(void)
     Pub_kinsim_2link_planar_50.createPublisher(tmp, 1);
     kinsim_2link_planar_DW.obj_f.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/SinkBlock'
+    // End of Start for MATLABSystem: '<S7>/SinkBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Publish1'
 
-    // Start for MATLABSystem: '<S13>/Get Parameter'
+    // Start for MATLABSystem: '<S11>/Get Parameter'
     kinsim_2link_planar_DW.obj_e.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_e.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -9466,9 +9491,9 @@ void kinsim_2link_planar_initialize(void)
     ParamGet_kinsim_2link_planar_61.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_e.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S13>/Get Parameter'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter'
 
-    // Start for MATLABSystem: '<S13>/Get Parameter2'
+    // Start for MATLABSystem: '<S11>/Get Parameter2'
     kinsim_2link_planar_DW.obj_p.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_p.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -9481,9 +9506,9 @@ void kinsim_2link_planar_initialize(void)
     ParamGet_kinsim_2link_planar_85.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_p.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S13>/Get Parameter2'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter2'
 
-    // Start for MATLABSystem: '<S13>/Get Parameter5'
+    // Start for MATLABSystem: '<S11>/Get Parameter5'
     kinsim_2link_planar_DW.obj_n.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_n.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -9496,9 +9521,9 @@ void kinsim_2link_planar_initialize(void)
     ParamGet_kinsim_2link_planar_88.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_n.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S13>/Get Parameter5'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter5'
 
-    // Start for MATLABSystem: '<S13>/Get Parameter4'
+    // Start for MATLABSystem: '<S11>/Get Parameter4'
     kinsim_2link_planar_DW.obj_em.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_em.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -9511,9 +9536,9 @@ void kinsim_2link_planar_initialize(void)
     ParamGet_kinsim_2link_planar_87.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_em.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S13>/Get Parameter4'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter4'
 
-    // Start for MATLABSystem: '<S13>/Get Parameter3'
+    // Start for MATLABSystem: '<S11>/Get Parameter3'
     kinsim_2link_planar_DW.obj_l.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_l.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -9526,9 +9551,9 @@ void kinsim_2link_planar_initialize(void)
     ParamGet_kinsim_2link_planar_86.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_l.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S13>/Get Parameter3'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter3'
 
-    // Start for MATLABSystem: '<S13>/Get Parameter1'
+    // Start for MATLABSystem: '<S11>/Get Parameter1'
     kinsim_2link_planar_DW.obj_ng.matlabCodegenIsDeleted = false;
     kinsim_2link_planar_DW.obj_ng.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -9541,7 +9566,7 @@ void kinsim_2link_planar_initialize(void)
     ParamGet_kinsim_2link_planar_65.set_initial_value(0.0);
     kinsim_2link_planar_DW.obj_ng.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S13>/Get Parameter1'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter1'
     emxInitStruct_robotics_slmanip_(&kinsim_2link_planar_DW.obj);
     emxInitStruct_l_robotics_manip_(&kinsim_2link_planar_DW.gobj_1);
     emxInitStruct_l_robotics_manip_(&kinsim_2link_planar_DW.gobj_12);
@@ -9556,7 +9581,7 @@ void kinsim_2link_planar_initialize(void)
     emxInitStruct_l_robotics_manip_(&kinsim_2link_planar_DW.gobj_3);
     emxInitStruct_l_robotics_manip_(&kinsim_2link_planar_DW.gobj_2);
 
-    // Start for MATLABSystem: '<S14>/MATLAB System'
+    // Start for MATLABSystem: '<S13>/MATLAB System'
     kinsim_2link_planar_DW.obj.isInitialized = 0;
     kinsim_2link_planar_DW.obj.isInitialized = 1;
     kin_RigidBodyTree_RigidBodyTree(&kinsim_2link_planar_DW.obj.TreeInternal,
@@ -9577,7 +9602,7 @@ void kinsim_2link_planar_initialize(void)
     emxInitStruct_l_robotics_mani_l(&kinsim_2link_planar_DW.gobj_3_j);
     emxInitStruct_l_robotics_mani_l(&kinsim_2link_planar_DW.gobj_2_o);
 
-    // Start for MATLABSystem: '<S15>/MATLAB System'
+    // Start for MATLABSystem: '<S14>/MATLAB System'
     kinsim_2link_planar_DW.obj_b.isInitialized = 0;
     kinsim_2link_planar_DW.obj_b.isInitialized = 1;
     k_RigidBodyTree_RigidBodyTree_l(&kinsim_2link_planar_DW.obj_b.TreeInternal,
@@ -9595,22 +9620,22 @@ void kinsim_2link_planar_initialize(void)
 // Model terminate function
 void kinsim_2link_planar_terminate(void)
 {
-  // Terminate for MATLABSystem: '<S13>/Get Parameter'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter'
   matlabCodegenHandle_matla_li5a1(&kinsim_2link_planar_DW.obj_e);
 
-  // Terminate for MATLABSystem: '<S13>/Get Parameter2'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter2'
   matlabCodegenHandle_matla_li5a1(&kinsim_2link_planar_DW.obj_p);
 
-  // Terminate for MATLABSystem: '<S13>/Get Parameter5'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter5'
   matlabCodegenHandle_matla_li5a1(&kinsim_2link_planar_DW.obj_n);
 
-  // Terminate for MATLABSystem: '<S13>/Get Parameter4'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter4'
   matlabCodegenHandle_matla_li5a1(&kinsim_2link_planar_DW.obj_em);
 
-  // Terminate for MATLABSystem: '<S13>/Get Parameter3'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter3'
   matlabCodegenHandle_matla_li5a1(&kinsim_2link_planar_DW.obj_l);
 
-  // Terminate for MATLABSystem: '<S13>/Get Parameter1'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter1'
   matlabCodegenHandle_matla_li5a1(&kinsim_2link_planar_DW.obj_ng);
   emxFreeStruct_robotics_slmanip_(&kinsim_2link_planar_DW.obj);
   emxFreeStruct_l_robotics_manip_(&kinsim_2link_planar_DW.gobj_1);
@@ -9640,31 +9665,31 @@ void kinsim_2link_planar_terminate(void)
   emxFreeStruct_l_robotics_mani_l(&kinsim_2link_planar_DW.gobj_2_o);
 
   // Terminate for Atomic SubSystem: '<Root>/Subscribe'
-  // Terminate for MATLABSystem: '<S12>/SourceBlock'
+  // Terminate for MATLABSystem: '<S10>/SourceBlock'
   matlabCodegenHandle_matlab_li5a(&kinsim_2link_planar_DW.obj_pp);
 
   // End of Terminate for SubSystem: '<Root>/Subscribe'
 
   // Terminate for Atomic SubSystem: '<Root>/Publish2'
-  // Terminate for MATLABSystem: '<S10>/SinkBlock'
+  // Terminate for MATLABSystem: '<S8>/SinkBlock'
   matlabCodegenHandle_matlabCodeg(&kinsim_2link_planar_DW.obj_m);
 
   // End of Terminate for SubSystem: '<Root>/Publish2'
 
   // Terminate for Atomic SubSystem: '<Root>/Publish3'
-  // Terminate for MATLABSystem: '<S11>/SinkBlock'
+  // Terminate for MATLABSystem: '<S9>/SinkBlock'
   matlabCodegenHandle_matlabCodeg(&kinsim_2link_planar_DW.obj_bs);
 
   // End of Terminate for SubSystem: '<Root>/Publish3'
 
   // Terminate for Atomic SubSystem: '<Root>/Publish'
-  // Terminate for MATLABSystem: '<S8>/SinkBlock'
+  // Terminate for MATLABSystem: '<S6>/SinkBlock'
   matlabCodegenHandle_matlabCodeg(&kinsim_2link_planar_DW.obj_nr);
 
   // End of Terminate for SubSystem: '<Root>/Publish'
 
   // Terminate for Atomic SubSystem: '<Root>/Publish1'
-  // Terminate for MATLABSystem: '<S9>/SinkBlock'
+  // Terminate for MATLABSystem: '<S7>/SinkBlock'
   matlabCodegenHandle_matlabCodeg(&kinsim_2link_planar_DW.obj_f);
 
   // End of Terminate for SubSystem: '<Root>/Publish1'

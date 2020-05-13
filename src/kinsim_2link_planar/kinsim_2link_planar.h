@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinsim_2link_planar'.
 //
-// Model version                  : 1.124
+// Model version                  : 1.125
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 13 15:54:45 2020
+// C/C++ source code generated on : Wed May 13 16:45:29 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -152,7 +152,7 @@
 // Block signals (default storage)
 typedef struct {
   SL_Bus_kinsim_2link_planar_sensor_msgs_JointState msg;// '<Root>/Assign to JointState msg' 
-  SL_Bus_kinsim_2link_planar_JointTrajectoryPoint_1csgl9 In1;// '<S17>/In1'
+  SL_Bus_kinsim_2link_planar_JointTrajectoryPoint_1csgl9 In1;// '<S16>/In1'
   SL_Bus_kinsim_2link_planar_JointTrajectoryPoint_1csgl9 b_varargout_2;
   real_T b_varargout_2_Positions[128];
   real_T b_varargout_2_Velocities[128];
@@ -161,6 +161,8 @@ typedef struct {
   real_T X[36];
   creal_T eigVec[16];
   creal_T At[16];
+  SL_Bus_kinsim_2link_planar_geometry_msgs_PoseStamped BusAssignment;// '<S12>/Bus Assignment' 
+  SL_Bus_kinsim_2link_planar_geometry_msgs_TwistStamped BusAssignment1;// '<S12>/Bus Assignment1' 
   real_T T2[16];
   real_T R[16];
   real_T T2inv[16];
@@ -191,9 +193,7 @@ typedef struct {
   creal_T eigVal[4];
   creal_T beta1[4];
   creal_T work1[4];
-  SL_Bus_kinsim_2link_planar_geometry_msgs_Pose BusAssignment;// '<Root>/Bus Assignment' 
-  SL_Bus_kinsim_2link_planar_geometry_msgs_Twist BusAssignment1;// '<Root>/Bus Assignment1' 
-  real_T MatrixMultiply[6];            // '<S5>/MatrixMultiply'
+  real_T MatrixMultiply[6];            // '<S3>/MatrixMultiply'
   int8_T msubspace_data[36];
   real_T cartOrn[4];
   real_T result_data[4];
@@ -221,13 +221,19 @@ typedef struct {
   char_T cv1[15];
   char_T cv2[14];
   char_T cv3[12];
-  char_T b_o[9];
+  cell_wrap_0_kinsim_2link_plan_T b_o;
+  cell_wrap_0_kinsim_2link_plan_T c;
+  cell_wrap_0_kinsim_2link_plan_T d;
+  cell_wrap_0_kinsim_2link_plan_T e;
+  cell_wrap_0_kinsim_2link_plan_T f;
+  cell_wrap_0_kinsim_2link_plan_T g;
   char_T b_b[9];
   char_T b_n[9];
-  char_T b_bs[8];
+  char_T b_bs[9];
   char_T b_l[8];
   char_T b_h[8];
   char_T b_bn[8];
+  char_T b_d[8];
   real_T K13;
   real_T K14;
   real_T K23;
@@ -235,15 +241,15 @@ typedef struct {
   real_T K34;
   real_T bid2;
   real_T endeffectorIndex;
-  real_T s_d;
+  real_T s_e;
   real_T idx_idx_1;
   real_T n;
   real_T k;
   real_T sth;
   real_T tempR_tmp;
-  real_T tempR_tmp_e;
   real_T tempR_tmp_b;
   real_T tempR_tmp_j;
+  real_T tempR_tmp_f;
   real_T colnorm;
   real_T scale;
   real_T absxk;
@@ -251,7 +257,7 @@ typedef struct {
   real_T anrm;
   real_T anrmto;
   real_T mul;
-  real_T d;
+  real_T d_a;
   real_T d1;
   real_T atmp_re;
   real_T atmp_im;
@@ -265,10 +271,10 @@ typedef struct {
   real_T t1_im;
   real_T shift_re;
   real_T shift_im;
-  real_T shift_im_f;
+  real_T shift_im_j;
   real_T eshift_re;
   real_T eshift_im;
-  real_T scale_a;
+  real_T scale_j;
   real_T g2;
   real_T f2s;
   real_T di;
@@ -277,14 +283,14 @@ typedef struct {
   real_T fs_im;
   real_T gs_re;
   real_T gs_im;
-  real_T a_j;
-  real_T n_j;
-  real_T k_o;
-  real_T sth_n;
-  real_T tempR_tmp_i;
-  real_T tempR_tmp_o;
+  real_T a_o;
+  real_T n_n;
+  real_T k_i;
+  real_T sth_o;
   real_T tempR_tmp_n;
   real_T tempR_tmp_m;
+  real_T tempR_tmp_c;
+  real_T tempR_tmp_md;
   real_T tst;
   real_T htmp1;
   real_T htmp2;
@@ -298,14 +304,14 @@ typedef struct {
   real_T p;
   real_T bcmax;
   real_T bcmis;
-  real_T scale_c;
+  real_T scale_m;
   real_T z;
-  real_T tau_m;
-  real_T anorm_m;
-  real_T ascale_j;
+  real_T tau_j;
+  real_T anorm_h;
+  real_T ascale_c;
   real_T temp;
   real_T acoeff;
-  real_T scale_h;
+  real_T scale_c;
   real_T dmin;
   real_T f_y;
   real_T salpha_re;
@@ -315,27 +321,21 @@ typedef struct {
   real_T work2_idx_3_im;
   real_T alpha1;
   real_T xnorm;
-  real_T c;
-  real_T scale_c0;
-  real_T g2_c;
-  real_T f2s_p;
-  real_T di_p;
+  real_T c_p;
+  real_T scale_p;
+  real_T g2_a;
+  real_T f2s_e;
+  real_T di_a;
   real_T x_a;
-  real_T fs_re_e;
-  real_T fs_im_a;
-  real_T gs_re_a;
-  cell_wrap_0_kinsim_2link_plan_T b_i;
-  cell_wrap_0_kinsim_2link_plan_T c_l;
-  cell_wrap_0_kinsim_2link_plan_T d_o;
-  cell_wrap_0_kinsim_2link_plan_T e;
-  cell_wrap_0_kinsim_2link_plan_T f;
-  cell_wrap_0_kinsim_2link_plan_T g;
+  real_T fs_re_i;
+  real_T fs_im_l;
+  real_T gs_re_o;
   int8_T chainmask[6];
   char_T bname[6];
   char_T b_o2[6];
   char_T a_i[6];
   char_T bname_f[6];
-  char_T b_iz[5];
+  char_T b_i[5];
   char_T b_f[5];
   char_T b_g[5];
   int32_T ret;
@@ -438,43 +438,43 @@ typedef struct {
 
 // Block states (default storage) for system '<Root>'
 typedef struct {
-  robotics_slmanip_internal_blo_T obj; // '<S14>/MATLAB System'
-  robotics_slmanip_internal_b_l_T obj_b;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_1;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_2;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_3;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_4;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_5;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_6;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_7;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_8;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_9;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_10;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_11;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_Rig_T gobj_12;// '<S14>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_1_a;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_2_o;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_3_j;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_4_i;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_5_a;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_6_g;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_7_l;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_8_j;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_9_p;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_10_b;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_11_l;// '<S15>/MATLAB System'
-  l_robotics_manip_internal_R_l_T gobj_12_b;// '<S15>/MATLAB System'
-  ros_slros_internal_block_GetP_T obj_e;// '<S13>/Get Parameter'
-  ros_slros_internal_block_GetP_T obj_p;// '<S13>/Get Parameter2'
-  ros_slros_internal_block_GetP_T obj_n;// '<S13>/Get Parameter5'
-  ros_slros_internal_block_GetP_T obj_em;// '<S13>/Get Parameter4'
-  ros_slros_internal_block_GetP_T obj_l;// '<S13>/Get Parameter3'
-  ros_slros_internal_block_GetP_T obj_ng;// '<S13>/Get Parameter1'
-  ros_slros_internal_block_Publ_T obj_bs;// '<S11>/SinkBlock'
-  ros_slros_internal_block_Publ_T obj_m;// '<S10>/SinkBlock'
-  ros_slros_internal_block_Publ_T obj_f;// '<S9>/SinkBlock'
-  ros_slros_internal_block_Publ_T obj_nr;// '<S8>/SinkBlock'
-  ros_slros_internal_block_Subs_T obj_pp;// '<S12>/SourceBlock'
+  robotics_slmanip_internal_blo_T obj; // '<S13>/MATLAB System'
+  robotics_slmanip_internal_b_l_T obj_b;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_1;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_2;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_3;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_4;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_5;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_6;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_7;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_8;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_9;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_10;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_11;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_Rig_T gobj_12;// '<S13>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_1_a;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_2_o;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_3_j;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_4_i;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_5_a;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_6_g;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_7_l;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_8_j;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_9_p;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_10_b;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_11_l;// '<S14>/MATLAB System'
+  l_robotics_manip_internal_R_l_T gobj_12_b;// '<S14>/MATLAB System'
+  ros_slros_internal_block_GetP_T obj_e;// '<S11>/Get Parameter'
+  ros_slros_internal_block_GetP_T obj_p;// '<S11>/Get Parameter2'
+  ros_slros_internal_block_GetP_T obj_n;// '<S11>/Get Parameter5'
+  ros_slros_internal_block_GetP_T obj_em;// '<S11>/Get Parameter4'
+  ros_slros_internal_block_GetP_T obj_l;// '<S11>/Get Parameter3'
+  ros_slros_internal_block_GetP_T obj_ng;// '<S11>/Get Parameter1'
+  ros_slros_internal_block_Publ_T obj_bs;// '<S9>/SinkBlock'
+  ros_slros_internal_block_Publ_T obj_m;// '<S8>/SinkBlock'
+  ros_slros_internal_block_Publ_T obj_f;// '<S7>/SinkBlock'
+  ros_slros_internal_block_Publ_T obj_nr;// '<S6>/SinkBlock'
+  ros_slros_internal_block_Subs_T obj_pp;// '<S10>/SourceBlock'
   int_T Integrator_IWORK;              // '<Root>/Integrator'
 } DW_kinsim_2link_planar_T;
 
@@ -507,22 +507,22 @@ typedef struct {
 // Parameters (default storage)
 struct P_kinsim_2link_planar_T_ {
   SL_Bus_kinsim_2link_planar_sensor_msgs_JointState Constant_Value;// Computed Parameter: Constant_Value
-                                                                      //  Referenced by: '<S6>/Constant'
+                                                                      //  Referenced by: '<S4>/Constant'
 
   SL_Bus_kinsim_2link_planar_JointTrajectoryPoint_1csgl9 Out1_Y0;// Computed Parameter: Out1_Y0
-                                                                    //  Referenced by: '<S17>/Out1'
+                                                                    //  Referenced by: '<S16>/Out1'
 
   SL_Bus_kinsim_2link_planar_JointTrajectoryPoint_1csgl9 Constant_Value_h;// Computed Parameter: Constant_Value_h
-                                                                      //  Referenced by: '<S12>/Constant'
+                                                                      //  Referenced by: '<S10>/Constant'
 
-  SL_Bus_kinsim_2link_planar_geometry_msgs_Pose Constant_Value_f;// Computed Parameter: Constant_Value_f
-                                                                    //  Referenced by: '<S3>/Constant'
+  SL_Bus_kinsim_2link_planar_geometry_msgs_PoseStamped Constant_Value_p;// Computed Parameter: Constant_Value_p
+                                                                      //  Referenced by: '<S17>/Constant'
 
-  SL_Bus_kinsim_2link_planar_geometry_msgs_Twist Constant_Value_p;// Computed Parameter: Constant_Value_p
-                                                                     //  Referenced by: '<S4>/Constant'
+  SL_Bus_kinsim_2link_planar_geometry_msgs_TwistStamped Constant_Value_m;// Computed Parameter: Constant_Value_m
+                                                                      //  Referenced by: '<S18>/Constant'
 
   SL_Bus_kinsim_2link_planar_rosgraph_msgs_Clock Constant_Value_o;// Computed Parameter: Constant_Value_o
-                                                                     //  Referenced by: '<S7>/Constant'
+                                                                     //  Referenced by: '<S5>/Constant'
 
 };
 
@@ -638,7 +638,7 @@ extern "C" {
 //-
 //  These blocks were eliminated from the model due to optimizations:
 //
-//  Block '<S5>/Reshape' : Reshape block reduction
+//  Block '<S3>/Reshape' : Reshape block reduction
 
 
 //-
@@ -658,21 +658,23 @@ extern "C" {
 //  '<Root>' : 'kinsim_2link_planar'
 //  '<S1>'   : 'kinsim_2link_planar/Assign to JointState msg'
 //  '<S2>'   : 'kinsim_2link_planar/Assign to Time msg'
-//  '<S3>'   : 'kinsim_2link_planar/Blank Message'
-//  '<S4>'   : 'kinsim_2link_planar/Blank Message1'
-//  '<S5>'   : 'kinsim_2link_planar/Forward_Kinematic'
-//  '<S6>'   : 'kinsim_2link_planar/JointState'
-//  '<S7>'   : 'kinsim_2link_planar/JointState1'
-//  '<S8>'   : 'kinsim_2link_planar/Publish'
-//  '<S9>'   : 'kinsim_2link_planar/Publish1'
-//  '<S10>'  : 'kinsim_2link_planar/Publish2'
-//  '<S11>'  : 'kinsim_2link_planar/Publish3'
-//  '<S12>'  : 'kinsim_2link_planar/Subscribe'
-//  '<S13>'  : 'kinsim_2link_planar/Subsystem'
-//  '<S14>'  : 'kinsim_2link_planar/Forward_Kinematic/Get Jacobian'
-//  '<S15>'  : 'kinsim_2link_planar/Forward_Kinematic/Get Transform'
-//  '<S16>'  : 'kinsim_2link_planar/Forward_Kinematic/MATLAB Function'
-//  '<S17>'  : 'kinsim_2link_planar/Subscribe/Enabled Subsystem'
+//  '<S3>'   : 'kinsim_2link_planar/Forward_Kinematic'
+//  '<S4>'   : 'kinsim_2link_planar/JointState'
+//  '<S5>'   : 'kinsim_2link_planar/JointState1'
+//  '<S6>'   : 'kinsim_2link_planar/Publish'
+//  '<S7>'   : 'kinsim_2link_planar/Publish1'
+//  '<S8>'   : 'kinsim_2link_planar/Publish2'
+//  '<S9>'   : 'kinsim_2link_planar/Publish3'
+//  '<S10>'  : 'kinsim_2link_planar/Subscribe'
+//  '<S11>'  : 'kinsim_2link_planar/Subsystem'
+//  '<S12>'  : 'kinsim_2link_planar/Subsystem1'
+//  '<S13>'  : 'kinsim_2link_planar/Forward_Kinematic/Get Jacobian'
+//  '<S14>'  : 'kinsim_2link_planar/Forward_Kinematic/Get Transform'
+//  '<S15>'  : 'kinsim_2link_planar/Forward_Kinematic/MATLAB Function'
+//  '<S16>'  : 'kinsim_2link_planar/Subscribe/Enabled Subsystem'
+//  '<S17>'  : 'kinsim_2link_planar/Subsystem1/Blank Message'
+//  '<S18>'  : 'kinsim_2link_planar/Subsystem1/Blank Message1'
+//  '<S19>'  : 'kinsim_2link_planar/Subsystem1/MATLAB Function'
 
 #endif                                 // RTW_HEADER_kinsim_2link_planar_h_
 

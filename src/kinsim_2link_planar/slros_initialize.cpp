@@ -13,10 +13,10 @@ SimulinkPublisher<sensor_msgs::JointState, SL_Bus_kinsim_2link_planar_sensor_msg
 SimulinkPublisher<rosgraph_msgs::Clock, SL_Bus_kinsim_2link_planar_rosgraph_msgs_Clock> Pub_kinsim_2link_planar_50;
 
 // For Block kinsim_2link_planar/Publish2
-SimulinkPublisher<geometry_msgs::Pose, SL_Bus_kinsim_2link_planar_geometry_msgs_Pose> Pub_kinsim_2link_planar_79;
+SimulinkPublisher<geometry_msgs::PoseStamped, SL_Bus_kinsim_2link_planar_geometry_msgs_PoseStamped> Pub_kinsim_2link_planar_79;
 
 // For Block kinsim_2link_planar/Publish3
-SimulinkPublisher<geometry_msgs::Twist, SL_Bus_kinsim_2link_planar_geometry_msgs_Twist> Pub_kinsim_2link_planar_101;
+SimulinkPublisher<geometry_msgs::TwistStamped, SL_Bus_kinsim_2link_planar_geometry_msgs_TwistStamped> Pub_kinsim_2link_planar_101;
 
 // For Block kinsim_2link_planar/Subsystem/Get Parameter
 SimulinkParameterGetter<real64_T, double> ParamGet_kinsim_2link_planar_61;

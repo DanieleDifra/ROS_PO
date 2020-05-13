@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinsim_2link_planar'.
 //
-// Model version                  : 1.124
+// Model version                  : 1.125
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 13 15:54:45 2020
+// C/C++ source code generated on : Wed May 13 16:45:29 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -21,71 +21,6 @@
 #include "rtwtypes.h"
 
 // Model Code Variants
-#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Point_
-#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Point_
-
-// MsgType=geometry_msgs/Point
-typedef struct {
-  real_T X;
-  real_T Y;
-  real_T Z;
-} SL_Bus_kinsim_2link_planar_geometry_msgs_Point;
-
-#endif
-
-#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion_
-#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion_
-
-// MsgType=geometry_msgs/Quaternion
-typedef struct {
-  real_T X;
-  real_T Y;
-  real_T Z;
-  real_T W;
-} SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion;
-
-#endif
-
-#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Pose_
-#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Pose_
-
-// MsgType=geometry_msgs/Pose
-typedef struct {
-  // MsgType=geometry_msgs/Point
-  SL_Bus_kinsim_2link_planar_geometry_msgs_Point Position;
-
-  // MsgType=geometry_msgs/Quaternion
-  SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion Orientation;
-} SL_Bus_kinsim_2link_planar_geometry_msgs_Pose;
-
-#endif
-
-#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3_
-#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3_
-
-// MsgType=geometry_msgs/Vector3
-typedef struct {
-  real_T X;
-  real_T Y;
-  real_T Z;
-} SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3;
-
-#endif
-
-#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Twist_
-#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Twist_
-
-// MsgType=geometry_msgs/Twist
-typedef struct {
-  // MsgType=geometry_msgs/Vector3
-  SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3 Linear;
-
-  // MsgType=geometry_msgs/Vector3
-  SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3 Angular;
-} SL_Bus_kinsim_2link_planar_geometry_msgs_Twist;
-
-#endif
-
 #ifndef DEFINED_TYPEDEF_FOR_SL_Bus_ROSVariableLengthArrayInfo_
 #define DEFINED_TYPEDEF_FOR_SL_Bus_ROSVariableLengthArrayInfo_
 
@@ -183,6 +118,99 @@ typedef struct {
   // MsgType=ros_time/Time
   SL_Bus_kinsim_2link_planar_ros_time_Time Clock_;
 } SL_Bus_kinsim_2link_planar_rosgraph_msgs_Clock;
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Point_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Point_
+
+// MsgType=geometry_msgs/Point
+typedef struct {
+  real_T X;
+  real_T Y;
+  real_T Z;
+} SL_Bus_kinsim_2link_planar_geometry_msgs_Point;
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion_
+
+// MsgType=geometry_msgs/Quaternion
+typedef struct {
+  real_T X;
+  real_T Y;
+  real_T Z;
+  real_T W;
+} SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion;
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Pose_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Pose_
+
+// MsgType=geometry_msgs/Pose
+typedef struct {
+  // MsgType=geometry_msgs/Point
+  SL_Bus_kinsim_2link_planar_geometry_msgs_Point Position;
+
+  // MsgType=geometry_msgs/Quaternion
+  SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion Orientation;
+} SL_Bus_kinsim_2link_planar_geometry_msgs_Pose;
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_PoseStamped_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_PoseStamped_
+
+// MsgType=geometry_msgs/PoseStamped
+typedef struct {
+  // MsgType=std_msgs/Header
+  SL_Bus_kinsim_2link_planar_std_msgs_Header Header;
+
+  // MsgType=geometry_msgs/Pose
+  SL_Bus_kinsim_2link_planar_geometry_msgs_Pose Pose;
+} SL_Bus_kinsim_2link_planar_geometry_msgs_PoseStamped;
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3_
+
+// MsgType=geometry_msgs/Vector3
+typedef struct {
+  real_T X;
+  real_T Y;
+  real_T Z;
+} SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3;
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Twist_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_Twist_
+
+// MsgType=geometry_msgs/Twist
+typedef struct {
+  // MsgType=geometry_msgs/Vector3
+  SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3 Linear;
+
+  // MsgType=geometry_msgs/Vector3
+  SL_Bus_kinsim_2link_planar_geometry_msgs_Vector3 Angular;
+} SL_Bus_kinsim_2link_planar_geometry_msgs_Twist;
+
+#endif
+
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_TwistStamped_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_kinsim_2link_planar_geometry_msgs_TwistStamped_
+
+// MsgType=geometry_msgs/TwistStamped
+typedef struct {
+  // MsgType=std_msgs/Header
+  SL_Bus_kinsim_2link_planar_std_msgs_Header Header;
+
+  // MsgType=geometry_msgs/Twist
+  SL_Bus_kinsim_2link_planar_geometry_msgs_Twist Twist;
+} SL_Bus_kinsim_2link_planar_geometry_msgs_TwistStamped;
 
 #endif
 
@@ -407,20 +435,20 @@ typedef struct emxArray_real_T emxArray_real_T_kinsim_2link__T;
 #endif                                 //typedef_emxArray_real_T_kinsim_2link__T
 
 // Custom Type definition for MATLAB Function: '<Root>/Assign to JointState msg' 
-#ifndef struct_tag_rGJxeAeFOtyQ9icBnCewuB
-#define struct_tag_rGJxeAeFOtyQ9icBnCewuB
+#ifndef struct_tag_bT1sNYKeiTHCFMEFtQq2wB
+#define struct_tag_bT1sNYKeiTHCFMEFtQq2wB
 
-struct tag_rGJxeAeFOtyQ9icBnCewuB
+struct tag_bT1sNYKeiTHCFMEFtQq2wB
 {
-  char_T f1[7];
+  char_T f1[11];
 };
 
-#endif                                 //struct_tag_rGJxeAeFOtyQ9icBnCewuB
+#endif                                 //struct_tag_bT1sNYKeiTHCFMEFtQq2wB
 
 #ifndef typedef_cell_wrap_0_kinsim_2link_plan_T
 #define typedef_cell_wrap_0_kinsim_2link_plan_T
 
-typedef struct tag_rGJxeAeFOtyQ9icBnCewuB cell_wrap_0_kinsim_2link_plan_T;
+typedef struct tag_bT1sNYKeiTHCFMEFtQq2wB cell_wrap_0_kinsim_2link_plan_T;
 
 #endif                                 //typedef_cell_wrap_0_kinsim_2link_plan_T
 

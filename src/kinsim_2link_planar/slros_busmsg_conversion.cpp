@@ -41,6 +41,25 @@ void convertToBus(SL_Bus_kinsim_2link_planar_geometry_msgs_Pose* busPtr, geometr
 }
 
 
+// Conversions between SL_Bus_kinsim_2link_planar_geometry_msgs_PoseStamped and geometry_msgs::PoseStamped
+
+void convertFromBus(geometry_msgs::PoseStamped* msgPtr, SL_Bus_kinsim_2link_planar_geometry_msgs_PoseStamped const* busPtr)
+{
+  const std::string rosMessageType("geometry_msgs/PoseStamped");
+
+  convertFromBus(&msgPtr->header, &busPtr->Header);
+  convertFromBus(&msgPtr->pose, &busPtr->Pose);
+}
+
+void convertToBus(SL_Bus_kinsim_2link_planar_geometry_msgs_PoseStamped* busPtr, geometry_msgs::PoseStamped const* msgPtr)
+{
+  const std::string rosMessageType("geometry_msgs/PoseStamped");
+
+  convertToBus(&busPtr->Header, &msgPtr->header);
+  convertToBus(&busPtr->Pose, &msgPtr->pose);
+}
+
+
 // Conversions between SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion and geometry_msgs::Quaternion
 
 void convertFromBus(geometry_msgs::Quaternion* msgPtr, SL_Bus_kinsim_2link_planar_geometry_msgs_Quaternion const* busPtr)
@@ -80,6 +99,25 @@ void convertToBus(SL_Bus_kinsim_2link_planar_geometry_msgs_Twist* busPtr, geomet
 
   convertToBus(&busPtr->Angular, &msgPtr->angular);
   convertToBus(&busPtr->Linear, &msgPtr->linear);
+}
+
+
+// Conversions between SL_Bus_kinsim_2link_planar_geometry_msgs_TwistStamped and geometry_msgs::TwistStamped
+
+void convertFromBus(geometry_msgs::TwistStamped* msgPtr, SL_Bus_kinsim_2link_planar_geometry_msgs_TwistStamped const* busPtr)
+{
+  const std::string rosMessageType("geometry_msgs/TwistStamped");
+
+  convertFromBus(&msgPtr->header, &busPtr->Header);
+  convertFromBus(&msgPtr->twist, &busPtr->Twist);
+}
+
+void convertToBus(SL_Bus_kinsim_2link_planar_geometry_msgs_TwistStamped* busPtr, geometry_msgs::TwistStamped const* msgPtr)
+{
+  const std::string rosMessageType("geometry_msgs/TwistStamped");
+
+  convertToBus(&busPtr->Header, &msgPtr->header);
+  convertToBus(&busPtr->Twist, &msgPtr->twist);
 }
 
 
