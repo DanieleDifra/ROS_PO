@@ -36,13 +36,15 @@
     args="-d $(find edo_description)/edo.rviz" />
 
   <!-- Run the kinematic simulator -->
-  <node pkg="kinsim_2link_planar" type="kinsim_2link_planar_node" name="kinsim_2link_planar">
-    <rosparam param="q1_initial">0</rosparam>
-    <rosparam param="q2_initial">0</rosparam>
-    <rosparam param="q3_initial">0</rosparam>
-    <rosparam param="q4_initial">0</rosparam>
-    <rosparam param="q5_initial">0</rosparam>
-    <rosparam param="q6_initial">0</rosparam>
-  </node>
+  <rosparam param="q1_initial">0</rosparam>
+  <rosparam param="q2_initial">0</rosparam>
+  <rosparam param="q3_initial">0</rosparam>
+  <rosparam param="q4_initial">0</rosparam>
+  <rosparam param="q5_initial">0</rosparam>
+  <rosparam param="q6_initial">0</rosparam>
+  
+  <node pkg="kinsim_2link_planar" type="kinsim_2link_planar_node" name="kinsim_2link_planar"/>
+
+ 
   
 </launch>
