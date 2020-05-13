@@ -23,8 +23,8 @@
     type="rviz"
     args="-d $(find edo_robot_simulation)/urdf.rviz" />
 
-  <rosparam param="q1_initial">1.57</rosparam>
-  <rosparam param="q2_initial">1.57</rosparam>
+  <rosparam param="q1_initial">0</rosparam>
+  <rosparam param="q2_initial">0</rosparam>
   <rosparam param="q3_initial">0</rosparam>
   <rosparam param="q4_initial">0</rosparam>
   <rosparam param="q5_initial">0</rosparam>

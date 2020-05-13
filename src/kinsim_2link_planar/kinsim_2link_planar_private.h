@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinsim_2link_planar'.
 //
-// Model version                  : 1.123
+// Model version                  : 1.124
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 13 01:26:11 2020
+// C/C++ source code generated on : Wed May 13 15:54:45 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -41,7 +41,7 @@
 # define rtmSetTPtr(rtm, val)          ((rtm)->Timing.t = (val))
 #endif
 
-extern real_T rt_atan2d_snf(real_T u0, real_T u1);
+extern int32_T div_nzp_s32(int32_T numerator, int32_T denominator);
 
 // private model entry point functions
 extern void kinsim_2link_planar_derivatives(void);
