@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynsim_2link_planar'.
 //
-// Model version                  : 1.117
+// Model version                  : 1.119
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 13 22:25:52 2020
+// C/C++ source code generated on : Thu May 14 00:29:05 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)

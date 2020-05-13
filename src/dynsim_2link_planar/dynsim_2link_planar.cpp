@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynsim_2link_planar'.
 //
-// Model version                  : 1.117
+// Model version                  : 1.119
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 13 22:25:52 2020
+// C/C++ source code generated on : Thu May 14 00:29:05 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -13564,7 +13564,7 @@ static p_robotics_manip_internal_Rig_T *dyn_RigidBodyTree_RigidBodyTree
   obj->NumBodies = 8.0;
   obj->Gravity[0] = 0.0;
   obj->Gravity[1] = 0.0;
-  obj->Gravity[2] = 0.0;
+  obj->Gravity[2] = -9.81;
   obj->VelocityNumber = 6.0;
   for (i = 0; i < 16; i++) {
     obj->PositionDoFMap[i] = tmp[i];

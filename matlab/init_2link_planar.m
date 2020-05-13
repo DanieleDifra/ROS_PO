@@ -12,3 +12,4 @@ close all
 rosinit
 % Load robot object from URDF
 robot_2link_planar = importrobot('../src/eDo_description/urdf/edo.urdf');
+robot_2link_planar.Gravity = [0, 0, -9.81];
