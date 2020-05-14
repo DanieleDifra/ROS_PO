@@ -7,8 +7,8 @@
   
   <arg name="hardware_interface" default="hardware_interface/PositionJointInterface"/>
   <arg name="robot_name" default="edo"/>
-  <arg name="origin_xyz" default="'0 0 0'"/> <!-- Note the syntax to pass a vector -->
-  <arg name="origin_rpy" default="'0 0 0'"/>
+  <arg name="origin_xyz" default="'0 0 1'"/> <!-- Note the syntax to pass a vector -->
+  <arg name="origin_rpy" default="'0 3.14 0'"/>
 
 <!--
   <param 
