@@ -42,7 +42,7 @@
   <rosparam param="q5_initial">0</rosparam>
   <rosparam param="q6_initial">0</rosparam>
   
-  <node pkg="kinsim_2link_planar" type="kinsim_2link_planar_node" name="kinsim_2link_planar"/>
+  <node pkg="kinematic_simulation" type="kinematic_simulation_node" name="kinematic_simulation"/>
 
  
   

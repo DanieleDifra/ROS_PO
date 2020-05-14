@@ -10,11 +10,7 @@
   <arg name="origin_xyz" default="'0 0 1'"/> <!-- Note the syntax to pass a vector -->
   <arg name="origin_rpy" default="'0 3.14 0'"/>
 
-<!--
-  <param 
-  name="robot_description" 
-  textfile="$(find edo_description)/urdf/edo.urdf" />
- -->
+
  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find edo_description)/urdf/edo.urdf.xacro' hardware_interface:=$(arg hardware_interface) robot_name:=$(arg robot_name) origin_xyz:=$(arg origin_xyz) origin_rpy:=$(arg origin_rpy)" />
    
     
@@ -53,7 +49,7 @@
   <rosparam param="qv5_initial">0</rosparam>
   <rosparam param="qv6_initial">0</rosparam>
   
-  <node pkg="dynsim_2link_planar" type="dynsim_2link_planar_node" name="dynsim_2link_planar"/>
+  <node pkg="dynamic_simulation" type="dynamic_simulation_node" name="dynamic_simulation"/>
 
  
   
