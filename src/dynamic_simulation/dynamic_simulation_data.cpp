@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.127
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Fri May 15 19:40:32 2020
+// C/C++ source code generated on : Fri May 15 20:39:42 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -373,7 +373,7 @@ P_dynamic_simulation_T dynamic_simulation_P = {
   },
 
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S23>/Out1'
+  //  Referenced by: '<S22>/Out1'
 
   {
     {

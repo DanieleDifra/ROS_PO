@@ -30,9 +30,6 @@ SimulinkParameterArrayGetter<char_T, std::string> ParamGet_kinematic_simulation_
 // For Block kinematic_simulation/Joint_State_Msg_Creator/Get Joint Names/Get Parameter5
 SimulinkParameterArrayGetter<char_T, std::string> ParamGet_kinematic_simulation_188;
 
-// For Block kinematic_simulation/Robot Kinematic Model/Get Parameter
-SimulinkParameterGetter<real64_T, double> ParamGet_kinematic_simulation_168;
-
 // For Block kinematic_simulation/Robot Kinematic Model/Subsystem/Get Parameter
 SimulinkParameterGetter<real64_T, double> ParamGet_kinematic_simulation_158;
 

@@ -36,9 +36,6 @@ SimulinkParameterArrayGetter<char_T, std::string> ParamGet_dynamic_simulation_23
 // For Block dynamic_simulation/Joint_State_Msg_Creator/Get Joint Names/Get Parameter5
 SimulinkParameterArrayGetter<char_T, std::string> ParamGet_dynamic_simulation_232;
 
-// For Block dynamic_simulation/Robot Dynamic Model/Get Parameter
-SimulinkParameterGetter<real64_T, double> ParamGet_dynamic_simulation_196;
-
 // For Block dynamic_simulation/Robot Dynamic Model/Subsystem/Get Parameter1
 SimulinkParameterGetter<real64_T, double> ParamGet_dynamic_simulation_132;
 

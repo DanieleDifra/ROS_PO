@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.127
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Fri May 15 19:40:32 2020
+// C/C++ source code generated on : Fri May 15 20:39:42 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -146,7 +146,7 @@ static void emxFreeStruct_robotics_slmani_k(robotics_slmanip_internal_b_k_T
   *pStruct);
 static void emxFreeStruct_n_robotics_mani_k(n_robotics_manip_internal_R_k_T
   *pStruct);
-static void dynamic_simul_matlabCodegenHa_l(ros_slros_internal_block_Subs_T *obj);
+static void dynamic_simul_matlabCodegenHa_e(ros_slros_internal_block_Subs_T *obj);
 static void emxFreeStruct_c_rigidBodyJoint2(c_rigidBodyJoint_dynamic_s_kq_T
   *pStruct);
 static void emxFreeStruct_o_robotics_man_kq(o_robotics_manip_internal__kq_T
@@ -8559,7 +8559,7 @@ static void emxFreeStruct_n_robotics_mani_k(n_robotics_manip_internal_R_k_T
   emxFreeStruct_c_rigidBodyJoint1(&pStruct->JointInternal);
 }
 
-static void dynamic_simul_matlabCodegenHa_l(ros_slros_internal_block_Subs_T *obj)
+static void dynamic_simul_matlabCodegenHa_e(ros_slros_internal_block_Subs_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
@@ -13519,31 +13519,31 @@ void dynamic_simulation_step(void)
       (&dynamic_simulation_M->solverInfo);
   }
 
-  // MATLABSystem: '<S22>/Get Parameter12'
+  // MATLABSystem: '<S21>/Get Parameter12'
   ParamGet_dynamic_simulation_194.get_parameter(&dynamic_simulation_B.vNum);
 
-  // MATLABSystem: '<S22>/Get Parameter1'
+  // MATLABSystem: '<S21>/Get Parameter1'
   ParamGet_dynamic_simulation_132.get_parameter(&dynamic_simulation_B.bid1);
 
-  // MATLABSystem: '<S22>/Get Parameter4'
+  // MATLABSystem: '<S21>/Get Parameter4'
   ParamGet_dynamic_simulation_137.get_parameter(&dynamic_simulation_B.j);
 
-  // MATLABSystem: '<S22>/Get Parameter5'
+  // MATLABSystem: '<S21>/Get Parameter5'
   ParamGet_dynamic_simulation_138.get_parameter(&dynamic_simulation_B.K23);
 
-  // MATLABSystem: '<S22>/Get Parameter6'
+  // MATLABSystem: '<S21>/Get Parameter6'
   ParamGet_dynamic_simulation_139.get_parameter(&dynamic_simulation_B.K24);
 
-  // MATLABSystem: '<S22>/Get Parameter7'
+  // MATLABSystem: '<S21>/Get Parameter7'
   ParamGet_dynamic_simulation_140.get_parameter(&dynamic_simulation_B.K34);
 
   // Integrator: '<S10>/Position' incorporates:
-  //   MATLABSystem: '<S22>/Get Parameter1'
-  //   MATLABSystem: '<S22>/Get Parameter12'
-  //   MATLABSystem: '<S22>/Get Parameter4'
-  //   MATLABSystem: '<S22>/Get Parameter5'
-  //   MATLABSystem: '<S22>/Get Parameter6'
-  //   MATLABSystem: '<S22>/Get Parameter7'
+  //   MATLABSystem: '<S21>/Get Parameter1'
+  //   MATLABSystem: '<S21>/Get Parameter12'
+  //   MATLABSystem: '<S21>/Get Parameter4'
+  //   MATLABSystem: '<S21>/Get Parameter5'
+  //   MATLABSystem: '<S21>/Get Parameter6'
+  //   MATLABSystem: '<S21>/Get Parameter7'
 
   if (dynamic_simulation_DW.Position_IWORK != 0) {
     dynamic_simulation_X.Position_CSTATE[0] = dynamic_simulation_B.vNum;
@@ -13888,31 +13888,31 @@ void dynamic_simulation_step(void)
     }
   }
 
-  // MATLABSystem: '<S22>/Get Parameter2'
+  // MATLABSystem: '<S21>/Get Parameter2'
   ParamGet_dynamic_simulation_135.get_parameter(&dynamic_simulation_B.vNum);
 
-  // MATLABSystem: '<S22>/Get Parameter3'
+  // MATLABSystem: '<S21>/Get Parameter3'
   ParamGet_dynamic_simulation_136.get_parameter(&dynamic_simulation_B.bid1);
 
-  // MATLABSystem: '<S22>/Get Parameter8'
+  // MATLABSystem: '<S21>/Get Parameter8'
   ParamGet_dynamic_simulation_141.get_parameter(&dynamic_simulation_B.j);
 
-  // MATLABSystem: '<S22>/Get Parameter9'
+  // MATLABSystem: '<S21>/Get Parameter9'
   ParamGet_dynamic_simulation_142.get_parameter(&dynamic_simulation_B.K23);
 
-  // MATLABSystem: '<S22>/Get Parameter10'
+  // MATLABSystem: '<S21>/Get Parameter10'
   ParamGet_dynamic_simulation_133.get_parameter(&dynamic_simulation_B.K24);
 
-  // MATLABSystem: '<S22>/Get Parameter11'
+  // MATLABSystem: '<S21>/Get Parameter11'
   ParamGet_dynamic_simulation_134.get_parameter(&dynamic_simulation_B.K34);
 
   // Integrator: '<S10>/Velocity' incorporates:
-  //   MATLABSystem: '<S22>/Get Parameter10'
-  //   MATLABSystem: '<S22>/Get Parameter11'
-  //   MATLABSystem: '<S22>/Get Parameter2'
-  //   MATLABSystem: '<S22>/Get Parameter3'
-  //   MATLABSystem: '<S22>/Get Parameter8'
-  //   MATLABSystem: '<S22>/Get Parameter9'
+  //   MATLABSystem: '<S21>/Get Parameter10'
+  //   MATLABSystem: '<S21>/Get Parameter11'
+  //   MATLABSystem: '<S21>/Get Parameter2'
+  //   MATLABSystem: '<S21>/Get Parameter3'
+  //   MATLABSystem: '<S21>/Get Parameter8'
+  //   MATLABSystem: '<S21>/Get Parameter9'
 
   if (dynamic_simulation_DW.Velocity_IWORK != 0) {
     dynamic_simulation_X.Velocity_CSTATE[0] = dynamic_simulation_B.vNum;
@@ -13953,7 +13953,7 @@ void dynamic_simulation_step(void)
   if (rtmIsMajorTimeStep(dynamic_simulation_M)) {
     // Outputs for Atomic SubSystem: '<Root>/Subscribe'
     // MATLABSystem: '<S11>/SourceBlock' incorporates:
-    //   Inport: '<S23>/In1'
+    //   Inport: '<S22>/In1'
 
     dynamic_simulat_SystemCore_step(&dynamic_simulation_B.b_bool,
       dynamic_simulation_B.b_varargout_2_Data,
@@ -13965,7 +13965,7 @@ void dynamic_simulation_step(void)
       &dynamic_simulation_B.b_varargout_2_Layout_Dim_SL_I_c);
 
     // Outputs for Enabled SubSystem: '<S11>/Enabled Subsystem' incorporates:
-    //   EnablePort: '<S23>/Enable'
+    //   EnablePort: '<S22>/Enable'
 
     if (dynamic_simulation_B.b_bool) {
       memcpy(&dynamic_simulation_B.In1.Data[0],
@@ -14471,11 +14471,6 @@ void dynamic_simulation_step(void)
 
   // End of Outputs for SubSystem: '<Root>/Publish'
   if (rtmIsMajorTimeStep(dynamic_simulation_M)) {
-    // MATLABSystem: '<S10>/Get Parameter'
-    ParamGet_dynamic_simulation_196.get_parameter(&dynamic_simulation_B.vNum);
-  }
-
-  if (rtmIsMajorTimeStep(dynamic_simulation_M)) {
     // Update for Integrator: '<S10>/Position'
     dynamic_simulation_DW.Position_IWORK = 0;
 
@@ -14665,9 +14660,6 @@ void dynamic_simulation_initialize(void)
     static const char_T tmp_s[12] = { '/', 'q', 'v', '6', '_', 'i', 'n', 'i',
       't', 'i', 'a', 'l' };
 
-    static const char_T tmp_t[14] = { '/', 'm', 'a', 'x', '_', 'j', 'o', 'i',
-      'n', 't', '_', 'v', 'e', 'l' };
-
     // InitializeConditions for Integrator: '<S10>/Position' incorporates:
     //   Integrator: '<S10>/Velocity'
 
@@ -14695,7 +14687,7 @@ void dynamic_simulation_initialize(void)
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Subscribe'
     // SystemInitialize for Enabled SubSystem: '<S11>/Enabled Subsystem'
-    // SystemInitialize for Outport: '<S23>/Out1'
+    // SystemInitialize for Outport: '<S22>/Out1'
     dynamic_simulation_B.In1 = dynamic_simulation_P.Out1_Y0;
 
     // End of SystemInitialize for SubSystem: '<S11>/Enabled Subsystem'
@@ -14774,7 +14766,7 @@ void dynamic_simulation_initialize(void)
     // End of Start for MATLABSystem: '<S6>/SinkBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Publish'
 
-    // Start for MATLABSystem: '<S22>/Get Parameter12'
+    // Start for MATLABSystem: '<S21>/Get Parameter12'
     dynamic_simulation_DW.obj_l.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_l.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -14787,9 +14779,9 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_194.set_initial_value(0.0);
     dynamic_simulation_DW.obj_l.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter12'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter12'
 
-    // Start for MATLABSystem: '<S22>/Get Parameter1'
+    // Start for MATLABSystem: '<S21>/Get Parameter1'
     dynamic_simulation_DW.obj_lm.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_lm.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -14802,9 +14794,9 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_132.set_initial_value(0.0);
     dynamic_simulation_DW.obj_lm.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter1'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter1'
 
-    // Start for MATLABSystem: '<S22>/Get Parameter4'
+    // Start for MATLABSystem: '<S21>/Get Parameter4'
     dynamic_simulation_DW.obj_a.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_a.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -14817,9 +14809,9 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_137.set_initial_value(0.0);
     dynamic_simulation_DW.obj_a.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter4'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter4'
 
-    // Start for MATLABSystem: '<S22>/Get Parameter5'
+    // Start for MATLABSystem: '<S21>/Get Parameter5'
     dynamic_simulation_DW.obj_d.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_d.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -14832,9 +14824,9 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_138.set_initial_value(0.0);
     dynamic_simulation_DW.obj_d.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter5'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter5'
 
-    // Start for MATLABSystem: '<S22>/Get Parameter6'
+    // Start for MATLABSystem: '<S21>/Get Parameter6'
     dynamic_simulation_DW.obj_h.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_h.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -14847,9 +14839,9 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_139.set_initial_value(0.0);
     dynamic_simulation_DW.obj_h.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter6'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter6'
 
-    // Start for MATLABSystem: '<S22>/Get Parameter7'
+    // Start for MATLABSystem: '<S21>/Get Parameter7'
     dynamic_simulation_DW.obj_f0.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_f0.isInitialized = 1;
     for (i = 0; i < 11; i++) {
@@ -14862,7 +14854,7 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_140.set_initial_value(0.0);
     dynamic_simulation_DW.obj_f0.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter7'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter7'
     emxInitStruct_robotics_slmanip_(&dynamic_simulation_DW.obj_f);
     emxInitStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_1_m);
     emxInitStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_16_a);
@@ -15036,7 +15028,7 @@ void dynamic_simulation_initialize(void)
       &dynamic_simulation_DW.gobj_7_n, &dynamic_simulation_DW.gobj_8_p,
       &dynamic_simulation_DW.gobj_9_c, &dynamic_simulation_DW.gobj_3_g0);
 
-    // Start for MATLABSystem: '<S22>/Get Parameter2'
+    // Start for MATLABSystem: '<S21>/Get Parameter2'
     dynamic_simulation_DW.obj_e.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_e.isInitialized = 1;
     for (i = 0; i < 12; i++) {
@@ -15049,9 +15041,9 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_135.set_initial_value(0.0);
     dynamic_simulation_DW.obj_e.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter2'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter2'
 
-    // Start for MATLABSystem: '<S22>/Get Parameter3'
+    // Start for MATLABSystem: '<S21>/Get Parameter3'
     dynamic_simulation_DW.obj_ez.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_ez.isInitialized = 1;
     for (i = 0; i < 12; i++) {
@@ -15064,9 +15056,9 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_136.set_initial_value(0.0);
     dynamic_simulation_DW.obj_ez.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter3'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter3'
 
-    // Start for MATLABSystem: '<S22>/Get Parameter8'
+    // Start for MATLABSystem: '<S21>/Get Parameter8'
     dynamic_simulation_DW.obj_io.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_io.isInitialized = 1;
     for (i = 0; i < 12; i++) {
@@ -15079,9 +15071,9 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_141.set_initial_value(0.0);
     dynamic_simulation_DW.obj_io.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter8'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter8'
 
-    // Start for MATLABSystem: '<S22>/Get Parameter9'
+    // Start for MATLABSystem: '<S21>/Get Parameter9'
     dynamic_simulation_DW.obj_ezd.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_ezd.isInitialized = 1;
     for (i = 0; i < 12; i++) {
@@ -15094,9 +15086,9 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_142.set_initial_value(0.0);
     dynamic_simulation_DW.obj_ezd.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter9'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter9'
 
-    // Start for MATLABSystem: '<S22>/Get Parameter10'
+    // Start for MATLABSystem: '<S21>/Get Parameter10'
     dynamic_simulation_DW.obj_n.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_n.isInitialized = 1;
     for (i = 0; i < 12; i++) {
@@ -15109,9 +15101,9 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_133.set_initial_value(0.0);
     dynamic_simulation_DW.obj_n.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter10'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter10'
 
-    // Start for MATLABSystem: '<S22>/Get Parameter11'
+    // Start for MATLABSystem: '<S21>/Get Parameter11'
     dynamic_simulation_DW.obj_p.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_p.isInitialized = 1;
     for (i = 0; i < 12; i++) {
@@ -15124,7 +15116,7 @@ void dynamic_simulation_initialize(void)
     ParamGet_dynamic_simulation_134.set_initial_value(0.0);
     dynamic_simulation_DW.obj_p.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S22>/Get Parameter11'
+    // End of Start for MATLABSystem: '<S21>/Get Parameter11'
     emxInitStruct_robotics_slman_kq(&dynamic_simulation_DW.obj);
     emxInitStruct_n_robotics_man_kq(&dynamic_simulation_DW.gobj_1);
     emxInitStruct_n_robotics_man_kq(&dynamic_simulation_DW.gobj_16);
@@ -15151,21 +15143,6 @@ void dynamic_simulation_initialize(void)
       &dynamic_simulation_DW.gobj_5, &dynamic_simulation_DW.gobj_6,
       &dynamic_simulation_DW.gobj_7, &dynamic_simulation_DW.gobj_8,
       &dynamic_simulation_DW.gobj_9, &dynamic_simulation_DW.gobj_3);
-
-    // Start for MATLABSystem: '<S10>/Get Parameter'
-    dynamic_simulation_DW.obj_j.matlabCodegenIsDeleted = false;
-    dynamic_simulation_DW.obj_j.isInitialized = 1;
-    for (i = 0; i < 14; i++) {
-      dynamic_simulation_B.cv1[i] = tmp_t[i];
-    }
-
-    dynamic_simulation_B.cv1[14] = '\x00';
-    ParamGet_dynamic_simulation_196.initialize(dynamic_simulation_B.cv1);
-    ParamGet_dynamic_simulation_196.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_dynamic_simulation_196.set_initial_value(5.0);
-    dynamic_simulation_DW.obj_j.isSetupComplete = true;
-
-    // End of Start for MATLABSystem: '<S10>/Get Parameter'
   }
 
   // set "at time zero" to false
@@ -15177,22 +15154,22 @@ void dynamic_simulation_initialize(void)
 // Model terminate function
 void dynamic_simulation_terminate(void)
 {
-  // Terminate for MATLABSystem: '<S22>/Get Parameter12'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter12'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_l);
 
-  // Terminate for MATLABSystem: '<S22>/Get Parameter1'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter1'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_lm);
 
-  // Terminate for MATLABSystem: '<S22>/Get Parameter4'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter4'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_a);
 
-  // Terminate for MATLABSystem: '<S22>/Get Parameter5'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter5'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_d);
 
-  // Terminate for MATLABSystem: '<S22>/Get Parameter6'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter6'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_h);
 
-  // Terminate for MATLABSystem: '<S22>/Get Parameter7'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter7'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_f0);
   emxFreeStruct_robotics_slmanip_(&dynamic_simulation_DW.obj_f);
   emxFreeStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_1_m);
@@ -15247,27 +15224,27 @@ void dynamic_simulation_terminate(void)
   emxFreeStruct_n_robotics_mani_k(&dynamic_simulation_DW.gobj_3_g0);
   emxFreeStruct_n_robotics_mani_k(&dynamic_simulation_DW.gobj_2_on);
 
-  // Terminate for MATLABSystem: '<S22>/Get Parameter2'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter2'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_e);
 
-  // Terminate for MATLABSystem: '<S22>/Get Parameter3'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter3'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_ez);
 
-  // Terminate for MATLABSystem: '<S22>/Get Parameter8'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter8'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_io);
 
-  // Terminate for MATLABSystem: '<S22>/Get Parameter9'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter9'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_ezd);
 
-  // Terminate for MATLABSystem: '<S22>/Get Parameter10'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter10'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_n);
 
-  // Terminate for MATLABSystem: '<S22>/Get Parameter11'
+  // Terminate for MATLABSystem: '<S21>/Get Parameter11'
   matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_p);
 
   // Terminate for Atomic SubSystem: '<Root>/Subscribe'
   // Terminate for MATLABSystem: '<S11>/SourceBlock'
-  dynamic_simul_matlabCodegenHa_l(&dynamic_simulation_DW.obj_fk);
+  dynamic_simul_matlabCodegenHa_e(&dynamic_simulation_DW.obj_fk);
 
   // End of Terminate for SubSystem: '<Root>/Subscribe'
   emxFreeStruct_robotics_slman_kq(&dynamic_simulation_DW.obj);
@@ -15311,9 +15288,6 @@ void dynamic_simulation_terminate(void)
   matlabCodegenHandle_matl_kq2tzt(&dynamic_simulation_DW.obj_cd);
 
   // End of Terminate for SubSystem: '<Root>/Publish'
-
-  // Terminate for MATLABSystem: '<S10>/Get Parameter'
-  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_j);
 }
 
 //

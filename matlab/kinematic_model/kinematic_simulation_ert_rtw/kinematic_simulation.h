@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.133
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Fri May 15 19:46:02 2020
+// C/C++ source code generated on : Fri May 15 20:36:27 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -147,15 +147,13 @@
 // Block signals (default storage)
 typedef struct {
   SL_Bus_kinematic_simulation_sensor_msgs_JointState BusAssignment;// '<S2>/Bus Assignment' 
-  SL_Bus_kinematic_simulation_JointTrajectoryPoint_qcxomb In1;// '<S13>/In1'
+  SL_Bus_kinematic_simulation_JointTrajectoryPoint_qcxomb In1;// '<S12>/In1'
   SL_Bus_kinematic_simulation_JointTrajectoryPoint_qcxomb b_varargout_2;
   real_T b_varargout_2_Positions[128];
   real_T b_varargout_2_Velocities[128];
   real_T b_varargout_2_Accelerations[128];
   real_T b_varargout_2_Effort[128];
   uint8_T TmpSignalConversionAtSFun_c[192];// '<S2>/Assign to JointState msg'
-  real_T limJointVel[6];               // '<S6>/MATLAB Function'
-  real_T limJointPos[6];               // '<S6>/MATLAB Function'
   char_T charValue[32];
   char_T charValue_m[32];
   char_T charValue_c[32];
@@ -175,13 +173,12 @@ typedef struct {
 
 // Block states (default storage) for system '<Root>'
 typedef struct {
-  ros_slros_internal_block_GetP_T obj; // '<S12>/Get Parameter'
-  ros_slros_internal_block_GetP_T obj_f;// '<S12>/Get Parameter2'
-  ros_slros_internal_block_GetP_T obj_b;// '<S12>/Get Parameter5'
-  ros_slros_internal_block_GetP_T obj_n;// '<S12>/Get Parameter4'
-  ros_slros_internal_block_GetP_T obj_j;// '<S12>/Get Parameter3'
-  ros_slros_internal_block_GetP_T obj_e;// '<S12>/Get Parameter1'
-  ros_slros_internal_block_GetP_T obj_jq;// '<S6>/Get Parameter'
+  ros_slros_internal_block_GetP_T obj; // '<S11>/Get Parameter'
+  ros_slros_internal_block_GetP_T obj_f;// '<S11>/Get Parameter2'
+  ros_slros_internal_block_GetP_T obj_b;// '<S11>/Get Parameter5'
+  ros_slros_internal_block_GetP_T obj_n;// '<S11>/Get Parameter4'
+  ros_slros_internal_block_GetP_T obj_j;// '<S11>/Get Parameter3'
+  ros_slros_internal_block_GetP_T obj_e;// '<S11>/Get Parameter1'
   ros_slros_internal_block_GetP_T obj_a;// '<S10>/Get Parameter'
   ros_slros_internal_block_GetP_T obj_l;// '<S10>/Get Parameter1'
   ros_slros_internal_block_GetP_T obj_i;// '<S10>/Get Parameter2'
@@ -229,7 +226,7 @@ struct P_kinematic_simulation_T_ {
                                                                       //  Referenced by: '<S9>/Constant'
 
   SL_Bus_kinematic_simulation_JointTrajectoryPoint_qcxomb Out1_Y0;// Computed Parameter: Out1_Y0
-                                                                     //  Referenced by: '<S13>/Out1'
+                                                                     //  Referenced by: '<S12>/Out1'
 
   SL_Bus_kinematic_simulation_JointTrajectoryPoint_qcxomb Constant_Value_h;// Computed Parameter: Constant_Value_h
                                                                       //  Referenced by: '<S7>/Constant'
@@ -373,9 +370,8 @@ extern "C" {
 //  '<S8>'   : 'kinematic_simulation/Joint_State_Msg_Creator/Assign to JointState msg'
 //  '<S9>'   : 'kinematic_simulation/Joint_State_Msg_Creator/Blank Message'
 //  '<S10>'  : 'kinematic_simulation/Joint_State_Msg_Creator/Get Joint Names'
-//  '<S11>'  : 'kinematic_simulation/Robot Kinematic Model/MATLAB Function'
-//  '<S12>'  : 'kinematic_simulation/Robot Kinematic Model/Subsystem'
-//  '<S13>'  : 'kinematic_simulation/Subscribe/Enabled Subsystem'
+//  '<S11>'  : 'kinematic_simulation/Robot Kinematic Model/Subsystem'
+//  '<S12>'  : 'kinematic_simulation/Subscribe/Enabled Subsystem'
 
 #endif                                 // RTW_HEADER_kinematic_simulation_h_
 

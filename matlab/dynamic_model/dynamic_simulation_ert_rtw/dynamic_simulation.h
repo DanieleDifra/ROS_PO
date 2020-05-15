@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.127
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Fri May 15 19:40:32 2020
+// C/C++ source code generated on : Fri May 15 20:39:42 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -151,7 +151,7 @@
 // Block signals (default storage)
 typedef struct {
   SL_Bus_dynamic_simulation_sensor_msgs_JointState BusAssignment;// '<S4>/Bus Assignment' 
-  SL_Bus_dynamic_simulation_std_msgs_Float64MultiArray In1;// '<S23>/In1'
+  SL_Bus_dynamic_simulation_std_msgs_Float64MultiArray In1;// '<S22>/In1'
   SL_Bus_dynamic_simulation_std_msgs_Float64MultiArray b_varargout_2;
   SL_Bus_dynamic_simulation_std_msgs_MultiArrayDimension
     b_varargout_2_Layout_Dim[16];
@@ -619,19 +619,18 @@ typedef struct {
   n_robotics_manip_internal_R_k_T gobj_14_om;// '<S15>/MATLAB System'
   n_robotics_manip_internal_R_k_T gobj_15_e;// '<S15>/MATLAB System'
   n_robotics_manip_internal_R_k_T gobj_16_n;// '<S15>/MATLAB System'
-  ros_slros_internal_block_GetP_T obj_l;// '<S22>/Get Parameter12'
-  ros_slros_internal_block_GetP_T obj_lm;// '<S22>/Get Parameter1'
-  ros_slros_internal_block_GetP_T obj_a;// '<S22>/Get Parameter4'
-  ros_slros_internal_block_GetP_T obj_d;// '<S22>/Get Parameter5'
-  ros_slros_internal_block_GetP_T obj_h;// '<S22>/Get Parameter6'
-  ros_slros_internal_block_GetP_T obj_f0;// '<S22>/Get Parameter7'
-  ros_slros_internal_block_GetP_T obj_e;// '<S22>/Get Parameter2'
-  ros_slros_internal_block_GetP_T obj_ez;// '<S22>/Get Parameter3'
-  ros_slros_internal_block_GetP_T obj_io;// '<S22>/Get Parameter8'
-  ros_slros_internal_block_GetP_T obj_ezd;// '<S22>/Get Parameter9'
-  ros_slros_internal_block_GetP_T obj_n;// '<S22>/Get Parameter10'
-  ros_slros_internal_block_GetP_T obj_p;// '<S22>/Get Parameter11'
-  ros_slros_internal_block_GetP_T obj_j;// '<S10>/Get Parameter'
+  ros_slros_internal_block_GetP_T obj_l;// '<S21>/Get Parameter12'
+  ros_slros_internal_block_GetP_T obj_lm;// '<S21>/Get Parameter1'
+  ros_slros_internal_block_GetP_T obj_a;// '<S21>/Get Parameter4'
+  ros_slros_internal_block_GetP_T obj_d;// '<S21>/Get Parameter5'
+  ros_slros_internal_block_GetP_T obj_h;// '<S21>/Get Parameter6'
+  ros_slros_internal_block_GetP_T obj_f0;// '<S21>/Get Parameter7'
+  ros_slros_internal_block_GetP_T obj_e;// '<S21>/Get Parameter2'
+  ros_slros_internal_block_GetP_T obj_ez;// '<S21>/Get Parameter3'
+  ros_slros_internal_block_GetP_T obj_io;// '<S21>/Get Parameter8'
+  ros_slros_internal_block_GetP_T obj_ezd;// '<S21>/Get Parameter9'
+  ros_slros_internal_block_GetP_T obj_n;// '<S21>/Get Parameter10'
+  ros_slros_internal_block_GetP_T obj_p;// '<S21>/Get Parameter11'
   ros_slros_internal_block_GetP_T obj_m;// '<S19>/Get Parameter'
   ros_slros_internal_block_GetP_T obj_c;// '<S19>/Get Parameter1'
   ros_slros_internal_block_GetP_T obj_px;// '<S19>/Get Parameter2'
@@ -685,7 +684,7 @@ struct P_dynamic_simulation_T_ {
                                                                      //  Referenced by: '<S18>/Constant'
 
   SL_Bus_dynamic_simulation_std_msgs_Float64MultiArray Out1_Y0;// Computed Parameter: Out1_Y0
-                                                                  //  Referenced by: '<S23>/Out1'
+                                                                  //  Referenced by: '<S22>/Out1'
 
   SL_Bus_dynamic_simulation_std_msgs_Float64MultiArray Constant_Value_n;// Computed Parameter: Constant_Value_n
                                                                       //  Referenced by: '<S11>/Constant'
@@ -854,9 +853,8 @@ extern "C" {
 //  '<S18>'  : 'dynamic_simulation/Joint_State_Msg_Creator/Blank Message'
 //  '<S19>'  : 'dynamic_simulation/Joint_State_Msg_Creator/Get Joint Names'
 //  '<S20>'  : 'dynamic_simulation/Robot Dynamic Model/Forward Dynamics'
-//  '<S21>'  : 'dynamic_simulation/Robot Dynamic Model/MATLAB Function'
-//  '<S22>'  : 'dynamic_simulation/Robot Dynamic Model/Subsystem'
-//  '<S23>'  : 'dynamic_simulation/Subscribe/Enabled Subsystem'
+//  '<S21>'  : 'dynamic_simulation/Robot Dynamic Model/Subsystem'
+//  '<S22>'  : 'dynamic_simulation/Subscribe/Enabled Subsystem'
 
 #endif                                 // RTW_HEADER_dynamic_simulation_h_
 
