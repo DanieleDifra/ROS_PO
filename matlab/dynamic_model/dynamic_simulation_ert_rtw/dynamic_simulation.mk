@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'dynamic_simulation'. 
 ## 
 ## Makefile     : dynamic_simulation.mk
-## Generated on : Thu May 14 22:49:48 2020
+## Generated on : Fri May 15 19:40:46 2020
 ## MATLAB Coder version: 5.0 (R2020a)
 ## 
 ## Build Info:
@@ -23,11 +23,11 @@
 
 PRODUCT_NAME              = dynamic_simulation
 MAKEFILE                  = dynamic_simulation.mk
-MATLAB_ROOT               = /Applications/MATLAB_R2020a.app
-MATLAB_BIN                = /Applications/MATLAB_R2020a.app/bin
-MATLAB_ARCH_BIN           = $(MATLAB_BIN)/maci64
+MATLAB_ROOT               = /usr/local/MATLAB/R2020a
+MATLAB_BIN                = /usr/local/MATLAB/R2020a/bin
+MATLAB_ARCH_BIN           = $(MATLAB_BIN)/glnxa64
 MASTER_ANCHOR_DIR         = 
-START_DIR                 = /Users/luca/Documents/PoliMi/ROS_PO/matlab/dynamic_model
+START_DIR                 = /home/paolo/ROS_PO/matlab/dynamic_model
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0

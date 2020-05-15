@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'kinematic_simulation'. 
 ## 
 ## Makefile     : kinematic_simulation.mk
-## Generated on : Thu May 14 23:08:00 2020
+## Generated on : Fri May 15 16:50:51 2020
 ## MATLAB Coder version: 5.0 (R2020a)
 ## 
 ## Build Info:
@@ -23,11 +23,11 @@
 
 PRODUCT_NAME              = kinematic_simulation
 MAKEFILE                  = kinematic_simulation.mk
-MATLAB_ROOT               = /Applications/MATLAB_R2020a.app
-MATLAB_BIN                = /Applications/MATLAB_R2020a.app/bin
-MATLAB_ARCH_BIN           = $(MATLAB_BIN)/maci64
+MATLAB_ROOT               = /usr/local/MATLAB/R2020a
+MATLAB_BIN                = /usr/local/MATLAB/R2020a/bin
+MATLAB_ARCH_BIN           = $(MATLAB_BIN)/glnxa64
 MASTER_ANCHOR_DIR         = 
-START_DIR                 = /Users/luca/Documents/PoliMi/ROS_PO/matlab/kinematic_model
+START_DIR                 = /home/paolo/ROS_PO/matlab/kinematic_model
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
@@ -174,7 +174,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/kinematic_simulation_ert_rtw/kinematic_simulation.cpp $(START_DIR)/kinematic_simulation_ert_rtw/kinematic_simulation_data.cpp $(START_DIR)/kinematic_simulation_ert_rtw/rtGetInf.cpp $(START_DIR)/kinematic_simulation_ert_rtw/rtGetNaN.cpp $(START_DIR)/kinematic_simulation_ert_rtw/rt_nonfinite.cpp $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.cpp $(START_DIR)/kinematic_simulation_ert_rtw/slros_busmsg_conversion.cpp $(START_DIR)/kinematic_simulation_ert_rtw/slros_initialize.cpp $(MATLAB_ROOT)/toolbox/ros/slros/src/slros_generic_param.cpp
+SRCS = $(START_DIR)/kinematic_simulation_ert_rtw/kinematic_simulation.cpp $(START_DIR)/kinematic_simulation_ert_rtw/kinematic_simulation_data.cpp $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.cpp $(START_DIR)/kinematic_simulation_ert_rtw/slros_busmsg_conversion.cpp $(START_DIR)/kinematic_simulation_ert_rtw/slros_initialize.cpp $(MATLAB_ROOT)/toolbox/ros/slros/src/slros_generic_param.cpp
 
 MAIN_SRC = $(START_DIR)/kinematic_simulation_ert_rtw/ert_main.cpp
 
@@ -184,7 +184,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = kinematic_simulation.cpp.o kinematic_simulation_data.cpp.o rtGetInf.cpp.o rtGetNaN.cpp.o rt_nonfinite.cpp.o linuxinitialize.cpp.o slros_busmsg_conversion.cpp.o slros_initialize.cpp.o slros_generic_param.cpp.o
+OBJS = kinematic_simulation.cpp.o kinematic_simulation_data.cpp.o linuxinitialize.cpp.o slros_busmsg_conversion.cpp.o slros_initialize.cpp.o slros_generic_param.cpp.o
 
 MAIN_OBJ = ert_main.cpp.o
 
@@ -404,18 +404,6 @@ kinematic_simulation.cpp.o : $(START_DIR)/kinematic_simulation_ert_rtw/kinematic
 
 
 kinematic_simulation_data.cpp.o : $(START_DIR)/kinematic_simulation_ert_rtw/kinematic_simulation_data.cpp
-	$(CPP) $(CPPFLAGS) -o $@ $<
-
-
-rtGetInf.cpp.o : $(START_DIR)/kinematic_simulation_ert_rtw/rtGetInf.cpp
-	$(CPP) $(CPPFLAGS) -o $@ $<
-
-
-rtGetNaN.cpp.o : $(START_DIR)/kinematic_simulation_ert_rtw/rtGetNaN.cpp
-	$(CPP) $(CPPFLAGS) -o $@ $<
-
-
-rt_nonfinite.cpp.o : $(START_DIR)/kinematic_simulation_ert_rtw/rt_nonfinite.cpp
 	$(CPP) $(CPPFLAGS) -o $@ $<
 
 

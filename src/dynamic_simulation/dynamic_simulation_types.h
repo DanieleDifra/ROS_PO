@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynamic_simulation'.
 //
-// Model version                  : 1.125
+// Model version                  : 1.127
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Thu May 14 23:02:45 2020
+// C/C++ source code generated on : Fri May 15 19:40:32 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -154,6 +154,17 @@ typedef struct {
 
 #endif
 
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_dynamic_simulation_rosgraph_msgs_Clock_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_dynamic_simulation_rosgraph_msgs_Clock_
+
+// MsgType=rosgraph_msgs/Clock
+typedef struct {
+  // MsgType=ros_time/Time
+  SL_Bus_dynamic_simulation_ros_time_Time Clock_;
+} SL_Bus_dynamic_simulation_rosgraph_msgs_Clock;
+
+#endif
+
 #ifndef DEFINED_TYPEDEF_FOR_SL_Bus_dynamic_simulation_std_msgs_String_
 #define DEFINED_TYPEDEF_FOR_SL_Bus_dynamic_simulation_std_msgs_String_
 
@@ -200,17 +211,6 @@ typedef struct {
   // MsgType=std_msgs/Header
   SL_Bus_dynamic_simulation_std_msgs_Header Header;
 } SL_Bus_dynamic_simulation_sensor_msgs_JointState;
-
-#endif
-
-#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_dynamic_simulation_rosgraph_msgs_Clock_
-#define DEFINED_TYPEDEF_FOR_SL_Bus_dynamic_simulation_rosgraph_msgs_Clock_
-
-// MsgType=rosgraph_msgs/Clock
-typedef struct {
-  // MsgType=ros_time/Time
-  SL_Bus_dynamic_simulation_ros_time_Time Clock_;
-} SL_Bus_dynamic_simulation_rosgraph_msgs_Clock;
 
 #endif
 
@@ -320,25 +320,6 @@ typedef struct {
 
 #endif
 
-#ifndef struct_tag_rkSooZHJZnr3Dpfu1LNqfH
-#define struct_tag_rkSooZHJZnr3Dpfu1LNqfH
-
-struct tag_rkSooZHJZnr3Dpfu1LNqfH
-{
-  boolean_T matlabCodegenIsDeleted;
-  int32_T isInitialized;
-  boolean_T isSetupComplete;
-};
-
-#endif                                 //struct_tag_rkSooZHJZnr3Dpfu1LNqfH
-
-#ifndef typedef_ros_slros_internal_block_Publ_T
-#define typedef_ros_slros_internal_block_Publ_T
-
-typedef struct tag_rkSooZHJZnr3Dpfu1LNqfH ros_slros_internal_block_Publ_T;
-
-#endif                                 //typedef_ros_slros_internal_block_Publ_T
-
 #ifndef struct_tag_KSdGoEc2IyOHz4CLi4rcCD
 #define struct_tag_KSdGoEc2IyOHz4CLi4rcCD
 
@@ -375,6 +356,25 @@ struct tag_PzhaB0v2Sx4ikuHWZx5WUB
 typedef struct tag_PzhaB0v2Sx4ikuHWZx5WUB ros_slros_internal_block_GetP_T;
 
 #endif                                 //typedef_ros_slros_internal_block_GetP_T
+
+#ifndef struct_tag_rkSooZHJZnr3Dpfu1LNqfH
+#define struct_tag_rkSooZHJZnr3Dpfu1LNqfH
+
+struct tag_rkSooZHJZnr3Dpfu1LNqfH
+{
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+};
+
+#endif                                 //struct_tag_rkSooZHJZnr3Dpfu1LNqfH
+
+#ifndef typedef_ros_slros_internal_block_Publ_T
+#define typedef_ros_slros_internal_block_Publ_T
+
+typedef struct tag_rkSooZHJZnr3Dpfu1LNqfH ros_slros_internal_block_Publ_T;
+
+#endif                                 //typedef_ros_slros_internal_block_Publ_T
 
 #ifndef struct_tag_9SewJ4y3IXNs5GrZti8qkG
 #define struct_tag_9SewJ4y3IXNs5GrZti8qkG
@@ -436,24 +436,6 @@ struct emxArray_real_T
 typedef struct emxArray_real_T emxArray_real_T_dynamic_simul_T;
 
 #endif                                 //typedef_emxArray_real_T_dynamic_simul_T
-
-// Custom Type definition for MATLAB Function: '<Root>/Assign to JointState msg' 
-#ifndef struct_tag_bT1sNYKeiTHCFMEFtQq2wB
-#define struct_tag_bT1sNYKeiTHCFMEFtQq2wB
-
-struct tag_bT1sNYKeiTHCFMEFtQq2wB
-{
-  char_T f1[11];
-};
-
-#endif                                 //struct_tag_bT1sNYKeiTHCFMEFtQq2wB
-
-#ifndef typedef_cell_wrap_0_dynamic_simulatio_T
-#define typedef_cell_wrap_0_dynamic_simulatio_T
-
-typedef struct tag_bT1sNYKeiTHCFMEFtQq2wB cell_wrap_0_dynamic_simulatio_T;
-
-#endif                                 //typedef_cell_wrap_0_dynamic_simulatio_T
 
 #ifndef struct_tag_sS24XwgKvOMFYbEXa7sc1bB
 #define struct_tag_sS24XwgKvOMFYbEXa7sc1bB

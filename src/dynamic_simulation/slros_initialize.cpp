@@ -18,6 +18,27 @@ SimulinkPublisher<geometry_msgs::PoseStamped, SL_Bus_dynamic_simulation_geometry
 // For Block dynamic_simulation/Publish3
 SimulinkPublisher<geometry_msgs::TwistStamped, SL_Bus_dynamic_simulation_geometry_msgs_TwistStamped> Pub_dynamic_simulation_179;
 
+// For Block dynamic_simulation/Joint_State_Msg_Creator/Get Joint Names/Get Parameter
+SimulinkParameterArrayGetter<char_T, std::string> ParamGet_dynamic_simulation_224;
+
+// For Block dynamic_simulation/Joint_State_Msg_Creator/Get Joint Names/Get Parameter1
+SimulinkParameterArrayGetter<char_T, std::string> ParamGet_dynamic_simulation_228;
+
+// For Block dynamic_simulation/Joint_State_Msg_Creator/Get Joint Names/Get Parameter2
+SimulinkParameterArrayGetter<char_T, std::string> ParamGet_dynamic_simulation_229;
+
+// For Block dynamic_simulation/Joint_State_Msg_Creator/Get Joint Names/Get Parameter3
+SimulinkParameterArrayGetter<char_T, std::string> ParamGet_dynamic_simulation_230;
+
+// For Block dynamic_simulation/Joint_State_Msg_Creator/Get Joint Names/Get Parameter4
+SimulinkParameterArrayGetter<char_T, std::string> ParamGet_dynamic_simulation_231;
+
+// For Block dynamic_simulation/Joint_State_Msg_Creator/Get Joint Names/Get Parameter5
+SimulinkParameterArrayGetter<char_T, std::string> ParamGet_dynamic_simulation_232;
+
+// For Block dynamic_simulation/Robot Dynamic Model/Get Parameter
+SimulinkParameterGetter<real64_T, double> ParamGet_dynamic_simulation_196;
+
 // For Block dynamic_simulation/Robot Dynamic Model/Subsystem/Get Parameter1
 SimulinkParameterGetter<real64_T, double> ParamGet_dynamic_simulation_132;
 

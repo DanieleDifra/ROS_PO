@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynamic_simulation'.
 //
-// Model version                  : 1.125
+// Model version                  : 1.127
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Thu May 14 23:02:45 2020
+// C/C++ source code generated on : Fri May 15 19:40:32 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -125,7 +125,7 @@ static void dynamic_simulation_xrot_l(int32_T n, real_T x[16], int32_T ix0,
 static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16]);
 static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
   [4]);
-static void matlabCodegenHandle_matlab_kq2t(ros_slros_internal_block_GetP_T *obj);
+static void matlabCodegenHandle_matlabCodeg(ros_slros_internal_block_GetP_T *obj);
 static void emxFreeStruct_c_rigidBodyJoint(c_rigidBodyJoint_dynamic_simu_T
   *pStruct);
 static void emxFreeStruct_o_robotics_manip_(o_robotics_manip_internal_Rig_T
@@ -146,7 +146,7 @@ static void emxFreeStruct_robotics_slmani_k(robotics_slmanip_internal_b_k_T
   *pStruct);
 static void emxFreeStruct_n_robotics_mani_k(n_robotics_manip_internal_R_k_T
   *pStruct);
-static void dynamic_simul_matlabCodegenHa_m(ros_slros_internal_block_Subs_T *obj);
+static void dynamic_simul_matlabCodegenHa_l(ros_slros_internal_block_Subs_T *obj);
 static void emxFreeStruct_c_rigidBodyJoint2(c_rigidBodyJoint_dynamic_s_kq_T
   *pStruct);
 static void emxFreeStruct_o_robotics_man_kq(o_robotics_manip_internal__kq_T
@@ -157,7 +157,7 @@ static void emxFreeStruct_robotics_slman_kq(robotics_slmanip_internal__kq_T
   *pStruct);
 static void emxFreeStruct_n_robotics_man_kq(n_robotics_manip_internal__kq_T
   *pStruct);
-static void matlabCodegenHandle_matlabCodeg(ros_slros_internal_block_Publ_T *obj);
+static void matlabCodegenHandle_matl_kq2tzt(ros_slros_internal_block_Publ_T *obj);
 static void emxInitStruct_c_rigidBodyJoint(c_rigidBodyJoint_dynamic_simu_T
   *pStruct);
 static void emxInitStruct_o_robotics_manip_(o_robotics_manip_internal_Rig_T
@@ -497,24 +497,24 @@ static void dy_rigidBodyJoint_get_JointAxis(const
 
   boolean_T guard1 = false;
   int32_T exitg1;
-  for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 8;
-       dynamic_simulation_B.b_kstr_p++) {
-    dynamic_simulation_B.b_px[dynamic_simulation_B.b_kstr_p] =
-      tmp[dynamic_simulation_B.b_kstr_p];
+  for (dynamic_simulation_B.b_kstr_o = 0; dynamic_simulation_B.b_kstr_o < 8;
+       dynamic_simulation_B.b_kstr_o++) {
+    dynamic_simulation_B.b_as[dynamic_simulation_B.b_kstr_o] =
+      tmp[dynamic_simulation_B.b_kstr_o];
   }
 
   dynamic_simulation_B.b_bool_d = false;
   if (obj->Type->size[1] == 8) {
-    dynamic_simulation_B.b_kstr_p = 1;
+    dynamic_simulation_B.b_kstr_o = 1;
     do {
       exitg1 = 0;
-      if (dynamic_simulation_B.b_kstr_p - 1 < 8) {
-        dynamic_simulation_B.kstr_p = dynamic_simulation_B.b_kstr_p - 1;
-        if (obj->Type->data[dynamic_simulation_B.kstr_p] !=
-            dynamic_simulation_B.b_px[dynamic_simulation_B.kstr_p]) {
+      if (dynamic_simulation_B.b_kstr_o - 1 < 8) {
+        dynamic_simulation_B.kstr_i = dynamic_simulation_B.b_kstr_o - 1;
+        if (obj->Type->data[dynamic_simulation_B.kstr_i] !=
+            dynamic_simulation_B.b_as[dynamic_simulation_B.kstr_i]) {
           exitg1 = 1;
         } else {
-          dynamic_simulation_B.b_kstr_p++;
+          dynamic_simulation_B.b_kstr_o++;
         }
       } else {
         dynamic_simulation_B.b_bool_d = true;
@@ -527,24 +527,24 @@ static void dy_rigidBodyJoint_get_JointAxis(const
   if (dynamic_simulation_B.b_bool_d) {
     guard1 = true;
   } else {
-    for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 9;
-         dynamic_simulation_B.b_kstr_p++) {
-      dynamic_simulation_B.b_j[dynamic_simulation_B.b_kstr_p] =
-        tmp_0[dynamic_simulation_B.b_kstr_p];
+    for (dynamic_simulation_B.b_kstr_o = 0; dynamic_simulation_B.b_kstr_o < 9;
+         dynamic_simulation_B.b_kstr_o++) {
+      dynamic_simulation_B.b_px[dynamic_simulation_B.b_kstr_o] =
+        tmp_0[dynamic_simulation_B.b_kstr_o];
     }
 
     dynamic_simulation_B.b_bool_d = false;
     if (obj->Type->size[1] == 9) {
-      dynamic_simulation_B.b_kstr_p = 1;
+      dynamic_simulation_B.b_kstr_o = 1;
       do {
         exitg1 = 0;
-        if (dynamic_simulation_B.b_kstr_p - 1 < 9) {
-          dynamic_simulation_B.kstr_p = dynamic_simulation_B.b_kstr_p - 1;
-          if (obj->Type->data[dynamic_simulation_B.kstr_p] !=
-              dynamic_simulation_B.b_j[dynamic_simulation_B.kstr_p]) {
+        if (dynamic_simulation_B.b_kstr_o - 1 < 9) {
+          dynamic_simulation_B.kstr_i = dynamic_simulation_B.b_kstr_o - 1;
+          if (obj->Type->data[dynamic_simulation_B.kstr_i] !=
+              dynamic_simulation_B.b_px[dynamic_simulation_B.kstr_i]) {
             exitg1 = 1;
           } else {
-            dynamic_simulation_B.b_kstr_p++;
+            dynamic_simulation_B.b_kstr_o++;
           }
         } else {
           dynamic_simulation_B.b_bool_d = true;
@@ -597,19 +597,19 @@ static void RigidBodyTree_forwardKinematics(p_robotics_manip_internal_Rig_T *obj
 
   int32_T exitg1;
   dynamic_simulation_B.n = obj->NumBodies;
-  for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 16;
-       dynamic_simulation_B.b_kstr_n++) {
-    dynamic_simulation_B.c_f1[dynamic_simulation_B.b_kstr_n] =
-      tmp[dynamic_simulation_B.b_kstr_n];
+  for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 16;
+       dynamic_simulation_B.b_kstr_p++) {
+    dynamic_simulation_B.c_f1[dynamic_simulation_B.b_kstr_p] =
+      tmp[dynamic_simulation_B.b_kstr_p];
   }
 
-  dynamic_simulation_B.b_kstr_n = Ttree->size[0] * Ttree->size[1];
+  dynamic_simulation_B.b_kstr_p = Ttree->size[0] * Ttree->size[1];
   Ttree->size[0] = 1;
-  dynamic_simulation_B.e_o = static_cast<int32_T>(dynamic_simulation_B.n);
-  Ttree->size[1] = dynamic_simulation_B.e_o;
-  d_emxEnsureCapacity_f_cell_wrap(Ttree, dynamic_simulation_B.b_kstr_n);
-  if (dynamic_simulation_B.e_o != 0) {
-    dynamic_simulation_B.ntilecols = dynamic_simulation_B.e_o - 1;
+  dynamic_simulation_B.e = static_cast<int32_T>(dynamic_simulation_B.n);
+  Ttree->size[1] = dynamic_simulation_B.e;
+  d_emxEnsureCapacity_f_cell_wrap(Ttree, dynamic_simulation_B.b_kstr_p);
+  if (dynamic_simulation_B.e != 0) {
+    dynamic_simulation_B.ntilecols = dynamic_simulation_B.e - 1;
     if (0 <= dynamic_simulation_B.ntilecols) {
       memcpy(&dynamic_simulation_B.expl_temp.f1[0], &dynamic_simulation_B.c_f1[0],
              sizeof(real_T) << 4U);
@@ -627,10 +627,10 @@ static void RigidBodyTree_forwardKinematics(p_robotics_manip_internal_Rig_T *obj
     - 1;
   dynamic_simulati_emxInit_char_T(&switch_expression, 2);
   if (0 <= dynamic_simulation_B.ntilecols) {
-    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 5;
-         dynamic_simulation_B.b_kstr_n++) {
-      dynamic_simulation_B.b_ao[dynamic_simulation_B.b_kstr_n] =
-        tmp_0[dynamic_simulation_B.b_kstr_n];
+    for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 5;
+         dynamic_simulation_B.b_kstr_p++) {
+      dynamic_simulation_B.b_f[dynamic_simulation_B.b_kstr_p] =
+        tmp_0[dynamic_simulation_B.b_kstr_p];
     }
   }
 
@@ -640,41 +640,40 @@ static void RigidBodyTree_forwardKinematics(p_robotics_manip_internal_Rig_T *obj
     dynamic_simulation_B.n = body->JointInternal.PositionNumber;
     dynamic_simulation_B.n += dynamic_simulation_B.k;
     if (dynamic_simulation_B.k > dynamic_simulation_B.n - 1.0) {
-      dynamic_simulation_B.e_o = 0;
-      dynamic_simulation_B.d_m = 0;
+      dynamic_simulation_B.e = 0;
+      dynamic_simulation_B.d_p = 0;
     } else {
-      dynamic_simulation_B.e_o = static_cast<int32_T>(dynamic_simulation_B.k) -
-        1;
-      dynamic_simulation_B.d_m = static_cast<int32_T>(dynamic_simulation_B.n -
+      dynamic_simulation_B.e = static_cast<int32_T>(dynamic_simulation_B.k) - 1;
+      dynamic_simulation_B.d_p = static_cast<int32_T>(dynamic_simulation_B.n -
         1.0);
     }
 
-    dynamic_simulation_B.b_kstr_n = switch_expression->size[0] *
+    dynamic_simulation_B.b_kstr_p = switch_expression->size[0] *
       switch_expression->size[1];
     switch_expression->size[0] = 1;
     switch_expression->size[1] = body->JointInternal.Type->size[1];
     dynami_emxEnsureCapacity_char_T(switch_expression,
-      dynamic_simulation_B.b_kstr_n);
-    dynamic_simulation_B.loop_ub_l = body->JointInternal.Type->size[0] *
+      dynamic_simulation_B.b_kstr_p);
+    dynamic_simulation_B.loop_ub_f = body->JointInternal.Type->size[0] *
       body->JointInternal.Type->size[1] - 1;
-    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <=
-         dynamic_simulation_B.loop_ub_l; dynamic_simulation_B.b_kstr_n++) {
-      switch_expression->data[dynamic_simulation_B.b_kstr_n] =
-        body->JointInternal.Type->data[dynamic_simulation_B.b_kstr_n];
+    for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p <=
+         dynamic_simulation_B.loop_ub_f; dynamic_simulation_B.b_kstr_p++) {
+      switch_expression->data[dynamic_simulation_B.b_kstr_p] =
+        body->JointInternal.Type->data[dynamic_simulation_B.b_kstr_p];
     }
 
     dynamic_simulation_B.b_bool_e = false;
     if (switch_expression->size[1] == 5) {
-      dynamic_simulation_B.b_kstr_n = 1;
+      dynamic_simulation_B.b_kstr_p = 1;
       do {
         exitg1 = 0;
-        if (dynamic_simulation_B.b_kstr_n - 1 < 5) {
-          dynamic_simulation_B.loop_ub_l = dynamic_simulation_B.b_kstr_n - 1;
-          if (switch_expression->data[dynamic_simulation_B.loop_ub_l] !=
-              dynamic_simulation_B.b_ao[dynamic_simulation_B.loop_ub_l]) {
+        if (dynamic_simulation_B.b_kstr_p - 1 < 5) {
+          dynamic_simulation_B.loop_ub_f = dynamic_simulation_B.b_kstr_p - 1;
+          if (switch_expression->data[dynamic_simulation_B.loop_ub_f] !=
+              dynamic_simulation_B.b_f[dynamic_simulation_B.loop_ub_f]) {
             exitg1 = 1;
           } else {
-            dynamic_simulation_B.b_kstr_n++;
+            dynamic_simulation_B.b_kstr_p++;
           }
         } else {
           dynamic_simulation_B.b_bool_e = true;
@@ -684,26 +683,26 @@ static void RigidBodyTree_forwardKinematics(p_robotics_manip_internal_Rig_T *obj
     }
 
     if (dynamic_simulation_B.b_bool_e) {
-      dynamic_simulation_B.b_kstr_n = 0;
+      dynamic_simulation_B.b_kstr_p = 0;
     } else {
-      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 8;
-           dynamic_simulation_B.b_kstr_n++) {
-        dynamic_simulation_B.b_ct[dynamic_simulation_B.b_kstr_n] =
-          tmp_1[dynamic_simulation_B.b_kstr_n];
+      for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 8;
+           dynamic_simulation_B.b_kstr_p++) {
+        dynamic_simulation_B.b_ax[dynamic_simulation_B.b_kstr_p] =
+          tmp_1[dynamic_simulation_B.b_kstr_p];
       }
 
       dynamic_simulation_B.b_bool_e = false;
       if (switch_expression->size[1] == 8) {
-        dynamic_simulation_B.b_kstr_n = 1;
+        dynamic_simulation_B.b_kstr_p = 1;
         do {
           exitg1 = 0;
-          if (dynamic_simulation_B.b_kstr_n - 1 < 8) {
-            dynamic_simulation_B.loop_ub_l = dynamic_simulation_B.b_kstr_n - 1;
-            if (switch_expression->data[dynamic_simulation_B.loop_ub_l] !=
-                dynamic_simulation_B.b_ct[dynamic_simulation_B.loop_ub_l]) {
+          if (dynamic_simulation_B.b_kstr_p - 1 < 8) {
+            dynamic_simulation_B.loop_ub_f = dynamic_simulation_B.b_kstr_p - 1;
+            if (switch_expression->data[dynamic_simulation_B.loop_ub_f] !=
+                dynamic_simulation_B.b_ax[dynamic_simulation_B.loop_ub_f]) {
               exitg1 = 1;
             } else {
-              dynamic_simulation_B.b_kstr_n++;
+              dynamic_simulation_B.b_kstr_p++;
             }
           } else {
             dynamic_simulation_B.b_bool_e = true;
@@ -713,13 +712,13 @@ static void RigidBodyTree_forwardKinematics(p_robotics_manip_internal_Rig_T *obj
       }
 
       if (dynamic_simulation_B.b_bool_e) {
-        dynamic_simulation_B.b_kstr_n = 1;
+        dynamic_simulation_B.b_kstr_p = 1;
       } else {
-        dynamic_simulation_B.b_kstr_n = -1;
+        dynamic_simulation_B.b_kstr_p = -1;
       }
     }
 
-    switch (dynamic_simulation_B.b_kstr_n) {
+    switch (dynamic_simulation_B.b_kstr_p) {
      case 0:
       memset(&dynamic_simulation_B.c_f1[0], 0, sizeof(real_T) << 4U);
       dynamic_simulation_B.c_f1[0] = 1.0;
@@ -731,17 +730,17 @@ static void RigidBodyTree_forwardKinematics(p_robotics_manip_internal_Rig_T *obj
      case 1:
       dy_rigidBodyJoint_get_JointAxis(&body->JointInternal,
         dynamic_simulation_B.v);
-      dynamic_simulation_B.d_m -= dynamic_simulation_B.e_o;
-      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <
-           dynamic_simulation_B.d_m; dynamic_simulation_B.b_kstr_n++) {
-        dynamic_simulation_B.e_data[dynamic_simulation_B.b_kstr_n] =
-          dynamic_simulation_B.e_o + dynamic_simulation_B.b_kstr_n;
+      dynamic_simulation_B.d_p -= dynamic_simulation_B.e;
+      for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p <
+           dynamic_simulation_B.d_p; dynamic_simulation_B.b_kstr_p++) {
+        dynamic_simulation_B.e_data[dynamic_simulation_B.b_kstr_p] =
+          dynamic_simulation_B.e + dynamic_simulation_B.b_kstr_p;
       }
 
       dynamic_simulation_B.result_data[0] = dynamic_simulation_B.v[0];
       dynamic_simulation_B.result_data[1] = dynamic_simulation_B.v[1];
       dynamic_simulation_B.result_data[2] = dynamic_simulation_B.v[2];
-      if (0 <= (dynamic_simulation_B.d_m != 0) - 1) {
+      if (0 <= (dynamic_simulation_B.d_p != 0) - 1) {
         dynamic_simulation_B.result_data[3] = qvec[dynamic_simulation_B.e_data[0]];
       }
 
@@ -762,57 +761,57 @@ static void RigidBodyTree_forwardKinematics(p_robotics_manip_internal_Rig_T *obj
         dynamic_simulation_B.k;
       dynamic_simulation_B.tempR_tmp = dynamic_simulation_B.v[1] *
         dynamic_simulation_B.v[0] * (1.0 - dynamic_simulation_B.k);
-      dynamic_simulation_B.tempR_tmp_l = dynamic_simulation_B.v[2] *
+      dynamic_simulation_B.tempR_tmp_i = dynamic_simulation_B.v[2] *
         dynamic_simulation_B.sth;
       dynamic_simulation_B.tempR[1] = dynamic_simulation_B.tempR_tmp -
-        dynamic_simulation_B.tempR_tmp_l;
-      dynamic_simulation_B.tempR_tmp_o = dynamic_simulation_B.v[2] *
+        dynamic_simulation_B.tempR_tmp_i;
+      dynamic_simulation_B.tempR_tmp_f = dynamic_simulation_B.v[2] *
         dynamic_simulation_B.v[0] * (1.0 - dynamic_simulation_B.k);
-      dynamic_simulation_B.tempR_tmp_o2 = dynamic_simulation_B.v[1] *
+      dynamic_simulation_B.tempR_tmp_g = dynamic_simulation_B.v[1] *
         dynamic_simulation_B.sth;
-      dynamic_simulation_B.tempR[2] = dynamic_simulation_B.tempR_tmp_o +
-        dynamic_simulation_B.tempR_tmp_o2;
+      dynamic_simulation_B.tempR[2] = dynamic_simulation_B.tempR_tmp_f +
+        dynamic_simulation_B.tempR_tmp_g;
       dynamic_simulation_B.tempR[3] = dynamic_simulation_B.tempR_tmp +
-        dynamic_simulation_B.tempR_tmp_l;
+        dynamic_simulation_B.tempR_tmp_i;
       dynamic_simulation_B.tempR[4] = dynamic_simulation_B.v[1] *
         dynamic_simulation_B.v[1] * (1.0 - dynamic_simulation_B.k) +
         dynamic_simulation_B.k;
       dynamic_simulation_B.tempR_tmp = dynamic_simulation_B.v[2] *
         dynamic_simulation_B.v[1] * (1.0 - dynamic_simulation_B.k);
-      dynamic_simulation_B.tempR_tmp_l = dynamic_simulation_B.v[0] *
+      dynamic_simulation_B.tempR_tmp_i = dynamic_simulation_B.v[0] *
         dynamic_simulation_B.sth;
       dynamic_simulation_B.tempR[5] = dynamic_simulation_B.tempR_tmp -
-        dynamic_simulation_B.tempR_tmp_l;
-      dynamic_simulation_B.tempR[6] = dynamic_simulation_B.tempR_tmp_o -
-        dynamic_simulation_B.tempR_tmp_o2;
+        dynamic_simulation_B.tempR_tmp_i;
+      dynamic_simulation_B.tempR[6] = dynamic_simulation_B.tempR_tmp_f -
+        dynamic_simulation_B.tempR_tmp_g;
       dynamic_simulation_B.tempR[7] = dynamic_simulation_B.tempR_tmp +
-        dynamic_simulation_B.tempR_tmp_l;
+        dynamic_simulation_B.tempR_tmp_i;
       dynamic_simulation_B.tempR[8] = dynamic_simulation_B.v[2] *
         dynamic_simulation_B.v[2] * (1.0 - dynamic_simulation_B.k) +
         dynamic_simulation_B.k;
-      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 3;
-           dynamic_simulation_B.b_kstr_n++) {
-        dynamic_simulation_B.e_o = dynamic_simulation_B.b_kstr_n + 1;
-        dynamic_simulation_B.R_dh[dynamic_simulation_B.e_o - 1] =
-          dynamic_simulation_B.tempR[(dynamic_simulation_B.e_o - 1) * 3];
-        dynamic_simulation_B.e_o = dynamic_simulation_B.b_kstr_n + 1;
-        dynamic_simulation_B.R_dh[dynamic_simulation_B.e_o + 2] =
-          dynamic_simulation_B.tempR[(dynamic_simulation_B.e_o - 1) * 3 + 1];
-        dynamic_simulation_B.e_o = dynamic_simulation_B.b_kstr_n + 1;
-        dynamic_simulation_B.R_dh[dynamic_simulation_B.e_o + 5] =
-          dynamic_simulation_B.tempR[(dynamic_simulation_B.e_o - 1) * 3 + 2];
+      for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 3;
+           dynamic_simulation_B.b_kstr_p++) {
+        dynamic_simulation_B.e = dynamic_simulation_B.b_kstr_p + 1;
+        dynamic_simulation_B.R_dh[dynamic_simulation_B.e - 1] =
+          dynamic_simulation_B.tempR[(dynamic_simulation_B.e - 1) * 3];
+        dynamic_simulation_B.e = dynamic_simulation_B.b_kstr_p + 1;
+        dynamic_simulation_B.R_dh[dynamic_simulation_B.e + 2] =
+          dynamic_simulation_B.tempR[(dynamic_simulation_B.e - 1) * 3 + 1];
+        dynamic_simulation_B.e = dynamic_simulation_B.b_kstr_p + 1;
+        dynamic_simulation_B.R_dh[dynamic_simulation_B.e + 5] =
+          dynamic_simulation_B.tempR[(dynamic_simulation_B.e - 1) * 3 + 2];
       }
 
       memset(&dynamic_simulation_B.c_f1[0], 0, sizeof(real_T) << 4U);
-      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 3;
-           dynamic_simulation_B.b_kstr_n++) {
-        dynamic_simulation_B.d_m = dynamic_simulation_B.b_kstr_n << 2;
-        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_m] =
-          dynamic_simulation_B.R_dh[3 * dynamic_simulation_B.b_kstr_n];
-        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_m + 1] =
-          dynamic_simulation_B.R_dh[3 * dynamic_simulation_B.b_kstr_n + 1];
-        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_m + 2] =
-          dynamic_simulation_B.R_dh[3 * dynamic_simulation_B.b_kstr_n + 2];
+      for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 3;
+           dynamic_simulation_B.b_kstr_p++) {
+        dynamic_simulation_B.d_p = dynamic_simulation_B.b_kstr_p << 2;
+        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_p] =
+          dynamic_simulation_B.R_dh[3 * dynamic_simulation_B.b_kstr_p];
+        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_p + 1] =
+          dynamic_simulation_B.R_dh[3 * dynamic_simulation_B.b_kstr_p + 1];
+        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_p + 2] =
+          dynamic_simulation_B.R_dh[3 * dynamic_simulation_B.b_kstr_p + 2];
       }
 
       dynamic_simulation_B.c_f1[15] = 1.0;
@@ -825,18 +824,18 @@ static void RigidBodyTree_forwardKinematics(p_robotics_manip_internal_Rig_T *obj
       dynamic_simulation_B.tempR[0] = 1.0;
       dynamic_simulation_B.tempR[4] = 1.0;
       dynamic_simulation_B.tempR[8] = 1.0;
-      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 3;
-           dynamic_simulation_B.b_kstr_n++) {
-        dynamic_simulation_B.d_m = dynamic_simulation_B.b_kstr_n << 2;
-        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_m] =
-          dynamic_simulation_B.tempR[3 * dynamic_simulation_B.b_kstr_n];
-        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_m + 1] =
-          dynamic_simulation_B.tempR[3 * dynamic_simulation_B.b_kstr_n + 1];
-        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_m + 2] =
-          dynamic_simulation_B.tempR[3 * dynamic_simulation_B.b_kstr_n + 2];
-        dynamic_simulation_B.c_f1[dynamic_simulation_B.b_kstr_n + 12] =
-          dynamic_simulation_B.v[dynamic_simulation_B.b_kstr_n] *
-          qvec[dynamic_simulation_B.e_o];
+      for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 3;
+           dynamic_simulation_B.b_kstr_p++) {
+        dynamic_simulation_B.d_p = dynamic_simulation_B.b_kstr_p << 2;
+        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_p] =
+          dynamic_simulation_B.tempR[3 * dynamic_simulation_B.b_kstr_p];
+        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_p + 1] =
+          dynamic_simulation_B.tempR[3 * dynamic_simulation_B.b_kstr_p + 1];
+        dynamic_simulation_B.c_f1[dynamic_simulation_B.d_p + 2] =
+          dynamic_simulation_B.tempR[3 * dynamic_simulation_B.b_kstr_p + 2];
+        dynamic_simulation_B.c_f1[dynamic_simulation_B.b_kstr_p + 12] =
+          dynamic_simulation_B.v[dynamic_simulation_B.b_kstr_p] *
+          qvec[dynamic_simulation_B.e];
       }
 
       dynamic_simulation_B.c_f1[3] = 0.0;
@@ -846,107 +845,107 @@ static void RigidBodyTree_forwardKinematics(p_robotics_manip_internal_Rig_T *obj
       break;
     }
 
-    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 16;
-         dynamic_simulation_B.b_kstr_n++) {
-      dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_n] =
-        body->JointInternal.JointToParentTransform[dynamic_simulation_B.b_kstr_n];
+    for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 16;
+         dynamic_simulation_B.b_kstr_p++) {
+      dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_p] =
+        body->JointInternal.JointToParentTransform[dynamic_simulation_B.b_kstr_p];
     }
 
-    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 16;
-         dynamic_simulation_B.b_kstr_n++) {
-      dynamic_simulation_B.b[dynamic_simulation_B.b_kstr_n] =
-        body->JointInternal.ChildToJointTransform[dynamic_simulation_B.b_kstr_n];
+    for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 16;
+         dynamic_simulation_B.b_kstr_p++) {
+      dynamic_simulation_B.b[dynamic_simulation_B.b_kstr_p] =
+        body->JointInternal.ChildToJointTransform[dynamic_simulation_B.b_kstr_p];
     }
 
-    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 4;
-         dynamic_simulation_B.b_kstr_n++) {
-      for (dynamic_simulation_B.e_o = 0; dynamic_simulation_B.e_o < 4;
-           dynamic_simulation_B.e_o++) {
-        dynamic_simulation_B.d_m = dynamic_simulation_B.e_o << 2;
-        dynamic_simulation_B.loop_ub_l = dynamic_simulation_B.b_kstr_n +
-          dynamic_simulation_B.d_m;
-        dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_l] = 0.0;
-        dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_l] +=
-          dynamic_simulation_B.c_f1[dynamic_simulation_B.d_m] *
-          dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_n];
-        dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_l] +=
-          dynamic_simulation_B.c_f1[dynamic_simulation_B.d_m + 1] *
-          dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_n + 4];
-        dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_l] +=
-          dynamic_simulation_B.c_f1[dynamic_simulation_B.d_m + 2] *
-          dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_n + 8];
-        dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_l] +=
-          dynamic_simulation_B.c_f1[dynamic_simulation_B.d_m + 3] *
-          dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_n + 12];
+    for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 4;
+         dynamic_simulation_B.b_kstr_p++) {
+      for (dynamic_simulation_B.e = 0; dynamic_simulation_B.e < 4;
+           dynamic_simulation_B.e++) {
+        dynamic_simulation_B.d_p = dynamic_simulation_B.e << 2;
+        dynamic_simulation_B.loop_ub_f = dynamic_simulation_B.b_kstr_p +
+          dynamic_simulation_B.d_p;
+        dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_f] = 0.0;
+        dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_f] +=
+          dynamic_simulation_B.c_f1[dynamic_simulation_B.d_p] *
+          dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_p];
+        dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_f] +=
+          dynamic_simulation_B.c_f1[dynamic_simulation_B.d_p + 1] *
+          dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_p + 4];
+        dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_f] +=
+          dynamic_simulation_B.c_f1[dynamic_simulation_B.d_p + 2] *
+          dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_p + 8];
+        dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_f] +=
+          dynamic_simulation_B.c_f1[dynamic_simulation_B.d_p + 3] *
+          dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_p + 12];
       }
 
-      for (dynamic_simulation_B.e_o = 0; dynamic_simulation_B.e_o < 4;
-           dynamic_simulation_B.e_o++) {
-        dynamic_simulation_B.d_m = dynamic_simulation_B.e_o << 2;
-        dynamic_simulation_B.loop_ub_l = dynamic_simulation_B.b_kstr_n +
-          dynamic_simulation_B.d_m;
+      for (dynamic_simulation_B.e = 0; dynamic_simulation_B.e < 4;
+           dynamic_simulation_B.e++) {
+        dynamic_simulation_B.d_p = dynamic_simulation_B.e << 2;
+        dynamic_simulation_B.loop_ub_f = dynamic_simulation_B.b_kstr_p +
+          dynamic_simulation_B.d_p;
         Ttree->data[dynamic_simulation_B.b_jtilecol]
-          .f1[dynamic_simulation_B.loop_ub_l] = 0.0;
+          .f1[dynamic_simulation_B.loop_ub_f] = 0.0;
         Ttree->data[dynamic_simulation_B.b_jtilecol]
-          .f1[dynamic_simulation_B.loop_ub_l] +=
-          dynamic_simulation_B.b[dynamic_simulation_B.d_m] *
-          dynamic_simulation_B.a_p[dynamic_simulation_B.b_kstr_n];
+          .f1[dynamic_simulation_B.loop_ub_f] +=
+          dynamic_simulation_B.b[dynamic_simulation_B.d_p] *
+          dynamic_simulation_B.a_p[dynamic_simulation_B.b_kstr_p];
         Ttree->data[dynamic_simulation_B.b_jtilecol]
-          .f1[dynamic_simulation_B.loop_ub_l] +=
-          dynamic_simulation_B.b[dynamic_simulation_B.d_m + 1] *
-          dynamic_simulation_B.a_p[dynamic_simulation_B.b_kstr_n + 4];
+          .f1[dynamic_simulation_B.loop_ub_f] +=
+          dynamic_simulation_B.b[dynamic_simulation_B.d_p + 1] *
+          dynamic_simulation_B.a_p[dynamic_simulation_B.b_kstr_p + 4];
         Ttree->data[dynamic_simulation_B.b_jtilecol]
-          .f1[dynamic_simulation_B.loop_ub_l] +=
-          dynamic_simulation_B.b[dynamic_simulation_B.d_m + 2] *
-          dynamic_simulation_B.a_p[dynamic_simulation_B.b_kstr_n + 8];
+          .f1[dynamic_simulation_B.loop_ub_f] +=
+          dynamic_simulation_B.b[dynamic_simulation_B.d_p + 2] *
+          dynamic_simulation_B.a_p[dynamic_simulation_B.b_kstr_p + 8];
         Ttree->data[dynamic_simulation_B.b_jtilecol]
-          .f1[dynamic_simulation_B.loop_ub_l] +=
-          dynamic_simulation_B.b[dynamic_simulation_B.d_m + 3] *
-          dynamic_simulation_B.a_p[dynamic_simulation_B.b_kstr_n + 12];
+          .f1[dynamic_simulation_B.loop_ub_f] +=
+          dynamic_simulation_B.b[dynamic_simulation_B.d_p + 3] *
+          dynamic_simulation_B.a_p[dynamic_simulation_B.b_kstr_p + 12];
       }
     }
 
     dynamic_simulation_B.k = dynamic_simulation_B.n;
     if (body->ParentIndex > 0.0) {
-      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 16;
-           dynamic_simulation_B.b_kstr_n++) {
-        dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_n] = Ttree->data[
+      for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 16;
+           dynamic_simulation_B.b_kstr_p++) {
+        dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_p] = Ttree->data[
           static_cast<int32_T>(body->ParentIndex) - 1]
-          .f1[dynamic_simulation_B.b_kstr_n];
+          .f1[dynamic_simulation_B.b_kstr_p];
       }
 
-      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 4;
-           dynamic_simulation_B.b_kstr_n++) {
-        for (dynamic_simulation_B.e_o = 0; dynamic_simulation_B.e_o < 4;
-             dynamic_simulation_B.e_o++) {
-          dynamic_simulation_B.d_m = dynamic_simulation_B.e_o << 2;
-          dynamic_simulation_B.loop_ub_l = dynamic_simulation_B.b_kstr_n +
-            dynamic_simulation_B.d_m;
-          dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_l] = 0.0;
-          dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_l] +=
+      for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 4;
+           dynamic_simulation_B.b_kstr_p++) {
+        for (dynamic_simulation_B.e = 0; dynamic_simulation_B.e < 4;
+             dynamic_simulation_B.e++) {
+          dynamic_simulation_B.d_p = dynamic_simulation_B.e << 2;
+          dynamic_simulation_B.loop_ub_f = dynamic_simulation_B.b_kstr_p +
+            dynamic_simulation_B.d_p;
+          dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_f] = 0.0;
+          dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_f] +=
             Ttree->data[dynamic_simulation_B.b_jtilecol]
-            .f1[dynamic_simulation_B.d_m] *
-            dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_n];
-          dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_l] +=
+            .f1[dynamic_simulation_B.d_p] *
+            dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_p];
+          dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_f] +=
             Ttree->data[dynamic_simulation_B.b_jtilecol]
-            .f1[dynamic_simulation_B.d_m + 1] *
-            dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_n + 4];
-          dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_l] +=
+            .f1[dynamic_simulation_B.d_p + 1] *
+            dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_p + 4];
+          dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_f] +=
             Ttree->data[dynamic_simulation_B.b_jtilecol]
-            .f1[dynamic_simulation_B.d_m + 2] *
-            dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_n + 8];
-          dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_l] +=
+            .f1[dynamic_simulation_B.d_p + 2] *
+            dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_p + 8];
+          dynamic_simulation_B.a_p[dynamic_simulation_B.loop_ub_f] +=
             Ttree->data[dynamic_simulation_B.b_jtilecol]
-            .f1[dynamic_simulation_B.d_m + 3] *
-            dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_n + 12];
+            .f1[dynamic_simulation_B.d_p + 3] *
+            dynamic_simulation_B.a[dynamic_simulation_B.b_kstr_p + 12];
         }
       }
 
-      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 16;
-           dynamic_simulation_B.b_kstr_n++) {
+      for (dynamic_simulation_B.b_kstr_p = 0; dynamic_simulation_B.b_kstr_p < 16;
+           dynamic_simulation_B.b_kstr_p++) {
         Ttree->data[dynamic_simulation_B.b_jtilecol]
-          .f1[dynamic_simulation_B.b_kstr_n] =
-          dynamic_simulation_B.a_p[dynamic_simulation_B.b_kstr_n];
+          .f1[dynamic_simulation_B.b_kstr_p] =
+          dynamic_simulation_B.a_p[dynamic_simulation_B.b_kstr_p];
       }
     }
   }
@@ -1043,53 +1042,53 @@ static void RigidBodyTree_geometricJacobian(p_robotics_manip_internal_Rig_T *obj
   boolean_T exitg2;
   dynamic_sim_emxInit_f_cell_wrap(&Ttree, 2);
   RigidBodyTree_forwardKinematics(obj, Q, Ttree);
-  dynamic_simulation_B.b_kstr_a = Jac->size[0] * Jac->size[1];
+  dynamic_simulation_B.b_kstr_n = Jac->size[0] * Jac->size[1];
   Jac->size[0] = 6;
   Jac->size[1] = static_cast<int32_T>(obj->VelocityNumber);
-  dynami_emxEnsureCapacity_real_T(Jac, dynamic_simulation_B.b_kstr_a);
+  dynami_emxEnsureCapacity_real_T(Jac, dynamic_simulation_B.b_kstr_n);
   dynamic_simulation_B.loop_ub = 6 * static_cast<int32_T>(obj->VelocityNumber) -
     1;
-  for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a <=
-       dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_a++) {
-    Jac->data[dynamic_simulation_B.b_kstr_a] = 0.0;
+  for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <=
+       dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_n++) {
+    Jac->data[dynamic_simulation_B.b_kstr_n] = 0.0;
   }
 
-  for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 8;
-       dynamic_simulation_B.b_kstr_a++) {
-    dynamic_simulation_B.chainmask[dynamic_simulation_B.b_kstr_a] = 0;
+  for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 8;
+       dynamic_simulation_B.b_kstr_n++) {
+    dynamic_simulation_B.chainmask[dynamic_simulation_B.b_kstr_n] = 0;
   }
 
   dynamic_simulati_emxInit_char_T(&bname, 2);
-  dynamic_simulation_B.b_kstr_a = bname->size[0] * bname->size[1];
+  dynamic_simulation_B.b_kstr_n = bname->size[0] * bname->size[1];
   bname->size[0] = 1;
   bname->size[1] = obj->Base.NameInternal->size[1];
-  dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr_a);
+  dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr_n);
   dynamic_simulation_B.loop_ub = obj->Base.NameInternal->size[0] *
     obj->Base.NameInternal->size[1] - 1;
-  for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a <=
-       dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_a++) {
-    bname->data[dynamic_simulation_B.b_kstr_a] = obj->Base.NameInternal->
-      data[dynamic_simulation_B.b_kstr_a];
+  for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <=
+       dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_n++) {
+    bname->data[dynamic_simulation_B.b_kstr_n] = obj->Base.NameInternal->
+      data[dynamic_simulation_B.b_kstr_n];
   }
 
-  for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 11;
-       dynamic_simulation_B.b_kstr_a++) {
-    dynamic_simulation_B.a_m[dynamic_simulation_B.b_kstr_a] =
-      tmp[dynamic_simulation_B.b_kstr_a];
+  for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 11;
+       dynamic_simulation_B.b_kstr_n++) {
+    dynamic_simulation_B.a_c[dynamic_simulation_B.b_kstr_n] =
+      tmp[dynamic_simulation_B.b_kstr_n];
   }
 
   dynamic_simulation_B.b_bool_b = false;
   if (11 == bname->size[1]) {
-    dynamic_simulation_B.b_kstr_a = 1;
+    dynamic_simulation_B.b_kstr_n = 1;
     do {
       exitg1 = 0;
-      if (dynamic_simulation_B.b_kstr_a - 1 < 11) {
-        dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_a - 1;
-        if (dynamic_simulation_B.a_m[dynamic_simulation_B.kstr] != bname->
+      if (dynamic_simulation_B.b_kstr_n - 1 < 11) {
+        dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_n - 1;
+        if (dynamic_simulation_B.a_c[dynamic_simulation_B.kstr] != bname->
             data[dynamic_simulation_B.kstr]) {
           exitg1 = 1;
         } else {
-          dynamic_simulation_B.b_kstr_a++;
+          dynamic_simulation_B.b_kstr_n++;
         }
       } else {
         dynamic_simulation_B.b_bool_b = true;
@@ -1111,36 +1110,36 @@ static void RigidBodyTree_geometricJacobian(p_robotics_manip_internal_Rig_T *obj
     dynamic_simulation_B.T2_c[15] = 1.0;
   } else {
     dynamic_simulation_B.endeffectorIndex = -1.0;
-    dynamic_simulation_B.b_kstr_a = bname->size[0] * bname->size[1];
+    dynamic_simulation_B.b_kstr_n = bname->size[0] * bname->size[1];
     bname->size[0] = 1;
     bname->size[1] = obj->Base.NameInternal->size[1];
-    dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr_a);
+    dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr_n);
     dynamic_simulation_B.loop_ub = obj->Base.NameInternal->size[0] *
       obj->Base.NameInternal->size[1] - 1;
-    for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a <=
-         dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_a++) {
-      bname->data[dynamic_simulation_B.b_kstr_a] = obj->Base.NameInternal->
-        data[dynamic_simulation_B.b_kstr_a];
+    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <=
+         dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_n++) {
+      bname->data[dynamic_simulation_B.b_kstr_n] = obj->Base.NameInternal->
+        data[dynamic_simulation_B.b_kstr_n];
     }
 
-    for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 11;
-         dynamic_simulation_B.b_kstr_a++) {
-      dynamic_simulation_B.a_m[dynamic_simulation_B.b_kstr_a] =
-        tmp[dynamic_simulation_B.b_kstr_a];
+    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 11;
+         dynamic_simulation_B.b_kstr_n++) {
+      dynamic_simulation_B.a_c[dynamic_simulation_B.b_kstr_n] =
+        tmp[dynamic_simulation_B.b_kstr_n];
     }
 
     dynamic_simulation_B.b_bool_b = false;
     if (bname->size[1] == 11) {
-      dynamic_simulation_B.b_kstr_a = 1;
+      dynamic_simulation_B.b_kstr_n = 1;
       do {
         exitg1 = 0;
-        if (dynamic_simulation_B.b_kstr_a - 1 < 11) {
-          dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_a - 1;
+        if (dynamic_simulation_B.b_kstr_n - 1 < 11) {
+          dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_n - 1;
           if (bname->data[dynamic_simulation_B.kstr] !=
-              dynamic_simulation_B.a_m[dynamic_simulation_B.kstr]) {
+              dynamic_simulation_B.a_c[dynamic_simulation_B.kstr]) {
             exitg1 = 1;
           } else {
-            dynamic_simulation_B.b_kstr_a++;
+            dynamic_simulation_B.b_kstr_n++;
           }
         } else {
           dynamic_simulation_B.b_bool_b = true;
@@ -1153,41 +1152,41 @@ static void RigidBodyTree_geometricJacobian(p_robotics_manip_internal_Rig_T *obj
       dynamic_simulation_B.endeffectorIndex = 0.0;
     } else {
       dynamic_simulation_B.idx_idx_1 = obj->NumBodies;
-      dynamic_simulation_B.b_i = 0;
+      dynamic_simulation_B.b_i_o = 0;
       exitg2 = false;
-      while ((!exitg2) && (dynamic_simulation_B.b_i <= static_cast<int32_T>
+      while ((!exitg2) && (dynamic_simulation_B.b_i_o <= static_cast<int32_T>
                            (dynamic_simulation_B.idx_idx_1) - 1)) {
-        body = obj->Bodies[dynamic_simulation_B.b_i];
-        dynamic_simulation_B.b_kstr_a = bname->size[0] * bname->size[1];
+        body = obj->Bodies[dynamic_simulation_B.b_i_o];
+        dynamic_simulation_B.b_kstr_n = bname->size[0] * bname->size[1];
         bname->size[0] = 1;
         bname->size[1] = body->NameInternal->size[1];
-        dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr_a);
+        dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr_n);
         dynamic_simulation_B.loop_ub = body->NameInternal->size[0] *
           body->NameInternal->size[1] - 1;
-        for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a <=
-             dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_a++) {
-          bname->data[dynamic_simulation_B.b_kstr_a] = body->NameInternal->
-            data[dynamic_simulation_B.b_kstr_a];
+        for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <=
+             dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_n++) {
+          bname->data[dynamic_simulation_B.b_kstr_n] = body->NameInternal->
+            data[dynamic_simulation_B.b_kstr_n];
         }
 
-        for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a <
-             11; dynamic_simulation_B.b_kstr_a++) {
-          dynamic_simulation_B.a_m[dynamic_simulation_B.b_kstr_a] =
-            tmp[dynamic_simulation_B.b_kstr_a];
+        for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <
+             11; dynamic_simulation_B.b_kstr_n++) {
+          dynamic_simulation_B.a_c[dynamic_simulation_B.b_kstr_n] =
+            tmp[dynamic_simulation_B.b_kstr_n];
         }
 
         dynamic_simulation_B.b_bool_b = false;
         if (bname->size[1] == 11) {
-          dynamic_simulation_B.b_kstr_a = 1;
+          dynamic_simulation_B.b_kstr_n = 1;
           do {
             exitg1 = 0;
-            if (dynamic_simulation_B.b_kstr_a - 1 < 11) {
-              dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_a - 1;
+            if (dynamic_simulation_B.b_kstr_n - 1 < 11) {
+              dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_n - 1;
               if (bname->data[dynamic_simulation_B.kstr] !=
-                  dynamic_simulation_B.a_m[dynamic_simulation_B.kstr]) {
+                  dynamic_simulation_B.a_c[dynamic_simulation_B.kstr]) {
                 exitg1 = 1;
               } else {
-                dynamic_simulation_B.b_kstr_a++;
+                dynamic_simulation_B.b_kstr_n++;
               }
             } else {
               dynamic_simulation_B.b_bool_b = true;
@@ -1198,60 +1197,60 @@ static void RigidBodyTree_geometricJacobian(p_robotics_manip_internal_Rig_T *obj
 
         if (dynamic_simulation_B.b_bool_b) {
           dynamic_simulation_B.endeffectorIndex = static_cast<real_T>
-            (dynamic_simulation_B.b_i) + 1.0;
+            (dynamic_simulation_B.b_i_o) + 1.0;
           exitg2 = true;
         } else {
-          dynamic_simulation_B.b_i++;
+          dynamic_simulation_B.b_i_o++;
         }
       }
     }
 
-    dynamic_simulation_B.b_i = static_cast<int32_T>
+    dynamic_simulation_B.b_i_o = static_cast<int32_T>
       (dynamic_simulation_B.endeffectorIndex) - 1;
-    body = obj->Bodies[dynamic_simulation_B.b_i];
-    for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 16;
-         dynamic_simulation_B.b_kstr_a++) {
-      dynamic_simulation_B.T2_c[dynamic_simulation_B.b_kstr_a] = Ttree->
-        data[dynamic_simulation_B.b_i].f1[dynamic_simulation_B.b_kstr_a];
+    body = obj->Bodies[dynamic_simulation_B.b_i_o];
+    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 16;
+         dynamic_simulation_B.b_kstr_n++) {
+      dynamic_simulation_B.T2_c[dynamic_simulation_B.b_kstr_n] = Ttree->
+        data[dynamic_simulation_B.b_i_o].f1[dynamic_simulation_B.b_kstr_n];
     }
 
-    for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 3;
-         dynamic_simulation_B.b_kstr_a++) {
-      dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a] = Ttree->
-        data[dynamic_simulation_B.b_i].f1[dynamic_simulation_B.b_kstr_a];
-      dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a + 1] =
-        Ttree->data[dynamic_simulation_B.b_i].f1[dynamic_simulation_B.b_kstr_a +
-        4];
-      dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a + 2] =
-        Ttree->data[dynamic_simulation_B.b_i].f1[dynamic_simulation_B.b_kstr_a +
-        8];
+    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 3;
+         dynamic_simulation_B.b_kstr_n++) {
+      dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n] = Ttree->
+        data[dynamic_simulation_B.b_i_o].f1[dynamic_simulation_B.b_kstr_n];
+      dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n + 1] =
+        Ttree->data[dynamic_simulation_B.b_i_o].f1[dynamic_simulation_B.b_kstr_n
+        + 4];
+      dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n + 2] =
+        Ttree->data[dynamic_simulation_B.b_i_o].f1[dynamic_simulation_B.b_kstr_n
+        + 8];
     }
 
-    for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 9;
-         dynamic_simulation_B.b_kstr_a++) {
-      dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_a] =
-        -dynamic_simulation_B.R_g[dynamic_simulation_B.b_kstr_a];
+    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 9;
+         dynamic_simulation_B.b_kstr_n++) {
+      dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_n] =
+        -dynamic_simulation_B.R_g[dynamic_simulation_B.b_kstr_n];
     }
 
-    for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 3;
-         dynamic_simulation_B.b_kstr_a++) {
+    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 3;
+         dynamic_simulation_B.b_kstr_n++) {
       dynamic_simulation_B.endeffectorIndex = Ttree->
-        data[dynamic_simulation_B.b_i].f1[12] *
-        dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_a];
-      dynamic_simulation_B.loop_ub = dynamic_simulation_B.b_kstr_a << 2;
+        data[dynamic_simulation_B.b_i_o].f1[12] *
+        dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_n];
+      dynamic_simulation_B.loop_ub = dynamic_simulation_B.b_kstr_n << 2;
       dynamic_simulation_B.T2inv[dynamic_simulation_B.loop_ub] =
-        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a];
+        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n];
       dynamic_simulation_B.endeffectorIndex +=
-        dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_a + 3] *
-        Ttree->data[dynamic_simulation_B.b_i].f1[13];
+        dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_n + 3] *
+        Ttree->data[dynamic_simulation_B.b_i_o].f1[13];
       dynamic_simulation_B.T2inv[dynamic_simulation_B.loop_ub + 1] =
-        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a + 1];
+        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n + 1];
       dynamic_simulation_B.endeffectorIndex +=
-        dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_a + 6] *
-        Ttree->data[dynamic_simulation_B.b_i].f1[14];
+        dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_n + 6] *
+        Ttree->data[dynamic_simulation_B.b_i_o].f1[14];
       dynamic_simulation_B.T2inv[dynamic_simulation_B.loop_ub + 2] =
-        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a + 2];
-      dynamic_simulation_B.T2inv[dynamic_simulation_B.b_kstr_a + 12] =
+        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n + 2];
+      dynamic_simulation_B.T2inv[dynamic_simulation_B.b_kstr_n + 12] =
         dynamic_simulation_B.endeffectorIndex;
     }
 
@@ -1259,7 +1258,7 @@ static void RigidBodyTree_geometricJacobian(p_robotics_manip_internal_Rig_T *obj
     dynamic_simulation_B.T2inv[7] = 0.0;
     dynamic_simulation_B.T2inv[11] = 0.0;
     dynamic_simulation_B.T2inv[15] = 1.0;
-    dynamic_simulation_B.chainmask[dynamic_simulation_B.b_i] = 1;
+    dynamic_simulation_B.chainmask[dynamic_simulation_B.b_i_o] = 1;
     while (body->ParentIndex > 0.0) {
       body = obj->Bodies[static_cast<int32_T>(body->ParentIndex) - 1];
       dynamic_simulation_B.chainmask[static_cast<int32_T>(body->Index) - 1] = 1;
@@ -1267,45 +1266,45 @@ static void RigidBodyTree_geometricJacobian(p_robotics_manip_internal_Rig_T *obj
   }
 
   dynamic_simulation_B.idx_idx_1 = obj->NumBodies;
-  dynamic_simulation_B.c_d = static_cast<int32_T>(dynamic_simulation_B.idx_idx_1)
+  dynamic_simulation_B.c_m = static_cast<int32_T>(dynamic_simulation_B.idx_idx_1)
     - 1;
   dynamic_simulati_emxInit_real_T(&JacSlice, 2);
   dynamic_simulati_emxInit_real_T(&b, 2);
-  if (0 <= dynamic_simulation_B.c_d) {
-    for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 5;
-         dynamic_simulation_B.b_kstr_a++) {
-      dynamic_simulation_B.b_b[dynamic_simulation_B.b_kstr_a] =
-        tmp_0[dynamic_simulation_B.b_kstr_a];
+  if (0 <= dynamic_simulation_B.c_m) {
+    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 5;
+         dynamic_simulation_B.b_kstr_n++) {
+      dynamic_simulation_B.b_ex[dynamic_simulation_B.b_kstr_n] =
+        tmp_0[dynamic_simulation_B.b_kstr_n];
     }
   }
 
-  for (dynamic_simulation_B.b_i = 0; dynamic_simulation_B.b_i <=
-       dynamic_simulation_B.c_d; dynamic_simulation_B.b_i++) {
-    body = obj->Bodies[dynamic_simulation_B.b_i];
-    dynamic_simulation_B.b_kstr_a = bname->size[0] * bname->size[1];
+  for (dynamic_simulation_B.b_i_o = 0; dynamic_simulation_B.b_i_o <=
+       dynamic_simulation_B.c_m; dynamic_simulation_B.b_i_o++) {
+    body = obj->Bodies[dynamic_simulation_B.b_i_o];
+    dynamic_simulation_B.b_kstr_n = bname->size[0] * bname->size[1];
     bname->size[0] = 1;
     bname->size[1] = body->JointInternal.Type->size[1];
-    dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr_a);
+    dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr_n);
     dynamic_simulation_B.loop_ub = body->JointInternal.Type->size[0] *
       body->JointInternal.Type->size[1] - 1;
-    for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a <=
-         dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_a++) {
-      bname->data[dynamic_simulation_B.b_kstr_a] = body->
-        JointInternal.Type->data[dynamic_simulation_B.b_kstr_a];
+    for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <=
+         dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_n++) {
+      bname->data[dynamic_simulation_B.b_kstr_n] = body->
+        JointInternal.Type->data[dynamic_simulation_B.b_kstr_n];
     }
 
     dynamic_simulation_B.b_bool_b = false;
     if (bname->size[1] == 5) {
-      dynamic_simulation_B.b_kstr_a = 1;
+      dynamic_simulation_B.b_kstr_n = 1;
       do {
         exitg1 = 0;
-        if (dynamic_simulation_B.b_kstr_a - 1 < 5) {
-          dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_a - 1;
+        if (dynamic_simulation_B.b_kstr_n - 1 < 5) {
+          dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_n - 1;
           if (bname->data[dynamic_simulation_B.kstr] !=
-              dynamic_simulation_B.b_b[dynamic_simulation_B.kstr]) {
+              dynamic_simulation_B.b_ex[dynamic_simulation_B.kstr]) {
             exitg1 = 1;
           } else {
-            dynamic_simulation_B.b_kstr_a++;
+            dynamic_simulation_B.b_kstr_n++;
           }
         } else {
           dynamic_simulation_B.b_bool_b = true;
@@ -1315,115 +1314,115 @@ static void RigidBodyTree_geometricJacobian(p_robotics_manip_internal_Rig_T *obj
     }
 
     if ((!dynamic_simulation_B.b_bool_b) &&
-        (dynamic_simulation_B.chainmask[dynamic_simulation_B.b_i] != 0)) {
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 16;
-           dynamic_simulation_B.b_kstr_a++) {
-        dynamic_simulation_B.T1_b[dynamic_simulation_B.b_kstr_a] = Ttree->data[
+        (dynamic_simulation_B.chainmask[dynamic_simulation_B.b_i_o] != 0)) {
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 16;
+           dynamic_simulation_B.b_kstr_n++) {
+        dynamic_simulation_B.T1_b[dynamic_simulation_B.b_kstr_n] = Ttree->data[
           static_cast<int32_T>(body->Index) - 1]
-          .f1[dynamic_simulation_B.b_kstr_a];
+          .f1[dynamic_simulation_B.b_kstr_n];
       }
 
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 16;
-           dynamic_simulation_B.b_kstr_a++) {
-        dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_a] =
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 16;
+           dynamic_simulation_B.b_kstr_n++) {
+        dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_n] =
           body->
-          JointInternal.ChildToJointTransform[dynamic_simulation_B.b_kstr_a];
+          JointInternal.ChildToJointTransform[dynamic_simulation_B.b_kstr_n];
       }
 
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 3;
-           dynamic_simulation_B.b_kstr_a++) {
-        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a] =
-          dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_a];
-        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a + 1] =
-          dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_a + 4];
-        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a + 2] =
-          dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_a + 8];
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 3;
+           dynamic_simulation_B.b_kstr_n++) {
+        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n] =
+          dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_n];
+        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n + 1] =
+          dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_n + 4];
+        dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n + 2] =
+          dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_n + 8];
       }
 
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 9;
-           dynamic_simulation_B.b_kstr_a++) {
-        dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_a] =
-          -dynamic_simulation_B.R_g[dynamic_simulation_B.b_kstr_a];
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 9;
+           dynamic_simulation_B.b_kstr_n++) {
+        dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_n] =
+          -dynamic_simulation_B.R_g[dynamic_simulation_B.b_kstr_n];
       }
 
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 3;
-           dynamic_simulation_B.b_kstr_a++) {
-        dynamic_simulation_B.R_o4[dynamic_simulation_B.b_kstr_a] =
-          dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_a + 6] *
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 3;
+           dynamic_simulation_B.b_kstr_n++) {
+        dynamic_simulation_B.R_m[dynamic_simulation_B.b_kstr_n] =
+          dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_n + 6] *
           dynamic_simulation_B.Tdh[14] +
-          (dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_a + 3] *
+          (dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_n + 3] *
            dynamic_simulation_B.Tdh[13] +
-           dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_a] *
+           dynamic_simulation_B.R_l[dynamic_simulation_B.b_kstr_n] *
            dynamic_simulation_B.Tdh[12]);
       }
 
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 4;
-           dynamic_simulation_B.b_kstr_a++) {
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 4;
+           dynamic_simulation_B.b_kstr_n++) {
         for (dynamic_simulation_B.kstr = 0; dynamic_simulation_B.kstr < 4;
              dynamic_simulation_B.kstr++) {
-          dynamic_simulation_B.n_p = dynamic_simulation_B.kstr << 2;
-          dynamic_simulation_B.loop_ub = dynamic_simulation_B.b_kstr_a +
-            dynamic_simulation_B.n_p;
+          dynamic_simulation_B.n_l = dynamic_simulation_B.kstr << 2;
+          dynamic_simulation_B.loop_ub = dynamic_simulation_B.b_kstr_n +
+            dynamic_simulation_B.n_l;
           dynamic_simulation_B.Tdh[dynamic_simulation_B.loop_ub] = 0.0;
           dynamic_simulation_B.Tdh[dynamic_simulation_B.loop_ub] +=
-            dynamic_simulation_B.T1_b[dynamic_simulation_B.n_p] *
-            dynamic_simulation_B.T2inv[dynamic_simulation_B.b_kstr_a];
+            dynamic_simulation_B.T1_b[dynamic_simulation_B.n_l] *
+            dynamic_simulation_B.T2inv[dynamic_simulation_B.b_kstr_n];
           dynamic_simulation_B.Tdh[dynamic_simulation_B.loop_ub] +=
-            dynamic_simulation_B.T1_b[dynamic_simulation_B.n_p + 1] *
-            dynamic_simulation_B.T2inv[dynamic_simulation_B.b_kstr_a + 4];
+            dynamic_simulation_B.T1_b[dynamic_simulation_B.n_l + 1] *
+            dynamic_simulation_B.T2inv[dynamic_simulation_B.b_kstr_n + 4];
           dynamic_simulation_B.Tdh[dynamic_simulation_B.loop_ub] +=
-            dynamic_simulation_B.T1_b[dynamic_simulation_B.n_p + 2] *
-            dynamic_simulation_B.T2inv[dynamic_simulation_B.b_kstr_a + 8];
+            dynamic_simulation_B.T1_b[dynamic_simulation_B.n_l + 2] *
+            dynamic_simulation_B.T2inv[dynamic_simulation_B.b_kstr_n + 8];
           dynamic_simulation_B.Tdh[dynamic_simulation_B.loop_ub] +=
-            dynamic_simulation_B.T1_b[dynamic_simulation_B.n_p + 3] *
-            dynamic_simulation_B.T2inv[dynamic_simulation_B.b_kstr_a + 12];
+            dynamic_simulation_B.T1_b[dynamic_simulation_B.n_l + 3] *
+            dynamic_simulation_B.T2inv[dynamic_simulation_B.b_kstr_n + 12];
         }
       }
 
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 3;
-           dynamic_simulation_B.b_kstr_a++) {
-        dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_a << 2;
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 3;
+           dynamic_simulation_B.b_kstr_n++) {
+        dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_n << 2;
         dynamic_simulation_B.T1_b[dynamic_simulation_B.kstr] =
-          dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a];
+          dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n];
         dynamic_simulation_B.T1_b[dynamic_simulation_B.kstr + 1] =
-          dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a + 1];
+          dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n + 1];
         dynamic_simulation_B.T1_b[dynamic_simulation_B.kstr + 2] =
-          dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_a + 2];
-        dynamic_simulation_B.T1_b[dynamic_simulation_B.b_kstr_a + 12] =
-          dynamic_simulation_B.R_o4[dynamic_simulation_B.b_kstr_a];
+          dynamic_simulation_B.R_g[3 * dynamic_simulation_B.b_kstr_n + 2];
+        dynamic_simulation_B.T1_b[dynamic_simulation_B.b_kstr_n + 12] =
+          dynamic_simulation_B.R_m[dynamic_simulation_B.b_kstr_n];
       }
 
       dynamic_simulation_B.T1_b[3] = 0.0;
       dynamic_simulation_B.T1_b[7] = 0.0;
       dynamic_simulation_B.T1_b[11] = 0.0;
       dynamic_simulation_B.T1_b[15] = 1.0;
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 4;
-           dynamic_simulation_B.b_kstr_a++) {
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 4;
+           dynamic_simulation_B.b_kstr_n++) {
         for (dynamic_simulation_B.kstr = 0; dynamic_simulation_B.kstr < 4;
              dynamic_simulation_B.kstr++) {
           dynamic_simulation_B.loop_ub = dynamic_simulation_B.kstr << 2;
-          dynamic_simulation_B.n_p = dynamic_simulation_B.b_kstr_a +
+          dynamic_simulation_B.n_l = dynamic_simulation_B.b_kstr_n +
             dynamic_simulation_B.loop_ub;
-          dynamic_simulation_B.T[dynamic_simulation_B.n_p] = 0.0;
-          dynamic_simulation_B.T[dynamic_simulation_B.n_p] +=
+          dynamic_simulation_B.T[dynamic_simulation_B.n_l] = 0.0;
+          dynamic_simulation_B.T[dynamic_simulation_B.n_l] +=
             dynamic_simulation_B.T1_b[dynamic_simulation_B.loop_ub] *
-            dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_a];
-          dynamic_simulation_B.T[dynamic_simulation_B.n_p] +=
+            dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_n];
+          dynamic_simulation_B.T[dynamic_simulation_B.n_l] +=
             dynamic_simulation_B.T1_b[dynamic_simulation_B.loop_ub + 1] *
-            dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_a + 4];
-          dynamic_simulation_B.T[dynamic_simulation_B.n_p] +=
+            dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_n + 4];
+          dynamic_simulation_B.T[dynamic_simulation_B.n_l] +=
             dynamic_simulation_B.T1_b[dynamic_simulation_B.loop_ub + 2] *
-            dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_a + 8];
-          dynamic_simulation_B.T[dynamic_simulation_B.n_p] +=
+            dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_n + 8];
+          dynamic_simulation_B.T[dynamic_simulation_B.n_l] +=
             dynamic_simulation_B.T1_b[dynamic_simulation_B.loop_ub + 3] *
-            dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_a + 12];
+            dynamic_simulation_B.Tdh[dynamic_simulation_B.b_kstr_n + 12];
         }
       }
 
       dynamic_simulation_B.endeffectorIndex = obj->
-        PositionDoFMap[dynamic_simulation_B.b_i];
+        PositionDoFMap[dynamic_simulation_B.b_i_o];
       dynamic_simulation_B.idx_idx_1 = obj->
-        PositionDoFMap[dynamic_simulation_B.b_i + 8];
+        PositionDoFMap[dynamic_simulation_B.b_i_o + 8];
       dynamic_simulation_B.R_g[0] = 0.0;
       dynamic_simulation_B.R_g[3] = -dynamic_simulation_B.T[14];
       dynamic_simulation_B.R_g[6] = dynamic_simulation_B.T[13];
@@ -1433,75 +1432,75 @@ static void RigidBodyTree_geometricJacobian(p_robotics_manip_internal_Rig_T *obj
       dynamic_simulation_B.R_g[2] = -dynamic_simulation_B.T[13];
       dynamic_simulation_B.R_g[5] = dynamic_simulation_B.T[12];
       dynamic_simulation_B.R_g[8] = 0.0;
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 3;
-           dynamic_simulation_B.b_kstr_a++) {
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 3;
+           dynamic_simulation_B.b_kstr_n++) {
         for (dynamic_simulation_B.kstr = 0; dynamic_simulation_B.kstr < 3;
              dynamic_simulation_B.kstr++) {
-          dynamic_simulation_B.loop_ub = dynamic_simulation_B.b_kstr_a + 3 *
+          dynamic_simulation_B.loop_ub = dynamic_simulation_B.b_kstr_n + 3 *
             dynamic_simulation_B.kstr;
           dynamic_simulation_B.R_l[dynamic_simulation_B.loop_ub] = 0.0;
-          dynamic_simulation_B.n_p = dynamic_simulation_B.kstr << 2;
+          dynamic_simulation_B.n_l = dynamic_simulation_B.kstr << 2;
           dynamic_simulation_B.R_l[dynamic_simulation_B.loop_ub] +=
-            dynamic_simulation_B.T[dynamic_simulation_B.n_p] *
-            dynamic_simulation_B.R_g[dynamic_simulation_B.b_kstr_a];
+            dynamic_simulation_B.T[dynamic_simulation_B.n_l] *
+            dynamic_simulation_B.R_g[dynamic_simulation_B.b_kstr_n];
           dynamic_simulation_B.R_l[dynamic_simulation_B.loop_ub] +=
-            dynamic_simulation_B.T[dynamic_simulation_B.n_p + 1] *
-            dynamic_simulation_B.R_g[dynamic_simulation_B.b_kstr_a + 3];
+            dynamic_simulation_B.T[dynamic_simulation_B.n_l + 1] *
+            dynamic_simulation_B.R_g[dynamic_simulation_B.b_kstr_n + 3];
           dynamic_simulation_B.R_l[dynamic_simulation_B.loop_ub] +=
-            dynamic_simulation_B.T[dynamic_simulation_B.n_p + 2] *
-            dynamic_simulation_B.R_g[dynamic_simulation_B.b_kstr_a + 6];
+            dynamic_simulation_B.T[dynamic_simulation_B.n_l + 2] *
+            dynamic_simulation_B.R_g[dynamic_simulation_B.b_kstr_n + 6];
           dynamic_simulation_B.X[dynamic_simulation_B.kstr + 6 *
-            dynamic_simulation_B.b_kstr_a] = dynamic_simulation_B.T
-            [(dynamic_simulation_B.b_kstr_a << 2) + dynamic_simulation_B.kstr];
+            dynamic_simulation_B.b_kstr_n] = dynamic_simulation_B.T
+            [(dynamic_simulation_B.b_kstr_n << 2) + dynamic_simulation_B.kstr];
           dynamic_simulation_B.X[dynamic_simulation_B.kstr + 6 *
-            (dynamic_simulation_B.b_kstr_a + 3)] = 0.0;
+            (dynamic_simulation_B.b_kstr_n + 3)] = 0.0;
         }
       }
 
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 3;
-           dynamic_simulation_B.b_kstr_a++) {
-        dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_a + 3] =
-          dynamic_simulation_B.R_l[3 * dynamic_simulation_B.b_kstr_a];
-        dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_a << 2;
-        dynamic_simulation_B.loop_ub = 6 * (dynamic_simulation_B.b_kstr_a + 3);
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 3;
+           dynamic_simulation_B.b_kstr_n++) {
+        dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_n + 3] =
+          dynamic_simulation_B.R_l[3 * dynamic_simulation_B.b_kstr_n];
+        dynamic_simulation_B.kstr = dynamic_simulation_B.b_kstr_n << 2;
+        dynamic_simulation_B.loop_ub = 6 * (dynamic_simulation_B.b_kstr_n + 3);
         dynamic_simulation_B.X[dynamic_simulation_B.loop_ub + 3] =
           dynamic_simulation_B.T[dynamic_simulation_B.kstr];
-        dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_a + 4] =
-          dynamic_simulation_B.R_l[3 * dynamic_simulation_B.b_kstr_a + 1];
+        dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_n + 4] =
+          dynamic_simulation_B.R_l[3 * dynamic_simulation_B.b_kstr_n + 1];
         dynamic_simulation_B.X[dynamic_simulation_B.loop_ub + 4] =
           dynamic_simulation_B.T[dynamic_simulation_B.kstr + 1];
-        dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_a + 5] =
-          dynamic_simulation_B.R_l[3 * dynamic_simulation_B.b_kstr_a + 2];
+        dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_n + 5] =
+          dynamic_simulation_B.R_l[3 * dynamic_simulation_B.b_kstr_n + 2];
         dynamic_simulation_B.X[dynamic_simulation_B.loop_ub + 5] =
           dynamic_simulation_B.T[dynamic_simulation_B.kstr + 2];
       }
 
-      dynamic_simulation_B.b_kstr_a = b->size[0] * b->size[1];
+      dynamic_simulation_B.b_kstr_n = b->size[0] * b->size[1];
       b->size[0] = 6;
       b->size[1] = body->JointInternal.MotionSubspace->size[1];
-      dynami_emxEnsureCapacity_real_T(b, dynamic_simulation_B.b_kstr_a);
+      dynami_emxEnsureCapacity_real_T(b, dynamic_simulation_B.b_kstr_n);
       dynamic_simulation_B.loop_ub = body->JointInternal.MotionSubspace->size[0]
         * body->JointInternal.MotionSubspace->size[1] - 1;
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a <=
-           dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_a++) {
-        b->data[dynamic_simulation_B.b_kstr_a] =
-          body->JointInternal.MotionSubspace->data[dynamic_simulation_B.b_kstr_a];
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <=
+           dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_n++) {
+        b->data[dynamic_simulation_B.b_kstr_n] =
+          body->JointInternal.MotionSubspace->data[dynamic_simulation_B.b_kstr_n];
       }
 
-      dynamic_simulation_B.n_p = b->size[1] - 1;
-      dynamic_simulation_B.b_kstr_a = JacSlice->size[0] * JacSlice->size[1];
+      dynamic_simulation_B.n_l = b->size[1] - 1;
+      dynamic_simulation_B.b_kstr_n = JacSlice->size[0] * JacSlice->size[1];
       JacSlice->size[0] = 6;
       JacSlice->size[1] = b->size[1];
-      dynami_emxEnsureCapacity_real_T(JacSlice, dynamic_simulation_B.b_kstr_a);
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a <=
-           dynamic_simulation_B.n_p; dynamic_simulation_B.b_kstr_a++) {
-        dynamic_simulation_B.coffset_tmp = dynamic_simulation_B.b_kstr_a * 6 - 1;
+      dynami_emxEnsureCapacity_real_T(JacSlice, dynamic_simulation_B.b_kstr_n);
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <=
+           dynamic_simulation_B.n_l; dynamic_simulation_B.b_kstr_n++) {
+        dynamic_simulation_B.coffset_tmp = dynamic_simulation_B.b_kstr_n * 6 - 1;
         for (dynamic_simulation_B.kstr = 0; dynamic_simulation_B.kstr < 6;
              dynamic_simulation_B.kstr++) {
-          dynamic_simulation_B.s_i = 0.0;
+          dynamic_simulation_B.s_f = 0.0;
           for (dynamic_simulation_B.loop_ub = 0; dynamic_simulation_B.loop_ub <
                6; dynamic_simulation_B.loop_ub++) {
-            dynamic_simulation_B.s_i +=
+            dynamic_simulation_B.s_f +=
               dynamic_simulation_B.X[dynamic_simulation_B.loop_ub * 6 +
               dynamic_simulation_B.kstr] * b->data
               [(dynamic_simulation_B.coffset_tmp + dynamic_simulation_B.loop_ub)
@@ -1510,26 +1509,26 @@ static void RigidBodyTree_geometricJacobian(p_robotics_manip_internal_Rig_T *obj
 
           JacSlice->data[(dynamic_simulation_B.coffset_tmp +
                           dynamic_simulation_B.kstr) + 1] =
-            dynamic_simulation_B.s_i;
+            dynamic_simulation_B.s_f;
         }
       }
 
       if (dynamic_simulation_B.endeffectorIndex > dynamic_simulation_B.idx_idx_1)
       {
-        dynamic_simulation_B.n_p = 0;
+        dynamic_simulation_B.n_l = 0;
       } else {
-        dynamic_simulation_B.n_p = static_cast<int32_T>
+        dynamic_simulation_B.n_l = static_cast<int32_T>
           (dynamic_simulation_B.endeffectorIndex) - 1;
       }
 
       dynamic_simulation_B.loop_ub = JacSlice->size[1];
-      for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a <
-           dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_a++) {
+      for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <
+           dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_n++) {
         for (dynamic_simulation_B.kstr = 0; dynamic_simulation_B.kstr < 6;
              dynamic_simulation_B.kstr++) {
-          Jac->data[dynamic_simulation_B.kstr + 6 * (dynamic_simulation_B.n_p +
-            dynamic_simulation_B.b_kstr_a)] = JacSlice->data[6 *
-            dynamic_simulation_B.b_kstr_a + dynamic_simulation_B.kstr];
+          Jac->data[dynamic_simulation_B.kstr + 6 * (dynamic_simulation_B.n_l +
+            dynamic_simulation_B.b_kstr_n)] = JacSlice->data[6 *
+            dynamic_simulation_B.b_kstr_n + dynamic_simulation_B.kstr];
         }
       }
     }
@@ -1538,66 +1537,66 @@ static void RigidBodyTree_geometricJacobian(p_robotics_manip_internal_Rig_T *obj
   dynamic_simulati_emxFree_char_T(&bname);
   dynamic_simulati_emxFree_real_T(&JacSlice);
   dynamic_sim_emxFree_f_cell_wrap(&Ttree);
-  for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a < 3;
-       dynamic_simulation_B.b_kstr_a++) {
-    dynamic_simulation_B.b_i = dynamic_simulation_B.b_kstr_a << 2;
-    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_a] =
-      dynamic_simulation_B.T2_c[dynamic_simulation_B.b_i];
-    dynamic_simulation_B.kstr = 6 * (dynamic_simulation_B.b_kstr_a + 3);
+  for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n < 3;
+       dynamic_simulation_B.b_kstr_n++) {
+    dynamic_simulation_B.b_i_o = dynamic_simulation_B.b_kstr_n << 2;
+    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_n] =
+      dynamic_simulation_B.T2_c[dynamic_simulation_B.b_i_o];
+    dynamic_simulation_B.kstr = 6 * (dynamic_simulation_B.b_kstr_n + 3);
     dynamic_simulation_B.X[dynamic_simulation_B.kstr] = 0.0;
-    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_a + 3] = 0.0;
+    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_n + 3] = 0.0;
     dynamic_simulation_B.X[dynamic_simulation_B.kstr + 3] =
-      dynamic_simulation_B.T2_c[dynamic_simulation_B.b_i];
+      dynamic_simulation_B.T2_c[dynamic_simulation_B.b_i_o];
     dynamic_simulation_B.endeffectorIndex =
-      dynamic_simulation_B.T2_c[dynamic_simulation_B.b_i + 1];
-    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_a + 1] =
+      dynamic_simulation_B.T2_c[dynamic_simulation_B.b_i_o + 1];
+    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_n + 1] =
       dynamic_simulation_B.endeffectorIndex;
     dynamic_simulation_B.X[dynamic_simulation_B.kstr + 1] = 0.0;
-    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_a + 4] = 0.0;
+    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_n + 4] = 0.0;
     dynamic_simulation_B.X[dynamic_simulation_B.kstr + 4] =
       dynamic_simulation_B.endeffectorIndex;
     dynamic_simulation_B.endeffectorIndex =
-      dynamic_simulation_B.T2_c[dynamic_simulation_B.b_i + 2];
-    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_a + 2] =
+      dynamic_simulation_B.T2_c[dynamic_simulation_B.b_i_o + 2];
+    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_n + 2] =
       dynamic_simulation_B.endeffectorIndex;
     dynamic_simulation_B.X[dynamic_simulation_B.kstr + 2] = 0.0;
-    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_a + 5] = 0.0;
+    dynamic_simulation_B.X[6 * dynamic_simulation_B.b_kstr_n + 5] = 0.0;
     dynamic_simulation_B.X[dynamic_simulation_B.kstr + 5] =
       dynamic_simulation_B.endeffectorIndex;
   }
 
-  dynamic_simulation_B.n_p = Jac->size[1];
-  dynamic_simulation_B.b_kstr_a = b->size[0] * b->size[1];
+  dynamic_simulation_B.n_l = Jac->size[1];
+  dynamic_simulation_B.b_kstr_n = b->size[0] * b->size[1];
   b->size[0] = 6;
   b->size[1] = Jac->size[1];
-  dynami_emxEnsureCapacity_real_T(b, dynamic_simulation_B.b_kstr_a);
+  dynami_emxEnsureCapacity_real_T(b, dynamic_simulation_B.b_kstr_n);
   dynamic_simulation_B.loop_ub = Jac->size[0] * Jac->size[1] - 1;
-  for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a <=
-       dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_a++) {
-    b->data[dynamic_simulation_B.b_kstr_a] = Jac->
-      data[dynamic_simulation_B.b_kstr_a];
+  for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <=
+       dynamic_simulation_B.loop_ub; dynamic_simulation_B.b_kstr_n++) {
+    b->data[dynamic_simulation_B.b_kstr_n] = Jac->
+      data[dynamic_simulation_B.b_kstr_n];
   }
 
-  dynamic_simulation_B.b_kstr_a = Jac->size[0] * Jac->size[1];
+  dynamic_simulation_B.b_kstr_n = Jac->size[0] * Jac->size[1];
   Jac->size[0] = 6;
-  Jac->size[1] = dynamic_simulation_B.n_p;
-  dynami_emxEnsureCapacity_real_T(Jac, dynamic_simulation_B.b_kstr_a);
-  for (dynamic_simulation_B.b_kstr_a = 0; dynamic_simulation_B.b_kstr_a <
-       dynamic_simulation_B.n_p; dynamic_simulation_B.b_kstr_a++) {
-    dynamic_simulation_B.coffset_tmp = dynamic_simulation_B.b_kstr_a * 6 - 1;
-    for (dynamic_simulation_B.b_i = 0; dynamic_simulation_B.b_i < 6;
-         dynamic_simulation_B.b_i++) {
-      dynamic_simulation_B.s_i = 0.0;
+  Jac->size[1] = dynamic_simulation_B.n_l;
+  dynami_emxEnsureCapacity_real_T(Jac, dynamic_simulation_B.b_kstr_n);
+  for (dynamic_simulation_B.b_kstr_n = 0; dynamic_simulation_B.b_kstr_n <
+       dynamic_simulation_B.n_l; dynamic_simulation_B.b_kstr_n++) {
+    dynamic_simulation_B.coffset_tmp = dynamic_simulation_B.b_kstr_n * 6 - 1;
+    for (dynamic_simulation_B.b_i_o = 0; dynamic_simulation_B.b_i_o < 6;
+         dynamic_simulation_B.b_i_o++) {
+      dynamic_simulation_B.s_f = 0.0;
       for (dynamic_simulation_B.loop_ub = 0; dynamic_simulation_B.loop_ub < 6;
            dynamic_simulation_B.loop_ub++) {
-        dynamic_simulation_B.s_i +=
+        dynamic_simulation_B.s_f +=
           dynamic_simulation_B.X[dynamic_simulation_B.loop_ub * 6 +
-          dynamic_simulation_B.b_i] * b->data[(dynamic_simulation_B.coffset_tmp
-          + dynamic_simulation_B.loop_ub) + 1];
+          dynamic_simulation_B.b_i_o] * b->data
+          [(dynamic_simulation_B.coffset_tmp + dynamic_simulation_B.loop_ub) + 1];
       }
 
-      Jac->data[(dynamic_simulation_B.coffset_tmp + dynamic_simulation_B.b_i) +
-        1] = dynamic_simulation_B.s_i;
+      Jac->data[(dynamic_simulation_B.coffset_tmp + dynamic_simulation_B.b_i_o)
+        + 1] = dynamic_simulation_B.s_f;
     }
   }
 
@@ -1613,24 +1612,24 @@ static void rigidBodyJoint_get_JointAxis_k(const c_rigidBodyJoint_dynamic_si_k_T
 
   boolean_T guard1 = false;
   int32_T exitg1;
-  for (dynamic_simulation_B.b_kstr_f = 0; dynamic_simulation_B.b_kstr_f < 8;
-       dynamic_simulation_B.b_kstr_f++) {
-    dynamic_simulation_B.b_as[dynamic_simulation_B.b_kstr_f] =
-      tmp[dynamic_simulation_B.b_kstr_f];
+  for (dynamic_simulation_B.b_kstr_pm = 0; dynamic_simulation_B.b_kstr_pm < 8;
+       dynamic_simulation_B.b_kstr_pm++) {
+    dynamic_simulation_B.b_ip[dynamic_simulation_B.b_kstr_pm] =
+      tmp[dynamic_simulation_B.b_kstr_pm];
   }
 
   dynamic_simulation_B.b_bool_dk = false;
   if (obj->Type->size[1] == 8) {
-    dynamic_simulation_B.b_kstr_f = 1;
+    dynamic_simulation_B.b_kstr_pm = 1;
     do {
       exitg1 = 0;
-      if (dynamic_simulation_B.b_kstr_f - 1 < 8) {
-        dynamic_simulation_B.kstr_c = dynamic_simulation_B.b_kstr_f - 1;
-        if (obj->Type->data[dynamic_simulation_B.kstr_c] !=
-            dynamic_simulation_B.b_as[dynamic_simulation_B.kstr_c]) {
+      if (dynamic_simulation_B.b_kstr_pm - 1 < 8) {
+        dynamic_simulation_B.kstr_f = dynamic_simulation_B.b_kstr_pm - 1;
+        if (obj->Type->data[dynamic_simulation_B.kstr_f] !=
+            dynamic_simulation_B.b_ip[dynamic_simulation_B.kstr_f]) {
           exitg1 = 1;
         } else {
-          dynamic_simulation_B.b_kstr_f++;
+          dynamic_simulation_B.b_kstr_pm++;
         }
       } else {
         dynamic_simulation_B.b_bool_dk = true;
@@ -1643,24 +1642,24 @@ static void rigidBodyJoint_get_JointAxis_k(const c_rigidBodyJoint_dynamic_si_k_T
   if (dynamic_simulation_B.b_bool_dk) {
     guard1 = true;
   } else {
-    for (dynamic_simulation_B.b_kstr_f = 0; dynamic_simulation_B.b_kstr_f < 9;
-         dynamic_simulation_B.b_kstr_f++) {
-      dynamic_simulation_B.b_c0[dynamic_simulation_B.b_kstr_f] =
-        tmp_0[dynamic_simulation_B.b_kstr_f];
+    for (dynamic_simulation_B.b_kstr_pm = 0; dynamic_simulation_B.b_kstr_pm < 9;
+         dynamic_simulation_B.b_kstr_pm++) {
+      dynamic_simulation_B.b_a[dynamic_simulation_B.b_kstr_pm] =
+        tmp_0[dynamic_simulation_B.b_kstr_pm];
     }
 
     dynamic_simulation_B.b_bool_dk = false;
     if (obj->Type->size[1] == 9) {
-      dynamic_simulation_B.b_kstr_f = 1;
+      dynamic_simulation_B.b_kstr_pm = 1;
       do {
         exitg1 = 0;
-        if (dynamic_simulation_B.b_kstr_f - 1 < 9) {
-          dynamic_simulation_B.kstr_c = dynamic_simulation_B.b_kstr_f - 1;
-          if (obj->Type->data[dynamic_simulation_B.kstr_c] !=
-              dynamic_simulation_B.b_c0[dynamic_simulation_B.kstr_c]) {
+        if (dynamic_simulation_B.b_kstr_pm - 1 < 9) {
+          dynamic_simulation_B.kstr_f = dynamic_simulation_B.b_kstr_pm - 1;
+          if (obj->Type->data[dynamic_simulation_B.kstr_f] !=
+              dynamic_simulation_B.b_a[dynamic_simulation_B.kstr_f]) {
             exitg1 = 1;
           } else {
-            dynamic_simulation_B.b_kstr_f++;
+            dynamic_simulation_B.b_kstr_pm++;
           }
         } else {
           dynamic_simulation_B.b_bool_dk = true;
@@ -1698,86 +1697,86 @@ static void RigidBodyTree_forwardKinemati_k(p_robotics_manip_internal_R_k_T *obj
   static const char_T tmp_1[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
 
   int32_T exitg1;
-  dynamic_simulation_B.n_l = obj->NumBodies;
-  for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 16;
-       dynamic_simulation_B.b_kstr_d++) {
-    dynamic_simulation_B.c_f1_m[dynamic_simulation_B.b_kstr_d] =
-      tmp[dynamic_simulation_B.b_kstr_d];
+  dynamic_simulation_B.n_h = obj->NumBodies;
+  for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na < 16;
+       dynamic_simulation_B.b_kstr_na++) {
+    dynamic_simulation_B.c_f1_m[dynamic_simulation_B.b_kstr_na] =
+      tmp[dynamic_simulation_B.b_kstr_na];
   }
 
-  dynamic_simulation_B.b_kstr_d = Ttree->size[0] * Ttree->size[1];
+  dynamic_simulation_B.b_kstr_na = Ttree->size[0] * Ttree->size[1];
   Ttree->size[0] = 1;
-  dynamic_simulation_B.e_a = static_cast<int32_T>(dynamic_simulation_B.n_l);
-  Ttree->size[1] = dynamic_simulation_B.e_a;
-  d_emxEnsureCapacity_f_cell_wrap(Ttree, dynamic_simulation_B.b_kstr_d);
-  if (dynamic_simulation_B.e_a != 0) {
-    dynamic_simulation_B.ntilecols_g = dynamic_simulation_B.e_a - 1;
-    if (0 <= dynamic_simulation_B.ntilecols_g) {
+  dynamic_simulation_B.e_g = static_cast<int32_T>(dynamic_simulation_B.n_h);
+  Ttree->size[1] = dynamic_simulation_B.e_g;
+  d_emxEnsureCapacity_f_cell_wrap(Ttree, dynamic_simulation_B.b_kstr_na);
+  if (dynamic_simulation_B.e_g != 0) {
+    dynamic_simulation_B.ntilecols_n = dynamic_simulation_B.e_g - 1;
+    if (0 <= dynamic_simulation_B.ntilecols_n) {
       memcpy(&dynamic_simulation_B.expl_temp_c.f1[0],
              &dynamic_simulation_B.c_f1_m[0], sizeof(real_T) << 4U);
     }
 
-    for (dynamic_simulation_B.b_jtilecol_n = 0;
-         dynamic_simulation_B.b_jtilecol_n <= dynamic_simulation_B.ntilecols_g;
-         dynamic_simulation_B.b_jtilecol_n++) {
-      Ttree->data[dynamic_simulation_B.b_jtilecol_n] =
+    for (dynamic_simulation_B.b_jtilecol_d = 0;
+         dynamic_simulation_B.b_jtilecol_d <= dynamic_simulation_B.ntilecols_n;
+         dynamic_simulation_B.b_jtilecol_d++) {
+      Ttree->data[dynamic_simulation_B.b_jtilecol_d] =
         dynamic_simulation_B.expl_temp_c;
     }
   }
 
-  dynamic_simulation_B.k_h = 1.0;
-  dynamic_simulation_B.ntilecols_g = static_cast<int32_T>
-    (dynamic_simulation_B.n_l) - 1;
+  dynamic_simulation_B.k_c = 1.0;
+  dynamic_simulation_B.ntilecols_n = static_cast<int32_T>
+    (dynamic_simulation_B.n_h) - 1;
   dynamic_simulati_emxInit_char_T(&switch_expression, 2);
-  if (0 <= dynamic_simulation_B.ntilecols_g) {
-    for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 5;
-         dynamic_simulation_B.b_kstr_d++) {
-      dynamic_simulation_B.b_ei[dynamic_simulation_B.b_kstr_d] =
-        tmp_0[dynamic_simulation_B.b_kstr_d];
+  if (0 <= dynamic_simulation_B.ntilecols_n) {
+    for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na < 5;
+         dynamic_simulation_B.b_kstr_na++) {
+      dynamic_simulation_B.b_d[dynamic_simulation_B.b_kstr_na] =
+        tmp_0[dynamic_simulation_B.b_kstr_na];
     }
   }
 
-  for (dynamic_simulation_B.b_jtilecol_n = 0; dynamic_simulation_B.b_jtilecol_n <=
-       dynamic_simulation_B.ntilecols_g; dynamic_simulation_B.b_jtilecol_n++) {
-    body = obj->Bodies[dynamic_simulation_B.b_jtilecol_n];
-    dynamic_simulation_B.n_l = body->JointInternal.PositionNumber;
-    dynamic_simulation_B.n_l += dynamic_simulation_B.k_h;
-    if (dynamic_simulation_B.k_h > dynamic_simulation_B.n_l - 1.0) {
-      dynamic_simulation_B.e_a = 0;
-      dynamic_simulation_B.d_f = 0;
+  for (dynamic_simulation_B.b_jtilecol_d = 0; dynamic_simulation_B.b_jtilecol_d <=
+       dynamic_simulation_B.ntilecols_n; dynamic_simulation_B.b_jtilecol_d++) {
+    body = obj->Bodies[dynamic_simulation_B.b_jtilecol_d];
+    dynamic_simulation_B.n_h = body->JointInternal.PositionNumber;
+    dynamic_simulation_B.n_h += dynamic_simulation_B.k_c;
+    if (dynamic_simulation_B.k_c > dynamic_simulation_B.n_h - 1.0) {
+      dynamic_simulation_B.e_g = 0;
+      dynamic_simulation_B.d_a = 0;
     } else {
-      dynamic_simulation_B.e_a = static_cast<int32_T>(dynamic_simulation_B.k_h)
+      dynamic_simulation_B.e_g = static_cast<int32_T>(dynamic_simulation_B.k_c)
         - 1;
-      dynamic_simulation_B.d_f = static_cast<int32_T>(dynamic_simulation_B.n_l -
+      dynamic_simulation_B.d_a = static_cast<int32_T>(dynamic_simulation_B.n_h -
         1.0);
     }
 
-    dynamic_simulation_B.b_kstr_d = switch_expression->size[0] *
+    dynamic_simulation_B.b_kstr_na = switch_expression->size[0] *
       switch_expression->size[1];
     switch_expression->size[0] = 1;
     switch_expression->size[1] = body->JointInternal.Type->size[1];
     dynami_emxEnsureCapacity_char_T(switch_expression,
-      dynamic_simulation_B.b_kstr_d);
-    dynamic_simulation_B.loop_ub_n = body->JointInternal.Type->size[0] *
+      dynamic_simulation_B.b_kstr_na);
+    dynamic_simulation_B.loop_ub_c = body->JointInternal.Type->size[0] *
       body->JointInternal.Type->size[1] - 1;
-    for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d <=
-         dynamic_simulation_B.loop_ub_n; dynamic_simulation_B.b_kstr_d++) {
-      switch_expression->data[dynamic_simulation_B.b_kstr_d] =
-        body->JointInternal.Type->data[dynamic_simulation_B.b_kstr_d];
+    for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na <=
+         dynamic_simulation_B.loop_ub_c; dynamic_simulation_B.b_kstr_na++) {
+      switch_expression->data[dynamic_simulation_B.b_kstr_na] =
+        body->JointInternal.Type->data[dynamic_simulation_B.b_kstr_na];
     }
 
     dynamic_simulation_B.b_bool_p = false;
     if (switch_expression->size[1] == 5) {
-      dynamic_simulation_B.b_kstr_d = 1;
+      dynamic_simulation_B.b_kstr_na = 1;
       do {
         exitg1 = 0;
-        if (dynamic_simulation_B.b_kstr_d - 1 < 5) {
-          dynamic_simulation_B.loop_ub_n = dynamic_simulation_B.b_kstr_d - 1;
-          if (switch_expression->data[dynamic_simulation_B.loop_ub_n] !=
-              dynamic_simulation_B.b_ei[dynamic_simulation_B.loop_ub_n]) {
+        if (dynamic_simulation_B.b_kstr_na - 1 < 5) {
+          dynamic_simulation_B.loop_ub_c = dynamic_simulation_B.b_kstr_na - 1;
+          if (switch_expression->data[dynamic_simulation_B.loop_ub_c] !=
+              dynamic_simulation_B.b_d[dynamic_simulation_B.loop_ub_c]) {
             exitg1 = 1;
           } else {
-            dynamic_simulation_B.b_kstr_d++;
+            dynamic_simulation_B.b_kstr_na++;
           }
         } else {
           dynamic_simulation_B.b_bool_p = true;
@@ -1787,26 +1786,26 @@ static void RigidBodyTree_forwardKinemati_k(p_robotics_manip_internal_R_k_T *obj
     }
 
     if (dynamic_simulation_B.b_bool_p) {
-      dynamic_simulation_B.b_kstr_d = 0;
+      dynamic_simulation_B.b_kstr_na = 0;
     } else {
-      for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 8;
-           dynamic_simulation_B.b_kstr_d++) {
-        dynamic_simulation_B.b_ax[dynamic_simulation_B.b_kstr_d] =
-          tmp_1[dynamic_simulation_B.b_kstr_d];
+      for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na <
+           8; dynamic_simulation_B.b_kstr_na++) {
+        dynamic_simulation_B.b_o2[dynamic_simulation_B.b_kstr_na] =
+          tmp_1[dynamic_simulation_B.b_kstr_na];
       }
 
       dynamic_simulation_B.b_bool_p = false;
       if (switch_expression->size[1] == 8) {
-        dynamic_simulation_B.b_kstr_d = 1;
+        dynamic_simulation_B.b_kstr_na = 1;
         do {
           exitg1 = 0;
-          if (dynamic_simulation_B.b_kstr_d - 1 < 8) {
-            dynamic_simulation_B.loop_ub_n = dynamic_simulation_B.b_kstr_d - 1;
-            if (switch_expression->data[dynamic_simulation_B.loop_ub_n] !=
-                dynamic_simulation_B.b_ax[dynamic_simulation_B.loop_ub_n]) {
+          if (dynamic_simulation_B.b_kstr_na - 1 < 8) {
+            dynamic_simulation_B.loop_ub_c = dynamic_simulation_B.b_kstr_na - 1;
+            if (switch_expression->data[dynamic_simulation_B.loop_ub_c] !=
+                dynamic_simulation_B.b_o2[dynamic_simulation_B.loop_ub_c]) {
               exitg1 = 1;
             } else {
-              dynamic_simulation_B.b_kstr_d++;
+              dynamic_simulation_B.b_kstr_na++;
             }
           } else {
             dynamic_simulation_B.b_bool_p = true;
@@ -1816,13 +1815,13 @@ static void RigidBodyTree_forwardKinemati_k(p_robotics_manip_internal_R_k_T *obj
       }
 
       if (dynamic_simulation_B.b_bool_p) {
-        dynamic_simulation_B.b_kstr_d = 1;
+        dynamic_simulation_B.b_kstr_na = 1;
       } else {
-        dynamic_simulation_B.b_kstr_d = -1;
+        dynamic_simulation_B.b_kstr_na = -1;
       }
     }
 
-    switch (dynamic_simulation_B.b_kstr_d) {
+    switch (dynamic_simulation_B.b_kstr_na) {
      case 0:
       memset(&dynamic_simulation_B.c_f1_m[0], 0, sizeof(real_T) << 4U);
       dynamic_simulation_B.c_f1_m[0] = 1.0;
@@ -1833,92 +1832,92 @@ static void RigidBodyTree_forwardKinemati_k(p_robotics_manip_internal_R_k_T *obj
 
      case 1:
       rigidBodyJoint_get_JointAxis_k(&body->JointInternal,
-        dynamic_simulation_B.v_o);
-      dynamic_simulation_B.d_f -= dynamic_simulation_B.e_a;
-      for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d <
-           dynamic_simulation_B.d_f; dynamic_simulation_B.b_kstr_d++) {
-        dynamic_simulation_B.e_data_j[dynamic_simulation_B.b_kstr_d] =
-          dynamic_simulation_B.e_a + dynamic_simulation_B.b_kstr_d;
+        dynamic_simulation_B.v_m3);
+      dynamic_simulation_B.d_a -= dynamic_simulation_B.e_g;
+      for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na <
+           dynamic_simulation_B.d_a; dynamic_simulation_B.b_kstr_na++) {
+        dynamic_simulation_B.e_data_n[dynamic_simulation_B.b_kstr_na] =
+          dynamic_simulation_B.e_g + dynamic_simulation_B.b_kstr_na;
       }
 
-      dynamic_simulation_B.result_data_a[0] = dynamic_simulation_B.v_o[0];
-      dynamic_simulation_B.result_data_a[1] = dynamic_simulation_B.v_o[1];
-      dynamic_simulation_B.result_data_a[2] = dynamic_simulation_B.v_o[2];
-      if (0 <= (dynamic_simulation_B.d_f != 0) - 1) {
-        dynamic_simulation_B.result_data_a[3] =
-          qvec[dynamic_simulation_B.e_data_j[0]];
+      dynamic_simulation_B.result_data_i[0] = dynamic_simulation_B.v_m3[0];
+      dynamic_simulation_B.result_data_i[1] = dynamic_simulation_B.v_m3[1];
+      dynamic_simulation_B.result_data_i[2] = dynamic_simulation_B.v_m3[2];
+      if (0 <= (dynamic_simulation_B.d_a != 0) - 1) {
+        dynamic_simulation_B.result_data_i[3] =
+          qvec[dynamic_simulation_B.e_data_n[0]];
       }
 
-      dynamic_simulation_B.k_h = 1.0 / sqrt((dynamic_simulation_B.result_data_a
-        [0] * dynamic_simulation_B.result_data_a[0] +
-        dynamic_simulation_B.result_data_a[1] *
-        dynamic_simulation_B.result_data_a[1]) +
-        dynamic_simulation_B.result_data_a[2] *
-        dynamic_simulation_B.result_data_a[2]);
-      dynamic_simulation_B.v_o[0] = dynamic_simulation_B.result_data_a[0] *
-        dynamic_simulation_B.k_h;
-      dynamic_simulation_B.v_o[1] = dynamic_simulation_B.result_data_a[1] *
-        dynamic_simulation_B.k_h;
-      dynamic_simulation_B.v_o[2] = dynamic_simulation_B.result_data_a[2] *
-        dynamic_simulation_B.k_h;
-      dynamic_simulation_B.k_h = cos(dynamic_simulation_B.result_data_a[3]);
-      dynamic_simulation_B.sth_m = sin(dynamic_simulation_B.result_data_a[3]);
-      dynamic_simulation_B.tempR_h[0] = dynamic_simulation_B.v_o[0] *
-        dynamic_simulation_B.v_o[0] * (1.0 - dynamic_simulation_B.k_h) +
-        dynamic_simulation_B.k_h;
-      dynamic_simulation_B.tempR_tmp_m = dynamic_simulation_B.v_o[1] *
-        dynamic_simulation_B.v_o[0] * (1.0 - dynamic_simulation_B.k_h);
-      dynamic_simulation_B.tempR_tmp_h = dynamic_simulation_B.v_o[2] *
-        dynamic_simulation_B.sth_m;
-      dynamic_simulation_B.tempR_h[1] = dynamic_simulation_B.tempR_tmp_m -
-        dynamic_simulation_B.tempR_tmp_h;
-      dynamic_simulation_B.tempR_tmp_cs = dynamic_simulation_B.v_o[2] *
-        dynamic_simulation_B.v_o[0] * (1.0 - dynamic_simulation_B.k_h);
-      dynamic_simulation_B.tempR_tmp_k = dynamic_simulation_B.v_o[1] *
-        dynamic_simulation_B.sth_m;
-      dynamic_simulation_B.tempR_h[2] = dynamic_simulation_B.tempR_tmp_cs +
-        dynamic_simulation_B.tempR_tmp_k;
-      dynamic_simulation_B.tempR_h[3] = dynamic_simulation_B.tempR_tmp_m +
-        dynamic_simulation_B.tempR_tmp_h;
-      dynamic_simulation_B.tempR_h[4] = dynamic_simulation_B.v_o[1] *
-        dynamic_simulation_B.v_o[1] * (1.0 - dynamic_simulation_B.k_h) +
-        dynamic_simulation_B.k_h;
-      dynamic_simulation_B.tempR_tmp_m = dynamic_simulation_B.v_o[2] *
-        dynamic_simulation_B.v_o[1] * (1.0 - dynamic_simulation_B.k_h);
-      dynamic_simulation_B.tempR_tmp_h = dynamic_simulation_B.v_o[0] *
-        dynamic_simulation_B.sth_m;
-      dynamic_simulation_B.tempR_h[5] = dynamic_simulation_B.tempR_tmp_m -
-        dynamic_simulation_B.tempR_tmp_h;
-      dynamic_simulation_B.tempR_h[6] = dynamic_simulation_B.tempR_tmp_cs -
-        dynamic_simulation_B.tempR_tmp_k;
-      dynamic_simulation_B.tempR_h[7] = dynamic_simulation_B.tempR_tmp_m +
-        dynamic_simulation_B.tempR_tmp_h;
-      dynamic_simulation_B.tempR_h[8] = dynamic_simulation_B.v_o[2] *
-        dynamic_simulation_B.v_o[2] * (1.0 - dynamic_simulation_B.k_h) +
-        dynamic_simulation_B.k_h;
-      for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 3;
-           dynamic_simulation_B.b_kstr_d++) {
-        dynamic_simulation_B.e_a = dynamic_simulation_B.b_kstr_d + 1;
-        dynamic_simulation_B.R_ln[dynamic_simulation_B.e_a - 1] =
-          dynamic_simulation_B.tempR_h[(dynamic_simulation_B.e_a - 1) * 3];
-        dynamic_simulation_B.e_a = dynamic_simulation_B.b_kstr_d + 1;
-        dynamic_simulation_B.R_ln[dynamic_simulation_B.e_a + 2] =
-          dynamic_simulation_B.tempR_h[(dynamic_simulation_B.e_a - 1) * 3 + 1];
-        dynamic_simulation_B.e_a = dynamic_simulation_B.b_kstr_d + 1;
-        dynamic_simulation_B.R_ln[dynamic_simulation_B.e_a + 5] =
-          dynamic_simulation_B.tempR_h[(dynamic_simulation_B.e_a - 1) * 3 + 2];
+      dynamic_simulation_B.k_c = 1.0 / sqrt((dynamic_simulation_B.result_data_i
+        [0] * dynamic_simulation_B.result_data_i[0] +
+        dynamic_simulation_B.result_data_i[1] *
+        dynamic_simulation_B.result_data_i[1]) +
+        dynamic_simulation_B.result_data_i[2] *
+        dynamic_simulation_B.result_data_i[2]);
+      dynamic_simulation_B.v_m3[0] = dynamic_simulation_B.result_data_i[0] *
+        dynamic_simulation_B.k_c;
+      dynamic_simulation_B.v_m3[1] = dynamic_simulation_B.result_data_i[1] *
+        dynamic_simulation_B.k_c;
+      dynamic_simulation_B.v_m3[2] = dynamic_simulation_B.result_data_i[2] *
+        dynamic_simulation_B.k_c;
+      dynamic_simulation_B.k_c = cos(dynamic_simulation_B.result_data_i[3]);
+      dynamic_simulation_B.sth_k = sin(dynamic_simulation_B.result_data_i[3]);
+      dynamic_simulation_B.tempR_h[0] = dynamic_simulation_B.v_m3[0] *
+        dynamic_simulation_B.v_m3[0] * (1.0 - dynamic_simulation_B.k_c) +
+        dynamic_simulation_B.k_c;
+      dynamic_simulation_B.tempR_tmp_p = dynamic_simulation_B.v_m3[1] *
+        dynamic_simulation_B.v_m3[0] * (1.0 - dynamic_simulation_B.k_c);
+      dynamic_simulation_B.tempR_tmp_px = dynamic_simulation_B.v_m3[2] *
+        dynamic_simulation_B.sth_k;
+      dynamic_simulation_B.tempR_h[1] = dynamic_simulation_B.tempR_tmp_p -
+        dynamic_simulation_B.tempR_tmp_px;
+      dynamic_simulation_B.tempR_tmp_p4 = dynamic_simulation_B.v_m3[2] *
+        dynamic_simulation_B.v_m3[0] * (1.0 - dynamic_simulation_B.k_c);
+      dynamic_simulation_B.tempR_tmp_a = dynamic_simulation_B.v_m3[1] *
+        dynamic_simulation_B.sth_k;
+      dynamic_simulation_B.tempR_h[2] = dynamic_simulation_B.tempR_tmp_p4 +
+        dynamic_simulation_B.tempR_tmp_a;
+      dynamic_simulation_B.tempR_h[3] = dynamic_simulation_B.tempR_tmp_p +
+        dynamic_simulation_B.tempR_tmp_px;
+      dynamic_simulation_B.tempR_h[4] = dynamic_simulation_B.v_m3[1] *
+        dynamic_simulation_B.v_m3[1] * (1.0 - dynamic_simulation_B.k_c) +
+        dynamic_simulation_B.k_c;
+      dynamic_simulation_B.tempR_tmp_p = dynamic_simulation_B.v_m3[2] *
+        dynamic_simulation_B.v_m3[1] * (1.0 - dynamic_simulation_B.k_c);
+      dynamic_simulation_B.tempR_tmp_px = dynamic_simulation_B.v_m3[0] *
+        dynamic_simulation_B.sth_k;
+      dynamic_simulation_B.tempR_h[5] = dynamic_simulation_B.tempR_tmp_p -
+        dynamic_simulation_B.tempR_tmp_px;
+      dynamic_simulation_B.tempR_h[6] = dynamic_simulation_B.tempR_tmp_p4 -
+        dynamic_simulation_B.tempR_tmp_a;
+      dynamic_simulation_B.tempR_h[7] = dynamic_simulation_B.tempR_tmp_p +
+        dynamic_simulation_B.tempR_tmp_px;
+      dynamic_simulation_B.tempR_h[8] = dynamic_simulation_B.v_m3[2] *
+        dynamic_simulation_B.v_m3[2] * (1.0 - dynamic_simulation_B.k_c) +
+        dynamic_simulation_B.k_c;
+      for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na <
+           3; dynamic_simulation_B.b_kstr_na++) {
+        dynamic_simulation_B.e_g = dynamic_simulation_B.b_kstr_na + 1;
+        dynamic_simulation_B.R_ln[dynamic_simulation_B.e_g - 1] =
+          dynamic_simulation_B.tempR_h[(dynamic_simulation_B.e_g - 1) * 3];
+        dynamic_simulation_B.e_g = dynamic_simulation_B.b_kstr_na + 1;
+        dynamic_simulation_B.R_ln[dynamic_simulation_B.e_g + 2] =
+          dynamic_simulation_B.tempR_h[(dynamic_simulation_B.e_g - 1) * 3 + 1];
+        dynamic_simulation_B.e_g = dynamic_simulation_B.b_kstr_na + 1;
+        dynamic_simulation_B.R_ln[dynamic_simulation_B.e_g + 5] =
+          dynamic_simulation_B.tempR_h[(dynamic_simulation_B.e_g - 1) * 3 + 2];
       }
 
       memset(&dynamic_simulation_B.c_f1_m[0], 0, sizeof(real_T) << 4U);
-      for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 3;
-           dynamic_simulation_B.b_kstr_d++) {
-        dynamic_simulation_B.d_f = dynamic_simulation_B.b_kstr_d << 2;
-        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_f] =
-          dynamic_simulation_B.R_ln[3 * dynamic_simulation_B.b_kstr_d];
-        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_f + 1] =
-          dynamic_simulation_B.R_ln[3 * dynamic_simulation_B.b_kstr_d + 1];
-        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_f + 2] =
-          dynamic_simulation_B.R_ln[3 * dynamic_simulation_B.b_kstr_d + 2];
+      for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na <
+           3; dynamic_simulation_B.b_kstr_na++) {
+        dynamic_simulation_B.d_a = dynamic_simulation_B.b_kstr_na << 2;
+        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_a] =
+          dynamic_simulation_B.R_ln[3 * dynamic_simulation_B.b_kstr_na];
+        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_a + 1] =
+          dynamic_simulation_B.R_ln[3 * dynamic_simulation_B.b_kstr_na + 1];
+        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_a + 2] =
+          dynamic_simulation_B.R_ln[3 * dynamic_simulation_B.b_kstr_na + 2];
       }
 
       dynamic_simulation_B.c_f1_m[15] = 1.0;
@@ -1926,23 +1925,23 @@ static void RigidBodyTree_forwardKinemati_k(p_robotics_manip_internal_R_k_T *obj
 
      default:
       rigidBodyJoint_get_JointAxis_k(&body->JointInternal,
-        dynamic_simulation_B.v_o);
+        dynamic_simulation_B.v_m3);
       memset(&dynamic_simulation_B.tempR_h[0], 0, 9U * sizeof(real_T));
       dynamic_simulation_B.tempR_h[0] = 1.0;
       dynamic_simulation_B.tempR_h[4] = 1.0;
       dynamic_simulation_B.tempR_h[8] = 1.0;
-      for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 3;
-           dynamic_simulation_B.b_kstr_d++) {
-        dynamic_simulation_B.d_f = dynamic_simulation_B.b_kstr_d << 2;
-        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_f] =
-          dynamic_simulation_B.tempR_h[3 * dynamic_simulation_B.b_kstr_d];
-        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_f + 1] =
-          dynamic_simulation_B.tempR_h[3 * dynamic_simulation_B.b_kstr_d + 1];
-        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_f + 2] =
-          dynamic_simulation_B.tempR_h[3 * dynamic_simulation_B.b_kstr_d + 2];
-        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.b_kstr_d + 12] =
-          dynamic_simulation_B.v_o[dynamic_simulation_B.b_kstr_d] *
-          qvec[dynamic_simulation_B.e_a];
+      for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na <
+           3; dynamic_simulation_B.b_kstr_na++) {
+        dynamic_simulation_B.d_a = dynamic_simulation_B.b_kstr_na << 2;
+        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_a] =
+          dynamic_simulation_B.tempR_h[3 * dynamic_simulation_B.b_kstr_na];
+        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_a + 1] =
+          dynamic_simulation_B.tempR_h[3 * dynamic_simulation_B.b_kstr_na + 1];
+        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_a + 2] =
+          dynamic_simulation_B.tempR_h[3 * dynamic_simulation_B.b_kstr_na + 2];
+        dynamic_simulation_B.c_f1_m[dynamic_simulation_B.b_kstr_na + 12] =
+          dynamic_simulation_B.v_m3[dynamic_simulation_B.b_kstr_na] *
+          qvec[dynamic_simulation_B.e_g];
       }
 
       dynamic_simulation_B.c_f1_m[3] = 0.0;
@@ -1952,107 +1951,108 @@ static void RigidBodyTree_forwardKinemati_k(p_robotics_manip_internal_R_k_T *obj
       break;
     }
 
-    for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 16;
-         dynamic_simulation_B.b_kstr_d++) {
-      dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_d] =
-        body->JointInternal.JointToParentTransform[dynamic_simulation_B.b_kstr_d];
+    for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na < 16;
+         dynamic_simulation_B.b_kstr_na++) {
+      dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_na] =
+        body->
+        JointInternal.JointToParentTransform[dynamic_simulation_B.b_kstr_na];
     }
 
-    for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 16;
-         dynamic_simulation_B.b_kstr_d++) {
-      dynamic_simulation_B.b_p[dynamic_simulation_B.b_kstr_d] =
-        body->JointInternal.ChildToJointTransform[dynamic_simulation_B.b_kstr_d];
+    for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na < 16;
+         dynamic_simulation_B.b_kstr_na++) {
+      dynamic_simulation_B.b_p[dynamic_simulation_B.b_kstr_na] =
+        body->JointInternal.ChildToJointTransform[dynamic_simulation_B.b_kstr_na];
     }
 
-    for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 4;
-         dynamic_simulation_B.b_kstr_d++) {
-      for (dynamic_simulation_B.e_a = 0; dynamic_simulation_B.e_a < 4;
-           dynamic_simulation_B.e_a++) {
-        dynamic_simulation_B.d_f = dynamic_simulation_B.e_a << 2;
-        dynamic_simulation_B.loop_ub_n = dynamic_simulation_B.b_kstr_d +
-          dynamic_simulation_B.d_f;
-        dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_n] = 0.0;
-        dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_n] +=
-          dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_f] *
-          dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_d];
-        dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_n] +=
-          dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_f + 1] *
-          dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_d + 4];
-        dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_n] +=
-          dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_f + 2] *
-          dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_d + 8];
-        dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_n] +=
-          dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_f + 3] *
-          dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_d + 12];
+    for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na < 4;
+         dynamic_simulation_B.b_kstr_na++) {
+      for (dynamic_simulation_B.e_g = 0; dynamic_simulation_B.e_g < 4;
+           dynamic_simulation_B.e_g++) {
+        dynamic_simulation_B.d_a = dynamic_simulation_B.e_g << 2;
+        dynamic_simulation_B.loop_ub_c = dynamic_simulation_B.b_kstr_na +
+          dynamic_simulation_B.d_a;
+        dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_c] = 0.0;
+        dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_c] +=
+          dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_a] *
+          dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_na];
+        dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_c] +=
+          dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_a + 1] *
+          dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_na + 4];
+        dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_c] +=
+          dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_a + 2] *
+          dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_na + 8];
+        dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_c] +=
+          dynamic_simulation_B.c_f1_m[dynamic_simulation_B.d_a + 3] *
+          dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_na + 12];
       }
 
-      for (dynamic_simulation_B.e_a = 0; dynamic_simulation_B.e_a < 4;
-           dynamic_simulation_B.e_a++) {
-        dynamic_simulation_B.d_f = dynamic_simulation_B.e_a << 2;
-        dynamic_simulation_B.loop_ub_n = dynamic_simulation_B.b_kstr_d +
-          dynamic_simulation_B.d_f;
-        Ttree->data[dynamic_simulation_B.b_jtilecol_n]
-          .f1[dynamic_simulation_B.loop_ub_n] = 0.0;
-        Ttree->data[dynamic_simulation_B.b_jtilecol_n]
-          .f1[dynamic_simulation_B.loop_ub_n] +=
-          dynamic_simulation_B.b_p[dynamic_simulation_B.d_f] *
-          dynamic_simulation_B.a_l[dynamic_simulation_B.b_kstr_d];
-        Ttree->data[dynamic_simulation_B.b_jtilecol_n]
-          .f1[dynamic_simulation_B.loop_ub_n] +=
-          dynamic_simulation_B.b_p[dynamic_simulation_B.d_f + 1] *
-          dynamic_simulation_B.a_l[dynamic_simulation_B.b_kstr_d + 4];
-        Ttree->data[dynamic_simulation_B.b_jtilecol_n]
-          .f1[dynamic_simulation_B.loop_ub_n] +=
-          dynamic_simulation_B.b_p[dynamic_simulation_B.d_f + 2] *
-          dynamic_simulation_B.a_l[dynamic_simulation_B.b_kstr_d + 8];
-        Ttree->data[dynamic_simulation_B.b_jtilecol_n]
-          .f1[dynamic_simulation_B.loop_ub_n] +=
-          dynamic_simulation_B.b_p[dynamic_simulation_B.d_f + 3] *
-          dynamic_simulation_B.a_l[dynamic_simulation_B.b_kstr_d + 12];
+      for (dynamic_simulation_B.e_g = 0; dynamic_simulation_B.e_g < 4;
+           dynamic_simulation_B.e_g++) {
+        dynamic_simulation_B.d_a = dynamic_simulation_B.e_g << 2;
+        dynamic_simulation_B.loop_ub_c = dynamic_simulation_B.b_kstr_na +
+          dynamic_simulation_B.d_a;
+        Ttree->data[dynamic_simulation_B.b_jtilecol_d]
+          .f1[dynamic_simulation_B.loop_ub_c] = 0.0;
+        Ttree->data[dynamic_simulation_B.b_jtilecol_d]
+          .f1[dynamic_simulation_B.loop_ub_c] +=
+          dynamic_simulation_B.b_p[dynamic_simulation_B.d_a] *
+          dynamic_simulation_B.a_l[dynamic_simulation_B.b_kstr_na];
+        Ttree->data[dynamic_simulation_B.b_jtilecol_d]
+          .f1[dynamic_simulation_B.loop_ub_c] +=
+          dynamic_simulation_B.b_p[dynamic_simulation_B.d_a + 1] *
+          dynamic_simulation_B.a_l[dynamic_simulation_B.b_kstr_na + 4];
+        Ttree->data[dynamic_simulation_B.b_jtilecol_d]
+          .f1[dynamic_simulation_B.loop_ub_c] +=
+          dynamic_simulation_B.b_p[dynamic_simulation_B.d_a + 2] *
+          dynamic_simulation_B.a_l[dynamic_simulation_B.b_kstr_na + 8];
+        Ttree->data[dynamic_simulation_B.b_jtilecol_d]
+          .f1[dynamic_simulation_B.loop_ub_c] +=
+          dynamic_simulation_B.b_p[dynamic_simulation_B.d_a + 3] *
+          dynamic_simulation_B.a_l[dynamic_simulation_B.b_kstr_na + 12];
       }
     }
 
-    dynamic_simulation_B.k_h = dynamic_simulation_B.n_l;
+    dynamic_simulation_B.k_c = dynamic_simulation_B.n_h;
     if (body->ParentIndex > 0.0) {
-      for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 16;
-           dynamic_simulation_B.b_kstr_d++) {
-        dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_d] = Ttree->data[
+      for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na <
+           16; dynamic_simulation_B.b_kstr_na++) {
+        dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_na] = Ttree->data[
           static_cast<int32_T>(body->ParentIndex) - 1]
-          .f1[dynamic_simulation_B.b_kstr_d];
+          .f1[dynamic_simulation_B.b_kstr_na];
       }
 
-      for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 4;
-           dynamic_simulation_B.b_kstr_d++) {
-        for (dynamic_simulation_B.e_a = 0; dynamic_simulation_B.e_a < 4;
-             dynamic_simulation_B.e_a++) {
-          dynamic_simulation_B.d_f = dynamic_simulation_B.e_a << 2;
-          dynamic_simulation_B.loop_ub_n = dynamic_simulation_B.b_kstr_d +
-            dynamic_simulation_B.d_f;
-          dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_n] = 0.0;
-          dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_n] +=
-            Ttree->data[dynamic_simulation_B.b_jtilecol_n]
-            .f1[dynamic_simulation_B.d_f] *
-            dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_d];
-          dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_n] +=
-            Ttree->data[dynamic_simulation_B.b_jtilecol_n]
-            .f1[dynamic_simulation_B.d_f + 1] *
-            dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_d + 4];
-          dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_n] +=
-            Ttree->data[dynamic_simulation_B.b_jtilecol_n]
-            .f1[dynamic_simulation_B.d_f + 2] *
-            dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_d + 8];
-          dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_n] +=
-            Ttree->data[dynamic_simulation_B.b_jtilecol_n]
-            .f1[dynamic_simulation_B.d_f + 3] *
-            dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_d + 12];
+      for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na <
+           4; dynamic_simulation_B.b_kstr_na++) {
+        for (dynamic_simulation_B.e_g = 0; dynamic_simulation_B.e_g < 4;
+             dynamic_simulation_B.e_g++) {
+          dynamic_simulation_B.d_a = dynamic_simulation_B.e_g << 2;
+          dynamic_simulation_B.loop_ub_c = dynamic_simulation_B.b_kstr_na +
+            dynamic_simulation_B.d_a;
+          dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_c] = 0.0;
+          dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_c] +=
+            Ttree->data[dynamic_simulation_B.b_jtilecol_d]
+            .f1[dynamic_simulation_B.d_a] *
+            dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_na];
+          dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_c] +=
+            Ttree->data[dynamic_simulation_B.b_jtilecol_d]
+            .f1[dynamic_simulation_B.d_a + 1] *
+            dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_na + 4];
+          dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_c] +=
+            Ttree->data[dynamic_simulation_B.b_jtilecol_d]
+            .f1[dynamic_simulation_B.d_a + 2] *
+            dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_na + 8];
+          dynamic_simulation_B.a_l[dynamic_simulation_B.loop_ub_c] +=
+            Ttree->data[dynamic_simulation_B.b_jtilecol_d]
+            .f1[dynamic_simulation_B.d_a + 3] *
+            dynamic_simulation_B.a_n[dynamic_simulation_B.b_kstr_na + 12];
         }
       }
 
-      for (dynamic_simulation_B.b_kstr_d = 0; dynamic_simulation_B.b_kstr_d < 16;
-           dynamic_simulation_B.b_kstr_d++) {
-        Ttree->data[dynamic_simulation_B.b_jtilecol_n]
-          .f1[dynamic_simulation_B.b_kstr_d] =
-          dynamic_simulation_B.a_l[dynamic_simulation_B.b_kstr_d];
+      for (dynamic_simulation_B.b_kstr_na = 0; dynamic_simulation_B.b_kstr_na <
+           16; dynamic_simulation_B.b_kstr_na++) {
+        Ttree->data[dynamic_simulation_B.b_jtilecol_d]
+          .f1[dynamic_simulation_B.b_kstr_na] =
+          dynamic_simulation_B.a_l[dynamic_simulation_B.b_kstr_na];
       }
     }
   }
@@ -2113,26 +2113,26 @@ static void emxEnsureCapacity_f_cell_wrap1(emxArray_f_cell_wrap_dynami_k_T
   }
 
   dynamic_simulation_B.newNumel_l = 1;
-  for (dynamic_simulation_B.i_f = 0; dynamic_simulation_B.i_f <
-       emxArray->numDimensions; dynamic_simulation_B.i_f++) {
-    dynamic_simulation_B.newNumel_l *= emxArray->size[dynamic_simulation_B.i_f];
+  for (dynamic_simulation_B.i_f1 = 0; dynamic_simulation_B.i_f1 <
+       emxArray->numDimensions; dynamic_simulation_B.i_f1++) {
+    dynamic_simulation_B.newNumel_l *= emxArray->size[dynamic_simulation_B.i_f1];
   }
 
   if (dynamic_simulation_B.newNumel_l > emxArray->allocatedSize) {
-    dynamic_simulation_B.i_f = emxArray->allocatedSize;
-    if (dynamic_simulation_B.i_f < 16) {
-      dynamic_simulation_B.i_f = 16;
+    dynamic_simulation_B.i_f1 = emxArray->allocatedSize;
+    if (dynamic_simulation_B.i_f1 < 16) {
+      dynamic_simulation_B.i_f1 = 16;
     }
 
-    while (dynamic_simulation_B.i_f < dynamic_simulation_B.newNumel_l) {
-      if (dynamic_simulation_B.i_f > 1073741823) {
-        dynamic_simulation_B.i_f = MAX_int32_T;
+    while (dynamic_simulation_B.i_f1 < dynamic_simulation_B.newNumel_l) {
+      if (dynamic_simulation_B.i_f1 > 1073741823) {
+        dynamic_simulation_B.i_f1 = MAX_int32_T;
       } else {
-        dynamic_simulation_B.i_f <<= 1;
+        dynamic_simulation_B.i_f1 <<= 1;
       }
     }
 
-    newData = calloc(static_cast<uint32_T>(dynamic_simulation_B.i_f), sizeof
+    newData = calloc(static_cast<uint32_T>(dynamic_simulation_B.i_f1), sizeof
                      (f_cell_wrap_dynamic_simulat_k_T));
     if (emxArray->data != NULL) {
       memcpy(newData, emxArray->data, sizeof(f_cell_wrap_dynamic_simulat_k_T)
@@ -2143,7 +2143,7 @@ static void emxEnsureCapacity_f_cell_wrap1(emxArray_f_cell_wrap_dynami_k_T
     }
 
     emxArray->data = (f_cell_wrap_dynamic_simulat_k_T *)newData;
-    emxArray->allocatedSize = dynamic_simulation_B.i_f;
+    emxArray->allocatedSize = dynamic_simulation_B.i_f1;
     emxArray->canFreeData = true;
   }
 }
@@ -2157,24 +2157,24 @@ static void rigidBodyJoint_get_JointAxis_kq(const
 
   boolean_T guard1 = false;
   int32_T exitg1;
-  for (dynamic_simulation_B.b_kstr_o = 0; dynamic_simulation_B.b_kstr_o < 8;
-       dynamic_simulation_B.b_kstr_o++) {
-    dynamic_simulation_B.b_a[dynamic_simulation_B.b_kstr_o] =
-      tmp[dynamic_simulation_B.b_kstr_o];
+  for (dynamic_simulation_B.b_kstr_f = 0; dynamic_simulation_B.b_kstr_f < 8;
+       dynamic_simulation_B.b_kstr_f++) {
+    dynamic_simulation_B.b_l[dynamic_simulation_B.b_kstr_f] =
+      tmp[dynamic_simulation_B.b_kstr_f];
   }
 
   dynamic_simulation_B.b_bool_n = false;
   if (obj->Type->size[1] == 8) {
-    dynamic_simulation_B.b_kstr_o = 1;
+    dynamic_simulation_B.b_kstr_f = 1;
     do {
       exitg1 = 0;
-      if (dynamic_simulation_B.b_kstr_o - 1 < 8) {
-        dynamic_simulation_B.kstr_i = dynamic_simulation_B.b_kstr_o - 1;
-        if (obj->Type->data[dynamic_simulation_B.kstr_i] !=
-            dynamic_simulation_B.b_a[dynamic_simulation_B.kstr_i]) {
+      if (dynamic_simulation_B.b_kstr_f - 1 < 8) {
+        dynamic_simulation_B.kstr_c = dynamic_simulation_B.b_kstr_f - 1;
+        if (obj->Type->data[dynamic_simulation_B.kstr_c] !=
+            dynamic_simulation_B.b_l[dynamic_simulation_B.kstr_c]) {
           exitg1 = 1;
         } else {
-          dynamic_simulation_B.b_kstr_o++;
+          dynamic_simulation_B.b_kstr_f++;
         }
       } else {
         dynamic_simulation_B.b_bool_n = true;
@@ -2187,24 +2187,24 @@ static void rigidBodyJoint_get_JointAxis_kq(const
   if (dynamic_simulation_B.b_bool_n) {
     guard1 = true;
   } else {
-    for (dynamic_simulation_B.b_kstr_o = 0; dynamic_simulation_B.b_kstr_o < 9;
-         dynamic_simulation_B.b_kstr_o++) {
-      dynamic_simulation_B.b_h[dynamic_simulation_B.b_kstr_o] =
-        tmp_0[dynamic_simulation_B.b_kstr_o];
+    for (dynamic_simulation_B.b_kstr_f = 0; dynamic_simulation_B.b_kstr_f < 9;
+         dynamic_simulation_B.b_kstr_f++) {
+      dynamic_simulation_B.b_p5[dynamic_simulation_B.b_kstr_f] =
+        tmp_0[dynamic_simulation_B.b_kstr_f];
     }
 
     dynamic_simulation_B.b_bool_n = false;
     if (obj->Type->size[1] == 9) {
-      dynamic_simulation_B.b_kstr_o = 1;
+      dynamic_simulation_B.b_kstr_f = 1;
       do {
         exitg1 = 0;
-        if (dynamic_simulation_B.b_kstr_o - 1 < 9) {
-          dynamic_simulation_B.kstr_i = dynamic_simulation_B.b_kstr_o - 1;
-          if (obj->Type->data[dynamic_simulation_B.kstr_i] !=
-              dynamic_simulation_B.b_h[dynamic_simulation_B.kstr_i]) {
+        if (dynamic_simulation_B.b_kstr_f - 1 < 9) {
+          dynamic_simulation_B.kstr_c = dynamic_simulation_B.b_kstr_f - 1;
+          if (obj->Type->data[dynamic_simulation_B.kstr_c] !=
+              dynamic_simulation_B.b_p5[dynamic_simulation_B.kstr_c]) {
             exitg1 = 1;
           } else {
-            dynamic_simulation_B.b_kstr_o++;
+            dynamic_simulation_B.b_kstr_f++;
           }
         } else {
           dynamic_simulation_B.b_bool_n = true;
@@ -2253,24 +2253,24 @@ static void rigidBodyJoint_transformBodyT_k(const
   static const char_T tmp_0[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
 
   int32_T exitg1;
-  for (dynamic_simulation_B.b_kstr_k = 0; dynamic_simulation_B.b_kstr_k < 5;
-       dynamic_simulation_B.b_kstr_k++) {
-    dynamic_simulation_B.b_ex[dynamic_simulation_B.b_kstr_k] =
-      tmp[dynamic_simulation_B.b_kstr_k];
+  for (dynamic_simulation_B.b_kstr_m = 0; dynamic_simulation_B.b_kstr_m < 5;
+       dynamic_simulation_B.b_kstr_m++) {
+    dynamic_simulation_B.b_ei[dynamic_simulation_B.b_kstr_m] =
+      tmp[dynamic_simulation_B.b_kstr_m];
   }
 
   dynamic_simulation_B.b_bool_g = false;
   if (obj->Type->size[1] == 5) {
-    dynamic_simulation_B.b_kstr_k = 1;
+    dynamic_simulation_B.b_kstr_m = 1;
     do {
       exitg1 = 0;
-      if (dynamic_simulation_B.b_kstr_k - 1 < 5) {
-        dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_k - 1;
+      if (dynamic_simulation_B.b_kstr_m - 1 < 5) {
+        dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_m - 1;
         if (obj->Type->data[dynamic_simulation_B.kstr_o] !=
-            dynamic_simulation_B.b_ex[dynamic_simulation_B.kstr_o]) {
+            dynamic_simulation_B.b_ei[dynamic_simulation_B.kstr_o]) {
           exitg1 = 1;
         } else {
-          dynamic_simulation_B.b_kstr_k++;
+          dynamic_simulation_B.b_kstr_m++;
         }
       } else {
         dynamic_simulation_B.b_bool_g = true;
@@ -2280,26 +2280,26 @@ static void rigidBodyJoint_transformBodyT_k(const
   }
 
   if (dynamic_simulation_B.b_bool_g) {
-    dynamic_simulation_B.b_kstr_k = 0;
+    dynamic_simulation_B.b_kstr_m = 0;
   } else {
-    for (dynamic_simulation_B.b_kstr_k = 0; dynamic_simulation_B.b_kstr_k < 8;
-         dynamic_simulation_B.b_kstr_k++) {
-      dynamic_simulation_B.b_p5[dynamic_simulation_B.b_kstr_k] =
-        tmp_0[dynamic_simulation_B.b_kstr_k];
+    for (dynamic_simulation_B.b_kstr_m = 0; dynamic_simulation_B.b_kstr_m < 8;
+         dynamic_simulation_B.b_kstr_m++) {
+      dynamic_simulation_B.b_i[dynamic_simulation_B.b_kstr_m] =
+        tmp_0[dynamic_simulation_B.b_kstr_m];
     }
 
     dynamic_simulation_B.b_bool_g = false;
     if (obj->Type->size[1] == 8) {
-      dynamic_simulation_B.b_kstr_k = 1;
+      dynamic_simulation_B.b_kstr_m = 1;
       do {
         exitg1 = 0;
-        if (dynamic_simulation_B.b_kstr_k - 1 < 8) {
-          dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_k - 1;
+        if (dynamic_simulation_B.b_kstr_m - 1 < 8) {
+          dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_m - 1;
           if (obj->Type->data[dynamic_simulation_B.kstr_o] !=
-              dynamic_simulation_B.b_p5[dynamic_simulation_B.kstr_o]) {
+              dynamic_simulation_B.b_i[dynamic_simulation_B.kstr_o]) {
             exitg1 = 1;
           } else {
-            dynamic_simulation_B.b_kstr_k++;
+            dynamic_simulation_B.b_kstr_m++;
           }
         } else {
           dynamic_simulation_B.b_bool_g = true;
@@ -2309,13 +2309,13 @@ static void rigidBodyJoint_transformBodyT_k(const
     }
 
     if (dynamic_simulation_B.b_bool_g) {
-      dynamic_simulation_B.b_kstr_k = 1;
+      dynamic_simulation_B.b_kstr_m = 1;
     } else {
-      dynamic_simulation_B.b_kstr_k = -1;
+      dynamic_simulation_B.b_kstr_m = -1;
     }
   }
 
-  switch (dynamic_simulation_B.b_kstr_k) {
+  switch (dynamic_simulation_B.b_kstr_m) {
    case 0:
     memset(&dynamic_simulation_B.TJ[0], 0, sizeof(real_T) << 4U);
     dynamic_simulation_B.TJ[0] = 1.0;
@@ -2325,97 +2325,97 @@ static void rigidBodyJoint_transformBodyT_k(const
     break;
 
    case 1:
-    rigidBodyJoint_get_JointAxis_kq(obj, dynamic_simulation_B.v_n);
-    dynamic_simulation_B.result_data_f[0] = dynamic_simulation_B.v_n[0];
-    dynamic_simulation_B.result_data_f[1] = dynamic_simulation_B.v_n[1];
-    dynamic_simulation_B.result_data_f[2] = dynamic_simulation_B.v_n[2];
+    rigidBodyJoint_get_JointAxis_kq(obj, dynamic_simulation_B.v_c);
+    dynamic_simulation_B.result_data_n[0] = dynamic_simulation_B.v_c[0];
+    dynamic_simulation_B.result_data_n[1] = dynamic_simulation_B.v_c[1];
+    dynamic_simulation_B.result_data_n[2] = dynamic_simulation_B.v_c[2];
     if (0 <= (*q_size != 0) - 1) {
-      dynamic_simulation_B.result_data_f[3] = q_data[0];
+      dynamic_simulation_B.result_data_n[3] = q_data[0];
     }
 
-    dynamic_simulation_B.cth = 1.0 / sqrt((dynamic_simulation_B.result_data_f[0]
-      * dynamic_simulation_B.result_data_f[0] +
-      dynamic_simulation_B.result_data_f[1] *
-      dynamic_simulation_B.result_data_f[1]) +
-      dynamic_simulation_B.result_data_f[2] *
-      dynamic_simulation_B.result_data_f[2]);
-    dynamic_simulation_B.v_n[0] = dynamic_simulation_B.result_data_f[0] *
+    dynamic_simulation_B.cth = 1.0 / sqrt((dynamic_simulation_B.result_data_n[0]
+      * dynamic_simulation_B.result_data_n[0] +
+      dynamic_simulation_B.result_data_n[1] *
+      dynamic_simulation_B.result_data_n[1]) +
+      dynamic_simulation_B.result_data_n[2] *
+      dynamic_simulation_B.result_data_n[2]);
+    dynamic_simulation_B.v_c[0] = dynamic_simulation_B.result_data_n[0] *
       dynamic_simulation_B.cth;
-    dynamic_simulation_B.v_n[1] = dynamic_simulation_B.result_data_f[1] *
+    dynamic_simulation_B.v_c[1] = dynamic_simulation_B.result_data_n[1] *
       dynamic_simulation_B.cth;
-    dynamic_simulation_B.v_n[2] = dynamic_simulation_B.result_data_f[2] *
+    dynamic_simulation_B.v_c[2] = dynamic_simulation_B.result_data_n[2] *
       dynamic_simulation_B.cth;
-    dynamic_simulation_B.cth = cos(dynamic_simulation_B.result_data_f[3]);
-    dynamic_simulation_B.sth_i = sin(dynamic_simulation_B.result_data_f[3]);
-    dynamic_simulation_B.tempR_tmp_f = dynamic_simulation_B.v_n[1] *
-      dynamic_simulation_B.v_n[0] * (1.0 - dynamic_simulation_B.cth);
-    dynamic_simulation_B.tempR_tmp_i = dynamic_simulation_B.v_n[2] *
-      dynamic_simulation_B.sth_i;
-    dynamic_simulation_B.tempR_tmp_ff = dynamic_simulation_B.v_n[2] *
-      dynamic_simulation_B.v_n[0] * (1.0 - dynamic_simulation_B.cth);
-    dynamic_simulation_B.tempR_tmp_g = dynamic_simulation_B.v_n[1] *
-      dynamic_simulation_B.sth_i;
-    dynamic_simulation_B.tempR_tmp_c = dynamic_simulation_B.v_n[2] *
-      dynamic_simulation_B.v_n[1] * (1.0 - dynamic_simulation_B.cth);
-    dynamic_simulation_B.sth_i *= dynamic_simulation_B.v_n[0];
-    dynamic_simulation_cat(dynamic_simulation_B.v_n[0] *
-      dynamic_simulation_B.v_n[0] * (1.0 - dynamic_simulation_B.cth) +
-      dynamic_simulation_B.cth, dynamic_simulation_B.tempR_tmp_f -
-      dynamic_simulation_B.tempR_tmp_i, dynamic_simulation_B.tempR_tmp_ff +
-      dynamic_simulation_B.tempR_tmp_g, dynamic_simulation_B.tempR_tmp_f +
-      dynamic_simulation_B.tempR_tmp_i, dynamic_simulation_B.v_n[1] *
-      dynamic_simulation_B.v_n[1] * (1.0 - dynamic_simulation_B.cth) +
+    dynamic_simulation_B.cth = cos(dynamic_simulation_B.result_data_n[3]);
+    dynamic_simulation_B.sth_c = sin(dynamic_simulation_B.result_data_n[3]);
+    dynamic_simulation_B.tempR_tmp_o = dynamic_simulation_B.v_c[1] *
+      dynamic_simulation_B.v_c[0] * (1.0 - dynamic_simulation_B.cth);
+    dynamic_simulation_B.tempR_tmp_l = dynamic_simulation_B.v_c[2] *
+      dynamic_simulation_B.sth_c;
+    dynamic_simulation_B.tempR_tmp_m = dynamic_simulation_B.v_c[2] *
+      dynamic_simulation_B.v_c[0] * (1.0 - dynamic_simulation_B.cth);
+    dynamic_simulation_B.tempR_tmp_mj = dynamic_simulation_B.v_c[1] *
+      dynamic_simulation_B.sth_c;
+    dynamic_simulation_B.tempR_tmp_c = dynamic_simulation_B.v_c[2] *
+      dynamic_simulation_B.v_c[1] * (1.0 - dynamic_simulation_B.cth);
+    dynamic_simulation_B.sth_c *= dynamic_simulation_B.v_c[0];
+    dynamic_simulation_cat(dynamic_simulation_B.v_c[0] *
+      dynamic_simulation_B.v_c[0] * (1.0 - dynamic_simulation_B.cth) +
+      dynamic_simulation_B.cth, dynamic_simulation_B.tempR_tmp_o -
+      dynamic_simulation_B.tempR_tmp_l, dynamic_simulation_B.tempR_tmp_m +
+      dynamic_simulation_B.tempR_tmp_mj, dynamic_simulation_B.tempR_tmp_o +
+      dynamic_simulation_B.tempR_tmp_l, dynamic_simulation_B.v_c[1] *
+      dynamic_simulation_B.v_c[1] * (1.0 - dynamic_simulation_B.cth) +
       dynamic_simulation_B.cth, dynamic_simulation_B.tempR_tmp_c -
-      dynamic_simulation_B.sth_i, dynamic_simulation_B.tempR_tmp_ff -
-      dynamic_simulation_B.tempR_tmp_g, dynamic_simulation_B.tempR_tmp_c +
-      dynamic_simulation_B.sth_i, dynamic_simulation_B.v_n[2] *
-      dynamic_simulation_B.v_n[2] * (1.0 - dynamic_simulation_B.cth) +
+      dynamic_simulation_B.sth_c, dynamic_simulation_B.tempR_tmp_m -
+      dynamic_simulation_B.tempR_tmp_mj, dynamic_simulation_B.tempR_tmp_c +
+      dynamic_simulation_B.sth_c, dynamic_simulation_B.v_c[2] *
+      dynamic_simulation_B.v_c[2] * (1.0 - dynamic_simulation_B.cth) +
       dynamic_simulation_B.cth, dynamic_simulation_B.tempR_b);
-    for (dynamic_simulation_B.b_kstr_k = 0; dynamic_simulation_B.b_kstr_k < 3;
-         dynamic_simulation_B.b_kstr_k++) {
-      dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_k + 1;
+    for (dynamic_simulation_B.b_kstr_m = 0; dynamic_simulation_B.b_kstr_m < 3;
+         dynamic_simulation_B.b_kstr_m++) {
+      dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_m + 1;
       dynamic_simulation_B.R_o[dynamic_simulation_B.kstr_o - 1] =
         dynamic_simulation_B.tempR_b[(dynamic_simulation_B.kstr_o - 1) * 3];
-      dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_k + 1;
+      dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_m + 1;
       dynamic_simulation_B.R_o[dynamic_simulation_B.kstr_o + 2] =
         dynamic_simulation_B.tempR_b[(dynamic_simulation_B.kstr_o - 1) * 3 + 1];
-      dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_k + 1;
+      dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_m + 1;
       dynamic_simulation_B.R_o[dynamic_simulation_B.kstr_o + 5] =
         dynamic_simulation_B.tempR_b[(dynamic_simulation_B.kstr_o - 1) * 3 + 2];
     }
 
     memset(&dynamic_simulation_B.TJ[0], 0, sizeof(real_T) << 4U);
-    for (dynamic_simulation_B.b_kstr_k = 0; dynamic_simulation_B.b_kstr_k < 3;
-         dynamic_simulation_B.b_kstr_k++) {
-      dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_k << 2;
+    for (dynamic_simulation_B.b_kstr_m = 0; dynamic_simulation_B.b_kstr_m < 3;
+         dynamic_simulation_B.b_kstr_m++) {
+      dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_m << 2;
       dynamic_simulation_B.TJ[dynamic_simulation_B.kstr_o] =
-        dynamic_simulation_B.R_o[3 * dynamic_simulation_B.b_kstr_k];
+        dynamic_simulation_B.R_o[3 * dynamic_simulation_B.b_kstr_m];
       dynamic_simulation_B.TJ[dynamic_simulation_B.kstr_o + 1] =
-        dynamic_simulation_B.R_o[3 * dynamic_simulation_B.b_kstr_k + 1];
+        dynamic_simulation_B.R_o[3 * dynamic_simulation_B.b_kstr_m + 1];
       dynamic_simulation_B.TJ[dynamic_simulation_B.kstr_o + 2] =
-        dynamic_simulation_B.R_o[3 * dynamic_simulation_B.b_kstr_k + 2];
+        dynamic_simulation_B.R_o[3 * dynamic_simulation_B.b_kstr_m + 2];
     }
 
     dynamic_simulation_B.TJ[15] = 1.0;
     break;
 
    default:
-    rigidBodyJoint_get_JointAxis_kq(obj, dynamic_simulation_B.v_n);
+    rigidBodyJoint_get_JointAxis_kq(obj, dynamic_simulation_B.v_c);
     memset(&dynamic_simulation_B.tempR_b[0], 0, 9U * sizeof(real_T));
     dynamic_simulation_B.tempR_b[0] = 1.0;
     dynamic_simulation_B.tempR_b[4] = 1.0;
     dynamic_simulation_B.tempR_b[8] = 1.0;
-    for (dynamic_simulation_B.b_kstr_k = 0; dynamic_simulation_B.b_kstr_k < 3;
-         dynamic_simulation_B.b_kstr_k++) {
-      dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_k << 2;
+    for (dynamic_simulation_B.b_kstr_m = 0; dynamic_simulation_B.b_kstr_m < 3;
+         dynamic_simulation_B.b_kstr_m++) {
+      dynamic_simulation_B.kstr_o = dynamic_simulation_B.b_kstr_m << 2;
       dynamic_simulation_B.TJ[dynamic_simulation_B.kstr_o] =
-        dynamic_simulation_B.tempR_b[3 * dynamic_simulation_B.b_kstr_k];
+        dynamic_simulation_B.tempR_b[3 * dynamic_simulation_B.b_kstr_m];
       dynamic_simulation_B.TJ[dynamic_simulation_B.kstr_o + 1] =
-        dynamic_simulation_B.tempR_b[3 * dynamic_simulation_B.b_kstr_k + 1];
+        dynamic_simulation_B.tempR_b[3 * dynamic_simulation_B.b_kstr_m + 1];
       dynamic_simulation_B.TJ[dynamic_simulation_B.kstr_o + 2] =
-        dynamic_simulation_B.tempR_b[3 * dynamic_simulation_B.b_kstr_k + 2];
-      dynamic_simulation_B.TJ[dynamic_simulation_B.b_kstr_k + 12] =
-        dynamic_simulation_B.v_n[dynamic_simulation_B.b_kstr_k] * q_data[0];
+        dynamic_simulation_B.tempR_b[3 * dynamic_simulation_B.b_kstr_m + 2];
+      dynamic_simulation_B.TJ[dynamic_simulation_B.b_kstr_m + 12] =
+        dynamic_simulation_B.v_c[dynamic_simulation_B.b_kstr_m] * q_data[0];
     }
 
     dynamic_simulation_B.TJ[3] = 0.0;
@@ -2425,46 +2425,46 @@ static void rigidBodyJoint_transformBodyT_k(const
     break;
   }
 
-  for (dynamic_simulation_B.b_kstr_k = 0; dynamic_simulation_B.b_kstr_k < 4;
-       dynamic_simulation_B.b_kstr_k++) {
+  for (dynamic_simulation_B.b_kstr_m = 0; dynamic_simulation_B.b_kstr_m < 4;
+       dynamic_simulation_B.b_kstr_m++) {
     for (dynamic_simulation_B.kstr_o = 0; dynamic_simulation_B.kstr_o < 4;
          dynamic_simulation_B.kstr_o++) {
       dynamic_simulation_B.obj_tmp_tmp = dynamic_simulation_B.kstr_o << 2;
-      dynamic_simulation_B.obj_tmp = dynamic_simulation_B.b_kstr_k +
+      dynamic_simulation_B.obj_tmp = dynamic_simulation_B.b_kstr_m +
         dynamic_simulation_B.obj_tmp_tmp;
       dynamic_simulation_B.obj[dynamic_simulation_B.obj_tmp] = 0.0;
       dynamic_simulation_B.obj[dynamic_simulation_B.obj_tmp] +=
         dynamic_simulation_B.TJ[dynamic_simulation_B.obj_tmp_tmp] *
-        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_k];
+        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_m];
       dynamic_simulation_B.obj[dynamic_simulation_B.obj_tmp] +=
         dynamic_simulation_B.TJ[dynamic_simulation_B.obj_tmp_tmp + 1] *
-        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_k + 4];
+        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_m + 4];
       dynamic_simulation_B.obj[dynamic_simulation_B.obj_tmp] +=
         dynamic_simulation_B.TJ[dynamic_simulation_B.obj_tmp_tmp + 2] *
-        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_k + 8];
+        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_m + 8];
       dynamic_simulation_B.obj[dynamic_simulation_B.obj_tmp] +=
         dynamic_simulation_B.TJ[dynamic_simulation_B.obj_tmp_tmp + 3] *
-        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_k + 12];
+        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_m + 12];
     }
 
     for (dynamic_simulation_B.kstr_o = 0; dynamic_simulation_B.kstr_o < 4;
          dynamic_simulation_B.kstr_o++) {
       dynamic_simulation_B.obj_tmp_tmp = dynamic_simulation_B.kstr_o << 2;
-      dynamic_simulation_B.obj_tmp = dynamic_simulation_B.b_kstr_k +
+      dynamic_simulation_B.obj_tmp = dynamic_simulation_B.b_kstr_m +
         dynamic_simulation_B.obj_tmp_tmp;
       T[dynamic_simulation_B.obj_tmp] = 0.0;
       T[dynamic_simulation_B.obj_tmp] += obj->
         ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp] *
-        dynamic_simulation_B.obj[dynamic_simulation_B.b_kstr_k];
+        dynamic_simulation_B.obj[dynamic_simulation_B.b_kstr_m];
       T[dynamic_simulation_B.obj_tmp] += obj->
         ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp + 1] *
-        dynamic_simulation_B.obj[dynamic_simulation_B.b_kstr_k + 4];
+        dynamic_simulation_B.obj[dynamic_simulation_B.b_kstr_m + 4];
       T[dynamic_simulation_B.obj_tmp] += obj->
         ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp + 2] *
-        dynamic_simulation_B.obj[dynamic_simulation_B.b_kstr_k + 8];
+        dynamic_simulation_B.obj[dynamic_simulation_B.b_kstr_m + 8];
       T[dynamic_simulation_B.obj_tmp] += obj->
         ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp + 3] *
-        dynamic_simulation_B.obj[dynamic_simulation_B.b_kstr_k + 12];
+        dynamic_simulation_B.obj[dynamic_simulation_B.b_kstr_m + 12];
     }
   }
 }
@@ -2477,24 +2477,24 @@ static void rigidBodyJoint_transformBodyToP(const
   static const char_T tmp_0[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
 
   int32_T exitg1;
-  for (dynamic_simulation_B.b_kstr_c = 0; dynamic_simulation_B.b_kstr_c < 5;
-       dynamic_simulation_B.b_kstr_c++) {
-    dynamic_simulation_B.b_h2[dynamic_simulation_B.b_kstr_c] =
-      tmp[dynamic_simulation_B.b_kstr_c];
+  for (dynamic_simulation_B.b_kstr_i = 0; dynamic_simulation_B.b_kstr_i < 5;
+       dynamic_simulation_B.b_kstr_i++) {
+    dynamic_simulation_B.b_axz[dynamic_simulation_B.b_kstr_i] =
+      tmp[dynamic_simulation_B.b_kstr_i];
   }
 
   dynamic_simulation_B.b_bool_c = false;
   if (obj->Type->size[1] == 5) {
-    dynamic_simulation_B.b_kstr_c = 1;
+    dynamic_simulation_B.b_kstr_i = 1;
     do {
       exitg1 = 0;
-      if (dynamic_simulation_B.b_kstr_c - 1 < 5) {
-        dynamic_simulation_B.kstr_b = dynamic_simulation_B.b_kstr_c - 1;
-        if (obj->Type->data[dynamic_simulation_B.kstr_b] !=
-            dynamic_simulation_B.b_h2[dynamic_simulation_B.kstr_b]) {
+      if (dynamic_simulation_B.b_kstr_i - 1 < 5) {
+        dynamic_simulation_B.kstr_n = dynamic_simulation_B.b_kstr_i - 1;
+        if (obj->Type->data[dynamic_simulation_B.kstr_n] !=
+            dynamic_simulation_B.b_axz[dynamic_simulation_B.kstr_n]) {
           exitg1 = 1;
         } else {
-          dynamic_simulation_B.b_kstr_c++;
+          dynamic_simulation_B.b_kstr_i++;
         }
       } else {
         dynamic_simulation_B.b_bool_c = true;
@@ -2504,26 +2504,26 @@ static void rigidBodyJoint_transformBodyToP(const
   }
 
   if (dynamic_simulation_B.b_bool_c) {
-    dynamic_simulation_B.b_kstr_c = 0;
+    dynamic_simulation_B.b_kstr_i = 0;
   } else {
-    for (dynamic_simulation_B.b_kstr_c = 0; dynamic_simulation_B.b_kstr_c < 8;
-         dynamic_simulation_B.b_kstr_c++) {
-      dynamic_simulation_B.b_e[dynamic_simulation_B.b_kstr_c] =
-        tmp_0[dynamic_simulation_B.b_kstr_c];
+    for (dynamic_simulation_B.b_kstr_i = 0; dynamic_simulation_B.b_kstr_i < 8;
+         dynamic_simulation_B.b_kstr_i++) {
+      dynamic_simulation_B.b_o[dynamic_simulation_B.b_kstr_i] =
+        tmp_0[dynamic_simulation_B.b_kstr_i];
     }
 
     dynamic_simulation_B.b_bool_c = false;
     if (obj->Type->size[1] == 8) {
-      dynamic_simulation_B.b_kstr_c = 1;
+      dynamic_simulation_B.b_kstr_i = 1;
       do {
         exitg1 = 0;
-        if (dynamic_simulation_B.b_kstr_c - 1 < 8) {
-          dynamic_simulation_B.kstr_b = dynamic_simulation_B.b_kstr_c - 1;
-          if (obj->Type->data[dynamic_simulation_B.kstr_b] !=
-              dynamic_simulation_B.b_e[dynamic_simulation_B.kstr_b]) {
+        if (dynamic_simulation_B.b_kstr_i - 1 < 8) {
+          dynamic_simulation_B.kstr_n = dynamic_simulation_B.b_kstr_i - 1;
+          if (obj->Type->data[dynamic_simulation_B.kstr_n] !=
+              dynamic_simulation_B.b_o[dynamic_simulation_B.kstr_n]) {
             exitg1 = 1;
           } else {
-            dynamic_simulation_B.b_kstr_c++;
+            dynamic_simulation_B.b_kstr_i++;
           }
         } else {
           dynamic_simulation_B.b_bool_c = true;
@@ -2533,13 +2533,13 @@ static void rigidBodyJoint_transformBodyToP(const
     }
 
     if (dynamic_simulation_B.b_bool_c) {
-      dynamic_simulation_B.b_kstr_c = 1;
+      dynamic_simulation_B.b_kstr_i = 1;
     } else {
-      dynamic_simulation_B.b_kstr_c = -1;
+      dynamic_simulation_B.b_kstr_i = -1;
     }
   }
 
-  switch (dynamic_simulation_B.b_kstr_c) {
+  switch (dynamic_simulation_B.b_kstr_i) {
    case 0:
     memset(&dynamic_simulation_B.TJ_g[0], 0, sizeof(real_T) << 4U);
     dynamic_simulation_B.TJ_g[0] = 1.0;
@@ -2549,81 +2549,81 @@ static void rigidBodyJoint_transformBodyToP(const
     break;
 
    case 1:
-    rigidBodyJoint_get_JointAxis_kq(obj, dynamic_simulation_B.v_i);
-    dynamic_simulation_B.axang_idx_0 = dynamic_simulation_B.v_i[0];
-    dynamic_simulation_B.axang_idx_1 = dynamic_simulation_B.v_i[1];
-    dynamic_simulation_B.axang_idx_2 = dynamic_simulation_B.v_i[2];
-    dynamic_simulation_B.b_f = 1.0 / sqrt((dynamic_simulation_B.axang_idx_0 *
+    rigidBodyJoint_get_JointAxis_kq(obj, dynamic_simulation_B.v_m);
+    dynamic_simulation_B.axang_idx_0 = dynamic_simulation_B.v_m[0];
+    dynamic_simulation_B.axang_idx_1 = dynamic_simulation_B.v_m[1];
+    dynamic_simulation_B.axang_idx_2 = dynamic_simulation_B.v_m[2];
+    dynamic_simulation_B.b_l5 = 1.0 / sqrt((dynamic_simulation_B.axang_idx_0 *
       dynamic_simulation_B.axang_idx_0 + dynamic_simulation_B.axang_idx_1 *
       dynamic_simulation_B.axang_idx_1) + dynamic_simulation_B.axang_idx_2 *
       dynamic_simulation_B.axang_idx_2);
-    dynamic_simulation_B.v_i[0] = dynamic_simulation_B.axang_idx_0 *
-      dynamic_simulation_B.b_f;
-    dynamic_simulation_B.v_i[1] = dynamic_simulation_B.axang_idx_1 *
-      dynamic_simulation_B.b_f;
-    dynamic_simulation_B.v_i[2] = dynamic_simulation_B.axang_idx_2 *
-      dynamic_simulation_B.b_f;
-    dynamic_simulation_B.axang_idx_0 = dynamic_simulation_B.v_i[1] *
-      dynamic_simulation_B.v_i[0] * 0.0;
-    dynamic_simulation_B.axang_idx_1 = dynamic_simulation_B.v_i[2] *
-      dynamic_simulation_B.v_i[0] * 0.0;
-    dynamic_simulation_B.axang_idx_2 = dynamic_simulation_B.v_i[2] *
-      dynamic_simulation_B.v_i[1] * 0.0;
-    dynamic_simulation_cat(dynamic_simulation_B.v_i[0] *
-      dynamic_simulation_B.v_i[0] * 0.0 + 1.0, dynamic_simulation_B.axang_idx_0
-      - dynamic_simulation_B.v_i[2] * 0.0, dynamic_simulation_B.axang_idx_1 +
-      dynamic_simulation_B.v_i[1] * 0.0, dynamic_simulation_B.axang_idx_0 +
-      dynamic_simulation_B.v_i[2] * 0.0, dynamic_simulation_B.v_i[1] *
-      dynamic_simulation_B.v_i[1] * 0.0 + 1.0, dynamic_simulation_B.axang_idx_2
-      - dynamic_simulation_B.v_i[0] * 0.0, dynamic_simulation_B.axang_idx_1 -
-      dynamic_simulation_B.v_i[1] * 0.0, dynamic_simulation_B.axang_idx_2 +
-      dynamic_simulation_B.v_i[0] * 0.0, dynamic_simulation_B.v_i[2] *
-      dynamic_simulation_B.v_i[2] * 0.0 + 1.0, dynamic_simulation_B.tempR_bs);
-    for (dynamic_simulation_B.b_kstr_c = 0; dynamic_simulation_B.b_kstr_c < 3;
-         dynamic_simulation_B.b_kstr_c++) {
-      dynamic_simulation_B.kstr_b = dynamic_simulation_B.b_kstr_c + 1;
-      dynamic_simulation_B.R_n[dynamic_simulation_B.kstr_b - 1] =
-        dynamic_simulation_B.tempR_bs[(dynamic_simulation_B.kstr_b - 1) * 3];
-      dynamic_simulation_B.kstr_b = dynamic_simulation_B.b_kstr_c + 1;
-      dynamic_simulation_B.R_n[dynamic_simulation_B.kstr_b + 2] =
-        dynamic_simulation_B.tempR_bs[(dynamic_simulation_B.kstr_b - 1) * 3 + 1];
-      dynamic_simulation_B.kstr_b = dynamic_simulation_B.b_kstr_c + 1;
-      dynamic_simulation_B.R_n[dynamic_simulation_B.kstr_b + 5] =
-        dynamic_simulation_B.tempR_bs[(dynamic_simulation_B.kstr_b - 1) * 3 + 2];
+    dynamic_simulation_B.v_m[0] = dynamic_simulation_B.axang_idx_0 *
+      dynamic_simulation_B.b_l5;
+    dynamic_simulation_B.v_m[1] = dynamic_simulation_B.axang_idx_1 *
+      dynamic_simulation_B.b_l5;
+    dynamic_simulation_B.v_m[2] = dynamic_simulation_B.axang_idx_2 *
+      dynamic_simulation_B.b_l5;
+    dynamic_simulation_B.axang_idx_0 = dynamic_simulation_B.v_m[1] *
+      dynamic_simulation_B.v_m[0] * 0.0;
+    dynamic_simulation_B.axang_idx_1 = dynamic_simulation_B.v_m[2] *
+      dynamic_simulation_B.v_m[0] * 0.0;
+    dynamic_simulation_B.axang_idx_2 = dynamic_simulation_B.v_m[2] *
+      dynamic_simulation_B.v_m[1] * 0.0;
+    dynamic_simulation_cat(dynamic_simulation_B.v_m[0] *
+      dynamic_simulation_B.v_m[0] * 0.0 + 1.0, dynamic_simulation_B.axang_idx_0
+      - dynamic_simulation_B.v_m[2] * 0.0, dynamic_simulation_B.axang_idx_1 +
+      dynamic_simulation_B.v_m[1] * 0.0, dynamic_simulation_B.axang_idx_0 +
+      dynamic_simulation_B.v_m[2] * 0.0, dynamic_simulation_B.v_m[1] *
+      dynamic_simulation_B.v_m[1] * 0.0 + 1.0, dynamic_simulation_B.axang_idx_2
+      - dynamic_simulation_B.v_m[0] * 0.0, dynamic_simulation_B.axang_idx_1 -
+      dynamic_simulation_B.v_m[1] * 0.0, dynamic_simulation_B.axang_idx_2 +
+      dynamic_simulation_B.v_m[0] * 0.0, dynamic_simulation_B.v_m[2] *
+      dynamic_simulation_B.v_m[2] * 0.0 + 1.0, dynamic_simulation_B.tempR_bs);
+    for (dynamic_simulation_B.b_kstr_i = 0; dynamic_simulation_B.b_kstr_i < 3;
+         dynamic_simulation_B.b_kstr_i++) {
+      dynamic_simulation_B.kstr_n = dynamic_simulation_B.b_kstr_i + 1;
+      dynamic_simulation_B.R_n[dynamic_simulation_B.kstr_n - 1] =
+        dynamic_simulation_B.tempR_bs[(dynamic_simulation_B.kstr_n - 1) * 3];
+      dynamic_simulation_B.kstr_n = dynamic_simulation_B.b_kstr_i + 1;
+      dynamic_simulation_B.R_n[dynamic_simulation_B.kstr_n + 2] =
+        dynamic_simulation_B.tempR_bs[(dynamic_simulation_B.kstr_n - 1) * 3 + 1];
+      dynamic_simulation_B.kstr_n = dynamic_simulation_B.b_kstr_i + 1;
+      dynamic_simulation_B.R_n[dynamic_simulation_B.kstr_n + 5] =
+        dynamic_simulation_B.tempR_bs[(dynamic_simulation_B.kstr_n - 1) * 3 + 2];
     }
 
     memset(&dynamic_simulation_B.TJ_g[0], 0, sizeof(real_T) << 4U);
-    for (dynamic_simulation_B.b_kstr_c = 0; dynamic_simulation_B.b_kstr_c < 3;
-         dynamic_simulation_B.b_kstr_c++) {
-      dynamic_simulation_B.kstr_b = dynamic_simulation_B.b_kstr_c << 2;
-      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_b] =
-        dynamic_simulation_B.R_n[3 * dynamic_simulation_B.b_kstr_c];
-      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_b + 1] =
-        dynamic_simulation_B.R_n[3 * dynamic_simulation_B.b_kstr_c + 1];
-      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_b + 2] =
-        dynamic_simulation_B.R_n[3 * dynamic_simulation_B.b_kstr_c + 2];
+    for (dynamic_simulation_B.b_kstr_i = 0; dynamic_simulation_B.b_kstr_i < 3;
+         dynamic_simulation_B.b_kstr_i++) {
+      dynamic_simulation_B.kstr_n = dynamic_simulation_B.b_kstr_i << 2;
+      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_n] =
+        dynamic_simulation_B.R_n[3 * dynamic_simulation_B.b_kstr_i];
+      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_n + 1] =
+        dynamic_simulation_B.R_n[3 * dynamic_simulation_B.b_kstr_i + 1];
+      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_n + 2] =
+        dynamic_simulation_B.R_n[3 * dynamic_simulation_B.b_kstr_i + 2];
     }
 
     dynamic_simulation_B.TJ_g[15] = 1.0;
     break;
 
    default:
-    rigidBodyJoint_get_JointAxis_kq(obj, dynamic_simulation_B.v_i);
+    rigidBodyJoint_get_JointAxis_kq(obj, dynamic_simulation_B.v_m);
     memset(&dynamic_simulation_B.tempR_bs[0], 0, 9U * sizeof(real_T));
     dynamic_simulation_B.tempR_bs[0] = 1.0;
     dynamic_simulation_B.tempR_bs[4] = 1.0;
     dynamic_simulation_B.tempR_bs[8] = 1.0;
-    for (dynamic_simulation_B.b_kstr_c = 0; dynamic_simulation_B.b_kstr_c < 3;
-         dynamic_simulation_B.b_kstr_c++) {
-      dynamic_simulation_B.kstr_b = dynamic_simulation_B.b_kstr_c << 2;
-      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_b] =
-        dynamic_simulation_B.tempR_bs[3 * dynamic_simulation_B.b_kstr_c];
-      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_b + 1] =
-        dynamic_simulation_B.tempR_bs[3 * dynamic_simulation_B.b_kstr_c + 1];
-      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_b + 2] =
-        dynamic_simulation_B.tempR_bs[3 * dynamic_simulation_B.b_kstr_c + 2];
-      dynamic_simulation_B.TJ_g[dynamic_simulation_B.b_kstr_c + 12] =
-        dynamic_simulation_B.v_i[dynamic_simulation_B.b_kstr_c] * 0.0;
+    for (dynamic_simulation_B.b_kstr_i = 0; dynamic_simulation_B.b_kstr_i < 3;
+         dynamic_simulation_B.b_kstr_i++) {
+      dynamic_simulation_B.kstr_n = dynamic_simulation_B.b_kstr_i << 2;
+      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_n] =
+        dynamic_simulation_B.tempR_bs[3 * dynamic_simulation_B.b_kstr_i];
+      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_n + 1] =
+        dynamic_simulation_B.tempR_bs[3 * dynamic_simulation_B.b_kstr_i + 1];
+      dynamic_simulation_B.TJ_g[dynamic_simulation_B.kstr_n + 2] =
+        dynamic_simulation_B.tempR_bs[3 * dynamic_simulation_B.b_kstr_i + 2];
+      dynamic_simulation_B.TJ_g[dynamic_simulation_B.b_kstr_i + 12] =
+        dynamic_simulation_B.v_m[dynamic_simulation_B.b_kstr_i] * 0.0;
     }
 
     dynamic_simulation_B.TJ_g[3] = 0.0;
@@ -2633,46 +2633,46 @@ static void rigidBodyJoint_transformBodyToP(const
     break;
   }
 
-  for (dynamic_simulation_B.b_kstr_c = 0; dynamic_simulation_B.b_kstr_c < 4;
-       dynamic_simulation_B.b_kstr_c++) {
-    for (dynamic_simulation_B.kstr_b = 0; dynamic_simulation_B.kstr_b < 4;
-         dynamic_simulation_B.kstr_b++) {
-      dynamic_simulation_B.obj_tmp_tmp_i = dynamic_simulation_B.kstr_b << 2;
-      dynamic_simulation_B.obj_tmp_n = dynamic_simulation_B.b_kstr_c +
-        dynamic_simulation_B.obj_tmp_tmp_i;
-      dynamic_simulation_B.obj_g[dynamic_simulation_B.obj_tmp_n] = 0.0;
-      dynamic_simulation_B.obj_g[dynamic_simulation_B.obj_tmp_n] +=
-        dynamic_simulation_B.TJ_g[dynamic_simulation_B.obj_tmp_tmp_i] *
-        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_c];
-      dynamic_simulation_B.obj_g[dynamic_simulation_B.obj_tmp_n] +=
-        dynamic_simulation_B.TJ_g[dynamic_simulation_B.obj_tmp_tmp_i + 1] *
-        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_c + 4];
-      dynamic_simulation_B.obj_g[dynamic_simulation_B.obj_tmp_n] +=
-        dynamic_simulation_B.TJ_g[dynamic_simulation_B.obj_tmp_tmp_i + 2] *
-        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_c + 8];
-      dynamic_simulation_B.obj_g[dynamic_simulation_B.obj_tmp_n] +=
-        dynamic_simulation_B.TJ_g[dynamic_simulation_B.obj_tmp_tmp_i + 3] *
-        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_c + 12];
+  for (dynamic_simulation_B.b_kstr_i = 0; dynamic_simulation_B.b_kstr_i < 4;
+       dynamic_simulation_B.b_kstr_i++) {
+    for (dynamic_simulation_B.kstr_n = 0; dynamic_simulation_B.kstr_n < 4;
+         dynamic_simulation_B.kstr_n++) {
+      dynamic_simulation_B.obj_tmp_tmp_j = dynamic_simulation_B.kstr_n << 2;
+      dynamic_simulation_B.obj_tmp_m = dynamic_simulation_B.b_kstr_i +
+        dynamic_simulation_B.obj_tmp_tmp_j;
+      dynamic_simulation_B.obj_g[dynamic_simulation_B.obj_tmp_m] = 0.0;
+      dynamic_simulation_B.obj_g[dynamic_simulation_B.obj_tmp_m] +=
+        dynamic_simulation_B.TJ_g[dynamic_simulation_B.obj_tmp_tmp_j] *
+        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_i];
+      dynamic_simulation_B.obj_g[dynamic_simulation_B.obj_tmp_m] +=
+        dynamic_simulation_B.TJ_g[dynamic_simulation_B.obj_tmp_tmp_j + 1] *
+        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_i + 4];
+      dynamic_simulation_B.obj_g[dynamic_simulation_B.obj_tmp_m] +=
+        dynamic_simulation_B.TJ_g[dynamic_simulation_B.obj_tmp_tmp_j + 2] *
+        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_i + 8];
+      dynamic_simulation_B.obj_g[dynamic_simulation_B.obj_tmp_m] +=
+        dynamic_simulation_B.TJ_g[dynamic_simulation_B.obj_tmp_tmp_j + 3] *
+        obj->JointToParentTransform[dynamic_simulation_B.b_kstr_i + 12];
     }
 
-    for (dynamic_simulation_B.kstr_b = 0; dynamic_simulation_B.kstr_b < 4;
-         dynamic_simulation_B.kstr_b++) {
-      dynamic_simulation_B.obj_tmp_tmp_i = dynamic_simulation_B.kstr_b << 2;
-      dynamic_simulation_B.obj_tmp_n = dynamic_simulation_B.b_kstr_c +
-        dynamic_simulation_B.obj_tmp_tmp_i;
-      T[dynamic_simulation_B.obj_tmp_n] = 0.0;
-      T[dynamic_simulation_B.obj_tmp_n] += obj->
-        ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp_i] *
-        dynamic_simulation_B.obj_g[dynamic_simulation_B.b_kstr_c];
-      T[dynamic_simulation_B.obj_tmp_n] += obj->
-        ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp_i + 1] *
-        dynamic_simulation_B.obj_g[dynamic_simulation_B.b_kstr_c + 4];
-      T[dynamic_simulation_B.obj_tmp_n] += obj->
-        ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp_i + 2] *
-        dynamic_simulation_B.obj_g[dynamic_simulation_B.b_kstr_c + 8];
-      T[dynamic_simulation_B.obj_tmp_n] += obj->
-        ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp_i + 3] *
-        dynamic_simulation_B.obj_g[dynamic_simulation_B.b_kstr_c + 12];
+    for (dynamic_simulation_B.kstr_n = 0; dynamic_simulation_B.kstr_n < 4;
+         dynamic_simulation_B.kstr_n++) {
+      dynamic_simulation_B.obj_tmp_tmp_j = dynamic_simulation_B.kstr_n << 2;
+      dynamic_simulation_B.obj_tmp_m = dynamic_simulation_B.b_kstr_i +
+        dynamic_simulation_B.obj_tmp_tmp_j;
+      T[dynamic_simulation_B.obj_tmp_m] = 0.0;
+      T[dynamic_simulation_B.obj_tmp_m] += obj->
+        ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp_j] *
+        dynamic_simulation_B.obj_g[dynamic_simulation_B.b_kstr_i];
+      T[dynamic_simulation_B.obj_tmp_m] += obj->
+        ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp_j + 1] *
+        dynamic_simulation_B.obj_g[dynamic_simulation_B.b_kstr_i + 4];
+      T[dynamic_simulation_B.obj_tmp_m] += obj->
+        ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp_j + 2] *
+        dynamic_simulation_B.obj_g[dynamic_simulation_B.b_kstr_i + 8];
+      T[dynamic_simulation_B.obj_tmp_m] += obj->
+        ChildToJointTransform[dynamic_simulation_B.obj_tmp_tmp_j + 3] *
+        dynamic_simulation_B.obj_g[dynamic_simulation_B.b_kstr_i + 12];
     }
   }
 }
@@ -2731,17 +2731,17 @@ static void dynamic_sim_tformToSpatialXform(const real_T T[16], real_T X[36])
        dynamic_simulation_B.i1++) {
     for (dynamic_simulation_B.X_tmp_p = 0; dynamic_simulation_B.X_tmp_p < 3;
          dynamic_simulation_B.X_tmp_p++) {
-      dynamic_simulation_B.X_tmp_p2 = dynamic_simulation_B.i1 + 3 *
+      dynamic_simulation_B.X_tmp_n = dynamic_simulation_B.i1 + 3 *
         dynamic_simulation_B.X_tmp_p;
-      dynamic_simulation_B.dv3[dynamic_simulation_B.X_tmp_p2] = 0.0;
+      dynamic_simulation_B.dv3[dynamic_simulation_B.X_tmp_n] = 0.0;
       dynamic_simulation_B.i2 = dynamic_simulation_B.X_tmp_p << 2;
-      dynamic_simulation_B.dv3[dynamic_simulation_B.X_tmp_p2] +=
+      dynamic_simulation_B.dv3[dynamic_simulation_B.X_tmp_n] +=
         T[dynamic_simulation_B.i2] *
         dynamic_simulation_B.dv2[dynamic_simulation_B.i1];
-      dynamic_simulation_B.dv3[dynamic_simulation_B.X_tmp_p2] +=
+      dynamic_simulation_B.dv3[dynamic_simulation_B.X_tmp_n] +=
         T[dynamic_simulation_B.i2 + 1] *
         dynamic_simulation_B.dv2[dynamic_simulation_B.i1 + 3];
-      dynamic_simulation_B.dv3[dynamic_simulation_B.X_tmp_p2] +=
+      dynamic_simulation_B.dv3[dynamic_simulation_B.X_tmp_n] +=
         T[dynamic_simulation_B.i2 + 2] *
         dynamic_simulation_B.dv2[dynamic_simulation_B.i1 + 6];
       X[dynamic_simulation_B.X_tmp_p + 6 * dynamic_simulation_B.i1] = T
@@ -2755,14 +2755,14 @@ static void dynamic_sim_tformToSpatialXform(const real_T T[16], real_T X[36])
     X[6 * dynamic_simulation_B.i1 + 3] = dynamic_simulation_B.dv3[3 *
       dynamic_simulation_B.i1];
     dynamic_simulation_B.X_tmp_p = dynamic_simulation_B.i1 << 2;
-    dynamic_simulation_B.X_tmp_p2 = 6 * (dynamic_simulation_B.i1 + 3);
-    X[dynamic_simulation_B.X_tmp_p2 + 3] = T[dynamic_simulation_B.X_tmp_p];
+    dynamic_simulation_B.X_tmp_n = 6 * (dynamic_simulation_B.i1 + 3);
+    X[dynamic_simulation_B.X_tmp_n + 3] = T[dynamic_simulation_B.X_tmp_p];
     X[6 * dynamic_simulation_B.i1 + 4] = dynamic_simulation_B.dv3[3 *
       dynamic_simulation_B.i1 + 1];
-    X[dynamic_simulation_B.X_tmp_p2 + 4] = T[dynamic_simulation_B.X_tmp_p + 1];
+    X[dynamic_simulation_B.X_tmp_n + 4] = T[dynamic_simulation_B.X_tmp_p + 1];
     X[6 * dynamic_simulation_B.i1 + 5] = dynamic_simulation_B.dv3[3 *
       dynamic_simulation_B.i1 + 2];
-    X[dynamic_simulation_B.X_tmp_p2 + 5] = T[dynamic_simulation_B.X_tmp_p + 2];
+    X[dynamic_simulation_B.X_tmp_n + 5] = T[dynamic_simulation_B.X_tmp_p + 2];
   }
 }
 
@@ -2798,157 +2798,157 @@ static void RigidBodyTreeDynamics_massMatri(p_robotics_manip_internal__kq_T
 
   boolean_T exitg1;
   int32_T exitg2;
-  dynamic_simulation_B.nb_o = robot->NumBodies;
-  dynamic_simulation_B.vNum_l = robot->VelocityNumber;
-  dynamic_simulation_B.f_c = H->size[0] * H->size[1];
-  dynamic_simulation_B.b_i_m = static_cast<int32_T>(dynamic_simulation_B.vNum_l);
-  H->size[0] = dynamic_simulation_B.b_i_m;
-  H->size[1] = dynamic_simulation_B.b_i_m;
-  dynami_emxEnsureCapacity_real_T(H, dynamic_simulation_B.f_c);
-  dynamic_simulation_B.loop_ub_a = dynamic_simulation_B.b_i_m *
-    dynamic_simulation_B.b_i_m - 1;
-  for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <=
-       dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-    H->data[dynamic_simulation_B.f_c] = 0.0;
+  dynamic_simulation_B.nb_f = robot->NumBodies;
+  dynamic_simulation_B.vNum_p = robot->VelocityNumber;
+  dynamic_simulation_B.f = H->size[0] * H->size[1];
+  dynamic_simulation_B.b_i_h = static_cast<int32_T>(dynamic_simulation_B.vNum_p);
+  H->size[0] = dynamic_simulation_B.b_i_h;
+  H->size[1] = dynamic_simulation_B.b_i_h;
+  dynami_emxEnsureCapacity_real_T(H, dynamic_simulation_B.f);
+  dynamic_simulation_B.loop_ub_p = dynamic_simulation_B.b_i_h *
+    dynamic_simulation_B.b_i_h - 1;
+  for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <=
+       dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+    H->data[dynamic_simulation_B.f] = 0.0;
   }
 
   dynamic_simulati_emxInit_real_T(&lambda_, 2);
-  dynamic_simulation_B.f_c = lambda_->size[0] * lambda_->size[1];
+  dynamic_simulation_B.f = lambda_->size[0] * lambda_->size[1];
   lambda_->size[0] = 1;
-  dynamic_simulation_B.nm1d2 = static_cast<int32_T>(dynamic_simulation_B.nb_o);
+  dynamic_simulation_B.nm1d2 = static_cast<int32_T>(dynamic_simulation_B.nb_f);
   lambda_->size[1] = dynamic_simulation_B.nm1d2;
-  dynami_emxEnsureCapacity_real_T(lambda_, dynamic_simulation_B.f_c);
+  dynami_emxEnsureCapacity_real_T(lambda_, dynamic_simulation_B.f);
   dynamic_simulation_B.idx = dynamic_simulation_B.nm1d2 - 1;
-  for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <=
-       dynamic_simulation_B.idx; dynamic_simulation_B.f_c++) {
-    lambda_->data[dynamic_simulation_B.f_c] = 0.0;
+  for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <=
+       dynamic_simulation_B.idx; dynamic_simulation_B.f++) {
+    lambda_->data[dynamic_simulation_B.f] = 0.0;
   }
 
-  dynamic_simulation_B.f_c = lambda->size[0] * lambda->size[1];
+  dynamic_simulation_B.f = lambda->size[0] * lambda->size[1];
   lambda->size[0] = 1;
-  lambda->size[1] = dynamic_simulation_B.b_i_m;
-  dynami_emxEnsureCapacity_real_T(lambda, dynamic_simulation_B.f_c);
-  dynamic_simulation_B.loop_ub_a = dynamic_simulation_B.b_i_m - 1;
-  for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <=
-       dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-    lambda->data[dynamic_simulation_B.f_c] = 0.0;
+  lambda->size[1] = dynamic_simulation_B.b_i_h;
+  dynami_emxEnsureCapacity_real_T(lambda, dynamic_simulation_B.f);
+  dynamic_simulation_B.loop_ub_p = dynamic_simulation_B.b_i_h - 1;
+  for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <=
+       dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+    lambda->data[dynamic_simulation_B.f] = 0.0;
   }
 
   dynamic_si_emxInit_f_cell_wrap1(&Ic, 2);
   dynamic_si_emxInit_f_cell_wrap1(&X, 2);
-  dynamic_simulation_B.f_c = Ic->size[0] * Ic->size[1];
+  dynamic_simulation_B.f = Ic->size[0] * Ic->size[1];
   Ic->size[0] = 1;
   Ic->size[1] = dynamic_simulation_B.nm1d2;
-  emxEnsureCapacity_f_cell_wrap1(Ic, dynamic_simulation_B.f_c);
-  dynamic_simulation_B.f_c = X->size[0] * X->size[1];
+  emxEnsureCapacity_f_cell_wrap1(Ic, dynamic_simulation_B.f);
+  dynamic_simulation_B.f = X->size[0] * X->size[1];
   X->size[0] = 1;
   X->size[1] = dynamic_simulation_B.nm1d2;
-  emxEnsureCapacity_f_cell_wrap1(X, dynamic_simulation_B.f_c);
-  for (dynamic_simulation_B.b_i_m = 0; dynamic_simulation_B.b_i_m <=
-       dynamic_simulation_B.idx; dynamic_simulation_B.b_i_m++) {
-    for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c < 36;
-         dynamic_simulation_B.f_c++) {
-      Ic->data[dynamic_simulation_B.b_i_m].f1[dynamic_simulation_B.f_c] =
-        robot->Bodies[dynamic_simulation_B.b_i_m]->
-        SpatialInertia[dynamic_simulation_B.f_c];
+  emxEnsureCapacity_f_cell_wrap1(X, dynamic_simulation_B.f);
+  for (dynamic_simulation_B.b_i_h = 0; dynamic_simulation_B.b_i_h <=
+       dynamic_simulation_B.idx; dynamic_simulation_B.b_i_h++) {
+    for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f < 36;
+         dynamic_simulation_B.f++) {
+      Ic->data[dynamic_simulation_B.b_i_h].f1[dynamic_simulation_B.f] =
+        robot->Bodies[dynamic_simulation_B.b_i_h]->
+        SpatialInertia[dynamic_simulation_B.f];
     }
 
-    dynamic_simulation_B.vNum_l = robot->
-      PositionDoFMap[dynamic_simulation_B.b_i_m];
+    dynamic_simulation_B.vNum_p = robot->
+      PositionDoFMap[dynamic_simulation_B.b_i_h];
     dynamic_simulation_B.p_idx_1 = robot->
-      PositionDoFMap[dynamic_simulation_B.b_i_m + 8];
-    if (dynamic_simulation_B.p_idx_1 < dynamic_simulation_B.vNum_l) {
-      obj = robot->Bodies[dynamic_simulation_B.b_i_m];
+      PositionDoFMap[dynamic_simulation_B.b_i_h + 8];
+    if (dynamic_simulation_B.p_idx_1 < dynamic_simulation_B.vNum_p) {
+      obj = robot->Bodies[dynamic_simulation_B.b_i_h];
       rigidBodyJoint_transformBodyToP(&obj->JointInternal,
         dynamic_simulation_B.T_f);
     } else {
-      if (dynamic_simulation_B.vNum_l > dynamic_simulation_B.p_idx_1) {
+      if (dynamic_simulation_B.vNum_p > dynamic_simulation_B.p_idx_1) {
         dynamic_simulation_B.nm1d2 = 0;
-        dynamic_simulation_B.f_c = -1;
+        dynamic_simulation_B.f = -1;
       } else {
         dynamic_simulation_B.nm1d2 = static_cast<int32_T>
-          (dynamic_simulation_B.vNum_l) - 1;
-        dynamic_simulation_B.f_c = static_cast<int32_T>
+          (dynamic_simulation_B.vNum_p) - 1;
+        dynamic_simulation_B.f = static_cast<int32_T>
           (dynamic_simulation_B.p_idx_1) - 1;
       }
 
-      obj = robot->Bodies[dynamic_simulation_B.b_i_m];
-      dynamic_simulation_B.loop_ub_a = dynamic_simulation_B.f_c -
+      obj = robot->Bodies[dynamic_simulation_B.b_i_h];
+      dynamic_simulation_B.loop_ub_p = dynamic_simulation_B.f -
         dynamic_simulation_B.nm1d2;
-      dynamic_simulation_B.q_size_k = dynamic_simulation_B.loop_ub_a + 1;
-      for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <=
-           dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-        dynamic_simulation_B.q_data_j[dynamic_simulation_B.f_c] =
-          q[dynamic_simulation_B.nm1d2 + dynamic_simulation_B.f_c];
+      dynamic_simulation_B.q_size_b = dynamic_simulation_B.loop_ub_p + 1;
+      for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <=
+           dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+        dynamic_simulation_B.q_data_j[dynamic_simulation_B.f] =
+          q[dynamic_simulation_B.nm1d2 + dynamic_simulation_B.f];
       }
 
       rigidBodyJoint_transformBodyT_k(&obj->JointInternal,
-        dynamic_simulation_B.q_data_j, &dynamic_simulation_B.q_size_k,
+        dynamic_simulation_B.q_data_j, &dynamic_simulation_B.q_size_b,
         dynamic_simulation_B.T_f);
     }
 
     dynamic_simulation_tforminv(dynamic_simulation_B.T_f,
       dynamic_simulation_B.dv);
     dynamic_sim_tformToSpatialXform(dynamic_simulation_B.dv, X->
-      data[dynamic_simulation_B.b_i_m].f1);
+      data[dynamic_simulation_B.b_i_h].f1);
   }
 
   dynamic_simulation_B.nm1d2 = static_cast<int32_T>(((-1.0 -
-    dynamic_simulation_B.nb_o) + 1.0) / -1.0) - 1;
+    dynamic_simulation_B.nb_f) + 1.0) / -1.0) - 1;
   dynamic_simulati_emxInit_real_T(&Si, 2);
   dynamic_simulati_emxInit_real_T(&Fi, 2);
   dynamic_simulati_emxInit_real_T(&Hji, 2);
   dynamic_simulati_emxInit_char_T(&a, 2);
   for (dynamic_simulation_B.idx = 0; dynamic_simulation_B.idx <=
        dynamic_simulation_B.nm1d2; dynamic_simulation_B.idx++) {
-    dynamic_simulation_B.n_f = static_cast<int32_T>(dynamic_simulation_B.nb_o +
+    dynamic_simulation_B.n_m = static_cast<int32_T>(dynamic_simulation_B.nb_f +
       -static_cast<real_T>(dynamic_simulation_B.idx));
-    dynamic_simulation_B.pid_tmp = dynamic_simulation_B.n_f - 1;
+    dynamic_simulation_B.pid_tmp = dynamic_simulation_B.n_m - 1;
     dynamic_simulation_B.pid = robot->Bodies[dynamic_simulation_B.pid_tmp]
       ->ParentIndex;
-    dynamic_simulation_B.vNum_l = robot->VelocityDoFMap[dynamic_simulation_B.n_f
+    dynamic_simulation_B.vNum_p = robot->VelocityDoFMap[dynamic_simulation_B.n_m
       - 1];
     dynamic_simulation_B.p_idx_1 = robot->
-      VelocityDoFMap[dynamic_simulation_B.n_f + 7];
+      VelocityDoFMap[dynamic_simulation_B.n_m + 7];
     if (dynamic_simulation_B.pid > 0.0) {
-      for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c < 6;
-           dynamic_simulation_B.f_c++) {
-        for (dynamic_simulation_B.b_i_m = 0; dynamic_simulation_B.b_i_m < 6;
-             dynamic_simulation_B.b_i_m++) {
-          dynamic_simulation_B.X_tmp = dynamic_simulation_B.f_c + 6 *
-            dynamic_simulation_B.b_i_m;
+      for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f < 6;
+           dynamic_simulation_B.f++) {
+        for (dynamic_simulation_B.b_i_h = 0; dynamic_simulation_B.b_i_h < 6;
+             dynamic_simulation_B.b_i_h++) {
+          dynamic_simulation_B.X_tmp = dynamic_simulation_B.f + 6 *
+            dynamic_simulation_B.b_i_h;
           dynamic_simulation_B.X_m[dynamic_simulation_B.X_tmp] = 0.0;
-          for (dynamic_simulation_B.loop_ub_a = 0;
-               dynamic_simulation_B.loop_ub_a < 6;
-               dynamic_simulation_B.loop_ub_a++) {
+          for (dynamic_simulation_B.loop_ub_p = 0;
+               dynamic_simulation_B.loop_ub_p < 6;
+               dynamic_simulation_B.loop_ub_p++) {
             dynamic_simulation_B.X_m[dynamic_simulation_B.X_tmp] += X->
-              data[dynamic_simulation_B.pid_tmp].f1[6 * dynamic_simulation_B.f_c
-              + dynamic_simulation_B.loop_ub_a] * Ic->
+              data[dynamic_simulation_B.pid_tmp].f1[6 * dynamic_simulation_B.f +
+              dynamic_simulation_B.loop_ub_p] * Ic->
               data[dynamic_simulation_B.pid_tmp].f1[6 *
-              dynamic_simulation_B.b_i_m + dynamic_simulation_B.loop_ub_a];
+              dynamic_simulation_B.b_i_h + dynamic_simulation_B.loop_ub_p];
           }
         }
       }
 
-      for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c < 6;
-           dynamic_simulation_B.f_c++) {
-        for (dynamic_simulation_B.b_i_m = 0; dynamic_simulation_B.b_i_m < 6;
-             dynamic_simulation_B.b_i_m++) {
-          dynamic_simulation_B.b_idx_0_m = 0.0;
-          for (dynamic_simulation_B.loop_ub_a = 0;
-               dynamic_simulation_B.loop_ub_a < 6;
-               dynamic_simulation_B.loop_ub_a++) {
-            dynamic_simulation_B.b_idx_0_m += dynamic_simulation_B.X_m[6 *
-              dynamic_simulation_B.loop_ub_a + dynamic_simulation_B.f_c] *
-              X->data[dynamic_simulation_B.pid_tmp].f1[6 *
-              dynamic_simulation_B.b_i_m + dynamic_simulation_B.loop_ub_a];
+      for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f < 6;
+           dynamic_simulation_B.f++) {
+        for (dynamic_simulation_B.b_i_h = 0; dynamic_simulation_B.b_i_h < 6;
+             dynamic_simulation_B.b_i_h++) {
+          dynamic_simulation_B.b_idx_0_o = 0.0;
+          for (dynamic_simulation_B.loop_ub_p = 0;
+               dynamic_simulation_B.loop_ub_p < 6;
+               dynamic_simulation_B.loop_ub_p++) {
+            dynamic_simulation_B.b_idx_0_o += dynamic_simulation_B.X_m[6 *
+              dynamic_simulation_B.loop_ub_p + dynamic_simulation_B.f] * X->
+              data[dynamic_simulation_B.pid_tmp].f1[6 *
+              dynamic_simulation_B.b_i_h + dynamic_simulation_B.loop_ub_p];
           }
 
-          dynamic_simulation_B.loop_ub_a = 6 * dynamic_simulation_B.b_i_m +
-            dynamic_simulation_B.f_c;
+          dynamic_simulation_B.loop_ub_p = 6 * dynamic_simulation_B.b_i_h +
+            dynamic_simulation_B.f;
           Ic->data[static_cast<int32_T>(dynamic_simulation_B.pid) - 1]
-            .f1[dynamic_simulation_B.loop_ub_a] +=
-            dynamic_simulation_B.b_idx_0_m;
+            .f1[dynamic_simulation_B.loop_ub_p] +=
+            dynamic_simulation_B.b_idx_0_o;
         }
       }
 
@@ -2957,36 +2957,36 @@ static void RigidBodyTreeDynamics_massMatri(p_robotics_manip_internal__kq_T
       while ((!exitg1) && (lambda_->data[dynamic_simulation_B.pid_tmp] > 0.0)) {
         obj = robot->Bodies[static_cast<int32_T>(lambda_->
           data[dynamic_simulation_B.pid_tmp]) - 1];
-        dynamic_simulation_B.f_c = a->size[0] * a->size[1];
+        dynamic_simulation_B.f = a->size[0] * a->size[1];
         a->size[0] = 1;
         a->size[1] = obj->JointInternal.Type->size[1];
-        dynami_emxEnsureCapacity_char_T(a, dynamic_simulation_B.f_c);
-        dynamic_simulation_B.loop_ub_a = obj->JointInternal.Type->size[0] *
+        dynami_emxEnsureCapacity_char_T(a, dynamic_simulation_B.f);
+        dynamic_simulation_B.loop_ub_p = obj->JointInternal.Type->size[0] *
           obj->JointInternal.Type->size[1] - 1;
-        for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <=
-             dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-          a->data[dynamic_simulation_B.f_c] = obj->JointInternal.Type->
-            data[dynamic_simulation_B.f_c];
+        for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <=
+             dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+          a->data[dynamic_simulation_B.f] = obj->JointInternal.Type->
+            data[dynamic_simulation_B.f];
         }
 
-        for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c < 5;
-             dynamic_simulation_B.f_c++) {
-          dynamic_simulation_B.b_fi[dynamic_simulation_B.f_c] =
-            tmp[dynamic_simulation_B.f_c];
+        for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f < 5;
+             dynamic_simulation_B.f++) {
+          dynamic_simulation_B.b_ch[dynamic_simulation_B.f] =
+            tmp[dynamic_simulation_B.f];
         }
 
         dynamic_simulation_B.b_bool_l = false;
         if (a->size[1] == 5) {
-          dynamic_simulation_B.f_c = 1;
+          dynamic_simulation_B.f = 1;
           do {
             exitg2 = 0;
-            if (dynamic_simulation_B.f_c - 1 < 5) {
-              dynamic_simulation_B.b_i_m = dynamic_simulation_B.f_c - 1;
-              if (a->data[dynamic_simulation_B.b_i_m] !=
-                  dynamic_simulation_B.b_fi[dynamic_simulation_B.b_i_m]) {
+            if (dynamic_simulation_B.f - 1 < 5) {
+              dynamic_simulation_B.b_i_h = dynamic_simulation_B.f - 1;
+              if (a->data[dynamic_simulation_B.b_i_h] !=
+                  dynamic_simulation_B.b_ch[dynamic_simulation_B.b_i_h]) {
                 exitg2 = 1;
               } else {
-                dynamic_simulation_B.f_c++;
+                dynamic_simulation_B.f++;
               }
             } else {
               dynamic_simulation_B.b_bool_l = true;
@@ -3005,283 +3005,282 @@ static void RigidBodyTreeDynamics_massMatri(p_robotics_manip_internal__kq_T
       }
     }
 
-    dynamic_simulation_B.b_idx_0_m = robot->
-      VelocityDoFMap[dynamic_simulation_B.n_f - 1];
-    dynamic_simulation_B.b_idx_1_c = robot->
-      VelocityDoFMap[dynamic_simulation_B.n_f + 7];
-    if (dynamic_simulation_B.b_idx_0_m <= dynamic_simulation_B.b_idx_1_c) {
+    dynamic_simulation_B.b_idx_0_o = robot->
+      VelocityDoFMap[dynamic_simulation_B.n_m - 1];
+    dynamic_simulation_B.b_idx_1_h = robot->
+      VelocityDoFMap[dynamic_simulation_B.n_m + 7];
+    if (dynamic_simulation_B.b_idx_0_o <= dynamic_simulation_B.b_idx_1_h) {
       obj = robot->Bodies[dynamic_simulation_B.pid_tmp];
-      dynamic_simulation_B.f_c = Si->size[0] * Si->size[1];
+      dynamic_simulation_B.f = Si->size[0] * Si->size[1];
       Si->size[0] = 6;
       Si->size[1] = obj->JointInternal.MotionSubspace->size[1];
-      dynami_emxEnsureCapacity_real_T(Si, dynamic_simulation_B.f_c);
-      dynamic_simulation_B.loop_ub_a = obj->JointInternal.MotionSubspace->size[0]
+      dynami_emxEnsureCapacity_real_T(Si, dynamic_simulation_B.f);
+      dynamic_simulation_B.loop_ub_p = obj->JointInternal.MotionSubspace->size[0]
         * obj->JointInternal.MotionSubspace->size[1] - 1;
-      for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <=
-           dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-        Si->data[dynamic_simulation_B.f_c] = obj->
-          JointInternal.MotionSubspace->data[dynamic_simulation_B.f_c];
+      for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <=
+           dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+        Si->data[dynamic_simulation_B.f] = obj->
+          JointInternal.MotionSubspace->data[dynamic_simulation_B.f];
       }
 
-      dynamic_simulation_B.n_f = Si->size[1] - 1;
-      dynamic_simulation_B.f_c = Fi->size[0] * Fi->size[1];
+      dynamic_simulation_B.n_m = Si->size[1] - 1;
+      dynamic_simulation_B.f = Fi->size[0] * Fi->size[1];
       Fi->size[0] = 6;
       Fi->size[1] = Si->size[1];
-      dynami_emxEnsureCapacity_real_T(Fi, dynamic_simulation_B.f_c);
-      for (dynamic_simulation_B.loop_ub_a = 0; dynamic_simulation_B.loop_ub_a <=
-           dynamic_simulation_B.n_f; dynamic_simulation_B.loop_ub_a++) {
-        dynamic_simulation_B.coffset_tmp_p = dynamic_simulation_B.loop_ub_a * 6
+      dynami_emxEnsureCapacity_real_T(Fi, dynamic_simulation_B.f);
+      for (dynamic_simulation_B.loop_ub_p = 0; dynamic_simulation_B.loop_ub_p <=
+           dynamic_simulation_B.n_m; dynamic_simulation_B.loop_ub_p++) {
+        dynamic_simulation_B.coffset_tmp_c = dynamic_simulation_B.loop_ub_p * 6
           - 1;
-        for (dynamic_simulation_B.b_i_m = 0; dynamic_simulation_B.b_i_m < 6;
-             dynamic_simulation_B.b_i_m++) {
-          dynamic_simulation_B.s_m = 0.0;
-          for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c < 6;
-               dynamic_simulation_B.f_c++) {
-            dynamic_simulation_B.s_m += Ic->data[dynamic_simulation_B.pid_tmp].
-              f1[dynamic_simulation_B.f_c * 6 + dynamic_simulation_B.b_i_m] *
-              Si->data[(dynamic_simulation_B.coffset_tmp_p +
-                        dynamic_simulation_B.f_c) + 1];
+        for (dynamic_simulation_B.b_i_h = 0; dynamic_simulation_B.b_i_h < 6;
+             dynamic_simulation_B.b_i_h++) {
+          dynamic_simulation_B.s_e = 0.0;
+          for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f < 6;
+               dynamic_simulation_B.f++) {
+            dynamic_simulation_B.s_e += Ic->data[dynamic_simulation_B.pid_tmp].
+              f1[dynamic_simulation_B.f * 6 + dynamic_simulation_B.b_i_h] *
+              Si->data[(dynamic_simulation_B.coffset_tmp_c +
+                        dynamic_simulation_B.f) + 1];
           }
 
-          Fi->data[(dynamic_simulation_B.coffset_tmp_p +
-                    dynamic_simulation_B.b_i_m) + 1] = dynamic_simulation_B.s_m;
+          Fi->data[(dynamic_simulation_B.coffset_tmp_c +
+                    dynamic_simulation_B.b_i_h) + 1] = dynamic_simulation_B.s_e;
         }
       }
 
-      if (dynamic_simulation_B.vNum_l > dynamic_simulation_B.p_idx_1) {
-        dynamic_simulation_B.coffset_tmp_p = 0;
+      if (dynamic_simulation_B.vNum_p > dynamic_simulation_B.p_idx_1) {
+        dynamic_simulation_B.coffset_tmp_c = 0;
         dynamic_simulation_B.cb = 0;
       } else {
-        dynamic_simulation_B.coffset_tmp_p = static_cast<int32_T>
-          (dynamic_simulation_B.vNum_l) - 1;
+        dynamic_simulation_B.coffset_tmp_c = static_cast<int32_T>
+          (dynamic_simulation_B.vNum_p) - 1;
         dynamic_simulation_B.cb = static_cast<int32_T>
-          (dynamic_simulation_B.vNum_l) - 1;
+          (dynamic_simulation_B.vNum_p) - 1;
       }
 
-      dynamic_simulation_B.m_h = Si->size[1];
-      dynamic_simulation_B.n_f = Fi->size[1] - 1;
-      dynamic_simulation_B.f_c = Hji->size[0] * Hji->size[1];
+      dynamic_simulation_B.m_a = Si->size[1];
+      dynamic_simulation_B.n_m = Fi->size[1] - 1;
+      dynamic_simulation_B.f = Hji->size[0] * Hji->size[1];
       Hji->size[0] = Si->size[1];
       Hji->size[1] = Fi->size[1];
-      dynami_emxEnsureCapacity_real_T(Hji, dynamic_simulation_B.f_c);
-      for (dynamic_simulation_B.loop_ub_a = 0; dynamic_simulation_B.loop_ub_a <=
-           dynamic_simulation_B.n_f; dynamic_simulation_B.loop_ub_a++) {
-        dynamic_simulation_B.coffset = dynamic_simulation_B.loop_ub_a *
-          dynamic_simulation_B.m_h - 1;
-        dynamic_simulation_B.boffset = dynamic_simulation_B.loop_ub_a * 6 - 1;
-        for (dynamic_simulation_B.b_i_m = 0; dynamic_simulation_B.b_i_m <
-             dynamic_simulation_B.m_h; dynamic_simulation_B.b_i_m++) {
-          dynamic_simulation_B.aoffset_m = dynamic_simulation_B.b_i_m * 6 - 1;
-          dynamic_simulation_B.s_m = 0.0;
-          for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c < 6;
-               dynamic_simulation_B.f_c++) {
-            dynamic_simulation_B.X_tmp = dynamic_simulation_B.f_c + 1;
-            dynamic_simulation_B.s_m += Si->data[dynamic_simulation_B.aoffset_m
+      dynami_emxEnsureCapacity_real_T(Hji, dynamic_simulation_B.f);
+      for (dynamic_simulation_B.loop_ub_p = 0; dynamic_simulation_B.loop_ub_p <=
+           dynamic_simulation_B.n_m; dynamic_simulation_B.loop_ub_p++) {
+        dynamic_simulation_B.coffset = dynamic_simulation_B.loop_ub_p *
+          dynamic_simulation_B.m_a - 1;
+        dynamic_simulation_B.boffset = dynamic_simulation_B.loop_ub_p * 6 - 1;
+        for (dynamic_simulation_B.b_i_h = 0; dynamic_simulation_B.b_i_h <
+             dynamic_simulation_B.m_a; dynamic_simulation_B.b_i_h++) {
+          dynamic_simulation_B.aoffset_k = dynamic_simulation_B.b_i_h * 6 - 1;
+          dynamic_simulation_B.s_e = 0.0;
+          for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f < 6;
+               dynamic_simulation_B.f++) {
+            dynamic_simulation_B.X_tmp = dynamic_simulation_B.f + 1;
+            dynamic_simulation_B.s_e += Si->data[dynamic_simulation_B.aoffset_k
               + dynamic_simulation_B.X_tmp] * Fi->
               data[dynamic_simulation_B.boffset + dynamic_simulation_B.X_tmp];
           }
 
-          Hji->data[(dynamic_simulation_B.coffset + dynamic_simulation_B.b_i_m)
-            + 1] = dynamic_simulation_B.s_m;
+          Hji->data[(dynamic_simulation_B.coffset + dynamic_simulation_B.b_i_h)
+            + 1] = dynamic_simulation_B.s_e;
         }
       }
 
-      dynamic_simulation_B.loop_ub_a = Hji->size[1];
-      for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <
-           dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-        dynamic_simulation_B.n_f = Hji->size[0];
-        for (dynamic_simulation_B.b_i_m = 0; dynamic_simulation_B.b_i_m <
-             dynamic_simulation_B.n_f; dynamic_simulation_B.b_i_m++) {
-          H->data[(dynamic_simulation_B.coffset_tmp_p +
-                   dynamic_simulation_B.b_i_m) + H->size[0] *
-            (dynamic_simulation_B.cb + dynamic_simulation_B.f_c)] = Hji->
-            data[Hji->size[0] * dynamic_simulation_B.f_c +
-            dynamic_simulation_B.b_i_m];
+      dynamic_simulation_B.loop_ub_p = Hji->size[1];
+      for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <
+           dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+        dynamic_simulation_B.n_m = Hji->size[0];
+        for (dynamic_simulation_B.b_i_h = 0; dynamic_simulation_B.b_i_h <
+             dynamic_simulation_B.n_m; dynamic_simulation_B.b_i_h++) {
+          H->data[(dynamic_simulation_B.coffset_tmp_c +
+                   dynamic_simulation_B.b_i_h) + H->size[0] *
+            (dynamic_simulation_B.cb + dynamic_simulation_B.f)] = Hji->data
+            [Hji->size[0] * dynamic_simulation_B.f + dynamic_simulation_B.b_i_h];
         }
       }
 
-      dynamic_simulation_B.n_f = Fi->size[1];
-      dynamic_simulation_B.f_c = Si->size[0] * Si->size[1];
+      dynamic_simulation_B.n_m = Fi->size[1];
+      dynamic_simulation_B.f = Si->size[0] * Si->size[1];
       Si->size[0] = 6;
       Si->size[1] = Fi->size[1];
-      dynami_emxEnsureCapacity_real_T(Si, dynamic_simulation_B.f_c);
-      dynamic_simulation_B.loop_ub_a = Fi->size[0] * Fi->size[1] - 1;
-      for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <=
-           dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-        Si->data[dynamic_simulation_B.f_c] = Fi->data[dynamic_simulation_B.f_c];
+      dynami_emxEnsureCapacity_real_T(Si, dynamic_simulation_B.f);
+      dynamic_simulation_B.loop_ub_p = Fi->size[0] * Fi->size[1] - 1;
+      for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <=
+           dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+        Si->data[dynamic_simulation_B.f] = Fi->data[dynamic_simulation_B.f];
       }
 
-      dynamic_simulation_B.f_c = Fi->size[0] * Fi->size[1];
+      dynamic_simulation_B.f = Fi->size[0] * Fi->size[1];
       Fi->size[0] = 6;
-      Fi->size[1] = dynamic_simulation_B.n_f;
-      dynami_emxEnsureCapacity_real_T(Fi, dynamic_simulation_B.f_c);
-      for (dynamic_simulation_B.loop_ub_a = 0; dynamic_simulation_B.loop_ub_a <
-           dynamic_simulation_B.n_f; dynamic_simulation_B.loop_ub_a++) {
-        dynamic_simulation_B.coffset_tmp_p = dynamic_simulation_B.loop_ub_a * 6
+      Fi->size[1] = dynamic_simulation_B.n_m;
+      dynami_emxEnsureCapacity_real_T(Fi, dynamic_simulation_B.f);
+      for (dynamic_simulation_B.loop_ub_p = 0; dynamic_simulation_B.loop_ub_p <
+           dynamic_simulation_B.n_m; dynamic_simulation_B.loop_ub_p++) {
+        dynamic_simulation_B.coffset_tmp_c = dynamic_simulation_B.loop_ub_p * 6
           - 1;
-        for (dynamic_simulation_B.b_i_m = 0; dynamic_simulation_B.b_i_m < 6;
-             dynamic_simulation_B.b_i_m++) {
-          dynamic_simulation_B.aoffset_m = dynamic_simulation_B.b_i_m * 6 - 1;
-          dynamic_simulation_B.s_m = 0.0;
-          for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c < 6;
-               dynamic_simulation_B.f_c++) {
-            dynamic_simulation_B.X_tmp = dynamic_simulation_B.f_c + 1;
-            dynamic_simulation_B.s_m += X->data[dynamic_simulation_B.pid_tmp]
-              .f1[dynamic_simulation_B.aoffset_m + dynamic_simulation_B.X_tmp] *
-              Si->data[dynamic_simulation_B.coffset_tmp_p +
+        for (dynamic_simulation_B.b_i_h = 0; dynamic_simulation_B.b_i_h < 6;
+             dynamic_simulation_B.b_i_h++) {
+          dynamic_simulation_B.aoffset_k = dynamic_simulation_B.b_i_h * 6 - 1;
+          dynamic_simulation_B.s_e = 0.0;
+          for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f < 6;
+               dynamic_simulation_B.f++) {
+            dynamic_simulation_B.X_tmp = dynamic_simulation_B.f + 1;
+            dynamic_simulation_B.s_e += X->data[dynamic_simulation_B.pid_tmp]
+              .f1[dynamic_simulation_B.aoffset_k + dynamic_simulation_B.X_tmp] *
+              Si->data[dynamic_simulation_B.coffset_tmp_c +
               dynamic_simulation_B.X_tmp];
           }
 
-          Fi->data[(dynamic_simulation_B.coffset_tmp_p +
-                    dynamic_simulation_B.b_i_m) + 1] = dynamic_simulation_B.s_m;
+          Fi->data[(dynamic_simulation_B.coffset_tmp_c +
+                    dynamic_simulation_B.b_i_h) + 1] = dynamic_simulation_B.s_e;
         }
       }
 
       while (dynamic_simulation_B.pid > 0.0) {
-        dynamic_simulation_B.b_i_m = static_cast<int32_T>
+        dynamic_simulation_B.b_i_h = static_cast<int32_T>
           (dynamic_simulation_B.pid);
-        dynamic_simulation_B.pid_tmp = dynamic_simulation_B.b_i_m - 1;
+        dynamic_simulation_B.pid_tmp = dynamic_simulation_B.b_i_h - 1;
         obj = robot->Bodies[dynamic_simulation_B.pid_tmp];
-        dynamic_simulation_B.f_c = Si->size[0] * Si->size[1];
+        dynamic_simulation_B.f = Si->size[0] * Si->size[1];
         Si->size[0] = 6;
         Si->size[1] = obj->JointInternal.MotionSubspace->size[1];
-        dynami_emxEnsureCapacity_real_T(Si, dynamic_simulation_B.f_c);
-        dynamic_simulation_B.loop_ub_a = obj->JointInternal.MotionSubspace->
+        dynami_emxEnsureCapacity_real_T(Si, dynamic_simulation_B.f);
+        dynamic_simulation_B.loop_ub_p = obj->JointInternal.MotionSubspace->
           size[0] * obj->JointInternal.MotionSubspace->size[1] - 1;
-        for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <=
-             dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-          Si->data[dynamic_simulation_B.f_c] = obj->
-            JointInternal.MotionSubspace->data[dynamic_simulation_B.f_c];
+        for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <=
+             dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+          Si->data[dynamic_simulation_B.f] = obj->
+            JointInternal.MotionSubspace->data[dynamic_simulation_B.f];
         }
 
-        dynamic_simulation_B.b_idx_0_m = robot->
-          VelocityDoFMap[dynamic_simulation_B.b_i_m - 1];
-        dynamic_simulation_B.b_idx_1_c = robot->
-          VelocityDoFMap[dynamic_simulation_B.b_i_m + 7];
-        if (dynamic_simulation_B.b_idx_0_m <= dynamic_simulation_B.b_idx_1_c) {
-          dynamic_simulation_B.m_h = Si->size[1];
-          dynamic_simulation_B.n_f = Fi->size[1] - 1;
-          dynamic_simulation_B.f_c = Hji->size[0] * Hji->size[1];
+        dynamic_simulation_B.b_idx_0_o = robot->
+          VelocityDoFMap[dynamic_simulation_B.b_i_h - 1];
+        dynamic_simulation_B.b_idx_1_h = robot->
+          VelocityDoFMap[dynamic_simulation_B.b_i_h + 7];
+        if (dynamic_simulation_B.b_idx_0_o <= dynamic_simulation_B.b_idx_1_h) {
+          dynamic_simulation_B.m_a = Si->size[1];
+          dynamic_simulation_B.n_m = Fi->size[1] - 1;
+          dynamic_simulation_B.f = Hji->size[0] * Hji->size[1];
           Hji->size[0] = Si->size[1];
           Hji->size[1] = Fi->size[1];
-          dynami_emxEnsureCapacity_real_T(Hji, dynamic_simulation_B.f_c);
-          for (dynamic_simulation_B.loop_ub_a = 0;
-               dynamic_simulation_B.loop_ub_a <= dynamic_simulation_B.n_f;
-               dynamic_simulation_B.loop_ub_a++) {
-            dynamic_simulation_B.coffset = dynamic_simulation_B.loop_ub_a *
-              dynamic_simulation_B.m_h - 1;
-            dynamic_simulation_B.boffset = dynamic_simulation_B.loop_ub_a * 6 -
+          dynami_emxEnsureCapacity_real_T(Hji, dynamic_simulation_B.f);
+          for (dynamic_simulation_B.loop_ub_p = 0;
+               dynamic_simulation_B.loop_ub_p <= dynamic_simulation_B.n_m;
+               dynamic_simulation_B.loop_ub_p++) {
+            dynamic_simulation_B.coffset = dynamic_simulation_B.loop_ub_p *
+              dynamic_simulation_B.m_a - 1;
+            dynamic_simulation_B.boffset = dynamic_simulation_B.loop_ub_p * 6 -
               1;
-            for (dynamic_simulation_B.b_i_m = 0; dynamic_simulation_B.b_i_m <
-                 dynamic_simulation_B.m_h; dynamic_simulation_B.b_i_m++) {
-              dynamic_simulation_B.aoffset_m = dynamic_simulation_B.b_i_m * 6 -
+            for (dynamic_simulation_B.b_i_h = 0; dynamic_simulation_B.b_i_h <
+                 dynamic_simulation_B.m_a; dynamic_simulation_B.b_i_h++) {
+              dynamic_simulation_B.aoffset_k = dynamic_simulation_B.b_i_h * 6 -
                 1;
-              dynamic_simulation_B.s_m = 0.0;
-              for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c < 6;
-                   dynamic_simulation_B.f_c++) {
-                dynamic_simulation_B.X_tmp = dynamic_simulation_B.f_c + 1;
-                dynamic_simulation_B.s_m += Si->
-                  data[dynamic_simulation_B.aoffset_m +
+              dynamic_simulation_B.s_e = 0.0;
+              for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f < 6;
+                   dynamic_simulation_B.f++) {
+                dynamic_simulation_B.X_tmp = dynamic_simulation_B.f + 1;
+                dynamic_simulation_B.s_e += Si->
+                  data[dynamic_simulation_B.aoffset_k +
                   dynamic_simulation_B.X_tmp] * Fi->
                   data[dynamic_simulation_B.boffset + dynamic_simulation_B.X_tmp];
               }
 
               Hji->data[(dynamic_simulation_B.coffset +
-                         dynamic_simulation_B.b_i_m) + 1] =
-                dynamic_simulation_B.s_m;
+                         dynamic_simulation_B.b_i_h) + 1] =
+                dynamic_simulation_B.s_e;
             }
           }
 
-          if (dynamic_simulation_B.b_idx_0_m > dynamic_simulation_B.b_idx_1_c) {
+          if (dynamic_simulation_B.b_idx_0_o > dynamic_simulation_B.b_idx_1_h) {
             dynamic_simulation_B.X_tmp = 0;
           } else {
             dynamic_simulation_B.X_tmp = static_cast<int32_T>
-              (dynamic_simulation_B.b_idx_0_m) - 1;
+              (dynamic_simulation_B.b_idx_0_o) - 1;
           }
 
-          if (dynamic_simulation_B.vNum_l > dynamic_simulation_B.p_idx_1) {
-            dynamic_simulation_B.coffset_tmp_p = 0;
+          if (dynamic_simulation_B.vNum_p > dynamic_simulation_B.p_idx_1) {
+            dynamic_simulation_B.coffset_tmp_c = 0;
           } else {
-            dynamic_simulation_B.coffset_tmp_p = static_cast<int32_T>
-              (dynamic_simulation_B.vNum_l) - 1;
+            dynamic_simulation_B.coffset_tmp_c = static_cast<int32_T>
+              (dynamic_simulation_B.vNum_p) - 1;
           }
 
-          dynamic_simulation_B.loop_ub_a = Hji->size[1];
-          for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <
-               dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-            dynamic_simulation_B.n_f = Hji->size[0];
-            for (dynamic_simulation_B.b_i_m = 0; dynamic_simulation_B.b_i_m <
-                 dynamic_simulation_B.n_f; dynamic_simulation_B.b_i_m++) {
-              H->data[(dynamic_simulation_B.X_tmp + dynamic_simulation_B.b_i_m)
-                + H->size[0] * (dynamic_simulation_B.coffset_tmp_p +
-                                dynamic_simulation_B.f_c)] = Hji->data[Hji->
-                size[0] * dynamic_simulation_B.f_c + dynamic_simulation_B.b_i_m];
+          dynamic_simulation_B.loop_ub_p = Hji->size[1];
+          for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <
+               dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+            dynamic_simulation_B.n_m = Hji->size[0];
+            for (dynamic_simulation_B.b_i_h = 0; dynamic_simulation_B.b_i_h <
+                 dynamic_simulation_B.n_m; dynamic_simulation_B.b_i_h++) {
+              H->data[(dynamic_simulation_B.X_tmp + dynamic_simulation_B.b_i_h)
+                + H->size[0] * (dynamic_simulation_B.coffset_tmp_c +
+                                dynamic_simulation_B.f)] = Hji->data[Hji->size[0]
+                * dynamic_simulation_B.f + dynamic_simulation_B.b_i_h];
             }
           }
 
-          if (dynamic_simulation_B.vNum_l > dynamic_simulation_B.p_idx_1) {
+          if (dynamic_simulation_B.vNum_p > dynamic_simulation_B.p_idx_1) {
             dynamic_simulation_B.X_tmp = 0;
           } else {
             dynamic_simulation_B.X_tmp = static_cast<int32_T>
-              (dynamic_simulation_B.vNum_l) - 1;
+              (dynamic_simulation_B.vNum_p) - 1;
           }
 
-          if (dynamic_simulation_B.b_idx_0_m > dynamic_simulation_B.b_idx_1_c) {
-            dynamic_simulation_B.coffset_tmp_p = 0;
+          if (dynamic_simulation_B.b_idx_0_o > dynamic_simulation_B.b_idx_1_h) {
+            dynamic_simulation_B.coffset_tmp_c = 0;
           } else {
-            dynamic_simulation_B.coffset_tmp_p = static_cast<int32_T>
-              (dynamic_simulation_B.b_idx_0_m) - 1;
+            dynamic_simulation_B.coffset_tmp_c = static_cast<int32_T>
+              (dynamic_simulation_B.b_idx_0_o) - 1;
           }
 
-          dynamic_simulation_B.loop_ub_a = Hji->size[0];
-          for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <
-               dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-            dynamic_simulation_B.n_f = Hji->size[1];
-            for (dynamic_simulation_B.b_i_m = 0; dynamic_simulation_B.b_i_m <
-                 dynamic_simulation_B.n_f; dynamic_simulation_B.b_i_m++) {
-              H->data[(dynamic_simulation_B.X_tmp + dynamic_simulation_B.b_i_m)
-                + H->size[0] * (dynamic_simulation_B.coffset_tmp_p +
-                                dynamic_simulation_B.f_c)] = Hji->data[Hji->
-                size[0] * dynamic_simulation_B.b_i_m + dynamic_simulation_B.f_c];
+          dynamic_simulation_B.loop_ub_p = Hji->size[0];
+          for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <
+               dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+            dynamic_simulation_B.n_m = Hji->size[1];
+            for (dynamic_simulation_B.b_i_h = 0; dynamic_simulation_B.b_i_h <
+                 dynamic_simulation_B.n_m; dynamic_simulation_B.b_i_h++) {
+              H->data[(dynamic_simulation_B.X_tmp + dynamic_simulation_B.b_i_h)
+                + H->size[0] * (dynamic_simulation_B.coffset_tmp_c +
+                                dynamic_simulation_B.f)] = Hji->data[Hji->size[0]
+                * dynamic_simulation_B.b_i_h + dynamic_simulation_B.f];
             }
           }
         }
 
-        dynamic_simulation_B.n_f = Fi->size[1];
-        dynamic_simulation_B.f_c = Si->size[0] * Si->size[1];
+        dynamic_simulation_B.n_m = Fi->size[1];
+        dynamic_simulation_B.f = Si->size[0] * Si->size[1];
         Si->size[0] = 6;
         Si->size[1] = Fi->size[1];
-        dynami_emxEnsureCapacity_real_T(Si, dynamic_simulation_B.f_c);
-        dynamic_simulation_B.loop_ub_a = Fi->size[0] * Fi->size[1] - 1;
-        for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <=
-             dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-          Si->data[dynamic_simulation_B.f_c] = Fi->data[dynamic_simulation_B.f_c];
+        dynami_emxEnsureCapacity_real_T(Si, dynamic_simulation_B.f);
+        dynamic_simulation_B.loop_ub_p = Fi->size[0] * Fi->size[1] - 1;
+        for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <=
+             dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+          Si->data[dynamic_simulation_B.f] = Fi->data[dynamic_simulation_B.f];
         }
 
-        dynamic_simulation_B.f_c = Fi->size[0] * Fi->size[1];
+        dynamic_simulation_B.f = Fi->size[0] * Fi->size[1];
         Fi->size[0] = 6;
-        Fi->size[1] = dynamic_simulation_B.n_f;
-        dynami_emxEnsureCapacity_real_T(Fi, dynamic_simulation_B.f_c);
-        for (dynamic_simulation_B.loop_ub_a = 0; dynamic_simulation_B.loop_ub_a <
-             dynamic_simulation_B.n_f; dynamic_simulation_B.loop_ub_a++) {
-          dynamic_simulation_B.coffset_tmp_p = dynamic_simulation_B.loop_ub_a *
+        Fi->size[1] = dynamic_simulation_B.n_m;
+        dynami_emxEnsureCapacity_real_T(Fi, dynamic_simulation_B.f);
+        for (dynamic_simulation_B.loop_ub_p = 0; dynamic_simulation_B.loop_ub_p <
+             dynamic_simulation_B.n_m; dynamic_simulation_B.loop_ub_p++) {
+          dynamic_simulation_B.coffset_tmp_c = dynamic_simulation_B.loop_ub_p *
             6 - 1;
-          for (dynamic_simulation_B.b_i_m = 0; dynamic_simulation_B.b_i_m < 6;
-               dynamic_simulation_B.b_i_m++) {
-            dynamic_simulation_B.aoffset_m = dynamic_simulation_B.b_i_m * 6 - 1;
-            dynamic_simulation_B.s_m = 0.0;
-            for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c < 6;
-                 dynamic_simulation_B.f_c++) {
-              dynamic_simulation_B.X_tmp = dynamic_simulation_B.f_c + 1;
-              dynamic_simulation_B.s_m += X->data[dynamic_simulation_B.pid_tmp].
-                f1[dynamic_simulation_B.aoffset_m + dynamic_simulation_B.X_tmp] *
-                Si->data[dynamic_simulation_B.coffset_tmp_p +
+          for (dynamic_simulation_B.b_i_h = 0; dynamic_simulation_B.b_i_h < 6;
+               dynamic_simulation_B.b_i_h++) {
+            dynamic_simulation_B.aoffset_k = dynamic_simulation_B.b_i_h * 6 - 1;
+            dynamic_simulation_B.s_e = 0.0;
+            for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f < 6;
+                 dynamic_simulation_B.f++) {
+              dynamic_simulation_B.X_tmp = dynamic_simulation_B.f + 1;
+              dynamic_simulation_B.s_e += X->data[dynamic_simulation_B.pid_tmp].
+                f1[dynamic_simulation_B.aoffset_k + dynamic_simulation_B.X_tmp] *
+                Si->data[dynamic_simulation_B.coffset_tmp_c +
                 dynamic_simulation_B.X_tmp];
             }
 
-            Fi->data[(dynamic_simulation_B.coffset_tmp_p +
-                      dynamic_simulation_B.b_i_m) + 1] =
-              dynamic_simulation_B.s_m;
+            Fi->data[(dynamic_simulation_B.coffset_tmp_c +
+                      dynamic_simulation_B.b_i_h) + 1] =
+              dynamic_simulation_B.s_e;
           }
         }
 
@@ -3297,28 +3296,28 @@ static void RigidBodyTreeDynamics_massMatri(p_robotics_manip_internal__kq_T
   dynamic_simulati_emxFree_real_T(&Si);
   dynamic_si_emxFree_f_cell_wrap1(&X);
   dynamic_si_emxFree_f_cell_wrap1(&Ic);
-  for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c < 8;
-       dynamic_simulation_B.f_c++) {
-    dynamic_simulation_B.mask[dynamic_simulation_B.f_c] = (robot->
-      VelocityDoFMap[dynamic_simulation_B.f_c] <= robot->
-      VelocityDoFMap[dynamic_simulation_B.f_c + 8]);
+  for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f < 8;
+       dynamic_simulation_B.f++) {
+    dynamic_simulation_B.mask[dynamic_simulation_B.f] = (robot->
+      VelocityDoFMap[dynamic_simulation_B.f] <= robot->
+      VelocityDoFMap[dynamic_simulation_B.f + 8]);
   }
 
   dynamic_simulation_B.idx = 0;
-  dynamic_simulation_B.f_c = 1;
+  dynamic_simulation_B.f = 1;
   exitg1 = false;
-  while ((!exitg1) && (dynamic_simulation_B.f_c - 1 < 8)) {
-    if (dynamic_simulation_B.mask[dynamic_simulation_B.f_c - 1]) {
+  while ((!exitg1) && (dynamic_simulation_B.f - 1 < 8)) {
+    if (dynamic_simulation_B.mask[dynamic_simulation_B.f - 1]) {
       dynamic_simulation_B.idx++;
       dynamic_simulation_B.ii_data[dynamic_simulation_B.idx - 1] =
-        dynamic_simulation_B.f_c;
+        dynamic_simulation_B.f;
       if (dynamic_simulation_B.idx >= 8) {
         exitg1 = true;
       } else {
-        dynamic_simulation_B.f_c++;
+        dynamic_simulation_B.f++;
       }
     } else {
-      dynamic_simulation_B.f_c++;
+      dynamic_simulation_B.f++;
     }
   }
 
@@ -3326,112 +3325,111 @@ static void RigidBodyTreeDynamics_massMatri(p_robotics_manip_internal__kq_T
     dynamic_simulation_B.idx = 0;
   }
 
-  for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <
-       dynamic_simulation_B.idx; dynamic_simulation_B.f_c++) {
-    dynamic_simulation_B.nonFixedIndices_data[dynamic_simulation_B.f_c] =
-      dynamic_simulation_B.ii_data[dynamic_simulation_B.f_c];
+  for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <
+       dynamic_simulation_B.idx; dynamic_simulation_B.f++) {
+    dynamic_simulation_B.nonFixedIndices_data[dynamic_simulation_B.f] =
+      dynamic_simulation_B.ii_data[dynamic_simulation_B.f];
   }
 
-  dynamic_simulation_B.b_i_m = dynamic_simulation_B.idx - 1;
+  dynamic_simulation_B.b_i_h = dynamic_simulation_B.idx - 1;
   dynamic_simulati_emxInit_real_T(&s, 2);
   for (dynamic_simulation_B.idx = 0; dynamic_simulation_B.idx <=
-       dynamic_simulation_B.b_i_m; dynamic_simulation_B.idx++) {
-    dynamic_simulation_B.vNum_l = robot->
+       dynamic_simulation_B.b_i_h; dynamic_simulation_B.idx++) {
+    dynamic_simulation_B.vNum_p = robot->
       VelocityDoFMap[dynamic_simulation_B.nonFixedIndices_data[dynamic_simulation_B.idx]
       - 1];
     dynamic_simulation_B.p_idx_1 = robot->
       VelocityDoFMap[dynamic_simulation_B.nonFixedIndices_data[dynamic_simulation_B.idx]
       + 7];
-    if (rtIsNaN(dynamic_simulation_B.vNum_l) || rtIsNaN
+    if (rtIsNaN(dynamic_simulation_B.vNum_p) || rtIsNaN
         (dynamic_simulation_B.p_idx_1)) {
-      dynamic_simulation_B.f_c = s->size[0] * s->size[1];
+      dynamic_simulation_B.f = s->size[0] * s->size[1];
       s->size[0] = 1;
       s->size[1] = 1;
-      dynami_emxEnsureCapacity_real_T(s, dynamic_simulation_B.f_c);
+      dynami_emxEnsureCapacity_real_T(s, dynamic_simulation_B.f);
       s->data[0] = (rtNaN);
-    } else if (dynamic_simulation_B.p_idx_1 < dynamic_simulation_B.vNum_l) {
+    } else if (dynamic_simulation_B.p_idx_1 < dynamic_simulation_B.vNum_p) {
       s->size[0] = 1;
       s->size[1] = 0;
-    } else if ((rtIsInf(dynamic_simulation_B.vNum_l) || rtIsInf
-                (dynamic_simulation_B.p_idx_1)) && (dynamic_simulation_B.vNum_l ==
+    } else if ((rtIsInf(dynamic_simulation_B.vNum_p) || rtIsInf
+                (dynamic_simulation_B.p_idx_1)) && (dynamic_simulation_B.vNum_p ==
                 dynamic_simulation_B.p_idx_1)) {
-      dynamic_simulation_B.f_c = s->size[0] * s->size[1];
+      dynamic_simulation_B.f = s->size[0] * s->size[1];
       s->size[0] = 1;
       s->size[1] = 1;
-      dynami_emxEnsureCapacity_real_T(s, dynamic_simulation_B.f_c);
+      dynami_emxEnsureCapacity_real_T(s, dynamic_simulation_B.f);
       s->data[0] = (rtNaN);
-    } else if (floor(dynamic_simulation_B.vNum_l) == dynamic_simulation_B.vNum_l)
+    } else if (floor(dynamic_simulation_B.vNum_p) == dynamic_simulation_B.vNum_p)
     {
-      dynamic_simulation_B.f_c = s->size[0] * s->size[1];
+      dynamic_simulation_B.f = s->size[0] * s->size[1];
       s->size[0] = 1;
-      dynamic_simulation_B.loop_ub_a = static_cast<int32_T>(floor
-        (dynamic_simulation_B.p_idx_1 - dynamic_simulation_B.vNum_l));
-      s->size[1] = dynamic_simulation_B.loop_ub_a + 1;
-      dynami_emxEnsureCapacity_real_T(s, dynamic_simulation_B.f_c);
-      for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <=
-           dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-        s->data[dynamic_simulation_B.f_c] = dynamic_simulation_B.vNum_l +
-          static_cast<real_T>(dynamic_simulation_B.f_c);
+      dynamic_simulation_B.loop_ub_p = static_cast<int32_T>(floor
+        (dynamic_simulation_B.p_idx_1 - dynamic_simulation_B.vNum_p));
+      s->size[1] = dynamic_simulation_B.loop_ub_p + 1;
+      dynami_emxEnsureCapacity_real_T(s, dynamic_simulation_B.f);
+      for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <=
+           dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+        s->data[dynamic_simulation_B.f] = dynamic_simulation_B.vNum_p +
+          static_cast<real_T>(dynamic_simulation_B.f);
       }
     } else {
-      dynamic_simulation_B.nb_o = floor((dynamic_simulation_B.p_idx_1 -
-        dynamic_simulation_B.vNum_l) + 0.5);
-      dynamic_simulation_B.pid = dynamic_simulation_B.vNum_l +
-        dynamic_simulation_B.nb_o;
-      dynamic_simulation_B.b_idx_0_m = dynamic_simulation_B.pid -
+      dynamic_simulation_B.nb_f = floor((dynamic_simulation_B.p_idx_1 -
+        dynamic_simulation_B.vNum_p) + 0.5);
+      dynamic_simulation_B.pid = dynamic_simulation_B.vNum_p +
+        dynamic_simulation_B.nb_f;
+      dynamic_simulation_B.b_idx_0_o = dynamic_simulation_B.pid -
         dynamic_simulation_B.p_idx_1;
-      dynamic_simulation_B.b_idx_1_c = fabs(dynamic_simulation_B.vNum_l);
-      dynamic_simulation_B.s_m = fabs(dynamic_simulation_B.p_idx_1);
-      if ((dynamic_simulation_B.b_idx_1_c > dynamic_simulation_B.s_m) || rtIsNaN
-          (dynamic_simulation_B.s_m)) {
-        dynamic_simulation_B.s_m = dynamic_simulation_B.b_idx_1_c;
+      dynamic_simulation_B.b_idx_1_h = fabs(dynamic_simulation_B.vNum_p);
+      dynamic_simulation_B.s_e = fabs(dynamic_simulation_B.p_idx_1);
+      if ((dynamic_simulation_B.b_idx_1_h > dynamic_simulation_B.s_e) || rtIsNaN
+          (dynamic_simulation_B.s_e)) {
+        dynamic_simulation_B.s_e = dynamic_simulation_B.b_idx_1_h;
       }
 
-      if (fabs(dynamic_simulation_B.b_idx_0_m) < 4.4408920985006262E-16 *
-          dynamic_simulation_B.s_m) {
-        dynamic_simulation_B.nb_o++;
+      if (fabs(dynamic_simulation_B.b_idx_0_o) < 4.4408920985006262E-16 *
+          dynamic_simulation_B.s_e) {
+        dynamic_simulation_B.nb_f++;
         dynamic_simulation_B.pid = dynamic_simulation_B.p_idx_1;
-      } else if (dynamic_simulation_B.b_idx_0_m > 0.0) {
-        dynamic_simulation_B.pid = (dynamic_simulation_B.nb_o - 1.0) +
-          dynamic_simulation_B.vNum_l;
+      } else if (dynamic_simulation_B.b_idx_0_o > 0.0) {
+        dynamic_simulation_B.pid = (dynamic_simulation_B.nb_f - 1.0) +
+          dynamic_simulation_B.vNum_p;
       } else {
-        dynamic_simulation_B.nb_o++;
+        dynamic_simulation_B.nb_f++;
       }
 
-      if (dynamic_simulation_B.nb_o >= 0.0) {
-        dynamic_simulation_B.f_c = static_cast<int32_T>
-          (dynamic_simulation_B.nb_o);
+      if (dynamic_simulation_B.nb_f >= 0.0) {
+        dynamic_simulation_B.f = static_cast<int32_T>(dynamic_simulation_B.nb_f);
       } else {
-        dynamic_simulation_B.f_c = 0;
+        dynamic_simulation_B.f = 0;
       }
 
-      dynamic_simulation_B.n_f = dynamic_simulation_B.f_c - 1;
-      dynamic_simulation_B.f_c = s->size[0] * s->size[1];
+      dynamic_simulation_B.n_m = dynamic_simulation_B.f - 1;
+      dynamic_simulation_B.f = s->size[0] * s->size[1];
       s->size[0] = 1;
-      s->size[1] = dynamic_simulation_B.n_f + 1;
-      dynami_emxEnsureCapacity_real_T(s, dynamic_simulation_B.f_c);
-      if (dynamic_simulation_B.n_f + 1 > 0) {
-        s->data[0] = dynamic_simulation_B.vNum_l;
-        if (dynamic_simulation_B.n_f + 1 > 1) {
-          s->data[dynamic_simulation_B.n_f] = dynamic_simulation_B.pid;
-          dynamic_simulation_B.nm1d2 = ((dynamic_simulation_B.n_f < 0) +
-            dynamic_simulation_B.n_f) >> 1;
-          dynamic_simulation_B.loop_ub_a = dynamic_simulation_B.nm1d2 - 2;
-          for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <=
-               dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-            dynamic_simulation_B.X_tmp = dynamic_simulation_B.f_c + 1;
-            s->data[dynamic_simulation_B.X_tmp] = dynamic_simulation_B.vNum_l +
+      s->size[1] = dynamic_simulation_B.n_m + 1;
+      dynami_emxEnsureCapacity_real_T(s, dynamic_simulation_B.f);
+      if (dynamic_simulation_B.n_m + 1 > 0) {
+        s->data[0] = dynamic_simulation_B.vNum_p;
+        if (dynamic_simulation_B.n_m + 1 > 1) {
+          s->data[dynamic_simulation_B.n_m] = dynamic_simulation_B.pid;
+          dynamic_simulation_B.nm1d2 = ((dynamic_simulation_B.n_m < 0) +
+            dynamic_simulation_B.n_m) >> 1;
+          dynamic_simulation_B.loop_ub_p = dynamic_simulation_B.nm1d2 - 2;
+          for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <=
+               dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+            dynamic_simulation_B.X_tmp = dynamic_simulation_B.f + 1;
+            s->data[dynamic_simulation_B.X_tmp] = dynamic_simulation_B.vNum_p +
               static_cast<real_T>(dynamic_simulation_B.X_tmp);
-            s->data[dynamic_simulation_B.n_f - dynamic_simulation_B.X_tmp] =
+            s->data[dynamic_simulation_B.n_m - dynamic_simulation_B.X_tmp] =
               dynamic_simulation_B.pid - static_cast<real_T>
               (dynamic_simulation_B.X_tmp);
           }
 
-          if (dynamic_simulation_B.nm1d2 << 1 == dynamic_simulation_B.n_f) {
-            s->data[dynamic_simulation_B.nm1d2] = (dynamic_simulation_B.vNum_l +
+          if (dynamic_simulation_B.nm1d2 << 1 == dynamic_simulation_B.n_m) {
+            s->data[dynamic_simulation_B.nm1d2] = (dynamic_simulation_B.vNum_p +
               dynamic_simulation_B.pid) / 2.0;
           } else {
-            s->data[dynamic_simulation_B.nm1d2] = dynamic_simulation_B.vNum_l +
+            s->data[dynamic_simulation_B.nm1d2] = dynamic_simulation_B.vNum_p +
               static_cast<real_T>(dynamic_simulation_B.nm1d2);
             s->data[dynamic_simulation_B.nm1d2 + 1] = dynamic_simulation_B.pid -
               static_cast<real_T>(dynamic_simulation_B.nm1d2);
@@ -3440,32 +3438,32 @@ static void RigidBodyTreeDynamics_massMatri(p_robotics_manip_internal__kq_T
       }
     }
 
-    if (dynamic_simulation_B.vNum_l > dynamic_simulation_B.p_idx_1) {
+    if (dynamic_simulation_B.vNum_p > dynamic_simulation_B.p_idx_1) {
       dynamic_simulation_B.nm1d2 = 0;
     } else {
       dynamic_simulation_B.nm1d2 = static_cast<int32_T>
-        (dynamic_simulation_B.vNum_l) - 1;
+        (dynamic_simulation_B.vNum_p) - 1;
     }
 
-    dynamic_simulation_B.loop_ub_a = s->size[1];
-    for (dynamic_simulation_B.f_c = 0; dynamic_simulation_B.f_c <
-         dynamic_simulation_B.loop_ub_a; dynamic_simulation_B.f_c++) {
-      lambda->data[dynamic_simulation_B.nm1d2 + dynamic_simulation_B.f_c] =
-        s->data[dynamic_simulation_B.f_c] - 1.0;
+    dynamic_simulation_B.loop_ub_p = s->size[1];
+    for (dynamic_simulation_B.f = 0; dynamic_simulation_B.f <
+         dynamic_simulation_B.loop_ub_p; dynamic_simulation_B.f++) {
+      lambda->data[dynamic_simulation_B.nm1d2 + dynamic_simulation_B.f] =
+        s->data[dynamic_simulation_B.f] - 1.0;
     }
 
     if (lambda_->
         data[dynamic_simulation_B.nonFixedIndices_data[dynamic_simulation_B.idx]
         - 1] == 0.0) {
-      lambda->data[static_cast<int32_T>(dynamic_simulation_B.vNum_l) - 1] = 0.0;
+      lambda->data[static_cast<int32_T>(dynamic_simulation_B.vNum_p) - 1] = 0.0;
     } else {
-      dynamic_simulation_B.f_c = static_cast<int32_T>(lambda_->
+      dynamic_simulation_B.f = static_cast<int32_T>(lambda_->
         data[dynamic_simulation_B.nonFixedIndices_data[dynamic_simulation_B.idx]
         - 1]);
-      dynamic_simulation_B.b_idx_1_c = robot->
-        VelocityDoFMap[dynamic_simulation_B.f_c + 7];
-      lambda->data[static_cast<int32_T>(dynamic_simulation_B.vNum_l) - 1] =
-        dynamic_simulation_B.b_idx_1_c;
+      dynamic_simulation_B.b_idx_1_h = robot->
+        VelocityDoFMap[dynamic_simulation_B.f + 7];
+      lambda->data[static_cast<int32_T>(dynamic_simulation_B.vNum_p) - 1] =
+        dynamic_simulation_B.b_idx_1_h;
     }
   }
 
@@ -3628,9 +3626,9 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
       }
 
       if (dynamic_simulation_B.b_idx_0 > dynamic_simulation_B.b_idx_1) {
-        dynamic_simulation_B.p_f = -1;
+        dynamic_simulation_B.p_k = -1;
       } else {
-        dynamic_simulation_B.p_f = static_cast<int32_T>
+        dynamic_simulation_B.p_k = static_cast<int32_T>
           (dynamic_simulation_B.b_idx_0) - 2;
       }
 
@@ -3664,7 +3662,7 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
             dynamic_simulation_B.q_size_tmp;
           vJ->data[dynamic_simulation_B.i_i] += S->data
             [(dynamic_simulation_B.aoffset + dynamic_simulation_B.q_size_tmp) +
-            1] * qdot[(dynamic_simulation_B.p_f + dynamic_simulation_B.b_k) + 1];
+            1] * qdot[(dynamic_simulation_B.p_k + dynamic_simulation_B.b_k) + 1];
         }
       }
     }
@@ -3720,15 +3718,15 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
         dynamic_simulation_B.q_size_tmp = dynamic_simulation_B.i_i + 3 *
           dynamic_simulation_B.b_k;
         dynamic_simulation_B.R_dy[dynamic_simulation_B.q_size_tmp] = 0.0;
-        dynamic_simulation_B.p_f = dynamic_simulation_B.b_k << 2;
+        dynamic_simulation_B.p_k = dynamic_simulation_B.b_k << 2;
         dynamic_simulation_B.R_dy[dynamic_simulation_B.q_size_tmp] +=
-          dynamic_simulation_B.Tinv[dynamic_simulation_B.p_f] *
+          dynamic_simulation_B.Tinv[dynamic_simulation_B.p_k] *
           dynamic_simulation_B.dv1[dynamic_simulation_B.i_i];
         dynamic_simulation_B.R_dy[dynamic_simulation_B.q_size_tmp] +=
-          dynamic_simulation_B.Tinv[dynamic_simulation_B.p_f + 1] *
+          dynamic_simulation_B.Tinv[dynamic_simulation_B.p_k + 1] *
           dynamic_simulation_B.dv1[dynamic_simulation_B.i_i + 3];
         dynamic_simulation_B.R_dy[dynamic_simulation_B.q_size_tmp] +=
-          dynamic_simulation_B.Tinv[dynamic_simulation_B.p_f + 2] *
+          dynamic_simulation_B.Tinv[dynamic_simulation_B.p_k + 2] *
           dynamic_simulation_B.dv1[dynamic_simulation_B.i_i + 6];
         X->data[dynamic_simulation_B.unnamed_idx_1].f1[dynamic_simulation_B.b_k
           + 6 * dynamic_simulation_B.i_i] = dynamic_simulation_B.Tinv
@@ -3911,15 +3909,15 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
           dynamic_simulation_B.q_size_tmp = dynamic_simulation_B.i_i + 3 *
             dynamic_simulation_B.b_k;
           dynamic_simulation_B.R_lx[dynamic_simulation_B.q_size_tmp] = 0.0;
-          dynamic_simulation_B.p_f = dynamic_simulation_B.b_k << 2;
+          dynamic_simulation_B.p_k = dynamic_simulation_B.b_k << 2;
           dynamic_simulation_B.R_lx[dynamic_simulation_B.q_size_tmp] +=
-            dynamic_simulation_B.T_c[dynamic_simulation_B.p_f] *
+            dynamic_simulation_B.T_c[dynamic_simulation_B.p_k] *
             dynamic_simulation_B.R_dy[dynamic_simulation_B.i_i];
           dynamic_simulation_B.R_lx[dynamic_simulation_B.q_size_tmp] +=
-            dynamic_simulation_B.T_c[dynamic_simulation_B.p_f + 1] *
+            dynamic_simulation_B.T_c[dynamic_simulation_B.p_k + 1] *
             dynamic_simulation_B.R_dy[dynamic_simulation_B.i_i + 3];
           dynamic_simulation_B.R_lx[dynamic_simulation_B.q_size_tmp] +=
-            dynamic_simulation_B.T_c[dynamic_simulation_B.p_f + 2] *
+            dynamic_simulation_B.T_c[dynamic_simulation_B.p_k + 2] *
             dynamic_simulation_B.R_dy[dynamic_simulation_B.i_i + 6];
           dynamic_simulation_B.R[dynamic_simulation_B.b_k + 6 *
             dynamic_simulation_B.i_i] = dynamic_simulation_B.T_c
@@ -3951,13 +3949,13 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
            dynamic_simulation_B.i_i++) {
         for (dynamic_simulation_B.b_k = 0; dynamic_simulation_B.b_k < 6;
              dynamic_simulation_B.b_k++) {
-          dynamic_simulation_B.p_f = dynamic_simulation_B.i_i + 6 *
+          dynamic_simulation_B.p_k = dynamic_simulation_B.i_i + 6 *
             dynamic_simulation_B.b_k;
-          dynamic_simulation_B.b_I[dynamic_simulation_B.p_f] = 0.0;
+          dynamic_simulation_B.b_I[dynamic_simulation_B.p_k] = 0.0;
           for (dynamic_simulation_B.q_size_tmp = 0;
                dynamic_simulation_B.q_size_tmp < 6;
                dynamic_simulation_B.q_size_tmp++) {
-            dynamic_simulation_B.b_I[dynamic_simulation_B.p_f] += Xtree->data[
+            dynamic_simulation_B.b_I[dynamic_simulation_B.p_k] += Xtree->data[
               static_cast<int32_T>(dynamic_simulation_B.a_idx_0) - 1].f1[6 *
               dynamic_simulation_B.q_size_tmp + dynamic_simulation_B.i_i] *
               dynamic_simulation_B.R[6 * dynamic_simulation_B.b_k +
@@ -4028,15 +4026,15 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
           dynamic_simulation_B.q_size_tmp = dynamic_simulation_B.i_i + 3 *
             dynamic_simulation_B.b_k;
           dynamic_simulation_B.R_lx[dynamic_simulation_B.q_size_tmp] = 0.0;
-          dynamic_simulation_B.p_f = dynamic_simulation_B.b_k << 2;
+          dynamic_simulation_B.p_k = dynamic_simulation_B.b_k << 2;
           dynamic_simulation_B.R_lx[dynamic_simulation_B.q_size_tmp] +=
-            dynamic_simulation_B.T_c[dynamic_simulation_B.p_f] *
+            dynamic_simulation_B.T_c[dynamic_simulation_B.p_k] *
             dynamic_simulation_B.R_dy[dynamic_simulation_B.i_i];
           dynamic_simulation_B.R_lx[dynamic_simulation_B.q_size_tmp] +=
-            dynamic_simulation_B.T_c[dynamic_simulation_B.p_f + 1] *
+            dynamic_simulation_B.T_c[dynamic_simulation_B.p_k + 1] *
             dynamic_simulation_B.R_dy[dynamic_simulation_B.i_i + 3];
           dynamic_simulation_B.R_lx[dynamic_simulation_B.q_size_tmp] +=
-            dynamic_simulation_B.T_c[dynamic_simulation_B.p_f + 2] *
+            dynamic_simulation_B.T_c[dynamic_simulation_B.p_k + 2] *
             dynamic_simulation_B.R_dy[dynamic_simulation_B.i_i + 6];
           Xtree->data[dynamic_simulation_B.unnamed_idx_1]
             .f1[dynamic_simulation_B.b_k + 6 * dynamic_simulation_B.i_i] =
@@ -4188,7 +4186,7 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
   if (0 <= dynamic_simulation_B.q_size_tmp) {
     for (dynamic_simulation_B.i_i = 0; dynamic_simulation_B.i_i < 5;
          dynamic_simulation_B.i_i++) {
-      dynamic_simulation_B.b_g[dynamic_simulation_B.i_i] =
+      dynamic_simulation_B.b_h[dynamic_simulation_B.i_i] =
         tmp[dynamic_simulation_B.i_i];
     }
   }
@@ -4197,8 +4195,8 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
        dynamic_simulation_B.q_size_tmp; dynamic_simulation_B.loop_ub_tmp++) {
     dynamic_simulation_B.a_idx_0 = dynamic_simulation_B.nb + -static_cast<real_T>
       (dynamic_simulation_B.loop_ub_tmp);
-    dynamic_simulation_B.p_f = static_cast<int32_T>(dynamic_simulation_B.a_idx_0);
-    dynamic_simulation_B.inner = dynamic_simulation_B.p_f - 1;
+    dynamic_simulation_B.p_k = static_cast<int32_T>(dynamic_simulation_B.a_idx_0);
+    dynamic_simulation_B.inner = dynamic_simulation_B.p_k - 1;
     obj = robot->Bodies[dynamic_simulation_B.inner];
     dynamic_simulation_B.i_i = a->size[0] * a->size[1];
     a->size[0] = 1;
@@ -4220,7 +4218,7 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
         if (dynamic_simulation_B.i_i - 1 < 5) {
           dynamic_simulation_B.unnamed_idx_1 = dynamic_simulation_B.i_i - 1;
           if (a->data[dynamic_simulation_B.unnamed_idx_1] !=
-              dynamic_simulation_B.b_g[dynamic_simulation_B.unnamed_idx_1]) {
+              dynamic_simulation_B.b_h[dynamic_simulation_B.unnamed_idx_1]) {
             exitg1 = 1;
           } else {
             dynamic_simulation_B.i_i++;
@@ -4269,9 +4267,9 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
       }
 
       dynamic_simulation_B.b_idx_0 = robot->
-        VelocityDoFMap[dynamic_simulation_B.p_f - 1];
+        VelocityDoFMap[dynamic_simulation_B.p_k - 1];
       dynamic_simulation_B.b_idx_1 = robot->
-        VelocityDoFMap[dynamic_simulation_B.p_f + 7];
+        VelocityDoFMap[dynamic_simulation_B.p_k + 7];
       if (dynamic_simulation_B.b_idx_0 > dynamic_simulation_B.b_idx_1) {
         dynamic_simulation_B.b_k = 0;
         dynamic_simulation_B.i_i = 0;
@@ -4300,7 +4298,7 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
         dynamic_simulation_B.a_idx_1 = 0.0;
         for (dynamic_simulation_B.b_k = 0; dynamic_simulation_B.b_k < 6;
              dynamic_simulation_B.b_k++) {
-          dynamic_simulation_B.a_idx_1 += f->data[(dynamic_simulation_B.p_f - 1)
+          dynamic_simulation_B.a_idx_1 += f->data[(dynamic_simulation_B.p_k - 1)
             * 6 + dynamic_simulation_B.b_k] * X->data[dynamic_simulation_B.inner]
             .f1[6 * dynamic_simulation_B.i_i + dynamic_simulation_B.b_k];
         }
@@ -4325,7 +4323,7 @@ static void RigidBodyTreeDynamics_inverseDy(p_robotics_manip_internal__kq_T
   dynamic_si_emxFree_f_cell_wrap1(&X);
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static boolean_T dynamic_simulation_anyNonFinite(const real_T x[16])
 {
   boolean_T b_p;
@@ -4343,24 +4341,24 @@ static boolean_T dynamic_simulation_anyNonFinite(const real_T x[16])
 static real_T dynamic_simulatio_rt_hypotd_snf(real_T u0, real_T u1)
 {
   real_T y;
-  dynamic_simulation_B.a_h = fabs(u0);
+  dynamic_simulation_B.a_m = fabs(u0);
   y = fabs(u1);
-  if (dynamic_simulation_B.a_h < y) {
-    dynamic_simulation_B.a_h /= y;
-    y *= sqrt(dynamic_simulation_B.a_h * dynamic_simulation_B.a_h + 1.0);
-  } else if (dynamic_simulation_B.a_h > y) {
-    y /= dynamic_simulation_B.a_h;
-    y = sqrt(y * y + 1.0) * dynamic_simulation_B.a_h;
+  if (dynamic_simulation_B.a_m < y) {
+    dynamic_simulation_B.a_m /= y;
+    y *= sqrt(dynamic_simulation_B.a_m * dynamic_simulation_B.a_m + 1.0);
+  } else if (dynamic_simulation_B.a_m > y) {
+    y /= dynamic_simulation_B.a_m;
+    y = sqrt(y * y + 1.0) * dynamic_simulation_B.a_m;
   } else {
     if (!rtIsNaN(y)) {
-      y = dynamic_simulation_B.a_h * 1.4142135623730951;
+      y = dynamic_simulation_B.a_m * 1.4142135623730951;
     }
   }
 
   return y;
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static real_T dynamic_simulation_xzlangeM(const creal_T x[16])
 {
   real_T y;
@@ -4387,7 +4385,7 @@ static real_T dynamic_simulation_xzlangeM(const creal_T x[16])
   return y;
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_xzlascl(real_T cfrom, real_T cto, creal_T A[16])
 {
   real_T cfromc;
@@ -4421,7 +4419,7 @@ static void dynamic_simulation_xzlascl(real_T cfrom, real_T cto, creal_T A[16])
   }
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static real_T dynamic_simulation_xzlanhs(const creal_T A[16], int32_T ilo,
   int32_T ihi)
 {
@@ -4488,7 +4486,7 @@ static real_T dynamic_simulation_xzlanhs(const creal_T A[16], int32_T ilo,
   return f;
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_xzlartg_d(const creal_T f, const creal_T g,
   real_T *cs, creal_T *sn)
 {
@@ -4606,16 +4604,16 @@ static void dynamic_simulation_xzlartg_d(const creal_T f, const creal_T g,
   }
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_xzlartg(const creal_T f, const creal_T g, real_T *
   cs, creal_T *sn, creal_T *r)
 {
   boolean_T guard1 = false;
   dynamic_simulation_B.f2s = fabs(f.re);
   dynamic_simulation_B.di = fabs(f.im);
-  dynamic_simulation_B.scale_o = dynamic_simulation_B.f2s;
+  dynamic_simulation_B.scale_m = dynamic_simulation_B.f2s;
   if (dynamic_simulation_B.di > dynamic_simulation_B.f2s) {
-    dynamic_simulation_B.scale_o = dynamic_simulation_B.di;
+    dynamic_simulation_B.scale_m = dynamic_simulation_B.di;
   }
 
   dynamic_simulation_B.gs_re = fabs(g.re);
@@ -4624,8 +4622,8 @@ static void dynamic_simulation_xzlartg(const creal_T f, const creal_T g, real_T 
     dynamic_simulation_B.gs_re = dynamic_simulation_B.gs_im;
   }
 
-  if (dynamic_simulation_B.gs_re > dynamic_simulation_B.scale_o) {
-    dynamic_simulation_B.scale_o = dynamic_simulation_B.gs_re;
+  if (dynamic_simulation_B.gs_re > dynamic_simulation_B.scale_m) {
+    dynamic_simulation_B.scale_m = dynamic_simulation_B.gs_re;
   }
 
   dynamic_simulation_B.fs_re = f.re;
@@ -4635,19 +4633,19 @@ static void dynamic_simulation_xzlartg(const creal_T f, const creal_T g, real_T 
   dynamic_simulation_B.count = -1;
   dynamic_simulation_B.rescaledir = 0;
   guard1 = false;
-  if (dynamic_simulation_B.scale_o >= 7.4428285367870146E+137) {
+  if (dynamic_simulation_B.scale_m >= 7.4428285367870146E+137) {
     do {
       dynamic_simulation_B.count++;
       dynamic_simulation_B.fs_re *= 1.3435752215134178E-138;
       dynamic_simulation_B.fs_im *= 1.3435752215134178E-138;
       dynamic_simulation_B.gs_re *= 1.3435752215134178E-138;
       dynamic_simulation_B.gs_im *= 1.3435752215134178E-138;
-      dynamic_simulation_B.scale_o *= 1.3435752215134178E-138;
-    } while (!(dynamic_simulation_B.scale_o < 7.4428285367870146E+137));
+      dynamic_simulation_B.scale_m *= 1.3435752215134178E-138;
+    } while (!(dynamic_simulation_B.scale_m < 7.4428285367870146E+137));
 
     dynamic_simulation_B.rescaledir = 1;
     guard1 = true;
-  } else if (dynamic_simulation_B.scale_o <= 1.3435752215134178E-138) {
+  } else if (dynamic_simulation_B.scale_m <= 1.3435752215134178E-138) {
     if ((g.re == 0.0) && (g.im == 0.0)) {
       *cs = 1.0;
       sn->re = 0.0;
@@ -4660,8 +4658,8 @@ static void dynamic_simulation_xzlartg(const creal_T f, const creal_T g, real_T 
         dynamic_simulation_B.fs_im *= 7.4428285367870146E+137;
         dynamic_simulation_B.gs_re *= 7.4428285367870146E+137;
         dynamic_simulation_B.gs_im *= 7.4428285367870146E+137;
-        dynamic_simulation_B.scale_o *= 7.4428285367870146E+137;
-      } while (!(dynamic_simulation_B.scale_o > 1.3435752215134178E-138));
+        dynamic_simulation_B.scale_m *= 7.4428285367870146E+137;
+      } while (!(dynamic_simulation_B.scale_m > 1.3435752215134178E-138));
 
       dynamic_simulation_B.rescaledir = -1;
       guard1 = true;
@@ -4671,7 +4669,7 @@ static void dynamic_simulation_xzlartg(const creal_T f, const creal_T g, real_T 
   }
 
   if (guard1) {
-    dynamic_simulation_B.scale_o = dynamic_simulation_B.fs_re *
+    dynamic_simulation_B.scale_m = dynamic_simulation_B.fs_re *
       dynamic_simulation_B.fs_re + dynamic_simulation_B.fs_im *
       dynamic_simulation_B.fs_im;
     dynamic_simulation_B.g2 = dynamic_simulation_B.gs_re *
@@ -4682,7 +4680,7 @@ static void dynamic_simulation_xzlartg(const creal_T f, const creal_T g, real_T 
       dynamic_simulation_B.x = 1.0;
     }
 
-    if (dynamic_simulation_B.scale_o <= dynamic_simulation_B.x *
+    if (dynamic_simulation_B.scale_m <= dynamic_simulation_B.x *
         2.0041683600089728E-292) {
       if ((f.re == 0.0) && (f.im == 0.0)) {
         *cs = 0.0;
@@ -4693,9 +4691,9 @@ static void dynamic_simulation_xzlartg(const creal_T f, const creal_T g, real_T 
         sn->re = dynamic_simulation_B.gs_re / dynamic_simulation_B.f2s;
         sn->im = -dynamic_simulation_B.gs_im / dynamic_simulation_B.f2s;
       } else {
-        dynamic_simulation_B.scale_o = sqrt(dynamic_simulation_B.g2);
+        dynamic_simulation_B.scale_m = sqrt(dynamic_simulation_B.g2);
         *cs = dynamic_simulatio_rt_hypotd_snf(dynamic_simulation_B.fs_re,
-          dynamic_simulation_B.fs_im) / dynamic_simulation_B.scale_o;
+          dynamic_simulation_B.fs_im) / dynamic_simulation_B.scale_m;
         if (dynamic_simulation_B.di > dynamic_simulation_B.f2s) {
           dynamic_simulation_B.f2s = dynamic_simulation_B.di;
         }
@@ -4714,9 +4712,9 @@ static void dynamic_simulation_xzlartg(const creal_T f, const creal_T g, real_T 
             dynamic_simulation_B.f2s;
         }
 
-        dynamic_simulation_B.gs_re /= dynamic_simulation_B.scale_o;
+        dynamic_simulation_B.gs_re /= dynamic_simulation_B.scale_m;
         dynamic_simulation_B.gs_im = -dynamic_simulation_B.gs_im /
-          dynamic_simulation_B.scale_o;
+          dynamic_simulation_B.scale_m;
         sn->re = dynamic_simulation_B.fs_re * dynamic_simulation_B.gs_re -
           dynamic_simulation_B.fs_im * dynamic_simulation_B.gs_im;
         sn->im = dynamic_simulation_B.fs_re * dynamic_simulation_B.gs_im +
@@ -4726,11 +4724,11 @@ static void dynamic_simulation_xzlartg(const creal_T f, const creal_T g, real_T 
       }
     } else {
       dynamic_simulation_B.f2s = sqrt(dynamic_simulation_B.g2 /
-        dynamic_simulation_B.scale_o + 1.0);
+        dynamic_simulation_B.scale_m + 1.0);
       r->re = dynamic_simulation_B.f2s * dynamic_simulation_B.fs_re;
       r->im = dynamic_simulation_B.f2s * dynamic_simulation_B.fs_im;
       *cs = 1.0 / dynamic_simulation_B.f2s;
-      dynamic_simulation_B.f2s = dynamic_simulation_B.scale_o +
+      dynamic_simulation_B.f2s = dynamic_simulation_B.scale_m +
         dynamic_simulation_B.g2;
       dynamic_simulation_B.fs_re = r->re / dynamic_simulation_B.f2s;
       dynamic_simulation_B.f2s = r->im / dynamic_simulation_B.f2s;
@@ -4760,7 +4758,7 @@ static void dynamic_simulation_xzlartg(const creal_T f, const creal_T g, real_T 
   }
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
   creal_T Z[16], int32_T *info, creal_T alpha1[4], creal_T beta1[4])
 {
@@ -4838,16 +4836,16 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
             A[dynamic_simulation_B.jp1].im = 0.0;
             dynamic_simulation_B.goto60 = true;
           } else {
-            dynamic_simulation_B.j_m = dynamic_simulation_B.ilastm1;
+            dynamic_simulation_B.j_j = dynamic_simulation_B.ilastm1;
             guard3 = false;
             exitg2 = false;
-            while ((!exitg2) && (dynamic_simulation_B.j_m + 1 >= ilo)) {
-              if (dynamic_simulation_B.j_m + 1 == ilo) {
+            while ((!exitg2) && (dynamic_simulation_B.j_j + 1 >= ilo)) {
+              if (dynamic_simulation_B.j_j + 1 == ilo) {
                 guard3 = true;
                 exitg2 = true;
               } else {
-                dynamic_simulation_B.jp1 = ((dynamic_simulation_B.j_m - 1) << 2)
-                  + dynamic_simulation_B.j_m;
+                dynamic_simulation_B.jp1 = ((dynamic_simulation_B.j_j - 1) << 2)
+                  + dynamic_simulation_B.j_j;
                 if (fabs(A[dynamic_simulation_B.jp1].re) + fabs
                     (A[dynamic_simulation_B.jp1].im) <=
                     dynamic_simulation_B.b_atol) {
@@ -4856,14 +4854,14 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
                   guard3 = true;
                   exitg2 = true;
                 } else {
-                  dynamic_simulation_B.j_m--;
+                  dynamic_simulation_B.j_j--;
                   guard3 = false;
                 }
               }
             }
 
             if (guard3) {
-              dynamic_simulation_B.ifirst = dynamic_simulation_B.j_m + 1;
+              dynamic_simulation_B.ifirst = dynamic_simulation_B.j_j + 1;
               dynamic_simulation_B.goto70 = true;
             }
           }
@@ -4916,11 +4914,11 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
             dynamic_simulation_B.iiter++;
             if (dynamic_simulation_B.iiter - div_nzp_s32
                 (dynamic_simulation_B.iiter, 10) * 10 != 0) {
-              dynamic_simulation_B.j_m = (dynamic_simulation_B.ilastm1 << 2) +
+              dynamic_simulation_B.j_j = (dynamic_simulation_B.ilastm1 << 2) +
                 dynamic_simulation_B.ilastm1;
-              dynamic_simulation_B.ar = A[dynamic_simulation_B.j_m].re *
+              dynamic_simulation_B.ar = A[dynamic_simulation_B.j_j].re *
                 dynamic_simulation_B.anorm;
-              dynamic_simulation_B.ai = A[dynamic_simulation_B.j_m].im *
+              dynamic_simulation_B.ai = A[dynamic_simulation_B.j_j].im *
                 dynamic_simulation_B.anorm;
               if (dynamic_simulation_B.ai == 0.0) {
                 dynamic_simulation_B.shift_re = dynamic_simulation_B.ar / 0.5;
@@ -4933,11 +4931,11 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
                 dynamic_simulation_B.shift_im = dynamic_simulation_B.ai / 0.5;
               }
 
-              dynamic_simulation_B.j_m = (dynamic_simulation_B.ilast << 2) +
+              dynamic_simulation_B.j_j = (dynamic_simulation_B.ilast << 2) +
                 dynamic_simulation_B.ilast;
-              dynamic_simulation_B.ar = A[dynamic_simulation_B.j_m].re *
+              dynamic_simulation_B.ar = A[dynamic_simulation_B.j_j].re *
                 dynamic_simulation_B.anorm;
-              dynamic_simulation_B.ai = A[dynamic_simulation_B.j_m].im *
+              dynamic_simulation_B.ai = A[dynamic_simulation_B.j_j].im *
                 dynamic_simulation_B.anorm;
               if (dynamic_simulation_B.ai == 0.0) {
                 dynamic_simulation_B.ad22.re = dynamic_simulation_B.ar / 0.5;
@@ -4954,11 +4952,11 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
                 dynamic_simulation_B.ad22.re) * 0.5;
               dynamic_simulation_B.t1_im = (dynamic_simulation_B.shift_im +
                 dynamic_simulation_B.ad22.im) * 0.5;
-              dynamic_simulation_B.j_m = (dynamic_simulation_B.ilast << 2) +
+              dynamic_simulation_B.j_j = (dynamic_simulation_B.ilast << 2) +
                 dynamic_simulation_B.ilastm1;
-              dynamic_simulation_B.ar = A[dynamic_simulation_B.j_m].re *
+              dynamic_simulation_B.ar = A[dynamic_simulation_B.j_j].re *
                 dynamic_simulation_B.anorm;
-              dynamic_simulation_B.ai = A[dynamic_simulation_B.j_m].im *
+              dynamic_simulation_B.ai = A[dynamic_simulation_B.j_j].im *
                 dynamic_simulation_B.anorm;
               if (dynamic_simulation_B.ai == 0.0) {
                 dynamic_simulation_B.absxr = dynamic_simulation_B.ar / 0.5;
@@ -4971,11 +4969,11 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
                 dynamic_simulation_B.absxi = dynamic_simulation_B.ai / 0.5;
               }
 
-              dynamic_simulation_B.j_m = (dynamic_simulation_B.ilastm1 << 2) +
+              dynamic_simulation_B.j_j = (dynamic_simulation_B.ilastm1 << 2) +
                 dynamic_simulation_B.ilast;
-              dynamic_simulation_B.ar = A[dynamic_simulation_B.j_m].re *
+              dynamic_simulation_B.ar = A[dynamic_simulation_B.j_j].re *
                 dynamic_simulation_B.anorm;
-              dynamic_simulation_B.ai = A[dynamic_simulation_B.j_m].im *
+              dynamic_simulation_B.ai = A[dynamic_simulation_B.j_j].im *
                 dynamic_simulation_B.anorm;
               if (dynamic_simulation_B.ai == 0.0) {
                 dynamic_simulation_B.ar /= 0.5;
@@ -4988,7 +4986,7 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
                 dynamic_simulation_B.ai /= 0.5;
               }
 
-              dynamic_simulation_B.shift_im_e = dynamic_simulation_B.shift_re *
+              dynamic_simulation_B.shift_im_h = dynamic_simulation_B.shift_re *
                 dynamic_simulation_B.ad22.im + dynamic_simulation_B.shift_im *
                 dynamic_simulation_B.ad22.re;
               dynamic_simulation_B.shift_re = ((dynamic_simulation_B.t1_re *
@@ -5003,7 +5001,7 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
               dynamic_simulation_B.shift_im = ((dynamic_simulation_B.shift_im +
                 dynamic_simulation_B.shift_im) + (dynamic_simulation_B.absxr *
                 dynamic_simulation_B.ai + dynamic_simulation_B.absxi *
-                dynamic_simulation_B.ar)) - dynamic_simulation_B.shift_im_e;
+                dynamic_simulation_B.ar)) - dynamic_simulation_B.shift_im_h;
               if (dynamic_simulation_B.shift_im == 0.0) {
                 if (dynamic_simulation_B.shift_re < 0.0) {
                   dynamic_simulation_B.absxr = 0.0;
@@ -5096,11 +5094,11 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
                   dynamic_simulation_B.absxi;
               }
             } else {
-              dynamic_simulation_B.j_m = (dynamic_simulation_B.ilastm1 << 2) +
+              dynamic_simulation_B.j_j = (dynamic_simulation_B.ilastm1 << 2) +
                 dynamic_simulation_B.ilast;
-              dynamic_simulation_B.ar = A[dynamic_simulation_B.j_m].re *
+              dynamic_simulation_B.ar = A[dynamic_simulation_B.j_j].re *
                 dynamic_simulation_B.anorm;
-              dynamic_simulation_B.ai = A[dynamic_simulation_B.j_m].im *
+              dynamic_simulation_B.ai = A[dynamic_simulation_B.j_j].im *
                 dynamic_simulation_B.anorm;
               if (dynamic_simulation_B.ai == 0.0) {
                 dynamic_simulation_B.absxr = dynamic_simulation_B.ar / 0.5;
@@ -5119,15 +5117,15 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
               dynamic_simulation_B.shift_im = dynamic_simulation_B.eshift_im;
             }
 
-            dynamic_simulation_B.j_m = dynamic_simulation_B.ilastm1;
+            dynamic_simulation_B.j_j = dynamic_simulation_B.ilastm1;
             dynamic_simulation_B.jp1 = dynamic_simulation_B.ilastm1 + 1;
             exitg2 = false;
-            while ((!exitg2) && (dynamic_simulation_B.j_m + 1 >
+            while ((!exitg2) && (dynamic_simulation_B.j_j + 1 >
                                  dynamic_simulation_B.ifirst)) {
-              dynamic_simulation_B.istart = dynamic_simulation_B.j_m + 1;
-              dynamic_simulation_B.ctemp_tmp_tmp = dynamic_simulation_B.j_m << 2;
+              dynamic_simulation_B.istart = dynamic_simulation_B.j_j + 1;
+              dynamic_simulation_B.ctemp_tmp_tmp = dynamic_simulation_B.j_j << 2;
               dynamic_simulation_B.ctemp_tmp =
-                dynamic_simulation_B.ctemp_tmp_tmp + dynamic_simulation_B.j_m;
+                dynamic_simulation_B.ctemp_tmp_tmp + dynamic_simulation_B.j_j;
               dynamic_simulation_B.ctemp.re = A[dynamic_simulation_B.ctemp_tmp].
                 re * dynamic_simulation_B.anorm - dynamic_simulation_B.shift_re *
                 0.5;
@@ -5151,8 +5149,8 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
                 dynamic_simulation_B.t1_im /= dynamic_simulation_B.absxr;
               }
 
-              dynamic_simulation_B.jp1 = ((dynamic_simulation_B.j_m - 1) << 2) +
-                dynamic_simulation_B.j_m;
+              dynamic_simulation_B.jp1 = ((dynamic_simulation_B.j_j - 1) << 2) +
+                dynamic_simulation_B.j_j;
               if ((fabs(A[dynamic_simulation_B.jp1].re) + fabs
                    (A[dynamic_simulation_B.jp1].im)) *
                   dynamic_simulation_B.t1_im <= dynamic_simulation_B.t1_re *
@@ -5160,8 +5158,8 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
                 dynamic_simulation_B.goto90 = true;
                 exitg2 = true;
               } else {
-                dynamic_simulation_B.jp1 = dynamic_simulation_B.j_m;
-                dynamic_simulation_B.j_m--;
+                dynamic_simulation_B.jp1 = dynamic_simulation_B.j_j;
+                dynamic_simulation_B.j_j--;
               }
             }
 
@@ -5178,35 +5176,35 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
             }
 
             dynamic_simulation_B.goto90 = false;
-            dynamic_simulation_B.j_m = ((dynamic_simulation_B.istart - 1) << 2)
+            dynamic_simulation_B.j_j = ((dynamic_simulation_B.istart - 1) << 2)
               + dynamic_simulation_B.istart;
-            dynamic_simulation_B.ascale.re = A[dynamic_simulation_B.j_m].re *
+            dynamic_simulation_B.ascale.re = A[dynamic_simulation_B.j_j].re *
               dynamic_simulation_B.anorm;
-            dynamic_simulation_B.ascale.im = A[dynamic_simulation_B.j_m].im *
+            dynamic_simulation_B.ascale.im = A[dynamic_simulation_B.j_j].im *
               dynamic_simulation_B.anorm;
             dynamic_simulation_xzlartg_d(dynamic_simulation_B.ctemp,
               dynamic_simulation_B.ascale, &dynamic_simulation_B.t1_re,
               &dynamic_simulation_B.ad22);
-            dynamic_simulation_B.j_m = dynamic_simulation_B.istart;
+            dynamic_simulation_B.j_j = dynamic_simulation_B.istart;
             dynamic_simulation_B.jp1 = dynamic_simulation_B.istart - 2;
-            while (dynamic_simulation_B.j_m < dynamic_simulation_B.ilast + 1) {
-              if (dynamic_simulation_B.j_m > dynamic_simulation_B.istart) {
-                dynamic_simulation_xzlartg(A[(dynamic_simulation_B.j_m +
+            while (dynamic_simulation_B.j_j < dynamic_simulation_B.ilast + 1) {
+              if (dynamic_simulation_B.j_j > dynamic_simulation_B.istart) {
+                dynamic_simulation_xzlartg(A[(dynamic_simulation_B.j_j +
                   (dynamic_simulation_B.jp1 << 2)) - 1],
-                  A[dynamic_simulation_B.j_m + (dynamic_simulation_B.jp1 << 2)],
+                  A[dynamic_simulation_B.j_j + (dynamic_simulation_B.jp1 << 2)],
                   &dynamic_simulation_B.t1_re, &dynamic_simulation_B.ad22, &A
-                  [(dynamic_simulation_B.j_m + (dynamic_simulation_B.jp1 << 2))
+                  [(dynamic_simulation_B.j_j + (dynamic_simulation_B.jp1 << 2))
                   - 1]);
-                dynamic_simulation_B.jp1 = dynamic_simulation_B.j_m +
+                dynamic_simulation_B.jp1 = dynamic_simulation_B.j_j +
                   (dynamic_simulation_B.jp1 << 2);
                 A[dynamic_simulation_B.jp1].re = 0.0;
                 A[dynamic_simulation_B.jp1].im = 0.0;
               }
 
-              dynamic_simulation_B.ctemp_tmp = dynamic_simulation_B.j_m - 1;
+              dynamic_simulation_B.ctemp_tmp = dynamic_simulation_B.j_j - 1;
               while (dynamic_simulation_B.ctemp_tmp + 1 < 5) {
                 dynamic_simulation_B.jp1 = (dynamic_simulation_B.ctemp_tmp << 2)
-                  + dynamic_simulation_B.j_m;
+                  + dynamic_simulation_B.j_j;
                 dynamic_simulation_B.ctemp_tmp_tmp = dynamic_simulation_B.jp1 -
                   1;
                 dynamic_simulation_B.shift_re =
@@ -5242,19 +5240,19 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
 
               dynamic_simulation_B.ad22.re = -dynamic_simulation_B.ad22.re;
               dynamic_simulation_B.ad22.im = -dynamic_simulation_B.ad22.im;
-              dynamic_simulation_B.ctemp_tmp = dynamic_simulation_B.j_m;
-              if (dynamic_simulation_B.ilast + 1 < dynamic_simulation_B.j_m + 2)
+              dynamic_simulation_B.ctemp_tmp = dynamic_simulation_B.j_j;
+              if (dynamic_simulation_B.ilast + 1 < dynamic_simulation_B.j_j + 2)
               {
                 dynamic_simulation_B.ctemp_tmp = dynamic_simulation_B.ilast - 1;
               }
 
-              dynamic_simulation_B.i_jg = 0;
-              while (dynamic_simulation_B.i_jg + 1 <=
+              dynamic_simulation_B.i_f = 0;
+              while (dynamic_simulation_B.i_f + 1 <=
                      dynamic_simulation_B.ctemp_tmp + 2) {
-                dynamic_simulation_B.jp1 = ((dynamic_simulation_B.j_m - 1) << 2)
-                  + dynamic_simulation_B.i_jg;
-                dynamic_simulation_B.ctemp_tmp_tmp = (dynamic_simulation_B.j_m <<
-                  2) + dynamic_simulation_B.i_jg;
+                dynamic_simulation_B.jp1 = ((dynamic_simulation_B.j_j - 1) << 2)
+                  + dynamic_simulation_B.i_f;
+                dynamic_simulation_B.ctemp_tmp_tmp = (dynamic_simulation_B.j_j <<
+                  2) + dynamic_simulation_B.i_f;
                 dynamic_simulation_B.shift_re = (A[dynamic_simulation_B.jp1].re *
                   dynamic_simulation_B.ad22.re - A[dynamic_simulation_B.jp1].im *
                   dynamic_simulation_B.ad22.im) +
@@ -5283,11 +5281,11 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
                   dynamic_simulation_B.shift_re;
                 A[dynamic_simulation_B.ctemp_tmp_tmp].im =
                   dynamic_simulation_B.shift_im;
-                dynamic_simulation_B.i_jg++;
+                dynamic_simulation_B.i_f++;
               }
 
-              dynamic_simulation_B.jp1 = (dynamic_simulation_B.j_m - 1) << 2;
-              dynamic_simulation_B.ctemp_tmp_tmp = dynamic_simulation_B.j_m << 2;
+              dynamic_simulation_B.jp1 = (dynamic_simulation_B.j_j - 1) << 2;
+              dynamic_simulation_B.ctemp_tmp_tmp = dynamic_simulation_B.j_j << 2;
               dynamic_simulation_B.shift_re = (Z[dynamic_simulation_B.jp1].re *
                 dynamic_simulation_B.ad22.re - Z[dynamic_simulation_B.jp1].im *
                 dynamic_simulation_B.ad22.im) +
@@ -5317,57 +5315,57 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
               Z[dynamic_simulation_B.ctemp_tmp_tmp].im =
                 dynamic_simulation_B.shift_im;
               dynamic_simulation_B.ctemp_tmp = dynamic_simulation_B.jp1 + 1;
-              dynamic_simulation_B.i_jg = dynamic_simulation_B.ctemp_tmp_tmp + 1;
+              dynamic_simulation_B.i_f = dynamic_simulation_B.ctemp_tmp_tmp + 1;
               dynamic_simulation_B.shift_re = (Z[dynamic_simulation_B.ctemp_tmp]
                 .re * dynamic_simulation_B.ad22.re -
                 Z[dynamic_simulation_B.ctemp_tmp].im *
-                dynamic_simulation_B.ad22.im) + Z[dynamic_simulation_B.i_jg].re *
+                dynamic_simulation_B.ad22.im) + Z[dynamic_simulation_B.i_f].re *
                 dynamic_simulation_B.t1_re;
               dynamic_simulation_B.shift_im = (Z[dynamic_simulation_B.ctemp_tmp]
                 .im * dynamic_simulation_B.ad22.re +
                 Z[dynamic_simulation_B.ctemp_tmp].re *
-                dynamic_simulation_B.ad22.im) + Z[dynamic_simulation_B.i_jg].im *
+                dynamic_simulation_B.ad22.im) + Z[dynamic_simulation_B.i_f].im *
                 dynamic_simulation_B.t1_re;
-              dynamic_simulation_B.t1_im = Z[dynamic_simulation_B.i_jg].im;
-              dynamic_simulation_B.absxr = Z[dynamic_simulation_B.i_jg].re;
+              dynamic_simulation_B.t1_im = Z[dynamic_simulation_B.i_f].im;
+              dynamic_simulation_B.absxr = Z[dynamic_simulation_B.i_f].re;
               Z[dynamic_simulation_B.ctemp_tmp].re =
                 Z[dynamic_simulation_B.ctemp_tmp].re *
-                dynamic_simulation_B.t1_re - (Z[dynamic_simulation_B.i_jg].re *
-                dynamic_simulation_B.ad22.re + Z[dynamic_simulation_B.i_jg].im *
+                dynamic_simulation_B.t1_re - (Z[dynamic_simulation_B.i_f].re *
+                dynamic_simulation_B.ad22.re + Z[dynamic_simulation_B.i_f].im *
                 dynamic_simulation_B.ad22.im);
               Z[dynamic_simulation_B.ctemp_tmp].im =
                 Z[dynamic_simulation_B.ctemp_tmp].im *
                 dynamic_simulation_B.t1_re - (dynamic_simulation_B.ad22.re *
                 dynamic_simulation_B.t1_im - dynamic_simulation_B.ad22.im *
                 dynamic_simulation_B.absxr);
-              Z[dynamic_simulation_B.i_jg].re = dynamic_simulation_B.shift_re;
-              Z[dynamic_simulation_B.i_jg].im = dynamic_simulation_B.shift_im;
+              Z[dynamic_simulation_B.i_f].re = dynamic_simulation_B.shift_re;
+              Z[dynamic_simulation_B.i_f].im = dynamic_simulation_B.shift_im;
               dynamic_simulation_B.ctemp_tmp = dynamic_simulation_B.jp1 + 2;
-              dynamic_simulation_B.i_jg = dynamic_simulation_B.ctemp_tmp_tmp + 2;
+              dynamic_simulation_B.i_f = dynamic_simulation_B.ctemp_tmp_tmp + 2;
               dynamic_simulation_B.shift_re = (Z[dynamic_simulation_B.ctemp_tmp]
                 .re * dynamic_simulation_B.ad22.re -
                 Z[dynamic_simulation_B.ctemp_tmp].im *
-                dynamic_simulation_B.ad22.im) + Z[dynamic_simulation_B.i_jg].re *
+                dynamic_simulation_B.ad22.im) + Z[dynamic_simulation_B.i_f].re *
                 dynamic_simulation_B.t1_re;
               dynamic_simulation_B.shift_im = (Z[dynamic_simulation_B.ctemp_tmp]
                 .im * dynamic_simulation_B.ad22.re +
                 Z[dynamic_simulation_B.ctemp_tmp].re *
-                dynamic_simulation_B.ad22.im) + Z[dynamic_simulation_B.i_jg].im *
+                dynamic_simulation_B.ad22.im) + Z[dynamic_simulation_B.i_f].im *
                 dynamic_simulation_B.t1_re;
-              dynamic_simulation_B.t1_im = Z[dynamic_simulation_B.i_jg].im;
-              dynamic_simulation_B.absxr = Z[dynamic_simulation_B.i_jg].re;
+              dynamic_simulation_B.t1_im = Z[dynamic_simulation_B.i_f].im;
+              dynamic_simulation_B.absxr = Z[dynamic_simulation_B.i_f].re;
               Z[dynamic_simulation_B.ctemp_tmp].re =
                 Z[dynamic_simulation_B.ctemp_tmp].re *
-                dynamic_simulation_B.t1_re - (Z[dynamic_simulation_B.i_jg].re *
-                dynamic_simulation_B.ad22.re + Z[dynamic_simulation_B.i_jg].im *
+                dynamic_simulation_B.t1_re - (Z[dynamic_simulation_B.i_f].re *
+                dynamic_simulation_B.ad22.re + Z[dynamic_simulation_B.i_f].im *
                 dynamic_simulation_B.ad22.im);
               Z[dynamic_simulation_B.ctemp_tmp].im =
                 Z[dynamic_simulation_B.ctemp_tmp].im *
                 dynamic_simulation_B.t1_re - (dynamic_simulation_B.ad22.re *
                 dynamic_simulation_B.t1_im - dynamic_simulation_B.ad22.im *
                 dynamic_simulation_B.absxr);
-              Z[dynamic_simulation_B.i_jg].re = dynamic_simulation_B.shift_re;
-              Z[dynamic_simulation_B.i_jg].im = dynamic_simulation_B.shift_im;
+              Z[dynamic_simulation_B.i_f].re = dynamic_simulation_B.shift_re;
+              Z[dynamic_simulation_B.i_f].im = dynamic_simulation_B.shift_im;
               dynamic_simulation_B.jp1 += 3;
               dynamic_simulation_B.ctemp_tmp_tmp += 3;
               dynamic_simulation_B.shift_re = (Z[dynamic_simulation_B.jp1].re *
@@ -5398,8 +5396,8 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
                 dynamic_simulation_B.shift_re;
               Z[dynamic_simulation_B.ctemp_tmp_tmp].im =
                 dynamic_simulation_B.shift_im;
-              dynamic_simulation_B.jp1 = dynamic_simulation_B.j_m - 1;
-              dynamic_simulation_B.j_m++;
+              dynamic_simulation_B.jp1 = dynamic_simulation_B.j_j - 1;
+              dynamic_simulation_B.j_j++;
             }
           }
 
@@ -5446,70 +5444,70 @@ static void dynamic_simulation_xzhgeqz(creal_T A[16], int32_T ilo, int32_T ihi,
   }
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
 {
   dynamic_simulation_B.rworka[0] = 0.0;
   dynamic_simulation_B.rworka[2] = 0.0;
   dynamic_simulation_B.rworka[3] = 0.0;
-  dynamic_simulation_B.anorm_p = fabs(A[0].re) + fabs(A[0].im);
+  dynamic_simulation_B.anorm_o = fabs(A[0].re) + fabs(A[0].im);
   dynamic_simulation_B.rworka[1] = fabs(A[4].re) + fabs(A[4].im);
-  dynamic_simulation_B.ascale_a = (fabs(A[5].re) + fabs(A[5].im)) +
+  dynamic_simulation_B.ascale_b = (fabs(A[5].re) + fabs(A[5].im)) +
     dynamic_simulation_B.rworka[1];
-  if (dynamic_simulation_B.ascale_a > dynamic_simulation_B.anorm_p) {
-    dynamic_simulation_B.anorm_p = dynamic_simulation_B.ascale_a;
+  if (dynamic_simulation_B.ascale_b > dynamic_simulation_B.anorm_o) {
+    dynamic_simulation_B.anorm_o = dynamic_simulation_B.ascale_b;
   }
 
-  dynamic_simulation_B.i_m = 0;
-  while (dynamic_simulation_B.i_m <= 1) {
-    dynamic_simulation_B.rworka[2] += fabs(A[dynamic_simulation_B.i_m + 8].re) +
-      fabs(A[dynamic_simulation_B.i_m + 8].im);
-    dynamic_simulation_B.i_m++;
+  dynamic_simulation_B.i_j = 0;
+  while (dynamic_simulation_B.i_j <= 1) {
+    dynamic_simulation_B.rworka[2] += fabs(A[dynamic_simulation_B.i_j + 8].re) +
+      fabs(A[dynamic_simulation_B.i_j + 8].im);
+    dynamic_simulation_B.i_j++;
   }
 
-  dynamic_simulation_B.ascale_a = (fabs(A[10].re) + fabs(A[10].im)) +
+  dynamic_simulation_B.ascale_b = (fabs(A[10].re) + fabs(A[10].im)) +
     dynamic_simulation_B.rworka[2];
-  if (dynamic_simulation_B.ascale_a > dynamic_simulation_B.anorm_p) {
-    dynamic_simulation_B.anorm_p = dynamic_simulation_B.ascale_a;
+  if (dynamic_simulation_B.ascale_b > dynamic_simulation_B.anorm_o) {
+    dynamic_simulation_B.anorm_o = dynamic_simulation_B.ascale_b;
   }
 
-  dynamic_simulation_B.i_m = 0;
-  while (dynamic_simulation_B.i_m <= 2) {
-    dynamic_simulation_B.rworka[3] += fabs(A[dynamic_simulation_B.i_m + 12].re)
-      + fabs(A[dynamic_simulation_B.i_m + 12].im);
-    dynamic_simulation_B.i_m++;
+  dynamic_simulation_B.i_j = 0;
+  while (dynamic_simulation_B.i_j <= 2) {
+    dynamic_simulation_B.rworka[3] += fabs(A[dynamic_simulation_B.i_j + 12].re)
+      + fabs(A[dynamic_simulation_B.i_j + 12].im);
+    dynamic_simulation_B.i_j++;
   }
 
-  dynamic_simulation_B.ascale_a = (fabs(A[15].re) + fabs(A[15].im)) +
+  dynamic_simulation_B.ascale_b = (fabs(A[15].re) + fabs(A[15].im)) +
     dynamic_simulation_B.rworka[3];
-  if (dynamic_simulation_B.ascale_a > dynamic_simulation_B.anorm_p) {
-    dynamic_simulation_B.anorm_p = dynamic_simulation_B.ascale_a;
+  if (dynamic_simulation_B.ascale_b > dynamic_simulation_B.anorm_o) {
+    dynamic_simulation_B.anorm_o = dynamic_simulation_B.ascale_b;
   }
 
-  dynamic_simulation_B.ascale_a = dynamic_simulation_B.anorm_p;
-  if (2.2250738585072014E-308 > dynamic_simulation_B.anorm_p) {
-    dynamic_simulation_B.ascale_a = 2.2250738585072014E-308;
+  dynamic_simulation_B.ascale_b = dynamic_simulation_B.anorm_o;
+  if (2.2250738585072014E-308 > dynamic_simulation_B.anorm_o) {
+    dynamic_simulation_B.ascale_b = 2.2250738585072014E-308;
   }
 
-  dynamic_simulation_B.ascale_a = 1.0 / dynamic_simulation_B.ascale_a;
-  for (dynamic_simulation_B.i_m = 0; dynamic_simulation_B.i_m < 4;
-       dynamic_simulation_B.i_m++) {
-    dynamic_simulation_B.c_x_tmp_tmp = (3 - dynamic_simulation_B.i_m) << 2;
+  dynamic_simulation_B.ascale_b = 1.0 / dynamic_simulation_B.ascale_b;
+  for (dynamic_simulation_B.i_j = 0; dynamic_simulation_B.i_j < 4;
+       dynamic_simulation_B.i_j++) {
+    dynamic_simulation_B.c_x_tmp_tmp = (3 - dynamic_simulation_B.i_j) << 2;
     dynamic_simulation_B.c_x_tmp = (dynamic_simulation_B.c_x_tmp_tmp -
-      dynamic_simulation_B.i_m) + 3;
+      dynamic_simulation_B.i_j) + 3;
     dynamic_simulation_B.salpha_re = (fabs(A[dynamic_simulation_B.c_x_tmp].re) +
-      fabs(A[dynamic_simulation_B.c_x_tmp].im)) * dynamic_simulation_B.ascale_a;
+      fabs(A[dynamic_simulation_B.c_x_tmp].im)) * dynamic_simulation_B.ascale_b;
     if (1.0 > dynamic_simulation_B.salpha_re) {
       dynamic_simulation_B.salpha_re = 1.0;
     }
 
     dynamic_simulation_B.temp = 1.0 / dynamic_simulation_B.salpha_re;
     dynamic_simulation_B.salpha_re = A[dynamic_simulation_B.c_x_tmp].re *
-      dynamic_simulation_B.temp * dynamic_simulation_B.ascale_a;
+      dynamic_simulation_B.temp * dynamic_simulation_B.ascale_b;
     dynamic_simulation_B.salpha_im = A[dynamic_simulation_B.c_x_tmp].im *
-      dynamic_simulation_B.temp * dynamic_simulation_B.ascale_a;
+      dynamic_simulation_B.temp * dynamic_simulation_B.ascale_b;
     dynamic_simulation_B.acoeff = dynamic_simulation_B.temp *
-      dynamic_simulation_B.ascale_a;
+      dynamic_simulation_B.ascale_b;
     dynamic_simulation_B.lscalea = ((dynamic_simulation_B.temp >=
       2.2250738585072014E-308) && (dynamic_simulation_B.acoeff <
       4.0083367200179456E-292));
@@ -5518,22 +5516,22 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
     dynamic_simulation_B.lscaleb = ((dynamic_simulation_B.dmin >=
       2.2250738585072014E-308) && (dynamic_simulation_B.dmin <
       4.0083367200179456E-292));
-    dynamic_simulation_B.scale_j = 1.0;
+    dynamic_simulation_B.scale_a = 1.0;
     if (dynamic_simulation_B.lscalea) {
-      dynamic_simulation_B.scale_j = dynamic_simulation_B.anorm_p;
-      if (2.4948003869184E+291 < dynamic_simulation_B.anorm_p) {
-        dynamic_simulation_B.scale_j = 2.4948003869184E+291;
+      dynamic_simulation_B.scale_a = dynamic_simulation_B.anorm_o;
+      if (2.4948003869184E+291 < dynamic_simulation_B.anorm_o) {
+        dynamic_simulation_B.scale_a = 2.4948003869184E+291;
       }
 
-      dynamic_simulation_B.scale_j *= 4.0083367200179456E-292 /
+      dynamic_simulation_B.scale_a *= 4.0083367200179456E-292 /
         dynamic_simulation_B.temp;
     }
 
     if (dynamic_simulation_B.lscaleb) {
       dynamic_simulation_B.work2_idx_2_im = 4.0083367200179456E-292 /
         dynamic_simulation_B.dmin;
-      if (dynamic_simulation_B.work2_idx_2_im > dynamic_simulation_B.scale_j) {
-        dynamic_simulation_B.scale_j = dynamic_simulation_B.work2_idx_2_im;
+      if (dynamic_simulation_B.work2_idx_2_im > dynamic_simulation_B.scale_a) {
+        dynamic_simulation_B.scale_a = dynamic_simulation_B.work2_idx_2_im;
       }
     }
 
@@ -5549,26 +5547,26 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
 
       dynamic_simulation_B.dmin = 1.0 / (2.2250738585072014E-308 *
         dynamic_simulation_B.work2_idx_2_im);
-      if (dynamic_simulation_B.dmin < dynamic_simulation_B.scale_j) {
-        dynamic_simulation_B.scale_j = dynamic_simulation_B.dmin;
+      if (dynamic_simulation_B.dmin < dynamic_simulation_B.scale_a) {
+        dynamic_simulation_B.scale_a = dynamic_simulation_B.dmin;
       }
 
       if (dynamic_simulation_B.lscalea) {
-        dynamic_simulation_B.acoeff = dynamic_simulation_B.scale_j *
-          dynamic_simulation_B.temp * dynamic_simulation_B.ascale_a;
+        dynamic_simulation_B.acoeff = dynamic_simulation_B.scale_a *
+          dynamic_simulation_B.temp * dynamic_simulation_B.ascale_b;
       } else {
-        dynamic_simulation_B.acoeff *= dynamic_simulation_B.scale_j;
+        dynamic_simulation_B.acoeff *= dynamic_simulation_B.scale_a;
       }
 
-      dynamic_simulation_B.salpha_re *= dynamic_simulation_B.scale_j;
-      dynamic_simulation_B.salpha_im *= dynamic_simulation_B.scale_j;
+      dynamic_simulation_B.salpha_re *= dynamic_simulation_B.scale_a;
+      dynamic_simulation_B.salpha_im *= dynamic_simulation_B.scale_a;
     }
 
     memset(&dynamic_simulation_B.work1[0], 0, sizeof(creal_T) << 2U);
-    dynamic_simulation_B.work1[3 - dynamic_simulation_B.i_m].re = 1.0;
-    dynamic_simulation_B.work1[3 - dynamic_simulation_B.i_m].im = 0.0;
+    dynamic_simulation_B.work1[3 - dynamic_simulation_B.i_j].re = 1.0;
+    dynamic_simulation_B.work1[3 - dynamic_simulation_B.i_j].im = 0.0;
     dynamic_simulation_B.dmin = 2.2204460492503131E-16 *
-      dynamic_simulation_B.acoeff * dynamic_simulation_B.anorm_p;
+      dynamic_simulation_B.acoeff * dynamic_simulation_B.anorm_o;
     dynamic_simulation_B.temp = (fabs(dynamic_simulation_B.salpha_re) + fabs
       (dynamic_simulation_B.salpha_im)) * 2.2204460492503131E-16;
     if (dynamic_simulation_B.temp > dynamic_simulation_B.dmin) {
@@ -5580,7 +5578,7 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
     }
 
     dynamic_simulation_B.c_x_tmp = 0;
-    while (dynamic_simulation_B.c_x_tmp <= 2 - dynamic_simulation_B.i_m) {
+    while (dynamic_simulation_B.c_x_tmp <= 2 - dynamic_simulation_B.i_j) {
       dynamic_simulation_B.d_re_tmp = dynamic_simulation_B.c_x_tmp_tmp +
         dynamic_simulation_B.c_x_tmp;
       dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].re =
@@ -5590,31 +5588,31 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
       dynamic_simulation_B.c_x_tmp++;
     }
 
-    dynamic_simulation_B.work1[3 - dynamic_simulation_B.i_m].re = 1.0;
-    dynamic_simulation_B.work1[3 - dynamic_simulation_B.i_m].im = 0.0;
+    dynamic_simulation_B.work1[3 - dynamic_simulation_B.i_j].re = 1.0;
+    dynamic_simulation_B.work1[3 - dynamic_simulation_B.i_j].im = 0.0;
     dynamic_simulation_B.c_x_tmp = static_cast<int32_T>(((-1.0 - ((-static_cast<
-      real_T>(dynamic_simulation_B.i_m) + 4.0) - 1.0)) + 1.0) / -1.0);
-    dynamic_simulation_B.c_j_j = 0;
-    while (dynamic_simulation_B.c_j_j <= dynamic_simulation_B.c_x_tmp - 1) {
-      dynamic_simulation_B.work2_idx_1_re_tmp = 2 - (dynamic_simulation_B.i_m +
-        dynamic_simulation_B.c_j_j);
+      real_T>(dynamic_simulation_B.i_j) + 4.0) - 1.0)) + 1.0) / -1.0);
+    dynamic_simulation_B.c_j_k = 0;
+    while (dynamic_simulation_B.c_j_k <= dynamic_simulation_B.c_x_tmp - 1) {
+      dynamic_simulation_B.work2_idx_1_re_tmp = 2 - (dynamic_simulation_B.i_j +
+        dynamic_simulation_B.c_j_k);
       dynamic_simulation_B.d_re_tmp_tmp =
         dynamic_simulation_B.work2_idx_1_re_tmp << 2;
       dynamic_simulation_B.d_re_tmp = dynamic_simulation_B.d_re_tmp_tmp +
         dynamic_simulation_B.work2_idx_1_re_tmp;
       dynamic_simulation_B.work2_idx_3_re = A[dynamic_simulation_B.d_re_tmp].re *
         dynamic_simulation_B.acoeff - dynamic_simulation_B.salpha_re;
-      dynamic_simulation_B.scale_j = A[dynamic_simulation_B.d_re_tmp].im *
+      dynamic_simulation_B.scale_a = A[dynamic_simulation_B.d_re_tmp].im *
         dynamic_simulation_B.acoeff - dynamic_simulation_B.salpha_im;
       if (fabs(dynamic_simulation_B.work2_idx_3_re) + fabs
-          (dynamic_simulation_B.scale_j) <= dynamic_simulation_B.dmin) {
+          (dynamic_simulation_B.scale_a) <= dynamic_simulation_B.dmin) {
         dynamic_simulation_B.work2_idx_3_re = dynamic_simulation_B.dmin;
-        dynamic_simulation_B.scale_j = 0.0;
+        dynamic_simulation_B.scale_a = 0.0;
       }
 
       dynamic_simulation_B.work2_idx_2_im = fabs
         (dynamic_simulation_B.work2_idx_3_re);
-      dynamic_simulation_B.work2_idx_3_im = fabs(dynamic_simulation_B.scale_j);
+      dynamic_simulation_B.work2_idx_3_im = fabs(dynamic_simulation_B.scale_a);
       dynamic_simulation_B.temp = dynamic_simulation_B.work2_idx_2_im +
         dynamic_simulation_B.work2_idx_3_im;
       if (dynamic_simulation_B.temp < 1.0) {
@@ -5627,7 +5625,7 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
             1.1235582092889474E+307) {
           dynamic_simulation_B.temp = 1.0 / dynamic_simulation_B.f_y;
           dynamic_simulation_B.d_re_tmp = 0;
-          while (dynamic_simulation_B.d_re_tmp <= 3 - dynamic_simulation_B.i_m)
+          while (dynamic_simulation_B.d_re_tmp <= 3 - dynamic_simulation_B.i_j)
           {
             dynamic_simulation_B.work1[dynamic_simulation_B.d_re_tmp].re *=
               dynamic_simulation_B.temp;
@@ -5638,25 +5636,25 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
         }
       }
 
-      if (dynamic_simulation_B.scale_j == 0.0) {
+      if (dynamic_simulation_B.scale_a == 0.0) {
         if (-dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
             .im == 0.0) {
           dynamic_simulation_B.temp =
             -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
             .re / dynamic_simulation_B.work2_idx_3_re;
-          dynamic_simulation_B.scale_j = 0.0;
+          dynamic_simulation_B.scale_a = 0.0;
         } else if
             (-dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
              .re == 0.0) {
           dynamic_simulation_B.temp = 0.0;
-          dynamic_simulation_B.scale_j =
+          dynamic_simulation_B.scale_a =
             -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
             .im / dynamic_simulation_B.work2_idx_3_re;
         } else {
           dynamic_simulation_B.temp =
             -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
             .re / dynamic_simulation_B.work2_idx_3_re;
-          dynamic_simulation_B.scale_j =
+          dynamic_simulation_B.scale_a =
             -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
             .im / dynamic_simulation_B.work2_idx_3_re;
         }
@@ -5665,78 +5663,78 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
             .re == 0.0) {
           dynamic_simulation_B.temp =
             -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
-            .im / dynamic_simulation_B.scale_j;
-          dynamic_simulation_B.scale_j = 0.0;
+            .im / dynamic_simulation_B.scale_a;
+          dynamic_simulation_B.scale_a = 0.0;
         } else if
             (-dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
              .im == 0.0) {
           dynamic_simulation_B.temp = 0.0;
-          dynamic_simulation_B.scale_j =
+          dynamic_simulation_B.scale_a =
             -(-dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
-              .re / dynamic_simulation_B.scale_j);
+              .re / dynamic_simulation_B.scale_a);
         } else {
           dynamic_simulation_B.temp =
             -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
-            .im / dynamic_simulation_B.scale_j;
-          dynamic_simulation_B.scale_j =
+            .im / dynamic_simulation_B.scale_a;
+          dynamic_simulation_B.scale_a =
             -(-dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
-              .re / dynamic_simulation_B.scale_j);
+              .re / dynamic_simulation_B.scale_a);
         }
       } else if (dynamic_simulation_B.work2_idx_2_im >
                  dynamic_simulation_B.work2_idx_3_im) {
-        dynamic_simulation_B.work2_idx_2_im = dynamic_simulation_B.scale_j /
+        dynamic_simulation_B.work2_idx_2_im = dynamic_simulation_B.scale_a /
           dynamic_simulation_B.work2_idx_3_re;
-        dynamic_simulation_B.scale_j = dynamic_simulation_B.work2_idx_2_im *
-          dynamic_simulation_B.scale_j + dynamic_simulation_B.work2_idx_3_re;
+        dynamic_simulation_B.scale_a = dynamic_simulation_B.work2_idx_2_im *
+          dynamic_simulation_B.scale_a + dynamic_simulation_B.work2_idx_3_re;
         dynamic_simulation_B.temp = (dynamic_simulation_B.work2_idx_2_im *
           -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
           im +
           -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
-          re) / dynamic_simulation_B.scale_j;
-        dynamic_simulation_B.scale_j =
+          re) / dynamic_simulation_B.scale_a;
+        dynamic_simulation_B.scale_a =
           (-dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
            im - dynamic_simulation_B.work2_idx_2_im *
            -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
-           re) / dynamic_simulation_B.scale_j;
+           re) / dynamic_simulation_B.scale_a;
       } else if (dynamic_simulation_B.work2_idx_3_im ==
                  dynamic_simulation_B.work2_idx_2_im) {
         dynamic_simulation_B.work2_idx_3_re =
           dynamic_simulation_B.work2_idx_3_re > 0.0 ? 0.5 : -0.5;
-        dynamic_simulation_B.scale_j = dynamic_simulation_B.scale_j > 0.0 ? 0.5 :
+        dynamic_simulation_B.scale_a = dynamic_simulation_B.scale_a > 0.0 ? 0.5 :
           -0.5;
         dynamic_simulation_B.temp =
           (-dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
            re * dynamic_simulation_B.work2_idx_3_re +
            -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
-           im * dynamic_simulation_B.scale_j) /
+           im * dynamic_simulation_B.scale_a) /
           dynamic_simulation_B.work2_idx_2_im;
-        dynamic_simulation_B.scale_j =
+        dynamic_simulation_B.scale_a =
           (-dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
            im * dynamic_simulation_B.work2_idx_3_re -
            -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
-           re * dynamic_simulation_B.scale_j) /
+           re * dynamic_simulation_B.scale_a) /
           dynamic_simulation_B.work2_idx_2_im;
       } else {
         dynamic_simulation_B.work2_idx_2_im =
-          dynamic_simulation_B.work2_idx_3_re / dynamic_simulation_B.scale_j;
-        dynamic_simulation_B.scale_j += dynamic_simulation_B.work2_idx_2_im *
+          dynamic_simulation_B.work2_idx_3_re / dynamic_simulation_B.scale_a;
+        dynamic_simulation_B.scale_a += dynamic_simulation_B.work2_idx_2_im *
           dynamic_simulation_B.work2_idx_3_re;
         dynamic_simulation_B.temp = (dynamic_simulation_B.work2_idx_2_im *
           -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
           re +
           -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
-          im) / dynamic_simulation_B.scale_j;
-        dynamic_simulation_B.scale_j = (dynamic_simulation_B.work2_idx_2_im *
+          im) / dynamic_simulation_B.scale_a;
+        dynamic_simulation_B.scale_a = (dynamic_simulation_B.work2_idx_2_im *
           -dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
           im -
           (-dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].
-           re)) / dynamic_simulation_B.scale_j;
+           re)) / dynamic_simulation_B.scale_a;
       }
 
       dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].re =
         dynamic_simulation_B.temp;
       dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].im =
-        dynamic_simulation_B.scale_j;
+        dynamic_simulation_B.scale_a;
       if (dynamic_simulation_B.work2_idx_1_re_tmp + 1 > 1) {
         if (fabs
             (dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp]
@@ -5752,7 +5750,7 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
               dynamic_simulation_B.rworka[dynamic_simulation_B.work2_idx_1_re_tmp]
               >= 1.1235582092889474E+307 * dynamic_simulation_B.temp) {
             dynamic_simulation_B.d_re_tmp = 0;
-            while (dynamic_simulation_B.d_re_tmp <= 3 - dynamic_simulation_B.i_m)
+            while (dynamic_simulation_B.d_re_tmp <= 3 - dynamic_simulation_B.i_j)
             {
               dynamic_simulation_B.work1[dynamic_simulation_B.d_re_tmp].re *=
                 dynamic_simulation_B.temp;
@@ -5765,7 +5763,7 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
 
         dynamic_simulation_B.work2_idx_3_re = dynamic_simulation_B.acoeff *
           dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].re;
-        dynamic_simulation_B.scale_j = dynamic_simulation_B.acoeff *
+        dynamic_simulation_B.scale_a = dynamic_simulation_B.acoeff *
           dynamic_simulation_B.work1[dynamic_simulation_B.work2_idx_1_re_tmp].im;
         dynamic_simulation_B.e_jr = 0;
         while (dynamic_simulation_B.e_jr <=
@@ -5775,38 +5773,38 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
           dynamic_simulation_B.work1[dynamic_simulation_B.e_jr].re +=
             A[dynamic_simulation_B.d_re_tmp].re *
             dynamic_simulation_B.work2_idx_3_re -
-            A[dynamic_simulation_B.d_re_tmp].im * dynamic_simulation_B.scale_j;
+            A[dynamic_simulation_B.d_re_tmp].im * dynamic_simulation_B.scale_a;
           dynamic_simulation_B.work1[dynamic_simulation_B.e_jr].im +=
             A[dynamic_simulation_B.d_re_tmp].im *
             dynamic_simulation_B.work2_idx_3_re +
-            A[dynamic_simulation_B.d_re_tmp].re * dynamic_simulation_B.scale_j;
+            A[dynamic_simulation_B.d_re_tmp].re * dynamic_simulation_B.scale_a;
           dynamic_simulation_B.e_jr++;
         }
       }
 
-      dynamic_simulation_B.c_j_j++;
+      dynamic_simulation_B.c_j_k++;
     }
 
     dynamic_simulation_B.salpha_re = 0.0;
     dynamic_simulation_B.salpha_im = 0.0;
     dynamic_simulation_B.acoeff = 0.0;
     dynamic_simulation_B.dmin = 0.0;
-    dynamic_simulation_B.scale_j = 0.0;
+    dynamic_simulation_B.scale_a = 0.0;
     dynamic_simulation_B.work2_idx_2_im = 0.0;
     dynamic_simulation_B.work2_idx_3_re = 0.0;
     dynamic_simulation_B.work2_idx_3_im = 0.0;
     dynamic_simulation_B.c_x_tmp = 0;
-    while (dynamic_simulation_B.c_x_tmp <= 3 - dynamic_simulation_B.i_m) {
-      dynamic_simulation_B.c_j_j = dynamic_simulation_B.c_x_tmp << 2;
-      dynamic_simulation_B.salpha_re += V[dynamic_simulation_B.c_j_j].re *
+    while (dynamic_simulation_B.c_x_tmp <= 3 - dynamic_simulation_B.i_j) {
+      dynamic_simulation_B.c_j_k = dynamic_simulation_B.c_x_tmp << 2;
+      dynamic_simulation_B.salpha_re += V[dynamic_simulation_B.c_j_k].re *
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].re -
-        V[dynamic_simulation_B.c_j_j].im *
+        V[dynamic_simulation_B.c_j_k].im *
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].im;
-      dynamic_simulation_B.salpha_im += V[dynamic_simulation_B.c_j_j].re *
+      dynamic_simulation_B.salpha_im += V[dynamic_simulation_B.c_j_k].re *
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].im +
-        V[dynamic_simulation_B.c_j_j].im *
+        V[dynamic_simulation_B.c_j_k].im *
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].re;
-      dynamic_simulation_B.work2_idx_1_re_tmp = dynamic_simulation_B.c_j_j + 1;
+      dynamic_simulation_B.work2_idx_1_re_tmp = dynamic_simulation_B.c_j_k + 1;
       dynamic_simulation_B.acoeff += V[dynamic_simulation_B.work2_idx_1_re_tmp].
         re * dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].re -
         V[dynamic_simulation_B.work2_idx_1_re_tmp].im *
@@ -5815,8 +5813,8 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
         * dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].im +
         V[dynamic_simulation_B.work2_idx_1_re_tmp].im *
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].re;
-      dynamic_simulation_B.work2_idx_1_re_tmp = dynamic_simulation_B.c_j_j + 2;
-      dynamic_simulation_B.scale_j += V[dynamic_simulation_B.work2_idx_1_re_tmp]
+      dynamic_simulation_B.work2_idx_1_re_tmp = dynamic_simulation_B.c_j_k + 2;
+      dynamic_simulation_B.scale_a += V[dynamic_simulation_B.work2_idx_1_re_tmp]
         .re * dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].re -
         V[dynamic_simulation_B.work2_idx_1_re_tmp].im *
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].im;
@@ -5825,14 +5823,14 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].im +
         V[dynamic_simulation_B.work2_idx_1_re_tmp].im *
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].re;
-      dynamic_simulation_B.c_j_j += 3;
-      dynamic_simulation_B.work2_idx_3_re += V[dynamic_simulation_B.c_j_j].re *
+      dynamic_simulation_B.c_j_k += 3;
+      dynamic_simulation_B.work2_idx_3_re += V[dynamic_simulation_B.c_j_k].re *
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].re -
-        V[dynamic_simulation_B.c_j_j].im *
+        V[dynamic_simulation_B.c_j_k].im *
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].im;
-      dynamic_simulation_B.work2_idx_3_im += V[dynamic_simulation_B.c_j_j].re *
+      dynamic_simulation_B.work2_idx_3_im += V[dynamic_simulation_B.c_j_k].re *
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].im +
-        V[dynamic_simulation_B.c_j_j].im *
+        V[dynamic_simulation_B.c_j_k].im *
         dynamic_simulation_B.work1[dynamic_simulation_B.c_x_tmp].re;
       dynamic_simulation_B.c_x_tmp++;
     }
@@ -5845,7 +5843,7 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
       dynamic_simulation_B.temp = dynamic_simulation_B.f_y;
     }
 
-    dynamic_simulation_B.f_y = fabs(dynamic_simulation_B.scale_j) + fabs
+    dynamic_simulation_B.f_y = fabs(dynamic_simulation_B.scale_a) + fabs
       (dynamic_simulation_B.work2_idx_2_im);
     if (dynamic_simulation_B.f_y > dynamic_simulation_B.temp) {
       dynamic_simulation_B.temp = dynamic_simulation_B.f_y;
@@ -5863,17 +5861,17 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
         dynamic_simulation_B.salpha_re;
       V[dynamic_simulation_B.c_x_tmp_tmp].im = dynamic_simulation_B.temp *
         dynamic_simulation_B.salpha_im;
-      dynamic_simulation_B.d_re_tmp = ((3 - dynamic_simulation_B.i_m) << 2) + 1;
+      dynamic_simulation_B.d_re_tmp = ((3 - dynamic_simulation_B.i_j) << 2) + 1;
       V[dynamic_simulation_B.d_re_tmp].re = dynamic_simulation_B.temp *
         dynamic_simulation_B.acoeff;
       V[dynamic_simulation_B.d_re_tmp].im = dynamic_simulation_B.temp *
         dynamic_simulation_B.dmin;
-      dynamic_simulation_B.d_re_tmp = ((3 - dynamic_simulation_B.i_m) << 2) + 2;
+      dynamic_simulation_B.d_re_tmp = ((3 - dynamic_simulation_B.i_j) << 2) + 2;
       V[dynamic_simulation_B.d_re_tmp].re = dynamic_simulation_B.temp *
-        dynamic_simulation_B.scale_j;
+        dynamic_simulation_B.scale_a;
       V[dynamic_simulation_B.d_re_tmp].im = dynamic_simulation_B.temp *
         dynamic_simulation_B.work2_idx_2_im;
-      dynamic_simulation_B.d_re_tmp = ((3 - dynamic_simulation_B.i_m) << 2) + 3;
+      dynamic_simulation_B.d_re_tmp = ((3 - dynamic_simulation_B.i_j) << 2) + 3;
       V[dynamic_simulation_B.d_re_tmp].re = dynamic_simulation_B.temp *
         dynamic_simulation_B.work2_idx_3_re;
       V[dynamic_simulation_B.d_re_tmp].im = dynamic_simulation_B.temp *
@@ -5894,7 +5892,7 @@ static void dynamic_simulation_xztgevc(const creal_T A[16], creal_T V[16])
   }
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
   alpha1[4], creal_T beta1[4], creal_T V[16])
 {
@@ -5953,14 +5951,14 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
     dynamic_simulation_B.ihi = 4;
     do {
       exitg2 = 0;
-      dynamic_simulation_B.i_e = 0;
+      dynamic_simulation_B.i_m = 0;
       dynamic_simulation_B.jcol = 0;
       dynamic_simulation_B.found = false;
       dynamic_simulation_B.ii = dynamic_simulation_B.ihi;
       exitg3 = false;
       while ((!exitg3) && (dynamic_simulation_B.ii > 0)) {
         dynamic_simulation_B.nzcount = 0;
-        dynamic_simulation_B.i_e = dynamic_simulation_B.ii;
+        dynamic_simulation_B.i_m = dynamic_simulation_B.ii;
         dynamic_simulation_B.jcol = dynamic_simulation_B.ihi;
         dynamic_simulation_B.jj = 0;
         exitg4 = false;
@@ -5995,25 +5993,25 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
       if (!dynamic_simulation_B.found) {
         exitg2 = 2;
       } else {
-        if (dynamic_simulation_B.i_e != dynamic_simulation_B.ihi) {
-          dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_e - 1].re;
-          dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_e - 1].im;
-          A[dynamic_simulation_B.i_e - 1] = A[dynamic_simulation_B.ihi - 1];
+        if (dynamic_simulation_B.i_m != dynamic_simulation_B.ihi) {
+          dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_m - 1].re;
+          dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_m - 1].im;
+          A[dynamic_simulation_B.i_m - 1] = A[dynamic_simulation_B.ihi - 1];
           A[dynamic_simulation_B.ihi - 1].re = dynamic_simulation_B.atmp_re;
           A[dynamic_simulation_B.ihi - 1].im = dynamic_simulation_B.atmp_im;
-          dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_e + 3].re;
-          dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_e + 3].im;
-          A[dynamic_simulation_B.i_e + 3] = A[dynamic_simulation_B.ihi + 3];
+          dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_m + 3].re;
+          dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_m + 3].im;
+          A[dynamic_simulation_B.i_m + 3] = A[dynamic_simulation_B.ihi + 3];
           A[dynamic_simulation_B.ihi + 3].re = dynamic_simulation_B.atmp_re;
           A[dynamic_simulation_B.ihi + 3].im = dynamic_simulation_B.atmp_im;
-          dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_e + 7].re;
-          dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_e + 7].im;
-          A[dynamic_simulation_B.i_e + 7] = A[dynamic_simulation_B.ihi + 7];
+          dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_m + 7].re;
+          dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_m + 7].im;
+          A[dynamic_simulation_B.i_m + 7] = A[dynamic_simulation_B.ihi + 7];
           A[dynamic_simulation_B.ihi + 7].re = dynamic_simulation_B.atmp_re;
           A[dynamic_simulation_B.ihi + 7].im = dynamic_simulation_B.atmp_im;
-          dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_e + 11].re;
-          dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_e + 11].im;
-          A[dynamic_simulation_B.i_e + 11] = A[dynamic_simulation_B.ihi + 11];
+          dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_m + 11].re;
+          dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_m + 11].im;
+          A[dynamic_simulation_B.i_m + 11] = A[dynamic_simulation_B.ihi + 11];
           A[dynamic_simulation_B.ihi + 11].re = dynamic_simulation_B.atmp_re;
           A[dynamic_simulation_B.ihi + 11].im = dynamic_simulation_B.atmp_im;
         }
@@ -6021,13 +6019,13 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
         if (dynamic_simulation_B.jcol != dynamic_simulation_B.ihi) {
           dynamic_simulation_B.ii = 0;
           while (dynamic_simulation_B.ii <= dynamic_simulation_B.ihi - 1) {
-            dynamic_simulation_B.i_e = ((dynamic_simulation_B.jcol - 1) << 2) +
+            dynamic_simulation_B.i_m = ((dynamic_simulation_B.jcol - 1) << 2) +
               dynamic_simulation_B.ii;
-            dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_e].re;
-            dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_e].im;
+            dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_m].re;
+            dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_m].im;
             dynamic_simulation_B.k_m = ((dynamic_simulation_B.ihi - 1) << 2) +
               dynamic_simulation_B.ii;
-            A[dynamic_simulation_B.i_e] = A[dynamic_simulation_B.k_m];
+            A[dynamic_simulation_B.i_m] = A[dynamic_simulation_B.k_m];
             A[dynamic_simulation_B.k_m].re = dynamic_simulation_B.atmp_re;
             A[dynamic_simulation_B.k_m].im = dynamic_simulation_B.atmp_im;
             dynamic_simulation_B.ii++;
@@ -6051,22 +6049,22 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
         dynamic_simulation_B.ii = 0;
         dynamic_simulation_B.jcol = 0;
         dynamic_simulation_B.found = false;
-        dynamic_simulation_B.i_e = dynamic_simulation_B.c_i + 1;
+        dynamic_simulation_B.i_m = dynamic_simulation_B.c_i + 1;
         exitg3 = false;
-        while ((!exitg3) && (dynamic_simulation_B.i_e <=
+        while ((!exitg3) && (dynamic_simulation_B.i_m <=
                              dynamic_simulation_B.ihi)) {
           dynamic_simulation_B.nzcount = 0;
           dynamic_simulation_B.ii = dynamic_simulation_B.ihi;
-          dynamic_simulation_B.jcol = dynamic_simulation_B.i_e;
+          dynamic_simulation_B.jcol = dynamic_simulation_B.i_m;
           dynamic_simulation_B.jj = dynamic_simulation_B.c_i + 1;
           exitg4 = false;
           while ((!exitg4) && (dynamic_simulation_B.jj <=
                                dynamic_simulation_B.ihi)) {
-            dynamic_simulation_B.k_m = (((dynamic_simulation_B.i_e - 1) << 2) +
+            dynamic_simulation_B.k_m = (((dynamic_simulation_B.i_m - 1) << 2) +
               dynamic_simulation_B.jj) - 1;
             if ((A[dynamic_simulation_B.k_m].re != 0.0) ||
                 (A[dynamic_simulation_B.k_m].im != 0.0) ||
-                (dynamic_simulation_B.jj == dynamic_simulation_B.i_e)) {
+                (dynamic_simulation_B.jj == dynamic_simulation_B.i_m)) {
               if (dynamic_simulation_B.nzcount == 0) {
                 dynamic_simulation_B.ii = dynamic_simulation_B.jj;
                 dynamic_simulation_B.nzcount = 1;
@@ -6084,7 +6082,7 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
             dynamic_simulation_B.found = true;
             exitg3 = true;
           } else {
-            dynamic_simulation_B.i_e++;
+            dynamic_simulation_B.i_m++;
           }
         }
 
@@ -6095,12 +6093,12 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
             dynamic_simulation_B.nzcount = dynamic_simulation_B.c_i;
             while (dynamic_simulation_B.nzcount + 1 < 5) {
               dynamic_simulation_B.k_m = dynamic_simulation_B.nzcount << 2;
-              dynamic_simulation_B.i_e = (dynamic_simulation_B.k_m +
+              dynamic_simulation_B.i_m = (dynamic_simulation_B.k_m +
                 dynamic_simulation_B.ii) - 1;
-              dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_e].re;
-              dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_e].im;
+              dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_m].re;
+              dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_m].im;
               dynamic_simulation_B.k_m += dynamic_simulation_B.c_i;
-              A[dynamic_simulation_B.i_e] = A[dynamic_simulation_B.k_m];
+              A[dynamic_simulation_B.i_m] = A[dynamic_simulation_B.k_m];
               A[dynamic_simulation_B.k_m].re = dynamic_simulation_B.atmp_re;
               A[dynamic_simulation_B.k_m].im = dynamic_simulation_B.atmp_im;
               dynamic_simulation_B.nzcount++;
@@ -6110,13 +6108,13 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
           if (dynamic_simulation_B.c_i + 1 != dynamic_simulation_B.jcol) {
             dynamic_simulation_B.ii = 0;
             while (dynamic_simulation_B.ii <= dynamic_simulation_B.ihi - 1) {
-              dynamic_simulation_B.i_e = ((dynamic_simulation_B.jcol - 1) << 2)
+              dynamic_simulation_B.i_m = ((dynamic_simulation_B.jcol - 1) << 2)
                 + dynamic_simulation_B.ii;
-              dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_e].re;
-              dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_e].im;
+              dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.i_m].re;
+              dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.i_m].im;
               dynamic_simulation_B.k_m = (dynamic_simulation_B.c_i << 2) +
                 dynamic_simulation_B.ii;
-              A[dynamic_simulation_B.i_e] = A[dynamic_simulation_B.k_m];
+              A[dynamic_simulation_B.i_m] = A[dynamic_simulation_B.k_m];
               A[dynamic_simulation_B.k_m].re = dynamic_simulation_B.atmp_re;
               A[dynamic_simulation_B.k_m].im = dynamic_simulation_B.atmp_im;
               dynamic_simulation_B.ii++;
@@ -6137,17 +6135,17 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
 
     for (dynamic_simulation_B.k_m = 0; dynamic_simulation_B.k_m < 16;
          dynamic_simulation_B.k_m++) {
-      dynamic_simulation_B.b_I_m[dynamic_simulation_B.k_m] = 0;
+      dynamic_simulation_B.b_I_h[dynamic_simulation_B.k_m] = 0;
     }
 
-    dynamic_simulation_B.b_I_m[0] = 1;
-    dynamic_simulation_B.b_I_m[5] = 1;
-    dynamic_simulation_B.b_I_m[10] = 1;
-    dynamic_simulation_B.b_I_m[15] = 1;
+    dynamic_simulation_B.b_I_h[0] = 1;
+    dynamic_simulation_B.b_I_h[5] = 1;
+    dynamic_simulation_B.b_I_h[10] = 1;
+    dynamic_simulation_B.b_I_h[15] = 1;
     for (dynamic_simulation_B.k_m = 0; dynamic_simulation_B.k_m < 16;
          dynamic_simulation_B.k_m++) {
       V[dynamic_simulation_B.k_m].re =
-        dynamic_simulation_B.b_I_m[dynamic_simulation_B.k_m];
+        dynamic_simulation_B.b_I_h[dynamic_simulation_B.k_m];
       V[dynamic_simulation_B.k_m].im = 0.0;
     }
 
@@ -6167,26 +6165,26 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
           A[dynamic_simulation_B.k_m].im = 0.0;
           dynamic_simulation_B.nzcount = dynamic_simulation_B.jcol + 1;
           while (dynamic_simulation_B.nzcount + 1 < 5) {
-            dynamic_simulation_B.i_e = (dynamic_simulation_B.nzcount << 2) +
+            dynamic_simulation_B.i_m = (dynamic_simulation_B.nzcount << 2) +
               dynamic_simulation_B.ii;
-            dynamic_simulation_B.k_m = dynamic_simulation_B.i_e - 1;
+            dynamic_simulation_B.k_m = dynamic_simulation_B.i_m - 1;
             dynamic_simulation_B.atmp_re = A[dynamic_simulation_B.k_m].re *
-              dynamic_simulation_B.mul + (A[dynamic_simulation_B.i_e].re *
-              dynamic_simulation_B.s.re - A[dynamic_simulation_B.i_e].im *
+              dynamic_simulation_B.mul + (A[dynamic_simulation_B.i_m].re *
+              dynamic_simulation_B.s.re - A[dynamic_simulation_B.i_m].im *
               dynamic_simulation_B.s.im);
             dynamic_simulation_B.atmp_im = A[dynamic_simulation_B.k_m].im *
-              dynamic_simulation_B.mul + (A[dynamic_simulation_B.i_e].im *
-              dynamic_simulation_B.s.re + A[dynamic_simulation_B.i_e].re *
+              dynamic_simulation_B.mul + (A[dynamic_simulation_B.i_m].im *
+              dynamic_simulation_B.s.re + A[dynamic_simulation_B.i_m].re *
               dynamic_simulation_B.s.im);
-            dynamic_simulation_B.d_p = A[dynamic_simulation_B.k_m].im;
+            dynamic_simulation_B.d = A[dynamic_simulation_B.k_m].im;
             dynamic_simulation_B.d1 = A[dynamic_simulation_B.k_m].re;
-            A[dynamic_simulation_B.i_e].re = A[dynamic_simulation_B.i_e].re *
+            A[dynamic_simulation_B.i_m].re = A[dynamic_simulation_B.i_m].re *
               dynamic_simulation_B.mul - (A[dynamic_simulation_B.k_m].re *
               dynamic_simulation_B.s.re + A[dynamic_simulation_B.k_m].im *
               dynamic_simulation_B.s.im);
-            A[dynamic_simulation_B.i_e].im = A[dynamic_simulation_B.i_e].im *
+            A[dynamic_simulation_B.i_m].im = A[dynamic_simulation_B.i_m].im *
               dynamic_simulation_B.mul - (dynamic_simulation_B.s.re *
-              dynamic_simulation_B.d_p - dynamic_simulation_B.s.im *
+              dynamic_simulation_B.d - dynamic_simulation_B.s.im *
               dynamic_simulation_B.d1);
             A[dynamic_simulation_B.k_m].re = dynamic_simulation_B.atmp_re;
             A[dynamic_simulation_B.k_m].im = dynamic_simulation_B.atmp_im;
@@ -6197,55 +6195,55 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
           dynamic_simulation_B.s.im = -dynamic_simulation_B.s.im;
           dynamic_simulation_B.nzcount = 0;
           while (dynamic_simulation_B.nzcount + 1 <= dynamic_simulation_B.ihi) {
-            dynamic_simulation_B.i_e = ((dynamic_simulation_B.ii - 1) << 2) +
+            dynamic_simulation_B.i_m = ((dynamic_simulation_B.ii - 1) << 2) +
               dynamic_simulation_B.nzcount;
             dynamic_simulation_B.k_m = (dynamic_simulation_B.ii << 2) +
               dynamic_simulation_B.nzcount;
-            dynamic_simulation_B.atmp_re = (A[dynamic_simulation_B.i_e].re *
-              dynamic_simulation_B.s.re - A[dynamic_simulation_B.i_e].im *
+            dynamic_simulation_B.atmp_re = (A[dynamic_simulation_B.i_m].re *
+              dynamic_simulation_B.s.re - A[dynamic_simulation_B.i_m].im *
               dynamic_simulation_B.s.im) + A[dynamic_simulation_B.k_m].re *
               dynamic_simulation_B.mul;
-            dynamic_simulation_B.atmp_im = (A[dynamic_simulation_B.i_e].im *
-              dynamic_simulation_B.s.re + A[dynamic_simulation_B.i_e].re *
+            dynamic_simulation_B.atmp_im = (A[dynamic_simulation_B.i_m].im *
+              dynamic_simulation_B.s.re + A[dynamic_simulation_B.i_m].re *
               dynamic_simulation_B.s.im) + A[dynamic_simulation_B.k_m].im *
               dynamic_simulation_B.mul;
-            dynamic_simulation_B.d_p = A[dynamic_simulation_B.k_m].im;
+            dynamic_simulation_B.d = A[dynamic_simulation_B.k_m].im;
             dynamic_simulation_B.d1 = A[dynamic_simulation_B.k_m].re;
-            A[dynamic_simulation_B.i_e].re = A[dynamic_simulation_B.i_e].re *
+            A[dynamic_simulation_B.i_m].re = A[dynamic_simulation_B.i_m].re *
               dynamic_simulation_B.mul - (A[dynamic_simulation_B.k_m].re *
               dynamic_simulation_B.s.re + A[dynamic_simulation_B.k_m].im *
               dynamic_simulation_B.s.im);
-            A[dynamic_simulation_B.i_e].im = A[dynamic_simulation_B.i_e].im *
+            A[dynamic_simulation_B.i_m].im = A[dynamic_simulation_B.i_m].im *
               dynamic_simulation_B.mul - (dynamic_simulation_B.s.re *
-              dynamic_simulation_B.d_p - dynamic_simulation_B.s.im *
+              dynamic_simulation_B.d - dynamic_simulation_B.s.im *
               dynamic_simulation_B.d1);
             A[dynamic_simulation_B.k_m].re = dynamic_simulation_B.atmp_re;
             A[dynamic_simulation_B.k_m].im = dynamic_simulation_B.atmp_im;
             dynamic_simulation_B.nzcount++;
           }
 
-          dynamic_simulation_B.i_e = (dynamic_simulation_B.ii - 1) << 2;
+          dynamic_simulation_B.i_m = (dynamic_simulation_B.ii - 1) << 2;
           dynamic_simulation_B.k_m = dynamic_simulation_B.ii << 2;
-          dynamic_simulation_B.atmp_re = (V[dynamic_simulation_B.i_e].re *
-            dynamic_simulation_B.s.re - V[dynamic_simulation_B.i_e].im *
+          dynamic_simulation_B.atmp_re = (V[dynamic_simulation_B.i_m].re *
+            dynamic_simulation_B.s.re - V[dynamic_simulation_B.i_m].im *
             dynamic_simulation_B.s.im) + V[dynamic_simulation_B.k_m].re *
             dynamic_simulation_B.mul;
-          dynamic_simulation_B.atmp_im = (V[dynamic_simulation_B.i_e].im *
-            dynamic_simulation_B.s.re + V[dynamic_simulation_B.i_e].re *
+          dynamic_simulation_B.atmp_im = (V[dynamic_simulation_B.i_m].im *
+            dynamic_simulation_B.s.re + V[dynamic_simulation_B.i_m].re *
             dynamic_simulation_B.s.im) + V[dynamic_simulation_B.k_m].im *
             dynamic_simulation_B.mul;
-          dynamic_simulation_B.d_p = V[dynamic_simulation_B.k_m].re;
-          V[dynamic_simulation_B.i_e].re = V[dynamic_simulation_B.i_e].re *
+          dynamic_simulation_B.d = V[dynamic_simulation_B.k_m].re;
+          V[dynamic_simulation_B.i_m].re = V[dynamic_simulation_B.i_m].re *
             dynamic_simulation_B.mul - (V[dynamic_simulation_B.k_m].re *
             dynamic_simulation_B.s.re + V[dynamic_simulation_B.k_m].im *
             dynamic_simulation_B.s.im);
-          V[dynamic_simulation_B.i_e].im = V[dynamic_simulation_B.i_e].im *
+          V[dynamic_simulation_B.i_m].im = V[dynamic_simulation_B.i_m].im *
             dynamic_simulation_B.mul - (V[dynamic_simulation_B.k_m].im *
             dynamic_simulation_B.s.re - dynamic_simulation_B.s.im *
-            dynamic_simulation_B.d_p);
+            dynamic_simulation_B.d);
           V[dynamic_simulation_B.k_m].re = dynamic_simulation_B.atmp_re;
           V[dynamic_simulation_B.k_m].im = dynamic_simulation_B.atmp_im;
-          dynamic_simulation_B.nzcount = dynamic_simulation_B.i_e + 1;
+          dynamic_simulation_B.nzcount = dynamic_simulation_B.i_m + 1;
           dynamic_simulation_B.jj = dynamic_simulation_B.k_m + 1;
           dynamic_simulation_B.atmp_re = (V[dynamic_simulation_B.nzcount].re *
             dynamic_simulation_B.s.re - V[dynamic_simulation_B.nzcount].im *
@@ -6255,7 +6253,7 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
             dynamic_simulation_B.s.re + V[dynamic_simulation_B.nzcount].re *
             dynamic_simulation_B.s.im) + V[dynamic_simulation_B.jj].im *
             dynamic_simulation_B.mul;
-          dynamic_simulation_B.d_p = V[dynamic_simulation_B.jj].re;
+          dynamic_simulation_B.d = V[dynamic_simulation_B.jj].re;
           V[dynamic_simulation_B.nzcount].re = V[dynamic_simulation_B.nzcount].
             re * dynamic_simulation_B.mul - (V[dynamic_simulation_B.jj].re *
             dynamic_simulation_B.s.re + V[dynamic_simulation_B.jj].im *
@@ -6263,10 +6261,10 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
           V[dynamic_simulation_B.nzcount].im = V[dynamic_simulation_B.nzcount].
             im * dynamic_simulation_B.mul - (V[dynamic_simulation_B.jj].im *
             dynamic_simulation_B.s.re - dynamic_simulation_B.s.im *
-            dynamic_simulation_B.d_p);
+            dynamic_simulation_B.d);
           V[dynamic_simulation_B.jj].re = dynamic_simulation_B.atmp_re;
           V[dynamic_simulation_B.jj].im = dynamic_simulation_B.atmp_im;
-          dynamic_simulation_B.nzcount = dynamic_simulation_B.i_e + 2;
+          dynamic_simulation_B.nzcount = dynamic_simulation_B.i_m + 2;
           dynamic_simulation_B.jj = dynamic_simulation_B.k_m + 2;
           dynamic_simulation_B.atmp_re = (V[dynamic_simulation_B.nzcount].re *
             dynamic_simulation_B.s.re - V[dynamic_simulation_B.nzcount].im *
@@ -6276,7 +6274,7 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
             dynamic_simulation_B.s.re + V[dynamic_simulation_B.nzcount].re *
             dynamic_simulation_B.s.im) + V[dynamic_simulation_B.jj].im *
             dynamic_simulation_B.mul;
-          dynamic_simulation_B.d_p = V[dynamic_simulation_B.jj].re;
+          dynamic_simulation_B.d = V[dynamic_simulation_B.jj].re;
           V[dynamic_simulation_B.nzcount].re = V[dynamic_simulation_B.nzcount].
             re * dynamic_simulation_B.mul - (V[dynamic_simulation_B.jj].re *
             dynamic_simulation_B.s.re + V[dynamic_simulation_B.jj].im *
@@ -6284,28 +6282,28 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
           V[dynamic_simulation_B.nzcount].im = V[dynamic_simulation_B.nzcount].
             im * dynamic_simulation_B.mul - (V[dynamic_simulation_B.jj].im *
             dynamic_simulation_B.s.re - dynamic_simulation_B.s.im *
-            dynamic_simulation_B.d_p);
+            dynamic_simulation_B.d);
           V[dynamic_simulation_B.jj].re = dynamic_simulation_B.atmp_re;
           V[dynamic_simulation_B.jj].im = dynamic_simulation_B.atmp_im;
-          dynamic_simulation_B.i_e += 3;
+          dynamic_simulation_B.i_m += 3;
           dynamic_simulation_B.k_m += 3;
-          dynamic_simulation_B.atmp_re = (V[dynamic_simulation_B.i_e].re *
-            dynamic_simulation_B.s.re - V[dynamic_simulation_B.i_e].im *
+          dynamic_simulation_B.atmp_re = (V[dynamic_simulation_B.i_m].re *
+            dynamic_simulation_B.s.re - V[dynamic_simulation_B.i_m].im *
             dynamic_simulation_B.s.im) + V[dynamic_simulation_B.k_m].re *
             dynamic_simulation_B.mul;
-          dynamic_simulation_B.atmp_im = (V[dynamic_simulation_B.i_e].im *
-            dynamic_simulation_B.s.re + V[dynamic_simulation_B.i_e].re *
+          dynamic_simulation_B.atmp_im = (V[dynamic_simulation_B.i_m].im *
+            dynamic_simulation_B.s.re + V[dynamic_simulation_B.i_m].re *
             dynamic_simulation_B.s.im) + V[dynamic_simulation_B.k_m].im *
             dynamic_simulation_B.mul;
-          dynamic_simulation_B.d_p = V[dynamic_simulation_B.k_m].re;
-          V[dynamic_simulation_B.i_e].re = V[dynamic_simulation_B.i_e].re *
+          dynamic_simulation_B.d = V[dynamic_simulation_B.k_m].re;
+          V[dynamic_simulation_B.i_m].re = V[dynamic_simulation_B.i_m].re *
             dynamic_simulation_B.mul - (V[dynamic_simulation_B.k_m].re *
             dynamic_simulation_B.s.re + V[dynamic_simulation_B.k_m].im *
             dynamic_simulation_B.s.im);
-          V[dynamic_simulation_B.i_e].im = V[dynamic_simulation_B.i_e].im *
+          V[dynamic_simulation_B.i_m].im = V[dynamic_simulation_B.i_m].im *
             dynamic_simulation_B.mul - (V[dynamic_simulation_B.k_m].im *
             dynamic_simulation_B.s.re - dynamic_simulation_B.s.im *
-            dynamic_simulation_B.d_p);
+            dynamic_simulation_B.d);
           V[dynamic_simulation_B.k_m].re = dynamic_simulation_B.atmp_re;
           V[dynamic_simulation_B.k_m].im = dynamic_simulation_B.atmp_im;
           dynamic_simulation_B.ii--;
@@ -6396,9 +6394,9 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
           dynamic_simulation_B.atmp_re = dynamic_simulation_B.atmp_im;
         }
 
-        dynamic_simulation_B.i_e = dynamic_simulation_B.c_i + 2;
-        dynamic_simulation_B.atmp_im = fabs(V[dynamic_simulation_B.i_e].re) +
-          fabs(V[dynamic_simulation_B.i_e].im);
+        dynamic_simulation_B.i_m = dynamic_simulation_B.c_i + 2;
+        dynamic_simulation_B.atmp_im = fabs(V[dynamic_simulation_B.i_m].re) +
+          fabs(V[dynamic_simulation_B.i_m].im);
         if (dynamic_simulation_B.atmp_im > dynamic_simulation_B.atmp_re) {
           dynamic_simulation_B.atmp_re = dynamic_simulation_B.atmp_im;
         }
@@ -6416,8 +6414,8 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
           V[dynamic_simulation_B.c_i].im *= dynamic_simulation_B.atmp_re;
           V[dynamic_simulation_B.k_m].re *= dynamic_simulation_B.atmp_re;
           V[dynamic_simulation_B.k_m].im *= dynamic_simulation_B.atmp_re;
-          V[dynamic_simulation_B.i_e].re *= dynamic_simulation_B.atmp_re;
-          V[dynamic_simulation_B.i_e].im *= dynamic_simulation_B.atmp_re;
+          V[dynamic_simulation_B.i_m].re *= dynamic_simulation_B.atmp_re;
+          V[dynamic_simulation_B.i_m].im *= dynamic_simulation_B.atmp_re;
           V[dynamic_simulation_B.jcol].re *= dynamic_simulation_B.atmp_re;
           V[dynamic_simulation_B.jcol].im *= dynamic_simulation_B.atmp_re;
         }
@@ -6459,7 +6457,7 @@ static void dynamic_simulation_xzggev(creal_T A[16], int32_T *info, creal_T
   }
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static real_T dynamic_simulation_xnrm2(int32_T n, const real_T x[16], int32_T
   ix0)
 {
@@ -6493,7 +6491,7 @@ static real_T dynamic_simulation_xnrm2(int32_T n, const real_T x[16], int32_T
   return y;
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_xzlarf(int32_T m, int32_T n, int32_T iv0, real_T
   tau, real_T C[16], int32_T ic0, real_T work[4])
 {
@@ -6550,18 +6548,18 @@ static void dynamic_simulation_xzlarf(int32_T m, int32_T n, int32_T iv0, real_T
       dynamic_simulation_B.iac_d = ic0;
       while (dynamic_simulation_B.iac_d <= dynamic_simulation_B.jy_c) {
         dynamic_simulation_B.ix_p = iv0;
-        dynamic_simulation_B.c_e = 0.0;
+        dynamic_simulation_B.c = 0.0;
         dynamic_simulation_B.d_g = (dynamic_simulation_B.iac_d +
           dynamic_simulation_B.lastv) - 1;
         dynamic_simulation_B.b_ia_c = dynamic_simulation_B.iac_d;
         while (dynamic_simulation_B.b_ia_c <= dynamic_simulation_B.d_g) {
-          dynamic_simulation_B.c_e += C[dynamic_simulation_B.b_ia_c - 1] *
+          dynamic_simulation_B.c += C[dynamic_simulation_B.b_ia_c - 1] *
             C[dynamic_simulation_B.ix_p - 1];
           dynamic_simulation_B.ix_p++;
           dynamic_simulation_B.b_ia_c++;
         }
 
-        work[dynamic_simulation_B.coltop] += dynamic_simulation_B.c_e;
+        work[dynamic_simulation_B.coltop] += dynamic_simulation_B.c;
         dynamic_simulation_B.coltop++;
         dynamic_simulation_B.iac_d += 4;
       }
@@ -6573,14 +6571,14 @@ static void dynamic_simulation_xzlarf(int32_T m, int32_T n, int32_T iv0, real_T
       dynamic_simulation_B.iac_d = 0;
       while (dynamic_simulation_B.iac_d <= dynamic_simulation_B.lastc_m) {
         if (work[dynamic_simulation_B.jy_c] != 0.0) {
-          dynamic_simulation_B.c_e = work[dynamic_simulation_B.jy_c] * -tau;
+          dynamic_simulation_B.c = work[dynamic_simulation_B.jy_c] * -tau;
           dynamic_simulation_B.ix_p = iv0;
           dynamic_simulation_B.d_g = dynamic_simulation_B.lastv +
             dynamic_simulation_B.coltop;
           dynamic_simulation_B.b_ia_c = dynamic_simulation_B.coltop;
           while (dynamic_simulation_B.b_ia_c + 1 <= dynamic_simulation_B.d_g) {
             C[dynamic_simulation_B.b_ia_c] += C[dynamic_simulation_B.ix_p - 1] *
-              dynamic_simulation_B.c_e;
+              dynamic_simulation_B.c;
             dynamic_simulation_B.ix_p++;
             dynamic_simulation_B.b_ia_c++;
           }
@@ -6594,15 +6592,15 @@ static void dynamic_simulation_xzlarf(int32_T m, int32_T n, int32_T iv0, real_T
   }
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
 {
   int32_T exitg1;
   boolean_T exitg2;
-  dynamic_simulation_B.work_j[0] = 0.0;
-  dynamic_simulation_B.work_j[1] = 0.0;
-  dynamic_simulation_B.work_j[2] = 0.0;
-  dynamic_simulation_B.work_j[3] = 0.0;
+  dynamic_simulation_B.work_o[0] = 0.0;
+  dynamic_simulation_B.work_o[1] = 0.0;
+  dynamic_simulation_B.work_o[2] = 0.0;
+  dynamic_simulation_B.work_o[3] = 0.0;
   dynamic_simulation_B.alpha1 = a[1];
   tau[0] = 0.0;
   dynamic_simulation_B.xnorm = dynamic_simulation_xnrm2(2, a, 3);
@@ -6706,7 +6704,7 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
     if (dynamic_simulation_B.lastc != 0) {
       dynamic_simulation_B.rowleft = 0;
       while (dynamic_simulation_B.rowleft <= dynamic_simulation_B.lastc - 1) {
-        dynamic_simulation_B.work_j[dynamic_simulation_B.rowleft] = 0.0;
+        dynamic_simulation_B.work_o[dynamic_simulation_B.rowleft] = 0.0;
         dynamic_simulation_B.rowleft++;
       }
 
@@ -6715,11 +6713,11 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
       dynamic_simulation_B.iac = 5;
       while (dynamic_simulation_B.iac <= dynamic_simulation_B.jy) {
         dynamic_simulation_B.b_ix = 0;
-        dynamic_simulation_B.g_k = (dynamic_simulation_B.iac +
+        dynamic_simulation_B.g = (dynamic_simulation_B.iac +
           dynamic_simulation_B.lastc) - 1;
         dynamic_simulation_B.b_ia = dynamic_simulation_B.iac;
-        while (dynamic_simulation_B.b_ia <= dynamic_simulation_B.g_k) {
-          dynamic_simulation_B.work_j[dynamic_simulation_B.b_ix] +=
+        while (dynamic_simulation_B.b_ia <= dynamic_simulation_B.g) {
+          dynamic_simulation_B.work_o[dynamic_simulation_B.b_ix] +=
             a[dynamic_simulation_B.b_ia - 1] * a[dynamic_simulation_B.rowleft];
           dynamic_simulation_B.b_ix++;
           dynamic_simulation_B.b_ia++;
@@ -6738,12 +6736,12 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
         if (a[dynamic_simulation_B.jy] != 0.0) {
           dynamic_simulation_B.xnorm = a[dynamic_simulation_B.jy] * -tau[0];
           dynamic_simulation_B.b_ix = 0;
-          dynamic_simulation_B.g_k = dynamic_simulation_B.lastc +
+          dynamic_simulation_B.g = dynamic_simulation_B.lastc +
             dynamic_simulation_B.rowleft;
           dynamic_simulation_B.b_ia = dynamic_simulation_B.rowleft;
-          while (dynamic_simulation_B.b_ia + 1 <= dynamic_simulation_B.g_k) {
+          while (dynamic_simulation_B.b_ia + 1 <= dynamic_simulation_B.g) {
             a[dynamic_simulation_B.b_ia] +=
-              dynamic_simulation_B.work_j[dynamic_simulation_B.b_ix] *
+              dynamic_simulation_B.work_o[dynamic_simulation_B.b_ix] *
               dynamic_simulation_B.xnorm;
             dynamic_simulation_B.b_ix++;
             dynamic_simulation_B.b_ia++;
@@ -6757,7 +6755,7 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
     }
   }
 
-  dynamic_simulation_xzlarf(3, 3, 2, tau[0], a, 6, dynamic_simulation_B.work_j);
+  dynamic_simulation_xzlarf(3, 3, 2, tau[0], a, 6, dynamic_simulation_B.work_o);
   a[1] = dynamic_simulation_B.alpha1;
   dynamic_simulation_B.alpha1 = a[6];
   tau[1] = 0.0;
@@ -6846,7 +6844,7 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
     if (dynamic_simulation_B.lastc != 0) {
       dynamic_simulation_B.rowleft = 0;
       while (dynamic_simulation_B.rowleft <= dynamic_simulation_B.lastc - 1) {
-        dynamic_simulation_B.work_j[dynamic_simulation_B.rowleft] = 0.0;
+        dynamic_simulation_B.work_o[dynamic_simulation_B.rowleft] = 0.0;
         dynamic_simulation_B.rowleft++;
       }
 
@@ -6855,11 +6853,11 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
       dynamic_simulation_B.iac = 9;
       while (dynamic_simulation_B.iac <= dynamic_simulation_B.jy) {
         dynamic_simulation_B.b_ix = 0;
-        dynamic_simulation_B.g_k = (dynamic_simulation_B.iac +
+        dynamic_simulation_B.g = (dynamic_simulation_B.iac +
           dynamic_simulation_B.lastc) - 1;
         dynamic_simulation_B.b_ia = dynamic_simulation_B.iac;
-        while (dynamic_simulation_B.b_ia <= dynamic_simulation_B.g_k) {
-          dynamic_simulation_B.work_j[dynamic_simulation_B.b_ix] +=
+        while (dynamic_simulation_B.b_ia <= dynamic_simulation_B.g) {
+          dynamic_simulation_B.work_o[dynamic_simulation_B.b_ix] +=
             a[dynamic_simulation_B.b_ia - 1] * a[dynamic_simulation_B.rowleft];
           dynamic_simulation_B.b_ix++;
           dynamic_simulation_B.b_ia++;
@@ -6878,12 +6876,12 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
         if (a[dynamic_simulation_B.jy] != 0.0) {
           dynamic_simulation_B.xnorm = a[dynamic_simulation_B.jy] * -tau[1];
           dynamic_simulation_B.b_ix = 0;
-          dynamic_simulation_B.g_k = dynamic_simulation_B.lastc +
+          dynamic_simulation_B.g = dynamic_simulation_B.lastc +
             dynamic_simulation_B.rowleft;
           dynamic_simulation_B.b_ia = dynamic_simulation_B.rowleft;
-          while (dynamic_simulation_B.b_ia + 1 <= dynamic_simulation_B.g_k) {
+          while (dynamic_simulation_B.b_ia + 1 <= dynamic_simulation_B.g) {
             a[dynamic_simulation_B.b_ia] +=
-              dynamic_simulation_B.work_j[dynamic_simulation_B.b_ix] *
+              dynamic_simulation_B.work_o[dynamic_simulation_B.b_ix] *
               dynamic_simulation_B.xnorm;
             dynamic_simulation_B.b_ix++;
             dynamic_simulation_B.b_ia++;
@@ -6897,7 +6895,7 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
     }
   }
 
-  dynamic_simulation_xzlarf(2, 2, 7, tau[1], a, 11, dynamic_simulation_B.work_j);
+  dynamic_simulation_xzlarf(2, 2, 7, tau[1], a, 11, dynamic_simulation_B.work_o);
   a[6] = dynamic_simulation_B.alpha1;
   dynamic_simulation_B.alpha1 = a[11];
   tau[2] = 0.0;
@@ -6981,7 +6979,7 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
     if (dynamic_simulation_B.lastc != 0) {
       dynamic_simulation_B.rowleft = 0;
       while (dynamic_simulation_B.rowleft <= dynamic_simulation_B.lastc - 1) {
-        dynamic_simulation_B.work_j[dynamic_simulation_B.rowleft] = 0.0;
+        dynamic_simulation_B.work_o[dynamic_simulation_B.rowleft] = 0.0;
         dynamic_simulation_B.rowleft++;
       }
 
@@ -6990,11 +6988,11 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
       dynamic_simulation_B.iac = 13;
       while (dynamic_simulation_B.iac <= dynamic_simulation_B.jy) {
         dynamic_simulation_B.b_ix = 0;
-        dynamic_simulation_B.g_k = (dynamic_simulation_B.iac +
+        dynamic_simulation_B.g = (dynamic_simulation_B.iac +
           dynamic_simulation_B.lastc) - 1;
         dynamic_simulation_B.b_ia = dynamic_simulation_B.iac;
-        while (dynamic_simulation_B.b_ia <= dynamic_simulation_B.g_k) {
-          dynamic_simulation_B.work_j[dynamic_simulation_B.b_ix] +=
+        while (dynamic_simulation_B.b_ia <= dynamic_simulation_B.g) {
+          dynamic_simulation_B.work_o[dynamic_simulation_B.b_ix] +=
             a[dynamic_simulation_B.b_ia - 1] * a[dynamic_simulation_B.rowleft];
           dynamic_simulation_B.b_ix++;
           dynamic_simulation_B.b_ia++;
@@ -7013,12 +7011,12 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
         if (a[dynamic_simulation_B.jy] != 0.0) {
           dynamic_simulation_B.xnorm = a[dynamic_simulation_B.jy] * -tau[2];
           dynamic_simulation_B.b_ix = 0;
-          dynamic_simulation_B.g_k = dynamic_simulation_B.lastc +
+          dynamic_simulation_B.g = dynamic_simulation_B.lastc +
             dynamic_simulation_B.rowleft;
           dynamic_simulation_B.b_ia = dynamic_simulation_B.rowleft;
-          while (dynamic_simulation_B.b_ia + 1 <= dynamic_simulation_B.g_k) {
+          while (dynamic_simulation_B.b_ia + 1 <= dynamic_simulation_B.g) {
             a[dynamic_simulation_B.b_ia] +=
-              dynamic_simulation_B.work_j[dynamic_simulation_B.b_ix] *
+              dynamic_simulation_B.work_o[dynamic_simulation_B.b_ix] *
               dynamic_simulation_B.xnorm;
             dynamic_simulation_B.b_ix++;
             dynamic_simulation_B.b_ia++;
@@ -7032,11 +7030,11 @@ static void dynamic_simulation_xgehrd(real_T a[16], real_T tau[3])
     }
   }
 
-  dynamic_simulation_xzlarf(1, 1, 12, tau[2], a, 16, dynamic_simulation_B.work_j);
+  dynamic_simulation_xzlarf(1, 1, 12, tau[2], a, 16, dynamic_simulation_B.work_o);
   a[11] = dynamic_simulation_B.alpha1;
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static real_T dynamic_simulation_xnrm2_a(int32_T n, const real_T x[3])
 {
   real_T y;
@@ -7075,7 +7073,7 @@ static real_T dynamic_simulation_xnrm2_a(int32_T n, const real_T x[3])
   return y;
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static real_T dynamic_simulation_xzlarfg(int32_T n, real_T *alpha1, real_T x[3])
 {
   real_T tau;
@@ -7135,7 +7133,7 @@ static real_T dynamic_simulation_xzlarfg(int32_T n, real_T *alpha1, real_T x[3])
   return tau;
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_xdlanv2(real_T *a, real_T *b, real_T *c, real_T
   *d, real_T *rt1r, real_T *rt1i, real_T *rt2r, real_T *rt2i, real_T *cs, real_T
   *sn)
@@ -7152,12 +7150,12 @@ static void dynamic_simulation_xdlanv2(real_T *a, real_T *b, real_T *c, real_T
     *b = -*c;
     *c = 0.0;
   } else {
-    dynamic_simulation_B.tau_p = *a - *d;
-    if ((dynamic_simulation_B.tau_p == 0.0) && ((*b < 0.0) != (*c < 0.0))) {
+    dynamic_simulation_B.tau_e = *a - *d;
+    if ((dynamic_simulation_B.tau_e == 0.0) && ((*b < 0.0) != (*c < 0.0))) {
       *cs = 1.0;
       *sn = 0.0;
     } else {
-      dynamic_simulation_B.p = 0.5 * dynamic_simulation_B.tau_p;
+      dynamic_simulation_B.p = 0.5 * dynamic_simulation_B.tau_e;
       dynamic_simulation_B.bcmis = fabs(*b);
       dynamic_simulation_B.z = fabs(*c);
       dynamic_simulation_B.b_oi = rtIsNaN(dynamic_simulation_B.z);
@@ -7174,72 +7172,72 @@ static void dynamic_simulation_xdlanv2(real_T *a, real_T *b, real_T *c, real_T
       }
 
       if (!(*b < 0.0)) {
-        dynamic_simulation_B.b_cq = 1;
+        dynamic_simulation_B.b_cj = 1;
       } else {
-        dynamic_simulation_B.b_cq = -1;
+        dynamic_simulation_B.b_cj = -1;
       }
 
       if (!(*c < 0.0)) {
-        dynamic_simulation_B.c_c = 1;
+        dynamic_simulation_B.c_m1 = 1;
       } else {
-        dynamic_simulation_B.c_c = -1;
+        dynamic_simulation_B.c_m1 = -1;
       }
 
       dynamic_simulation_B.bcmis = dynamic_simulation_B.z * static_cast<real_T>
-        (dynamic_simulation_B.b_cq) * static_cast<real_T>
-        (dynamic_simulation_B.c_c);
-      dynamic_simulation_B.scale_p = fabs(dynamic_simulation_B.p);
-      if ((!(dynamic_simulation_B.scale_p > dynamic_simulation_B.bcmax)) &&
+        (dynamic_simulation_B.b_cj) * static_cast<real_T>
+        (dynamic_simulation_B.c_m1);
+      dynamic_simulation_B.scale_j = fabs(dynamic_simulation_B.p);
+      if ((!(dynamic_simulation_B.scale_j > dynamic_simulation_B.bcmax)) &&
           (!rtIsNaN(dynamic_simulation_B.bcmax))) {
-        dynamic_simulation_B.scale_p = dynamic_simulation_B.bcmax;
+        dynamic_simulation_B.scale_j = dynamic_simulation_B.bcmax;
       }
 
       dynamic_simulation_B.z = dynamic_simulation_B.p /
-        dynamic_simulation_B.scale_p * dynamic_simulation_B.p +
-        dynamic_simulation_B.bcmax / dynamic_simulation_B.scale_p *
+        dynamic_simulation_B.scale_j * dynamic_simulation_B.p +
+        dynamic_simulation_B.bcmax / dynamic_simulation_B.scale_j *
         dynamic_simulation_B.bcmis;
       if (dynamic_simulation_B.z >= 8.8817841970012523E-16) {
         if (!(dynamic_simulation_B.p < 0.0)) {
-          dynamic_simulation_B.tau_p = sqrt(dynamic_simulation_B.scale_p) * sqrt
+          dynamic_simulation_B.tau_e = sqrt(dynamic_simulation_B.scale_j) * sqrt
             (dynamic_simulation_B.z);
         } else {
-          dynamic_simulation_B.tau_p = -(sqrt(dynamic_simulation_B.scale_p) *
+          dynamic_simulation_B.tau_e = -(sqrt(dynamic_simulation_B.scale_j) *
             sqrt(dynamic_simulation_B.z));
         }
 
         dynamic_simulation_B.z = dynamic_simulation_B.p +
-          dynamic_simulation_B.tau_p;
+          dynamic_simulation_B.tau_e;
         *a = *d + dynamic_simulation_B.z;
         *d -= dynamic_simulation_B.bcmax / dynamic_simulation_B.z *
           dynamic_simulation_B.bcmis;
-        dynamic_simulation_B.tau_p = dynamic_simulatio_rt_hypotd_snf(*c,
+        dynamic_simulation_B.tau_e = dynamic_simulatio_rt_hypotd_snf(*c,
           dynamic_simulation_B.z);
-        *cs = dynamic_simulation_B.z / dynamic_simulation_B.tau_p;
-        *sn = *c / dynamic_simulation_B.tau_p;
+        *cs = dynamic_simulation_B.z / dynamic_simulation_B.tau_e;
+        *sn = *c / dynamic_simulation_B.tau_e;
         *b -= *c;
         *c = 0.0;
       } else {
         dynamic_simulation_B.bcmax = *b + *c;
-        dynamic_simulation_B.tau_p = dynamic_simulatio_rt_hypotd_snf
-          (dynamic_simulation_B.bcmax, dynamic_simulation_B.tau_p);
+        dynamic_simulation_B.tau_e = dynamic_simulatio_rt_hypotd_snf
+          (dynamic_simulation_B.bcmax, dynamic_simulation_B.tau_e);
         *cs = sqrt((fabs(dynamic_simulation_B.bcmax) /
-                    dynamic_simulation_B.tau_p + 1.0) * 0.5);
+                    dynamic_simulation_B.tau_e + 1.0) * 0.5);
         if (!(dynamic_simulation_B.bcmax < 0.0)) {
-          dynamic_simulation_B.b_cq = 1;
+          dynamic_simulation_B.b_cj = 1;
         } else {
-          dynamic_simulation_B.b_cq = -1;
+          dynamic_simulation_B.b_cj = -1;
         }
 
-        *sn = -(dynamic_simulation_B.p / (dynamic_simulation_B.tau_p * *cs)) *
-          static_cast<real_T>(dynamic_simulation_B.b_cq);
+        *sn = -(dynamic_simulation_B.p / (dynamic_simulation_B.tau_e * *cs)) *
+          static_cast<real_T>(dynamic_simulation_B.b_cj);
         dynamic_simulation_B.p = *a * *cs + *b * *sn;
-        dynamic_simulation_B.tau_p = -*a * *sn + *b * *cs;
+        dynamic_simulation_B.tau_e = -*a * *sn + *b * *cs;
         dynamic_simulation_B.bcmax = *c * *cs + *d * *sn;
         dynamic_simulation_B.bcmis = -*c * *sn + *d * *cs;
-        *b = dynamic_simulation_B.tau_p * *cs + dynamic_simulation_B.bcmis * *sn;
+        *b = dynamic_simulation_B.tau_e * *cs + dynamic_simulation_B.bcmis * *sn;
         *c = -dynamic_simulation_B.p * *sn + dynamic_simulation_B.bcmax * *cs;
         dynamic_simulation_B.bcmax = ((dynamic_simulation_B.p * *cs +
-          dynamic_simulation_B.bcmax * *sn) + (-dynamic_simulation_B.tau_p * *sn
+          dynamic_simulation_B.bcmax * *sn) + (-dynamic_simulation_B.tau_e * *sn
           + dynamic_simulation_B.bcmis * *cs)) * 0.5;
         *a = dynamic_simulation_B.bcmax;
         *d = dynamic_simulation_B.bcmax;
@@ -7256,17 +7254,17 @@ static void dynamic_simulation_xdlanv2(real_T *a, real_T *b, real_T *c, real_T
                   dynamic_simulation_B.bcmis);
               }
 
-              dynamic_simulation_B.tau_p = 1.0 / sqrt(fabs(*b + *c));
+              dynamic_simulation_B.tau_e = 1.0 / sqrt(fabs(*b + *c));
               *a = dynamic_simulation_B.bcmax + dynamic_simulation_B.p;
               *d = dynamic_simulation_B.bcmax - dynamic_simulation_B.p;
               *b -= *c;
               *c = 0.0;
               dynamic_simulation_B.p = dynamic_simulation_B.z *
-                dynamic_simulation_B.tau_p;
-              dynamic_simulation_B.tau_p *= dynamic_simulation_B.bcmis;
+                dynamic_simulation_B.tau_e;
+              dynamic_simulation_B.tau_e *= dynamic_simulation_B.bcmis;
               dynamic_simulation_B.bcmax = *cs * dynamic_simulation_B.p - *sn *
-                dynamic_simulation_B.tau_p;
-              *sn = *cs * dynamic_simulation_B.tau_p + *sn *
+                dynamic_simulation_B.tau_e;
+              *sn = *cs * dynamic_simulation_B.tau_e + *sn *
                 dynamic_simulation_B.p;
               *cs = dynamic_simulation_B.bcmax;
             }
@@ -7293,7 +7291,7 @@ static void dynamic_simulation_xdlanv2(real_T *a, real_T *b, real_T *c, real_T
   }
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_xrot(int32_T n, real_T x[16], int32_T ix0,
   int32_T iy0, real_T c, real_T s)
 {
@@ -7312,7 +7310,7 @@ static void dynamic_simulation_xrot(int32_T n, real_T x[16], int32_T ix0,
   }
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_xrot_l(int32_T n, real_T x[16], int32_T ix0,
   int32_T iy0, real_T c, real_T s)
 {
@@ -7333,7 +7331,7 @@ static void dynamic_simulation_xrot_l(int32_T n, real_T x[16], int32_T ix0,
   }
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
 {
   int32_T info;
@@ -7341,51 +7339,51 @@ static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
   boolean_T exitg2;
   boolean_T exitg3;
   info = 0;
-  dynamic_simulation_B.v_nv[0] = 0.0;
-  dynamic_simulation_B.v_nv[1] = 0.0;
-  dynamic_simulation_B.v_nv[2] = 0.0;
+  dynamic_simulation_B.v_j[0] = 0.0;
+  dynamic_simulation_B.v_j[1] = 0.0;
+  dynamic_simulation_B.v_j[2] = 0.0;
   h[2] = 0.0;
   h[3] = 0.0;
   h[7] = 0.0;
-  dynamic_simulation_B.i_n = 3;
+  dynamic_simulation_B.i_k = 3;
   exitg1 = false;
-  while ((!exitg1) && (dynamic_simulation_B.i_n + 1 >= 1)) {
+  while ((!exitg1) && (dynamic_simulation_B.i_k + 1 >= 1)) {
     dynamic_simulation_B.L = 1;
     dynamic_simulation_B.goto150 = false;
     dynamic_simulation_B.ix = 0;
     exitg2 = false;
     while ((!exitg2) && (dynamic_simulation_B.ix < 301)) {
-      dynamic_simulation_B.k_k = dynamic_simulation_B.i_n;
+      dynamic_simulation_B.k_n = dynamic_simulation_B.i_k;
       exitg3 = false;
-      while ((!exitg3) && (dynamic_simulation_B.k_k + 1 > dynamic_simulation_B.L))
+      while ((!exitg3) && (dynamic_simulation_B.k_n + 1 > dynamic_simulation_B.L))
       {
-        dynamic_simulation_B.s_tmp = ((dynamic_simulation_B.k_k - 1) << 2) +
-          dynamic_simulation_B.k_k;
+        dynamic_simulation_B.s_tmp = ((dynamic_simulation_B.k_n - 1) << 2) +
+          dynamic_simulation_B.k_n;
         dynamic_simulation_B.htmp2 = fabs(h[dynamic_simulation_B.s_tmp]);
         if (dynamic_simulation_B.htmp2 <= 4.0083367200179456E-292) {
           exitg3 = true;
         } else {
-          dynamic_simulation_B.m_n = (dynamic_simulation_B.k_k << 2) +
-            dynamic_simulation_B.k_k;
+          dynamic_simulation_B.m_o = (dynamic_simulation_B.k_n << 2) +
+            dynamic_simulation_B.k_n;
           dynamic_simulation_B.nr = dynamic_simulation_B.s_tmp - 1;
           dynamic_simulation_B.tst = fabs(h[dynamic_simulation_B.nr]) + fabs
-            (h[dynamic_simulation_B.m_n]);
+            (h[dynamic_simulation_B.m_o]);
           if (dynamic_simulation_B.tst == 0.0) {
-            if (dynamic_simulation_B.k_k - 1 >= 1) {
-              dynamic_simulation_B.tst = fabs(h[(((dynamic_simulation_B.k_k - 2)
-                << 2) + dynamic_simulation_B.k_k) - 1]);
+            if (dynamic_simulation_B.k_n - 1 >= 1) {
+              dynamic_simulation_B.tst = fabs(h[(((dynamic_simulation_B.k_n - 2)
+                << 2) + dynamic_simulation_B.k_n) - 1]);
             }
 
-            if (dynamic_simulation_B.k_k + 2 <= 4) {
-              dynamic_simulation_B.tst += fabs(h[((dynamic_simulation_B.k_k << 2)
-                + dynamic_simulation_B.k_k) + 1]);
+            if (dynamic_simulation_B.k_n + 2 <= 4) {
+              dynamic_simulation_B.tst += fabs(h[((dynamic_simulation_B.k_n << 2)
+                + dynamic_simulation_B.k_n) + 1]);
             }
           }
 
           if (dynamic_simulation_B.htmp2 <= 2.2204460492503131E-16 *
               dynamic_simulation_B.tst) {
             dynamic_simulation_B.htmp1 = fabs(h[dynamic_simulation_B.s_tmp]);
-            dynamic_simulation_B.htmp2 = fabs(h[dynamic_simulation_B.m_n - 1]);
+            dynamic_simulation_B.htmp2 = fabs(h[dynamic_simulation_B.m_o - 1]);
             if (dynamic_simulation_B.htmp1 > dynamic_simulation_B.htmp2) {
               dynamic_simulation_B.tst = dynamic_simulation_B.htmp1;
               dynamic_simulation_B.ba = dynamic_simulation_B.htmp2;
@@ -7394,9 +7392,9 @@ static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
               dynamic_simulation_B.ba = dynamic_simulation_B.htmp1;
             }
 
-            dynamic_simulation_B.htmp1 = fabs(h[dynamic_simulation_B.m_n]);
+            dynamic_simulation_B.htmp1 = fabs(h[dynamic_simulation_B.m_o]);
             dynamic_simulation_B.htmp2 = fabs(h[dynamic_simulation_B.nr] -
-              h[dynamic_simulation_B.m_n]);
+              h[dynamic_simulation_B.m_o]);
             if (dynamic_simulation_B.htmp1 > dynamic_simulation_B.htmp2) {
               dynamic_simulation_B.aa = dynamic_simulation_B.htmp1;
               dynamic_simulation_B.htmp1 = dynamic_simulation_B.htmp2;
@@ -7418,30 +7416,30 @@ static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
                 dynamic_simulation_B.ba <= dynamic_simulation_B.htmp1) {
               exitg3 = true;
             } else {
-              dynamic_simulation_B.k_k--;
+              dynamic_simulation_B.k_n--;
             }
           } else {
-            dynamic_simulation_B.k_k--;
+            dynamic_simulation_B.k_n--;
           }
         }
       }
 
-      dynamic_simulation_B.L = dynamic_simulation_B.k_k + 1;
-      if (dynamic_simulation_B.k_k + 1 > 1) {
-        h[dynamic_simulation_B.k_k + ((dynamic_simulation_B.k_k - 1) << 2)] =
+      dynamic_simulation_B.L = dynamic_simulation_B.k_n + 1;
+      if (dynamic_simulation_B.k_n + 1 > 1) {
+        h[dynamic_simulation_B.k_n + ((dynamic_simulation_B.k_n - 1) << 2)] =
           0.0;
       }
 
-      if (dynamic_simulation_B.k_k + 1 >= dynamic_simulation_B.i_n) {
+      if (dynamic_simulation_B.k_n + 1 >= dynamic_simulation_B.i_k) {
         dynamic_simulation_B.goto150 = true;
         exitg2 = true;
       } else {
         switch (dynamic_simulation_B.ix) {
          case 10:
-          dynamic_simulation_B.s_tmp = (dynamic_simulation_B.k_k << 2) +
-            dynamic_simulation_B.k_k;
-          dynamic_simulation_B.htmp2 = fabs(h[(((dynamic_simulation_B.k_k + 1) <<
-            2) + dynamic_simulation_B.k_k) + 2]) + fabs
+          dynamic_simulation_B.s_tmp = (dynamic_simulation_B.k_n << 2) +
+            dynamic_simulation_B.k_n;
+          dynamic_simulation_B.htmp2 = fabs(h[(((dynamic_simulation_B.k_n + 1) <<
+            2) + dynamic_simulation_B.k_n) + 2]) + fabs
             (h[dynamic_simulation_B.s_tmp + 1]);
           dynamic_simulation_B.ba = h[dynamic_simulation_B.s_tmp] + 0.75 *
             dynamic_simulation_B.htmp2;
@@ -7451,25 +7449,25 @@ static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
           break;
 
          case 20:
-          dynamic_simulation_B.htmp2 = fabs(h[(((dynamic_simulation_B.i_n - 2) <<
-            2) + dynamic_simulation_B.i_n) - 1]) + fabs(h
-            [((dynamic_simulation_B.i_n - 1) << 2) + dynamic_simulation_B.i_n]);
-          dynamic_simulation_B.ba = h[(dynamic_simulation_B.i_n << 2) +
-            dynamic_simulation_B.i_n] + 0.75 * dynamic_simulation_B.htmp2;
+          dynamic_simulation_B.htmp2 = fabs(h[(((dynamic_simulation_B.i_k - 2) <<
+            2) + dynamic_simulation_B.i_k) - 1]) + fabs(h
+            [((dynamic_simulation_B.i_k - 1) << 2) + dynamic_simulation_B.i_k]);
+          dynamic_simulation_B.ba = h[(dynamic_simulation_B.i_k << 2) +
+            dynamic_simulation_B.i_k] + 0.75 * dynamic_simulation_B.htmp2;
           dynamic_simulation_B.h12 = -0.4375 * dynamic_simulation_B.htmp2;
           dynamic_simulation_B.aa = dynamic_simulation_B.htmp2;
           dynamic_simulation_B.tst = dynamic_simulation_B.ba;
           break;
 
          default:
-          dynamic_simulation_B.ba = h[(((dynamic_simulation_B.i_n - 1) << 2) +
-            dynamic_simulation_B.i_n) - 1];
-          dynamic_simulation_B.aa = h[((dynamic_simulation_B.i_n - 1) << 2) +
-            dynamic_simulation_B.i_n];
-          dynamic_simulation_B.h12 = h[((dynamic_simulation_B.i_n << 2) +
-            dynamic_simulation_B.i_n) - 1];
-          dynamic_simulation_B.tst = h[(dynamic_simulation_B.i_n << 2) +
-            dynamic_simulation_B.i_n];
+          dynamic_simulation_B.ba = h[(((dynamic_simulation_B.i_k - 1) << 2) +
+            dynamic_simulation_B.i_k) - 1];
+          dynamic_simulation_B.aa = h[((dynamic_simulation_B.i_k - 1) << 2) +
+            dynamic_simulation_B.i_k];
+          dynamic_simulation_B.h12 = h[((dynamic_simulation_B.i_k << 2) +
+            dynamic_simulation_B.i_k) - 1];
+          dynamic_simulation_B.tst = h[(dynamic_simulation_B.i_k << 2) +
+            dynamic_simulation_B.i_k];
           break;
         }
 
@@ -7518,12 +7516,12 @@ static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
           }
         }
 
-        dynamic_simulation_B.m_n = dynamic_simulation_B.i_n - 1;
+        dynamic_simulation_B.m_o = dynamic_simulation_B.i_k - 1;
         exitg3 = false;
-        while ((!exitg3) && (dynamic_simulation_B.m_n >=
-                             dynamic_simulation_B.k_k + 1)) {
-          dynamic_simulation_B.s_tmp = ((dynamic_simulation_B.m_n - 1) << 2) +
-            dynamic_simulation_B.m_n;
+        while ((!exitg3) && (dynamic_simulation_B.m_o >=
+                             dynamic_simulation_B.k_n + 1)) {
+          dynamic_simulation_B.s_tmp = ((dynamic_simulation_B.m_o - 1) << 2) +
+            dynamic_simulation_B.m_o;
           dynamic_simulation_B.nr = dynamic_simulation_B.s_tmp - 1;
           dynamic_simulation_B.h12 = h[dynamic_simulation_B.nr] -
             dynamic_simulation_B.htmp1;
@@ -7531,82 +7529,80 @@ static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
             (dynamic_simulation_B.aa)) + fabs(h[dynamic_simulation_B.s_tmp]);
           dynamic_simulation_B.h21s = h[dynamic_simulation_B.s_tmp] /
             dynamic_simulation_B.htmp2;
-          dynamic_simulation_B.hoffset = (dynamic_simulation_B.m_n << 2) +
-            dynamic_simulation_B.m_n;
-          dynamic_simulation_B.v_nv[0] = (dynamic_simulation_B.h12 /
+          dynamic_simulation_B.hoffset = (dynamic_simulation_B.m_o << 2) +
+            dynamic_simulation_B.m_o;
+          dynamic_simulation_B.v_j[0] = (dynamic_simulation_B.h12 /
             dynamic_simulation_B.htmp2 * (h[dynamic_simulation_B.nr] -
             dynamic_simulation_B.ba) + h[dynamic_simulation_B.hoffset - 1] *
             dynamic_simulation_B.h21s) - dynamic_simulation_B.aa /
             dynamic_simulation_B.htmp2 * dynamic_simulation_B.tst;
-          dynamic_simulation_B.v_nv[1] = (((h[dynamic_simulation_B.nr] +
+          dynamic_simulation_B.v_j[1] = (((h[dynamic_simulation_B.nr] +
             h[dynamic_simulation_B.hoffset]) - dynamic_simulation_B.ba) -
             dynamic_simulation_B.htmp1) * dynamic_simulation_B.h21s;
-          dynamic_simulation_B.v_nv[2] = h[dynamic_simulation_B.hoffset + 1] *
+          dynamic_simulation_B.v_j[2] = h[dynamic_simulation_B.hoffset + 1] *
             dynamic_simulation_B.h21s;
-          dynamic_simulation_B.htmp2 = (fabs(dynamic_simulation_B.v_nv[0]) +
-            fabs(dynamic_simulation_B.v_nv[1])) + fabs
-            (dynamic_simulation_B.v_nv[2]);
-          dynamic_simulation_B.v_nv[0] /= dynamic_simulation_B.htmp2;
-          dynamic_simulation_B.v_nv[1] /= dynamic_simulation_B.htmp2;
-          dynamic_simulation_B.v_nv[2] /= dynamic_simulation_B.htmp2;
-          if (dynamic_simulation_B.k_k + 1 == dynamic_simulation_B.m_n) {
+          dynamic_simulation_B.htmp2 = (fabs(dynamic_simulation_B.v_j[0]) + fabs
+            (dynamic_simulation_B.v_j[1])) + fabs(dynamic_simulation_B.v_j[2]);
+          dynamic_simulation_B.v_j[0] /= dynamic_simulation_B.htmp2;
+          dynamic_simulation_B.v_j[1] /= dynamic_simulation_B.htmp2;
+          dynamic_simulation_B.v_j[2] /= dynamic_simulation_B.htmp2;
+          if (dynamic_simulation_B.k_n + 1 == dynamic_simulation_B.m_o) {
             exitg3 = true;
           } else {
-            dynamic_simulation_B.s_tmp = ((dynamic_simulation_B.m_n - 2) << 2) +
-              dynamic_simulation_B.m_n;
+            dynamic_simulation_B.s_tmp = ((dynamic_simulation_B.m_o - 2) << 2) +
+              dynamic_simulation_B.m_o;
             if (fabs(h[dynamic_simulation_B.s_tmp - 1]) * (fabs
-                 (dynamic_simulation_B.v_nv[1]) + fabs
-                 (dynamic_simulation_B.v_nv[2])) <= ((fabs
-                  (h[dynamic_simulation_B.s_tmp - 2]) + fabs
-                  (h[dynamic_simulation_B.nr])) + fabs
-                 (h[dynamic_simulation_B.hoffset])) * (2.2204460492503131E-16 *
-                 fabs(dynamic_simulation_B.v_nv[0]))) {
+                 (dynamic_simulation_B.v_j[1]) + fabs(dynamic_simulation_B.v_j[2]))
+                <= ((fabs(h[dynamic_simulation_B.s_tmp - 2]) + fabs
+                     (h[dynamic_simulation_B.nr])) + fabs
+                    (h[dynamic_simulation_B.hoffset])) * (2.2204460492503131E-16
+                 * fabs(dynamic_simulation_B.v_j[0]))) {
               exitg3 = true;
             } else {
-              dynamic_simulation_B.m_n--;
+              dynamic_simulation_B.m_o--;
             }
           }
         }
 
-        dynamic_simulation_B.s_tmp = dynamic_simulation_B.m_n;
-        while (dynamic_simulation_B.s_tmp <= dynamic_simulation_B.i_n) {
-          dynamic_simulation_B.nr = (dynamic_simulation_B.i_n -
+        dynamic_simulation_B.s_tmp = dynamic_simulation_B.m_o;
+        while (dynamic_simulation_B.s_tmp <= dynamic_simulation_B.i_k) {
+          dynamic_simulation_B.nr = (dynamic_simulation_B.i_k -
             dynamic_simulation_B.s_tmp) + 2;
           if (3 < dynamic_simulation_B.nr) {
             dynamic_simulation_B.nr = 3;
           }
 
-          if (dynamic_simulation_B.s_tmp > dynamic_simulation_B.m_n) {
+          if (dynamic_simulation_B.s_tmp > dynamic_simulation_B.m_o) {
             dynamic_simulation_B.hoffset = ((dynamic_simulation_B.s_tmp - 2) <<
               2) + dynamic_simulation_B.s_tmp;
-            dynamic_simulation_B.j_o = 0;
-            while (dynamic_simulation_B.j_o <= dynamic_simulation_B.nr - 1) {
-              dynamic_simulation_B.v_nv[dynamic_simulation_B.j_o] = h
-                [(dynamic_simulation_B.j_o + dynamic_simulation_B.hoffset) - 1];
-              dynamic_simulation_B.j_o++;
+            dynamic_simulation_B.j_g = 0;
+            while (dynamic_simulation_B.j_g <= dynamic_simulation_B.nr - 1) {
+              dynamic_simulation_B.v_j[dynamic_simulation_B.j_g] = h
+                [(dynamic_simulation_B.j_g + dynamic_simulation_B.hoffset) - 1];
+              dynamic_simulation_B.j_g++;
             }
           }
 
-          dynamic_simulation_B.tst = dynamic_simulation_B.v_nv[0];
-          dynamic_simulation_B.b_v[0] = dynamic_simulation_B.v_nv[0];
-          dynamic_simulation_B.b_v[1] = dynamic_simulation_B.v_nv[1];
-          dynamic_simulation_B.b_v[2] = dynamic_simulation_B.v_nv[2];
+          dynamic_simulation_B.tst = dynamic_simulation_B.v_j[0];
+          dynamic_simulation_B.b_v[0] = dynamic_simulation_B.v_j[0];
+          dynamic_simulation_B.b_v[1] = dynamic_simulation_B.v_j[1];
+          dynamic_simulation_B.b_v[2] = dynamic_simulation_B.v_j[2];
           dynamic_simulation_B.htmp2 = dynamic_simulation_xzlarfg
             (dynamic_simulation_B.nr, &dynamic_simulation_B.tst,
              dynamic_simulation_B.b_v);
-          dynamic_simulation_B.v_nv[1] = dynamic_simulation_B.b_v[1];
-          dynamic_simulation_B.v_nv[2] = dynamic_simulation_B.b_v[2];
-          dynamic_simulation_B.v_nv[0] = dynamic_simulation_B.tst;
-          if (dynamic_simulation_B.s_tmp > dynamic_simulation_B.m_n) {
+          dynamic_simulation_B.v_j[1] = dynamic_simulation_B.b_v[1];
+          dynamic_simulation_B.v_j[2] = dynamic_simulation_B.b_v[2];
+          dynamic_simulation_B.v_j[0] = dynamic_simulation_B.tst;
+          if (dynamic_simulation_B.s_tmp > dynamic_simulation_B.m_o) {
             h[(dynamic_simulation_B.s_tmp + ((dynamic_simulation_B.s_tmp - 2) <<
                 2)) - 1] = dynamic_simulation_B.tst;
             h[dynamic_simulation_B.s_tmp + ((dynamic_simulation_B.s_tmp - 2) <<
               2)] = 0.0;
-            if (dynamic_simulation_B.s_tmp < dynamic_simulation_B.i_n) {
+            if (dynamic_simulation_B.s_tmp < dynamic_simulation_B.i_k) {
               h[dynamic_simulation_B.s_tmp + 1] = 0.0;
             }
           } else {
-            if (dynamic_simulation_B.m_n > dynamic_simulation_B.k_k + 1) {
+            if (dynamic_simulation_B.m_o > dynamic_simulation_B.k_n + 1) {
               h[dynamic_simulation_B.s_tmp - 1] *= 1.0 -
                 dynamic_simulation_B.htmp2;
             }
@@ -7620,74 +7616,74 @@ static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
             dynamic_simulation_B.htmp1 = dynamic_simulation_B.b_v[2];
             dynamic_simulation_B.aa = dynamic_simulation_B.htmp2 *
               dynamic_simulation_B.b_v[2];
-            dynamic_simulation_B.b_j_g = dynamic_simulation_B.s_tmp - 1;
-            while (dynamic_simulation_B.b_j_g + 1 < 5) {
-              dynamic_simulation_B.nr = (dynamic_simulation_B.b_j_g << 2) +
+            dynamic_simulation_B.b_j_c = dynamic_simulation_B.s_tmp - 1;
+            while (dynamic_simulation_B.b_j_c + 1 < 5) {
+              dynamic_simulation_B.nr = (dynamic_simulation_B.b_j_c << 2) +
                 dynamic_simulation_B.s_tmp;
               dynamic_simulation_B.hoffset = dynamic_simulation_B.nr - 1;
-              dynamic_simulation_B.j_o = dynamic_simulation_B.nr + 1;
+              dynamic_simulation_B.j_g = dynamic_simulation_B.nr + 1;
               dynamic_simulation_B.h12 = (h[dynamic_simulation_B.hoffset] +
                 h[dynamic_simulation_B.nr] * dynamic_simulation_B.tst) +
-                h[dynamic_simulation_B.j_o] * dynamic_simulation_B.htmp1;
+                h[dynamic_simulation_B.j_g] * dynamic_simulation_B.htmp1;
               h[dynamic_simulation_B.hoffset] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.htmp2;
               h[dynamic_simulation_B.nr] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.ba;
-              h[dynamic_simulation_B.j_o] -= dynamic_simulation_B.h12 *
+              h[dynamic_simulation_B.j_g] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.aa;
-              dynamic_simulation_B.b_j_g++;
+              dynamic_simulation_B.b_j_c++;
             }
 
             dynamic_simulation_B.nr = dynamic_simulation_B.s_tmp + 3;
-            dynamic_simulation_B.b_j_g = dynamic_simulation_B.i_n + 1;
-            if (dynamic_simulation_B.nr < dynamic_simulation_B.b_j_g) {
-              dynamic_simulation_B.b_j_g = dynamic_simulation_B.nr;
+            dynamic_simulation_B.b_j_c = dynamic_simulation_B.i_k + 1;
+            if (dynamic_simulation_B.nr < dynamic_simulation_B.b_j_c) {
+              dynamic_simulation_B.b_j_c = dynamic_simulation_B.nr;
             }
 
             dynamic_simulation_B.c_j = 0;
-            while (dynamic_simulation_B.c_j <= dynamic_simulation_B.b_j_g - 1) {
+            while (dynamic_simulation_B.c_j <= dynamic_simulation_B.b_j_c - 1) {
               dynamic_simulation_B.nr = ((dynamic_simulation_B.s_tmp - 1) << 2)
                 + dynamic_simulation_B.c_j;
               dynamic_simulation_B.hoffset = (dynamic_simulation_B.s_tmp << 2) +
                 dynamic_simulation_B.c_j;
-              dynamic_simulation_B.j_o = ((dynamic_simulation_B.s_tmp + 1) << 2)
+              dynamic_simulation_B.j_g = ((dynamic_simulation_B.s_tmp + 1) << 2)
                 + dynamic_simulation_B.c_j;
               dynamic_simulation_B.h12 = (h[dynamic_simulation_B.nr] +
                 h[dynamic_simulation_B.hoffset] * dynamic_simulation_B.tst) +
-                h[dynamic_simulation_B.j_o] * dynamic_simulation_B.htmp1;
+                h[dynamic_simulation_B.j_g] * dynamic_simulation_B.htmp1;
               h[dynamic_simulation_B.nr] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.htmp2;
               h[dynamic_simulation_B.hoffset] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.ba;
-              h[dynamic_simulation_B.j_o] -= dynamic_simulation_B.h12 *
+              h[dynamic_simulation_B.j_g] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.aa;
               dynamic_simulation_B.c_j++;
             }
 
-            for (dynamic_simulation_B.b_j_g = 0; dynamic_simulation_B.b_j_g < 4;
-                 dynamic_simulation_B.b_j_g++) {
+            for (dynamic_simulation_B.b_j_c = 0; dynamic_simulation_B.b_j_c < 4;
+                 dynamic_simulation_B.b_j_c++) {
               dynamic_simulation_B.nr = ((dynamic_simulation_B.s_tmp - 1) << 2)
-                + dynamic_simulation_B.b_j_g;
+                + dynamic_simulation_B.b_j_c;
               dynamic_simulation_B.hoffset = (dynamic_simulation_B.s_tmp << 2) +
-                dynamic_simulation_B.b_j_g;
-              dynamic_simulation_B.j_o = ((dynamic_simulation_B.s_tmp + 1) << 2)
-                + dynamic_simulation_B.b_j_g;
+                dynamic_simulation_B.b_j_c;
+              dynamic_simulation_B.j_g = ((dynamic_simulation_B.s_tmp + 1) << 2)
+                + dynamic_simulation_B.b_j_c;
               dynamic_simulation_B.h12 = (z[dynamic_simulation_B.nr] +
                 z[dynamic_simulation_B.hoffset] * dynamic_simulation_B.tst) +
-                z[dynamic_simulation_B.j_o] * dynamic_simulation_B.htmp1;
+                z[dynamic_simulation_B.j_g] * dynamic_simulation_B.htmp1;
               z[dynamic_simulation_B.nr] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.htmp2;
               z[dynamic_simulation_B.hoffset] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.ba;
-              z[dynamic_simulation_B.j_o] -= dynamic_simulation_B.h12 *
+              z[dynamic_simulation_B.j_g] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.aa;
             }
             break;
 
            case 2:
-            dynamic_simulation_B.j_o = dynamic_simulation_B.s_tmp - 1;
-            while (dynamic_simulation_B.j_o + 1 < 5) {
-              dynamic_simulation_B.nr = (dynamic_simulation_B.j_o << 2) +
+            dynamic_simulation_B.j_g = dynamic_simulation_B.s_tmp - 1;
+            while (dynamic_simulation_B.j_g + 1 < 5) {
+              dynamic_simulation_B.nr = (dynamic_simulation_B.j_g << 2) +
                 dynamic_simulation_B.s_tmp;
               dynamic_simulation_B.hoffset = dynamic_simulation_B.nr - 1;
               dynamic_simulation_B.h12 = h[dynamic_simulation_B.hoffset] +
@@ -7696,30 +7692,30 @@ static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
                 dynamic_simulation_B.htmp2;
               h[dynamic_simulation_B.nr] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.ba;
-              dynamic_simulation_B.j_o++;
+              dynamic_simulation_B.j_g++;
             }
 
-            dynamic_simulation_B.j_o = 0;
-            while (dynamic_simulation_B.j_o <= dynamic_simulation_B.i_n) {
+            dynamic_simulation_B.j_g = 0;
+            while (dynamic_simulation_B.j_g <= dynamic_simulation_B.i_k) {
               dynamic_simulation_B.nr = ((dynamic_simulation_B.s_tmp - 1) << 2)
-                + dynamic_simulation_B.j_o;
+                + dynamic_simulation_B.j_g;
               dynamic_simulation_B.hoffset = (dynamic_simulation_B.s_tmp << 2) +
-                dynamic_simulation_B.j_o;
+                dynamic_simulation_B.j_g;
               dynamic_simulation_B.h12 = h[dynamic_simulation_B.nr] +
                 h[dynamic_simulation_B.hoffset] * dynamic_simulation_B.tst;
               h[dynamic_simulation_B.nr] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.htmp2;
               h[dynamic_simulation_B.hoffset] -= dynamic_simulation_B.h12 *
                 dynamic_simulation_B.ba;
-              dynamic_simulation_B.j_o++;
+              dynamic_simulation_B.j_g++;
             }
 
-            for (dynamic_simulation_B.j_o = 0; dynamic_simulation_B.j_o < 4;
-                 dynamic_simulation_B.j_o++) {
+            for (dynamic_simulation_B.j_g = 0; dynamic_simulation_B.j_g < 4;
+                 dynamic_simulation_B.j_g++) {
               dynamic_simulation_B.nr = ((dynamic_simulation_B.s_tmp - 1) << 2)
-                + dynamic_simulation_B.j_o;
+                + dynamic_simulation_B.j_g;
               dynamic_simulation_B.hoffset = (dynamic_simulation_B.s_tmp << 2) +
-                dynamic_simulation_B.j_o;
+                dynamic_simulation_B.j_g;
               dynamic_simulation_B.h12 = z[dynamic_simulation_B.nr] +
                 z[dynamic_simulation_B.hoffset] * dynamic_simulation_B.tst;
               z[dynamic_simulation_B.nr] -= dynamic_simulation_B.h12 *
@@ -7738,22 +7734,22 @@ static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
     }
 
     if (!dynamic_simulation_B.goto150) {
-      info = dynamic_simulation_B.i_n + 1;
+      info = dynamic_simulation_B.i_k + 1;
       exitg1 = true;
     } else {
-      if ((dynamic_simulation_B.i_n + 1 != dynamic_simulation_B.L) &&
-          (dynamic_simulation_B.L == dynamic_simulation_B.i_n)) {
-        dynamic_simulation_B.ix = (dynamic_simulation_B.i_n - 1) << 2;
-        dynamic_simulation_B.k_k = dynamic_simulation_B.ix +
-          dynamic_simulation_B.i_n;
-        dynamic_simulation_B.m_n = dynamic_simulation_B.k_k - 1;
-        dynamic_simulation_B.ba = h[dynamic_simulation_B.m_n];
-        dynamic_simulation_B.s_tmp = dynamic_simulation_B.i_n << 2;
+      if ((dynamic_simulation_B.i_k + 1 != dynamic_simulation_B.L) &&
+          (dynamic_simulation_B.L == dynamic_simulation_B.i_k)) {
+        dynamic_simulation_B.ix = (dynamic_simulation_B.i_k - 1) << 2;
+        dynamic_simulation_B.k_n = dynamic_simulation_B.ix +
+          dynamic_simulation_B.i_k;
+        dynamic_simulation_B.m_o = dynamic_simulation_B.k_n - 1;
+        dynamic_simulation_B.ba = h[dynamic_simulation_B.m_o];
+        dynamic_simulation_B.s_tmp = dynamic_simulation_B.i_k << 2;
         dynamic_simulation_B.nr = dynamic_simulation_B.s_tmp +
-          dynamic_simulation_B.i_n;
+          dynamic_simulation_B.i_k;
         dynamic_simulation_B.hoffset = dynamic_simulation_B.nr - 1;
         dynamic_simulation_B.htmp1 = h[dynamic_simulation_B.hoffset];
-        dynamic_simulation_B.aa = h[dynamic_simulation_B.k_k];
+        dynamic_simulation_B.aa = h[dynamic_simulation_B.k_n];
         dynamic_simulation_B.h12 = h[dynamic_simulation_B.nr];
         dynamic_simulation_xdlanv2(&dynamic_simulation_B.ba,
           &dynamic_simulation_B.htmp1, &dynamic_simulation_B.aa,
@@ -7761,19 +7757,19 @@ static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
           &dynamic_simulation_B.unusedU1, &dynamic_simulation_B.unusedU2,
           &dynamic_simulation_B.unusedU3, &dynamic_simulation_B.htmp2,
           &dynamic_simulation_B.tst);
-        h[dynamic_simulation_B.m_n] = dynamic_simulation_B.ba;
+        h[dynamic_simulation_B.m_o] = dynamic_simulation_B.ba;
         h[dynamic_simulation_B.hoffset] = dynamic_simulation_B.htmp1;
-        h[dynamic_simulation_B.k_k] = dynamic_simulation_B.aa;
+        h[dynamic_simulation_B.k_n] = dynamic_simulation_B.aa;
         h[dynamic_simulation_B.nr] = dynamic_simulation_B.h12;
-        if (4 > dynamic_simulation_B.i_n + 1) {
-          dynamic_simulation_xrot(3 - dynamic_simulation_B.i_n, h,
-            dynamic_simulation_B.i_n + ((dynamic_simulation_B.i_n + 1) << 2),
-            (dynamic_simulation_B.i_n + ((dynamic_simulation_B.i_n + 1) << 2)) +
+        if (4 > dynamic_simulation_B.i_k + 1) {
+          dynamic_simulation_xrot(3 - dynamic_simulation_B.i_k, h,
+            dynamic_simulation_B.i_k + ((dynamic_simulation_B.i_k + 1) << 2),
+            (dynamic_simulation_B.i_k + ((dynamic_simulation_B.i_k + 1) << 2)) +
             1, dynamic_simulation_B.htmp2, dynamic_simulation_B.tst);
         }
 
-        dynamic_simulation_xrot_l(dynamic_simulation_B.i_n - 1, h,
-          ((dynamic_simulation_B.i_n - 1) << 2) + 1, (dynamic_simulation_B.i_n <<
+        dynamic_simulation_xrot_l(dynamic_simulation_B.i_k - 1, h,
+          ((dynamic_simulation_B.i_k - 1) << 2) + 1, (dynamic_simulation_B.i_k <<
           2) + 1, dynamic_simulation_B.htmp2, dynamic_simulation_B.tst);
         dynamic_simulation_B.ba = dynamic_simulation_B.htmp2 *
           z[dynamic_simulation_B.ix] + dynamic_simulation_B.tst *
@@ -7782,53 +7778,53 @@ static int32_T dynamic_simulation_eml_dlahqr(real_T h[16], real_T z[16])
           z[dynamic_simulation_B.s_tmp] - dynamic_simulation_B.tst *
           z[dynamic_simulation_B.ix];
         z[dynamic_simulation_B.ix] = dynamic_simulation_B.ba;
-        dynamic_simulation_B.i_n = dynamic_simulation_B.s_tmp + 1;
+        dynamic_simulation_B.i_k = dynamic_simulation_B.s_tmp + 1;
         dynamic_simulation_B.ix++;
         dynamic_simulation_B.ba = dynamic_simulation_B.htmp2 *
           z[dynamic_simulation_B.ix] + dynamic_simulation_B.tst *
-          z[dynamic_simulation_B.i_n];
-        z[dynamic_simulation_B.i_n] = dynamic_simulation_B.htmp2 *
-          z[dynamic_simulation_B.i_n] - dynamic_simulation_B.tst *
+          z[dynamic_simulation_B.i_k];
+        z[dynamic_simulation_B.i_k] = dynamic_simulation_B.htmp2 *
+          z[dynamic_simulation_B.i_k] - dynamic_simulation_B.tst *
           z[dynamic_simulation_B.ix];
         z[dynamic_simulation_B.ix] = dynamic_simulation_B.ba;
-        dynamic_simulation_B.i_n++;
+        dynamic_simulation_B.i_k++;
         dynamic_simulation_B.ix++;
         dynamic_simulation_B.ba = dynamic_simulation_B.htmp2 *
           z[dynamic_simulation_B.ix] + dynamic_simulation_B.tst *
-          z[dynamic_simulation_B.i_n];
-        z[dynamic_simulation_B.i_n] = dynamic_simulation_B.htmp2 *
-          z[dynamic_simulation_B.i_n] - dynamic_simulation_B.tst *
+          z[dynamic_simulation_B.i_k];
+        z[dynamic_simulation_B.i_k] = dynamic_simulation_B.htmp2 *
+          z[dynamic_simulation_B.i_k] - dynamic_simulation_B.tst *
           z[dynamic_simulation_B.ix];
         z[dynamic_simulation_B.ix] = dynamic_simulation_B.ba;
-        dynamic_simulation_B.i_n++;
+        dynamic_simulation_B.i_k++;
         dynamic_simulation_B.ix++;
         dynamic_simulation_B.ba = dynamic_simulation_B.htmp2 *
           z[dynamic_simulation_B.ix] + dynamic_simulation_B.tst *
-          z[dynamic_simulation_B.i_n];
-        z[dynamic_simulation_B.i_n] = dynamic_simulation_B.htmp2 *
-          z[dynamic_simulation_B.i_n] - dynamic_simulation_B.tst *
+          z[dynamic_simulation_B.i_k];
+        z[dynamic_simulation_B.i_k] = dynamic_simulation_B.htmp2 *
+          z[dynamic_simulation_B.i_k] - dynamic_simulation_B.tst *
           z[dynamic_simulation_B.ix];
         z[dynamic_simulation_B.ix] = dynamic_simulation_B.ba;
       }
 
-      dynamic_simulation_B.i_n = dynamic_simulation_B.L - 2;
+      dynamic_simulation_B.i_k = dynamic_simulation_B.L - 2;
     }
   }
 
   return info;
 }
 
-// Function for MATLAB Function: '<S4>/MATLAB Function'
+// Function for MATLAB Function: '<S2>/MATLAB Function'
 static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
   [4])
 {
   int32_T exitg1;
   boolean_T exitg2;
   if (dynamic_simulation_anyNonFinite(A)) {
-    for (dynamic_simulation_B.b_j_m = 0; dynamic_simulation_B.b_j_m < 16;
-         dynamic_simulation_B.b_j_m++) {
-      V[dynamic_simulation_B.b_j_m].re = (rtNaN);
-      V[dynamic_simulation_B.b_j_m].im = 0.0;
+    for (dynamic_simulation_B.b_j = 0; dynamic_simulation_B.b_j < 16;
+         dynamic_simulation_B.b_j++) {
+      V[dynamic_simulation_B.b_j].re = (rtNaN);
+      V[dynamic_simulation_B.b_j].im = 0.0;
     }
 
     D[0].re = (rtNaN);
@@ -7841,23 +7837,23 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
     D[3].im = 0.0;
   } else {
     dynamic_simulation_B.p_n = true;
-    dynamic_simulation_B.b_j_m = 0;
+    dynamic_simulation_B.b_j = 0;
     exitg2 = false;
-    while ((!exitg2) && (dynamic_simulation_B.b_j_m < 4)) {
-      dynamic_simulation_B.i_j = 0;
+    while ((!exitg2) && (dynamic_simulation_B.b_j < 4)) {
+      dynamic_simulation_B.i_e = 0;
       do {
         exitg1 = 0;
-        if (dynamic_simulation_B.i_j <= dynamic_simulation_B.b_j_m) {
-          if (!(A[(dynamic_simulation_B.b_j_m << 2) + dynamic_simulation_B.i_j] ==
-                A[(dynamic_simulation_B.i_j << 2) + dynamic_simulation_B.b_j_m]))
+        if (dynamic_simulation_B.i_e <= dynamic_simulation_B.b_j) {
+          if (!(A[(dynamic_simulation_B.b_j << 2) + dynamic_simulation_B.i_e] ==
+                A[(dynamic_simulation_B.i_e << 2) + dynamic_simulation_B.b_j]))
           {
             dynamic_simulation_B.p_n = false;
             exitg1 = 1;
           } else {
-            dynamic_simulation_B.i_j++;
+            dynamic_simulation_B.i_e++;
           }
         } else {
-          dynamic_simulation_B.b_j_m++;
+          dynamic_simulation_B.b_j++;
           exitg1 = 2;
         }
       } while (exitg1 == 0);
@@ -7869,27 +7865,27 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
 
     if (dynamic_simulation_B.p_n) {
       if (dynamic_simulation_anyNonFinite(A)) {
-        for (dynamic_simulation_B.b_j_m = 0; dynamic_simulation_B.b_j_m < 16;
-             dynamic_simulation_B.b_j_m++) {
-          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m] = (rtNaN);
+        for (dynamic_simulation_B.b_j = 0; dynamic_simulation_B.b_j < 16;
+             dynamic_simulation_B.b_j++) {
+          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j] = (rtNaN);
         }
 
-        dynamic_simulation_B.b_j_m = 2;
-        while (dynamic_simulation_B.b_j_m < 5) {
-          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m - 1] = 0.0;
-          dynamic_simulation_B.b_j_m++;
+        dynamic_simulation_B.b_j = 2;
+        while (dynamic_simulation_B.b_j < 5) {
+          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j - 1] = 0.0;
+          dynamic_simulation_B.b_j++;
         }
 
-        dynamic_simulation_B.b_j_m = 3;
-        while (dynamic_simulation_B.b_j_m < 5) {
-          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m + 3] = 0.0;
-          dynamic_simulation_B.b_j_m++;
+        dynamic_simulation_B.b_j = 3;
+        while (dynamic_simulation_B.b_j < 5) {
+          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j + 3] = 0.0;
+          dynamic_simulation_B.b_j++;
         }
 
         dynamic_simulation_B.b_V[11] = 0.0;
-        for (dynamic_simulation_B.b_j_m = 0; dynamic_simulation_B.b_j_m < 16;
-             dynamic_simulation_B.b_j_m++) {
-          dynamic_simulation_B.b_A[dynamic_simulation_B.b_j_m] = (rtNaN);
+        for (dynamic_simulation_B.b_j = 0; dynamic_simulation_B.b_j < 16;
+             dynamic_simulation_B.b_j++) {
+          dynamic_simulation_B.b_A[dynamic_simulation_B.b_j] = (rtNaN);
         }
       } else {
         memcpy(&dynamic_simulation_B.b_A[0], &A[0], sizeof(real_T) << 4U);
@@ -7897,31 +7893,31 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
           dynamic_simulation_B.tau);
         memcpy(&dynamic_simulation_B.b_V[0], &dynamic_simulation_B.b_A[0],
                sizeof(real_T) << 4U);
-        dynamic_simulation_B.b_j_m = 0;
-        while (dynamic_simulation_B.b_j_m <= 2) {
-          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m + 12] = 0.0;
-          dynamic_simulation_B.b_j_m++;
+        dynamic_simulation_B.b_j = 0;
+        while (dynamic_simulation_B.b_j <= 2) {
+          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j + 12] = 0.0;
+          dynamic_simulation_B.b_j++;
         }
 
-        dynamic_simulation_B.b_j_m = 0;
-        while (dynamic_simulation_B.b_j_m <= 1) {
-          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m + 8] = 0.0;
-          dynamic_simulation_B.b_j_m++;
+        dynamic_simulation_B.b_j = 0;
+        while (dynamic_simulation_B.b_j <= 1) {
+          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j + 8] = 0.0;
+          dynamic_simulation_B.b_j++;
         }
 
-        dynamic_simulation_B.b_j_m = 1;
-        while (dynamic_simulation_B.b_j_m + 3 < 5) {
-          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m + 10] =
-            dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m + 6];
-          dynamic_simulation_B.b_j_m++;
+        dynamic_simulation_B.b_j = 1;
+        while (dynamic_simulation_B.b_j + 3 < 5) {
+          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j + 10] =
+            dynamic_simulation_B.b_V[dynamic_simulation_B.b_j + 6];
+          dynamic_simulation_B.b_j++;
         }
 
         dynamic_simulation_B.b_V[4] = 0.0;
-        dynamic_simulation_B.b_j_m = 0;
-        while (dynamic_simulation_B.b_j_m + 3 < 5) {
-          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m + 6] =
-            dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m + 2];
-          dynamic_simulation_B.b_j_m++;
+        dynamic_simulation_B.b_j = 0;
+        while (dynamic_simulation_B.b_j + 3 < 5) {
+          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j + 6] =
+            dynamic_simulation_B.b_V[dynamic_simulation_B.b_j + 2];
+          dynamic_simulation_B.b_j++;
         }
 
         dynamic_simulation_B.work[0] = 0.0;
@@ -7933,20 +7929,20 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
         dynamic_simulation_B.work[3] = 0.0;
         dynamic_simulation_B.b_V[0] = 1.0;
         dynamic_simulation_B.b_V[15] = 1.0 - dynamic_simulation_B.tau[2];
-        dynamic_simulation_B.b_j_m = 0;
-        while (dynamic_simulation_B.b_j_m <= 1) {
-          dynamic_simulation_B.b_V[14 - dynamic_simulation_B.b_j_m] = 0.0;
-          dynamic_simulation_B.b_j_m++;
+        dynamic_simulation_B.b_j = 0;
+        while (dynamic_simulation_B.b_j <= 1) {
+          dynamic_simulation_B.b_V[14 - dynamic_simulation_B.b_j] = 0.0;
+          dynamic_simulation_B.b_j++;
         }
 
         dynamic_simulation_B.b_V[10] = 1.0;
         dynamic_simulation_xzlarf(2, 1, 11, dynamic_simulation_B.tau[1],
           dynamic_simulation_B.b_V, 15, dynamic_simulation_B.work);
-        dynamic_simulation_B.b_j_m = 11;
-        while (dynamic_simulation_B.b_j_m + 1 <= 12) {
-          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m] *=
+        dynamic_simulation_B.b_j = 11;
+        while (dynamic_simulation_B.b_j + 1 <= 12) {
+          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j] *=
             -dynamic_simulation_B.tau[1];
-          dynamic_simulation_B.b_j_m++;
+          dynamic_simulation_B.b_j++;
         }
 
         dynamic_simulation_B.b_V[10] = 1.0 - dynamic_simulation_B.tau[1];
@@ -7954,11 +7950,11 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
         dynamic_simulation_B.b_V[5] = 1.0;
         dynamic_simulation_xzlarf(3, 2, 6, dynamic_simulation_B.tau[0],
           dynamic_simulation_B.b_V, 10, dynamic_simulation_B.work);
-        dynamic_simulation_B.b_j_m = 6;
-        while (dynamic_simulation_B.b_j_m + 1 <= 8) {
-          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m] *=
+        dynamic_simulation_B.b_j = 6;
+        while (dynamic_simulation_B.b_j + 1 <= 8) {
+          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j] *=
             -dynamic_simulation_B.tau[0];
-          dynamic_simulation_B.b_j_m++;
+          dynamic_simulation_B.b_j++;
         }
 
         dynamic_simulation_B.b_V[5] = 1.0 - dynamic_simulation_B.tau[0];
@@ -7966,11 +7962,11 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
           dynamic_simulation_B.b_V);
       }
 
-      for (dynamic_simulation_B.b_j_m = 0; dynamic_simulation_B.b_j_m < 16;
-           dynamic_simulation_B.b_j_m++) {
-        V[dynamic_simulation_B.b_j_m].re =
-          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j_m];
-        V[dynamic_simulation_B.b_j_m].im = 0.0;
+      for (dynamic_simulation_B.b_j = 0; dynamic_simulation_B.b_j < 16;
+           dynamic_simulation_B.b_j++) {
+        V[dynamic_simulation_B.b_j].re =
+          dynamic_simulation_B.b_V[dynamic_simulation_B.b_j];
+        V[dynamic_simulation_B.b_j].im = 0.0;
       }
 
       D[0].re = dynamic_simulation_B.b_A[0];
@@ -7982,20 +7978,20 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
       D[3].re = dynamic_simulation_B.b_A[15];
       D[3].im = 0.0;
     } else {
-      for (dynamic_simulation_B.b_j_m = 0; dynamic_simulation_B.b_j_m < 16;
-           dynamic_simulation_B.b_j_m++) {
-        dynamic_simulation_B.At[dynamic_simulation_B.b_j_m].re =
-          A[dynamic_simulation_B.b_j_m];
-        dynamic_simulation_B.At[dynamic_simulation_B.b_j_m].im = 0.0;
+      for (dynamic_simulation_B.b_j = 0; dynamic_simulation_B.b_j < 16;
+           dynamic_simulation_B.b_j++) {
+        dynamic_simulation_B.At[dynamic_simulation_B.b_j].re =
+          A[dynamic_simulation_B.b_j];
+        dynamic_simulation_B.At[dynamic_simulation_B.b_j].im = 0.0;
       }
 
       dynamic_simulation_xzggev(dynamic_simulation_B.At,
-        &dynamic_simulation_B.b_j_m, D, dynamic_simulation_B.beta1, V);
+        &dynamic_simulation_B.b_j, D, dynamic_simulation_B.beta1, V);
       dynamic_simulation_B.colnorm = 0.0;
       dynamic_simulation_B.scale = 3.3121686421112381E-170;
-      dynamic_simulation_B.b_j_m = 0;
-      while (dynamic_simulation_B.b_j_m + 1 <= 4) {
-        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j_m].re);
+      dynamic_simulation_B.b_j = 0;
+      while (dynamic_simulation_B.b_j + 1 <= 4) {
+        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j].re);
         if (dynamic_simulation_B.absxk > dynamic_simulation_B.scale) {
           dynamic_simulation_B.t = dynamic_simulation_B.scale /
             dynamic_simulation_B.absxk;
@@ -8009,7 +8005,7 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
             dynamic_simulation_B.t;
         }
 
-        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j_m].im);
+        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j].im);
         if (dynamic_simulation_B.absxk > dynamic_simulation_B.scale) {
           dynamic_simulation_B.t = dynamic_simulation_B.scale /
             dynamic_simulation_B.absxk;
@@ -8023,38 +8019,38 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
             dynamic_simulation_B.t;
         }
 
-        dynamic_simulation_B.b_j_m++;
+        dynamic_simulation_B.b_j++;
       }
 
       dynamic_simulation_B.colnorm = dynamic_simulation_B.scale * sqrt
         (dynamic_simulation_B.colnorm);
-      dynamic_simulation_B.b_j_m = 0;
-      while (dynamic_simulation_B.b_j_m + 1 <= 4) {
-        if (V[dynamic_simulation_B.b_j_m].im == 0.0) {
-          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j_m].re /
+      dynamic_simulation_B.b_j = 0;
+      while (dynamic_simulation_B.b_j + 1 <= 4) {
+        if (V[dynamic_simulation_B.b_j].im == 0.0) {
+          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j].re /
             dynamic_simulation_B.colnorm;
           dynamic_simulation_B.absxk = 0.0;
-        } else if (V[dynamic_simulation_B.b_j_m].re == 0.0) {
+        } else if (V[dynamic_simulation_B.b_j].re == 0.0) {
           dynamic_simulation_B.scale = 0.0;
-          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j_m].im /
+          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j].im /
             dynamic_simulation_B.colnorm;
         } else {
-          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j_m].re /
+          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j].re /
             dynamic_simulation_B.colnorm;
-          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j_m].im /
+          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j].im /
             dynamic_simulation_B.colnorm;
         }
 
-        V[dynamic_simulation_B.b_j_m].re = dynamic_simulation_B.scale;
-        V[dynamic_simulation_B.b_j_m].im = dynamic_simulation_B.absxk;
-        dynamic_simulation_B.b_j_m++;
+        V[dynamic_simulation_B.b_j].re = dynamic_simulation_B.scale;
+        V[dynamic_simulation_B.b_j].im = dynamic_simulation_B.absxk;
+        dynamic_simulation_B.b_j++;
       }
 
       dynamic_simulation_B.colnorm = 0.0;
       dynamic_simulation_B.scale = 3.3121686421112381E-170;
-      dynamic_simulation_B.b_j_m = 4;
-      while (dynamic_simulation_B.b_j_m + 1 <= 8) {
-        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j_m].re);
+      dynamic_simulation_B.b_j = 4;
+      while (dynamic_simulation_B.b_j + 1 <= 8) {
+        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j].re);
         if (dynamic_simulation_B.absxk > dynamic_simulation_B.scale) {
           dynamic_simulation_B.t = dynamic_simulation_B.scale /
             dynamic_simulation_B.absxk;
@@ -8068,7 +8064,7 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
             dynamic_simulation_B.t;
         }
 
-        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j_m].im);
+        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j].im);
         if (dynamic_simulation_B.absxk > dynamic_simulation_B.scale) {
           dynamic_simulation_B.t = dynamic_simulation_B.scale /
             dynamic_simulation_B.absxk;
@@ -8082,38 +8078,38 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
             dynamic_simulation_B.t;
         }
 
-        dynamic_simulation_B.b_j_m++;
+        dynamic_simulation_B.b_j++;
       }
 
       dynamic_simulation_B.colnorm = dynamic_simulation_B.scale * sqrt
         (dynamic_simulation_B.colnorm);
-      dynamic_simulation_B.b_j_m = 4;
-      while (dynamic_simulation_B.b_j_m + 1 <= 8) {
-        if (V[dynamic_simulation_B.b_j_m].im == 0.0) {
-          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j_m].re /
+      dynamic_simulation_B.b_j = 4;
+      while (dynamic_simulation_B.b_j + 1 <= 8) {
+        if (V[dynamic_simulation_B.b_j].im == 0.0) {
+          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j].re /
             dynamic_simulation_B.colnorm;
           dynamic_simulation_B.absxk = 0.0;
-        } else if (V[dynamic_simulation_B.b_j_m].re == 0.0) {
+        } else if (V[dynamic_simulation_B.b_j].re == 0.0) {
           dynamic_simulation_B.scale = 0.0;
-          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j_m].im /
+          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j].im /
             dynamic_simulation_B.colnorm;
         } else {
-          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j_m].re /
+          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j].re /
             dynamic_simulation_B.colnorm;
-          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j_m].im /
+          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j].im /
             dynamic_simulation_B.colnorm;
         }
 
-        V[dynamic_simulation_B.b_j_m].re = dynamic_simulation_B.scale;
-        V[dynamic_simulation_B.b_j_m].im = dynamic_simulation_B.absxk;
-        dynamic_simulation_B.b_j_m++;
+        V[dynamic_simulation_B.b_j].re = dynamic_simulation_B.scale;
+        V[dynamic_simulation_B.b_j].im = dynamic_simulation_B.absxk;
+        dynamic_simulation_B.b_j++;
       }
 
       dynamic_simulation_B.colnorm = 0.0;
       dynamic_simulation_B.scale = 3.3121686421112381E-170;
-      dynamic_simulation_B.b_j_m = 8;
-      while (dynamic_simulation_B.b_j_m + 1 <= 12) {
-        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j_m].re);
+      dynamic_simulation_B.b_j = 8;
+      while (dynamic_simulation_B.b_j + 1 <= 12) {
+        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j].re);
         if (dynamic_simulation_B.absxk > dynamic_simulation_B.scale) {
           dynamic_simulation_B.t = dynamic_simulation_B.scale /
             dynamic_simulation_B.absxk;
@@ -8127,7 +8123,7 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
             dynamic_simulation_B.t;
         }
 
-        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j_m].im);
+        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j].im);
         if (dynamic_simulation_B.absxk > dynamic_simulation_B.scale) {
           dynamic_simulation_B.t = dynamic_simulation_B.scale /
             dynamic_simulation_B.absxk;
@@ -8141,38 +8137,38 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
             dynamic_simulation_B.t;
         }
 
-        dynamic_simulation_B.b_j_m++;
+        dynamic_simulation_B.b_j++;
       }
 
       dynamic_simulation_B.colnorm = dynamic_simulation_B.scale * sqrt
         (dynamic_simulation_B.colnorm);
-      dynamic_simulation_B.b_j_m = 8;
-      while (dynamic_simulation_B.b_j_m + 1 <= 12) {
-        if (V[dynamic_simulation_B.b_j_m].im == 0.0) {
-          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j_m].re /
+      dynamic_simulation_B.b_j = 8;
+      while (dynamic_simulation_B.b_j + 1 <= 12) {
+        if (V[dynamic_simulation_B.b_j].im == 0.0) {
+          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j].re /
             dynamic_simulation_B.colnorm;
           dynamic_simulation_B.absxk = 0.0;
-        } else if (V[dynamic_simulation_B.b_j_m].re == 0.0) {
+        } else if (V[dynamic_simulation_B.b_j].re == 0.0) {
           dynamic_simulation_B.scale = 0.0;
-          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j_m].im /
+          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j].im /
             dynamic_simulation_B.colnorm;
         } else {
-          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j_m].re /
+          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j].re /
             dynamic_simulation_B.colnorm;
-          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j_m].im /
+          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j].im /
             dynamic_simulation_B.colnorm;
         }
 
-        V[dynamic_simulation_B.b_j_m].re = dynamic_simulation_B.scale;
-        V[dynamic_simulation_B.b_j_m].im = dynamic_simulation_B.absxk;
-        dynamic_simulation_B.b_j_m++;
+        V[dynamic_simulation_B.b_j].re = dynamic_simulation_B.scale;
+        V[dynamic_simulation_B.b_j].im = dynamic_simulation_B.absxk;
+        dynamic_simulation_B.b_j++;
       }
 
       dynamic_simulation_B.colnorm = 0.0;
       dynamic_simulation_B.scale = 3.3121686421112381E-170;
-      dynamic_simulation_B.b_j_m = 12;
-      while (dynamic_simulation_B.b_j_m + 1 <= 16) {
-        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j_m].re);
+      dynamic_simulation_B.b_j = 12;
+      while (dynamic_simulation_B.b_j + 1 <= 16) {
+        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j].re);
         if (dynamic_simulation_B.absxk > dynamic_simulation_B.scale) {
           dynamic_simulation_B.t = dynamic_simulation_B.scale /
             dynamic_simulation_B.absxk;
@@ -8186,7 +8182,7 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
             dynamic_simulation_B.t;
         }
 
-        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j_m].im);
+        dynamic_simulation_B.absxk = fabs(V[dynamic_simulation_B.b_j].im);
         if (dynamic_simulation_B.absxk > dynamic_simulation_B.scale) {
           dynamic_simulation_B.t = dynamic_simulation_B.scale /
             dynamic_simulation_B.absxk;
@@ -8200,31 +8196,31 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
             dynamic_simulation_B.t;
         }
 
-        dynamic_simulation_B.b_j_m++;
+        dynamic_simulation_B.b_j++;
       }
 
       dynamic_simulation_B.colnorm = dynamic_simulation_B.scale * sqrt
         (dynamic_simulation_B.colnorm);
-      dynamic_simulation_B.b_j_m = 12;
-      while (dynamic_simulation_B.b_j_m + 1 <= 16) {
-        if (V[dynamic_simulation_B.b_j_m].im == 0.0) {
-          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j_m].re /
+      dynamic_simulation_B.b_j = 12;
+      while (dynamic_simulation_B.b_j + 1 <= 16) {
+        if (V[dynamic_simulation_B.b_j].im == 0.0) {
+          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j].re /
             dynamic_simulation_B.colnorm;
           dynamic_simulation_B.absxk = 0.0;
-        } else if (V[dynamic_simulation_B.b_j_m].re == 0.0) {
+        } else if (V[dynamic_simulation_B.b_j].re == 0.0) {
           dynamic_simulation_B.scale = 0.0;
-          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j_m].im /
+          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j].im /
             dynamic_simulation_B.colnorm;
         } else {
-          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j_m].re /
+          dynamic_simulation_B.scale = V[dynamic_simulation_B.b_j].re /
             dynamic_simulation_B.colnorm;
-          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j_m].im /
+          dynamic_simulation_B.absxk = V[dynamic_simulation_B.b_j].im /
             dynamic_simulation_B.colnorm;
         }
 
-        V[dynamic_simulation_B.b_j_m].re = dynamic_simulation_B.scale;
-        V[dynamic_simulation_B.b_j_m].im = dynamic_simulation_B.absxk;
-        dynamic_simulation_B.b_j_m++;
+        V[dynamic_simulation_B.b_j].re = dynamic_simulation_B.scale;
+        V[dynamic_simulation_B.b_j].im = dynamic_simulation_B.absxk;
+        dynamic_simulation_B.b_j++;
       }
 
       if (dynamic_simulation_B.beta1[0].im == 0.0) {
@@ -8491,7 +8487,7 @@ static void dynamic_simulation_eig(const real_T A[16], creal_T V[16], creal_T D
   }
 }
 
-static void matlabCodegenHandle_matlab_kq2t(ros_slros_internal_block_GetP_T *obj)
+static void matlabCodegenHandle_matlabCodeg(ros_slros_internal_block_GetP_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
@@ -8563,7 +8559,7 @@ static void emxFreeStruct_n_robotics_mani_k(n_robotics_manip_internal_R_k_T
   emxFreeStruct_c_rigidBodyJoint1(&pStruct->JointInternal);
 }
 
-static void dynamic_simul_matlabCodegenHa_m(ros_slros_internal_block_Subs_T *obj)
+static void dynamic_simul_matlabCodegenHa_l(ros_slros_internal_block_Subs_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
@@ -8601,7 +8597,7 @@ static void emxFreeStruct_n_robotics_man_kq(n_robotics_manip_internal__kq_T
   emxFreeStruct_c_rigidBodyJoint2(&pStruct->JointInternal);
 }
 
-static void matlabCodegenHandle_matlabCodeg(ros_slros_internal_block_Publ_T *obj)
+static void matlabCodegenHandle_matl_kq2tzt(ros_slros_internal_block_Publ_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
@@ -13294,12 +13290,10 @@ static o_robotics_manip_internal__kq_T *d_RigidBody_Rigid_e
   (o_robotics_manip_internal__kq_T *obj)
 {
   o_robotics_manip_internal__kq_T *b_obj;
-  int8_T msubspace_data[36];
   emxArray_char_T_dynamic_simul_T *switch_expression;
   boolean_T b_bool;
   int32_T b_kstr;
   char_T b[8];
-  char_T b_0[9];
   int32_T loop_ub;
   int8_T tmp[6];
   static const char_T tmp_0[5] = { 'f', 'i', 'x', 'e', 'd' };
@@ -13356,7 +13350,7 @@ static o_robotics_manip_internal__kq_T *d_RigidBody_Rigid_e
     b_kstr = 0;
   } else {
     for (b_kstr = 0; b_kstr < 9; b_kstr++) {
-      b_0[b_kstr] = tmp_2[b_kstr];
+      dynamic_simulation_B.b_e[b_kstr] = tmp_2[b_kstr];
     }
 
     b_bool = false;
@@ -13366,7 +13360,8 @@ static o_robotics_manip_internal__kq_T *d_RigidBody_Rigid_e
         exitg1 = 0;
         if (b_kstr - 1 < 9) {
           loop_ub = b_kstr - 1;
-          if (switch_expression->data[loop_ub] != b_0[loop_ub]) {
+          if (switch_expression->data[loop_ub] !=
+              dynamic_simulation_B.b_e[loop_ub]) {
             exitg1 = 1;
           } else {
             b_kstr++;
@@ -13395,7 +13390,7 @@ static o_robotics_manip_internal__kq_T *d_RigidBody_Rigid_e
     tmp[4] = 0;
     tmp[5] = 0;
     for (b_kstr = 0; b_kstr < 6; b_kstr++) {
-      msubspace_data[b_kstr] = tmp[b_kstr];
+      dynamic_simulation_B.msubspace_data[b_kstr] = tmp[b_kstr];
     }
 
     obj->JointInternal.JointAxisInternal[0] = 0.0;
@@ -13411,7 +13406,7 @@ static o_robotics_manip_internal__kq_T *d_RigidBody_Rigid_e
     tmp[4] = 0;
     tmp[5] = 1;
     for (b_kstr = 0; b_kstr < 6; b_kstr++) {
-      msubspace_data[b_kstr] = tmp[b_kstr];
+      dynamic_simulation_B.msubspace_data[b_kstr] = tmp[b_kstr];
     }
 
     obj->JointInternal.JointAxisInternal[0] = 0.0;
@@ -13421,7 +13416,7 @@ static o_robotics_manip_internal__kq_T *d_RigidBody_Rigid_e
 
    default:
     for (b_kstr = 0; b_kstr < 6; b_kstr++) {
-      msubspace_data[b_kstr] = 0;
+      dynamic_simulation_B.msubspace_data[b_kstr] = 0;
     }
 
     obj->JointInternal.JointAxisInternal[0] = 0.0;
@@ -13436,7 +13431,8 @@ static o_robotics_manip_internal__kq_T *d_RigidBody_Rigid_e
   obj->JointInternal.MotionSubspace->size[1] = 1;
   dynami_emxEnsureCapacity_real_T(obj->JointInternal.MotionSubspace, b_kstr);
   for (b_kstr = 0; b_kstr < 6; b_kstr++) {
-    obj->JointInternal.MotionSubspace->data[b_kstr] = msubspace_data[b_kstr];
+    obj->JointInternal.MotionSubspace->data[b_kstr] =
+      dynamic_simulation_B.msubspace_data[b_kstr];
   }
 
   return b_obj;
@@ -13475,7 +13471,7 @@ static p_robotics_manip_internal__kq_T *RigidBodyTree_RigidBodyTree_kq
   obj->NumBodies = 8.0;
   obj->Gravity[0] = 0.0;
   obj->Gravity[1] = 0.0;
-  obj->Gravity[2] = -9.81;
+  obj->Gravity[2] = 0.0;
   obj->VelocityNumber = 6.0;
   for (i = 0; i < 16; i++) {
     obj->PositionDoFMap[i] = tmp[i];
@@ -13508,24 +13504,6 @@ void dynamic_simulation_step(void)
 
   static const char_T tmp_1[5] = { 'w', 'o', 'r', 'l', 'd' };
 
-  static const char_T h[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
-    '1' };
-
-  static const char_T i[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
-    '2' };
-
-  static const char_T j[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
-    '3' };
-
-  static const char_T k[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
-    '4' };
-
-  static const char_T l[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
-    '5' };
-
-  static const char_T m[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n', 't', '_',
-    '6' };
-
   int32_T exitg1;
   boolean_T exitg2;
   if (rtmIsMajorTimeStep(dynamic_simulation_M)) {
@@ -13541,31 +13519,31 @@ void dynamic_simulation_step(void)
       (&dynamic_simulation_M->solverInfo);
   }
 
-  // MATLABSystem: '<S20>/Get Parameter12'
+  // MATLABSystem: '<S22>/Get Parameter12'
   ParamGet_dynamic_simulation_194.get_parameter(&dynamic_simulation_B.vNum);
 
-  // MATLABSystem: '<S20>/Get Parameter1'
+  // MATLABSystem: '<S22>/Get Parameter1'
   ParamGet_dynamic_simulation_132.get_parameter(&dynamic_simulation_B.bid1);
 
-  // MATLABSystem: '<S20>/Get Parameter4'
+  // MATLABSystem: '<S22>/Get Parameter4'
   ParamGet_dynamic_simulation_137.get_parameter(&dynamic_simulation_B.j);
 
-  // MATLABSystem: '<S20>/Get Parameter5'
+  // MATLABSystem: '<S22>/Get Parameter5'
   ParamGet_dynamic_simulation_138.get_parameter(&dynamic_simulation_B.K23);
 
-  // MATLABSystem: '<S20>/Get Parameter6'
+  // MATLABSystem: '<S22>/Get Parameter6'
   ParamGet_dynamic_simulation_139.get_parameter(&dynamic_simulation_B.K24);
 
-  // MATLABSystem: '<S20>/Get Parameter7'
+  // MATLABSystem: '<S22>/Get Parameter7'
   ParamGet_dynamic_simulation_140.get_parameter(&dynamic_simulation_B.K34);
 
-  // Integrator: '<S11>/Position' incorporates:
-  //   MATLABSystem: '<S20>/Get Parameter1'
-  //   MATLABSystem: '<S20>/Get Parameter12'
-  //   MATLABSystem: '<S20>/Get Parameter4'
-  //   MATLABSystem: '<S20>/Get Parameter5'
-  //   MATLABSystem: '<S20>/Get Parameter6'
-  //   MATLABSystem: '<S20>/Get Parameter7'
+  // Integrator: '<S10>/Position' incorporates:
+  //   MATLABSystem: '<S22>/Get Parameter1'
+  //   MATLABSystem: '<S22>/Get Parameter12'
+  //   MATLABSystem: '<S22>/Get Parameter4'
+  //   MATLABSystem: '<S22>/Get Parameter5'
+  //   MATLABSystem: '<S22>/Get Parameter6'
+  //   MATLABSystem: '<S22>/Get Parameter7'
 
   if (dynamic_simulation_DW.Position_IWORK != 0) {
     dynamic_simulation_X.Position_CSTATE[0] = dynamic_simulation_B.vNum;
@@ -13580,14 +13558,42 @@ void dynamic_simulation_step(void)
   dynamic_sim_emxInit_f_cell_wrap(&Ttree, 2);
   dynamic_simulati_emxInit_char_T(&bname, 2);
 
-  // MATLABSystem: '<S16>/MATLAB System' incorporates:
-  //   Integrator: '<S11>/Position'
+  // MATLABSystem: '<S14>/MATLAB System' incorporates:
+  //   Integrator: '<S10>/Position'
 
   RigidBodyTree_geometricJacobian(&dynamic_simulation_DW.obj_f.TreeInternal,
     dynamic_simulation_X.Position_CSTATE, b);
 
-  // MATLABSystem: '<S17>/MATLAB System' incorporates:
-  //   Integrator: '<S11>/Position'
+  // SignalConversion generated from: '<S17>/ SFunction ' incorporates:
+  //   MATLAB Function: '<S4>/Assign to JointState msg'
+  //   MATLABSystem: '<S19>/Get Parameter'
+  //   MATLABSystem: '<S19>/Get Parameter1'
+  //   MATLABSystem: '<S19>/Get Parameter2'
+  //   MATLABSystem: '<S19>/Get Parameter3'
+  //   MATLABSystem: '<S19>/Get Parameter4'
+  //   MATLABSystem: '<S19>/Get Parameter5'
+
+  ParamGet_dynamic_simulation_224.get_parameter(32U,
+    dynamic_simulation_B.charValue,
+    &dynamic_simulation_B.TmpSignalConversionAtSFunct[0]);
+  ParamGet_dynamic_simulation_228.get_parameter(32U,
+    dynamic_simulation_B.charValue_f,
+    &dynamic_simulation_B.TmpSignalConversionAtSFunct[1]);
+  ParamGet_dynamic_simulation_229.get_parameter(32U,
+    dynamic_simulation_B.charValue_a,
+    &dynamic_simulation_B.TmpSignalConversionAtSFunct[2]);
+  ParamGet_dynamic_simulation_230.get_parameter(32U,
+    dynamic_simulation_B.charValue_j,
+    &dynamic_simulation_B.TmpSignalConversionAtSFunct[3]);
+  ParamGet_dynamic_simulation_231.get_parameter(32U,
+    dynamic_simulation_B.charValue_jz,
+    &dynamic_simulation_B.TmpSignalConversionAtSFunct[4]);
+  ParamGet_dynamic_simulation_232.get_parameter(32U,
+    dynamic_simulation_B.charValue_o,
+    &dynamic_simulation_B.TmpSignalConversionAtSFunct[5]);
+
+  // MATLABSystem: '<S15>/MATLAB System' incorporates:
+  //   Integrator: '<S10>/Position'
 
   obj = &dynamic_simulation_DW.obj_i;
   obj_0 = &dynamic_simulation_DW.obj_i.TreeInternal;
@@ -13598,17 +13604,17 @@ void dynamic_simulation_step(void)
   bname->size[0] = 1;
   bname->size[1] = obj_0->Base.NameInternal->size[1];
   dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr);
-  dynamic_simulation_B.n_c = obj_0->Base.NameInternal->size[0] *
+  dynamic_simulation_B.n_a = obj_0->Base.NameInternal->size[0] *
     obj_0->Base.NameInternal->size[1] - 1;
   for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr <=
-       dynamic_simulation_B.n_c; dynamic_simulation_B.b_kstr++) {
+       dynamic_simulation_B.n_a; dynamic_simulation_B.b_kstr++) {
     bname->data[dynamic_simulation_B.b_kstr] = obj_0->Base.NameInternal->
       data[dynamic_simulation_B.b_kstr];
   }
 
   for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr < 11;
        dynamic_simulation_B.b_kstr++) {
-    dynamic_simulation_B.b_m[dynamic_simulation_B.b_kstr] =
+    dynamic_simulation_B.b_c[dynamic_simulation_B.b_kstr] =
       tmp_0[dynamic_simulation_B.b_kstr];
   }
 
@@ -13618,9 +13624,9 @@ void dynamic_simulation_step(void)
     do {
       exitg1 = 0;
       if (dynamic_simulation_B.b_kstr - 1 < 11) {
-        dynamic_simulation_B.n_c = dynamic_simulation_B.b_kstr - 1;
-        if (bname->data[dynamic_simulation_B.n_c] !=
-            dynamic_simulation_B.b_m[dynamic_simulation_B.n_c]) {
+        dynamic_simulation_B.n_a = dynamic_simulation_B.b_kstr - 1;
+        if (bname->data[dynamic_simulation_B.n_a] !=
+            dynamic_simulation_B.b_c[dynamic_simulation_B.n_a]) {
           exitg1 = 1;
         } else {
           dynamic_simulation_B.b_kstr++;
@@ -13645,17 +13651,17 @@ void dynamic_simulation_step(void)
       bname->size[0] = 1;
       bname->size[1] = obj_1->NameInternal->size[1];
       dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr);
-      dynamic_simulation_B.n_c = obj_1->NameInternal->size[0] *
+      dynamic_simulation_B.n_a = obj_1->NameInternal->size[0] *
         obj_1->NameInternal->size[1] - 1;
       for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr <=
-           dynamic_simulation_B.n_c; dynamic_simulation_B.b_kstr++) {
+           dynamic_simulation_B.n_a; dynamic_simulation_B.b_kstr++) {
         bname->data[dynamic_simulation_B.b_kstr] = obj_1->NameInternal->
           data[dynamic_simulation_B.b_kstr];
       }
 
       for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr < 11;
            dynamic_simulation_B.b_kstr++) {
-        dynamic_simulation_B.b_m[dynamic_simulation_B.b_kstr] =
+        dynamic_simulation_B.b_c[dynamic_simulation_B.b_kstr] =
           tmp_0[dynamic_simulation_B.b_kstr];
       }
 
@@ -13665,9 +13671,9 @@ void dynamic_simulation_step(void)
         do {
           exitg1 = 0;
           if (dynamic_simulation_B.b_kstr - 1 < 11) {
-            dynamic_simulation_B.n_c = dynamic_simulation_B.b_kstr - 1;
-            if (bname->data[dynamic_simulation_B.n_c] !=
-                dynamic_simulation_B.b_m[dynamic_simulation_B.n_c]) {
+            dynamic_simulation_B.n_a = dynamic_simulation_B.b_kstr - 1;
+            if (bname->data[dynamic_simulation_B.n_a] !=
+                dynamic_simulation_B.b_c[dynamic_simulation_B.n_a]) {
               exitg1 = 1;
             } else {
               dynamic_simulation_B.b_kstr++;
@@ -13709,17 +13715,17 @@ void dynamic_simulation_step(void)
   bname->size[0] = 1;
   bname->size[1] = obj_0->Base.NameInternal->size[1];
   dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr);
-  dynamic_simulation_B.n_c = obj_0->Base.NameInternal->size[0] *
+  dynamic_simulation_B.n_a = obj_0->Base.NameInternal->size[0] *
     obj_0->Base.NameInternal->size[1] - 1;
   for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr <=
-       dynamic_simulation_B.n_c; dynamic_simulation_B.b_kstr++) {
+       dynamic_simulation_B.n_a; dynamic_simulation_B.b_kstr++) {
     bname->data[dynamic_simulation_B.b_kstr] = obj_0->Base.NameInternal->
       data[dynamic_simulation_B.b_kstr];
   }
 
   for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr < 5;
        dynamic_simulation_B.b_kstr++) {
-    dynamic_simulation_B.b_o[dynamic_simulation_B.b_kstr] =
+    dynamic_simulation_B.b_g[dynamic_simulation_B.b_kstr] =
       tmp_1[dynamic_simulation_B.b_kstr];
   }
 
@@ -13729,9 +13735,9 @@ void dynamic_simulation_step(void)
     do {
       exitg1 = 0;
       if (dynamic_simulation_B.b_kstr - 1 < 5) {
-        dynamic_simulation_B.n_c = dynamic_simulation_B.b_kstr - 1;
-        if (bname->data[dynamic_simulation_B.n_c] !=
-            dynamic_simulation_B.b_o[dynamic_simulation_B.n_c]) {
+        dynamic_simulation_B.n_a = dynamic_simulation_B.b_kstr - 1;
+        if (bname->data[dynamic_simulation_B.n_a] !=
+            dynamic_simulation_B.b_g[dynamic_simulation_B.n_a]) {
           exitg1 = 1;
         } else {
           dynamic_simulation_B.b_kstr++;
@@ -13756,17 +13762,17 @@ void dynamic_simulation_step(void)
       bname->size[0] = 1;
       bname->size[1] = obj_1->NameInternal->size[1];
       dynami_emxEnsureCapacity_char_T(bname, dynamic_simulation_B.b_kstr);
-      dynamic_simulation_B.n_c = obj_1->NameInternal->size[0] *
+      dynamic_simulation_B.n_a = obj_1->NameInternal->size[0] *
         obj_1->NameInternal->size[1] - 1;
       for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr <=
-           dynamic_simulation_B.n_c; dynamic_simulation_B.b_kstr++) {
+           dynamic_simulation_B.n_a; dynamic_simulation_B.b_kstr++) {
         bname->data[dynamic_simulation_B.b_kstr] = obj_1->NameInternal->
           data[dynamic_simulation_B.b_kstr];
       }
 
       for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr < 5;
            dynamic_simulation_B.b_kstr++) {
-        dynamic_simulation_B.b_o[dynamic_simulation_B.b_kstr] =
+        dynamic_simulation_B.b_g[dynamic_simulation_B.b_kstr] =
           tmp_1[dynamic_simulation_B.b_kstr];
       }
 
@@ -13776,9 +13782,9 @@ void dynamic_simulation_step(void)
         do {
           exitg1 = 0;
           if (dynamic_simulation_B.b_kstr - 1 < 5) {
-            dynamic_simulation_B.n_c = dynamic_simulation_B.b_kstr - 1;
-            if (bname->data[dynamic_simulation_B.n_c] !=
-                dynamic_simulation_B.b_o[dynamic_simulation_B.n_c]) {
+            dynamic_simulation_B.n_a = dynamic_simulation_B.b_kstr - 1;
+            if (bname->data[dynamic_simulation_B.n_a] !=
+                dynamic_simulation_B.b_g[dynamic_simulation_B.n_a]) {
               exitg1 = 1;
             } else {
               dynamic_simulation_B.b_kstr++;
@@ -13802,7 +13808,7 @@ void dynamic_simulation_step(void)
 
   dynamic_simulati_emxFree_char_T(&bname);
 
-  // MATLABSystem: '<S17>/MATLAB System'
+  // MATLABSystem: '<S15>/MATLAB System'
   if (dynamic_simulation_B.bid1 == 0.0) {
     memset(&dynamic_simulation_B.T2[0], 0, sizeof(real_T) << 4U);
     dynamic_simulation_B.T2[0] = 1.0;
@@ -13820,7 +13826,7 @@ void dynamic_simulation_step(void)
 
   dynamic_sim_emxFree_f_cell_wrap(&Ttree);
 
-  // MATLABSystem: '<S17>/MATLAB System'
+  // MATLABSystem: '<S15>/MATLAB System'
   for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr < 3;
        dynamic_simulation_B.b_kstr++) {
     dynamic_simulation_B.R_j[3 * dynamic_simulation_B.b_kstr] =
@@ -13861,52 +13867,52 @@ void dynamic_simulation_step(void)
   dynamic_simulation_B.R_k[15] = 1.0;
   for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr < 4;
        dynamic_simulation_B.b_kstr++) {
-    for (dynamic_simulation_B.n_c = 0; dynamic_simulation_B.n_c < 4;
-         dynamic_simulation_B.n_c++) {
+    for (dynamic_simulation_B.n_a = 0; dynamic_simulation_B.n_a < 4;
+         dynamic_simulation_B.n_a++) {
       dynamic_simulation_B.i = dynamic_simulation_B.b_kstr << 2;
-      dynamic_simulation_B.rtb_MATLABSystem_tmp = dynamic_simulation_B.n_c +
+      dynamic_simulation_B.rtb_MATLABSystem_tmp = dynamic_simulation_B.n_a +
         dynamic_simulation_B.i;
       dynamic_simulation_B.T2[dynamic_simulation_B.rtb_MATLABSystem_tmp] = 0.0;
       dynamic_simulation_B.T2[dynamic_simulation_B.rtb_MATLABSystem_tmp] +=
         dynamic_simulation_B.T1[dynamic_simulation_B.i] *
-        dynamic_simulation_B.R_k[dynamic_simulation_B.n_c];
+        dynamic_simulation_B.R_k[dynamic_simulation_B.n_a];
       dynamic_simulation_B.T2[dynamic_simulation_B.rtb_MATLABSystem_tmp] +=
         dynamic_simulation_B.T1[dynamic_simulation_B.i + 1] *
-        dynamic_simulation_B.R_k[dynamic_simulation_B.n_c + 4];
+        dynamic_simulation_B.R_k[dynamic_simulation_B.n_a + 4];
       dynamic_simulation_B.T2[dynamic_simulation_B.rtb_MATLABSystem_tmp] +=
         dynamic_simulation_B.T1[dynamic_simulation_B.i + 2] *
-        dynamic_simulation_B.R_k[dynamic_simulation_B.n_c + 8];
+        dynamic_simulation_B.R_k[dynamic_simulation_B.n_a + 8];
       dynamic_simulation_B.T2[dynamic_simulation_B.rtb_MATLABSystem_tmp] +=
         dynamic_simulation_B.T1[dynamic_simulation_B.i + 3] *
-        dynamic_simulation_B.R_k[dynamic_simulation_B.n_c + 12];
+        dynamic_simulation_B.R_k[dynamic_simulation_B.n_a + 12];
     }
   }
 
-  // MATLABSystem: '<S20>/Get Parameter2'
+  // MATLABSystem: '<S22>/Get Parameter2'
   ParamGet_dynamic_simulation_135.get_parameter(&dynamic_simulation_B.vNum);
 
-  // MATLABSystem: '<S20>/Get Parameter3'
+  // MATLABSystem: '<S22>/Get Parameter3'
   ParamGet_dynamic_simulation_136.get_parameter(&dynamic_simulation_B.bid1);
 
-  // MATLABSystem: '<S20>/Get Parameter8'
+  // MATLABSystem: '<S22>/Get Parameter8'
   ParamGet_dynamic_simulation_141.get_parameter(&dynamic_simulation_B.j);
 
-  // MATLABSystem: '<S20>/Get Parameter9'
+  // MATLABSystem: '<S22>/Get Parameter9'
   ParamGet_dynamic_simulation_142.get_parameter(&dynamic_simulation_B.K23);
 
-  // MATLABSystem: '<S20>/Get Parameter10'
+  // MATLABSystem: '<S22>/Get Parameter10'
   ParamGet_dynamic_simulation_133.get_parameter(&dynamic_simulation_B.K24);
 
-  // MATLABSystem: '<S20>/Get Parameter11'
+  // MATLABSystem: '<S22>/Get Parameter11'
   ParamGet_dynamic_simulation_134.get_parameter(&dynamic_simulation_B.K34);
 
-  // Integrator: '<S11>/Velocity' incorporates:
-  //   MATLABSystem: '<S20>/Get Parameter10'
-  //   MATLABSystem: '<S20>/Get Parameter11'
-  //   MATLABSystem: '<S20>/Get Parameter2'
-  //   MATLABSystem: '<S20>/Get Parameter3'
-  //   MATLABSystem: '<S20>/Get Parameter8'
-  //   MATLABSystem: '<S20>/Get Parameter9'
+  // Integrator: '<S10>/Velocity' incorporates:
+  //   MATLABSystem: '<S22>/Get Parameter10'
+  //   MATLABSystem: '<S22>/Get Parameter11'
+  //   MATLABSystem: '<S22>/Get Parameter2'
+  //   MATLABSystem: '<S22>/Get Parameter3'
+  //   MATLABSystem: '<S22>/Get Parameter8'
+  //   MATLABSystem: '<S22>/Get Parameter9'
 
   if (dynamic_simulation_DW.Velocity_IWORK != 0) {
     dynamic_simulation_X.Velocity_CSTATE[0] = dynamic_simulation_B.vNum;
@@ -13923,31 +13929,31 @@ void dynamic_simulation_step(void)
       dynamic_simulation_X.Velocity_CSTATE[dynamic_simulation_B.i];
   }
 
-  // End of Integrator: '<S11>/Velocity'
+  // End of Integrator: '<S10>/Velocity'
 
-  // Product: '<S4>/MatrixMultiply' incorporates:
-  //   MATLABSystem: '<S16>/MATLAB System'
+  // Product: '<S2>/MatrixMultiply' incorporates:
+  //   MATLABSystem: '<S14>/MATLAB System'
 
   for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr < 6;
        dynamic_simulation_B.b_kstr++) {
     dynamic_simulation_B.MatrixMultiply[dynamic_simulation_B.b_kstr] = 0.0;
-    for (dynamic_simulation_B.n_c = 0; dynamic_simulation_B.n_c < 6;
-         dynamic_simulation_B.n_c++) {
-      dynamic_simulation_B.vNum = b->data[6 * dynamic_simulation_B.n_c +
+    for (dynamic_simulation_B.n_a = 0; dynamic_simulation_B.n_a < 6;
+         dynamic_simulation_B.n_a++) {
+      dynamic_simulation_B.vNum = b->data[6 * dynamic_simulation_B.n_a +
         dynamic_simulation_B.b_kstr] *
-        dynamic_simulation_B.Velocity[dynamic_simulation_B.n_c] +
+        dynamic_simulation_B.Velocity[dynamic_simulation_B.n_a] +
         dynamic_simulation_B.MatrixMultiply[dynamic_simulation_B.b_kstr];
       dynamic_simulation_B.MatrixMultiply[dynamic_simulation_B.b_kstr] =
         dynamic_simulation_B.vNum;
     }
   }
 
-  // End of Product: '<S4>/MatrixMultiply'
+  // End of Product: '<S2>/MatrixMultiply'
   dynamic_simulati_emxFree_real_T(&b);
   if (rtmIsMajorTimeStep(dynamic_simulation_M)) {
     // Outputs for Atomic SubSystem: '<Root>/Subscribe'
-    // MATLABSystem: '<S12>/SourceBlock' incorporates:
-    //   Inport: '<S21>/In1'
+    // MATLABSystem: '<S11>/SourceBlock' incorporates:
+    //   Inport: '<S23>/In1'
 
     dynamic_simulat_SystemCore_step(&dynamic_simulation_B.b_bool,
       dynamic_simulation_B.b_varargout_2_Data,
@@ -13958,8 +13964,8 @@ void dynamic_simulation_step(void)
       &dynamic_simulation_B.b_varargout_2_Layout_Dim_SL_Inf,
       &dynamic_simulation_B.b_varargout_2_Layout_Dim_SL_I_c);
 
-    // Outputs for Enabled SubSystem: '<S12>/Enabled Subsystem' incorporates:
-    //   EnablePort: '<S21>/Enable'
+    // Outputs for Enabled SubSystem: '<S11>/Enabled Subsystem' incorporates:
+    //   EnablePort: '<S23>/Enable'
 
     if (dynamic_simulation_B.b_bool) {
       memcpy(&dynamic_simulation_B.In1.Data[0],
@@ -13979,8 +13985,8 @@ void dynamic_simulation_step(void)
         dynamic_simulation_B.b_varargout_2_Layout_Dim_SL_I_c;
     }
 
-    // End of MATLABSystem: '<S12>/SourceBlock'
-    // End of Outputs for SubSystem: '<S12>/Enabled Subsystem'
+    // End of MATLABSystem: '<S11>/SourceBlock'
+    // End of Outputs for SubSystem: '<S11>/Enabled Subsystem'
     // End of Outputs for SubSystem: '<Root>/Subscribe'
   }
 
@@ -13988,9 +13994,9 @@ void dynamic_simulation_step(void)
   dynamic_simulati_emxInit_real_T(&lambda, 2);
   dynamic_simulati_emxInit_real_T(&tmp, 1);
 
-  // MATLABSystem: '<S19>/MATLAB System' incorporates:
-  //   Constant: '<S11>/Constant'
-  //   Integrator: '<S11>/Position'
+  // MATLABSystem: '<S20>/MATLAB System' incorporates:
+  //   Constant: '<S10>/Constant'
+  //   Integrator: '<S10>/Position'
 
   obj_2 = &dynamic_simulation_DW.obj;
   RigidBodyTreeDynamics_massMatri(&dynamic_simulation_DW.obj.TreeInternal,
@@ -14012,7 +14018,7 @@ void dynamic_simulation_step(void)
     dynamic_simulation_P.Constant_Value_ij, dynamic_simulation_B.MATLABSystem);
   dynamic_simulati_emxFree_real_T(&tmp);
 
-  // MATLABSystem: '<S19>/MATLAB System'
+  // MATLABSystem: '<S20>/MATLAB System'
   for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr < 6;
        dynamic_simulation_B.b_kstr++) {
     dynamic_simulation_B.MATLABSystem[dynamic_simulation_B.b_kstr] =
@@ -14032,14 +14038,14 @@ void dynamic_simulation_step(void)
 
   dynamic_simulati_emxInit_real_T(&H, 2);
 
-  // MATLABSystem: '<S19>/MATLAB System'
+  // MATLABSystem: '<S20>/MATLAB System'
   dynamic_simulation_B.b_kstr = H->size[0] * H->size[1];
   H->size[0] = L->size[0];
   H->size[1] = L->size[1];
   dynami_emxEnsureCapacity_real_T(H, dynamic_simulation_B.b_kstr);
-  dynamic_simulation_B.n_c = L->size[0] * L->size[1] - 1;
+  dynamic_simulation_B.n_a = L->size[0] * L->size[1] - 1;
   for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr <=
-       dynamic_simulation_B.n_c; dynamic_simulation_B.b_kstr++) {
+       dynamic_simulation_B.n_a; dynamic_simulation_B.b_kstr++) {
     H->data[dynamic_simulation_B.b_kstr] = L->data[dynamic_simulation_B.b_kstr];
   }
 
@@ -14050,39 +14056,39 @@ void dynamic_simulation_step(void)
     dynamic_simulation_B.j = static_cast<real_T>(dynamic_simulation_B.u1) + -
       static_cast<real_T>(dynamic_simulation_B.i);
     dynamic_simulation_B.b_kstr = static_cast<int32_T>(dynamic_simulation_B.j);
-    dynamic_simulation_B.n_c = dynamic_simulation_B.b_kstr - 1;
+    dynamic_simulation_B.n_a = dynamic_simulation_B.b_kstr - 1;
     H->data[(static_cast<int32_T>(dynamic_simulation_B.j) + H->size[0] * (
               static_cast<int32_T>(dynamic_simulation_B.j) - 1)) - 1] = sqrt
-      (H->data[(dynamic_simulation_B.n_c * H->size[0] +
+      (H->data[(dynamic_simulation_B.n_a * H->size[0] +
                 dynamic_simulation_B.b_kstr) - 1]);
-    dynamic_simulation_B.bid1 = lambda->data[dynamic_simulation_B.n_c];
+    dynamic_simulation_B.bid1 = lambda->data[dynamic_simulation_B.n_a];
     while (dynamic_simulation_B.bid1 > 0.0) {
-      dynamic_simulation_B.i_a = static_cast<int32_T>(dynamic_simulation_B.bid1)
+      dynamic_simulation_B.i_p = static_cast<int32_T>(dynamic_simulation_B.bid1)
         - 1;
       H->data[(static_cast<int32_T>(dynamic_simulation_B.j) + H->size[0] * (
                 static_cast<int32_T>(dynamic_simulation_B.bid1) - 1)) - 1] =
-        H->data[(dynamic_simulation_B.i_a * H->size[0] +
+        H->data[(dynamic_simulation_B.i_p * H->size[0] +
                  dynamic_simulation_B.b_kstr) - 1] / H->data
         [((static_cast<int32_T>(dynamic_simulation_B.j) - 1) * H->size[0] +
           static_cast<int32_T>(dynamic_simulation_B.j)) - 1];
-      dynamic_simulation_B.bid1 = lambda->data[dynamic_simulation_B.i_a];
+      dynamic_simulation_B.bid1 = lambda->data[dynamic_simulation_B.i_p];
     }
 
-    dynamic_simulation_B.bid1 = lambda->data[dynamic_simulation_B.n_c];
+    dynamic_simulation_B.bid1 = lambda->data[dynamic_simulation_B.n_a];
     while (dynamic_simulation_B.bid1 > 0.0) {
       dynamic_simulation_B.j = dynamic_simulation_B.bid1;
       while (dynamic_simulation_B.j > 0.0) {
-        dynamic_simulation_B.n_c = static_cast<int32_T>(dynamic_simulation_B.j)
+        dynamic_simulation_B.n_a = static_cast<int32_T>(dynamic_simulation_B.j)
           - 1;
         H->data[(static_cast<int32_T>(dynamic_simulation_B.bid1) + H->size[0] *
                  (static_cast<int32_T>(dynamic_simulation_B.j) - 1)) - 1] =
-          H->data[(dynamic_simulation_B.n_c * H->size[0] + static_cast<int32_T>
+          H->data[(dynamic_simulation_B.n_a * H->size[0] + static_cast<int32_T>
                    (dynamic_simulation_B.bid1)) - 1] - H->data
           [((static_cast<int32_T>(dynamic_simulation_B.bid1) - 1) * H->size[0] +
             dynamic_simulation_B.b_kstr) - 1] * H->data[((static_cast<int32_T>
           (dynamic_simulation_B.j) - 1) * H->size[0] +
           dynamic_simulation_B.b_kstr) - 1];
-        dynamic_simulation_B.j = lambda->data[dynamic_simulation_B.n_c];
+        dynamic_simulation_B.j = lambda->data[dynamic_simulation_B.n_a];
       }
 
       dynamic_simulation_B.bid1 = lambda->data[static_cast<int32_T>
@@ -14094,18 +14100,18 @@ void dynamic_simulation_step(void)
   L->size[0] = H->size[0];
   L->size[1] = H->size[1];
   dynami_emxEnsureCapacity_real_T(L, dynamic_simulation_B.b_kstr);
-  dynamic_simulation_B.n_c = H->size[0] * H->size[1] - 1;
+  dynamic_simulation_B.n_a = H->size[0] * H->size[1] - 1;
   for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr <=
-       dynamic_simulation_B.n_c; dynamic_simulation_B.b_kstr++) {
+       dynamic_simulation_B.n_a; dynamic_simulation_B.b_kstr++) {
     L->data[dynamic_simulation_B.b_kstr] = H->data[dynamic_simulation_B.b_kstr];
   }
 
-  dynamic_simulation_B.n_c = H->size[1];
+  dynamic_simulation_B.n_a = H->size[1];
   if ((H->size[0] == 0) || (H->size[1] == 0) || (1 >= H->size[1])) {
   } else {
     dynamic_simulation_B.iend = 0;
     for (dynamic_simulation_B.b_kstr = 2; dynamic_simulation_B.b_kstr <=
-         dynamic_simulation_B.n_c; dynamic_simulation_B.b_kstr++) {
+         dynamic_simulation_B.n_a; dynamic_simulation_B.b_kstr++) {
       for (dynamic_simulation_B.i = 0; dynamic_simulation_B.i <=
            dynamic_simulation_B.iend; dynamic_simulation_B.i++) {
         L->data[dynamic_simulation_B.i + L->size[0] *
@@ -14120,29 +14126,29 @@ void dynamic_simulation_step(void)
 
   dynamic_simulati_emxFree_real_T(&H);
 
-  // MATLABSystem: '<S19>/MATLAB System'
+  // MATLABSystem: '<S20>/MATLAB System'
   dynamic_simulation_B.iend = static_cast<int32_T>(((-1.0 -
     dynamic_simulation_B.vNum) + 1.0) / -1.0) - 1;
   for (dynamic_simulation_B.i = 0; dynamic_simulation_B.i <=
        dynamic_simulation_B.iend; dynamic_simulation_B.i++) {
-    dynamic_simulation_B.n_c = static_cast<int32_T>(dynamic_simulation_B.vNum +
+    dynamic_simulation_B.n_a = static_cast<int32_T>(dynamic_simulation_B.vNum +
       -static_cast<real_T>(dynamic_simulation_B.i));
-    dynamic_simulation_B.b_kstr = dynamic_simulation_B.n_c - 1;
+    dynamic_simulation_B.b_kstr = dynamic_simulation_B.n_a - 1;
     dynamic_simulation_B.MATLABSystem[dynamic_simulation_B.b_kstr] /= L->data
-      [(dynamic_simulation_B.b_kstr * L->size[0] + dynamic_simulation_B.n_c) - 1];
+      [(dynamic_simulation_B.b_kstr * L->size[0] + dynamic_simulation_B.n_a) - 1];
     dynamic_simulation_B.j = lambda->data[dynamic_simulation_B.b_kstr];
     while (dynamic_simulation_B.j > 0.0) {
       dynamic_simulation_B.u1 = static_cast<int32_T>(dynamic_simulation_B.j) - 1;
       dynamic_simulation_B.MATLABSystem[dynamic_simulation_B.u1] -= L->data
-        [(dynamic_simulation_B.u1 * L->size[0] + dynamic_simulation_B.n_c) - 1] *
+        [(dynamic_simulation_B.u1 * L->size[0] + dynamic_simulation_B.n_a) - 1] *
         dynamic_simulation_B.MATLABSystem[dynamic_simulation_B.b_kstr];
       dynamic_simulation_B.j = lambda->data[dynamic_simulation_B.u1];
     }
   }
 
-  dynamic_simulation_B.n_c = dynamic_simulation_B.rtb_MATLABSystem_tmp - 1;
+  dynamic_simulation_B.n_a = dynamic_simulation_B.rtb_MATLABSystem_tmp - 1;
   for (dynamic_simulation_B.i = 0; dynamic_simulation_B.i <=
-       dynamic_simulation_B.n_c; dynamic_simulation_B.i++) {
+       dynamic_simulation_B.n_a; dynamic_simulation_B.i++) {
     dynamic_simulation_B.j = lambda->data[dynamic_simulation_B.i];
     while (dynamic_simulation_B.j > 0.0) {
       dynamic_simulation_B.b_kstr = static_cast<int32_T>(dynamic_simulation_B.j)
@@ -14160,7 +14166,7 @@ void dynamic_simulation_step(void)
   dynamic_simulati_emxFree_real_T(&lambda);
   dynamic_simulati_emxFree_real_T(&L);
 
-  // MATLAB Function: '<S4>/MATLAB Function'
+  // MATLAB Function: '<S2>/MATLAB Function'
   dynamic_simulation_B.vNum = dynamic_simulation_B.T2[4] +
     dynamic_simulation_B.T2[1];
   dynamic_simulation_B.bid1 = dynamic_simulation_B.T2[8] +
@@ -14240,9 +14246,9 @@ void dynamic_simulation_step(void)
     dynamic_simulation_B.eigVec[dynamic_simulation_B.b_kstr].re;
   dynamic_simulation_B.cartOrn[1] =
     dynamic_simulation_B.eigVec[dynamic_simulation_B.i].re;
-  dynamic_simulation_B.n_c = dynamic_simulation_B.i + 1;
+  dynamic_simulation_B.n_a = dynamic_simulation_B.i + 1;
   dynamic_simulation_B.cartOrn[2] =
-    dynamic_simulation_B.eigVec[dynamic_simulation_B.n_c].re;
+    dynamic_simulation_B.eigVec[dynamic_simulation_B.n_a].re;
   dynamic_simulation_B.rtb_MATLABSystem_tmp = dynamic_simulation_B.i + 2;
   dynamic_simulation_B.cartOrn[3] =
     dynamic_simulation_B.eigVec[dynamic_simulation_B.rtb_MATLABSystem_tmp].re;
@@ -14252,76 +14258,85 @@ void dynamic_simulation_step(void)
     dynamic_simulation_B.cartOrn[1] =
       -dynamic_simulation_B.eigVec[dynamic_simulation_B.i].re;
     dynamic_simulation_B.cartOrn[2] =
-      -dynamic_simulation_B.eigVec[dynamic_simulation_B.n_c].re;
+      -dynamic_simulation_B.eigVec[dynamic_simulation_B.n_a].re;
     dynamic_simulation_B.cartOrn[3] =
       -dynamic_simulation_B.eigVec[dynamic_simulation_B.rtb_MATLABSystem_tmp].re;
   }
 
-  // Clock: '<Root>/Clock1' incorporates:
-  //   Clock: '<Root>/Clock'
+  // Clock: '<Root>/Clock1'
+  dynamic_simulation_B.bid1 = dynamic_simulation_M->Timing.t[0];
 
-  dynamic_simulation_B.vNum = dynamic_simulation_M->Timing.t[0];
-
-  // MATLAB Function: '<S3>/MATLAB Function' incorporates:
-  //   Clock: '<Root>/Clock1'
-
-  if (dynamic_simulation_B.vNum < 0.0) {
-    // MATLAB Function: '<Root>/Assign to JointState msg'
-    dynamic_simulation_B.bid1 = ceil(dynamic_simulation_B.vNum);
+  // MATLAB Function: '<Root>/MATLAB Function'
+  if (dynamic_simulation_B.bid1 < 0.0) {
+    dynamic_simulation_B.vNum = ceil(dynamic_simulation_B.bid1);
   } else {
-    // MATLAB Function: '<Root>/Assign to JointState msg'
-    dynamic_simulation_B.bid1 = floor(dynamic_simulation_B.vNum);
+    dynamic_simulation_B.vNum = floor(dynamic_simulation_B.bid1);
   }
 
-  dynamic_simulation_B.j = (dynamic_simulation_B.vNum -
-    dynamic_simulation_B.bid1) * 1.0E+9;
-  if (dynamic_simulation_B.j < 0.0) {
-    // MATLAB Function: '<Root>/Assign to JointState msg'
-    dynamic_simulation_B.j = ceil(dynamic_simulation_B.j);
+  dynamic_simulation_B.bid1 = (dynamic_simulation_B.bid1 -
+    dynamic_simulation_B.vNum) * 1.0E+9;
+  if (dynamic_simulation_B.bid1 < 0.0) {
+    dynamic_simulation_B.bid1 = ceil(dynamic_simulation_B.bid1);
   } else {
-    // MATLAB Function: '<Root>/Assign to JointState msg'
-    dynamic_simulation_B.j = floor(dynamic_simulation_B.j);
+    dynamic_simulation_B.bid1 = floor(dynamic_simulation_B.bid1);
   }
 
-  // BusAssignment: '<S3>/Bus Assignment' incorporates:
-  //   Constant: '<S13>/Constant'
-  //   MATLAB Function: '<S3>/MATLAB Function'
-  //   MATLAB Function: '<S4>/MATLAB Function'
+  // BusAssignment: '<S1>/Bus Assignment' incorporates:
+  //   BusCreator generated from: '<S1>/Bus Assignment'
+  //   Constant: '<S12>/Constant'
+  //   MATLAB Function: '<Root>/MATLAB Function'
+  //   MATLAB Function: '<S2>/MATLAB Function'
 
-  dynamic_simulation_B.BusAssignment = dynamic_simulation_P.Constant_Value_l;
-  dynamic_simulation_B.BusAssignment.Header.Stamp.Sec =
+  dynamic_simulation_B.BusAssignment_b = dynamic_simulation_P.Constant_Value_l;
+  dynamic_simulation_B.BusAssignment_b.Header.Stamp.Sec =
+    dynamic_simulation_B.vNum;
+  dynamic_simulation_B.BusAssignment_b.Header.Stamp.Nsec =
     dynamic_simulation_B.bid1;
-  dynamic_simulation_B.BusAssignment.Header.Stamp.Nsec = dynamic_simulation_B.j;
-  dynamic_simulation_B.BusAssignment.Pose.Position.X = dynamic_simulation_B.T2
-    [12];
-  dynamic_simulation_B.BusAssignment.Pose.Position.Y = dynamic_simulation_B.T2
-    [13];
-  dynamic_simulation_B.BusAssignment.Pose.Position.Z = dynamic_simulation_B.T2
-    [14];
-  dynamic_simulation_B.BusAssignment.Pose.Orientation.X =
+  dynamic_simulation_B.BusAssignment_b.Pose.Position.X =
+    dynamic_simulation_B.T2[12];
+  dynamic_simulation_B.BusAssignment_b.Pose.Position.Y =
+    dynamic_simulation_B.T2[13];
+  dynamic_simulation_B.BusAssignment_b.Pose.Position.Z =
+    dynamic_simulation_B.T2[14];
+  dynamic_simulation_B.BusAssignment_b.Pose.Orientation.X =
     dynamic_simulation_B.cartOrn[0];
-  dynamic_simulation_B.BusAssignment.Pose.Orientation.Y =
+  dynamic_simulation_B.BusAssignment_b.Pose.Orientation.Y =
     dynamic_simulation_B.cartOrn[1];
-  dynamic_simulation_B.BusAssignment.Pose.Orientation.Z =
+  dynamic_simulation_B.BusAssignment_b.Pose.Orientation.Z =
     dynamic_simulation_B.cartOrn[2];
-  dynamic_simulation_B.BusAssignment.Pose.Orientation.W =
+  dynamic_simulation_B.BusAssignment_b.Pose.Orientation.W =
     dynamic_simulation_B.cartOrn[3];
 
   // Outputs for Atomic SubSystem: '<Root>/Publish2'
-  // MATLABSystem: '<S9>/SinkBlock'
-  Pub_dynamic_simulation_178.publish(&dynamic_simulation_B.BusAssignment);
+  // MATLABSystem: '<S8>/SinkBlock'
+  Pub_dynamic_simulation_178.publish(&dynamic_simulation_B.BusAssignment_b);
 
   // End of Outputs for SubSystem: '<Root>/Publish2'
 
-  // BusAssignment: '<S3>/Bus Assignment1' incorporates:
-  //   Constant: '<S14>/Constant'
-  //   MATLAB Function: '<S3>/MATLAB Function'
-  //   MATLAB Function: '<S4>/MATLAB Function'
+  // BusAssignment: '<Root>/Bus Assignment' incorporates:
+  //   BusCreator generated from: '<Root>/Bus Assignment'
+  //   MATLAB Function: '<Root>/MATLAB Function'
+
+  dynamic_simulation_B.BusAssignment_o.Clock_.Sec = dynamic_simulation_B.vNum;
+  dynamic_simulation_B.BusAssignment_o.Clock_.Nsec = dynamic_simulation_B.bid1;
+
+  // Outputs for Atomic SubSystem: '<Root>/Publish1'
+  // MATLABSystem: '<S7>/SinkBlock'
+  Pub_dynamic_simulation_158.publish(&dynamic_simulation_B.BusAssignment_o);
+
+  // End of Outputs for SubSystem: '<Root>/Publish1'
+
+  // BusAssignment: '<S1>/Bus Assignment1' incorporates:
+  //   BusCreator generated from: '<S1>/Bus Assignment1'
+  //   Constant: '<S13>/Constant'
+  //   MATLAB Function: '<Root>/MATLAB Function'
+  //   MATLAB Function: '<S2>/MATLAB Function'
 
   dynamic_simulation_B.BusAssignment1 = dynamic_simulation_P.Constant_Value_a;
   dynamic_simulation_B.BusAssignment1.Header.Stamp.Sec =
+    dynamic_simulation_B.vNum;
+  dynamic_simulation_B.BusAssignment1.Header.Stamp.Nsec =
     dynamic_simulation_B.bid1;
-  dynamic_simulation_B.BusAssignment1.Header.Stamp.Nsec = dynamic_simulation_B.j;
   dynamic_simulation_B.BusAssignment1.Twist.Linear.X =
     dynamic_simulation_B.MatrixMultiply[3];
   dynamic_simulation_B.BusAssignment1.Twist.Linear.Y =
@@ -14336,103 +14351,135 @@ void dynamic_simulation_step(void)
     dynamic_simulation_B.MatrixMultiply[2];
 
   // Outputs for Atomic SubSystem: '<Root>/Publish3'
-  // MATLABSystem: '<S10>/SinkBlock'
+  // MATLABSystem: '<S9>/SinkBlock'
   Pub_dynamic_simulation_179.publish(&dynamic_simulation_B.BusAssignment1);
 
   // End of Outputs for SubSystem: '<Root>/Publish3'
-
-  // MATLAB Function: '<Root>/Assign to JointState msg' incorporates:
-  //   Constant: '<S5>/Constant'
-  //   Integrator: '<S11>/Position'
-
-  dynamic_simulation_B.msg = dynamic_simulation_P.Constant_Value;
-  dynamic_simulation_B.msg.Header.Stamp.Sec = dynamic_simulation_B.bid1;
-  dynamic_simulation_B.msg.Header.Stamp.Nsec = dynamic_simulation_B.j;
-  dynamic_simulation_B.msg.Name_SL_Info.CurrentLength = 6U;
-  dynamic_simulation_B.msg.Position_SL_Info.CurrentLength = 6U;
-  dynamic_simulation_B.msg.Velocity_SL_Info.CurrentLength = 6U;
-  dynamic_simulation_B.msg.Name[0].Data_SL_Info.CurrentLength = 11U;
-  dynamic_simulation_B.msg.Position[0] = dynamic_simulation_X.Position_CSTATE[0];
-  dynamic_simulation_B.msg.Velocity[0] = dynamic_simulation_B.Velocity[0];
-  dynamic_simulation_B.msg.Name[1].Data_SL_Info.CurrentLength = 11U;
-  dynamic_simulation_B.msg.Position[1] = dynamic_simulation_X.Position_CSTATE[1];
-  dynamic_simulation_B.msg.Velocity[1] = dynamic_simulation_B.Velocity[1];
-  dynamic_simulation_B.msg.Name[2].Data_SL_Info.CurrentLength = 11U;
-  dynamic_simulation_B.msg.Position[2] = dynamic_simulation_X.Position_CSTATE[2];
-  dynamic_simulation_B.msg.Velocity[2] = dynamic_simulation_B.Velocity[2];
-  dynamic_simulation_B.msg.Name[3].Data_SL_Info.CurrentLength = 11U;
-  dynamic_simulation_B.msg.Position[3] = dynamic_simulation_X.Position_CSTATE[3];
-  dynamic_simulation_B.msg.Velocity[3] = dynamic_simulation_B.Velocity[3];
-  dynamic_simulation_B.msg.Name[4].Data_SL_Info.CurrentLength = 11U;
-  dynamic_simulation_B.msg.Position[4] = dynamic_simulation_X.Position_CSTATE[4];
-  dynamic_simulation_B.msg.Velocity[4] = dynamic_simulation_B.Velocity[4];
-  for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr < 11;
+  for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr < 32;
        dynamic_simulation_B.b_kstr++) {
-    dynamic_simulation_B.b_c.f1[dynamic_simulation_B.b_kstr] =
-      h[dynamic_simulation_B.b_kstr];
-    dynamic_simulation_B.c.f1[dynamic_simulation_B.b_kstr] =
-      i[dynamic_simulation_B.b_kstr];
-    dynamic_simulation_B.d.f1[dynamic_simulation_B.b_kstr] =
-      j[dynamic_simulation_B.b_kstr];
-    dynamic_simulation_B.e.f1[dynamic_simulation_B.b_kstr] =
-      k[dynamic_simulation_B.b_kstr];
-    dynamic_simulation_B.f.f1[dynamic_simulation_B.b_kstr] =
-      l[dynamic_simulation_B.b_kstr];
-    dynamic_simulation_B.g.f1[dynamic_simulation_B.b_kstr] =
-      m[dynamic_simulation_B.b_kstr];
-    dynamic_simulation_B.msg.Name[0].Data[dynamic_simulation_B.b_kstr] =
-      static_cast<uint8_T>
-      (dynamic_simulation_B.b_c.f1[dynamic_simulation_B.b_kstr]);
-    dynamic_simulation_B.msg.Name[1].Data[dynamic_simulation_B.b_kstr] =
-      static_cast<uint8_T>(dynamic_simulation_B.c.f1[dynamic_simulation_B.b_kstr]);
-    dynamic_simulation_B.msg.Name[2].Data[dynamic_simulation_B.b_kstr] =
-      static_cast<uint8_T>(dynamic_simulation_B.d.f1[dynamic_simulation_B.b_kstr]);
-    dynamic_simulation_B.msg.Name[3].Data[dynamic_simulation_B.b_kstr] =
-      static_cast<uint8_T>(dynamic_simulation_B.e.f1[dynamic_simulation_B.b_kstr]);
-    dynamic_simulation_B.msg.Name[4].Data[dynamic_simulation_B.b_kstr] =
-      static_cast<uint8_T>(dynamic_simulation_B.f.f1[dynamic_simulation_B.b_kstr]);
-    dynamic_simulation_B.msg.Name[5].Data[dynamic_simulation_B.b_kstr] =
-      static_cast<uint8_T>(dynamic_simulation_B.g.f1[dynamic_simulation_B.b_kstr]);
+    // SignalConversion generated from: '<S17>/ SFunction ' incorporates:
+    //   MATLAB Function: '<S4>/Assign to JointState msg'
+    //   MATLABSystem: '<S19>/Get Parameter'
+    //   MATLABSystem: '<S19>/Get Parameter1'
+    //   MATLABSystem: '<S19>/Get Parameter2'
+    //   MATLABSystem: '<S19>/Get Parameter3'
+    //   MATLABSystem: '<S19>/Get Parameter4'
+    //   MATLABSystem: '<S19>/Get Parameter5'
+
+    dynamic_simulation_B.TmpSignalConversionAtSFun_b[dynamic_simulation_B.b_kstr]
+      = static_cast<uint8_T>
+      (dynamic_simulation_B.charValue[dynamic_simulation_B.b_kstr]);
+    dynamic_simulation_B.TmpSignalConversionAtSFun_b[dynamic_simulation_B.b_kstr
+      + 32] = static_cast<uint8_T>
+      (dynamic_simulation_B.charValue_f[dynamic_simulation_B.b_kstr]);
+    dynamic_simulation_B.TmpSignalConversionAtSFun_b[dynamic_simulation_B.b_kstr
+      + 64] = static_cast<uint8_T>
+      (dynamic_simulation_B.charValue_a[dynamic_simulation_B.b_kstr]);
+    dynamic_simulation_B.TmpSignalConversionAtSFun_b[dynamic_simulation_B.b_kstr
+      + 96] = static_cast<uint8_T>
+      (dynamic_simulation_B.charValue_j[dynamic_simulation_B.b_kstr]);
+    dynamic_simulation_B.TmpSignalConversionAtSFun_b[dynamic_simulation_B.b_kstr
+      + 128] = static_cast<uint8_T>
+      (dynamic_simulation_B.charValue_jz[dynamic_simulation_B.b_kstr]);
+    dynamic_simulation_B.TmpSignalConversionAtSFun_b[dynamic_simulation_B.b_kstr
+      + 160] = static_cast<uint8_T>
+      (dynamic_simulation_B.charValue_o[dynamic_simulation_B.b_kstr]);
   }
 
-  dynamic_simulation_B.msg.Name[5].Data_SL_Info.CurrentLength = 11U;
-  dynamic_simulation_B.msg.Position[5] = dynamic_simulation_X.Position_CSTATE[5];
-  dynamic_simulation_B.msg.Velocity[5] = dynamic_simulation_B.Velocity[5];
+  // BusAssignment: '<S4>/Bus Assignment' incorporates:
+  //   Constant: '<S18>/Constant'
+  //   MATLAB Function: '<S4>/Assign to JointState msg'
+
+  dynamic_simulation_B.BusAssignment = dynamic_simulation_P.Constant_Value;
+
+  // MATLAB Function: '<S4>/Assign to JointState msg' incorporates:
+  //   BusAssignment: '<S4>/Bus Assignment'
+  //   Constant: '<S4>/Constant'
+  //   Integrator: '<S10>/Position'
+
+  dynamic_simulation_B.BusAssignment.Name_SL_Info.CurrentLength = 6U;
+  dynamic_simulation_B.BusAssignment.Position_SL_Info.CurrentLength = 6U;
+  dynamic_simulation_B.BusAssignment.Velocity_SL_Info.CurrentLength = 6U;
+  for (dynamic_simulation_B.i = 0; dynamic_simulation_B.i < 6;
+       dynamic_simulation_B.i++) {
+    dynamic_simulation_B.j = ((static_cast<real_T>(dynamic_simulation_B.i) + 1.0)
+      - 1.0) * static_cast<real_T>(dynamic_simulation_P.name_max_length);
+    if (dynamic_simulation_B.j < 4.294967296E+9) {
+      dynamic_simulation_B.b_varargout_2_Data_SL_Info_Rece =
+        static_cast<uint32_T>(dynamic_simulation_B.j);
+    } else {
+      dynamic_simulation_B.b_varargout_2_Data_SL_Info_Rece = MAX_uint32_T;
+    }
+
+    dynamic_simulation_B.b_varargout_2_Data_SL_Info_Curr =
+      dynamic_simulation_B.b_varargout_2_Data_SL_Info_Rece + /*MW:OvSatOk*/ 1U;
+    if (dynamic_simulation_B.b_varargout_2_Data_SL_Info_Curr <
+        dynamic_simulation_B.b_varargout_2_Data_SL_Info_Rece) {
+      dynamic_simulation_B.b_varargout_2_Data_SL_Info_Curr = MAX_uint32_T;
+    }
+
+    dynamic_simulation_B.b_varargout_2_Data_SL_Info_Rece =
+      dynamic_simulation_B.b_varargout_2_Data_SL_Info_Curr + /*MW:OvSatOk*/
+      dynamic_simulation_B.TmpSignalConversionAtSFunct[dynamic_simulation_B.i];
+    if (dynamic_simulation_B.b_varargout_2_Data_SL_Info_Rece <
+        dynamic_simulation_B.b_varargout_2_Data_SL_Info_Curr) {
+      dynamic_simulation_B.b_varargout_2_Data_SL_Info_Rece = MAX_uint32_T;
+    }
+
+    dynamic_simulation_B.b_varargout_2_Data_SL_Info_Rece--;
+    if (dynamic_simulation_B.b_varargout_2_Data_SL_Info_Curr >
+        dynamic_simulation_B.b_varargout_2_Data_SL_Info_Rece) {
+      dynamic_simulation_B.rtb_MATLABSystem_tmp = 0;
+      dynamic_simulation_B.n_a = 0;
+    } else {
+      dynamic_simulation_B.rtb_MATLABSystem_tmp = static_cast<int32_T>
+        (dynamic_simulation_B.b_varargout_2_Data_SL_Info_Curr) - 1;
+      dynamic_simulation_B.n_a = static_cast<int32_T>
+        (dynamic_simulation_B.b_varargout_2_Data_SL_Info_Rece);
+    }
+
+    dynamic_simulation_B.n_a -= dynamic_simulation_B.rtb_MATLABSystem_tmp;
+    for (dynamic_simulation_B.b_kstr = 0; dynamic_simulation_B.b_kstr <
+         dynamic_simulation_B.n_a; dynamic_simulation_B.b_kstr++) {
+      dynamic_simulation_B.BusAssignment.Name[dynamic_simulation_B.i]
+        .Data[dynamic_simulation_B.b_kstr] =
+        dynamic_simulation_B.TmpSignalConversionAtSFun_b[dynamic_simulation_B.rtb_MATLABSystem_tmp
+        + dynamic_simulation_B.b_kstr];
+    }
+
+    dynamic_simulation_B.BusAssignment.Name[dynamic_simulation_B.i].
+      Data_SL_Info.CurrentLength =
+      dynamic_simulation_B.TmpSignalConversionAtSFunct[dynamic_simulation_B.i];
+    dynamic_simulation_B.BusAssignment.Position[dynamic_simulation_B.i] =
+      dynamic_simulation_X.Position_CSTATE[dynamic_simulation_B.i];
+    dynamic_simulation_B.BusAssignment.Velocity[dynamic_simulation_B.i] =
+      dynamic_simulation_B.Velocity[dynamic_simulation_B.i];
+  }
+
+  // BusAssignment: '<S4>/Bus Assignment' incorporates:
+  //   BusCreator generated from: '<S4>/Bus Assignment'
+  //   MATLAB Function: '<Root>/MATLAB Function'
+
+  dynamic_simulation_B.BusAssignment.Header.Stamp.Sec =
+    dynamic_simulation_B.vNum;
+  dynamic_simulation_B.BusAssignment.Header.Stamp.Nsec =
+    dynamic_simulation_B.bid1;
 
   // Outputs for Atomic SubSystem: '<Root>/Publish'
-  // MATLABSystem: '<S7>/SinkBlock'
-  Pub_dynamic_simulation_157.publish(&dynamic_simulation_B.msg);
+  // MATLABSystem: '<S6>/SinkBlock'
+  Pub_dynamic_simulation_157.publish(&dynamic_simulation_B.BusAssignment);
 
   // End of Outputs for SubSystem: '<Root>/Publish'
-
-  // MATLAB Function: '<Root>/Assign to Time msg'
-  if (dynamic_simulation_B.vNum < 0.0) {
-    dynamic_simulation_B.bid1 = ceil(dynamic_simulation_B.vNum);
-  } else {
-    dynamic_simulation_B.bid1 = floor(dynamic_simulation_B.vNum);
-  }
-
-  dynamic_simulation_B.msg_k.Clock_.Sec = dynamic_simulation_B.bid1;
-  dynamic_simulation_B.j = (dynamic_simulation_B.vNum -
-    dynamic_simulation_B.bid1) * 1.0E+9;
-  if (dynamic_simulation_B.j < 0.0) {
-    dynamic_simulation_B.msg_k.Clock_.Nsec = ceil(dynamic_simulation_B.j);
-  } else {
-    dynamic_simulation_B.msg_k.Clock_.Nsec = floor(dynamic_simulation_B.j);
-  }
-
-  // End of MATLAB Function: '<Root>/Assign to Time msg'
-
-  // Outputs for Atomic SubSystem: '<Root>/Publish1'
-  // MATLABSystem: '<S8>/SinkBlock'
-  Pub_dynamic_simulation_158.publish(&dynamic_simulation_B.msg_k);
-
-  // End of Outputs for SubSystem: '<Root>/Publish1'
   if (rtmIsMajorTimeStep(dynamic_simulation_M)) {
-    // Update for Integrator: '<S11>/Position'
+    // MATLABSystem: '<S10>/Get Parameter'
+    ParamGet_dynamic_simulation_196.get_parameter(&dynamic_simulation_B.vNum);
+  }
+
+  if (rtmIsMajorTimeStep(dynamic_simulation_M)) {
+    // Update for Integrator: '<S10>/Position'
     dynamic_simulation_DW.Position_IWORK = 0;
 
-    // Update for Integrator: '<S11>/Velocity'
+    // Update for Integrator: '<S10>/Velocity'
     dynamic_simulation_DW.Velocity_IWORK = 0;
   }                                    // end MajorTimeStep
 
@@ -14468,10 +14515,10 @@ void dynamic_simulation_derivatives(void)
   XDot_dynamic_simulation_T *_rtXdot;
   _rtXdot = ((XDot_dynamic_simulation_T *) dynamic_simulation_M->derivs);
   for (i = 0; i < 6; i++) {
-    // Derivatives for Integrator: '<S11>/Position'
+    // Derivatives for Integrator: '<S10>/Position'
     _rtXdot->Position_CSTATE[i] = dynamic_simulation_B.Velocity[i];
 
-    // Derivatives for Integrator: '<S11>/Velocity'
+    // Derivatives for Integrator: '<S10>/Velocity'
     _rtXdot->Velocity_CSTATE[i] = dynamic_simulation_B.MATLABSystem[i];
   }
 }
@@ -14524,64 +14571,105 @@ void dynamic_simulation_initialize(void)
   rtmSetFirstInitCond(dynamic_simulation_M, 1);
 
   {
-    char_T tmp[14];
-    char_T tmp_0[15];
-    char_T tmp_1[7];
-    char_T tmp_2[12];
-    char_T tmp_3[13];
+    char_T tmp[7];
     int32_T i;
-    static const char_T tmp_4[13] = { '/', 'j', 'o', 'i', 'n', 't', '_', 't',
+    static const char_T tmp_0[13] = { '/', 'j', 'o', 'i', 'n', 't', '_', 't',
       'o', 'r', 'q', 'u', 'e' };
 
-    static const char_T tmp_5[14] = { '/', 'c', 'a', 'r', 't', 'e', 's', 'i',
+    static const char_T tmp_1[14] = { '/', 'c', 'a', 'r', 't', 'e', 's', 'i',
       'a', 'n', '_', 'p', 'o', 's' };
 
-    static const char_T tmp_6[14] = { '/', 'c', 'a', 'r', 't', 'e', 's', 'i',
+    static const char_T tmp_2[6] = { '/', 'c', 'l', 'o', 'c', 'k' };
+
+    static const char_T tmp_3[14] = { '/', 'c', 'a', 'r', 't', 'e', 's', 'i',
       'a', 'n', '_', 'v', 'e', 'l' };
 
-    static const char_T tmp_7[13] = { '/', 'j', 'o', 'i', 'n', 't', '_', 's',
+    static const char_T tmp_4[13] = { '/', 'j', 'o', 'i', 'n', 't', '_', 's',
       't', 'a', 't', 'e', 's' };
 
-    static const char_T tmp_8[6] = { '/', 'c', 'l', 'o', 'c', 'k' };
-
-    static const char_T tmp_9[11] = { '/', 'q', '1', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_5[11] = { '/', 'q', '1', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
-    static const char_T tmp_a[11] = { '/', 'q', '2', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_6[11] = { '/', 'q', '2', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
-    static const char_T tmp_b[11] = { '/', 'q', '3', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_7[11] = { '/', 'q', '3', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
-    static const char_T tmp_c[11] = { '/', 'q', '4', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_8[11] = { '/', 'q', '4', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
-    static const char_T tmp_d[11] = { '/', 'q', '5', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_9[11] = { '/', 'q', '5', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
-    static const char_T tmp_e[11] = { '/', 'q', '6', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_a[11] = { '/', 'q', '6', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
-    static const char_T tmp_f[12] = { '/', 'q', 'v', '1', '_', 'i', 'n', 'i',
+    static const char_T tmp_b[24] = { '/', 'c', 'o', 'n', 't', 'r', 'o', 'l',
+      'l', 'e', 'r', '_', 'j', 'o', 'i', 'n', 't', '_', 'n', 'a', 'm', 'e', '_',
+      '1' };
+
+    static const char_T tmp_c[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n',
+      't', '_', '1' };
+
+    static const char_T tmp_d[24] = { '/', 'c', 'o', 'n', 't', 'r', 'o', 'l',
+      'l', 'e', 'r', '_', 'j', 'o', 'i', 'n', 't', '_', 'n', 'a', 'm', 'e', '_',
+      '2' };
+
+    static const char_T tmp_e[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n',
+      't', '_', '2' };
+
+    static const char_T tmp_f[24] = { '/', 'c', 'o', 'n', 't', 'r', 'o', 'l',
+      'l', 'e', 'r', '_', 'j', 'o', 'i', 'n', 't', '_', 'n', 'a', 'm', 'e', '_',
+      '3' };
+
+    static const char_T tmp_g[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n',
+      't', '_', '3' };
+
+    static const char_T tmp_h[24] = { '/', 'c', 'o', 'n', 't', 'r', 'o', 'l',
+      'l', 'e', 'r', '_', 'j', 'o', 'i', 'n', 't', '_', 'n', 'a', 'm', 'e', '_',
+      '4' };
+
+    static const char_T tmp_i[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n',
+      't', '_', '4' };
+
+    static const char_T tmp_j[24] = { '/', 'c', 'o', 'n', 't', 'r', 'o', 'l',
+      'l', 'e', 'r', '_', 'j', 'o', 'i', 'n', 't', '_', 'n', 'a', 'm', 'e', '_',
+      '5' };
+
+    static const char_T tmp_k[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n',
+      't', '_', '5' };
+
+    static const char_T tmp_l[24] = { '/', 'c', 'o', 'n', 't', 'r', 'o', 'l',
+      'l', 'e', 'r', '_', 'j', 'o', 'i', 'n', 't', '_', 'n', 'a', 'm', 'e', '_',
+      '6' };
+
+    static const char_T tmp_m[11] = { 'e', 'd', 'o', '_', 'j', 'o', 'i', 'n',
+      't', '_', '6' };
+
+    static const char_T tmp_n[12] = { '/', 'q', 'v', '1', '_', 'i', 'n', 'i',
       't', 'i', 'a', 'l' };
 
-    static const char_T tmp_g[12] = { '/', 'q', 'v', '2', '_', 'i', 'n', 'i',
+    static const char_T tmp_o[12] = { '/', 'q', 'v', '2', '_', 'i', 'n', 'i',
       't', 'i', 'a', 'l' };
 
-    static const char_T tmp_h[12] = { '/', 'q', 'v', '3', '_', 'i', 'n', 'i',
+    static const char_T tmp_p[12] = { '/', 'q', 'v', '3', '_', 'i', 'n', 'i',
       't', 'i', 'a', 'l' };
 
-    static const char_T tmp_i[12] = { '/', 'q', 'v', '4', '_', 'i', 'n', 'i',
+    static const char_T tmp_q[12] = { '/', 'q', 'v', '4', '_', 'i', 'n', 'i',
       't', 'i', 'a', 'l' };
 
-    static const char_T tmp_j[12] = { '/', 'q', 'v', '5', '_', 'i', 'n', 'i',
+    static const char_T tmp_r[12] = { '/', 'q', 'v', '5', '_', 'i', 'n', 'i',
       't', 'i', 'a', 'l' };
 
-    static const char_T tmp_k[12] = { '/', 'q', 'v', '6', '_', 'i', 'n', 'i',
+    static const char_T tmp_s[12] = { '/', 'q', 'v', '6', '_', 'i', 'n', 'i',
       't', 'i', 'a', 'l' };
 
-    // InitializeConditions for Integrator: '<S11>/Position' incorporates:
-    //   Integrator: '<S11>/Velocity'
+    static const char_T tmp_t[14] = { '/', 'm', 'a', 'x', '_', 'j', 'o', 'i',
+      'n', 't', '_', 'v', 'e', 'l' };
+
+    // InitializeConditions for Integrator: '<S10>/Position' incorporates:
+    //   Integrator: '<S10>/Velocity'
 
     if (rtmIsFirstInitCond(dynamic_simulation_M)) {
       dynamic_simulation_X.Position_CSTATE[0] = 0.0;
@@ -14600,181 +14688,181 @@ void dynamic_simulation_initialize(void)
 
     dynamic_simulation_DW.Position_IWORK = 1;
 
-    // End of InitializeConditions for Integrator: '<S11>/Position'
+    // End of InitializeConditions for Integrator: '<S10>/Position'
 
-    // InitializeConditions for Integrator: '<S11>/Velocity'
+    // InitializeConditions for Integrator: '<S10>/Velocity'
     dynamic_simulation_DW.Velocity_IWORK = 1;
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Subscribe'
-    // SystemInitialize for Enabled SubSystem: '<S12>/Enabled Subsystem'
-    // SystemInitialize for Outport: '<S21>/Out1'
+    // SystemInitialize for Enabled SubSystem: '<S11>/Enabled Subsystem'
+    // SystemInitialize for Outport: '<S23>/Out1'
     dynamic_simulation_B.In1 = dynamic_simulation_P.Out1_Y0;
 
-    // End of SystemInitialize for SubSystem: '<S12>/Enabled Subsystem'
+    // End of SystemInitialize for SubSystem: '<S11>/Enabled Subsystem'
 
-    // Start for MATLABSystem: '<S12>/SourceBlock'
+    // Start for MATLABSystem: '<S11>/SourceBlock'
     dynamic_simulation_DW.obj_fk.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_fk.isInitialized = 1;
     for (i = 0; i < 13; i++) {
-      tmp[i] = tmp_4[i];
+      dynamic_simulation_B.cv2[i] = tmp_0[i];
     }
 
-    tmp[13] = '\x00';
-    Sub_dynamic_simulation_160.createSubscriber(tmp, 1);
+    dynamic_simulation_B.cv2[13] = '\x00';
+    Sub_dynamic_simulation_160.createSubscriber(dynamic_simulation_B.cv2, 1);
     dynamic_simulation_DW.obj_fk.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S12>/SourceBlock'
+    // End of Start for MATLABSystem: '<S11>/SourceBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Subscribe'
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Publish2'
-    // Start for MATLABSystem: '<S9>/SinkBlock'
+    // Start for MATLABSystem: '<S8>/SinkBlock'
     dynamic_simulation_DW.obj_g.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_g.isInitialized = 1;
     for (i = 0; i < 14; i++) {
-      tmp_0[i] = tmp_5[i];
+      dynamic_simulation_B.cv1[i] = tmp_1[i];
     }
 
-    tmp_0[14] = '\x00';
-    Pub_dynamic_simulation_178.createPublisher(tmp_0, 1);
+    dynamic_simulation_B.cv1[14] = '\x00';
+    Pub_dynamic_simulation_178.createPublisher(dynamic_simulation_B.cv1, 1);
     dynamic_simulation_DW.obj_g.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/SinkBlock'
+    // End of Start for MATLABSystem: '<S8>/SinkBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Publish2'
 
-    // SystemInitialize for Atomic SubSystem: '<Root>/Publish3'
-    // Start for MATLABSystem: '<S10>/SinkBlock'
-    dynamic_simulation_DW.obj_dj.matlabCodegenIsDeleted = false;
-    dynamic_simulation_DW.obj_dj.isInitialized = 1;
-    for (i = 0; i < 14; i++) {
-      tmp_0[i] = tmp_6[i];
-    }
-
-    tmp_0[14] = '\x00';
-    Pub_dynamic_simulation_179.createPublisher(tmp_0, 1);
-    dynamic_simulation_DW.obj_dj.isSetupComplete = true;
-
-    // End of Start for MATLABSystem: '<S10>/SinkBlock'
-    // End of SystemInitialize for SubSystem: '<Root>/Publish3'
-
-    // SystemInitialize for Atomic SubSystem: '<Root>/Publish'
-    // Start for MATLABSystem: '<S7>/SinkBlock'
-    dynamic_simulation_DW.obj_c.matlabCodegenIsDeleted = false;
-    dynamic_simulation_DW.obj_c.isInitialized = 1;
-    for (i = 0; i < 13; i++) {
-      tmp[i] = tmp_7[i];
-    }
-
-    tmp[13] = '\x00';
-    Pub_dynamic_simulation_157.createPublisher(tmp, 1);
-    dynamic_simulation_DW.obj_c.isSetupComplete = true;
-
-    // End of Start for MATLABSystem: '<S7>/SinkBlock'
-    // End of SystemInitialize for SubSystem: '<Root>/Publish'
-
     // SystemInitialize for Atomic SubSystem: '<Root>/Publish1'
-    // Start for MATLABSystem: '<S8>/SinkBlock'
+    // Start for MATLABSystem: '<S7>/SinkBlock'
     dynamic_simulation_DW.obj_iv.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_iv.isInitialized = 1;
     for (i = 0; i < 6; i++) {
-      tmp_1[i] = tmp_8[i];
+      tmp[i] = tmp_2[i];
     }
 
-    tmp_1[6] = '\x00';
-    Pub_dynamic_simulation_158.createPublisher(tmp_1, 1);
+    tmp[6] = '\x00';
+    Pub_dynamic_simulation_158.createPublisher(tmp, 1);
     dynamic_simulation_DW.obj_iv.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S8>/SinkBlock'
+    // End of Start for MATLABSystem: '<S7>/SinkBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Publish1'
 
-    // Start for MATLABSystem: '<S20>/Get Parameter12'
+    // SystemInitialize for Atomic SubSystem: '<Root>/Publish3'
+    // Start for MATLABSystem: '<S9>/SinkBlock'
+    dynamic_simulation_DW.obj_dj.matlabCodegenIsDeleted = false;
+    dynamic_simulation_DW.obj_dj.isInitialized = 1;
+    for (i = 0; i < 14; i++) {
+      dynamic_simulation_B.cv1[i] = tmp_3[i];
+    }
+
+    dynamic_simulation_B.cv1[14] = '\x00';
+    Pub_dynamic_simulation_179.createPublisher(dynamic_simulation_B.cv1, 1);
+    dynamic_simulation_DW.obj_dj.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S9>/SinkBlock'
+    // End of SystemInitialize for SubSystem: '<Root>/Publish3'
+
+    // SystemInitialize for Atomic SubSystem: '<Root>/Publish'
+    // Start for MATLABSystem: '<S6>/SinkBlock'
+    dynamic_simulation_DW.obj_cd.matlabCodegenIsDeleted = false;
+    dynamic_simulation_DW.obj_cd.isInitialized = 1;
+    for (i = 0; i < 13; i++) {
+      dynamic_simulation_B.cv2[i] = tmp_4[i];
+    }
+
+    dynamic_simulation_B.cv2[13] = '\x00';
+    Pub_dynamic_simulation_157.createPublisher(dynamic_simulation_B.cv2, 1);
+    dynamic_simulation_DW.obj_cd.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S6>/SinkBlock'
+    // End of SystemInitialize for SubSystem: '<Root>/Publish'
+
+    // Start for MATLABSystem: '<S22>/Get Parameter12'
     dynamic_simulation_DW.obj_l.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_l.isInitialized = 1;
     for (i = 0; i < 11; i++) {
-      tmp_2[i] = tmp_9[i];
+      dynamic_simulation_B.cv4[i] = tmp_5[i];
     }
 
-    tmp_2[11] = '\x00';
-    ParamGet_dynamic_simulation_194.initialize(tmp_2);
+    dynamic_simulation_B.cv4[11] = '\x00';
+    ParamGet_dynamic_simulation_194.initialize(dynamic_simulation_B.cv4);
     ParamGet_dynamic_simulation_194.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_194.set_initial_value(0.0);
     dynamic_simulation_DW.obj_l.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter12'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter12'
 
-    // Start for MATLABSystem: '<S20>/Get Parameter1'
+    // Start for MATLABSystem: '<S22>/Get Parameter1'
     dynamic_simulation_DW.obj_lm.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_lm.isInitialized = 1;
     for (i = 0; i < 11; i++) {
-      tmp_2[i] = tmp_a[i];
+      dynamic_simulation_B.cv4[i] = tmp_6[i];
     }
 
-    tmp_2[11] = '\x00';
-    ParamGet_dynamic_simulation_132.initialize(tmp_2);
+    dynamic_simulation_B.cv4[11] = '\x00';
+    ParamGet_dynamic_simulation_132.initialize(dynamic_simulation_B.cv4);
     ParamGet_dynamic_simulation_132.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_132.set_initial_value(0.0);
     dynamic_simulation_DW.obj_lm.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter1'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter1'
 
-    // Start for MATLABSystem: '<S20>/Get Parameter4'
+    // Start for MATLABSystem: '<S22>/Get Parameter4'
     dynamic_simulation_DW.obj_a.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_a.isInitialized = 1;
     for (i = 0; i < 11; i++) {
-      tmp_2[i] = tmp_b[i];
+      dynamic_simulation_B.cv4[i] = tmp_7[i];
     }
 
-    tmp_2[11] = '\x00';
-    ParamGet_dynamic_simulation_137.initialize(tmp_2);
+    dynamic_simulation_B.cv4[11] = '\x00';
+    ParamGet_dynamic_simulation_137.initialize(dynamic_simulation_B.cv4);
     ParamGet_dynamic_simulation_137.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_137.set_initial_value(0.0);
     dynamic_simulation_DW.obj_a.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter4'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter4'
 
-    // Start for MATLABSystem: '<S20>/Get Parameter5'
+    // Start for MATLABSystem: '<S22>/Get Parameter5'
     dynamic_simulation_DW.obj_d.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_d.isInitialized = 1;
     for (i = 0; i < 11; i++) {
-      tmp_2[i] = tmp_c[i];
+      dynamic_simulation_B.cv4[i] = tmp_8[i];
     }
 
-    tmp_2[11] = '\x00';
-    ParamGet_dynamic_simulation_138.initialize(tmp_2);
+    dynamic_simulation_B.cv4[11] = '\x00';
+    ParamGet_dynamic_simulation_138.initialize(dynamic_simulation_B.cv4);
     ParamGet_dynamic_simulation_138.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_138.set_initial_value(0.0);
     dynamic_simulation_DW.obj_d.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter5'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter5'
 
-    // Start for MATLABSystem: '<S20>/Get Parameter6'
+    // Start for MATLABSystem: '<S22>/Get Parameter6'
     dynamic_simulation_DW.obj_h.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_h.isInitialized = 1;
     for (i = 0; i < 11; i++) {
-      tmp_2[i] = tmp_d[i];
+      dynamic_simulation_B.cv4[i] = tmp_9[i];
     }
 
-    tmp_2[11] = '\x00';
-    ParamGet_dynamic_simulation_139.initialize(tmp_2);
+    dynamic_simulation_B.cv4[11] = '\x00';
+    ParamGet_dynamic_simulation_139.initialize(dynamic_simulation_B.cv4);
     ParamGet_dynamic_simulation_139.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_139.set_initial_value(0.0);
     dynamic_simulation_DW.obj_h.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter6'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter6'
 
-    // Start for MATLABSystem: '<S20>/Get Parameter7'
+    // Start for MATLABSystem: '<S22>/Get Parameter7'
     dynamic_simulation_DW.obj_f0.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_f0.isInitialized = 1;
     for (i = 0; i < 11; i++) {
-      tmp_2[i] = tmp_e[i];
+      dynamic_simulation_B.cv4[i] = tmp_a[i];
     }
 
-    tmp_2[11] = '\x00';
-    ParamGet_dynamic_simulation_140.initialize(tmp_2);
+    dynamic_simulation_B.cv4[11] = '\x00';
+    ParamGet_dynamic_simulation_140.initialize(dynamic_simulation_B.cv4);
     ParamGet_dynamic_simulation_140.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_140.set_initial_value(0.0);
     dynamic_simulation_DW.obj_f0.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter7'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter7'
     emxInitStruct_robotics_slmanip_(&dynamic_simulation_DW.obj_f);
     emxInitStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_1_m);
     emxInitStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_16_a);
@@ -14793,7 +14881,7 @@ void dynamic_simulation_initialize(void)
     emxInitStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_3_g);
     emxInitStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_2_o);
 
-    // Start for MATLABSystem: '<S16>/MATLAB System'
+    // Start for MATLABSystem: '<S14>/MATLAB System'
     dynamic_simulation_DW.obj_f.isInitialized = 0;
     dynamic_simulation_DW.obj_f.isInitialized = 1;
     dyn_RigidBodyTree_RigidBodyTree(&dynamic_simulation_DW.obj_f.TreeInternal,
@@ -14801,6 +14889,126 @@ void dynamic_simulation_initialize(void)
       &dynamic_simulation_DW.gobj_5_a, &dynamic_simulation_DW.gobj_6_a,
       &dynamic_simulation_DW.gobj_7_o, &dynamic_simulation_DW.gobj_8_i,
       &dynamic_simulation_DW.gobj_9_p, &dynamic_simulation_DW.gobj_3_g);
+
+    // Start for MATLABSystem: '<S19>/Get Parameter'
+    dynamic_simulation_DW.obj_m.matlabCodegenIsDeleted = false;
+    dynamic_simulation_DW.obj_m.isInitialized = 1;
+    for (i = 0; i < 24; i++) {
+      dynamic_simulation_B.cv[i] = tmp_b[i];
+    }
+
+    dynamic_simulation_B.cv[24] = '\x00';
+    ParamGet_dynamic_simulation_224.initialize(dynamic_simulation_B.cv);
+    ParamGet_dynamic_simulation_224.initialize_error_codes(0, 1, 2, 3);
+    for (i = 0; i < 11; i++) {
+      dynamic_simulation_B.initialValue[i] = tmp_c[i];
+    }
+
+    ParamGet_dynamic_simulation_224.set_initial_value
+      (dynamic_simulation_B.initialValue, 11U);
+    dynamic_simulation_DW.obj_m.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S19>/Get Parameter'
+
+    // Start for MATLABSystem: '<S19>/Get Parameter1'
+    dynamic_simulation_DW.obj_c.matlabCodegenIsDeleted = false;
+    dynamic_simulation_DW.obj_c.isInitialized = 1;
+    for (i = 0; i < 24; i++) {
+      dynamic_simulation_B.cv[i] = tmp_d[i];
+    }
+
+    dynamic_simulation_B.cv[24] = '\x00';
+    ParamGet_dynamic_simulation_228.initialize(dynamic_simulation_B.cv);
+    ParamGet_dynamic_simulation_228.initialize_error_codes(0, 1, 2, 3);
+    for (i = 0; i < 11; i++) {
+      dynamic_simulation_B.initialValue[i] = tmp_e[i];
+    }
+
+    ParamGet_dynamic_simulation_228.set_initial_value
+      (dynamic_simulation_B.initialValue, 11U);
+    dynamic_simulation_DW.obj_c.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S19>/Get Parameter1'
+
+    // Start for MATLABSystem: '<S19>/Get Parameter2'
+    dynamic_simulation_DW.obj_px.matlabCodegenIsDeleted = false;
+    dynamic_simulation_DW.obj_px.isInitialized = 1;
+    for (i = 0; i < 24; i++) {
+      dynamic_simulation_B.cv[i] = tmp_f[i];
+    }
+
+    dynamic_simulation_B.cv[24] = '\x00';
+    ParamGet_dynamic_simulation_229.initialize(dynamic_simulation_B.cv);
+    ParamGet_dynamic_simulation_229.initialize_error_codes(0, 1, 2, 3);
+    for (i = 0; i < 11; i++) {
+      dynamic_simulation_B.initialValue[i] = tmp_g[i];
+    }
+
+    ParamGet_dynamic_simulation_229.set_initial_value
+      (dynamic_simulation_B.initialValue, 11U);
+    dynamic_simulation_DW.obj_px.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S19>/Get Parameter2'
+
+    // Start for MATLABSystem: '<S19>/Get Parameter3'
+    dynamic_simulation_DW.obj_nt.matlabCodegenIsDeleted = false;
+    dynamic_simulation_DW.obj_nt.isInitialized = 1;
+    for (i = 0; i < 24; i++) {
+      dynamic_simulation_B.cv[i] = tmp_h[i];
+    }
+
+    dynamic_simulation_B.cv[24] = '\x00';
+    ParamGet_dynamic_simulation_230.initialize(dynamic_simulation_B.cv);
+    ParamGet_dynamic_simulation_230.initialize_error_codes(0, 1, 2, 3);
+    for (i = 0; i < 11; i++) {
+      dynamic_simulation_B.initialValue[i] = tmp_i[i];
+    }
+
+    ParamGet_dynamic_simulation_230.set_initial_value
+      (dynamic_simulation_B.initialValue, 11U);
+    dynamic_simulation_DW.obj_nt.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S19>/Get Parameter3'
+
+    // Start for MATLABSystem: '<S19>/Get Parameter4'
+    dynamic_simulation_DW.obj_o.matlabCodegenIsDeleted = false;
+    dynamic_simulation_DW.obj_o.isInitialized = 1;
+    for (i = 0; i < 24; i++) {
+      dynamic_simulation_B.cv[i] = tmp_j[i];
+    }
+
+    dynamic_simulation_B.cv[24] = '\x00';
+    ParamGet_dynamic_simulation_231.initialize(dynamic_simulation_B.cv);
+    ParamGet_dynamic_simulation_231.initialize_error_codes(0, 1, 2, 3);
+    for (i = 0; i < 11; i++) {
+      dynamic_simulation_B.initialValue[i] = tmp_k[i];
+    }
+
+    ParamGet_dynamic_simulation_231.set_initial_value
+      (dynamic_simulation_B.initialValue, 11U);
+    dynamic_simulation_DW.obj_o.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S19>/Get Parameter4'
+
+    // Start for MATLABSystem: '<S19>/Get Parameter5'
+    dynamic_simulation_DW.obj_m4.matlabCodegenIsDeleted = false;
+    dynamic_simulation_DW.obj_m4.isInitialized = 1;
+    for (i = 0; i < 24; i++) {
+      dynamic_simulation_B.cv[i] = tmp_l[i];
+    }
+
+    dynamic_simulation_B.cv[24] = '\x00';
+    ParamGet_dynamic_simulation_232.initialize(dynamic_simulation_B.cv);
+    ParamGet_dynamic_simulation_232.initialize_error_codes(0, 1, 2, 3);
+    for (i = 0; i < 11; i++) {
+      dynamic_simulation_B.initialValue[i] = tmp_m[i];
+    }
+
+    ParamGet_dynamic_simulation_232.set_initial_value
+      (dynamic_simulation_B.initialValue, 11U);
+    dynamic_simulation_DW.obj_m4.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S19>/Get Parameter5'
     emxInitStruct_robotics_slmani_k(&dynamic_simulation_DW.obj_i);
     emxInitStruct_n_robotics_mani_k(&dynamic_simulation_DW.gobj_1_p);
     emxInitStruct_n_robotics_mani_k(&dynamic_simulation_DW.gobj_16_n);
@@ -14819,7 +15027,7 @@ void dynamic_simulation_initialize(void)
     emxInitStruct_n_robotics_mani_k(&dynamic_simulation_DW.gobj_3_g0);
     emxInitStruct_n_robotics_mani_k(&dynamic_simulation_DW.gobj_2_on);
 
-    // Start for MATLABSystem: '<S17>/MATLAB System'
+    // Start for MATLABSystem: '<S15>/MATLAB System'
     dynamic_simulation_DW.obj_i.isInitialized = 0;
     dynamic_simulation_DW.obj_i.isInitialized = 1;
     d_RigidBodyTree_RigidBodyTree_k(&dynamic_simulation_DW.obj_i.TreeInternal,
@@ -14828,95 +15036,95 @@ void dynamic_simulation_initialize(void)
       &dynamic_simulation_DW.gobj_7_n, &dynamic_simulation_DW.gobj_8_p,
       &dynamic_simulation_DW.gobj_9_c, &dynamic_simulation_DW.gobj_3_g0);
 
-    // Start for MATLABSystem: '<S20>/Get Parameter2'
+    // Start for MATLABSystem: '<S22>/Get Parameter2'
     dynamic_simulation_DW.obj_e.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_e.isInitialized = 1;
     for (i = 0; i < 12; i++) {
-      tmp_3[i] = tmp_f[i];
+      dynamic_simulation_B.cv3[i] = tmp_n[i];
     }
 
-    tmp_3[12] = '\x00';
-    ParamGet_dynamic_simulation_135.initialize(tmp_3);
+    dynamic_simulation_B.cv3[12] = '\x00';
+    ParamGet_dynamic_simulation_135.initialize(dynamic_simulation_B.cv3);
     ParamGet_dynamic_simulation_135.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_135.set_initial_value(0.0);
     dynamic_simulation_DW.obj_e.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter2'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter2'
 
-    // Start for MATLABSystem: '<S20>/Get Parameter3'
+    // Start for MATLABSystem: '<S22>/Get Parameter3'
     dynamic_simulation_DW.obj_ez.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_ez.isInitialized = 1;
     for (i = 0; i < 12; i++) {
-      tmp_3[i] = tmp_g[i];
+      dynamic_simulation_B.cv3[i] = tmp_o[i];
     }
 
-    tmp_3[12] = '\x00';
-    ParamGet_dynamic_simulation_136.initialize(tmp_3);
+    dynamic_simulation_B.cv3[12] = '\x00';
+    ParamGet_dynamic_simulation_136.initialize(dynamic_simulation_B.cv3);
     ParamGet_dynamic_simulation_136.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_136.set_initial_value(0.0);
     dynamic_simulation_DW.obj_ez.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter3'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter3'
 
-    // Start for MATLABSystem: '<S20>/Get Parameter8'
+    // Start for MATLABSystem: '<S22>/Get Parameter8'
     dynamic_simulation_DW.obj_io.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_io.isInitialized = 1;
     for (i = 0; i < 12; i++) {
-      tmp_3[i] = tmp_h[i];
+      dynamic_simulation_B.cv3[i] = tmp_p[i];
     }
 
-    tmp_3[12] = '\x00';
-    ParamGet_dynamic_simulation_141.initialize(tmp_3);
+    dynamic_simulation_B.cv3[12] = '\x00';
+    ParamGet_dynamic_simulation_141.initialize(dynamic_simulation_B.cv3);
     ParamGet_dynamic_simulation_141.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_141.set_initial_value(0.0);
     dynamic_simulation_DW.obj_io.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter8'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter8'
 
-    // Start for MATLABSystem: '<S20>/Get Parameter9'
+    // Start for MATLABSystem: '<S22>/Get Parameter9'
     dynamic_simulation_DW.obj_ezd.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_ezd.isInitialized = 1;
     for (i = 0; i < 12; i++) {
-      tmp_3[i] = tmp_i[i];
+      dynamic_simulation_B.cv3[i] = tmp_q[i];
     }
 
-    tmp_3[12] = '\x00';
-    ParamGet_dynamic_simulation_142.initialize(tmp_3);
+    dynamic_simulation_B.cv3[12] = '\x00';
+    ParamGet_dynamic_simulation_142.initialize(dynamic_simulation_B.cv3);
     ParamGet_dynamic_simulation_142.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_142.set_initial_value(0.0);
     dynamic_simulation_DW.obj_ezd.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter9'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter9'
 
-    // Start for MATLABSystem: '<S20>/Get Parameter10'
+    // Start for MATLABSystem: '<S22>/Get Parameter10'
     dynamic_simulation_DW.obj_n.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_n.isInitialized = 1;
     for (i = 0; i < 12; i++) {
-      tmp_3[i] = tmp_j[i];
+      dynamic_simulation_B.cv3[i] = tmp_r[i];
     }
 
-    tmp_3[12] = '\x00';
-    ParamGet_dynamic_simulation_133.initialize(tmp_3);
+    dynamic_simulation_B.cv3[12] = '\x00';
+    ParamGet_dynamic_simulation_133.initialize(dynamic_simulation_B.cv3);
     ParamGet_dynamic_simulation_133.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_133.set_initial_value(0.0);
     dynamic_simulation_DW.obj_n.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter10'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter10'
 
-    // Start for MATLABSystem: '<S20>/Get Parameter11'
+    // Start for MATLABSystem: '<S22>/Get Parameter11'
     dynamic_simulation_DW.obj_p.matlabCodegenIsDeleted = false;
     dynamic_simulation_DW.obj_p.isInitialized = 1;
     for (i = 0; i < 12; i++) {
-      tmp_3[i] = tmp_k[i];
+      dynamic_simulation_B.cv3[i] = tmp_s[i];
     }
 
-    tmp_3[12] = '\x00';
-    ParamGet_dynamic_simulation_134.initialize(tmp_3);
+    dynamic_simulation_B.cv3[12] = '\x00';
+    ParamGet_dynamic_simulation_134.initialize(dynamic_simulation_B.cv3);
     ParamGet_dynamic_simulation_134.initialize_error_codes(0, 1, 2, 3);
     ParamGet_dynamic_simulation_134.set_initial_value(0.0);
     dynamic_simulation_DW.obj_p.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S20>/Get Parameter11'
+    // End of Start for MATLABSystem: '<S22>/Get Parameter11'
     emxInitStruct_robotics_slman_kq(&dynamic_simulation_DW.obj);
     emxInitStruct_n_robotics_man_kq(&dynamic_simulation_DW.gobj_1);
     emxInitStruct_n_robotics_man_kq(&dynamic_simulation_DW.gobj_16);
@@ -14935,7 +15143,7 @@ void dynamic_simulation_initialize(void)
     emxInitStruct_n_robotics_man_kq(&dynamic_simulation_DW.gobj_3);
     emxInitStruct_n_robotics_man_kq(&dynamic_simulation_DW.gobj_2);
 
-    // Start for MATLABSystem: '<S19>/MATLAB System'
+    // Start for MATLABSystem: '<S20>/MATLAB System'
     dynamic_simulation_DW.obj.isInitialized = 0;
     dynamic_simulation_DW.obj.isInitialized = 1;
     RigidBodyTree_RigidBodyTree_kq(&dynamic_simulation_DW.obj.TreeInternal,
@@ -14943,6 +15151,21 @@ void dynamic_simulation_initialize(void)
       &dynamic_simulation_DW.gobj_5, &dynamic_simulation_DW.gobj_6,
       &dynamic_simulation_DW.gobj_7, &dynamic_simulation_DW.gobj_8,
       &dynamic_simulation_DW.gobj_9, &dynamic_simulation_DW.gobj_3);
+
+    // Start for MATLABSystem: '<S10>/Get Parameter'
+    dynamic_simulation_DW.obj_j.matlabCodegenIsDeleted = false;
+    dynamic_simulation_DW.obj_j.isInitialized = 1;
+    for (i = 0; i < 14; i++) {
+      dynamic_simulation_B.cv1[i] = tmp_t[i];
+    }
+
+    dynamic_simulation_B.cv1[14] = '\x00';
+    ParamGet_dynamic_simulation_196.initialize(dynamic_simulation_B.cv1);
+    ParamGet_dynamic_simulation_196.initialize_error_codes(0, 1, 2, 3);
+    ParamGet_dynamic_simulation_196.set_initial_value(5.0);
+    dynamic_simulation_DW.obj_j.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S10>/Get Parameter'
   }
 
   // set "at time zero" to false
@@ -14954,23 +15177,23 @@ void dynamic_simulation_initialize(void)
 // Model terminate function
 void dynamic_simulation_terminate(void)
 {
-  // Terminate for MATLABSystem: '<S20>/Get Parameter12'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_l);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter12'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_l);
 
-  // Terminate for MATLABSystem: '<S20>/Get Parameter1'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_lm);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter1'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_lm);
 
-  // Terminate for MATLABSystem: '<S20>/Get Parameter4'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_a);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter4'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_a);
 
-  // Terminate for MATLABSystem: '<S20>/Get Parameter5'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_d);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter5'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_d);
 
-  // Terminate for MATLABSystem: '<S20>/Get Parameter6'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_h);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter6'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_h);
 
-  // Terminate for MATLABSystem: '<S20>/Get Parameter7'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_f0);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter7'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_f0);
   emxFreeStruct_robotics_slmanip_(&dynamic_simulation_DW.obj_f);
   emxFreeStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_1_m);
   emxFreeStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_16_a);
@@ -14988,6 +15211,24 @@ void dynamic_simulation_terminate(void)
   emxFreeStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_4_g);
   emxFreeStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_3_g);
   emxFreeStruct_n_robotics_manip_(&dynamic_simulation_DW.gobj_2_o);
+
+  // Terminate for MATLABSystem: '<S19>/Get Parameter'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_m);
+
+  // Terminate for MATLABSystem: '<S19>/Get Parameter1'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_c);
+
+  // Terminate for MATLABSystem: '<S19>/Get Parameter2'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_px);
+
+  // Terminate for MATLABSystem: '<S19>/Get Parameter3'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_nt);
+
+  // Terminate for MATLABSystem: '<S19>/Get Parameter4'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_o);
+
+  // Terminate for MATLABSystem: '<S19>/Get Parameter5'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_m4);
   emxFreeStruct_robotics_slmani_k(&dynamic_simulation_DW.obj_i);
   emxFreeStruct_n_robotics_mani_k(&dynamic_simulation_DW.gobj_1_p);
   emxFreeStruct_n_robotics_mani_k(&dynamic_simulation_DW.gobj_16_n);
@@ -15006,27 +15247,27 @@ void dynamic_simulation_terminate(void)
   emxFreeStruct_n_robotics_mani_k(&dynamic_simulation_DW.gobj_3_g0);
   emxFreeStruct_n_robotics_mani_k(&dynamic_simulation_DW.gobj_2_on);
 
-  // Terminate for MATLABSystem: '<S20>/Get Parameter2'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_e);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter2'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_e);
 
-  // Terminate for MATLABSystem: '<S20>/Get Parameter3'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_ez);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter3'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_ez);
 
-  // Terminate for MATLABSystem: '<S20>/Get Parameter8'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_io);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter8'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_io);
 
-  // Terminate for MATLABSystem: '<S20>/Get Parameter9'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_ezd);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter9'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_ezd);
 
-  // Terminate for MATLABSystem: '<S20>/Get Parameter10'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_n);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter10'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_n);
 
-  // Terminate for MATLABSystem: '<S20>/Get Parameter11'
-  matlabCodegenHandle_matlab_kq2t(&dynamic_simulation_DW.obj_p);
+  // Terminate for MATLABSystem: '<S22>/Get Parameter11'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_p);
 
   // Terminate for Atomic SubSystem: '<Root>/Subscribe'
-  // Terminate for MATLABSystem: '<S12>/SourceBlock'
-  dynamic_simul_matlabCodegenHa_m(&dynamic_simulation_DW.obj_fk);
+  // Terminate for MATLABSystem: '<S11>/SourceBlock'
+  dynamic_simul_matlabCodegenHa_l(&dynamic_simulation_DW.obj_fk);
 
   // End of Terminate for SubSystem: '<Root>/Subscribe'
   emxFreeStruct_robotics_slman_kq(&dynamic_simulation_DW.obj);
@@ -15048,28 +15289,31 @@ void dynamic_simulation_terminate(void)
   emxFreeStruct_n_robotics_man_kq(&dynamic_simulation_DW.gobj_2);
 
   // Terminate for Atomic SubSystem: '<Root>/Publish2'
-  // Terminate for MATLABSystem: '<S9>/SinkBlock'
-  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_g);
+  // Terminate for MATLABSystem: '<S8>/SinkBlock'
+  matlabCodegenHandle_matl_kq2tzt(&dynamic_simulation_DW.obj_g);
 
   // End of Terminate for SubSystem: '<Root>/Publish2'
 
+  // Terminate for Atomic SubSystem: '<Root>/Publish1'
+  // Terminate for MATLABSystem: '<S7>/SinkBlock'
+  matlabCodegenHandle_matl_kq2tzt(&dynamic_simulation_DW.obj_iv);
+
+  // End of Terminate for SubSystem: '<Root>/Publish1'
+
   // Terminate for Atomic SubSystem: '<Root>/Publish3'
-  // Terminate for MATLABSystem: '<S10>/SinkBlock'
-  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_dj);
+  // Terminate for MATLABSystem: '<S9>/SinkBlock'
+  matlabCodegenHandle_matl_kq2tzt(&dynamic_simulation_DW.obj_dj);
 
   // End of Terminate for SubSystem: '<Root>/Publish3'
 
   // Terminate for Atomic SubSystem: '<Root>/Publish'
-  // Terminate for MATLABSystem: '<S7>/SinkBlock'
-  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_c);
+  // Terminate for MATLABSystem: '<S6>/SinkBlock'
+  matlabCodegenHandle_matl_kq2tzt(&dynamic_simulation_DW.obj_cd);
 
   // End of Terminate for SubSystem: '<Root>/Publish'
 
-  // Terminate for Atomic SubSystem: '<Root>/Publish1'
-  // Terminate for MATLABSystem: '<S8>/SinkBlock'
-  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_iv);
-
-  // End of Terminate for SubSystem: '<Root>/Publish1'
+  // Terminate for MATLABSystem: '<S10>/Get Parameter'
+  matlabCodegenHandle_matlabCodeg(&dynamic_simulation_DW.obj_j);
 }
 
 //

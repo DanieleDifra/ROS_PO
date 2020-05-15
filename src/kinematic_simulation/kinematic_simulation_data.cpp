@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinematic_simulation'.
 //
-// Model version                  : 1.130
+// Model version                  : 1.133
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Thu May 14 23:07:46 2020
+// C/C++ source code generated on : Fri May 15 19:46:02 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -21,8 +21,13 @@
 
 // Block parameters (default storage)
 P_kinematic_simulation_T kinematic_simulation_P = {
+  // Variable: name_max_length
+  //  Referenced by: '<S2>/Constant'
+
+  32U,
+
   // Computed Parameter: Constant_Value
-  //  Referenced by: '<S5>/Constant'
+  //  Referenced by: '<S9>/Constant'
 
   {
     {
@@ -368,7 +373,7 @@ P_kinematic_simulation_T kinematic_simulation_P = {
   },
 
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S19>/Out1'
+  //  Referenced by: '<S13>/Out1'
 
   {
     {
@@ -446,7 +451,7 @@ P_kinematic_simulation_T kinematic_simulation_P = {
   },
 
   // Computed Parameter: Constant_Value_h
-  //  Referenced by: '<S11>/Constant'
+  //  Referenced by: '<S7>/Constant'
 
   {
     {
@@ -523,97 +528,8 @@ P_kinematic_simulation_T kinematic_simulation_P = {
     }                                  // TimeFromStart
   },
 
-  // Computed Parameter: Constant_Value_p
-  //  Referenced by: '<S13>/Constant'
-
-  {
-    {
-      0U,                              // Seq
-
-      {
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U }
-      ,                                // FrameId
-
-      {
-        0U,                            // CurrentLength
-        0U                             // ReceivedLength
-      },                               // FrameId_SL_Info
-
-      {
-        0.0,                           // Sec
-        0.0                            // Nsec
-      }                                // Stamp
-    },                                 // Header
-
-    {
-      {
-        0.0,                           // X
-        0.0,                           // Y
-        0.0                            // Z
-      },                               // Position
-
-      {
-        0.0,                           // X
-        0.0,                           // Y
-        0.0,                           // Z
-        0.0                            // W
-      }                                // Orientation
-    }                                  // Pose
-  },
-
-  // Computed Parameter: Constant_Value_m
-  //  Referenced by: '<S14>/Constant'
-
-  {
-    {
-      0U,                              // Seq
-
-      {
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U }
-      ,                                // FrameId
-
-      {
-        0U,                            // CurrentLength
-        0U                             // ReceivedLength
-      },                               // FrameId_SL_Info
-
-      {
-        0.0,                           // Sec
-        0.0                            // Nsec
-      }                                // Stamp
-    },                                 // Header
-
-    {
-      {
-        0.0,                           // X
-        0.0,                           // Y
-        0.0                            // Z
-      },                               // Linear
-
-      {
-        0.0,                           // X
-        0.0,                           // Y
-        0.0                            // Z
-      }                                // Angular
-    }                                  // Twist
-  },
-
-  // Computed Parameter: Constant_Value_o
-  //  Referenced by: '<S6>/Constant'
+  // Computed Parameter: Constant_Value_j
+  //  Referenced by: '<S1>/Constant'
 
   {
     {

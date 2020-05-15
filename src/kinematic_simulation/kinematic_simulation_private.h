@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinematic_simulation'.
 //
-// Model version                  : 1.130
+// Model version                  : 1.133
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Thu May 14 23:07:46 2020
+// C/C++ source code generated on : Fri May 15 19:46:02 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -40,8 +40,6 @@
 #ifndef rtmSetTPtr
 # define rtmSetTPtr(rtm, val)          ((rtm)->Timing.t = (val))
 #endif
-
-extern int32_T div_nzp_s32(int32_T numerator, int32_T denominator);
 
 // private model entry point functions
 extern void kinematic_simulation_derivatives(void);
