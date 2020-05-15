@@ -60,6 +60,8 @@ CATKIN_IGNORE
 !.vscode/launch.json
 !.vscode/extensions.json
 *.code-workspace
+.vscode
+/src/.vscode
 
 # Local History for Visual Studio Code
 .history/
