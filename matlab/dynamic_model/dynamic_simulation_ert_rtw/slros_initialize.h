@@ -16,12 +16,6 @@ extern SimulinkPublisher<sensor_msgs::JointState, SL_Bus_dynamic_simulation_sens
 // For Block dynamic_simulation/Publish1
 extern SimulinkPublisher<rosgraph_msgs::Clock, SL_Bus_dynamic_simulation_rosgraph_msgs_Clock> Pub_dynamic_simulation_158;
 
-// For Block dynamic_simulation/Publish2
-extern SimulinkPublisher<geometry_msgs::PoseStamped, SL_Bus_dynamic_simulation_geometry_msgs_PoseStamped> Pub_dynamic_simulation_178;
-
-// For Block dynamic_simulation/Publish3
-extern SimulinkPublisher<geometry_msgs::TwistStamped, SL_Bus_dynamic_simulation_geometry_msgs_TwistStamped> Pub_dynamic_simulation_179;
-
 // For Block dynamic_simulation/Joint_State_Msg_Creator/Get Joint Names/Get Parameter
 extern SimulinkParameterArrayGetter<char_T, std::string> ParamGet_dynamic_simulation_224;
 

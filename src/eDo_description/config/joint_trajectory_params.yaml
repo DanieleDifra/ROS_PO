@@ -1,0 +1,22 @@
+q1_initial: 1.57
+q2_initial: 1.57
+q3_initial: 1.57
+q4_initial: 1.57
+q5_initial: 1.57
+q6_initial: 1.57
+
+q1_final: 6.28
+q2_final: 6.28
+q3_final: 6.28
+q4_final: 6.28
+q5_final: 6.28
+q6_final: 6.28
+
+trajectoryType: 1
+
+start_delay: 5.0
+tf: 20.0
+
+max_ang_vel: 5.0
+max_ang_acc: 2.0
+

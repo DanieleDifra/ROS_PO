@@ -10,7 +10,6 @@ set(MW_TOP_LEVEL_PROJECT_NAME ${PROJECT_NAME})
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-geometry_msgs
 roscpp
 rosgraph_msgs
 sensor_msgs
@@ -27,7 +26,7 @@ add_definitions(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-   CATKIN_DEPENDS geometry_msgs roscpp rosgraph_msgs sensor_msgs std_msgs 
+   CATKIN_DEPENDS roscpp rosgraph_msgs sensor_msgs std_msgs 
 )
 
 ###########

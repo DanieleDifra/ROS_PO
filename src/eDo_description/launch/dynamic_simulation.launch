@@ -53,7 +53,7 @@
   <rosparam param="max_joint_vel">0.5</rosparam>
   
   <node pkg="dynamic_simulation" type="dynamic_simulation_node" name="dynamic_simulation"/>
-
+  <node pkg="forward_kinematics" type="forward_kinematics_node" name="forward_kinematics"/>
  
   
 </launch>

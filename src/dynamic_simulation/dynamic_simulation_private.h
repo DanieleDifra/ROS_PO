@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynamic_simulation'.
 //
-// Model version                  : 1.127
+// Model version                  : 1.129
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Fri May 15 20:39:42 2020
+// C/C++ source code generated on : Sat May 16 00:53:14 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -40,8 +40,6 @@
 #ifndef rtmSetTPtr
 # define rtmSetTPtr(rtm, val)          ((rtm)->Timing.t = (val))
 #endif
-
-extern int32_T div_nzp_s32(int32_T numerator, int32_T denominator);
 
 // private model entry point functions
 extern void dynamic_simulation_derivatives(void);

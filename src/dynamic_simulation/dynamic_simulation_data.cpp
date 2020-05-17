@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynamic_simulation'.
 //
-// Model version                  : 1.127
+// Model version                  : 1.129
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Fri May 15 20:39:42 2020
+// C/C++ source code generated on : Sat May 16 00:53:14 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -22,12 +22,12 @@
 // Block parameters (default storage)
 P_dynamic_simulation_T dynamic_simulation_P = {
   // Variable: name_max_length
-  //  Referenced by: '<S4>/Constant'
+  //  Referenced by: '<S2>/Constant'
 
   32U,
 
   // Computed Parameter: Constant_Value
-  //  Referenced by: '<S18>/Constant'
+  //  Referenced by: '<S9>/Constant'
 
   {
     {
@@ -373,7 +373,7 @@ P_dynamic_simulation_T dynamic_simulation_P = {
   },
 
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S22>/Out1'
+  //  Referenced by: '<S13>/Out1'
 
   {
     {
@@ -696,7 +696,7 @@ P_dynamic_simulation_T dynamic_simulation_P = {
   },
 
   // Computed Parameter: Constant_Value_n
-  //  Referenced by: '<S11>/Constant'
+  //  Referenced by: '<S7>/Constant'
 
   {
     {
@@ -1018,97 +1018,8 @@ P_dynamic_simulation_T dynamic_simulation_P = {
     }                                  // Layout
   },
 
-  // Computed Parameter: Constant_Value_l
-  //  Referenced by: '<S12>/Constant'
-
-  {
-    {
-      0U,                              // Seq
-
-      {
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U }
-      ,                                // FrameId
-
-      {
-        0U,                            // CurrentLength
-        0U                             // ReceivedLength
-      },                               // FrameId_SL_Info
-
-      {
-        0.0,                           // Sec
-        0.0                            // Nsec
-      }                                // Stamp
-    },                                 // Header
-
-    {
-      {
-        0.0,                           // X
-        0.0,                           // Y
-        0.0                            // Z
-      },                               // Position
-
-      {
-        0.0,                           // X
-        0.0,                           // Y
-        0.0,                           // Z
-        0.0                            // W
-      }                                // Orientation
-    }                                  // Pose
-  },
-
-  // Computed Parameter: Constant_Value_a
-  //  Referenced by: '<S13>/Constant'
-
-  {
-    {
-      0U,                              // Seq
-
-      {
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U, 0U,
-        0U, 0U }
-      ,                                // FrameId
-
-      {
-        0U,                            // CurrentLength
-        0U                             // ReceivedLength
-      },                               // FrameId_SL_Info
-
-      {
-        0.0,                           // Sec
-        0.0                            // Nsec
-      }                                // Stamp
-    },                                 // Header
-
-    {
-      {
-        0.0,                           // X
-        0.0,                           // Y
-        0.0                            // Z
-      },                               // Linear
-
-      {
-        0.0,                           // X
-        0.0,                           // Y
-        0.0                            // Z
-      }                                // Angular
-    }                                  // Twist
-  },
-
   // Computed Parameter: Constant_Value_i
-  //  Referenced by: '<S3>/Constant'
+  //  Referenced by: '<S1>/Constant'
 
   {
     {
@@ -1118,7 +1029,7 @@ P_dynamic_simulation_T dynamic_simulation_P = {
   },
 
   // Expression: zeros(6,8)
-  //  Referenced by: '<S10>/Constant'
+  //  Referenced by: '<S6>/Constant'
 
   { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
     0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
