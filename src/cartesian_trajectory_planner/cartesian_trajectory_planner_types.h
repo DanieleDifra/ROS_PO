@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cartesian_trajectory_planner'.
 //
-// Model version                  : 1.130
+// Model version                  : 1.129
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 19 17:06:24 2020
+// C/C++ source code generated on : Wed May 20 16:41:34 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -208,6 +208,43 @@ typedef struct tag_vxHWSOYrO9xtYchIOe7EKG robotics_slcore_internal_bloc_T;
 
 #endif                                 //typedef_robotics_slcore_internal_bloc_T
 
+#ifndef struct_tag_KSdGoEc2IyOHz4CLi4rcCD
+#define struct_tag_KSdGoEc2IyOHz4CLi4rcCD
+
+struct tag_KSdGoEc2IyOHz4CLi4rcCD
+{
+  int32_T __dummy;
+};
+
+#endif                                 //struct_tag_KSdGoEc2IyOHz4CLi4rcCD
+
+#ifndef typedef_e_robotics_slcore_internal_bl_T
+#define typedef_e_robotics_slcore_internal_bl_T
+
+typedef struct tag_KSdGoEc2IyOHz4CLi4rcCD e_robotics_slcore_internal_bl_T;
+
+#endif                                 //typedef_e_robotics_slcore_internal_bl_T
+
+#ifndef struct_tag_PzhaB0v2Sx4ikuHWZx5WUB
+#define struct_tag_PzhaB0v2Sx4ikuHWZx5WUB
+
+struct tag_PzhaB0v2Sx4ikuHWZx5WUB
+{
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+  e_robotics_slcore_internal_bl_T SampleTimeHandler;
+};
+
+#endif                                 //struct_tag_PzhaB0v2Sx4ikuHWZx5WUB
+
+#ifndef typedef_ros_slros_internal_block_GetP_T
+#define typedef_ros_slros_internal_block_GetP_T
+
+typedef struct tag_PzhaB0v2Sx4ikuHWZx5WUB ros_slros_internal_block_GetP_T;
+
+#endif                                 //typedef_ros_slros_internal_block_GetP_T
+
 #ifndef struct_tag_d9Cd9FR17y4PCQL0V3usIB
 #define struct_tag_d9Cd9FR17y4PCQL0V3usIB
 
@@ -262,43 +299,6 @@ struct tag_9SewJ4y3IXNs5GrZti8qkG
 typedef struct tag_9SewJ4y3IXNs5GrZti8qkG ros_slros_internal_block_Subs_T;
 
 #endif                                 //typedef_ros_slros_internal_block_Subs_T
-
-#ifndef struct_tag_KSdGoEc2IyOHz4CLi4rcCD
-#define struct_tag_KSdGoEc2IyOHz4CLi4rcCD
-
-struct tag_KSdGoEc2IyOHz4CLi4rcCD
-{
-  int32_T __dummy;
-};
-
-#endif                                 //struct_tag_KSdGoEc2IyOHz4CLi4rcCD
-
-#ifndef typedef_e_robotics_slcore_internal_bl_T
-#define typedef_e_robotics_slcore_internal_bl_T
-
-typedef struct tag_KSdGoEc2IyOHz4CLi4rcCD e_robotics_slcore_internal_bl_T;
-
-#endif                                 //typedef_e_robotics_slcore_internal_bl_T
-
-#ifndef struct_tag_PzhaB0v2Sx4ikuHWZx5WUB
-#define struct_tag_PzhaB0v2Sx4ikuHWZx5WUB
-
-struct tag_PzhaB0v2Sx4ikuHWZx5WUB
-{
-  boolean_T matlabCodegenIsDeleted;
-  int32_T isInitialized;
-  boolean_T isSetupComplete;
-  e_robotics_slcore_internal_bl_T SampleTimeHandler;
-};
-
-#endif                                 //struct_tag_PzhaB0v2Sx4ikuHWZx5WUB
-
-#ifndef typedef_ros_slros_internal_block_GetP_T
-#define typedef_ros_slros_internal_block_GetP_T
-
-typedef struct tag_PzhaB0v2Sx4ikuHWZx5WUB ros_slros_internal_block_GetP_T;
-
-#endif                                 //typedef_ros_slros_internal_block_GetP_T
 
 #ifndef struct_emxArray_char_T
 #define struct_emxArray_char_T
@@ -383,43 +383,6 @@ struct emxArray_boolean_T
 typedef struct emxArray_boolean_T emxArray_boolean_T_cartesian__T;
 
 #endif                                 //typedef_emxArray_boolean_T_cartesian__T
-
-#ifndef struct_tag_PMfBDzoakfdM9QAdfx2o6D
-#define struct_tag_PMfBDzoakfdM9QAdfx2o6D
-
-struct tag_PMfBDzoakfdM9QAdfx2o6D
-{
-  uint32_T f1[8];
-};
-
-#endif                                 //struct_tag_PMfBDzoakfdM9QAdfx2o6D
-
-#ifndef typedef_cell_wrap_cartesian_trajector_T
-#define typedef_cell_wrap_cartesian_trajector_T
-
-typedef struct tag_PMfBDzoakfdM9QAdfx2o6D cell_wrap_cartesian_trajector_T;
-
-#endif                                 //typedef_cell_wrap_cartesian_trajector_T
-
-#ifndef struct_tag_oDXjHSH9Se3wuqhBTjzTID
-#define struct_tag_oDXjHSH9Se3wuqhBTjzTID
-
-struct tag_oDXjHSH9Se3wuqhBTjzTID
-{
-  int32_T isInitialized;
-  boolean_T TunablePropsChanged;
-  cell_wrap_cartesian_trajector_T inputVarSize[4];
-  real_T TimeScaling[33];
-};
-
-#endif                                 //struct_tag_oDXjHSH9Se3wuqhBTjzTID
-
-#ifndef typedef_robotics_slcore_internal_bl_a_T
-#define typedef_robotics_slcore_internal_bl_a_T
-
-typedef struct tag_oDXjHSH9Se3wuqhBTjzTID robotics_slcore_internal_bl_a_T;
-
-#endif                                 //typedef_robotics_slcore_internal_bl_a_T
 
 #ifndef struct_tag_sS24XwgKvOMFYbEXa7sc1bB
 #define struct_tag_sS24XwgKvOMFYbEXa7sc1bB
@@ -590,6 +553,102 @@ typedef struct tag_8WuLxcHshihGuDAyFMTJLD robotics_slmanip_internal_blo_T;
 
 #endif                                 //typedef_robotics_slmanip_internal_blo_T
 
+#ifndef struct_tag_2xAJzS7rvIyFzfuC7FOGlD
+#define struct_tag_2xAJzS7rvIyFzfuC7FOGlD
+
+struct tag_2xAJzS7rvIyFzfuC7FOGlD
+{
+  emxArray_char_T_cartesian_tra_T *Type;
+  real_T PositionNumber;
+  real_T JointToParentTransform[16];
+  real_T ChildToJointTransform[16];
+  real_T JointAxisInternal[3];
+};
+
+#endif                                 //struct_tag_2xAJzS7rvIyFzfuC7FOGlD
+
+#ifndef typedef_c_rigidBodyJoint_cartesian__a_T
+#define typedef_c_rigidBodyJoint_cartesian__a_T
+
+typedef struct tag_2xAJzS7rvIyFzfuC7FOGlD c_rigidBodyJoint_cartesian__a_T;
+
+#endif                                 //typedef_c_rigidBodyJoint_cartesian__a_T
+
+#ifndef struct_tag_BPMfb1nwAW0cVckEDiFVnG
+#define struct_tag_BPMfb1nwAW0cVckEDiFVnG
+
+struct tag_BPMfb1nwAW0cVckEDiFVnG
+{
+  emxArray_char_T_cartesian_tra_T *NameInternal;
+  c_rigidBodyJoint_cartesian__a_T JointInternal;
+  real_T ParentIndex;
+};
+
+#endif                                 //struct_tag_BPMfb1nwAW0cVckEDiFVnG
+
+#ifndef typedef_n_robotics_manip_internal_R_a_T
+#define typedef_n_robotics_manip_internal_R_a_T
+
+typedef struct tag_BPMfb1nwAW0cVckEDiFVnG n_robotics_manip_internal_R_a_T;
+
+#endif                                 //typedef_n_robotics_manip_internal_R_a_T
+
+#ifndef struct_tag_EpnOXkcFkOFmcaZiu2CuCD
+#define struct_tag_EpnOXkcFkOFmcaZiu2CuCD
+
+struct tag_EpnOXkcFkOFmcaZiu2CuCD
+{
+  emxArray_char_T_cartesian_tra_T *NameInternal;
+  c_rigidBodyJoint_cartesian__a_T JointInternal;
+};
+
+#endif                                 //struct_tag_EpnOXkcFkOFmcaZiu2CuCD
+
+#ifndef typedef_o_robotics_manip_internal_R_a_T
+#define typedef_o_robotics_manip_internal_R_a_T
+
+typedef struct tag_EpnOXkcFkOFmcaZiu2CuCD o_robotics_manip_internal_R_a_T;
+
+#endif                                 //typedef_o_robotics_manip_internal_R_a_T
+
+#ifndef struct_tag_30tOpKFHjBx7LOwU1qyzZE
+#define struct_tag_30tOpKFHjBx7LOwU1qyzZE
+
+struct tag_30tOpKFHjBx7LOwU1qyzZE
+{
+  real_T NumBodies;
+  o_robotics_manip_internal_R_a_T Base;
+  n_robotics_manip_internal_R_a_T *Bodies[8];
+  real_T PositionNumber;
+};
+
+#endif                                 //struct_tag_30tOpKFHjBx7LOwU1qyzZE
+
+#ifndef typedef_p_robotics_manip_internal_R_a_T
+#define typedef_p_robotics_manip_internal_R_a_T
+
+typedef struct tag_30tOpKFHjBx7LOwU1qyzZE p_robotics_manip_internal_R_a_T;
+
+#endif                                 //typedef_p_robotics_manip_internal_R_a_T
+
+#ifndef struct_tag_OhlsWxsKBuXkrIadR09rYF
+#define struct_tag_OhlsWxsKBuXkrIadR09rYF
+
+struct tag_OhlsWxsKBuXkrIadR09rYF
+{
+  int32_T isInitialized;
+  p_robotics_manip_internal_R_a_T TreeInternal;
+};
+
+#endif                                 //struct_tag_OhlsWxsKBuXkrIadR09rYF
+
+#ifndef typedef_robotics_slmanip_internal_b_a_T
+#define typedef_robotics_slmanip_internal_b_a_T
+
+typedef struct tag_OhlsWxsKBuXkrIadR09rYF robotics_slmanip_internal_b_a_T;
+
+#endif                                 //typedef_robotics_slmanip_internal_b_a_T
+
 #ifndef struct_tag_a9w8IowFHzogdOiVBZxs7
 #define struct_tag_a9w8IowFHzogdOiVBZxs7
 
@@ -610,12 +669,12 @@ struct tag_a9w8IowFHzogdOiVBZxs7
 
 #endif                                 //struct_tag_a9w8IowFHzogdOiVBZxs7
 
-#ifndef typedef_c_rigidBodyJoint_cartesian__a_T
-#define typedef_c_rigidBodyJoint_cartesian__a_T
+#ifndef typedef_c_rigidBodyJoint_cartesian_as_T
+#define typedef_c_rigidBodyJoint_cartesian_as_T
 
-typedef struct tag_a9w8IowFHzogdOiVBZxs7 c_rigidBodyJoint_cartesian__a_T;
+typedef struct tag_a9w8IowFHzogdOiVBZxs7 c_rigidBodyJoint_cartesian_as_T;
 
-#endif                                 //typedef_c_rigidBodyJoint_cartesian__a_T
+#endif                                 //typedef_c_rigidBodyJoint_cartesian_as_T
 
 #ifndef struct_tag_Ba6v2kM2i80AQ3teGuWbQD
 #define struct_tag_Ba6v2kM2i80AQ3teGuWbQD
@@ -624,7 +683,7 @@ struct tag_Ba6v2kM2i80AQ3teGuWbQD
 {
   real_T Index;
   emxArray_char_T_cartesian_tra_T *NameInternal;
-  c_rigidBodyJoint_cartesian__a_T JointInternal;
+  c_rigidBodyJoint_cartesian_as_T JointInternal;
   real_T ParentIndex;
   real_T MassInternal;
   real_T CenterOfMassInternal[3];
@@ -648,7 +707,7 @@ struct tag_0AxmFhqo47Mw76v4Vj4AdE
 {
   real_T Index;
   emxArray_char_T_cartesian_tra_T *NameInternal;
-  c_rigidBodyJoint_cartesian__a_T *JointInternal;
+  c_rigidBodyJoint_cartesian_as_T *JointInternal;
   real_T ParentIndex;
 };
 
@@ -797,12 +856,12 @@ struct tag_sxjfBB9iGq1brg4yDDoQjB
 
 #endif                                 //struct_tag_sxjfBB9iGq1brg4yDDoQjB
 
-#ifndef typedef_robotics_slmanip_internal_b_a_T
-#define typedef_robotics_slmanip_internal_b_a_T
+#ifndef typedef_robotics_slmanip_internal__as_T
+#define typedef_robotics_slmanip_internal__as_T
 
-typedef struct tag_sxjfBB9iGq1brg4yDDoQjB robotics_slmanip_internal_b_a_T;
+typedef struct tag_sxjfBB9iGq1brg4yDDoQjB robotics_slmanip_internal__as_T;
 
-#endif                                 //typedef_robotics_slmanip_internal_b_a_T
+#endif                                 //typedef_robotics_slmanip_internal__as_T
 
 #ifndef struct_emxArray_tag_8EP4ctv7s0SDnh3V6W
 #define struct_emxArray_tag_8EP4ctv7s0SDnh3V6W

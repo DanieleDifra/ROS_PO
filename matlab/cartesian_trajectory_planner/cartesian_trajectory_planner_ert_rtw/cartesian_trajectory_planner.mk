@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'cartesian_trajectory_planner'. 
 ## 
 ## Makefile     : cartesian_trajectory_planner.mk
-## Generated on : Tue May 19 17:06:42 2020
+## Generated on : Wed May 20 16:36:58 2020
 ## MATLAB Coder version: 5.0 (R2020a)
 ## 
 ## Build Info:

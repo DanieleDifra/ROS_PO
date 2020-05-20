@@ -12,8 +12,7 @@ close all
 rosinit
 
 % Load robot object from URDF
-robot=importrobot('./eDo_description_urdf/robots/edo_sim.urdf');
-
+robot=importrobot('../src/eDo_description/urdf/edo.urdf');
 
 default_name_1 = uint8('edo_joint_1');
 default_name_2 = uint8('edo_joint_2');
@@ -25,8 +24,8 @@ default_name_6 = uint8('edo_joint_6');
 name_max_length = uint32(32);
 
 %% Close ROSCORE
+clc
 rosshutdown
 setenv('ROS_MASTER_URI', '');
 setenv('ROS_IP','');
 clear
-clc

@@ -9,7 +9,7 @@ robot.DataFormat = 'row';
 link_6 = 'link_6';
 cupHeight = 0.2;
 cupRadius = 0.05;
-cupPosition = [-0.5, 0.5, cupHeight/2+0.3];
+cupPosition = [-0.3, 0.3 cupHeight/2+0.3];
 body = rigidBody('cupFrame');
 setFixedTransform(body.Joint, trvec2tform(cupPosition))
 addBody(robot, body, robot.BaseName);
@@ -21,24 +21,24 @@ numWaypoints = 5;
 q0 = homeConfiguration(robot);
 qWaypoints = repmat(q0, numWaypoints, 1);
 gik = generalizedInverseKinematics('RigidBodyTree', robot, ...
-    'ConstraintInputs', {'cartesian','position','aiming','orientation','joint'})
+    'ConstraintInputs', {'cartesian','position','aiming','orientation','joint'});
 
 heightAboveTable = constraintCartesianBounds(link_6);
 heightAboveTable.Bounds = [-inf, inf; ...
                            -inf, inf; ...
-                           0.5, inf]
+                           0.5, inf];
                        
 distanceFromCup = constraintPositionTarget('cupFrame');
 distanceFromCup.ReferenceBody = link_6;
-distanceFromCup.PositionTolerance = 0.005
+distanceFromCup.PositionTolerance = 0.005;
 
 alignWithCup = constraintAiming('link_6');
-alignWithCup.TargetPoint = [0, 0, 100]
+alignWithCup.TargetPoint = [0, 0, 100];
 
-limitJointChange = constraintJointBounds(robot)
+limitJointChange = constraintJointBounds(robot);
 
 fixOrientation = constraintOrientationTarget(link_6);
-fixOrientation.OrientationTolerance = deg2rad(1)
+fixOrientation.OrientationTolerance = deg2rad(1);
 
 
 intermediateDistance = 0.3;

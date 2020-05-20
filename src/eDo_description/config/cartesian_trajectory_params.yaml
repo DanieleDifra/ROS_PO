@@ -9,17 +9,17 @@ oi_y: 0.0
 oi_z: 0.0
 oi_w: 1.0
 
-pf_x: 0.21
-pf_y: 0.48
-pf_z: 0.10
+pf_x: 0.3
+pf_y: 0.3
+pf_z: 0.3
 of_x: 0.39
 of_y: 0.89
 of_z: 0.2
 of_w: -0.12
 
-weight_ox: 1.0
-weight_oy: 1.0
-weight_oz: 1.0
+weight_ox: 0.0
+weight_oy: 0.0
+weight_oz: 0.0
 weight_px: 1.0
 weight_py: 1.0
 weight_pz: 1.0
