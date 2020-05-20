@@ -1,0 +1,86 @@
+#include "slros_initialize.h"
+
+ros::NodeHandle * SLROSNodePtr;
+const std::string SLROSNodeName = "cartesian_trajectory_planner_2";
+
+// For Block cartesian_trajectory_planner_2/Subscribe
+SimulinkSubscriber<rosgraph_msgs::Clock, SL_Bus_cartesian_trajectory_planner_2_rosgraph_msgs_Clock> Sub_cartesian_trajectory_planner_2_267;
+
+// For Block cartesian_trajectory_planner_2/Publish
+SimulinkPublisher<trajectory_msgs::JointTrajectoryPoint, SL_Bus_cartesian_trajectory_plan_JointTrajectoryPoint_na5m06> Pub_cartesian_trajectory_planner_2_266;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Get Parameter
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_270;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Get Parameter2
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_271;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Get Parameter3
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_272;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem/Get Parameter
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_275;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem/Get Parameter1
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_276;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem/Get Parameter2
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_277;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem/Get Parameter3
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_278;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem/Get Parameter4
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_279;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem/Get Parameter5
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_280;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem/Get Parameter6
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_281;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem1/Get Parameter
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_287;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem1/Get Parameter1
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_288;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem1/Get Parameter2
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_289;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem1/Get Parameter3
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_290;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem1/Get Parameter4
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_291;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem1/Get Parameter5
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_292;
+
+// For Block cartesian_trajectory_planner_2/Subsystem/Subsystem1/Get Parameter6
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_293;
+
+// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_299;
+
+// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter1
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_300;
+
+// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter2
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_301;
+
+// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter3
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_302;
+
+// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter4
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_303;
+
+// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter5
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_304;
+
+void slros_node_init(int argc, char** argv)
+{
+  ros::init(argc, argv, SLROSNodeName);
+  SLROSNodePtr = new ros::NodeHandle();
+}
+
