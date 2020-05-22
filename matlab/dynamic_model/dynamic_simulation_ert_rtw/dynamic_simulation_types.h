@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynamic_simulation'.
 //
-// Model version                  : 1.129
+// Model version                  : 1.131
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sat May 16 00:53:14 2020
+// C/C++ source code generated on : Fri May 22 10:58:09 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -471,44 +471,43 @@ typedef struct tag_Y04n94zUMq8rhLX3OxwtfD o_robotics_manip_internal_Rig_T;
 
 #endif                                 //typedef_o_robotics_manip_internal_Rig_T
 
-#ifndef struct_tag_CGxMVC4zETAqBEj5tfaJlD
-#define struct_tag_CGxMVC4zETAqBEj5tfaJlD
+#ifndef struct_tag_Ea2a5zzjJXD6wMTLacj1oD
+#define struct_tag_Ea2a5zzjJXD6wMTLacj1oD
 
-struct tag_CGxMVC4zETAqBEj5tfaJlD
+struct tag_Ea2a5zzjJXD6wMTLacj1oD
 {
   real_T NumBodies;
   o_robotics_manip_internal_Rig_T Base;
-  real_T Gravity[3];
   n_robotics_manip_internal_Rig_T *Bodies[8];
   real_T VelocityNumber;
   real_T PositionDoFMap[16];
   real_T VelocityDoFMap[16];
 };
 
-#endif                                 //struct_tag_CGxMVC4zETAqBEj5tfaJlD
+#endif                                 //struct_tag_Ea2a5zzjJXD6wMTLacj1oD
 
 #ifndef typedef_p_robotics_manip_internal_Rig_T
 #define typedef_p_robotics_manip_internal_Rig_T
 
-typedef struct tag_CGxMVC4zETAqBEj5tfaJlD p_robotics_manip_internal_Rig_T;
+typedef struct tag_Ea2a5zzjJXD6wMTLacj1oD p_robotics_manip_internal_Rig_T;
 
 #endif                                 //typedef_p_robotics_manip_internal_Rig_T
 
-#ifndef struct_tag_M95ulqvrzjlE3M76uzDFDD
-#define struct_tag_M95ulqvrzjlE3M76uzDFDD
+#ifndef struct_tag_aYmFLERtbTp8yusqC2HPZH
+#define struct_tag_aYmFLERtbTp8yusqC2HPZH
 
-struct tag_M95ulqvrzjlE3M76uzDFDD
+struct tag_aYmFLERtbTp8yusqC2HPZH
 {
   int32_T isInitialized;
   p_robotics_manip_internal_Rig_T TreeInternal;
 };
 
-#endif                                 //struct_tag_M95ulqvrzjlE3M76uzDFDD
+#endif                                 //struct_tag_aYmFLERtbTp8yusqC2HPZH
 
 #ifndef typedef_robotics_slmanip_internal_blo_T
 #define typedef_robotics_slmanip_internal_blo_T
 
-typedef struct tag_M95ulqvrzjlE3M76uzDFDD robotics_slmanip_internal_blo_T;
+typedef struct tag_aYmFLERtbTp8yusqC2HPZH robotics_slmanip_internal_blo_T;
 
 #endif                                 //typedef_robotics_slmanip_internal_blo_T
 

@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynamic_simulation'.
 //
-// Model version                  : 1.129
+// Model version                  : 1.131
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sat May 16 00:53:14 2020
+// C/C++ source code generated on : Fri May 22 10:58:09 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -1026,15 +1026,7 @@ P_dynamic_simulation_T dynamic_simulation_P = {
       0.0,                             // Sec
       0.0                              // Nsec
     }                                  // Clock_
-  },
-
-  // Expression: zeros(6,8)
-  //  Referenced by: '<S6>/Constant'
-
-  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-    0.0, 0.0, 0.0 }
+  }
 };
 
 //

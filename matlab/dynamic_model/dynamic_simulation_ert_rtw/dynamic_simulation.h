@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynamic_simulation'.
 //
-// Model version                  : 1.129
+// Model version                  : 1.131
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sat May 16 00:53:14 2020
+// C/C++ source code generated on : Fri May 22 10:58:09 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -156,46 +156,42 @@ typedef struct {
   SL_Bus_dynamic_simulation_std_msgs_MultiArrayDimension
     b_varargout_2_Layout_Dim[16];
   real_T b_varargout_2_Data[128];
-  real_T b_I[36];
-  real_T R[36];
   real_T X[36];
+  real_T A[36];
   uint8_T TmpSignalConversionAtSFun_b[192];// '<S2>/Assign to JointState msg'
   real_T T[16];
-  real_T Tinv[16];
+  real_T dv[16];
   real_T TJ[16];
   real_T obj[16];
-  real_T T_m[16];
-  real_T dv[16];
-  real_T TJ_c[16];
-  real_T obj_k[16];
-  real_T R_c[9];
-  real_T R_b[9];
-  real_T dv1[9];
-  real_T R_p[9];
+  real_T TJ_m[16];
+  real_T obj_c[16];
+  real_T R[9];
   real_T tempR[9];
-  real_T R_cv[9];
-  real_T tempR_f[9];
+  real_T R_k[9];
+  real_T tempR_c[9];
+  real_T dv1[9];
   real_T dv2[9];
-  real_T dv3[9];
-  real_T R_g[9];
-  real_T R_g1[9];
+  real_T R_b[9];
+  real_T R_p[9];
+  real_T MatrixDivide[6];              // '<S6>/Matrix Divide'
   real_T Velocity[6];                  // '<S6>/Velocity'
-  real_T MATLABSystem[6];              // '<S11>/MATLAB System'
-  real_T a0[6];
   real_T q_data[6];
-  real_T X_m[6];
-  real_T b_I_n[6];
-  real_T q_data_p[6];
   int8_T msubspace_data[36];
+  int8_T msubspace_data_c[36];
+  int8_T msubspace_data_f[36];
+  int8_T msubspace_data_g[36];
+  int8_T msubspace_data_g1[36];
+  int8_T msubspace_data_m[36];
+  int8_T msubspace_data_n[36];
+  int8_T msubspace_data_p[36];
+  int8_T msubspace_data_l[36];
   char_T charValue[32];
-  char_T charValue_l[32];
   char_T charValue_j[32];
   char_T charValue_d[32];
   char_T charValue_g[32];
-  char_T charValue_ld[32];
+  char_T charValue_l[32];
+  char_T charValue_dh[32];
   real_T result_data[4];
-  int32_T nonFixedIndices_data[8];
-  int32_T ii_data[8];
   char_T cv[25];
   real_T v[3];
   real_T v_d[3];
@@ -206,112 +202,89 @@ typedef struct {
   char_T cv3[12];
   char_T initialValue[11];
   char_T b[9];
+  char_T b_l[9];
+  char_T b_o[9];
+  char_T b_b[9];
+  char_T b_n[9];
+  char_T b_bs[9];
+  char_T b_ln[9];
+  char_T b_h[9];
+  char_T b_bn[9];
   char_T b_d[9];
-  char_T b_l[8];
-  char_T b_o[8];
-  boolean_T mask[8];
-  char_T b_b[8];
+  char_T b_e[8];
+  char_T b_bj[8];
+  char_T b_j[8];
   real_T value;
-  real_T value_n;
-  real_T value_b;
-  real_T vNum;
-  real_T k;
-  real_T j;
+  real_T value_f;
+  real_T value_a;
+  real_T value_j;
+  real_T value_jz;
+  real_T Clock1;                       // '<Root>/Clock1'
   real_T nb;
-  real_T a_idx_1;
-  real_T a_idx_0;
+  real_T vNum;
+  real_T pid;
+  real_T s;
+  real_T p_idx_1;
   real_T b_idx_0;
   real_T b_idx_1;
   real_T cth;
   real_T sth;
   real_T tempR_tmp;
-  real_T tempR_tmp_l;
-  real_T tempR_tmp_h;
-  real_T tempR_tmp_b;
-  real_T tempR_tmp_d;
-  real_T nb_e;
-  real_T vNum_b;
-  real_T pid;
-  real_T s;
-  real_T p_idx_1;
-  real_T b_idx_0_j;
-  real_T b_idx_1_f;
-  real_T b_a;
+  real_T tempR_tmp_o;
+  real_T tempR_tmp_n;
+  real_T tempR_tmp_i;
+  real_T tempR_tmp_oy;
+  real_T b_nv;
   real_T axang_idx_0;
   real_T axang_idx_1;
   real_T axang_idx_2;
-  char_T b_j[5];
-  char_T b_jz[5];
-  char_T b_o4[5];
-  char_T b_n[5];
-  int32_T n;
-  int32_T iend;
-  int32_T j_i;
+  real_T smax;
+  char_T b_m[5];
+  char_T b_c[5];
+  int32_T c;
+  int32_T d;
   int32_T i;
-  int32_T i_o;
-  int32_T vNum_idx_0_tmp;
-  int32_T MATLABSystem_tmp;
-  int32_T b_k;
-  int32_T p;
+  int32_T loop_ub;
+  int32_T c_m;
+  int32_T f;
+  int32_T g;
+  int32_T cb;
+  int32_T n;
   int32_T m;
-  int32_T inner;
+  int32_T coffset;
+  int32_T boffset;
   int32_T aoffset;
-  int32_T i_n;
+  int32_T k;
+  int32_T loop_ub_m;
   int32_T q_size;
-  int32_T unnamed_idx_1;
-  int32_T loop_ub_tmp;
-  int32_T q_size_tmp;
+  int32_T c_tmp;
+  int32_T pid_tmp;
+  int32_T X_tmp;
   int32_T kstr;
   int32_T b_kstr;
   int32_T obj_tmp;
   int32_T obj_tmp_tmp;
-  int32_T kstr_m;
+  int32_T kstr_j;
+  int32_T kstr_h;
   int32_T b_kstr_c;
-  int32_T b_i;
-  int32_T f;
-  int32_T cb;
-  int32_T idx;
-  int32_T n_m;
-  int32_T nm1d2;
-  int32_T m_m;
-  int32_T coffset;
-  int32_T boffset;
-  int32_T aoffset_j;
-  int32_T loop_ub;
-  int32_T q_size_h;
-  int32_T pid_tmp;
-  int32_T X_tmp;
-  int32_T coffset_tmp;
-  int32_T kstr_c;
-  int32_T b_kstr_ct;
-  int32_T obj_tmp_p;
+  int32_T obj_tmp_c;
   int32_T obj_tmp_tmp_p;
+  int32_T i_p;
   int32_T i1;
-  int32_T i2;
   int32_T X_tmp_a;
-  int32_T X_tmp_e;
-  int32_T i3;
-  int32_T Tinv_tmp;
+  int32_T i2;
   int32_T newNumel;
-  int32_T i_a;
+  int32_T i_e;
   int32_T newNumel_a;
+  int32_T i_a;
   int32_T i_i;
-  int32_T newNumel_l;
-  int32_T i_oj;
-  int32_T i_o2;
-  int32_T i_ip;
-  int32_T i_f;
+  int32_T i_l;
   uint32_T b_varargout_2_Data_SL_Info_Curr;
   uint32_T b_varargout_2_Data_SL_Info_Rece;
   uint32_T b_varargout_2_Layout_DataOffset;
   uint32_T b_varargout_2_Layout_Dim_SL_Inf;
-  uint32_T b_varargout_2_Layout_Dim_SL_I_c;
+  uint32_T b_varargout_2_Layout_Dim_SL_I_f;
   boolean_T b_varargout_1;
-  boolean_T b_bool;
-  boolean_T b_bool_o;
-  boolean_T b_bool_l;
-  boolean_T b_bool_m;
-  boolean_T b_bool_mj;
 } B_dynamic_simulation_T;
 
 // Block states (default storage) for system '<Root>'
@@ -403,9 +376,6 @@ struct P_dynamic_simulation_T_ {
 
   SL_Bus_dynamic_simulation_rosgraph_msgs_Clock Constant_Value_i;// Computed Parameter: Constant_Value_i
                                                                     //  Referenced by: '<S1>/Constant'
-
-  real_T Constant_Value_ij[48];        // Expression: zeros(6,8)
-                                          //  Referenced by: '<S6>/Constant'
 
 };
 
@@ -519,12 +489,6 @@ extern "C" {
 #endif
 
 //-
-//  These blocks were eliminated from the model due to optimizations:
-//
-//  Block '<S11>/Reshape' : Reshape block reduction
-
-
-//-
 //  The generated code includes comments that allow you to trace directly
 //  back to the appropriate location in the model.  The basic format
 //  is <system>/block_name, where system is the system number (uniquely
@@ -549,7 +513,7 @@ extern "C" {
 //  '<S8>'   : 'dynamic_simulation/Joint_State_Msg_Creator/Assign to JointState msg'
 //  '<S9>'   : 'dynamic_simulation/Joint_State_Msg_Creator/Blank Message'
 //  '<S10>'  : 'dynamic_simulation/Joint_State_Msg_Creator/Get Joint Names'
-//  '<S11>'  : 'dynamic_simulation/Robot Dynamic Model/Forward Dynamics'
+//  '<S11>'  : 'dynamic_simulation/Robot Dynamic Model/Joint Space Mass Matrix'
 //  '<S12>'  : 'dynamic_simulation/Robot Dynamic Model/Subsystem'
 //  '<S13>'  : 'dynamic_simulation/Subscribe/Enabled Subsystem'
 
