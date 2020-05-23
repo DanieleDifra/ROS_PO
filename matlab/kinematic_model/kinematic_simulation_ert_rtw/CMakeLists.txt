@@ -54,6 +54,7 @@ add_executable(${PROJECT_NAME}_node
    ert_main.cpp
    kinematic_simulation.cpp
    kinematic_simulation_data.cpp
+   rt_zcfcn.cpp
    linuxinitialize.cpp
    slros_busmsg_conversion.cpp
    slros_initialize.cpp

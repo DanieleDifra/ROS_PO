@@ -21,15 +21,6 @@ default_name_4 = uint8('edo_joint_4');
 default_name_5 = uint8('edo_joint_5');
 default_name_6 = uint8('edo_joint_6');
 
-transmission = zeros(6, 6);
-n = 20;
-
-for i=1:6
-    for j=1:6
-        transmission(i, j) = n ^ abs(i-j);
-    end
-end
-
 name_max_length = uint32(32);
 
 %% Close ROSCORE

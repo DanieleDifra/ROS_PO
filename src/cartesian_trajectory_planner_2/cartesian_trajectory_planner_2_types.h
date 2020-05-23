@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cartesian_trajectory_planner_2'.
 //
-// Model version                  : 1.129
+// Model version                  : 1.136
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 19 21:41:37 2020
+// C/C++ source code generated on : Sat May 23 17:30:41 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -672,220 +672,24 @@ typedef struct tag_PzhaB0v2Sx4ikuHWZx5WUB ros_slros_internal_block_GetP_T;
 
 #endif                                 //typedef_ros_slros_internal_block_GetP_T
 
-#ifndef struct_emxArray_real_T_1x7
-#define struct_emxArray_real_T_1x7
+#ifndef struct_tag_rVaL2jCthDg1Nc4cghuMrG
+#define struct_tag_rVaL2jCthDg1Nc4cghuMrG
 
-struct emxArray_real_T_1x7
+struct tag_rVaL2jCthDg1Nc4cghuMrG
 {
-  real_T data[7];
-  int32_T size[2];
-};
-
-#endif                                 //struct_emxArray_real_T_1x7
-
-#ifndef typedef_emxArray_real_T_1x7_cartesian_T
-#define typedef_emxArray_real_T_1x7_cartesian_T
-
-typedef struct emxArray_real_T_1x7 emxArray_real_T_1x7_cartesian_T;
-
-#endif                                 //typedef_emxArray_real_T_1x7_cartesian_T
-
-#ifndef struct_emxArray_real_T_6x6x3
-#define struct_emxArray_real_T_6x6x3
-
-struct emxArray_real_T_6x6x3
-{
-  real_T data[108];
-  int32_T size[3];
-};
-
-#endif                                 //struct_emxArray_real_T_6x6x3
-
-#ifndef typedef_emxArray_real_T_6x6x3_cartesi_T
-#define typedef_emxArray_real_T_6x6x3_cartesi_T
-
-typedef struct emxArray_real_T_6x6x3 emxArray_real_T_6x6x3_cartesi_T;
-
-#endif                                 //typedef_emxArray_real_T_6x6x3_cartesi_T
-
-#ifndef struct_tag_06c2DDfmr4zcnTqhww20ZC
-#define struct_tag_06c2DDfmr4zcnTqhww20ZC
-
-struct tag_06c2DDfmr4zcnTqhww20ZC
-{
-  emxArray_real_T_1x7_cartesian_T breaks;
-  emxArray_real_T_6x6x3_cartesi_T coefs;
-};
-
-#endif                                 //struct_tag_06c2DDfmr4zcnTqhww20ZC
-
-#ifndef typedef_s_06c2DDfmr4zcnTqhww20ZC_cart_T
-#define typedef_s_06c2DDfmr4zcnTqhww20ZC_cart_T
-
-typedef struct tag_06c2DDfmr4zcnTqhww20ZC s_06c2DDfmr4zcnTqhww20ZC_cart_T;
-
-#endif                                 //typedef_s_06c2DDfmr4zcnTqhww20ZC_cart_T
-
-#ifndef struct_emxArray_real_T_1x5
-#define struct_emxArray_real_T_1x5
-
-struct emxArray_real_T_1x5
-{
-  real_T data[5];
-  int32_T size[2];
-};
-
-#endif                                 //struct_emxArray_real_T_1x5
-
-#ifndef typedef_emxArray_real_T_1x5_cartesian_T
-#define typedef_emxArray_real_T_1x5_cartesian_T
-
-typedef struct emxArray_real_T_1x5 emxArray_real_T_1x5_cartesian_T;
-
-#endif                                 //typedef_emxArray_real_T_1x5_cartesian_T
-
-#ifndef struct_tag_pAdZwyzDKFMs78Zw3azLwB
-#define struct_tag_pAdZwyzDKFMs78Zw3azLwB
-
-struct tag_pAdZwyzDKFMs78Zw3azLwB
-{
-  emxArray_real_T_1x5_cartesian_T f1;
-};
-
-#endif                                 //struct_tag_pAdZwyzDKFMs78Zw3azLwB
-
-#ifndef typedef_f_cell_wrap_cartesian_traject_T
-#define typedef_f_cell_wrap_cartesian_traject_T
-
-typedef struct tag_pAdZwyzDKFMs78Zw3azLwB f_cell_wrap_cartesian_traject_T;
-
-#endif                                 //typedef_f_cell_wrap_cartesian_traject_T
-
-#ifndef struct_emxArray_real_T_18x3
-#define struct_emxArray_real_T_18x3
-
-struct emxArray_real_T_18x3
-{
-  real_T data[54];
-  int32_T size[2];
-};
-
-#endif                                 //struct_emxArray_real_T_18x3
-
-#ifndef typedef_emxArray_real_T_18x3_cartesia_T
-#define typedef_emxArray_real_T_18x3_cartesia_T
-
-typedef struct emxArray_real_T_18x3 emxArray_real_T_18x3_cartesia_T;
-
-#endif                                 //typedef_emxArray_real_T_18x3_cartesia_T
-
-#ifndef struct_tag_4enwL8LeteOUifFosK3af
-#define struct_tag_4enwL8LeteOUifFosK3af
-
-struct tag_4enwL8LeteOUifFosK3af
-{
-  emxArray_real_T_18x3_cartesia_T f1;
-};
-
-#endif                                 //struct_tag_4enwL8LeteOUifFosK3af
-
-#ifndef typedef_g_cell_wrap_cartesian_traject_T
-#define typedef_g_cell_wrap_cartesian_traject_T
-
-typedef struct tag_4enwL8LeteOUifFosK3af g_cell_wrap_cartesian_traject_T;
-
-#endif                                 //typedef_g_cell_wrap_cartesian_traject_T
-
-#ifndef struct_tag_FsykqfbjNNuE0BFHsFVRCE
-#define struct_tag_FsykqfbjNNuE0BFHsFVRCE
-
-struct tag_FsykqfbjNNuE0BFHsFVRCE
-{
-  real_T f1[6];
-  real_T f2;
-};
-
-#endif                                 //struct_tag_FsykqfbjNNuE0BFHsFVRCE
-
-#ifndef typedef_g_cell_cartesian_trajectory_p_T
-#define typedef_g_cell_cartesian_trajectory_p_T
-
-typedef struct tag_FsykqfbjNNuE0BFHsFVRCE g_cell_cartesian_trajectory_p_T;
-
-#endif                                 //typedef_g_cell_cartesian_trajectory_p_T
-
-#ifndef struct_tag_5zdrOwEBCNIh1LgbqnM3yB
-#define struct_tag_5zdrOwEBCNIh1LgbqnM3yB
-
-struct tag_5zdrOwEBCNIh1LgbqnM3yB
-{
-  g_cell_cartesian_trajectory_p_T ParsedResults;
-};
-
-#endif                                 //struct_tag_5zdrOwEBCNIh1LgbqnM3yB
-
-#ifndef typedef_c_robotics_core_internal_code_T
-#define typedef_c_robotics_core_internal_code_T
-
-typedef struct tag_5zdrOwEBCNIh1LgbqnM3yB c_robotics_core_internal_code_T;
-
-#endif                                 //typedef_c_robotics_core_internal_code_T
-
-#ifndef struct_tag_PMfBDzoakfdM9QAdfx2o6D
-#define struct_tag_PMfBDzoakfdM9QAdfx2o6D
-
-struct tag_PMfBDzoakfdM9QAdfx2o6D
-{
-  uint32_T f1[8];
-};
-
-#endif                                 //struct_tag_PMfBDzoakfdM9QAdfx2o6D
-
-#ifndef typedef_cell_wrap_cartesian_trajector_T
-#define typedef_cell_wrap_cartesian_trajector_T
-
-typedef struct tag_PMfBDzoakfdM9QAdfx2o6D cell_wrap_cartesian_trajector_T;
-
-#endif                                 //typedef_cell_wrap_cartesian_trajector_T
-
-#ifndef struct_tag_8Y13cAEkrxA1KBxYU14FTD
-#define struct_tag_8Y13cAEkrxA1KBxYU14FTD
-
-struct tag_8Y13cAEkrxA1KBxYU14FTD
-{
+  boolean_T matlabCodegenIsDeleted;
   int32_T isInitialized;
-  boolean_T TunablePropsChanged;
-  cell_wrap_cartesian_trajector_T inputVarSize[4];
-  real_T PeakVelocity[2];
-  real_T Acceleration[2];
+  boolean_T isSetupComplete;
 };
 
-#endif                                 //struct_tag_8Y13cAEkrxA1KBxYU14FTD
+#endif                                 //struct_tag_rVaL2jCthDg1Nc4cghuMrG
 
-#ifndef typedef_robotics_slcore_internal_bl_j_T
-#define typedef_robotics_slcore_internal_bl_j_T
+#ifndef typedef_ros_slros_internal_block_SetP_T
+#define typedef_ros_slros_internal_block_SetP_T
 
-typedef struct tag_8Y13cAEkrxA1KBxYU14FTD robotics_slcore_internal_bl_j_T;
+typedef struct tag_rVaL2jCthDg1Nc4cghuMrG ros_slros_internal_block_SetP_T;
 
-#endif                                 //typedef_robotics_slcore_internal_bl_j_T
-
-#ifndef struct_emxArray_tag_06c2DDfmr4zcnTqhww
-#define struct_emxArray_tag_06c2DDfmr4zcnTqhww
-
-struct emxArray_tag_06c2DDfmr4zcnTqhww
-{
-  s_06c2DDfmr4zcnTqhww20ZC_cart_T data[6];
-  int32_T size;
-};
-
-#endif                                 //struct_emxArray_tag_06c2DDfmr4zcnTqhww
-
-#ifndef typedef_emxArray_s_06c2DDfmr4zcnTqhww_T
-#define typedef_emxArray_s_06c2DDfmr4zcnTqhww_T
-
-typedef struct emxArray_tag_06c2DDfmr4zcnTqhww emxArray_s_06c2DDfmr4zcnTqhww_T;
-
-#endif                                 //typedef_emxArray_s_06c2DDfmr4zcnTqhww_T
+#endif                                 //typedef_ros_slros_internal_block_SetP_T
 
 // Parameters (default storage)
 typedef struct P_cartesian_trajectory_planne_T_ P_cartesian_trajectory_planne_T;

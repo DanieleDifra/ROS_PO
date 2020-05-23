@@ -93,10 +93,14 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["kinematic_simulation:155"] = {rtwname: "<S6>/Joint Velocities"};
 	this.rtwnameHashMap["<S6>/Bus Creator"] = {sid: "kinematic_simulation:167"};
 	this.sidHashMap["kinematic_simulation:167"] = {rtwname: "<S6>/Bus Creator"};
+	this.rtwnameHashMap["<S6>/Data Type Conversion"] = {sid: "kinematic_simulation:210"};
+	this.sidHashMap["kinematic_simulation:210"] = {rtwname: "<S6>/Data Type Conversion"};
+	this.rtwnameHashMap["<S6>/Display"] = {sid: "kinematic_simulation:211"};
+	this.sidHashMap["kinematic_simulation:211"] = {rtwname: "<S6>/Display"};
 	this.rtwnameHashMap["<S6>/Integrator"] = {sid: "kinematic_simulation:166"};
 	this.sidHashMap["kinematic_simulation:166"] = {rtwname: "<S6>/Integrator"};
-	this.rtwnameHashMap["<S6>/Subsystem"] = {sid: "kinematic_simulation:157"};
-	this.sidHashMap["kinematic_simulation:157"] = {rtwname: "<S6>/Subsystem"};
+	this.rtwnameHashMap["<S6>/initial_configurations"] = {sid: "kinematic_simulation:157"};
+	this.sidHashMap["kinematic_simulation:157"] = {rtwname: "<S6>/initial_configurations"};
 	this.rtwnameHashMap["<S6>/Joint Bus"] = {sid: "kinematic_simulation:156"};
 	this.sidHashMap["kinematic_simulation:156"] = {rtwname: "<S6>/Joint Bus"};
 	this.rtwnameHashMap["<S7>/Constant"] = {sid: "kinematic_simulation:16:51"};
@@ -115,8 +119,6 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["kinematic_simulation:179:33"] = {rtwname: "<S9>/Constant"};
 	this.rtwnameHashMap["<S9>/Out"] = {sid: "kinematic_simulation:179:34"};
 	this.sidHashMap["kinematic_simulation:179:34"] = {rtwname: "<S9>/Out"};
-	this.rtwnameHashMap["<S10>/Get Parameter"] = {sid: "kinematic_simulation:205"};
-	this.sidHashMap["kinematic_simulation:205"] = {rtwname: "<S10>/Get Parameter"};
 	this.rtwnameHashMap["<S10>/Get Parameter1"] = {sid: "kinematic_simulation:184"};
 	this.sidHashMap["kinematic_simulation:184"] = {rtwname: "<S10>/Get Parameter1"};
 	this.rtwnameHashMap["<S10>/Get Parameter2"] = {sid: "kinematic_simulation:185"};
@@ -127,6 +129,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["kinematic_simulation:187"] = {rtwname: "<S10>/Get Parameter4"};
 	this.rtwnameHashMap["<S10>/Get Parameter5"] = {sid: "kinematic_simulation:188"};
 	this.sidHashMap["kinematic_simulation:188"] = {rtwname: "<S10>/Get Parameter5"};
+	this.rtwnameHashMap["<S10>/Get Parameter6"] = {sid: "kinematic_simulation:212"};
+	this.sidHashMap["kinematic_simulation:212"] = {rtwname: "<S10>/Get Parameter6"};
 	this.rtwnameHashMap["<S10>/Mux"] = {sid: "kinematic_simulation:189"};
 	this.sidHashMap["kinematic_simulation:189"] = {rtwname: "<S10>/Mux"};
 	this.rtwnameHashMap["<S10>/Mux1"] = {sid: "kinematic_simulation:190"};
@@ -149,8 +153,12 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["kinematic_simulation:163"] = {rtwname: "<S11>/Get Parameter5"};
 	this.rtwnameHashMap["<S11>/Mux"] = {sid: "kinematic_simulation:164"};
 	this.sidHashMap["kinematic_simulation:164"] = {rtwname: "<S11>/Mux"};
+	this.rtwnameHashMap["<S11>/Mux1"] = {sid: "kinematic_simulation:207"};
+	this.sidHashMap["kinematic_simulation:207"] = {rtwname: "<S11>/Mux1"};
 	this.rtwnameHashMap["<S11>/initial_configuration"] = {sid: "kinematic_simulation:165"};
 	this.sidHashMap["kinematic_simulation:165"] = {rtwname: "<S11>/initial_configuration"};
+	this.rtwnameHashMap["<S11>/error_codes"] = {sid: "kinematic_simulation:208"};
+	this.sidHashMap["kinematic_simulation:208"] = {rtwname: "<S11>/error_codes"};
 	this.rtwnameHashMap["<S12>/In1"] = {sid: "kinematic_simulation:16:53"};
 	this.sidHashMap["kinematic_simulation:16:53"] = {rtwname: "<S12>/In1"};
 	this.rtwnameHashMap["<S12>/Enable"] = {sid: "kinematic_simulation:16:54"};

@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'kinematic_simulation'. 
 ## 
 ## Makefile     : kinematic_simulation.mk
-## Generated on : Fri May 15 16:50:51 2020
+## Generated on : Sat May 23 12:09:02 2020
 ## MATLAB Coder version: 5.0 (R2020a)
 ## 
 ## Build Info:
@@ -174,7 +174,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/kinematic_simulation_ert_rtw/kinematic_simulation.cpp $(START_DIR)/kinematic_simulation_ert_rtw/kinematic_simulation_data.cpp $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.cpp $(START_DIR)/kinematic_simulation_ert_rtw/slros_busmsg_conversion.cpp $(START_DIR)/kinematic_simulation_ert_rtw/slros_initialize.cpp $(MATLAB_ROOT)/toolbox/ros/slros/src/slros_generic_param.cpp
+SRCS = $(START_DIR)/kinematic_simulation_ert_rtw/kinematic_simulation.cpp $(START_DIR)/kinematic_simulation_ert_rtw/kinematic_simulation_data.cpp $(START_DIR)/kinematic_simulation_ert_rtw/rt_zcfcn.cpp $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.cpp $(START_DIR)/kinematic_simulation_ert_rtw/slros_busmsg_conversion.cpp $(START_DIR)/kinematic_simulation_ert_rtw/slros_initialize.cpp $(MATLAB_ROOT)/toolbox/ros/slros/src/slros_generic_param.cpp
 
 MAIN_SRC = $(START_DIR)/kinematic_simulation_ert_rtw/ert_main.cpp
 
@@ -184,7 +184,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = kinematic_simulation.cpp.o kinematic_simulation_data.cpp.o linuxinitialize.cpp.o slros_busmsg_conversion.cpp.o slros_initialize.cpp.o slros_generic_param.cpp.o
+OBJS = kinematic_simulation.cpp.o kinematic_simulation_data.cpp.o rt_zcfcn.cpp.o linuxinitialize.cpp.o slros_busmsg_conversion.cpp.o slros_initialize.cpp.o slros_generic_param.cpp.o
 
 MAIN_OBJ = ert_main.cpp.o
 
@@ -404,6 +404,10 @@ kinematic_simulation.cpp.o : $(START_DIR)/kinematic_simulation_ert_rtw/kinematic
 
 
 kinematic_simulation_data.cpp.o : $(START_DIR)/kinematic_simulation_ert_rtw/kinematic_simulation_data.cpp
+	$(CPP) $(CPPFLAGS) -o $@ $<
+
+
+rt_zcfcn.cpp.o : $(START_DIR)/kinematic_simulation_ert_rtw/rt_zcfcn.cpp
 	$(CPP) $(CPPFLAGS) -o $@ $<
 
 

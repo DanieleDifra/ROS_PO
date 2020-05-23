@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinematic_simulation'.
 //
-// Model version                  : 1.133
+// Model version                  : 1.136
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Fri May 15 20:36:27 2020
+// C/C++ source code generated on : Sat May 23 12:08:46 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -27,6 +27,9 @@ X_kinematic_simulation_T kinematic_simulation_X;
 
 // Block states (default storage)
 DW_kinematic_simulation_T kinematic_simulation_DW;
+
+// Previous zero-crossings (trigger) states
+PrevZCX_kinematic_simulation_T kinematic_simulation_PrevZCX;
 
 // Real-time model
 RT_MODEL_kinematic_simulation_T kinematic_simulation_M_ =
@@ -198,7 +201,8 @@ static void matlabCodegenHandle_matl_alw5ty(ros_slros_internal_block_Publ_T *obj
 // Model step function
 void kinematic_simulation_step(void)
 {
-  int32_T idx;
+  int_T iS;
+  ZCEventType zcEvent;
   int32_T c;
   int32_T d;
   uint32_T b_varargout_2_Positions_SL_Info;
@@ -210,7 +214,7 @@ void kinematic_simulation_step(void)
   uint32_T b_varargout_2_Effort_SL_Info_Cu;
   uint32_T b_varargout_2_Effort_SL_Info_Re;
   boolean_T b_varargout_1;
-  real_T rtb_Clock;
+  uint8_T DataTypeConversion[6];
   int32_T loop_ub;
   if (rtmIsMajorTimeStep(kinematic_simulation_M)) {
     // set solver stop time
@@ -227,14 +231,14 @@ void kinematic_simulation_step(void)
 
   // SignalConversion generated from: '<S8>/ SFunction ' incorporates:
   //   MATLAB Function: '<S2>/Assign to JointState msg'
-  //   MATLABSystem: '<S10>/Get Parameter'
   //   MATLABSystem: '<S10>/Get Parameter1'
   //   MATLABSystem: '<S10>/Get Parameter2'
   //   MATLABSystem: '<S10>/Get Parameter3'
   //   MATLABSystem: '<S10>/Get Parameter4'
   //   MATLABSystem: '<S10>/Get Parameter5'
+  //   MATLABSystem: '<S10>/Get Parameter6'
 
-  ParamGet_kinematic_simulation_205.get_parameter(32U,
+  ParamGet_kinematic_simulation_212.get_parameter(32U,
     kinematic_simulation_B.charValue,
     &kinematic_simulation_B.TmpSignalConversionAtSFunct[0]);
   ParamGet_kinematic_simulation_184.get_parameter(32U,
@@ -253,43 +257,40 @@ void kinematic_simulation_step(void)
     kinematic_simulation_B.charValue_b,
     &kinematic_simulation_B.TmpSignalConversionAtSFunct[5]);
 
-  // MATLABSystem: '<S11>/Get Parameter'
-  ParamGet_kinematic_simulation_158.get_parameter(&kinematic_simulation_B.value);
-
-  // MATLABSystem: '<S11>/Get Parameter2'
-  ParamGet_kinematic_simulation_160.get_parameter(&rtb_Clock);
-
-  // MATLABSystem: '<S11>/Get Parameter5'
-  ParamGet_kinematic_simulation_163.get_parameter
-    (&kinematic_simulation_B.value_p);
-
-  // MATLABSystem: '<S11>/Get Parameter4'
-  ParamGet_kinematic_simulation_162.get_parameter
-    (&kinematic_simulation_B.value_c);
-
-  // MATLABSystem: '<S11>/Get Parameter3'
-  ParamGet_kinematic_simulation_161.get_parameter
-    (&kinematic_simulation_B.value_f);
-
-  // MATLABSystem: '<S11>/Get Parameter1'
-  ParamGet_kinematic_simulation_159.get_parameter
-    (&kinematic_simulation_B.value_g);
-
-  // Integrator: '<S6>/Integrator' incorporates:
+  // DataTypeConversion: '<S6>/Data Type Conversion' incorporates:
   //   MATLABSystem: '<S11>/Get Parameter'
   //   MATLABSystem: '<S11>/Get Parameter1'
   //   MATLABSystem: '<S11>/Get Parameter2'
   //   MATLABSystem: '<S11>/Get Parameter3'
   //   MATLABSystem: '<S11>/Get Parameter4'
   //   MATLABSystem: '<S11>/Get Parameter5'
+  //   SignalConversion generated from: '<S6>/Integrator'
 
-  if (kinematic_simulation_DW.Integrator_IWORK != 0) {
-    kinematic_simulation_X.Integrator_CSTATE[0] = kinematic_simulation_B.value;
-    kinematic_simulation_X.Integrator_CSTATE[1] = rtb_Clock;
-    kinematic_simulation_X.Integrator_CSTATE[2] = kinematic_simulation_B.value_p;
-    kinematic_simulation_X.Integrator_CSTATE[3] = kinematic_simulation_B.value_c;
-    kinematic_simulation_X.Integrator_CSTATE[4] = kinematic_simulation_B.value_f;
-    kinematic_simulation_X.Integrator_CSTATE[5] = kinematic_simulation_B.value_g;
+  DataTypeConversion[0] = ParamGet_kinematic_simulation_158.get_parameter
+    (&kinematic_simulation_B.TmpSignalConversionAtIntegrator[0]);
+  DataTypeConversion[1] = ParamGet_kinematic_simulation_160.get_parameter
+    (&kinematic_simulation_B.TmpSignalConversionAtIntegrator[1]);
+  DataTypeConversion[2] = ParamGet_kinematic_simulation_163.get_parameter
+    (&kinematic_simulation_B.TmpSignalConversionAtIntegrator[2]);
+  DataTypeConversion[3] = ParamGet_kinematic_simulation_162.get_parameter
+    (&kinematic_simulation_B.TmpSignalConversionAtIntegrator[3]);
+  DataTypeConversion[4] = ParamGet_kinematic_simulation_161.get_parameter
+    (&kinematic_simulation_B.TmpSignalConversionAtIntegrator[4]);
+  DataTypeConversion[5] = ParamGet_kinematic_simulation_159.get_parameter
+    (&kinematic_simulation_B.TmpSignalConversionAtIntegrator[5]);
+
+  // Integrator: '<S6>/Integrator'
+  if (rtmIsMajorTimeStep(kinematic_simulation_M)) {
+    for (iS = 0; iS < 6; iS++) {
+      zcEvent = rt_ZCFcn(FALLING_ZERO_CROSSING,
+                         &kinematic_simulation_PrevZCX.Integrator_Reset_ZCE[iS],
+                         (static_cast<real_T>(DataTypeConversion[iS])));
+      if ((zcEvent != NO_ZCEVENT) || (kinematic_simulation_DW.Integrator_IWORK
+           != 0)) {
+        kinematic_simulation_X.Integrator_CSTATE[iS] =
+          kinematic_simulation_B.TmpSignalConversionAtIntegrator[iS];
+      }
+    }
   }
 
   if (rtmIsMajorTimeStep(kinematic_simulation_M)) {
@@ -306,7 +307,8 @@ void kinematic_simulation_step(void)
       &b_varargout_2_Accelerations_SL_, &b_varargout_2_Accelerations_S_0,
       kinematic_simulation_B.b_varargout_2_Effort,
       &b_varargout_2_Effort_SL_Info_Cu, &b_varargout_2_Effort_SL_Info_Re,
-      &kinematic_simulation_B.value, &rtb_Clock);
+      &kinematic_simulation_B.b_varargout_2_TimeFromStart_Sec,
+      &kinematic_simulation_B.Clock);
 
     // Outputs for Enabled SubSystem: '<S7>/Enabled Subsystem' incorporates:
     //   EnablePort: '<S12>/Enable'
@@ -341,8 +343,9 @@ void kinematic_simulation_step(void)
       kinematic_simulation_B.In1.Effort_SL_Info.ReceivedLength =
         b_varargout_2_Effort_SL_Info_Re;
       kinematic_simulation_B.In1.TimeFromStart.Sec =
-        kinematic_simulation_B.value;
-      kinematic_simulation_B.In1.TimeFromStart.Nsec = rtb_Clock;
+        kinematic_simulation_B.b_varargout_2_TimeFromStart_Sec;
+      kinematic_simulation_B.In1.TimeFromStart.Nsec =
+        kinematic_simulation_B.Clock;
     }
 
     // End of MATLABSystem: '<S7>/SourceBlock'
@@ -353,12 +356,12 @@ void kinematic_simulation_step(void)
   for (c = 0; c < 32; c++) {
     // SignalConversion generated from: '<S8>/ SFunction ' incorporates:
     //   MATLAB Function: '<S2>/Assign to JointState msg'
-    //   MATLABSystem: '<S10>/Get Parameter'
     //   MATLABSystem: '<S10>/Get Parameter1'
     //   MATLABSystem: '<S10>/Get Parameter2'
     //   MATLABSystem: '<S10>/Get Parameter3'
     //   MATLABSystem: '<S10>/Get Parameter4'
     //   MATLABSystem: '<S10>/Get Parameter5'
+    //   MATLABSystem: '<S10>/Get Parameter6'
 
     kinematic_simulation_B.TmpSignalConversionAtSFun_c[c] = static_cast<uint8_T>
       (kinematic_simulation_B.charValue[c]);
@@ -388,12 +391,14 @@ void kinematic_simulation_step(void)
   kinematic_simulation_B.BusAssignment.Name_SL_Info.CurrentLength = 6U;
   kinematic_simulation_B.BusAssignment.Position_SL_Info.CurrentLength = 6U;
   kinematic_simulation_B.BusAssignment.Velocity_SL_Info.CurrentLength = 6U;
-  for (idx = 0; idx < 6; idx++) {
-    kinematic_simulation_B.value = ((static_cast<real_T>(idx) + 1.0) - 1.0) *
-      static_cast<real_T>(kinematic_simulation_P.name_max_length);
-    if (kinematic_simulation_B.value < 4.294967296E+9) {
+  for (iS = 0; iS < 6; iS++) {
+    kinematic_simulation_B.b_varargout_2_TimeFromStart_Sec =
+      ((static_cast<real_T>(iS) + 1.0) - 1.0) * static_cast<real_T>
+      (kinematic_simulation_P.name_max_length);
+    if (kinematic_simulation_B.b_varargout_2_TimeFromStart_Sec < 4.294967296E+9)
+    {
       b_varargout_2_Positions_SL_In_0 = static_cast<uint32_T>
-        (kinematic_simulation_B.value);
+        (kinematic_simulation_B.b_varargout_2_TimeFromStart_Sec);
     } else {
       b_varargout_2_Positions_SL_In_0 = MAX_uint32_T;
     }
@@ -405,7 +410,7 @@ void kinematic_simulation_step(void)
     }
 
     b_varargout_2_Positions_SL_In_0 = b_varargout_2_Positions_SL_Info +
-      /*MW:OvSatOk*/ kinematic_simulation_B.TmpSignalConversionAtSFunct[idx];
+      /*MW:OvSatOk*/ kinematic_simulation_B.TmpSignalConversionAtSFunct[iS];
     if (b_varargout_2_Positions_SL_In_0 < b_varargout_2_Positions_SL_Info) {
       b_varargout_2_Positions_SL_In_0 = MAX_uint32_T;
     }
@@ -421,33 +426,36 @@ void kinematic_simulation_step(void)
 
     loop_ub = c - d;
     for (c = 0; c < loop_ub; c++) {
-      kinematic_simulation_B.BusAssignment.Name[idx].Data[c] =
+      kinematic_simulation_B.BusAssignment.Name[iS].Data[c] =
         kinematic_simulation_B.TmpSignalConversionAtSFun_c[d + c];
     }
 
-    kinematic_simulation_B.BusAssignment.Name[idx].Data_SL_Info.CurrentLength =
-      kinematic_simulation_B.TmpSignalConversionAtSFunct[idx];
-    kinematic_simulation_B.BusAssignment.Position[idx] =
-      kinematic_simulation_X.Integrator_CSTATE[idx];
-    kinematic_simulation_B.BusAssignment.Velocity[idx] =
-      kinematic_simulation_B.In1.Velocities[idx];
+    kinematic_simulation_B.BusAssignment.Name[iS].Data_SL_Info.CurrentLength =
+      kinematic_simulation_B.TmpSignalConversionAtSFunct[iS];
+    kinematic_simulation_B.BusAssignment.Position[iS] =
+      kinematic_simulation_X.Integrator_CSTATE[iS];
+    kinematic_simulation_B.BusAssignment.Velocity[iS] =
+      kinematic_simulation_B.In1.Velocities[iS];
   }
 
   // Clock: '<Root>/Clock'
-  rtb_Clock = kinematic_simulation_M->Timing.t[0];
+  kinematic_simulation_B.Clock = kinematic_simulation_M->Timing.t[0];
 
   // MATLAB Function: '<Root>/MATLAB Function'
-  if (rtb_Clock < 0.0) {
-    kinematic_simulation_B.value = ceil(rtb_Clock);
+  if (kinematic_simulation_B.Clock < 0.0) {
+    kinematic_simulation_B.b_varargout_2_TimeFromStart_Sec = ceil
+      (kinematic_simulation_B.Clock);
   } else {
-    kinematic_simulation_B.value = floor(rtb_Clock);
+    kinematic_simulation_B.b_varargout_2_TimeFromStart_Sec = floor
+      (kinematic_simulation_B.Clock);
   }
 
-  rtb_Clock = (rtb_Clock - kinematic_simulation_B.value) * 1.0E+9;
-  if (rtb_Clock < 0.0) {
-    rtb_Clock = ceil(rtb_Clock);
+  kinematic_simulation_B.Clock = (kinematic_simulation_B.Clock -
+    kinematic_simulation_B.b_varargout_2_TimeFromStart_Sec) * 1.0E+9;
+  if (kinematic_simulation_B.Clock < 0.0) {
+    kinematic_simulation_B.Clock = ceil(kinematic_simulation_B.Clock);
   } else {
-    rtb_Clock = floor(rtb_Clock);
+    kinematic_simulation_B.Clock = floor(kinematic_simulation_B.Clock);
   }
 
   // BusAssignment: '<S2>/Bus Assignment' incorporates:
@@ -455,8 +463,9 @@ void kinematic_simulation_step(void)
   //   MATLAB Function: '<Root>/MATLAB Function'
 
   kinematic_simulation_B.BusAssignment.Header.Stamp.Sec =
-    kinematic_simulation_B.value;
-  kinematic_simulation_B.BusAssignment.Header.Stamp.Nsec = rtb_Clock;
+    kinematic_simulation_B.b_varargout_2_TimeFromStart_Sec;
+  kinematic_simulation_B.BusAssignment.Header.Stamp.Nsec =
+    kinematic_simulation_B.Clock;
 
   // Outputs for Atomic SubSystem: '<Root>/Publish'
   // MATLABSystem: '<S4>/SinkBlock'
@@ -469,8 +478,9 @@ void kinematic_simulation_step(void)
   //   MATLAB Function: '<Root>/MATLAB Function'
 
   kinematic_simulation_B.BusAssignment_e.Clock_.Sec =
-    kinematic_simulation_B.value;
-  kinematic_simulation_B.BusAssignment_e.Clock_.Nsec = rtb_Clock;
+    kinematic_simulation_B.b_varargout_2_TimeFromStart_Sec;
+  kinematic_simulation_B.BusAssignment_e.Clock_.Nsec =
+    kinematic_simulation_B.Clock;
 
   // Outputs for Atomic SubSystem: '<Root>/Publish1'
   // MATLABSystem: '<S5>/SinkBlock'
@@ -568,10 +578,10 @@ void kinematic_simulation_initialize(void)
 
   {
     char_T initialValue[11];
+    int32_T i;
     char_T tmp[14];
     char_T tmp_0[7];
     char_T tmp_1[12];
-    int32_T i;
     static const char_T tmp_2[17] = { '/', 'j', 'o', 'i', 'n', 't', '_', 't',
       'r', 'a', 'j', 'e', 'c', 't', 'o', 'r', 'y' };
 
@@ -640,6 +650,10 @@ void kinematic_simulation_initialize(void)
     static const char_T tmp_m[11] = { '/', 'q', '6', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
+    for (i = 0; i < 6; i++) {
+      kinematic_simulation_PrevZCX.Integrator_Reset_ZCE[i] = UNINITIALIZED_ZCSIG;
+    }
+
     // InitializeConditions for Integrator: '<S6>/Integrator'
     if (rtmIsFirstInitCond(kinematic_simulation_M)) {
       kinematic_simulation_X.Integrator_CSTATE[0] = 0.0;
@@ -705,24 +719,24 @@ void kinematic_simulation_initialize(void)
     // End of Start for MATLABSystem: '<S5>/SinkBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Publish1'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter'
-    kinematic_simulation_DW.obj_a.matlabCodegenIsDeleted = false;
-    kinematic_simulation_DW.obj_a.isInitialized = 1;
+    // Start for MATLABSystem: '<S10>/Get Parameter6'
+    kinematic_simulation_DW.obj_c.matlabCodegenIsDeleted = false;
+    kinematic_simulation_DW.obj_c.isInitialized = 1;
     for (i = 0; i < 24; i++) {
       kinematic_simulation_B.cv[i] = tmp_5[i];
     }
 
     kinematic_simulation_B.cv[24] = '\x00';
-    ParamGet_kinematic_simulation_205.initialize(kinematic_simulation_B.cv);
-    ParamGet_kinematic_simulation_205.initialize_error_codes(0, 1, 2, 3);
+    ParamGet_kinematic_simulation_212.initialize(kinematic_simulation_B.cv);
+    ParamGet_kinematic_simulation_212.initialize_error_codes(0, 1, 2, 3);
     for (i = 0; i < 11; i++) {
       initialValue[i] = tmp_6[i];
     }
 
-    ParamGet_kinematic_simulation_205.set_initial_value(initialValue, 11U);
-    kinematic_simulation_DW.obj_a.isSetupComplete = true;
+    ParamGet_kinematic_simulation_212.set_initial_value(initialValue, 11U);
+    kinematic_simulation_DW.obj_c.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter'
+    // End of Start for MATLABSystem: '<S10>/Get Parameter6'
 
     // Start for MATLABSystem: '<S10>/Get Parameter1'
     kinematic_simulation_DW.obj_l.matlabCodegenIsDeleted = false;
@@ -763,8 +777,8 @@ void kinematic_simulation_initialize(void)
     // End of Start for MATLABSystem: '<S10>/Get Parameter2'
 
     // Start for MATLABSystem: '<S10>/Get Parameter3'
-    kinematic_simulation_DW.obj_c.matlabCodegenIsDeleted = false;
-    kinematic_simulation_DW.obj_c.isInitialized = 1;
+    kinematic_simulation_DW.obj_c4.matlabCodegenIsDeleted = false;
+    kinematic_simulation_DW.obj_c4.isInitialized = 1;
     for (i = 0; i < 24; i++) {
       kinematic_simulation_B.cv[i] = tmp_b[i];
     }
@@ -777,7 +791,7 @@ void kinematic_simulation_initialize(void)
     }
 
     ParamGet_kinematic_simulation_186.set_initial_value(initialValue, 11U);
-    kinematic_simulation_DW.obj_c.isSetupComplete = true;
+    kinematic_simulation_DW.obj_c4.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S10>/Get Parameter3'
 
@@ -919,8 +933,8 @@ void kinematic_simulation_initialize(void)
 // Model terminate function
 void kinematic_simulation_terminate(void)
 {
-  // Terminate for MATLABSystem: '<S10>/Get Parameter'
-  matlabCodegenHandle_matlabCodeg(&kinematic_simulation_DW.obj_a);
+  // Terminate for MATLABSystem: '<S10>/Get Parameter6'
+  matlabCodegenHandle_matlabCodeg(&kinematic_simulation_DW.obj_c);
 
   // Terminate for MATLABSystem: '<S10>/Get Parameter1'
   matlabCodegenHandle_matlabCodeg(&kinematic_simulation_DW.obj_l);
@@ -929,7 +943,7 @@ void kinematic_simulation_terminate(void)
   matlabCodegenHandle_matlabCodeg(&kinematic_simulation_DW.obj_i);
 
   // Terminate for MATLABSystem: '<S10>/Get Parameter3'
-  matlabCodegenHandle_matlabCodeg(&kinematic_simulation_DW.obj_c);
+  matlabCodegenHandle_matlabCodeg(&kinematic_simulation_DW.obj_c4);
 
   // Terminate for MATLABSystem: '<S10>/Get Parameter4'
   matlabCodegenHandle_matlabCodeg(&kinematic_simulation_DW.obj_cn);

@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinematic_simulation'.
 //
-// Model version                  : 1.133
+// Model version                  : 1.136
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Fri May 15 20:36:27 2020
+// C/C++ source code generated on : Sat May 23 12:08:46 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -22,10 +22,12 @@
 #include <string.h>
 #include <stddef.h>
 #include "rtwtypes.h"
+#include "zero_crossing_types.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
 #include "slros_initialize.h"
 #include "kinematic_simulation_types.h"
+#include "rt_zcfcn.h"
 
 // Macros for accessing real-time model data structure
 #ifndef rtmGetContStateDisabled
@@ -154,6 +156,7 @@ typedef struct {
   real_T b_varargout_2_Accelerations[128];
   real_T b_varargout_2_Effort[128];
   uint8_T TmpSignalConversionAtSFun_c[192];// '<S2>/Assign to JointState msg'
+  real_T TmpSignalConversionAtIntegrator[6];
   char_T charValue[32];
   char_T charValue_m[32];
   char_T charValue_c[32];
@@ -164,11 +167,8 @@ typedef struct {
   uint32_T TmpSignalConversionAtSFunct[6];// '<S2>/Assign to JointState msg'
   char_T cv1[18];
   SL_Bus_kinematic_simulation_rosgraph_msgs_Clock BusAssignment_e;// '<Root>/Bus Assignment' 
-  real_T value;
-  real_T value_p;
-  real_T value_c;
-  real_T value_f;
-  real_T value_g;
+  real_T b_varargout_2_TimeFromStart_Sec;
+  real_T Clock;                        // '<Root>/Clock'
 } B_kinematic_simulation_T;
 
 // Block states (default storage) for system '<Root>'
@@ -179,10 +179,10 @@ typedef struct {
   ros_slros_internal_block_GetP_T obj_n;// '<S11>/Get Parameter4'
   ros_slros_internal_block_GetP_T obj_j;// '<S11>/Get Parameter3'
   ros_slros_internal_block_GetP_T obj_e;// '<S11>/Get Parameter1'
-  ros_slros_internal_block_GetP_T obj_a;// '<S10>/Get Parameter'
+  ros_slros_internal_block_GetP_T obj_c;// '<S10>/Get Parameter6'
   ros_slros_internal_block_GetP_T obj_l;// '<S10>/Get Parameter1'
   ros_slros_internal_block_GetP_T obj_i;// '<S10>/Get Parameter2'
-  ros_slros_internal_block_GetP_T obj_c;// '<S10>/Get Parameter3'
+  ros_slros_internal_block_GetP_T obj_c4;// '<S10>/Get Parameter3'
   ros_slros_internal_block_GetP_T obj_cn;// '<S10>/Get Parameter4'
   ros_slros_internal_block_GetP_T obj_o;// '<S10>/Get Parameter5'
   ros_slros_internal_block_Publ_T obj_d;// '<S5>/SinkBlock'
@@ -205,6 +205,11 @@ typedef struct {
 typedef struct {
   boolean_T Integrator_CSTATE[6];      // '<S6>/Integrator'
 } XDis_kinematic_simulation_T;
+
+// Zero-crossing (trigger) state
+typedef struct {
+  ZCSigState Integrator_Reset_ZCE[6];  // '<S6>/Integrator'
+} PrevZCX_kinematic_simulation_T;
 
 #ifndef ODE3_INTG
 #define ODE3_INTG
@@ -315,6 +320,9 @@ extern X_kinematic_simulation_T kinematic_simulation_X;
 // Block states (default storage)
 extern DW_kinematic_simulation_T kinematic_simulation_DW;
 
+// Zero-crossing (trigger) state
+extern PrevZCX_kinematic_simulation_T kinematic_simulation_PrevZCX;
+
 #ifdef __cplusplus
 
 extern "C" {
@@ -346,6 +354,12 @@ extern "C" {
 #endif
 
 //-
+//  These blocks were eliminated from the model due to optimizations:
+//
+//  Block '<S6>/Display' : Unused code path elimination
+
+
+//-
 //  The generated code includes comments that allow you to trace directly
 //  back to the appropriate location in the model.  The basic format
 //  is <system>/block_name, where system is the system number (uniquely
@@ -370,7 +384,7 @@ extern "C" {
 //  '<S8>'   : 'kinematic_simulation/Joint_State_Msg_Creator/Assign to JointState msg'
 //  '<S9>'   : 'kinematic_simulation/Joint_State_Msg_Creator/Blank Message'
 //  '<S10>'  : 'kinematic_simulation/Joint_State_Msg_Creator/Get Joint Names'
-//  '<S11>'  : 'kinematic_simulation/Robot Kinematic Model/Subsystem'
+//  '<S11>'  : 'kinematic_simulation/Robot Kinematic Model/initial_configurations'
 //  '<S12>'  : 'kinematic_simulation/Subscribe/Enabled Subsystem'
 
 #endif                                 // RTW_HEADER_kinematic_simulation_h_

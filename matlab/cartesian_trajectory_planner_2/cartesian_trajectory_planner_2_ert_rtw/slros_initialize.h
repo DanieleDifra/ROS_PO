@@ -64,23 +64,41 @@ extern SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_p
 // For Block cartesian_trajectory_planner_2/Subsystem/Subsystem1/Get Parameter6
 extern SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_293;
 
-// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter
+// For Block cartesian_trajectory_planner_2/weights/Get Parameter
 extern SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_299;
 
-// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter1
+// For Block cartesian_trajectory_planner_2/weights/Get Parameter1
 extern SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_300;
 
-// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter2
+// For Block cartesian_trajectory_planner_2/weights/Get Parameter2
 extern SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_301;
 
-// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter3
+// For Block cartesian_trajectory_planner_2/weights/Get Parameter3
 extern SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_302;
 
-// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter4
+// For Block cartesian_trajectory_planner_2/weights/Get Parameter4
 extern SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_303;
 
-// For Block cartesian_trajectory_planner_2/Subsystem1/Get Parameter5
+// For Block cartesian_trajectory_planner_2/weights/Get Parameter5
 extern SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_trajectory_planner_2_304;
+
+// For Block cartesian_trajectory_planner_2/set_initial_conditions/Set Parameter
+extern SimulinkParameterSetter<real64_T, double> ParamSet_cartesian_trajectory_planner_2_325;
+
+// For Block cartesian_trajectory_planner_2/set_initial_conditions/Set Parameter1
+extern SimulinkParameterSetter<real64_T, double> ParamSet_cartesian_trajectory_planner_2_326;
+
+// For Block cartesian_trajectory_planner_2/set_initial_conditions/Set Parameter2
+extern SimulinkParameterSetter<real64_T, double> ParamSet_cartesian_trajectory_planner_2_327;
+
+// For Block cartesian_trajectory_planner_2/set_initial_conditions/Set Parameter3
+extern SimulinkParameterSetter<real64_T, double> ParamSet_cartesian_trajectory_planner_2_328;
+
+// For Block cartesian_trajectory_planner_2/set_initial_conditions/Set Parameter4
+extern SimulinkParameterSetter<real64_T, double> ParamSet_cartesian_trajectory_planner_2_329;
+
+// For Block cartesian_trajectory_planner_2/set_initial_conditions/Set Parameter5
+extern SimulinkParameterSetter<real64_T, double> ParamSet_cartesian_trajectory_planner_2_330;
 
 void slros_node_init(int argc, char** argv);
 

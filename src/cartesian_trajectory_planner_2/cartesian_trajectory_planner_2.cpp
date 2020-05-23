@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cartesian_trajectory_planner_2'.
 //
-// Model version                  : 1.129
+// Model version                  : 1.136
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 19 21:41:37 2020
+// C/C++ source code generated on : Sat May 23 17:30:41 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -342,78 +342,10 @@ static void emxFreeStruct_h_robotics_core_i(h_robotics_core_internal_Damp_T
   *pStruct);
 
 // Forward declaration for local functions
-static c_robotics_core_internal_code_T *NameValueParser_NameValueParser
-  (c_robotics_core_internal_code_T *obj);
-static void cartesian__computeProfileParams(real_T i, const real_T wayPoints[12],
-  const real_T Vel[6], const real_T Acc_data[], real_T *vParam, real_T *aParam,
-  real_T *tAParam, real_T *tFParam);
-static void c_computeScalarLSPBCoefficients(real_T s0, real_T sF, real_T v,
-  real_T a, real_T ta, real_T tf, real_T coefs[9], real_T breaks[4]);
-static boolean_T cart_checkPolyForMultipleBreaks(const real_T breakMat[24]);
-static void cartes_processPolynomialResults(const real_T breakMat[24], const
-  real_T coeffMat[54], boolean_T hasMultipleBreaks,
-  f_cell_wrap_cartesian_traject_T breaksCell[6], g_cell_wrap_cartesian_traject_T
-  coeffCell[6]);
-static real_T cartesian_trajector_rt_powd_snf(real_T u0, real_T u1);
-static void ca_addFlatSegmentsToPPFormParts(const real_T oldbreaks_data[], const
-  int32_T oldbreaks_size[2], const real_T oldCoeffs_data[], const int32_T
-  oldCoeffs_size[2], real_T dim, real_T newBreaks_data[], int32_T
-  newBreaks_size[2], real_T newCoefs_data[], int32_T newCoefs_size[2]);
-static void cartesian__polyCoeffsDerivative(const real_T coeffs_data[], const
-  int32_T coeffs_size[2], real_T dCoeffs_data[], int32_T dCoeffs_size[2]);
-static int32_T cartesian_trajectory_pl_bsearch(const real_T x_data[], const
-  int32_T x_size[2], real_T xi);
-static void cartesian_trajectory_plan_ppval(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], const real_T x[2], real_T v_data[], int32_T v_size[2]);
-static void c_generateTrajectoriesFromCoefs(const real_T breaks_data[], const
-  int32_T breaks_size[2], const real_T coeffs_data[], const int32_T coeffs_size
-  [2], real_T dim, const real_T t[2], real_T q_data[], int32_T q_size[2], real_T
-  qd_data[], int32_T qd_size[2], real_T qdd_data[], int32_T qdd_size[2], real_T
-  pp_breaks_data[], int32_T pp_breaks_size[2], real_T pp_coefs_data[], int32_T
-  pp_coefs_size[3]);
-static void cartesian_trajector_trapveltraj(const real_T wayPoints[12], const
-  real_T varargin_2[6], real_T varargin_4, real_T q[12], real_T qd[12], real_T
-  qdd[12], real_T t[2], s_06c2DDfmr4zcnTqhww20ZC_cart_T ppCell_data[], int32_T
-  *ppCell_size);
-static void TrapVelTrajSys_extract1DimFromP(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2]);
-static void cartesian_trajectory_pl_ppval_j(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], real_T x, real_T
-  v_data[], int32_T *v_size);
-static void TrapVelTrajSys_generate1DTrajec(const real_T breaks_data[], const
-  int32_T breaks_size[2], const real_T coefs_data[], const int32_T coefs_size[2],
-  real_T t, real_T q_data[], int32_T *q_size, real_T qd_data[], int32_T *qd_size,
-  real_T qdd_data[], int32_T *qdd_size);
-static void TrapVelTrajSys_extract1DimFro_j(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2]);
-static void TrapVelTrajSys_extract1DimFr_jb(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2]);
-static void TrapVelTrajSys_extract1DimF_jbz(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2]);
-static void TrapVelTrajSys_extract1Dim_jbzp(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2]);
-static void TrapVelTrajSys_extract1Di_jbzpa(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2]);
-static void cartesi_TrapVelTrajSys_stepImpl(real_T time, const real_T
-  varargin_1[12], const real_T varargin_2[6], real_T varargin_3, real_T q[6],
-  real_T qd[6], real_T qdd[6]);
 static void matlabCodegenHandle_matlabC_jbz(ros_slros_internal_block_GetP_T *obj);
+static void cartesian_tr_matlabCodegenHa_ku(ros_slros_internal_block_SetP_T *obj);
 static void matlabCodegenHandle_matlabCo_jb(ros_slros_internal_block_Subs_T *obj);
 static void matlabCodegenHandle_matlabCod_j(ros_slros_internal_block_Publ_T *obj);
-static void cartesian_traj_SystemCore_setup(robotics_slcore_internal_bl_j_T *obj);
 int32_T div_s32_floor(int32_T numerator, int32_T denominator)
 {
   int32_T quotient;
@@ -444,39 +376,6 @@ int32_T div_s32_floor(int32_T numerator, int32_T denominator)
   }
 
   return quotient;
-}
-
-int32_T div_nzp_s32(int32_T numerator, int32_T denominator)
-{
-  uint32_T tempAbsQuotient;
-  tempAbsQuotient = (numerator < 0 ? ~static_cast<uint32_T>(numerator) + 1U :
-                     static_cast<uint32_T>(numerator)) / (denominator < 0 ? ~
-    static_cast<uint32_T>(denominator) + 1U : static_cast<uint32_T>(denominator));
-  return (numerator < 0) != (denominator < 0) ? -static_cast<int32_T>
-    (tempAbsQuotient) : static_cast<int32_T>(tempAbsQuotient);
-}
-
-int32_T div_nzp_s32_floor(int32_T numerator, int32_T denominator)
-{
-  uint32_T absNumerator;
-  uint32_T absDenominator;
-  uint32_T tempAbsQuotient;
-  boolean_T quotientNeedsNegation;
-  absNumerator = numerator < 0 ? ~static_cast<uint32_T>(numerator) + 1U :
-    static_cast<uint32_T>(numerator);
-  absDenominator = denominator < 0 ? ~static_cast<uint32_T>(denominator) + 1U :
-    static_cast<uint32_T>(denominator);
-  quotientNeedsNegation = ((numerator < 0) != (denominator < 0));
-  tempAbsQuotient = absNumerator / absDenominator;
-  if (quotientNeedsNegation) {
-    absNumerator %= absDenominator;
-    if (absNumerator > 0U) {
-      tempAbsQuotient++;
-    }
-  }
-
-  return quotientNeedsNegation ? -static_cast<int32_T>(tempAbsQuotient) :
-    static_cast<int32_T>(tempAbsQuotient);
 }
 
 static void cartesian_trajec_emxInit_char_T(emxArray_char_T_cartesian_tra_T
@@ -14824,7 +14723,7 @@ void cartesian_tra_MATLABSystem_Term(DW_MATLABSystem_cartesian_tra_T *localDW)
 //
 void CoordinateTransformationCo_Init(DW_CoordinateTransformationCo_T *localDW)
 {
-  // Start for MATLABSystem: '<S12>/Coordinate Transformation Conversion'
+  // Start for MATLABSystem: '<S13>/Coordinate Transformation Conversion'
   localDW->objisempty = true;
   localDW->obj.isInitialized = 1;
 }
@@ -14847,7 +14746,7 @@ void CoordinateTransformationConvers(const real_T rtu_0[4], const real_T rtu_1[3
   real_T tempR_tmp_2;
   real_T tempR_tmp_3;
 
-  // MATLABSystem: '<S12>/Coordinate Transformation Conversion'
+  // MATLABSystem: '<S13>/Coordinate Transformation Conversion'
   localB->u0_idx_0 = rtu_0[0];
   localB->u0_idx_1 = rtu_0[1];
   u0_idx_2 = rtu_0[2];
@@ -14901,2946 +14800,17 @@ void CoordinateTransformationConvers(const real_T rtu_0[4], const real_T rtu_1[3
     localB->CoordinateTransformationConve_g[b_k + 12] = localB->u1[b_k];
   }
 
-  // End of MATLABSystem: '<S12>/Coordinate Transformation Conversion'
-}
-
-static c_robotics_core_internal_code_T *NameValueParser_NameValueParser
-  (c_robotics_core_internal_code_T *obj)
-{
-  return obj;
-}
-
-static void cartesian__computeProfileParams(real_T i, const real_T wayPoints[12],
-  const real_T Vel[6], const real_T Acc_data[], real_T *vParam, real_T *aParam,
-  real_T *tAParam, real_T *tFParam)
-{
-  cartesian_trajectory_planner__B.s0_tmp = static_cast<int32_T>(i);
-  cartesian_trajectory_planner__B.s0_tmp_e =
-    cartesian_trajectory_planner__B.s0_tmp - 1;
-  cartesian_trajectory_planner__B.s0 =
-    wayPoints[cartesian_trajectory_planner__B.s0_tmp_e];
-  cartesian_trajectory_planner__B.s0_tmp += 5;
-  cartesian_trajectory_planner__B.sF =
-    wayPoints[cartesian_trajectory_planner__B.s0_tmp];
-  cartesian_trajectory_planner__B.deltaSign = 1;
-  if (wayPoints[cartesian_trajectory_planner__B.s0_tmp] <
-      wayPoints[cartesian_trajectory_planner__B.s0_tmp_e]) {
-    cartesian_trajectory_planner__B.s0 =
-      wayPoints[cartesian_trajectory_planner__B.s0_tmp];
-    cartesian_trajectory_planner__B.sF =
-      wayPoints[cartesian_trajectory_planner__B.s0_tmp_e];
-    cartesian_trajectory_planner__B.deltaSign = -1;
-  }
-
-  *vParam = Vel[cartesian_trajectory_planner__B.s0_tmp_e];
-  *aParam = Acc_data[cartesian_trajectory_planner__B.s0_tmp_e];
-  *tAParam = Vel[cartesian_trajectory_planner__B.s0_tmp_e] /
-    Acc_data[cartesian_trajectory_planner__B.s0_tmp_e];
-  *tFParam = ((Vel[cartesian_trajectory_planner__B.s0_tmp_e] * *tAParam +
-               cartesian_trajectory_planner__B.sF) -
-              cartesian_trajectory_planner__B.s0) /
-    Vel[cartesian_trajectory_planner__B.s0_tmp_e];
-  if (cartesian_trajectory_planner__B.s0 == cartesian_trajectory_planner__B.sF)
-  {
-    *aParam = 0.0;
-    *vParam = 0.0;
-    if (rtIsNaN(*tFParam) || (*tFParam == 0.0)) {
-      *tFParam = 1.0;
-    }
-
-    *tAParam = *tFParam / 3.0;
-  }
-
-  *vParam *= static_cast<real_T>(cartesian_trajectory_planner__B.deltaSign);
-  *aParam *= static_cast<real_T>(cartesian_trajectory_planner__B.deltaSign);
-}
-
-static void c_computeScalarLSPBCoefficients(real_T s0, real_T sF, real_T v,
-  real_T a, real_T ta, real_T tf, real_T coefs[9], real_T breaks[4])
-{
-  breaks[0] = 0.0;
-  breaks[1] = ta;
-  breaks[2] = tf - ta;
-  breaks[3] = tf;
-  memset(&coefs[0], 0, 9U * sizeof(real_T));
-  if (v == 0.0) {
-    coefs[6] = s0;
-    coefs[7] = s0;
-    coefs[8] = s0;
-  } else {
-    coefs[0] = a / 2.0;
-    coefs[3] = 0.0;
-    coefs[6] = s0;
-    coefs[1] = 0.0;
-    coefs[4] = v;
-    cartesian_trajectory_planner__B.coefs_tmp = a / 2.0 * (ta * ta);
-    coefs[7] = cartesian_trajectory_planner__B.coefs_tmp + s0;
-    coefs[2] = -a / 2.0;
-    coefs[5] = v;
-    coefs[8] = (cartesian_trajectory_planner__B.coefs_tmp + sF) - v * ta;
-  }
-}
-
-static boolean_T cart_checkPolyForMultipleBreaks(const real_T breakMat[24])
-{
-  boolean_T hasMultipleBreaks;
-  boolean_T exitg1;
-  hasMultipleBreaks = false;
-  for (cartesian_trajectory_planner__B.b_i_c = 0;
-       cartesian_trajectory_planner__B.b_i_c < 5;
-       cartesian_trajectory_planner__B.b_i_c++) {
-    cartesian_trajectory_planner__B.b_i_f =
-      cartesian_trajectory_planner__B.b_i_c + 1;
-    cartesian_trajectory_planner__B.y[0] = fabs
-      (breakMat[cartesian_trajectory_planner__B.b_i_f - 1] -
-       breakMat[cartesian_trajectory_planner__B.b_i_c + 1]);
-    cartesian_trajectory_planner__B.y[1] = fabs
-      (breakMat[cartesian_trajectory_planner__B.b_i_f + 5] -
-       breakMat[cartesian_trajectory_planner__B.b_i_c + 7]);
-    cartesian_trajectory_planner__B.y[2] = fabs
-      (breakMat[cartesian_trajectory_planner__B.b_i_f + 11] -
-       breakMat[cartesian_trajectory_planner__B.b_i_c + 13]);
-    cartesian_trajectory_planner__B.y[3] = fabs
-      (breakMat[cartesian_trajectory_planner__B.b_i_f + 17] -
-       breakMat[cartesian_trajectory_planner__B.b_i_c + 19]);
-    cartesian_trajectory_planner__B.y_l = false;
-    cartesian_trajectory_planner__B.b_i_f = 0;
-    exitg1 = false;
-    while ((!exitg1) && (cartesian_trajectory_planner__B.b_i_f < 4)) {
-      if (!(cartesian_trajectory_planner__B.y[cartesian_trajectory_planner__B.b_i_f]
-            > 2.2204460492503131E-16)) {
-        cartesian_trajectory_planner__B.b_i_f++;
-      } else {
-        cartesian_trajectory_planner__B.y_l = true;
-        exitg1 = true;
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.y_l || hasMultipleBreaks) {
-      hasMultipleBreaks = true;
-    } else {
-      hasMultipleBreaks = false;
-    }
-  }
-
-  return hasMultipleBreaks;
-}
-
-static void cartes_processPolynomialResults(const real_T breakMat[24], const
-  real_T coeffMat[54], boolean_T hasMultipleBreaks,
-  f_cell_wrap_cartesian_traject_T breaksCell[6], g_cell_wrap_cartesian_traject_T
-  coeffCell[6])
-{
-  boolean_T exitg1;
-  if (!rtIsNaN(breakMat[18])) {
-    cartesian_trajectory_planner__B.b_idx_m = 1;
-  } else {
-    cartesian_trajectory_planner__B.b_idx_m = 0;
-    cartesian_trajectory_planner__B.k = 2;
-    exitg1 = false;
-    while ((!exitg1) && (cartesian_trajectory_planner__B.k < 7)) {
-      if (!rtIsNaN(breakMat[cartesian_trajectory_planner__B.k + 17])) {
-        cartesian_trajectory_planner__B.b_idx_m =
-          cartesian_trajectory_planner__B.k;
-        exitg1 = true;
-      } else {
-        cartesian_trajectory_planner__B.k++;
-      }
-    }
-  }
-
-  if (cartesian_trajectory_planner__B.b_idx_m == 0) {
-    cartesian_trajectory_planner__B.maxBreaksTime = breakMat[18];
-  } else {
-    cartesian_trajectory_planner__B.maxBreaksTime =
-      breakMat[cartesian_trajectory_planner__B.b_idx_m + 17];
-    for (cartesian_trajectory_planner__B.k =
-         cartesian_trajectory_planner__B.b_idx_m + 1;
-         cartesian_trajectory_planner__B.k < 7;
-         cartesian_trajectory_planner__B.k++) {
-      cartesian_trajectory_planner__B.holdTime_o =
-        breakMat[cartesian_trajectory_planner__B.k + 17];
-      if (cartesian_trajectory_planner__B.maxBreaksTime <
-          cartesian_trajectory_planner__B.holdTime_o) {
-        cartesian_trajectory_planner__B.maxBreaksTime =
-          cartesian_trajectory_planner__B.holdTime_o;
-      }
-    }
-  }
-
-  if (hasMultipleBreaks) {
-    if (!rtIsNaN(breakMat[0])) {
-      cartesian_trajectory_planner__B.b_idx_m = 1;
-    } else {
-      cartesian_trajectory_planner__B.b_idx_m = 0;
-      cartesian_trajectory_planner__B.k = 2;
-      exitg1 = false;
-      while ((!exitg1) && (cartesian_trajectory_planner__B.k < 5)) {
-        if (!rtIsNaN(breakMat[(cartesian_trajectory_planner__B.k - 1) * 6])) {
-          cartesian_trajectory_planner__B.b_idx_m =
-            cartesian_trajectory_planner__B.k;
-          exitg1 = true;
-        } else {
-          cartesian_trajectory_planner__B.k++;
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.b_idx_m == 0) {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[0];
-    } else {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat
-        [(cartesian_trajectory_planner__B.b_idx_m - 1) * 6];
-      for (cartesian_trajectory_planner__B.k =
-           cartesian_trajectory_planner__B.b_idx_m + 1;
-           cartesian_trajectory_planner__B.k < 5;
-           cartesian_trajectory_planner__B.k++) {
-        cartesian_trajectory_planner__B.i_m = (cartesian_trajectory_planner__B.k
-          - 1) * 6;
-        if (cartesian_trajectory_planner__B.holdTime_o <
-            breakMat[cartesian_trajectory_planner__B.i_m]) {
-          cartesian_trajectory_planner__B.holdTime_o =
-            breakMat[cartesian_trajectory_planner__B.i_m];
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.holdTime_o <
-        cartesian_trajectory_planner__B.maxBreaksTime) {
-      breaksCell[0].f1.size[0] = 1;
-      breaksCell[0].f1.size[1] = 5;
-      breaksCell[0].f1.data[0] = breakMat[0];
-      breaksCell[0].f1.data[1] = breakMat[6];
-      breaksCell[0].f1.data[2] = breakMat[12];
-      breaksCell[0].f1.data[3] = breakMat[18];
-      breaksCell[0].f1.data[4] = cartesian_trajectory_planner__B.maxBreaksTime;
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[18] - breakMat[12];
-      cartesian_trajectory_planner__B.k = 4;
-      memset(&cartesian_trajectory_planner__B.coefs_data[0], 0, 12U * sizeof
-             (real_T));
-      cartesian_trajectory_planner__B.holdTime[0] =
-        cartesian_trajectory_planner__B.holdTime_o *
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[1] =
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[2] = 1.0;
-      cartesian_trajectory_planner__B.holdTime_o = 0.0;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.b_idx_m =
-          cartesian_trajectory_planner__B.i_m << 2;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m]
-          = coeffMat[18 * cartesian_trajectory_planner__B.i_m];
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 1] = coeffMat[18 * cartesian_trajectory_planner__B.i_m + 6];
-        cartesian_trajectory_planner__B.coefs_data_tmp = 18 *
-          cartesian_trajectory_planner__B.i_m + 12;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 2] = coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp];
-        cartesian_trajectory_planner__B.holdTime_o +=
-          coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp] *
-          cartesian_trajectory_planner__B.holdTime[cartesian_trajectory_planner__B.i_m];
-      }
-
-      cartesian_trajectory_planner__B.coefs_data[11] =
-        cartesian_trajectory_planner__B.holdTime_o;
-    } else {
-      cartesian_trajectory_planner__B.k = 3;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 1] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 6];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 2] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 12];
-      }
-
-      breaksCell[0].f1.size[0] = 1;
-      breaksCell[0].f1.size[1] = 4;
-      breaksCell[0].f1.data[0] = breakMat[0];
-      breaksCell[0].f1.data[1] = breakMat[6];
-      breaksCell[0].f1.data[2] = breakMat[12];
-      breaksCell[0].f1.data[3] = breakMat[18];
-    }
-
-    coeffCell[0].f1.size[0] = cartesian_trajectory_planner__B.k;
-    coeffCell[0].f1.size[1] = 3;
-    cartesian_trajectory_planner__B.k = cartesian_trajectory_planner__B.k * 3 -
-      1;
-    for (cartesian_trajectory_planner__B.i_m = 0;
-         cartesian_trajectory_planner__B.i_m <=
-         cartesian_trajectory_planner__B.k; cartesian_trajectory_planner__B.i_m
-         ++) {
-      coeffCell[0].f1.data[cartesian_trajectory_planner__B.i_m] =
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.i_m];
-    }
-
-    if (!rtIsNaN(breakMat[1])) {
-      cartesian_trajectory_planner__B.b_idx_m = 1;
-    } else {
-      cartesian_trajectory_planner__B.b_idx_m = 0;
-      cartesian_trajectory_planner__B.k = 2;
-      exitg1 = false;
-      while ((!exitg1) && (cartesian_trajectory_planner__B.k < 5)) {
-        if (!rtIsNaN(breakMat[(cartesian_trajectory_planner__B.k - 1) * 6 + 1]))
-        {
-          cartesian_trajectory_planner__B.b_idx_m =
-            cartesian_trajectory_planner__B.k;
-          exitg1 = true;
-        } else {
-          cartesian_trajectory_planner__B.k++;
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.b_idx_m == 0) {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[1];
-    } else {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat
-        [(cartesian_trajectory_planner__B.b_idx_m - 1) * 6 + 1];
-      for (cartesian_trajectory_planner__B.k =
-           cartesian_trajectory_planner__B.b_idx_m + 1;
-           cartesian_trajectory_planner__B.k < 5;
-           cartesian_trajectory_planner__B.k++) {
-        cartesian_trajectory_planner__B.i_m = (cartesian_trajectory_planner__B.k
-          - 1) * 6 + 1;
-        if (cartesian_trajectory_planner__B.holdTime_o <
-            breakMat[cartesian_trajectory_planner__B.i_m]) {
-          cartesian_trajectory_planner__B.holdTime_o =
-            breakMat[cartesian_trajectory_planner__B.i_m];
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.holdTime_o <
-        cartesian_trajectory_planner__B.maxBreaksTime) {
-      breaksCell[1].f1.size[0] = 1;
-      breaksCell[1].f1.size[1] = 5;
-      breaksCell[1].f1.data[0] = breakMat[1];
-      breaksCell[1].f1.data[1] = breakMat[7];
-      breaksCell[1].f1.data[2] = breakMat[13];
-      breaksCell[1].f1.data[3] = breakMat[19];
-      breaksCell[1].f1.data[4] = cartesian_trajectory_planner__B.maxBreaksTime;
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[19] - breakMat[13];
-      cartesian_trajectory_planner__B.k = 4;
-      memset(&cartesian_trajectory_planner__B.coefs_data[0], 0, 12U * sizeof
-             (real_T));
-      cartesian_trajectory_planner__B.holdTime[0] =
-        cartesian_trajectory_planner__B.holdTime_o *
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[1] =
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[2] = 1.0;
-      cartesian_trajectory_planner__B.holdTime_o = 0.0;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.b_idx_m =
-          cartesian_trajectory_planner__B.i_m << 2;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m]
-          = coeffMat[18 * cartesian_trajectory_planner__B.i_m + 1];
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 1] = coeffMat[18 * cartesian_trajectory_planner__B.i_m + 7];
-        cartesian_trajectory_planner__B.coefs_data_tmp = 18 *
-          cartesian_trajectory_planner__B.i_m + 13;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 2] = coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp];
-        cartesian_trajectory_planner__B.holdTime_o +=
-          coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp] *
-          cartesian_trajectory_planner__B.holdTime[cartesian_trajectory_planner__B.i_m];
-      }
-
-      cartesian_trajectory_planner__B.coefs_data[11] =
-        cartesian_trajectory_planner__B.holdTime_o;
-    } else {
-      cartesian_trajectory_planner__B.k = 3;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 1];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 1] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 7];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 2] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 13];
-      }
-
-      breaksCell[1].f1.size[0] = 1;
-      breaksCell[1].f1.size[1] = 4;
-      breaksCell[1].f1.data[0] = breakMat[1];
-      breaksCell[1].f1.data[1] = breakMat[7];
-      breaksCell[1].f1.data[2] = breakMat[13];
-      breaksCell[1].f1.data[3] = breakMat[19];
-    }
-
-    coeffCell[1].f1.size[0] = cartesian_trajectory_planner__B.k;
-    coeffCell[1].f1.size[1] = 3;
-    cartesian_trajectory_planner__B.k = cartesian_trajectory_planner__B.k * 3 -
-      1;
-    for (cartesian_trajectory_planner__B.i_m = 0;
-         cartesian_trajectory_planner__B.i_m <=
-         cartesian_trajectory_planner__B.k; cartesian_trajectory_planner__B.i_m
-         ++) {
-      coeffCell[1].f1.data[cartesian_trajectory_planner__B.i_m] =
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.i_m];
-    }
-
-    if (!rtIsNaN(breakMat[2])) {
-      cartesian_trajectory_planner__B.b_idx_m = 1;
-    } else {
-      cartesian_trajectory_planner__B.b_idx_m = 0;
-      cartesian_trajectory_planner__B.k = 2;
-      exitg1 = false;
-      while ((!exitg1) && (cartesian_trajectory_planner__B.k < 5)) {
-        if (!rtIsNaN(breakMat[(cartesian_trajectory_planner__B.k - 1) * 6 + 2]))
-        {
-          cartesian_trajectory_planner__B.b_idx_m =
-            cartesian_trajectory_planner__B.k;
-          exitg1 = true;
-        } else {
-          cartesian_trajectory_planner__B.k++;
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.b_idx_m == 0) {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[2];
-    } else {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat
-        [(cartesian_trajectory_planner__B.b_idx_m - 1) * 6 + 2];
-      for (cartesian_trajectory_planner__B.k =
-           cartesian_trajectory_planner__B.b_idx_m + 1;
-           cartesian_trajectory_planner__B.k < 5;
-           cartesian_trajectory_planner__B.k++) {
-        cartesian_trajectory_planner__B.i_m = (cartesian_trajectory_planner__B.k
-          - 1) * 6 + 2;
-        if (cartesian_trajectory_planner__B.holdTime_o <
-            breakMat[cartesian_trajectory_planner__B.i_m]) {
-          cartesian_trajectory_planner__B.holdTime_o =
-            breakMat[cartesian_trajectory_planner__B.i_m];
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.holdTime_o <
-        cartesian_trajectory_planner__B.maxBreaksTime) {
-      breaksCell[2].f1.size[0] = 1;
-      breaksCell[2].f1.size[1] = 5;
-      breaksCell[2].f1.data[0] = breakMat[2];
-      breaksCell[2].f1.data[1] = breakMat[8];
-      breaksCell[2].f1.data[2] = breakMat[14];
-      breaksCell[2].f1.data[3] = breakMat[20];
-      breaksCell[2].f1.data[4] = cartesian_trajectory_planner__B.maxBreaksTime;
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[20] - breakMat[14];
-      cartesian_trajectory_planner__B.k = 4;
-      memset(&cartesian_trajectory_planner__B.coefs_data[0], 0, 12U * sizeof
-             (real_T));
-      cartesian_trajectory_planner__B.holdTime[0] =
-        cartesian_trajectory_planner__B.holdTime_o *
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[1] =
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[2] = 1.0;
-      cartesian_trajectory_planner__B.holdTime_o = 0.0;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.b_idx_m =
-          cartesian_trajectory_planner__B.i_m << 2;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m]
-          = coeffMat[18 * cartesian_trajectory_planner__B.i_m + 2];
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 1] = coeffMat[18 * cartesian_trajectory_planner__B.i_m + 8];
-        cartesian_trajectory_planner__B.coefs_data_tmp = 18 *
-          cartesian_trajectory_planner__B.i_m + 14;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 2] = coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp];
-        cartesian_trajectory_planner__B.holdTime_o +=
-          coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp] *
-          cartesian_trajectory_planner__B.holdTime[cartesian_trajectory_planner__B.i_m];
-      }
-
-      cartesian_trajectory_planner__B.coefs_data[11] =
-        cartesian_trajectory_planner__B.holdTime_o;
-    } else {
-      cartesian_trajectory_planner__B.k = 3;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 2];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 1] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 8];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 2] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 14];
-      }
-
-      breaksCell[2].f1.size[0] = 1;
-      breaksCell[2].f1.size[1] = 4;
-      breaksCell[2].f1.data[0] = breakMat[2];
-      breaksCell[2].f1.data[1] = breakMat[8];
-      breaksCell[2].f1.data[2] = breakMat[14];
-      breaksCell[2].f1.data[3] = breakMat[20];
-    }
-
-    coeffCell[2].f1.size[0] = cartesian_trajectory_planner__B.k;
-    coeffCell[2].f1.size[1] = 3;
-    cartesian_trajectory_planner__B.k = cartesian_trajectory_planner__B.k * 3 -
-      1;
-    for (cartesian_trajectory_planner__B.i_m = 0;
-         cartesian_trajectory_planner__B.i_m <=
-         cartesian_trajectory_planner__B.k; cartesian_trajectory_planner__B.i_m
-         ++) {
-      coeffCell[2].f1.data[cartesian_trajectory_planner__B.i_m] =
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.i_m];
-    }
-
-    if (!rtIsNaN(breakMat[3])) {
-      cartesian_trajectory_planner__B.b_idx_m = 1;
-    } else {
-      cartesian_trajectory_planner__B.b_idx_m = 0;
-      cartesian_trajectory_planner__B.k = 2;
-      exitg1 = false;
-      while ((!exitg1) && (cartesian_trajectory_planner__B.k < 5)) {
-        if (!rtIsNaN(breakMat[(cartesian_trajectory_planner__B.k - 1) * 6 + 3]))
-        {
-          cartesian_trajectory_planner__B.b_idx_m =
-            cartesian_trajectory_planner__B.k;
-          exitg1 = true;
-        } else {
-          cartesian_trajectory_planner__B.k++;
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.b_idx_m == 0) {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[3];
-    } else {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat
-        [(cartesian_trajectory_planner__B.b_idx_m - 1) * 6 + 3];
-      for (cartesian_trajectory_planner__B.k =
-           cartesian_trajectory_planner__B.b_idx_m + 1;
-           cartesian_trajectory_planner__B.k < 5;
-           cartesian_trajectory_planner__B.k++) {
-        cartesian_trajectory_planner__B.i_m = (cartesian_trajectory_planner__B.k
-          - 1) * 6 + 3;
-        if (cartesian_trajectory_planner__B.holdTime_o <
-            breakMat[cartesian_trajectory_planner__B.i_m]) {
-          cartesian_trajectory_planner__B.holdTime_o =
-            breakMat[cartesian_trajectory_planner__B.i_m];
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.holdTime_o <
-        cartesian_trajectory_planner__B.maxBreaksTime) {
-      breaksCell[3].f1.size[0] = 1;
-      breaksCell[3].f1.size[1] = 5;
-      breaksCell[3].f1.data[0] = breakMat[3];
-      breaksCell[3].f1.data[1] = breakMat[9];
-      breaksCell[3].f1.data[2] = breakMat[15];
-      breaksCell[3].f1.data[3] = breakMat[21];
-      breaksCell[3].f1.data[4] = cartesian_trajectory_planner__B.maxBreaksTime;
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[21] - breakMat[15];
-      cartesian_trajectory_planner__B.k = 4;
-      memset(&cartesian_trajectory_planner__B.coefs_data[0], 0, 12U * sizeof
-             (real_T));
-      cartesian_trajectory_planner__B.holdTime[0] =
-        cartesian_trajectory_planner__B.holdTime_o *
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[1] =
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[2] = 1.0;
-      cartesian_trajectory_planner__B.holdTime_o = 0.0;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.b_idx_m =
-          cartesian_trajectory_planner__B.i_m << 2;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m]
-          = coeffMat[18 * cartesian_trajectory_planner__B.i_m + 3];
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 1] = coeffMat[18 * cartesian_trajectory_planner__B.i_m + 9];
-        cartesian_trajectory_planner__B.coefs_data_tmp = 18 *
-          cartesian_trajectory_planner__B.i_m + 15;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 2] = coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp];
-        cartesian_trajectory_planner__B.holdTime_o +=
-          coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp] *
-          cartesian_trajectory_planner__B.holdTime[cartesian_trajectory_planner__B.i_m];
-      }
-
-      cartesian_trajectory_planner__B.coefs_data[11] =
-        cartesian_trajectory_planner__B.holdTime_o;
-    } else {
-      cartesian_trajectory_planner__B.k = 3;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 3];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 1] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 9];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 2] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 15];
-      }
-
-      breaksCell[3].f1.size[0] = 1;
-      breaksCell[3].f1.size[1] = 4;
-      breaksCell[3].f1.data[0] = breakMat[3];
-      breaksCell[3].f1.data[1] = breakMat[9];
-      breaksCell[3].f1.data[2] = breakMat[15];
-      breaksCell[3].f1.data[3] = breakMat[21];
-    }
-
-    coeffCell[3].f1.size[0] = cartesian_trajectory_planner__B.k;
-    coeffCell[3].f1.size[1] = 3;
-    cartesian_trajectory_planner__B.k = cartesian_trajectory_planner__B.k * 3 -
-      1;
-    for (cartesian_trajectory_planner__B.i_m = 0;
-         cartesian_trajectory_planner__B.i_m <=
-         cartesian_trajectory_planner__B.k; cartesian_trajectory_planner__B.i_m
-         ++) {
-      coeffCell[3].f1.data[cartesian_trajectory_planner__B.i_m] =
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.i_m];
-    }
-
-    if (!rtIsNaN(breakMat[4])) {
-      cartesian_trajectory_planner__B.b_idx_m = 1;
-    } else {
-      cartesian_trajectory_planner__B.b_idx_m = 0;
-      cartesian_trajectory_planner__B.k = 2;
-      exitg1 = false;
-      while ((!exitg1) && (cartesian_trajectory_planner__B.k < 5)) {
-        if (!rtIsNaN(breakMat[(cartesian_trajectory_planner__B.k - 1) * 6 + 4]))
-        {
-          cartesian_trajectory_planner__B.b_idx_m =
-            cartesian_trajectory_planner__B.k;
-          exitg1 = true;
-        } else {
-          cartesian_trajectory_planner__B.k++;
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.b_idx_m == 0) {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[4];
-    } else {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat
-        [(cartesian_trajectory_planner__B.b_idx_m - 1) * 6 + 4];
-      for (cartesian_trajectory_planner__B.k =
-           cartesian_trajectory_planner__B.b_idx_m + 1;
-           cartesian_trajectory_planner__B.k < 5;
-           cartesian_trajectory_planner__B.k++) {
-        cartesian_trajectory_planner__B.i_m = (cartesian_trajectory_planner__B.k
-          - 1) * 6 + 4;
-        if (cartesian_trajectory_planner__B.holdTime_o <
-            breakMat[cartesian_trajectory_planner__B.i_m]) {
-          cartesian_trajectory_planner__B.holdTime_o =
-            breakMat[cartesian_trajectory_planner__B.i_m];
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.holdTime_o <
-        cartesian_trajectory_planner__B.maxBreaksTime) {
-      breaksCell[4].f1.size[0] = 1;
-      breaksCell[4].f1.size[1] = 5;
-      breaksCell[4].f1.data[0] = breakMat[4];
-      breaksCell[4].f1.data[1] = breakMat[10];
-      breaksCell[4].f1.data[2] = breakMat[16];
-      breaksCell[4].f1.data[3] = breakMat[22];
-      breaksCell[4].f1.data[4] = cartesian_trajectory_planner__B.maxBreaksTime;
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[22] - breakMat[16];
-      cartesian_trajectory_planner__B.k = 4;
-      memset(&cartesian_trajectory_planner__B.coefs_data[0], 0, 12U * sizeof
-             (real_T));
-      cartesian_trajectory_planner__B.holdTime[0] =
-        cartesian_trajectory_planner__B.holdTime_o *
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[1] =
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[2] = 1.0;
-      cartesian_trajectory_planner__B.holdTime_o = 0.0;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.b_idx_m =
-          cartesian_trajectory_planner__B.i_m << 2;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m]
-          = coeffMat[18 * cartesian_trajectory_planner__B.i_m + 4];
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 1] = coeffMat[18 * cartesian_trajectory_planner__B.i_m + 10];
-        cartesian_trajectory_planner__B.coefs_data_tmp = 18 *
-          cartesian_trajectory_planner__B.i_m + 16;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 2] = coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp];
-        cartesian_trajectory_planner__B.holdTime_o +=
-          coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp] *
-          cartesian_trajectory_planner__B.holdTime[cartesian_trajectory_planner__B.i_m];
-      }
-
-      cartesian_trajectory_planner__B.coefs_data[11] =
-        cartesian_trajectory_planner__B.holdTime_o;
-    } else {
-      cartesian_trajectory_planner__B.k = 3;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 4];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 1] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 10];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 2] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 16];
-      }
-
-      breaksCell[4].f1.size[0] = 1;
-      breaksCell[4].f1.size[1] = 4;
-      breaksCell[4].f1.data[0] = breakMat[4];
-      breaksCell[4].f1.data[1] = breakMat[10];
-      breaksCell[4].f1.data[2] = breakMat[16];
-      breaksCell[4].f1.data[3] = breakMat[22];
-    }
-
-    coeffCell[4].f1.size[0] = cartesian_trajectory_planner__B.k;
-    coeffCell[4].f1.size[1] = 3;
-    cartesian_trajectory_planner__B.k = cartesian_trajectory_planner__B.k * 3 -
-      1;
-    for (cartesian_trajectory_planner__B.i_m = 0;
-         cartesian_trajectory_planner__B.i_m <=
-         cartesian_trajectory_planner__B.k; cartesian_trajectory_planner__B.i_m
-         ++) {
-      coeffCell[4].f1.data[cartesian_trajectory_planner__B.i_m] =
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.i_m];
-    }
-
-    if (!rtIsNaN(breakMat[5])) {
-      cartesian_trajectory_planner__B.b_idx_m = 1;
-    } else {
-      cartesian_trajectory_planner__B.b_idx_m = 0;
-      cartesian_trajectory_planner__B.k = 2;
-      exitg1 = false;
-      while ((!exitg1) && (cartesian_trajectory_planner__B.k < 5)) {
-        if (!rtIsNaN(breakMat[(cartesian_trajectory_planner__B.k - 1) * 6 + 5]))
-        {
-          cartesian_trajectory_planner__B.b_idx_m =
-            cartesian_trajectory_planner__B.k;
-          exitg1 = true;
-        } else {
-          cartesian_trajectory_planner__B.k++;
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.b_idx_m == 0) {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[5];
-    } else {
-      cartesian_trajectory_planner__B.holdTime_o = breakMat
-        [(cartesian_trajectory_planner__B.b_idx_m - 1) * 6 + 5];
-      for (cartesian_trajectory_planner__B.k =
-           cartesian_trajectory_planner__B.b_idx_m + 1;
-           cartesian_trajectory_planner__B.k < 5;
-           cartesian_trajectory_planner__B.k++) {
-        cartesian_trajectory_planner__B.i_m = (cartesian_trajectory_planner__B.k
-          - 1) * 6 + 5;
-        if (cartesian_trajectory_planner__B.holdTime_o <
-            breakMat[cartesian_trajectory_planner__B.i_m]) {
-          cartesian_trajectory_planner__B.holdTime_o =
-            breakMat[cartesian_trajectory_planner__B.i_m];
-        }
-      }
-    }
-
-    if (cartesian_trajectory_planner__B.holdTime_o <
-        cartesian_trajectory_planner__B.maxBreaksTime) {
-      breaksCell[5].f1.size[0] = 1;
-      breaksCell[5].f1.size[1] = 5;
-      breaksCell[5].f1.data[0] = breakMat[5];
-      breaksCell[5].f1.data[1] = breakMat[11];
-      breaksCell[5].f1.data[2] = breakMat[17];
-      breaksCell[5].f1.data[3] = breakMat[23];
-      breaksCell[5].f1.data[4] = cartesian_trajectory_planner__B.maxBreaksTime;
-      cartesian_trajectory_planner__B.holdTime_o = breakMat[23] - breakMat[17];
-      cartesian_trajectory_planner__B.k = 4;
-      memset(&cartesian_trajectory_planner__B.coefs_data[0], 0, 12U * sizeof
-             (real_T));
-      cartesian_trajectory_planner__B.holdTime[0] =
-        cartesian_trajectory_planner__B.holdTime_o *
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[1] =
-        cartesian_trajectory_planner__B.holdTime_o;
-      cartesian_trajectory_planner__B.holdTime[2] = 1.0;
-      cartesian_trajectory_planner__B.holdTime_o = 0.0;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.b_idx_m =
-          cartesian_trajectory_planner__B.i_m << 2;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m]
-          = coeffMat[18 * cartesian_trajectory_planner__B.i_m + 5];
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 1] = coeffMat[18 * cartesian_trajectory_planner__B.i_m + 11];
-        cartesian_trajectory_planner__B.coefs_data_tmp = 18 *
-          cartesian_trajectory_planner__B.i_m + 17;
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.b_idx_m
-          + 2] = coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp];
-        cartesian_trajectory_planner__B.holdTime_o +=
-          coeffMat[cartesian_trajectory_planner__B.coefs_data_tmp] *
-          cartesian_trajectory_planner__B.holdTime[cartesian_trajectory_planner__B.i_m];
-      }
-
-      cartesian_trajectory_planner__B.coefs_data[11] =
-        cartesian_trajectory_planner__B.holdTime_o;
-    } else {
-      cartesian_trajectory_planner__B.k = 3;
-      for (cartesian_trajectory_planner__B.i_m = 0;
-           cartesian_trajectory_planner__B.i_m < 3;
-           cartesian_trajectory_planner__B.i_m++) {
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 5];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 1] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 11];
-        cartesian_trajectory_planner__B.coefs_data[3 *
-          cartesian_trajectory_planner__B.i_m + 2] = coeffMat[18 *
-          cartesian_trajectory_planner__B.i_m + 17];
-      }
-
-      breaksCell[5].f1.size[0] = 1;
-      breaksCell[5].f1.size[1] = 4;
-      breaksCell[5].f1.data[0] = breakMat[5];
-      breaksCell[5].f1.data[1] = breakMat[11];
-      breaksCell[5].f1.data[2] = breakMat[17];
-      breaksCell[5].f1.data[3] = breakMat[23];
-    }
-
-    coeffCell[5].f1.size[0] = cartesian_trajectory_planner__B.k;
-    coeffCell[5].f1.size[1] = 3;
-    cartesian_trajectory_planner__B.k = cartesian_trajectory_planner__B.k * 3 -
-      1;
-    for (cartesian_trajectory_planner__B.i_m = 0;
-         cartesian_trajectory_planner__B.i_m <=
-         cartesian_trajectory_planner__B.k; cartesian_trajectory_planner__B.i_m
-         ++) {
-      coeffCell[5].f1.data[cartesian_trajectory_planner__B.i_m] =
-        cartesian_trajectory_planner__B.coefs_data[cartesian_trajectory_planner__B.i_m];
-    }
-  } else {
-    breaksCell[0].f1.size[0] = 1;
-    breaksCell[0].f1.size[1] = 4;
-    breaksCell[0].f1.data[0] = breakMat[0];
-    breaksCell[0].f1.data[1] = breakMat[6];
-    breaksCell[0].f1.data[2] = breakMat[12];
-    breaksCell[0].f1.data[3] = breakMat[18];
-    coeffCell[0].f1.size[0] = 18;
-    coeffCell[0].f1.size[1] = 3;
-    breaksCell[1].f1.size[0] = 1;
-    breaksCell[1].f1.size[1] = 4;
-    breaksCell[1].f1.data[0] = breakMat[0];
-    breaksCell[1].f1.data[1] = breakMat[6];
-    breaksCell[1].f1.data[2] = breakMat[12];
-    breaksCell[1].f1.data[3] = breakMat[18];
-    coeffCell[1].f1.size[0] = 18;
-    coeffCell[1].f1.size[1] = 3;
-    breaksCell[2].f1.size[0] = 1;
-    breaksCell[2].f1.size[1] = 4;
-    breaksCell[2].f1.data[0] = breakMat[0];
-    breaksCell[2].f1.data[1] = breakMat[6];
-    breaksCell[2].f1.data[2] = breakMat[12];
-    breaksCell[2].f1.data[3] = breakMat[18];
-    coeffCell[2].f1.size[0] = 18;
-    coeffCell[2].f1.size[1] = 3;
-    breaksCell[3].f1.size[0] = 1;
-    breaksCell[3].f1.size[1] = 4;
-    breaksCell[3].f1.data[0] = breakMat[0];
-    breaksCell[3].f1.data[1] = breakMat[6];
-    breaksCell[3].f1.data[2] = breakMat[12];
-    breaksCell[3].f1.data[3] = breakMat[18];
-    coeffCell[3].f1.size[0] = 18;
-    coeffCell[3].f1.size[1] = 3;
-    breaksCell[4].f1.size[0] = 1;
-    breaksCell[4].f1.size[1] = 4;
-    breaksCell[4].f1.data[0] = breakMat[0];
-    breaksCell[4].f1.data[1] = breakMat[6];
-    breaksCell[4].f1.data[2] = breakMat[12];
-    breaksCell[4].f1.data[3] = breakMat[18];
-    coeffCell[4].f1.size[0] = 18;
-    coeffCell[4].f1.size[1] = 3;
-    breaksCell[5].f1.size[0] = 1;
-    breaksCell[5].f1.size[1] = 4;
-    breaksCell[5].f1.data[0] = breakMat[0];
-    breaksCell[5].f1.data[1] = breakMat[6];
-    breaksCell[5].f1.data[2] = breakMat[12];
-    breaksCell[5].f1.data[3] = breakMat[18];
-    coeffCell[5].f1.size[0] = 18;
-    coeffCell[5].f1.size[1] = 3;
-    memcpy(&coeffCell[0].f1.data[0], &coeffMat[0], 54U * sizeof(real_T));
-    memcpy(&coeffCell[1].f1.data[0], &coeffMat[0], 54U * sizeof(real_T));
-    memcpy(&coeffCell[2].f1.data[0], &coeffMat[0], 54U * sizeof(real_T));
-    memcpy(&coeffCell[3].f1.data[0], &coeffMat[0], 54U * sizeof(real_T));
-    memcpy(&coeffCell[4].f1.data[0], &coeffMat[0], 54U * sizeof(real_T));
-    memcpy(&coeffCell[5].f1.data[0], &coeffMat[0], 54U * sizeof(real_T));
-  }
-}
-
-static real_T cartesian_trajector_rt_powd_snf(real_T u0, real_T u1)
-{
-  real_T y;
-  if (rtIsNaN(u0) || rtIsNaN(u1)) {
-    y = (rtNaN);
-  } else {
-    cartesian_trajectory_planner__B.d1 = fabs(u0);
-    cartesian_trajectory_planner__B.d2 = fabs(u1);
-    if (rtIsInf(u1)) {
-      if (cartesian_trajectory_planner__B.d1 == 1.0) {
-        y = 1.0;
-      } else if (cartesian_trajectory_planner__B.d1 > 1.0) {
-        if (u1 > 0.0) {
-          y = (rtInf);
-        } else {
-          y = 0.0;
-        }
-      } else if (u1 > 0.0) {
-        y = 0.0;
-      } else {
-        y = (rtInf);
-      }
-    } else if (cartesian_trajectory_planner__B.d2 == 0.0) {
-      y = 1.0;
-    } else if (cartesian_trajectory_planner__B.d2 == 1.0) {
-      if (u1 > 0.0) {
-        y = u0;
-      } else {
-        y = 1.0 / u0;
-      }
-    } else if (u1 == 2.0) {
-      y = u0 * u0;
-    } else if ((u1 == 0.5) && (u0 >= 0.0)) {
-      y = sqrt(u0);
-    } else if ((u0 < 0.0) && (u1 > floor(u1))) {
-      y = (rtNaN);
-    } else {
-      y = pow(u0, u1);
-    }
-  }
-
-  return y;
-}
-
-static void ca_addFlatSegmentsToPPFormParts(const real_T oldbreaks_data[], const
-  int32_T oldbreaks_size[2], const real_T oldCoeffs_data[], const int32_T
-  oldCoeffs_size[2], real_T dim, real_T newBreaks_data[], int32_T
-  newBreaks_size[2], real_T newCoefs_data[], int32_T newCoefs_size[2])
-{
-  cartesian_trajectory_planner__B.m_tmp = static_cast<int32_T>(dim);
-  cartesian_trajectory_planner__B.m = cartesian_trajectory_planner__B.m_tmp - 1;
-  for (cartesian_trajectory_planner__B.b_i = 0;
-       cartesian_trajectory_planner__B.b_i <= cartesian_trajectory_planner__B.m;
-       cartesian_trajectory_planner__B.b_i++) {
-    cartesian_trajectory_planner__B.d_n = cartesian_trajectory_planner__B.m_tmp
-      + cartesian_trajectory_planner__B.b_i;
-    cartesian_trajectory_planner__B.s =
-      oldCoeffs_data[cartesian_trajectory_planner__B.b_i %
-      cartesian_trajectory_planner__B.m_tmp + oldCoeffs_size[0] *
-      div_nzp_s32_floor(cartesian_trajectory_planner__B.b_i,
-                        cartesian_trajectory_planner__B.m_tmp)] * 0.0 +
-      oldCoeffs_data[cartesian_trajectory_planner__B.d_n %
-      cartesian_trajectory_planner__B.m_tmp + oldCoeffs_size[0] *
-      div_nzp_s32_floor(cartesian_trajectory_planner__B.d_n,
-                        cartesian_trajectory_planner__B.m_tmp)] * 0.0;
-    cartesian_trajectory_planner__B.d_n = (cartesian_trajectory_planner__B.m_tmp
-      << 1) + cartesian_trajectory_planner__B.b_i;
-    cartesian_trajectory_planner__B.valueAtStart_data[cartesian_trajectory_planner__B.b_i]
-      = oldCoeffs_data[cartesian_trajectory_planner__B.d_n %
-      cartesian_trajectory_planner__B.m_tmp + oldCoeffs_size[0] *
-      div_nzp_s32_floor(cartesian_trajectory_planner__B.d_n,
-                        cartesian_trajectory_planner__B.m_tmp)] +
-      cartesian_trajectory_planner__B.s;
-  }
-
-  cartesian_trajectory_planner__B.loop_ub_tmp =
-    cartesian_trajectory_planner__B.m_tmp * 3 - 1;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_tmp) {
-    memset(&cartesian_trajectory_planner__B.newSegmentCoeffs_data[0], 0,
-           (cartesian_trajectory_planner__B.loop_ub_tmp + 1) * sizeof(real_T));
-  }
-
-  for (cartesian_trajectory_planner__B.d_n = 0;
-       cartesian_trajectory_planner__B.d_n <
-       cartesian_trajectory_planner__B.m_tmp;
-       cartesian_trajectory_planner__B.d_n++) {
-    cartesian_trajectory_planner__B.newSegmentCoeffs_data[cartesian_trajectory_planner__B.d_n
-      + (cartesian_trajectory_planner__B.m_tmp << 1)] =
-      cartesian_trajectory_planner__B.valueAtStart_data[cartesian_trajectory_planner__B.d_n];
-  }
-
-  cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_t = static_cast<
-    real_T>(oldCoeffs_size[0]) + dim;
-  cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c = static_cast<
-    int32_T>(cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_t);
-  cartesian_trajectory_planner__B.loop_ub_m =
-    cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c * 3 - 1;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_m) {
-    memset(&cartesian_trajectory_planner__B.coefsWithFlatStart_data[0], 0,
-           (cartesian_trajectory_planner__B.loop_ub_m + 1) * sizeof(real_T));
-  }
-
-  for (cartesian_trajectory_planner__B.d_n = 0;
-       cartesian_trajectory_planner__B.d_n < 3;
-       cartesian_trajectory_planner__B.d_n++) {
-    for (cartesian_trajectory_planner__B.b_i = 0;
-         cartesian_trajectory_planner__B.b_i <
-         cartesian_trajectory_planner__B.m_tmp;
-         cartesian_trajectory_planner__B.b_i++) {
-      cartesian_trajectory_planner__B.coefsWithFlatStart_data[cartesian_trajectory_planner__B.b_i
-        + cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c *
-        cartesian_trajectory_planner__B.d_n] =
-        cartesian_trajectory_planner__B.newSegmentCoeffs_data[cartesian_trajectory_planner__B.m_tmp
-        * cartesian_trajectory_planner__B.d_n +
-        cartesian_trajectory_planner__B.b_i];
-    }
-  }
-
-  if (dim + 1.0 >
-      cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_t) {
-    cartesian_trajectory_planner__B.h = 0;
-  } else {
-    cartesian_trajectory_planner__B.h = static_cast<int32_T>(dim + 1.0) - 1;
-  }
-
-  cartesian_trajectory_planner__B.loop_ub_m = oldCoeffs_size[0];
-  for (cartesian_trajectory_planner__B.d_n = 0;
-       cartesian_trajectory_planner__B.d_n < 3;
-       cartesian_trajectory_planner__B.d_n++) {
-    for (cartesian_trajectory_planner__B.b_i = 0;
-         cartesian_trajectory_planner__B.b_i <
-         cartesian_trajectory_planner__B.loop_ub_m;
-         cartesian_trajectory_planner__B.b_i++) {
-      cartesian_trajectory_planner__B.coefsWithFlatStart_data
-        [(cartesian_trajectory_planner__B.h +
-          cartesian_trajectory_planner__B.b_i) +
-        cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c *
-        cartesian_trajectory_planner__B.d_n] = oldCoeffs_data[oldCoeffs_size[0] *
-        cartesian_trajectory_planner__B.d_n +
-        cartesian_trajectory_planner__B.b_i];
-    }
-  }
-
-  cartesian_trajectory_planner__B.h = oldbreaks_size[1] + 1;
-  cartesian_trajectory_planner__B.loop_ub_m = oldbreaks_size[0] *
-    oldbreaks_size[1] - 1;
-  cartesian_trajectory_planner__B.valueAtStart_data[0] = oldbreaks_data[0] - 1.0;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_m) {
-    memcpy(&cartesian_trajectory_planner__B.valueAtStart_data[1],
-           &oldbreaks_data[0], (cartesian_trajectory_planner__B.loop_ub_m + 1) *
-           sizeof(real_T));
-  }
-
-  cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_t =
-    cartesian_trajectory_planner__B.valueAtStart_data[cartesian_trajectory_planner__B.h
-    - 1];
-  cartesian_trajectory_planner__B.holdPoint =
-    cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_t -
-    cartesian_trajectory_planner__B.valueAtStart_data[cartesian_trajectory_planner__B.h
-    - 2];
-  cartesian_trajectory_planner__B.B_idx_0 = cartesian_trajector_rt_powd_snf
-    (cartesian_trajectory_planner__B.holdPoint, 2.0);
-  cartesian_trajectory_planner__B.B_idx_1 = cartesian_trajector_rt_powd_snf
-    (cartesian_trajectory_planner__B.holdPoint, 1.0);
-  cartesian_trajectory_planner__B.holdPoint = cartesian_trajector_rt_powd_snf
-    (cartesian_trajectory_planner__B.holdPoint, 0.0);
-  cartesian_trajectory_planner__B.s = (static_cast<real_T>
-    (cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c) - dim) +
-    1.0;
-  if (cartesian_trajectory_planner__B.s >
-      cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c) {
-    cartesian_trajectory_planner__B.loop_ub_m = 0;
-    cartesian_trajectory_planner__B.d_n = 0;
-  } else {
-    cartesian_trajectory_planner__B.loop_ub_m = static_cast<int32_T>
-      (cartesian_trajectory_planner__B.s) - 1;
-    cartesian_trajectory_planner__B.d_n =
-      cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c;
-  }
-
-  cartesian_trajectory_planner__B.m_tmp_m = cartesian_trajectory_planner__B.d_n
-    - cartesian_trajectory_planner__B.loop_ub_m;
-  cartesian_trajectory_planner__B.m = cartesian_trajectory_planner__B.m_tmp_m -
-    1;
-  for (cartesian_trajectory_planner__B.b_i = 0;
-       cartesian_trajectory_planner__B.b_i <= cartesian_trajectory_planner__B.m;
-       cartesian_trajectory_planner__B.b_i++) {
-    cartesian_trajectory_planner__B.d_n =
-      cartesian_trajectory_planner__B.m_tmp_m +
-      cartesian_trajectory_planner__B.b_i;
-    cartesian_trajectory_planner__B.s =
-      cartesian_trajectory_planner__B.coefsWithFlatStart_data
-      [(cartesian_trajectory_planner__B.b_i %
-        cartesian_trajectory_planner__B.m_tmp_m +
-        cartesian_trajectory_planner__B.loop_ub_m) + div_nzp_s32_floor
-      (cartesian_trajectory_planner__B.b_i,
-       cartesian_trajectory_planner__B.m_tmp_m) *
-      cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c] *
-      cartesian_trajectory_planner__B.B_idx_0 +
-      cartesian_trajectory_planner__B.coefsWithFlatStart_data
-      [(cartesian_trajectory_planner__B.d_n %
-        cartesian_trajectory_planner__B.m_tmp_m +
-        cartesian_trajectory_planner__B.loop_ub_m) + div_nzp_s32_floor
-      (cartesian_trajectory_planner__B.d_n,
-       cartesian_trajectory_planner__B.m_tmp_m) *
-      cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c] *
-      cartesian_trajectory_planner__B.B_idx_1;
-    cartesian_trajectory_planner__B.d_n =
-      (cartesian_trajectory_planner__B.m_tmp_m << 1) +
-      cartesian_trajectory_planner__B.b_i;
-    cartesian_trajectory_planner__B.valueAtEnd_data[cartesian_trajectory_planner__B.b_i]
-      = cartesian_trajectory_planner__B.coefsWithFlatStart_data
-      [(cartesian_trajectory_planner__B.d_n %
-        cartesian_trajectory_planner__B.m_tmp_m +
-        cartesian_trajectory_planner__B.loop_ub_m) + div_nzp_s32_floor
-      (cartesian_trajectory_planner__B.d_n,
-       cartesian_trajectory_planner__B.m_tmp_m) *
-      cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c] *
-      cartesian_trajectory_planner__B.holdPoint
-      + cartesian_trajectory_planner__B.s;
-  }
-
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_tmp) {
-    memset(&cartesian_trajectory_planner__B.newSegmentCoeffs_data[0], 0,
-           (cartesian_trajectory_planner__B.loop_ub_tmp + 1) * sizeof(real_T));
-  }
-
-  for (cartesian_trajectory_planner__B.d_n = 0;
-       cartesian_trajectory_planner__B.d_n <
-       cartesian_trajectory_planner__B.m_tmp_m;
-       cartesian_trajectory_planner__B.d_n++) {
-    cartesian_trajectory_planner__B.newSegmentCoeffs_data[cartesian_trajectory_planner__B.d_n
-      + (cartesian_trajectory_planner__B.m_tmp << 1)] =
-      cartesian_trajectory_planner__B.valueAtEnd_data[cartesian_trajectory_planner__B.d_n];
-  }
-
-  cartesian_trajectory_planner__B.loop_ub_tmp = static_cast<int32_T>(
-    static_cast<real_T>
-    (cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c) + dim);
-  newCoefs_size[0] = cartesian_trajectory_planner__B.loop_ub_tmp;
-  newCoefs_size[1] = 3;
-  cartesian_trajectory_planner__B.loop_ub_m =
-    cartesian_trajectory_planner__B.loop_ub_tmp * 3 - 1;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_m) {
-    memset(&newCoefs_data[0], 0, (cartesian_trajectory_planner__B.loop_ub_m + 1)
-           * sizeof(real_T));
-  }
-
-  for (cartesian_trajectory_planner__B.d_n = 0;
-       cartesian_trajectory_planner__B.d_n < 3;
-       cartesian_trajectory_planner__B.d_n++) {
-    for (cartesian_trajectory_planner__B.b_i = 0;
-         cartesian_trajectory_planner__B.b_i <
-         cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c;
-         cartesian_trajectory_planner__B.b_i++) {
-      newCoefs_data[cartesian_trajectory_planner__B.b_i +
-        cartesian_trajectory_planner__B.loop_ub_tmp *
-        cartesian_trajectory_planner__B.d_n] =
-        cartesian_trajectory_planner__B.coefsWithFlatStart_data[cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c
-        * cartesian_trajectory_planner__B.d_n +
-        cartesian_trajectory_planner__B.b_i];
-    }
-  }
-
-  for (cartesian_trajectory_planner__B.d_n = 0;
-       cartesian_trajectory_planner__B.d_n < 3;
-       cartesian_trajectory_planner__B.d_n++) {
-    for (cartesian_trajectory_planner__B.b_i = 0;
-         cartesian_trajectory_planner__B.b_i <
-         cartesian_trajectory_planner__B.m_tmp;
-         cartesian_trajectory_planner__B.b_i++) {
-      newCoefs_data
-        [((cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_c +
-           (cartesian_trajectory_planner__B.b_i + 1)) +
-          cartesian_trajectory_planner__B.loop_ub_tmp *
-          cartesian_trajectory_planner__B.d_n) - 1] =
-        cartesian_trajectory_planner__B.newSegmentCoeffs_data[cartesian_trajectory_planner__B.m_tmp
-        * cartesian_trajectory_planner__B.d_n +
-        cartesian_trajectory_planner__B.b_i];
-    }
-  }
-
-  newBreaks_size[0] = 1;
-  newBreaks_size[1] = cartesian_trajectory_planner__B.h + 1;
-  if (0 <= cartesian_trajectory_planner__B.h - 1) {
-    memcpy(&newBreaks_data[0],
-           &cartesian_trajectory_planner__B.valueAtStart_data[0],
-           cartesian_trajectory_planner__B.h * sizeof(real_T));
-  }
-
-  newBreaks_data[cartesian_trajectory_planner__B.h] =
-    cartesian_trajectory_planner__B.coefsWithFlatStart_size_idx_0_t + 1.0;
-}
-
-static void cartesian__polyCoeffsDerivative(const real_T coeffs_data[], const
-  int32_T coeffs_size[2], real_T dCoeffs_data[], int32_T dCoeffs_size[2])
-{
-  cartesian_trajectory_planner__B.b_idx_0 = coeffs_size[0];
-  dCoeffs_size[0] = coeffs_size[0];
-  dCoeffs_size[1] = 3;
-  cartesian_trajectory_planner__B.loop_ub_o4 = coeffs_size[0] * 3 - 1;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_o4) {
-    memset(&dCoeffs_data[0], 0, (cartesian_trajectory_planner__B.loop_ub_o4 + 1)
-           * sizeof(real_T));
-  }
-
-  cartesian_trajectory_planner__B.loop_ub_o4 = coeffs_size[0];
-  for (cartesian_trajectory_planner__B.i2 = 0;
-       cartesian_trajectory_planner__B.i2 <
-       cartesian_trajectory_planner__B.loop_ub_o4;
-       cartesian_trajectory_planner__B.i2++) {
-    dCoeffs_data[cartesian_trajectory_planner__B.i2 +
-      cartesian_trajectory_planner__B.b_idx_0] = 2.0 *
-      coeffs_data[cartesian_trajectory_planner__B.i2];
-  }
-
-  cartesian_trajectory_planner__B.loop_ub_o4 = coeffs_size[0];
-  for (cartesian_trajectory_planner__B.i2 = 0;
-       cartesian_trajectory_planner__B.i2 <
-       cartesian_trajectory_planner__B.loop_ub_o4;
-       cartesian_trajectory_planner__B.i2++) {
-    dCoeffs_data[cartesian_trajectory_planner__B.i2 +
-      (cartesian_trajectory_planner__B.b_idx_0 << 1)] =
-      coeffs_data[cartesian_trajectory_planner__B.i2 + coeffs_size[0]];
-  }
-}
-
-static int32_T cartesian_trajectory_pl_bsearch(const real_T x_data[], const
-  int32_T x_size[2], real_T xi)
-{
-  int32_T n;
-  n = 1;
-  cartesian_trajectory_planner__B.low_ip1 = 1;
-  cartesian_trajectory_planner__B.high_i = x_size[1];
-  while (cartesian_trajectory_planner__B.high_i >
-         cartesian_trajectory_planner__B.low_ip1 + 1) {
-    cartesian_trajectory_planner__B.mid_i = (n >> 1) +
-      (cartesian_trajectory_planner__B.high_i >> 1);
-    if (((n & 1) == 1) && ((cartesian_trajectory_planner__B.high_i & 1) == 1)) {
-      cartesian_trajectory_planner__B.mid_i++;
-    }
-
-    if (xi >= x_data[cartesian_trajectory_planner__B.mid_i - 1]) {
-      n = cartesian_trajectory_planner__B.mid_i;
-      cartesian_trajectory_planner__B.low_ip1 =
-        cartesian_trajectory_planner__B.mid_i;
-    } else {
-      cartesian_trajectory_planner__B.high_i =
-        cartesian_trajectory_planner__B.mid_i;
-    }
-  }
-
-  return n;
-}
-
-static void cartesian_trajectory_plan_ppval(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], const real_T x[2], real_T v_data[], int32_T v_size[2])
-{
-  cartesian_trajectory_planner__B.elementsPerPage = pp_coefs_size[0] - 1;
-  cartesian_trajectory_planner__B.coefStride = (pp_breaks_size[1] - 1) *
-    pp_coefs_size[0];
-  v_size[0] = pp_coefs_size[0];
-  v_size[1] = 2;
-  if (pp_coefs_size[0] == 1) {
-    if (rtIsNaN(x[0])) {
-      v_data[0] = x[0];
-    } else {
-      cartesian_trajectory_planner__B.ip_p = cartesian_trajectory_pl_bsearch
-        (pp_breaks_data, pp_breaks_size, x[0]) - 1;
-      cartesian_trajectory_planner__B.xloc_b = x[0] -
-        pp_breaks_data[cartesian_trajectory_planner__B.ip_p];
-      v_data[0] = (cartesian_trajectory_planner__B.xloc_b *
-                   pp_coefs_data[cartesian_trajectory_planner__B.ip_p] +
-                   pp_coefs_data[cartesian_trajectory_planner__B.ip_p +
-                   cartesian_trajectory_planner__B.coefStride]) *
-        cartesian_trajectory_planner__B.xloc_b + pp_coefs_data
-        [(cartesian_trajectory_planner__B.coefStride << 1) +
-        cartesian_trajectory_planner__B.ip_p];
-    }
-
-    if (rtIsNaN(x[1])) {
-      v_data[1] = x[1];
-    } else {
-      cartesian_trajectory_planner__B.ip_p = cartesian_trajectory_pl_bsearch
-        (pp_breaks_data, pp_breaks_size, x[1]) - 1;
-      cartesian_trajectory_planner__B.xloc_b = x[1] -
-        pp_breaks_data[cartesian_trajectory_planner__B.ip_p];
-      v_data[1] = (cartesian_trajectory_planner__B.xloc_b *
-                   pp_coefs_data[cartesian_trajectory_planner__B.ip_p] +
-                   pp_coefs_data[cartesian_trajectory_planner__B.ip_p +
-                   cartesian_trajectory_planner__B.coefStride]) *
-        cartesian_trajectory_planner__B.xloc_b + pp_coefs_data
-        [(cartesian_trajectory_planner__B.coefStride << 1) +
-        cartesian_trajectory_planner__B.ip_p];
-    }
-  } else {
-    if (rtIsNaN(x[0])) {
-      for (cartesian_trajectory_planner__B.ip_p = 0;
-           cartesian_trajectory_planner__B.ip_p <=
-           cartesian_trajectory_planner__B.elementsPerPage;
-           cartesian_trajectory_planner__B.ip_p++) {
-        v_data[cartesian_trajectory_planner__B.ip_p] = x[0];
-      }
-    } else {
-      cartesian_trajectory_planner__B.ip_p = cartesian_trajectory_pl_bsearch
-        (pp_breaks_data, pp_breaks_size, x[0]) - 1;
-      cartesian_trajectory_planner__B.icp =
-        (cartesian_trajectory_planner__B.elementsPerPage + 1) *
-        cartesian_trajectory_planner__B.ip_p;
-      cartesian_trajectory_planner__B.xloc_b = x[0] -
-        pp_breaks_data[cartesian_trajectory_planner__B.ip_p];
-      cartesian_trajectory_planner__B.ic0 = (cartesian_trajectory_planner__B.icp
-        + cartesian_trajectory_planner__B.coefStride) - 1;
-      for (cartesian_trajectory_planner__B.ip_p = 0;
-           cartesian_trajectory_planner__B.ip_p <=
-           cartesian_trajectory_planner__B.elementsPerPage;
-           cartesian_trajectory_planner__B.ip_p++) {
-        v_data[cartesian_trajectory_planner__B.ip_p] =
-          pp_coefs_data[cartesian_trajectory_planner__B.icp +
-          cartesian_trajectory_planner__B.ip_p];
-        cartesian_trajectory_planner__B.j = cartesian_trajectory_planner__B.ip_p
-          + 1;
-        v_data[-1 + cartesian_trajectory_planner__B.j] = v_data[-1 +
-          cartesian_trajectory_planner__B.j] *
-          cartesian_trajectory_planner__B.xloc_b +
-          pp_coefs_data[cartesian_trajectory_planner__B.ic0 +
-          cartesian_trajectory_planner__B.j];
-      }
-
-      cartesian_trajectory_planner__B.ic0 =
-        ((cartesian_trajectory_planner__B.coefStride << 1) +
-         cartesian_trajectory_planner__B.icp) - 1;
-      for (cartesian_trajectory_planner__B.ip_p = 0;
-           cartesian_trajectory_planner__B.ip_p <=
-           cartesian_trajectory_planner__B.elementsPerPage;
-           cartesian_trajectory_planner__B.ip_p++) {
-        cartesian_trajectory_planner__B.j = cartesian_trajectory_planner__B.ip_p
-          + 1;
-        v_data[-1 + cartesian_trajectory_planner__B.j] = v_data[-1 +
-          cartesian_trajectory_planner__B.j] *
-          cartesian_trajectory_planner__B.xloc_b +
-          pp_coefs_data[cartesian_trajectory_planner__B.ic0 +
-          cartesian_trajectory_planner__B.j];
-      }
-    }
-
-    if (rtIsNaN(x[1])) {
-      for (cartesian_trajectory_planner__B.ip_p = 0;
-           cartesian_trajectory_planner__B.ip_p <=
-           cartesian_trajectory_planner__B.elementsPerPage;
-           cartesian_trajectory_planner__B.ip_p++) {
-        v_data[(cartesian_trajectory_planner__B.elementsPerPage +
-                cartesian_trajectory_planner__B.ip_p) + 1] = x[1];
-      }
-    } else {
-      cartesian_trajectory_planner__B.ip_p = cartesian_trajectory_pl_bsearch
-        (pp_breaks_data, pp_breaks_size, x[1]) - 1;
-      cartesian_trajectory_planner__B.icp =
-        (cartesian_trajectory_planner__B.elementsPerPage + 1) *
-        cartesian_trajectory_planner__B.ip_p;
-      cartesian_trajectory_planner__B.xloc_b = x[1] -
-        pp_breaks_data[cartesian_trajectory_planner__B.ip_p];
-      cartesian_trajectory_planner__B.ic0 = (cartesian_trajectory_planner__B.icp
-        + cartesian_trajectory_planner__B.coefStride) - 1;
-      for (cartesian_trajectory_planner__B.ip_p = 0;
-           cartesian_trajectory_planner__B.ip_p <=
-           cartesian_trajectory_planner__B.elementsPerPage;
-           cartesian_trajectory_planner__B.ip_p++) {
-        v_data[(cartesian_trajectory_planner__B.elementsPerPage +
-                cartesian_trajectory_planner__B.ip_p) + 1] =
-          pp_coefs_data[cartesian_trajectory_planner__B.icp +
-          cartesian_trajectory_planner__B.ip_p];
-        cartesian_trajectory_planner__B.j = cartesian_trajectory_planner__B.ip_p
-          + 1;
-        cartesian_trajectory_planner__B.v_data_tmp =
-          cartesian_trajectory_planner__B.elementsPerPage +
-          cartesian_trajectory_planner__B.j;
-        v_data[cartesian_trajectory_planner__B.v_data_tmp] =
-          v_data[cartesian_trajectory_planner__B.v_data_tmp] *
-          cartesian_trajectory_planner__B.xloc_b +
-          pp_coefs_data[cartesian_trajectory_planner__B.ic0 +
-          cartesian_trajectory_planner__B.j];
-      }
-
-      cartesian_trajectory_planner__B.ic0 =
-        ((cartesian_trajectory_planner__B.coefStride << 1) +
-         cartesian_trajectory_planner__B.icp) - 1;
-      for (cartesian_trajectory_planner__B.ip_p = 0;
-           cartesian_trajectory_planner__B.ip_p <=
-           cartesian_trajectory_planner__B.elementsPerPage;
-           cartesian_trajectory_planner__B.ip_p++) {
-        cartesian_trajectory_planner__B.j = cartesian_trajectory_planner__B.ip_p
-          + 1;
-        cartesian_trajectory_planner__B.v_data_tmp =
-          cartesian_trajectory_planner__B.elementsPerPage +
-          cartesian_trajectory_planner__B.j;
-        v_data[cartesian_trajectory_planner__B.v_data_tmp] =
-          v_data[cartesian_trajectory_planner__B.v_data_tmp] *
-          cartesian_trajectory_planner__B.xloc_b +
-          pp_coefs_data[cartesian_trajectory_planner__B.ic0 +
-          cartesian_trajectory_planner__B.j];
-      }
-    }
-  }
-}
-
-static void c_generateTrajectoriesFromCoefs(const real_T breaks_data[], const
-  int32_T breaks_size[2], const real_T coeffs_data[], const int32_T coeffs_size
-  [2], real_T dim, const real_T t[2], real_T q_data[], int32_T q_size[2], real_T
-  qd_data[], int32_T qd_size[2], real_T qdd_data[], int32_T qdd_size[2], real_T
-  pp_breaks_data[], int32_T pp_breaks_size[2], real_T pp_coefs_data[], int32_T
-  pp_coefs_size[3])
-{
-  ca_addFlatSegmentsToPPFormParts(breaks_data, breaks_size, coeffs_data,
-    coeffs_size, dim, cartesian_trajectory_planner__B.modBreaks_data,
-    cartesian_trajectory_planner__B.modBreaks_size,
-    cartesian_trajectory_planner__B.modCoeffs_data,
-    cartesian_trajectory_planner__B.modCoeffs_size);
-  cartesian__polyCoeffsDerivative(cartesian_trajectory_planner__B.modCoeffs_data,
-    cartesian_trajectory_planner__B.modCoeffs_size,
-    cartesian_trajectory_planner__B.tmp_data,
-    cartesian_trajectory_planner__B.tmp_size);
-  cartesian_trajectory_planner__B.dCoeffs_size[0] =
-    cartesian_trajectory_planner__B.tmp_size[0];
-  cartesian_trajectory_planner__B.dCoeffs_size[1] = 3;
-  cartesian_trajectory_planner__B.loop_ub_o =
-    cartesian_trajectory_planner__B.tmp_size[0] *
-    cartesian_trajectory_planner__B.tmp_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_o - 1) {
-    memcpy(&cartesian_trajectory_planner__B.dCoeffs_data[0],
-           &cartesian_trajectory_planner__B.tmp_data[0],
-           cartesian_trajectory_planner__B.loop_ub_o * sizeof(real_T));
-  }
-
-  cartesian_trajectory_planner__B.num_idx_0_tmp = static_cast<int32_T>(dim);
-  cartesian_trajectory_planner__B.num_idx_1 =
-    cartesian_trajectory_planner__B.modBreaks_size[1] - 1;
-  pp_breaks_size[0] = 1;
-  pp_breaks_size[1] = cartesian_trajectory_planner__B.modBreaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_o =
-    cartesian_trajectory_planner__B.modBreaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_o - 1) {
-    memcpy(&pp_breaks_data[0], &cartesian_trajectory_planner__B.modBreaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_o * sizeof(real_T));
-  }
-
-  pp_coefs_size[0] = cartesian_trajectory_planner__B.num_idx_0_tmp;
-  pp_coefs_size[1] = cartesian_trajectory_planner__B.num_idx_1;
-  pp_coefs_size[2] = 3;
-  cartesian_trajectory_planner__B.loop_ub_o =
-    cartesian_trajectory_planner__B.num_idx_0_tmp *
-    cartesian_trajectory_planner__B.num_idx_1 * 3 - 1;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_o) {
-    memcpy(&pp_coefs_data[0], &cartesian_trajectory_planner__B.modCoeffs_data[0],
-           (cartesian_trajectory_planner__B.loop_ub_o + 1) * sizeof(real_T));
-  }
-
-  cartesian_trajectory_planner__B.num[0] =
-    cartesian_trajectory_planner__B.num_idx_0_tmp;
-  cartesian_trajectory_planner__B.num[1] =
-    cartesian_trajectory_planner__B.num_idx_1;
-  cartesian_trajectory_planner__B.num[2] = 3;
-  cartesian_trajectory_planner__B.modBreaks_size_n[0] = 1;
-  cartesian_trajectory_planner__B.modBreaks_size_n[1] =
-    cartesian_trajectory_planner__B.modBreaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_o =
-    cartesian_trajectory_planner__B.modBreaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_o - 1) {
-    memcpy(&cartesian_trajectory_planner__B.modBreaks_data_f[0],
-           &cartesian_trajectory_planner__B.modBreaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_o * sizeof(real_T));
-  }
-
-  cartesian_trajectory_plan_ppval
-    (cartesian_trajectory_planner__B.modBreaks_data_f,
-     cartesian_trajectory_planner__B.modBreaks_size_n,
-     cartesian_trajectory_planner__B.modCoeffs_data,
-     cartesian_trajectory_planner__B.num, t, q_data, q_size);
-  cartesian_trajectory_planner__B.num[0] =
-    cartesian_trajectory_planner__B.num_idx_0_tmp;
-  cartesian_trajectory_planner__B.num[1] =
-    cartesian_trajectory_planner__B.modBreaks_size[1] - 1;
-  cartesian_trajectory_planner__B.num[2] = 3;
-  cartesian_trajectory_planner__B.modBreaks_size_b[0] = 1;
-  cartesian_trajectory_planner__B.modBreaks_size_b[1] =
-    cartesian_trajectory_planner__B.modBreaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_o =
-    cartesian_trajectory_planner__B.modBreaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_o - 1) {
-    memcpy(&cartesian_trajectory_planner__B.modBreaks_data_f[0],
-           &cartesian_trajectory_planner__B.modBreaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_o * sizeof(real_T));
-  }
-
-  cartesian_trajectory_plan_ppval
-    (cartesian_trajectory_planner__B.modBreaks_data_f,
-     cartesian_trajectory_planner__B.modBreaks_size_b,
-     cartesian_trajectory_planner__B.dCoeffs_data,
-     cartesian_trajectory_planner__B.num, t, qd_data, qd_size);
-  cartesian__polyCoeffsDerivative(cartesian_trajectory_planner__B.dCoeffs_data,
-    cartesian_trajectory_planner__B.dCoeffs_size,
-    cartesian_trajectory_planner__B.tmp_data,
-    cartesian_trajectory_planner__B.tmp_size);
-  cartesian_trajectory_planner__B.num[0] =
-    cartesian_trajectory_planner__B.num_idx_0_tmp;
-  cartesian_trajectory_planner__B.num[1] =
-    cartesian_trajectory_planner__B.modBreaks_size[1] - 1;
-  cartesian_trajectory_planner__B.num[2] = 3;
-  cartesian_trajectory_planner__B.modBreaks_size_l[0] = 1;
-  cartesian_trajectory_planner__B.modBreaks_size_l[1] =
-    cartesian_trajectory_planner__B.modBreaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_o =
-    cartesian_trajectory_planner__B.modBreaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_o - 1) {
-    memcpy(&cartesian_trajectory_planner__B.modBreaks_data_f[0],
-           &cartesian_trajectory_planner__B.modBreaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_o * sizeof(real_T));
-  }
-
-  cartesian_trajectory_plan_ppval
-    (cartesian_trajectory_planner__B.modBreaks_data_f,
-     cartesian_trajectory_planner__B.modBreaks_size_l,
-     cartesian_trajectory_planner__B.tmp_data,
-     cartesian_trajectory_planner__B.num, t, qdd_data, qdd_size);
-}
-
-static void cartesian_trajector_trapveltraj(const real_T wayPoints[12], const
-  real_T varargin_2[6], real_T varargin_4, real_T q[12], real_T qd[12], real_T
-  qdd[12], real_T t[2], s_06c2DDfmr4zcnTqhww20ZC_cart_T ppCell_data[], int32_T
-  *ppCell_size)
-{
-  boolean_T exitg1;
-  NameValueParser_NameValueParser(&cartesian_trajectory_planner__B.parser);
-  for (cartesian_trajectory_planner__B.i_i = 0;
-       cartesian_trajectory_planner__B.i_i < 6;
-       cartesian_trajectory_planner__B.i_i++) {
-    cartesian_trajectory_planner__B.parser.ParsedResults.f1[cartesian_trajectory_planner__B.i_i]
-      = varargin_2[cartesian_trajectory_planner__B.i_i];
-  }
-
-  cartesian_trajectory_planner__B.parser.ParsedResults.f2 = varargin_4;
-  for (cartesian_trajectory_planner__B.i_i = 0;
-       cartesian_trajectory_planner__B.i_i < 6;
-       cartesian_trajectory_planner__B.i_i++) {
-    cartesian_trajectory_planner__B.a[cartesian_trajectory_planner__B.i_i] =
-      cartesian_trajectory_planner__B.parser.ParsedResults.f1[cartesian_trajectory_planner__B.i_i];
-  }
-
-  cartesian_trajectory_planner__B.acc =
-    cartesian_trajectory_planner__B.parser.ParsedResults.f2;
-  for (cartesian_trajectory_planner__B.i_i = 0;
-       cartesian_trajectory_planner__B.i_i < 6;
-       cartesian_trajectory_planner__B.i_i++) {
-    cartesian_trajectory_planner__B.vel[cartesian_trajectory_planner__B.i_i] =
-      cartesian_trajectory_planner__B.a[cartesian_trajectory_planner__B.i_i];
-    cartesian_trajectory_planner__B.matrixInput_data[cartesian_trajectory_planner__B.i_i]
-      = cartesian_trajectory_planner__B.acc;
-  }
-
-  for (cartesian_trajectory_planner__B.i_i = 0;
-       cartesian_trajectory_planner__B.i_i < 12;
-       cartesian_trajectory_planner__B.i_i++) {
-    q[cartesian_trajectory_planner__B.i_i] = 0.0;
-  }
-
-  for (cartesian_trajectory_planner__B.i_i = 0;
-       cartesian_trajectory_planner__B.i_i < 12;
-       cartesian_trajectory_planner__B.i_i++) {
-    qd[cartesian_trajectory_planner__B.i_i] = 0.0;
-  }
-
-  for (cartesian_trajectory_planner__B.i_i = 0;
-       cartesian_trajectory_planner__B.i_i < 12;
-       cartesian_trajectory_planner__B.i_i++) {
-    qdd[cartesian_trajectory_planner__B.i_i] = 0.0;
-  }
-
-  memset(&cartesian_trajectory_planner__B.coeffMat[0], 0, 54U * sizeof(real_T));
-  memset(&cartesian_trajectory_planner__B.breakMat[0], 0, 24U * sizeof(real_T));
-  for (cartesian_trajectory_planner__B.b_idx = 0;
-       cartesian_trajectory_planner__B.b_idx < 6;
-       cartesian_trajectory_planner__B.b_idx++) {
-    cartesian__computeProfileParams(static_cast<real_T>
-      (cartesian_trajectory_planner__B.b_idx) + 1.0, wayPoints,
-      cartesian_trajectory_planner__B.vel,
-      cartesian_trajectory_planner__B.matrixInput_data,
-      &cartesian_trajectory_planner__B.acc,
-      &cartesian_trajectory_planner__B.segAcc,
-      &cartesian_trajectory_planner__B.segATime,
-      &cartesian_trajectory_planner__B.segFTime);
-    cartesian_trajectory_planner__B.parameterMat[cartesian_trajectory_planner__B.b_idx]
-      = wayPoints[cartesian_trajectory_planner__B.b_idx];
-    cartesian_trajectory_planner__B.parameterMat[cartesian_trajectory_planner__B.b_idx
-      + 6] = wayPoints[cartesian_trajectory_planner__B.b_idx + 6];
-    cartesian_trajectory_planner__B.parameterMat[cartesian_trajectory_planner__B.b_idx
-      + 12] = cartesian_trajectory_planner__B.acc;
-    cartesian_trajectory_planner__B.parameterMat[cartesian_trajectory_planner__B.b_idx
-      + 18] = cartesian_trajectory_planner__B.segAcc;
-    cartesian_trajectory_planner__B.parameterMat[cartesian_trajectory_planner__B.b_idx
-      + 24] = cartesian_trajectory_planner__B.segATime;
-    cartesian_trajectory_planner__B.parameterMat[cartesian_trajectory_planner__B.b_idx
-      + 30] = cartesian_trajectory_planner__B.segFTime;
-    c_computeScalarLSPBCoefficients
-      (wayPoints[cartesian_trajectory_planner__B.b_idx],
-       wayPoints[cartesian_trajectory_planner__B.b_idx + 6],
-       cartesian_trajectory_planner__B.acc,
-       cartesian_trajectory_planner__B.segAcc,
-       cartesian_trajectory_planner__B.segATime,
-       cartesian_trajectory_planner__B.segFTime,
-       cartesian_trajectory_planner__B.coefs,
-       cartesian_trajectory_planner__B.breaks);
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i < 18;
-         cartesian_trajectory_planner__B.i_i++) {
-      cartesian_trajectory_planner__B.coefIndex[cartesian_trajectory_planner__B.i_i]
-        = false;
-    }
-
-    cartesian_trajectory_planner__B.i_i = cartesian_trajectory_planner__B.b_idx
-      + 1;
-    cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp = static_cast<
-      int32_T>(floor(static_cast<real_T>((cartesian_trajectory_planner__B.b_idx
-      - cartesian_trajectory_planner__B.i_i) + 13) / 6.0));
-    cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1 =
-      cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp + 1;
-    for (cartesian_trajectory_planner__B.indivPolyDim = 0;
-         cartesian_trajectory_planner__B.indivPolyDim <=
-         cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp;
-         cartesian_trajectory_planner__B.indivPolyDim++) {
-      cartesian_trajectory_planner__B.lspbSegIndices_data[cartesian_trajectory_planner__B.indivPolyDim]
-        = 6 * cartesian_trajectory_planner__B.indivPolyDim +
-        cartesian_trajectory_planner__B.i_i;
-    }
-
-    cartesian_trajectory_planner__B.indivPolyDim =
-      cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1 - 1;
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i <=
-         cartesian_trajectory_planner__B.indivPolyDim;
-         cartesian_trajectory_planner__B.i_i++) {
-      cartesian_trajectory_planner__B.g_data[cartesian_trajectory_planner__B.i_i]
-        = static_cast<int32_T>
-        (cartesian_trajectory_planner__B.lspbSegIndices_data[cartesian_trajectory_planner__B.i_i]);
-    }
-
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i <
-         cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1;
-         cartesian_trajectory_planner__B.i_i++) {
-      cartesian_trajectory_planner__B.coefIndex[cartesian_trajectory_planner__B.g_data
-        [cartesian_trajectory_planner__B.i_i] - 1] = true;
-    }
-
-    cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1 = 0;
-    cartesian_trajectory_planner__B.indivPolyDim = 0;
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i < 18;
-         cartesian_trajectory_planner__B.i_i++) {
-      if (cartesian_trajectory_planner__B.coefIndex[cartesian_trajectory_planner__B.i_i])
-      {
-        cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1++;
-        cartesian_trajectory_planner__B.o_data[cartesian_trajectory_planner__B.indivPolyDim]
-          = static_cast<int8_T>(cartesian_trajectory_planner__B.i_i + 1);
-        cartesian_trajectory_planner__B.indivPolyDim++;
-      }
-    }
-
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i < 3;
-         cartesian_trajectory_planner__B.i_i++) {
-      for (cartesian_trajectory_planner__B.indivPolyDim = 0;
-           cartesian_trajectory_planner__B.indivPolyDim <
-           cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1;
-           cartesian_trajectory_planner__B.indivPolyDim++) {
-        cartesian_trajectory_planner__B.coeffMat
-          [(cartesian_trajectory_planner__B.o_data[cartesian_trajectory_planner__B.indivPolyDim]
-            + 18 * cartesian_trajectory_planner__B.i_i) - 1] =
-          cartesian_trajectory_planner__B.coefs[cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1
-          * cartesian_trajectory_planner__B.i_i +
-          cartesian_trajectory_planner__B.indivPolyDim];
-      }
-    }
-
-    cartesian_trajectory_planner__B.acc =
-      cartesian_trajectory_planner__B.breakMat[cartesian_trajectory_planner__B.b_idx];
-    cartesian_trajectory_planner__B.breakMat[cartesian_trajectory_planner__B.b_idx]
-      += cartesian_trajectory_planner__B.breaks[0];
-    cartesian_trajectory_planner__B.breakMat[cartesian_trajectory_planner__B.b_idx
-      + 6] = cartesian_trajectory_planner__B.breaks[1] +
-      cartesian_trajectory_planner__B.acc;
-    cartesian_trajectory_planner__B.breakMat[cartesian_trajectory_planner__B.b_idx
-      + 12] = cartesian_trajectory_planner__B.breaks[2] +
-      cartesian_trajectory_planner__B.acc;
-    cartesian_trajectory_planner__B.breakMat[cartesian_trajectory_planner__B.b_idx
-      + 18] = cartesian_trajectory_planner__B.breaks[3] +
-      cartesian_trajectory_planner__B.acc;
-    cartesian_trajectory_planner__B.a[cartesian_trajectory_planner__B.b_idx] =
-      cartesian_trajectory_planner__B.parameterMat[cartesian_trajectory_planner__B.b_idx
-      + 30];
-  }
-
-  cartesian_trajectory_planner__B.hasMultipleBreaks =
-    cart_checkPolyForMultipleBreaks(cartesian_trajectory_planner__B.breakMat);
-  cartes_processPolynomialResults(cartesian_trajectory_planner__B.breakMat,
-    cartesian_trajectory_planner__B.coeffMat,
-    cartesian_trajectory_planner__B.hasMultipleBreaks,
-    cartesian_trajectory_planner__B.breaksCell,
-    cartesian_trajectory_planner__B.coeffsCell);
-  if (!rtIsNaN(cartesian_trajectory_planner__B.a[0])) {
-    cartesian_trajectory_planner__B.b_idx = 1;
-  } else {
-    cartesian_trajectory_planner__B.b_idx = 0;
-    cartesian_trajectory_planner__B.i_i = 2;
-    exitg1 = false;
-    while ((!exitg1) && (cartesian_trajectory_planner__B.i_i < 7)) {
-      if (!rtIsNaN
-          (cartesian_trajectory_planner__B.a[cartesian_trajectory_planner__B.i_i
-           - 1])) {
-        cartesian_trajectory_planner__B.b_idx =
-          cartesian_trajectory_planner__B.i_i;
-        exitg1 = true;
-      } else {
-        cartesian_trajectory_planner__B.i_i++;
-      }
-    }
-  }
-
-  if (cartesian_trajectory_planner__B.b_idx == 0) {
-    t[1] = cartesian_trajectory_planner__B.a[0];
-  } else {
-    cartesian_trajectory_planner__B.segAcc =
-      cartesian_trajectory_planner__B.a[cartesian_trajectory_planner__B.b_idx -
-      1];
-    for (cartesian_trajectory_planner__B.i_i =
-         cartesian_trajectory_planner__B.b_idx + 1;
-         cartesian_trajectory_planner__B.i_i < 7;
-         cartesian_trajectory_planner__B.i_i++) {
-      cartesian_trajectory_planner__B.acc =
-        cartesian_trajectory_planner__B.a[cartesian_trajectory_planner__B.i_i -
-        1];
-      if (cartesian_trajectory_planner__B.segAcc <
-          cartesian_trajectory_planner__B.acc) {
-        cartesian_trajectory_planner__B.segAcc =
-          cartesian_trajectory_planner__B.acc;
-      }
-    }
-
-    t[1] = cartesian_trajectory_planner__B.segAcc;
-  }
-
-  t[0] = 0.0;
-  if (cartesian_trajectory_planner__B.hasMultipleBreaks) {
-    cartesian_trajectory_planner__B.i_i = 6;
-    cartesian_trajectory_planner__B.indivPolyDim = 1;
-  } else {
-    cartesian_trajectory_planner__B.i_i = 1;
-    cartesian_trajectory_planner__B.indivPolyDim = 6;
-  }
-
-  cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1 =
-    cartesian_trajectory_planner__B.i_i - 1;
-  *ppCell_size = cartesian_trajectory_planner__B.i_i;
-  for (cartesian_trajectory_planner__B.b_idx = 0;
-       cartesian_trajectory_planner__B.b_idx <=
-       cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1;
-       cartesian_trajectory_planner__B.b_idx++) {
-    if (cartesian_trajectory_planner__B.hasMultipleBreaks) {
-      cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp = 1;
-      cartesian_trajectory_planner__B.rowSelection_data[0] = static_cast<int8_T>
-        (cartesian_trajectory_planner__B.b_idx + 1);
-      cartesian_trajectory_planner__B.i_i =
-        cartesian_trajectory_planner__B.b_idx + 1;
-    } else {
-      cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp = 6;
-      for (cartesian_trajectory_planner__B.i_i = 0;
-           cartesian_trajectory_planner__B.i_i < 6;
-           cartesian_trajectory_planner__B.i_i++) {
-        cartesian_trajectory_planner__B.rowSelection_data[cartesian_trajectory_planner__B.i_i]
-          = static_cast<int8_T>(cartesian_trajectory_planner__B.i_i + 1);
-      }
-
-      cartesian_trajectory_planner__B.i_i = 1;
-    }
-
-    c_generateTrajectoriesFromCoefs
-      (cartesian_trajectory_planner__B.breaksCell[cartesian_trajectory_planner__B.i_i
-       - 1].f1.data,
-       cartesian_trajectory_planner__B.breaksCell[cartesian_trajectory_planner__B.i_i
-       - 1].f1.size,
-       cartesian_trajectory_planner__B.coeffsCell[cartesian_trajectory_planner__B.i_i
-       - 1].f1.data,
-       cartesian_trajectory_planner__B.coeffsCell[cartesian_trajectory_planner__B.i_i
-       - 1].f1.size, static_cast<real_T>
-       (cartesian_trajectory_planner__B.indivPolyDim), t,
-       cartesian_trajectory_planner__B.b_data_cv,
-       cartesian_trajectory_planner__B.b_size,
-       cartesian_trajectory_planner__B.c_data,
-       cartesian_trajectory_planner__B.c_size,
-       cartesian_trajectory_planner__B.d_data,
-       cartesian_trajectory_planner__B.d_size,
-       ppCell_data[cartesian_trajectory_planner__B.b_idx].breaks.data,
-       ppCell_data[cartesian_trajectory_planner__B.b_idx].breaks.size,
-       ppCell_data[cartesian_trajectory_planner__B.b_idx].coefs.data,
-       ppCell_data[cartesian_trajectory_planner__B.b_idx].coefs.size);
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i <
-         cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp;
-         cartesian_trajectory_planner__B.i_i++) {
-      cartesian_trajectory_planner__B.l_tmp_data[cartesian_trajectory_planner__B.i_i]
-        = static_cast<int8_T>
-        (cartesian_trajectory_planner__B.rowSelection_data[cartesian_trajectory_planner__B.i_i]
-         - 1);
-    }
-
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i <
-         cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp;
-         cartesian_trajectory_planner__B.i_i++) {
-      q[cartesian_trajectory_planner__B.l_tmp_data[cartesian_trajectory_planner__B.i_i]]
-        =
-        cartesian_trajectory_planner__B.b_data_cv[cartesian_trajectory_planner__B.i_i];
-    }
-
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i <
-         cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp;
-         cartesian_trajectory_planner__B.i_i++) {
-      q[cartesian_trajectory_planner__B.l_tmp_data[cartesian_trajectory_planner__B.i_i]
-        + 6] =
-        cartesian_trajectory_planner__B.b_data_cv[cartesian_trajectory_planner__B.i_i
-        + cartesian_trajectory_planner__B.b_size[0]];
-    }
-
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i <
-         cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp;
-         cartesian_trajectory_planner__B.i_i++) {
-      qd[cartesian_trajectory_planner__B.l_tmp_data[cartesian_trajectory_planner__B.i_i]]
-        =
-        cartesian_trajectory_planner__B.c_data[cartesian_trajectory_planner__B.i_i];
-    }
-
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i <
-         cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp;
-         cartesian_trajectory_planner__B.i_i++) {
-      qd[cartesian_trajectory_planner__B.l_tmp_data[cartesian_trajectory_planner__B.i_i]
-        + 6] =
-        cartesian_trajectory_planner__B.c_data[cartesian_trajectory_planner__B.i_i
-        + cartesian_trajectory_planner__B.c_size[0]];
-    }
-
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i <
-         cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp;
-         cartesian_trajectory_planner__B.i_i++) {
-      qdd[cartesian_trajectory_planner__B.l_tmp_data[cartesian_trajectory_planner__B.i_i]]
-        =
-        cartesian_trajectory_planner__B.d_data[cartesian_trajectory_planner__B.i_i];
-    }
-
-    for (cartesian_trajectory_planner__B.i_i = 0;
-         cartesian_trajectory_planner__B.i_i <
-         cartesian_trajectory_planner__B.lspbSegIndices_size_idx_1_tmp;
-         cartesian_trajectory_planner__B.i_i++) {
-      qdd[cartesian_trajectory_planner__B.l_tmp_data[cartesian_trajectory_planner__B.i_i]
-        + 6] =
-        cartesian_trajectory_planner__B.d_data[cartesian_trajectory_planner__B.i_i
-        + cartesian_trajectory_planner__B.d_size[0]];
-    }
-  }
-}
-
-static void TrapVelTrajSys_extract1DimFromP(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2])
-{
-  static const boolean_T tmp[6] = { true, false, false, false, false, false };
-
-  breaks_size[0] = 1;
-  breaks_size[1] = pp_breaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_l = pp_breaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_l - 1) {
-    memcpy(&breaks_data[0], &pp_breaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_l * sizeof(real_T));
-  }
-
-  for (cartesian_trajectory_planner__B.i_o3 = 0;
-       cartesian_trajectory_planner__B.i_o3 < 6;
-       cartesian_trajectory_planner__B.i_o3++) {
-    cartesian_trajectory_planner__B.a_ju[cartesian_trajectory_planner__B.i_o3] =
-      tmp[cartesian_trajectory_planner__B.i_o3];
-  }
-
-  cartesian_trajectory_planner__B.ntilerows_g = pp_breaks_size[1] - 2;
-  for (cartesian_trajectory_planner__B.loop_ub_l = 0;
-       cartesian_trajectory_planner__B.loop_ub_l <=
-       cartesian_trajectory_planner__B.ntilerows_g;
-       cartesian_trajectory_planner__B.loop_ub_l++) {
-    cartesian_trajectory_planner__B.ibcol_co =
-      cartesian_trajectory_planner__B.loop_ub_l * 6 - 1;
-    for (cartesian_trajectory_planner__B.i_o3 = 0;
-         cartesian_trajectory_planner__B.i_o3 < 6;
-         cartesian_trajectory_planner__B.i_o3++) {
-      cartesian_trajectory_planner__B.coeffIndex_data_l
-        [(cartesian_trajectory_planner__B.ibcol_co +
-          cartesian_trajectory_planner__B.i_o3) + 1] =
-        cartesian_trajectory_planner__B.a_ju[cartesian_trajectory_planner__B.i_o3];
-    }
-  }
-
-  cartesian_trajectory_planner__B.ntilerows_g = (pp_breaks_size[1] - 1) * 6 - 1;
-  cartesian_trajectory_planner__B.loop_ub_l = 0;
-  cartesian_trajectory_planner__B.ibcol_co = 0;
-  for (cartesian_trajectory_planner__B.i_o3 = 0;
-       cartesian_trajectory_planner__B.i_o3 <=
-       cartesian_trajectory_planner__B.ntilerows_g;
-       cartesian_trajectory_planner__B.i_o3++) {
-    if (cartesian_trajectory_planner__B.coeffIndex_data_l[cartesian_trajectory_planner__B.i_o3])
-    {
-      cartesian_trajectory_planner__B.loop_ub_l++;
-      cartesian_trajectory_planner__B.b_data_p[cartesian_trajectory_planner__B.ibcol_co]
-        = cartesian_trajectory_planner__B.i_o3 + 1;
-      cartesian_trajectory_planner__B.ibcol_co++;
-    }
-  }
-
-  cartesian_trajectory_planner__B.ibcol_co = div_nzp_s32(pp_coefs_size[0] *
-    pp_coefs_size[1] * 3, 3);
-  oneDimCoeffs_size[0] = cartesian_trajectory_planner__B.loop_ub_l;
-  oneDimCoeffs_size[1] = 3;
-  for (cartesian_trajectory_planner__B.i_o3 = 0;
-       cartesian_trajectory_planner__B.i_o3 < 3;
-       cartesian_trajectory_planner__B.i_o3++) {
-    for (cartesian_trajectory_planner__B.ntilerows_g = 0;
-         cartesian_trajectory_planner__B.ntilerows_g <
-         cartesian_trajectory_planner__B.loop_ub_l;
-         cartesian_trajectory_planner__B.ntilerows_g++) {
-      oneDimCoeffs_data[cartesian_trajectory_planner__B.ntilerows_g +
-        cartesian_trajectory_planner__B.loop_ub_l *
-        cartesian_trajectory_planner__B.i_o3] = pp_coefs_data
-        [(cartesian_trajectory_planner__B.ibcol_co *
-          cartesian_trajectory_planner__B.i_o3 +
-          cartesian_trajectory_planner__B.b_data_p[cartesian_trajectory_planner__B.ntilerows_g])
-        - 1];
-    }
-  }
-}
-
-static void cartesian_trajectory_pl_ppval_j(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], real_T x, real_T
-  v_data[], int32_T *v_size)
-{
-  *v_size = 1;
-  if (rtIsNaN(x)) {
-    v_data[0] = x;
-  } else {
-    cartesian_trajectory_planner__B.ip = cartesian_trajectory_pl_bsearch
-      (pp_breaks_data, pp_breaks_size, x) - 1;
-    cartesian_trajectory_planner__B.xloc = x -
-      pp_breaks_data[cartesian_trajectory_planner__B.ip];
-    v_data[0] = (pp_coefs_data[(cartesian_trajectory_planner__B.ip +
-      pp_breaks_size[1]) - 1] + cartesian_trajectory_planner__B.xloc *
-                 pp_coefs_data[cartesian_trajectory_planner__B.ip]) *
-      cartesian_trajectory_planner__B.xloc + pp_coefs_data[((pp_breaks_size[1] -
-      1) << 1) + cartesian_trajectory_planner__B.ip];
-  }
-}
-
-static void TrapVelTrajSys_generate1DTrajec(const real_T breaks_data[], const
-  int32_T breaks_size[2], const real_T coefs_data[], const int32_T coefs_size[2],
-  real_T t, real_T q_data[], int32_T *q_size, real_T qd_data[], int32_T *qd_size,
-  real_T qdd_data[], int32_T *qdd_size)
-{
-  cartesian__polyCoeffsDerivative(coefs_data, coefs_size,
-    cartesian_trajectory_planner__B.dCoefs_data,
-    cartesian_trajectory_planner__B.dCoefs_size);
-  cartesian_trajectory_planner__B.breaks_size_h[0] = 1;
-  cartesian_trajectory_planner__B.breaks_size_h[1] = breaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_m3 = breaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_m3 - 1) {
-    memcpy(&cartesian_trajectory_planner__B.breaks_data_g[0], &breaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_m3 * sizeof(real_T));
-  }
-
-  cartesian_trajectory_pl_ppval_j(cartesian_trajectory_planner__B.breaks_data_g,
-    cartesian_trajectory_planner__B.breaks_size_h, coefs_data, t, q_data, q_size);
-  cartesian_trajectory_planner__B.breaks_size_b[0] = 1;
-  cartesian_trajectory_planner__B.breaks_size_b[1] = breaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_m3 = breaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_m3 - 1) {
-    memcpy(&cartesian_trajectory_planner__B.breaks_data_g[0], &breaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_m3 * sizeof(real_T));
-  }
-
-  cartesian_trajectory_pl_ppval_j(cartesian_trajectory_planner__B.breaks_data_g,
-    cartesian_trajectory_planner__B.breaks_size_b,
-    cartesian_trajectory_planner__B.dCoefs_data, t, qd_data, qd_size);
-  cartesian__polyCoeffsDerivative(cartesian_trajectory_planner__B.dCoefs_data,
-    cartesian_trajectory_planner__B.dCoefs_size,
-    cartesian_trajectory_planner__B.tmp_data_m,
-    cartesian_trajectory_planner__B.breaks_size_h);
-  cartesian_trajectory_planner__B.breaks_size_d[0] = 1;
-  cartesian_trajectory_planner__B.breaks_size_d[1] = breaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_m3 = breaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_m3 - 1) {
-    memcpy(&cartesian_trajectory_planner__B.breaks_data_g[0], &breaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_m3 * sizeof(real_T));
-  }
-
-  cartesian_trajectory_pl_ppval_j(cartesian_trajectory_planner__B.breaks_data_g,
-    cartesian_trajectory_planner__B.breaks_size_d,
-    cartesian_trajectory_planner__B.tmp_data_m, t, qdd_data, qdd_size);
-}
-
-static void TrapVelTrajSys_extract1DimFro_j(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2])
-{
-  static const boolean_T tmp[6] = { false, true, false, false, false, false };
-
-  breaks_size[0] = 1;
-  breaks_size[1] = pp_breaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_f = pp_breaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_f - 1) {
-    memcpy(&breaks_data[0], &pp_breaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_f * sizeof(real_T));
-  }
-
-  for (cartesian_trajectory_planner__B.i_iz = 0;
-       cartesian_trajectory_planner__B.i_iz < 6;
-       cartesian_trajectory_planner__B.i_iz++) {
-    cartesian_trajectory_planner__B.a_a[cartesian_trajectory_planner__B.i_iz] =
-      tmp[cartesian_trajectory_planner__B.i_iz];
-  }
-
-  cartesian_trajectory_planner__B.ntilerows_ip = pp_breaks_size[1] - 2;
-  for (cartesian_trajectory_planner__B.loop_ub_f = 0;
-       cartesian_trajectory_planner__B.loop_ub_f <=
-       cartesian_trajectory_planner__B.ntilerows_ip;
-       cartesian_trajectory_planner__B.loop_ub_f++) {
-    cartesian_trajectory_planner__B.ibcol_f =
-      cartesian_trajectory_planner__B.loop_ub_f * 6 - 1;
-    for (cartesian_trajectory_planner__B.i_iz = 0;
-         cartesian_trajectory_planner__B.i_iz < 6;
-         cartesian_trajectory_planner__B.i_iz++) {
-      cartesian_trajectory_planner__B.coeffIndex_data_p
-        [(cartesian_trajectory_planner__B.ibcol_f +
-          cartesian_trajectory_planner__B.i_iz) + 1] =
-        cartesian_trajectory_planner__B.a_a[cartesian_trajectory_planner__B.i_iz];
-    }
-  }
-
-  cartesian_trajectory_planner__B.ntilerows_ip = (pp_breaks_size[1] - 1) * 6 - 1;
-  cartesian_trajectory_planner__B.loop_ub_f = 0;
-  cartesian_trajectory_planner__B.ibcol_f = 0;
-  for (cartesian_trajectory_planner__B.i_iz = 0;
-       cartesian_trajectory_planner__B.i_iz <=
-       cartesian_trajectory_planner__B.ntilerows_ip;
-       cartesian_trajectory_planner__B.i_iz++) {
-    if (cartesian_trajectory_planner__B.coeffIndex_data_p[cartesian_trajectory_planner__B.i_iz])
-    {
-      cartesian_trajectory_planner__B.loop_ub_f++;
-      cartesian_trajectory_planner__B.b_data_b[cartesian_trajectory_planner__B.ibcol_f]
-        = cartesian_trajectory_planner__B.i_iz + 1;
-      cartesian_trajectory_planner__B.ibcol_f++;
-    }
-  }
-
-  cartesian_trajectory_planner__B.ibcol_f = div_nzp_s32(pp_coefs_size[0] *
-    pp_coefs_size[1] * 3, 3);
-  oneDimCoeffs_size[0] = cartesian_trajectory_planner__B.loop_ub_f;
-  oneDimCoeffs_size[1] = 3;
-  for (cartesian_trajectory_planner__B.i_iz = 0;
-       cartesian_trajectory_planner__B.i_iz < 3;
-       cartesian_trajectory_planner__B.i_iz++) {
-    for (cartesian_trajectory_planner__B.ntilerows_ip = 0;
-         cartesian_trajectory_planner__B.ntilerows_ip <
-         cartesian_trajectory_planner__B.loop_ub_f;
-         cartesian_trajectory_planner__B.ntilerows_ip++) {
-      oneDimCoeffs_data[cartesian_trajectory_planner__B.ntilerows_ip +
-        cartesian_trajectory_planner__B.loop_ub_f *
-        cartesian_trajectory_planner__B.i_iz] = pp_coefs_data
-        [(cartesian_trajectory_planner__B.ibcol_f *
-          cartesian_trajectory_planner__B.i_iz +
-          cartesian_trajectory_planner__B.b_data_b[cartesian_trajectory_planner__B.ntilerows_ip])
-        - 1];
-    }
-  }
-}
-
-static void TrapVelTrajSys_extract1DimFr_jb(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2])
-{
-  static const boolean_T tmp[6] = { false, false, true, false, false, false };
-
-  breaks_size[0] = 1;
-  breaks_size[1] = pp_breaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_o2 = pp_breaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_o2 - 1) {
-    memcpy(&breaks_data[0], &pp_breaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_o2 * sizeof(real_T));
-  }
-
-  for (cartesian_trajectory_planner__B.i_o = 0;
-       cartesian_trajectory_planner__B.i_o < 6;
-       cartesian_trajectory_planner__B.i_o++) {
-    cartesian_trajectory_planner__B.a_f[cartesian_trajectory_planner__B.i_o] =
-      tmp[cartesian_trajectory_planner__B.i_o];
-  }
-
-  cartesian_trajectory_planner__B.ntilerows_i = pp_breaks_size[1] - 2;
-  for (cartesian_trajectory_planner__B.loop_ub_o2 = 0;
-       cartesian_trajectory_planner__B.loop_ub_o2 <=
-       cartesian_trajectory_planner__B.ntilerows_i;
-       cartesian_trajectory_planner__B.loop_ub_o2++) {
-    cartesian_trajectory_planner__B.ibcol_l =
-      cartesian_trajectory_planner__B.loop_ub_o2 * 6 - 1;
-    for (cartesian_trajectory_planner__B.i_o = 0;
-         cartesian_trajectory_planner__B.i_o < 6;
-         cartesian_trajectory_planner__B.i_o++) {
-      cartesian_trajectory_planner__B.coeffIndex_data_n
-        [(cartesian_trajectory_planner__B.ibcol_l +
-          cartesian_trajectory_planner__B.i_o) + 1] =
-        cartesian_trajectory_planner__B.a_f[cartesian_trajectory_planner__B.i_o];
-    }
-  }
-
-  cartesian_trajectory_planner__B.ntilerows_i = (pp_breaks_size[1] - 1) * 6 - 1;
-  cartesian_trajectory_planner__B.loop_ub_o2 = 0;
-  cartesian_trajectory_planner__B.ibcol_l = 0;
-  for (cartesian_trajectory_planner__B.i_o = 0;
-       cartesian_trajectory_planner__B.i_o <=
-       cartesian_trajectory_planner__B.ntilerows_i;
-       cartesian_trajectory_planner__B.i_o++) {
-    if (cartesian_trajectory_planner__B.coeffIndex_data_n[cartesian_trajectory_planner__B.i_o])
-    {
-      cartesian_trajectory_planner__B.loop_ub_o2++;
-      cartesian_trajectory_planner__B.b_data_cx[cartesian_trajectory_planner__B.ibcol_l]
-        = cartesian_trajectory_planner__B.i_o + 1;
-      cartesian_trajectory_planner__B.ibcol_l++;
-    }
-  }
-
-  cartesian_trajectory_planner__B.ibcol_l = div_nzp_s32(pp_coefs_size[0] *
-    pp_coefs_size[1] * 3, 3);
-  oneDimCoeffs_size[0] = cartesian_trajectory_planner__B.loop_ub_o2;
-  oneDimCoeffs_size[1] = 3;
-  for (cartesian_trajectory_planner__B.i_o = 0;
-       cartesian_trajectory_planner__B.i_o < 3;
-       cartesian_trajectory_planner__B.i_o++) {
-    for (cartesian_trajectory_planner__B.ntilerows_i = 0;
-         cartesian_trajectory_planner__B.ntilerows_i <
-         cartesian_trajectory_planner__B.loop_ub_o2;
-         cartesian_trajectory_planner__B.ntilerows_i++) {
-      oneDimCoeffs_data[cartesian_trajectory_planner__B.ntilerows_i +
-        cartesian_trajectory_planner__B.loop_ub_o2 *
-        cartesian_trajectory_planner__B.i_o] = pp_coefs_data
-        [(cartesian_trajectory_planner__B.ibcol_l *
-          cartesian_trajectory_planner__B.i_o +
-          cartesian_trajectory_planner__B.b_data_cx[cartesian_trajectory_planner__B.ntilerows_i])
-        - 1];
-    }
-  }
-}
-
-static void TrapVelTrajSys_extract1DimF_jbz(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2])
-{
-  static const boolean_T tmp[6] = { false, false, false, true, false, false };
-
-  breaks_size[0] = 1;
-  breaks_size[1] = pp_breaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_a = pp_breaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_a - 1) {
-    memcpy(&breaks_data[0], &pp_breaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_a * sizeof(real_T));
-  }
-
-  for (cartesian_trajectory_planner__B.i_a = 0;
-       cartesian_trajectory_planner__B.i_a < 6;
-       cartesian_trajectory_planner__B.i_a++) {
-    cartesian_trajectory_planner__B.a_j[cartesian_trajectory_planner__B.i_a] =
-      tmp[cartesian_trajectory_planner__B.i_a];
-  }
-
-  cartesian_trajectory_planner__B.ntilerows_a = pp_breaks_size[1] - 2;
-  for (cartesian_trajectory_planner__B.loop_ub_a = 0;
-       cartesian_trajectory_planner__B.loop_ub_a <=
-       cartesian_trajectory_planner__B.ntilerows_a;
-       cartesian_trajectory_planner__B.loop_ub_a++) {
-    cartesian_trajectory_planner__B.ibcol_e =
-      cartesian_trajectory_planner__B.loop_ub_a * 6 - 1;
-    for (cartesian_trajectory_planner__B.i_a = 0;
-         cartesian_trajectory_planner__B.i_a < 6;
-         cartesian_trajectory_planner__B.i_a++) {
-      cartesian_trajectory_planner__B.coeffIndex_data_m
-        [(cartesian_trajectory_planner__B.ibcol_e +
-          cartesian_trajectory_planner__B.i_a) + 1] =
-        cartesian_trajectory_planner__B.a_j[cartesian_trajectory_planner__B.i_a];
-    }
-  }
-
-  cartesian_trajectory_planner__B.ntilerows_a = (pp_breaks_size[1] - 1) * 6 - 1;
-  cartesian_trajectory_planner__B.loop_ub_a = 0;
-  cartesian_trajectory_planner__B.ibcol_e = 0;
-  for (cartesian_trajectory_planner__B.i_a = 0;
-       cartesian_trajectory_planner__B.i_a <=
-       cartesian_trajectory_planner__B.ntilerows_a;
-       cartesian_trajectory_planner__B.i_a++) {
-    if (cartesian_trajectory_planner__B.coeffIndex_data_m[cartesian_trajectory_planner__B.i_a])
-    {
-      cartesian_trajectory_planner__B.loop_ub_a++;
-      cartesian_trajectory_planner__B.b_data_k[cartesian_trajectory_planner__B.ibcol_e]
-        = cartesian_trajectory_planner__B.i_a + 1;
-      cartesian_trajectory_planner__B.ibcol_e++;
-    }
-  }
-
-  cartesian_trajectory_planner__B.ibcol_e = div_nzp_s32(pp_coefs_size[0] *
-    pp_coefs_size[1] * 3, 3);
-  oneDimCoeffs_size[0] = cartesian_trajectory_planner__B.loop_ub_a;
-  oneDimCoeffs_size[1] = 3;
-  for (cartesian_trajectory_planner__B.i_a = 0;
-       cartesian_trajectory_planner__B.i_a < 3;
-       cartesian_trajectory_planner__B.i_a++) {
-    for (cartesian_trajectory_planner__B.ntilerows_a = 0;
-         cartesian_trajectory_planner__B.ntilerows_a <
-         cartesian_trajectory_planner__B.loop_ub_a;
-         cartesian_trajectory_planner__B.ntilerows_a++) {
-      oneDimCoeffs_data[cartesian_trajectory_planner__B.ntilerows_a +
-        cartesian_trajectory_planner__B.loop_ub_a *
-        cartesian_trajectory_planner__B.i_a] = pp_coefs_data
-        [(cartesian_trajectory_planner__B.ibcol_e *
-          cartesian_trajectory_planner__B.i_a +
-          cartesian_trajectory_planner__B.b_data_k[cartesian_trajectory_planner__B.ntilerows_a])
-        - 1];
-    }
-  }
-}
-
-static void TrapVelTrajSys_extract1Dim_jbzp(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2])
-{
-  static const boolean_T tmp[6] = { false, false, false, false, true, false };
-
-  breaks_size[0] = 1;
-  breaks_size[1] = pp_breaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_p = pp_breaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_p - 1) {
-    memcpy(&breaks_data[0], &pp_breaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_p * sizeof(real_T));
-  }
-
-  for (cartesian_trajectory_planner__B.i_p = 0;
-       cartesian_trajectory_planner__B.i_p < 6;
-       cartesian_trajectory_planner__B.i_p++) {
-    cartesian_trajectory_planner__B.a_b[cartesian_trajectory_planner__B.i_p] =
-      tmp[cartesian_trajectory_planner__B.i_p];
-  }
-
-  cartesian_trajectory_planner__B.ntilerows_c = pp_breaks_size[1] - 2;
-  for (cartesian_trajectory_planner__B.loop_ub_p = 0;
-       cartesian_trajectory_planner__B.loop_ub_p <=
-       cartesian_trajectory_planner__B.ntilerows_c;
-       cartesian_trajectory_planner__B.loop_ub_p++) {
-    cartesian_trajectory_planner__B.ibcol_c =
-      cartesian_trajectory_planner__B.loop_ub_p * 6 - 1;
-    for (cartesian_trajectory_planner__B.i_p = 0;
-         cartesian_trajectory_planner__B.i_p < 6;
-         cartesian_trajectory_planner__B.i_p++) {
-      cartesian_trajectory_planner__B.coeffIndex_data_g
-        [(cartesian_trajectory_planner__B.ibcol_c +
-          cartesian_trajectory_planner__B.i_p) + 1] =
-        cartesian_trajectory_planner__B.a_b[cartesian_trajectory_planner__B.i_p];
-    }
-  }
-
-  cartesian_trajectory_planner__B.ntilerows_c = (pp_breaks_size[1] - 1) * 6 - 1;
-  cartesian_trajectory_planner__B.loop_ub_p = 0;
-  cartesian_trajectory_planner__B.ibcol_c = 0;
-  for (cartesian_trajectory_planner__B.i_p = 0;
-       cartesian_trajectory_planner__B.i_p <=
-       cartesian_trajectory_planner__B.ntilerows_c;
-       cartesian_trajectory_planner__B.i_p++) {
-    if (cartesian_trajectory_planner__B.coeffIndex_data_g[cartesian_trajectory_planner__B.i_p])
-    {
-      cartesian_trajectory_planner__B.loop_ub_p++;
-      cartesian_trajectory_planner__B.b_data_c[cartesian_trajectory_planner__B.ibcol_c]
-        = cartesian_trajectory_planner__B.i_p + 1;
-      cartesian_trajectory_planner__B.ibcol_c++;
-    }
-  }
-
-  cartesian_trajectory_planner__B.ibcol_c = div_nzp_s32(pp_coefs_size[0] *
-    pp_coefs_size[1] * 3, 3);
-  oneDimCoeffs_size[0] = cartesian_trajectory_planner__B.loop_ub_p;
-  oneDimCoeffs_size[1] = 3;
-  for (cartesian_trajectory_planner__B.i_p = 0;
-       cartesian_trajectory_planner__B.i_p < 3;
-       cartesian_trajectory_planner__B.i_p++) {
-    for (cartesian_trajectory_planner__B.ntilerows_c = 0;
-         cartesian_trajectory_planner__B.ntilerows_c <
-         cartesian_trajectory_planner__B.loop_ub_p;
-         cartesian_trajectory_planner__B.ntilerows_c++) {
-      oneDimCoeffs_data[cartesian_trajectory_planner__B.ntilerows_c +
-        cartesian_trajectory_planner__B.loop_ub_p *
-        cartesian_trajectory_planner__B.i_p] = pp_coefs_data
-        [(cartesian_trajectory_planner__B.ibcol_c *
-          cartesian_trajectory_planner__B.i_p +
-          cartesian_trajectory_planner__B.b_data_c[cartesian_trajectory_planner__B.ntilerows_c])
-        - 1];
-    }
-  }
-}
-
-static void TrapVelTrajSys_extract1Di_jbzpa(const real_T pp_breaks_data[], const
-  int32_T pp_breaks_size[2], const real_T pp_coefs_data[], const int32_T
-  pp_coefs_size[3], real_T breaks_data[], int32_T breaks_size[2], real_T
-  oneDimCoeffs_data[], int32_T oneDimCoeffs_size[2])
-{
-  static const boolean_T tmp[6] = { false, false, false, false, false, true };
-
-  breaks_size[0] = 1;
-  breaks_size[1] = pp_breaks_size[1];
-  cartesian_trajectory_planner__B.loop_ub_h = pp_breaks_size[1];
-  if (0 <= cartesian_trajectory_planner__B.loop_ub_h - 1) {
-    memcpy(&breaks_data[0], &pp_breaks_data[0],
-           cartesian_trajectory_planner__B.loop_ub_h * sizeof(real_T));
-  }
-
-  for (cartesian_trajectory_planner__B.i_j = 0;
-       cartesian_trajectory_planner__B.i_j < 6;
-       cartesian_trajectory_planner__B.i_j++) {
-    cartesian_trajectory_planner__B.a_e[cartesian_trajectory_planner__B.i_j] =
-      tmp[cartesian_trajectory_planner__B.i_j];
-  }
-
-  cartesian_trajectory_planner__B.ntilerows = pp_breaks_size[1] - 2;
-  for (cartesian_trajectory_planner__B.loop_ub_h = 0;
-       cartesian_trajectory_planner__B.loop_ub_h <=
-       cartesian_trajectory_planner__B.ntilerows;
-       cartesian_trajectory_planner__B.loop_ub_h++) {
-    cartesian_trajectory_planner__B.ibcol =
-      cartesian_trajectory_planner__B.loop_ub_h * 6 - 1;
-    for (cartesian_trajectory_planner__B.i_j = 0;
-         cartesian_trajectory_planner__B.i_j < 6;
-         cartesian_trajectory_planner__B.i_j++) {
-      cartesian_trajectory_planner__B.coeffIndex_data
-        [(cartesian_trajectory_planner__B.ibcol +
-          cartesian_trajectory_planner__B.i_j) + 1] =
-        cartesian_trajectory_planner__B.a_e[cartesian_trajectory_planner__B.i_j];
-    }
-  }
-
-  cartesian_trajectory_planner__B.ntilerows = (pp_breaks_size[1] - 1) * 6 - 1;
-  cartesian_trajectory_planner__B.loop_ub_h = 0;
-  cartesian_trajectory_planner__B.ibcol = 0;
-  for (cartesian_trajectory_planner__B.i_j = 0;
-       cartesian_trajectory_planner__B.i_j <=
-       cartesian_trajectory_planner__B.ntilerows;
-       cartesian_trajectory_planner__B.i_j++) {
-    if (cartesian_trajectory_planner__B.coeffIndex_data[cartesian_trajectory_planner__B.i_j])
-    {
-      cartesian_trajectory_planner__B.loop_ub_h++;
-      cartesian_trajectory_planner__B.b_data[cartesian_trajectory_planner__B.ibcol]
-        = cartesian_trajectory_planner__B.i_j + 1;
-      cartesian_trajectory_planner__B.ibcol++;
-    }
-  }
-
-  cartesian_trajectory_planner__B.ibcol = div_nzp_s32(pp_coefs_size[0] *
-    pp_coefs_size[1] * 3, 3);
-  oneDimCoeffs_size[0] = cartesian_trajectory_planner__B.loop_ub_h;
-  oneDimCoeffs_size[1] = 3;
-  for (cartesian_trajectory_planner__B.i_j = 0;
-       cartesian_trajectory_planner__B.i_j < 3;
-       cartesian_trajectory_planner__B.i_j++) {
-    for (cartesian_trajectory_planner__B.ntilerows = 0;
-         cartesian_trajectory_planner__B.ntilerows <
-         cartesian_trajectory_planner__B.loop_ub_h;
-         cartesian_trajectory_planner__B.ntilerows++) {
-      oneDimCoeffs_data[cartesian_trajectory_planner__B.ntilerows +
-        cartesian_trajectory_planner__B.loop_ub_h *
-        cartesian_trajectory_planner__B.i_j] = pp_coefs_data
-        [(cartesian_trajectory_planner__B.ibcol *
-          cartesian_trajectory_planner__B.i_j +
-          cartesian_trajectory_planner__B.b_data[cartesian_trajectory_planner__B.ntilerows])
-        - 1];
-    }
-  }
-}
-
-static void cartesi_TrapVelTrajSys_stepImpl(real_T time, const real_T
-  varargin_1[12], const real_T varargin_2[6], real_T varargin_3, real_T q[6],
-  real_T qd[6], real_T qdd[6])
-{
-  cartesian_trajector_trapveltraj(varargin_1, varargin_2, varargin_3,
-    cartesian_trajectory_planner__B.unusedU10,
-    cartesian_trajectory_planner__B.unusedU11,
-    cartesian_trajectory_planner__B.unusedU12,
-    cartesian_trajectory_planner__B.unusedU13,
-    cartesian_trajectory_planner__B.trajPP.data,
-    &cartesian_trajectory_planner__B.trajPP.size);
-  if (cartesian_trajectory_planner__B.trajPP.size > 1) {
-    cartesian_trajectory_planner__B.breaks_size[0] = 1;
-    cartesian_trajectory_planner__B.breaks_size[1] =
-      cartesian_trajectory_planner__B.trajPP.data[0].breaks.size[1];
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.trajPP.data[0].breaks.size[1];
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.breaks_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[0]
-        .breaks.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-
-    cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = div_nzp_s32
-      (cartesian_trajectory_planner__B.trajPP.data[0].coefs.size[0] *
-       cartesian_trajectory_planner__B.trajPP.data[0].coefs.size[1] * 3, 3);
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp;
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp * 3 - 1;
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <=
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[0]
-        .coefs.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-  } else {
-    TrapVelTrajSys_extract1DimFromP(cartesian_trajectory_planner__B.trajPP.data
-      [0].breaks.data, cartesian_trajectory_planner__B.trajPP.data[0].
-      breaks.size, cartesian_trajectory_planner__B.trajPP.data[0].coefs.data,
-      cartesian_trajectory_planner__B.trajPP.data[0].coefs.size,
-      cartesian_trajectory_planner__B.breaks_data,
-      cartesian_trajectory_planner__B.breaks_size,
-      cartesian_trajectory_planner__B.oneDimCoeffs_data,
-      cartesian_trajectory_planner__B.oneDimCoeffs_size);
-  }
-
-  cartesian_trajectory_planner__B.evalCoeffs_size[0] =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  cartesian_trajectory_planner__B.evalCoeffs_size[1] = 3;
-  cartesian_trajectory_planner__B.loop_ub =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] * 3 - 1;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub) {
-    memset(&cartesian_trajectory_planner__B.evalCoeffs_data[0], 0,
-           (cartesian_trajectory_planner__B.loop_ub + 1) * sizeof(real_T));
-  }
-
-  if (1 > cartesian_trajectory_planner__B.oneDimCoeffs_size[0]) {
-    cartesian_trajectory_planner__B.f = 0;
-  } else {
-    cartesian_trajectory_planner__B.f =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  }
-
-  for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp < 3;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-    for (cartesian_trajectory_planner__B.loop_ub = 0;
-         cartesian_trajectory_planner__B.loop_ub <
-         cartesian_trajectory_planner__B.f;
-         cartesian_trajectory_planner__B.loop_ub++) {
-      cartesian_trajectory_planner__B.evalCoeffs_data[cartesian_trajectory_planner__B.loop_ub
-        + cartesian_trajectory_planner__B.evalCoeffs_size[0] *
-        cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp] =
-        cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size
-        [0] * cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp +
-        cartesian_trajectory_planner__B.loop_ub];
-    }
-  }
-
-  TrapVelTrajSys_generate1DTrajec(cartesian_trajectory_planner__B.breaks_data,
-    cartesian_trajectory_planner__B.breaks_size,
-    cartesian_trajectory_planner__B.evalCoeffs_data,
-    cartesian_trajectory_planner__B.evalCoeffs_size, time,
-    &cartesian_trajectory_planner__B.d_data_d,
-    &cartesian_trajectory_planner__B.d_size_n,
-    &cartesian_trajectory_planner__B.c_data_l,
-    &cartesian_trajectory_planner__B.c_size_o,
-    &cartesian_trajectory_planner__B.b_data_g,
-    &cartesian_trajectory_planner__B.b_size_j);
-  if (cartesian_trajectory_planner__B.trajPP.size > 1) {
-    cartesian_trajectory_planner__B.breaks_size[0] = 1;
-    cartesian_trajectory_planner__B.breaks_size[1] =
-      cartesian_trajectory_planner__B.trajPP.data[1].breaks.size[1];
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.trajPP.data[1].breaks.size[1];
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.breaks_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[1]
-        .breaks.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-
-    cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = div_nzp_s32
-      (cartesian_trajectory_planner__B.trajPP.data[1].coefs.size[0] *
-       cartesian_trajectory_planner__B.trajPP.data[1].coefs.size[1] * 3, 3);
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp;
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp * 3 - 1;
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <=
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[1]
-        .coefs.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-  } else {
-    TrapVelTrajSys_extract1DimFro_j(cartesian_trajectory_planner__B.trajPP.data
-      [0].breaks.data, cartesian_trajectory_planner__B.trajPP.data[0].
-      breaks.size, cartesian_trajectory_planner__B.trajPP.data[0].coefs.data,
-      cartesian_trajectory_planner__B.trajPP.data[0].coefs.size,
-      cartesian_trajectory_planner__B.breaks_data,
-      cartesian_trajectory_planner__B.breaks_size,
-      cartesian_trajectory_planner__B.oneDimCoeffs_data,
-      cartesian_trajectory_planner__B.oneDimCoeffs_size);
-  }
-
-  cartesian_trajectory_planner__B.evalCoeffs_size[0] =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  cartesian_trajectory_planner__B.evalCoeffs_size[1] = 3;
-  cartesian_trajectory_planner__B.loop_ub =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] * 3 - 1;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub) {
-    memset(&cartesian_trajectory_planner__B.evalCoeffs_data[0], 0,
-           (cartesian_trajectory_planner__B.loop_ub + 1) * sizeof(real_T));
-  }
-
-  if (1 > cartesian_trajectory_planner__B.oneDimCoeffs_size[0]) {
-    cartesian_trajectory_planner__B.f = 0;
-  } else {
-    cartesian_trajectory_planner__B.f =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  }
-
-  for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp < 3;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-    for (cartesian_trajectory_planner__B.loop_ub = 0;
-         cartesian_trajectory_planner__B.loop_ub <
-         cartesian_trajectory_planner__B.f;
-         cartesian_trajectory_planner__B.loop_ub++) {
-      cartesian_trajectory_planner__B.evalCoeffs_data[cartesian_trajectory_planner__B.loop_ub
-        + cartesian_trajectory_planner__B.evalCoeffs_size[0] *
-        cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp] =
-        cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size
-        [0] * cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp +
-        cartesian_trajectory_planner__B.loop_ub];
-    }
-  }
-
-  TrapVelTrajSys_generate1DTrajec(cartesian_trajectory_planner__B.breaks_data,
-    cartesian_trajectory_planner__B.breaks_size,
-    cartesian_trajectory_planner__B.evalCoeffs_data,
-    cartesian_trajectory_planner__B.evalCoeffs_size, time,
-    &cartesian_trajectory_planner__B.j_data,
-    &cartesian_trajectory_planner__B.d_size_n,
-    &cartesian_trajectory_planner__B.i_data,
-    &cartesian_trajectory_planner__B.c_size_o,
-    &cartesian_trajectory_planner__B.h_data,
-    &cartesian_trajectory_planner__B.b_size_j);
-  if (cartesian_trajectory_planner__B.trajPP.size > 1) {
-    cartesian_trajectory_planner__B.breaks_size[0] = 1;
-    cartesian_trajectory_planner__B.breaks_size[1] =
-      cartesian_trajectory_planner__B.trajPP.data[2].breaks.size[1];
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.trajPP.data[2].breaks.size[1];
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.breaks_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[2]
-        .breaks.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-
-    cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = div_nzp_s32
-      (cartesian_trajectory_planner__B.trajPP.data[2].coefs.size[0] *
-       cartesian_trajectory_planner__B.trajPP.data[2].coefs.size[1] * 3, 3);
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp;
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp * 3 - 1;
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <=
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[2]
-        .coefs.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-  } else {
-    TrapVelTrajSys_extract1DimFr_jb(cartesian_trajectory_planner__B.trajPP.data
-      [0].breaks.data, cartesian_trajectory_planner__B.trajPP.data[0].
-      breaks.size, cartesian_trajectory_planner__B.trajPP.data[0].coefs.data,
-      cartesian_trajectory_planner__B.trajPP.data[0].coefs.size,
-      cartesian_trajectory_planner__B.breaks_data,
-      cartesian_trajectory_planner__B.breaks_size,
-      cartesian_trajectory_planner__B.oneDimCoeffs_data,
-      cartesian_trajectory_planner__B.oneDimCoeffs_size);
-  }
-
-  cartesian_trajectory_planner__B.evalCoeffs_size[0] =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  cartesian_trajectory_planner__B.evalCoeffs_size[1] = 3;
-  cartesian_trajectory_planner__B.loop_ub =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] * 3 - 1;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub) {
-    memset(&cartesian_trajectory_planner__B.evalCoeffs_data[0], 0,
-           (cartesian_trajectory_planner__B.loop_ub + 1) * sizeof(real_T));
-  }
-
-  if (1 > cartesian_trajectory_planner__B.oneDimCoeffs_size[0]) {
-    cartesian_trajectory_planner__B.f = 0;
-  } else {
-    cartesian_trajectory_planner__B.f =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  }
-
-  for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp < 3;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-    for (cartesian_trajectory_planner__B.loop_ub = 0;
-         cartesian_trajectory_planner__B.loop_ub <
-         cartesian_trajectory_planner__B.f;
-         cartesian_trajectory_planner__B.loop_ub++) {
-      cartesian_trajectory_planner__B.evalCoeffs_data[cartesian_trajectory_planner__B.loop_ub
-        + cartesian_trajectory_planner__B.evalCoeffs_size[0] *
-        cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp] =
-        cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size
-        [0] * cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp +
-        cartesian_trajectory_planner__B.loop_ub];
-    }
-  }
-
-  TrapVelTrajSys_generate1DTrajec(cartesian_trajectory_planner__B.breaks_data,
-    cartesian_trajectory_planner__B.breaks_size,
-    cartesian_trajectory_planner__B.evalCoeffs_data,
-    cartesian_trajectory_planner__B.evalCoeffs_size, time,
-    &cartesian_trajectory_planner__B.p_data,
-    &cartesian_trajectory_planner__B.d_size_n,
-    &cartesian_trajectory_planner__B.o_data_d,
-    &cartesian_trajectory_planner__B.c_size_o,
-    &cartesian_trajectory_planner__B.n_data,
-    &cartesian_trajectory_planner__B.b_size_j);
-  if (cartesian_trajectory_planner__B.trajPP.size > 1) {
-    cartesian_trajectory_planner__B.breaks_size[0] = 1;
-    cartesian_trajectory_planner__B.breaks_size[1] =
-      cartesian_trajectory_planner__B.trajPP.data[3].breaks.size[1];
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.trajPP.data[3].breaks.size[1];
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.breaks_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[3]
-        .breaks.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-
-    cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = div_nzp_s32
-      (cartesian_trajectory_planner__B.trajPP.data[3].coefs.size[0] *
-       cartesian_trajectory_planner__B.trajPP.data[3].coefs.size[1] * 3, 3);
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp;
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp * 3 - 1;
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <=
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[3]
-        .coefs.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-  } else {
-    TrapVelTrajSys_extract1DimF_jbz(cartesian_trajectory_planner__B.trajPP.data
-      [0].breaks.data, cartesian_trajectory_planner__B.trajPP.data[0].
-      breaks.size, cartesian_trajectory_planner__B.trajPP.data[0].coefs.data,
-      cartesian_trajectory_planner__B.trajPP.data[0].coefs.size,
-      cartesian_trajectory_planner__B.breaks_data,
-      cartesian_trajectory_planner__B.breaks_size,
-      cartesian_trajectory_planner__B.oneDimCoeffs_data,
-      cartesian_trajectory_planner__B.oneDimCoeffs_size);
-  }
-
-  cartesian_trajectory_planner__B.evalCoeffs_size[0] =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  cartesian_trajectory_planner__B.evalCoeffs_size[1] = 3;
-  cartesian_trajectory_planner__B.loop_ub =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] * 3 - 1;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub) {
-    memset(&cartesian_trajectory_planner__B.evalCoeffs_data[0], 0,
-           (cartesian_trajectory_planner__B.loop_ub + 1) * sizeof(real_T));
-  }
-
-  if (1 > cartesian_trajectory_planner__B.oneDimCoeffs_size[0]) {
-    cartesian_trajectory_planner__B.f = 0;
-  } else {
-    cartesian_trajectory_planner__B.f =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  }
-
-  for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp < 3;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-    for (cartesian_trajectory_planner__B.loop_ub = 0;
-         cartesian_trajectory_planner__B.loop_ub <
-         cartesian_trajectory_planner__B.f;
-         cartesian_trajectory_planner__B.loop_ub++) {
-      cartesian_trajectory_planner__B.evalCoeffs_data[cartesian_trajectory_planner__B.loop_ub
-        + cartesian_trajectory_planner__B.evalCoeffs_size[0] *
-        cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp] =
-        cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size
-        [0] * cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp +
-        cartesian_trajectory_planner__B.loop_ub];
-    }
-  }
-
-  TrapVelTrajSys_generate1DTrajec(cartesian_trajectory_planner__B.breaks_data,
-    cartesian_trajectory_planner__B.breaks_size,
-    cartesian_trajectory_planner__B.evalCoeffs_data,
-    cartesian_trajectory_planner__B.evalCoeffs_size, time,
-    &cartesian_trajectory_planner__B.w_data,
-    &cartesian_trajectory_planner__B.d_size_n,
-    &cartesian_trajectory_planner__B.v_data,
-    &cartesian_trajectory_planner__B.c_size_o,
-    &cartesian_trajectory_planner__B.u_data,
-    &cartesian_trajectory_planner__B.b_size_j);
-  if (cartesian_trajectory_planner__B.trajPP.size > 1) {
-    cartesian_trajectory_planner__B.breaks_size[0] = 1;
-    cartesian_trajectory_planner__B.breaks_size[1] =
-      cartesian_trajectory_planner__B.trajPP.data[4].breaks.size[1];
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.trajPP.data[4].breaks.size[1];
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.breaks_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[4]
-        .breaks.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-
-    cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = div_nzp_s32
-      (cartesian_trajectory_planner__B.trajPP.data[4].coefs.size[0] *
-       cartesian_trajectory_planner__B.trajPP.data[4].coefs.size[1] * 3, 3);
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp;
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp * 3 - 1;
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <=
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[4]
-        .coefs.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-  } else {
-    TrapVelTrajSys_extract1Dim_jbzp(cartesian_trajectory_planner__B.trajPP.data
-      [0].breaks.data, cartesian_trajectory_planner__B.trajPP.data[0].
-      breaks.size, cartesian_trajectory_planner__B.trajPP.data[0].coefs.data,
-      cartesian_trajectory_planner__B.trajPP.data[0].coefs.size,
-      cartesian_trajectory_planner__B.breaks_data,
-      cartesian_trajectory_planner__B.breaks_size,
-      cartesian_trajectory_planner__B.oneDimCoeffs_data,
-      cartesian_trajectory_planner__B.oneDimCoeffs_size);
-  }
-
-  cartesian_trajectory_planner__B.evalCoeffs_size[0] =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  cartesian_trajectory_planner__B.evalCoeffs_size[1] = 3;
-  cartesian_trajectory_planner__B.loop_ub =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] * 3 - 1;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub) {
-    memset(&cartesian_trajectory_planner__B.evalCoeffs_data[0], 0,
-           (cartesian_trajectory_planner__B.loop_ub + 1) * sizeof(real_T));
-  }
-
-  if (1 > cartesian_trajectory_planner__B.oneDimCoeffs_size[0]) {
-    cartesian_trajectory_planner__B.f = 0;
-  } else {
-    cartesian_trajectory_planner__B.f =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  }
-
-  for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp < 3;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-    for (cartesian_trajectory_planner__B.loop_ub = 0;
-         cartesian_trajectory_planner__B.loop_ub <
-         cartesian_trajectory_planner__B.f;
-         cartesian_trajectory_planner__B.loop_ub++) {
-      cartesian_trajectory_planner__B.evalCoeffs_data[cartesian_trajectory_planner__B.loop_ub
-        + cartesian_trajectory_planner__B.evalCoeffs_size[0] *
-        cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp] =
-        cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size
-        [0] * cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp +
-        cartesian_trajectory_planner__B.loop_ub];
-    }
-  }
-
-  TrapVelTrajSys_generate1DTrajec(cartesian_trajectory_planner__B.breaks_data,
-    cartesian_trajectory_planner__B.breaks_size,
-    cartesian_trajectory_planner__B.evalCoeffs_data,
-    cartesian_trajectory_planner__B.evalCoeffs_size, time,
-    &cartesian_trajectory_planner__B.db_data,
-    &cartesian_trajectory_planner__B.d_size_n,
-    &cartesian_trajectory_planner__B.cb_data,
-    &cartesian_trajectory_planner__B.c_size_o,
-    &cartesian_trajectory_planner__B.bb_data,
-    &cartesian_trajectory_planner__B.b_size_j);
-  if (cartesian_trajectory_planner__B.trajPP.size > 1) {
-    cartesian_trajectory_planner__B.breaks_size[0] = 1;
-    cartesian_trajectory_planner__B.breaks_size[1] =
-      cartesian_trajectory_planner__B.trajPP.data[5].breaks.size[1];
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.trajPP.data[5].breaks.size[1];
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.breaks_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[5]
-        .breaks.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-
-    cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = div_nzp_s32
-      (cartesian_trajectory_planner__B.trajPP.data[5].coefs.size[0] *
-       cartesian_trajectory_planner__B.trajPP.data[5].coefs.size[1] * 3, 3);
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp;
-    cartesian_trajectory_planner__B.loop_ub =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp * 3 - 1;
-    for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp <=
-         cartesian_trajectory_planner__B.loop_ub;
-         cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-      cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp]
-        = cartesian_trajectory_planner__B.trajPP.data[5]
-        .coefs.data[cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp];
-    }
-  } else {
-    TrapVelTrajSys_extract1Di_jbzpa(cartesian_trajectory_planner__B.trajPP.data
-      [0].breaks.data, cartesian_trajectory_planner__B.trajPP.data[0].
-      breaks.size, cartesian_trajectory_planner__B.trajPP.data[0].coefs.data,
-      cartesian_trajectory_planner__B.trajPP.data[0].coefs.size,
-      cartesian_trajectory_planner__B.breaks_data,
-      cartesian_trajectory_planner__B.breaks_size,
-      cartesian_trajectory_planner__B.oneDimCoeffs_data,
-      cartesian_trajectory_planner__B.oneDimCoeffs_size);
-  }
-
-  cartesian_trajectory_planner__B.evalCoeffs_size[0] =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  cartesian_trajectory_planner__B.evalCoeffs_size[1] = 3;
-  cartesian_trajectory_planner__B.loop_ub =
-    cartesian_trajectory_planner__B.oneDimCoeffs_size[0] * 3 - 1;
-  if (0 <= cartesian_trajectory_planner__B.loop_ub) {
-    memset(&cartesian_trajectory_planner__B.evalCoeffs_data[0], 0,
-           (cartesian_trajectory_planner__B.loop_ub + 1) * sizeof(real_T));
-  }
-
-  if (1 > cartesian_trajectory_planner__B.oneDimCoeffs_size[0]) {
-    cartesian_trajectory_planner__B.f = 0;
-  } else {
-    cartesian_trajectory_planner__B.f =
-      cartesian_trajectory_planner__B.oneDimCoeffs_size[0];
-  }
-
-  for (cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp = 0;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp < 3;
-       cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp++) {
-    for (cartesian_trajectory_planner__B.loop_ub = 0;
-         cartesian_trajectory_planner__B.loop_ub <
-         cartesian_trajectory_planner__B.f;
-         cartesian_trajectory_planner__B.loop_ub++) {
-      cartesian_trajectory_planner__B.evalCoeffs_data[cartesian_trajectory_planner__B.loop_ub
-        + cartesian_trajectory_planner__B.evalCoeffs_size[0] *
-        cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp] =
-        cartesian_trajectory_planner__B.oneDimCoeffs_data[cartesian_trajectory_planner__B.oneDimCoeffs_size
-        [0] * cartesian_trajectory_planner__B.oneDimCoeffs_size_tmp +
-        cartesian_trajectory_planner__B.loop_ub];
-    }
-  }
-
-  TrapVelTrajSys_generate1DTrajec(cartesian_trajectory_planner__B.breaks_data,
-    cartesian_trajectory_planner__B.breaks_size,
-    cartesian_trajectory_planner__B.evalCoeffs_data,
-    cartesian_trajectory_planner__B.evalCoeffs_size, time,
-    &cartesian_trajectory_planner__B.jb_data,
-    &cartesian_trajectory_planner__B.d_size_n,
-    &cartesian_trajectory_planner__B.ib_data,
-    &cartesian_trajectory_planner__B.c_size_o,
-    &cartesian_trajectory_planner__B.hb_data,
-    &cartesian_trajectory_planner__B.b_size_j);
-  q[0] = cartesian_trajectory_planner__B.d_data_d;
-  q[1] = cartesian_trajectory_planner__B.j_data;
-  q[2] = cartesian_trajectory_planner__B.p_data;
-  q[3] = cartesian_trajectory_planner__B.w_data;
-  q[4] = cartesian_trajectory_planner__B.db_data;
-  q[5] = cartesian_trajectory_planner__B.jb_data;
-  qd[0] = cartesian_trajectory_planner__B.c_data_l;
-  qd[1] = cartesian_trajectory_planner__B.i_data;
-  qd[2] = cartesian_trajectory_planner__B.o_data_d;
-  qd[3] = cartesian_trajectory_planner__B.v_data;
-  qd[4] = cartesian_trajectory_planner__B.cb_data;
-  qd[5] = cartesian_trajectory_planner__B.ib_data;
-  qdd[0] = cartesian_trajectory_planner__B.b_data_g;
-  qdd[1] = cartesian_trajectory_planner__B.h_data;
-  qdd[2] = cartesian_trajectory_planner__B.n_data;
-  qdd[3] = cartesian_trajectory_planner__B.u_data;
-  qdd[4] = cartesian_trajectory_planner__B.bb_data;
-  qdd[5] = cartesian_trajectory_planner__B.hb_data;
+  // End of MATLABSystem: '<S13>/Coordinate Transformation Conversion'
 }
 
 static void matlabCodegenHandle_matlabC_jbz(ros_slros_internal_block_GetP_T *obj)
+{
+  if (!obj->matlabCodegenIsDeleted) {
+    obj->matlabCodegenIsDeleted = true;
+  }
+}
+
+static void cartesian_tr_matlabCodegenHa_ku(ros_slros_internal_block_SetP_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
@@ -17861,28 +14831,24 @@ static void matlabCodegenHandle_matlabCod_j(ros_slros_internal_block_Publ_T *obj
   }
 }
 
-static void cartesian_traj_SystemCore_setup(robotics_slcore_internal_bl_j_T *obj)
-{
-  obj->isInitialized = 1;
-  obj->TunablePropsChanged = false;
-}
-
 // Model step function
 void cartesian_trajectory_planner_2_step(void)
 {
+  boolean_T exitg1;
+
   // SignalConversion generated from: '<S13>/Coordinate Transformation Conversion' incorporates:
   //   MATLABSystem: '<S13>/Get Parameter3'
   //   MATLABSystem: '<S13>/Get Parameter4'
   //   MATLABSystem: '<S13>/Get Parameter5'
   //   MATLABSystem: '<S13>/Get Parameter6'
 
-  ParamGet_cartesian_trajectory_planner_2_290.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_278.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoordi[0]);
-  ParamGet_cartesian_trajectory_planner_2_291.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_279.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoordi[1]);
-  ParamGet_cartesian_trajectory_planner_2_292.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_280.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoordi[2]);
-  ParamGet_cartesian_trajectory_planner_2_293.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_281.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoordi[3]);
 
   // SignalConversion generated from: '<S13>/Coordinate Transformation Conversion' incorporates:
@@ -17890,55 +14856,55 @@ void cartesian_trajectory_planner_2_step(void)
   //   MATLABSystem: '<S13>/Get Parameter1'
   //   MATLABSystem: '<S13>/Get Parameter2'
 
-  ParamGet_cartesian_trajectory_planner_2_287.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_275.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoor_p[0]);
-  ParamGet_cartesian_trajectory_planner_2_288.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_276.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoor_p[1]);
-  ParamGet_cartesian_trajectory_planner_2_289.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_277.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoor_p[2]);
   CoordinateTransformationConvers
     (cartesian_trajectory_planner__B.TmpSignalConversionAtCoordi,
      cartesian_trajectory_planner__B.TmpSignalConversionAtCoor_p,
-     &cartesian_trajectory_planner__B.CoordinateTransformationConv_pn);
+     &cartesian_trajectory_planner__B.CoordinateTransformationConve_p);
 
-  // SignalConversion generated from: '<S12>/Coordinate Transformation Conversion' incorporates:
-  //   MATLABSystem: '<S12>/Get Parameter3'
-  //   MATLABSystem: '<S12>/Get Parameter4'
-  //   MATLABSystem: '<S12>/Get Parameter5'
-  //   MATLABSystem: '<S12>/Get Parameter6'
+  // SignalConversion generated from: '<S14>/Coordinate Transformation Conversion' incorporates:
+  //   MATLABSystem: '<S14>/Get Parameter3'
+  //   MATLABSystem: '<S14>/Get Parameter4'
+  //   MATLABSystem: '<S14>/Get Parameter5'
+  //   MATLABSystem: '<S14>/Get Parameter6'
 
-  ParamGet_cartesian_trajectory_planner_2_278.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_290.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoor_l[0]);
-  ParamGet_cartesian_trajectory_planner_2_279.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_291.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoor_l[1]);
-  ParamGet_cartesian_trajectory_planner_2_280.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_292.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoor_l[2]);
-  ParamGet_cartesian_trajectory_planner_2_281.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_293.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoor_l[3]);
 
-  // SignalConversion generated from: '<S12>/Coordinate Transformation Conversion' incorporates:
-  //   MATLABSystem: '<S12>/Get Parameter'
-  //   MATLABSystem: '<S12>/Get Parameter1'
-  //   MATLABSystem: '<S12>/Get Parameter2'
+  // SignalConversion generated from: '<S14>/Coordinate Transformation Conversion' incorporates:
+  //   MATLABSystem: '<S14>/Get Parameter'
+  //   MATLABSystem: '<S14>/Get Parameter1'
+  //   MATLABSystem: '<S14>/Get Parameter2'
 
-  ParamGet_cartesian_trajectory_planner_2_275.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_287.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoo_pn[0]);
-  ParamGet_cartesian_trajectory_planner_2_276.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_288.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoo_pn[1]);
-  ParamGet_cartesian_trajectory_planner_2_277.get_parameter
+  ParamGet_cartesian_trajectory_planner_2_289.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtCoo_pn[2]);
   CoordinateTransformationConvers
     (cartesian_trajectory_planner__B.TmpSignalConversionAtCoor_l,
      cartesian_trajectory_planner__B.TmpSignalConversionAtCoo_pn,
-     &cartesian_trajectory_planner__B.CoordinateTransformationConve_p);
+     &cartesian_trajectory_planner__B.CoordinateTransformationConv_pn);
 
   // SignalConversion generated from: '<S2>/MATLAB System' incorporates:
-  //   MATLABSystem: '<S10>/Get Parameter'
-  //   MATLABSystem: '<S10>/Get Parameter1'
-  //   MATLABSystem: '<S10>/Get Parameter2'
-  //   MATLABSystem: '<S10>/Get Parameter3'
-  //   MATLABSystem: '<S10>/Get Parameter4'
-  //   MATLABSystem: '<S10>/Get Parameter5'
+  //   MATLABSystem: '<S11>/Get Parameter'
+  //   MATLABSystem: '<S11>/Get Parameter1'
+  //   MATLABSystem: '<S11>/Get Parameter2'
+  //   MATLABSystem: '<S11>/Get Parameter3'
+  //   MATLABSystem: '<S11>/Get Parameter4'
+  //   MATLABSystem: '<S11>/Get Parameter5'
 
   ParamGet_cartesian_trajectory_planner_2_299.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtMATLAB[0]);
@@ -17953,103 +14919,110 @@ void cartesian_trajectory_planner_2_step(void)
   ParamGet_cartesian_trajectory_planner_2_304.get_parameter
     (&cartesian_trajectory_planner__B.TmpSignalConversionAtMATLAB[5]);
 
-  // Constant: '<Root>/Constant'
-  cartesian_trajecto_MATLABSystem
-    (cartesian_trajectory_planner__B.CoordinateTransformationConve_p.CoordinateTransformationConve_g,
-     cartesian_trajectory_planner__B.TmpSignalConversionAtMATLAB,
-     cartesian_trajectory_planner__P.Constant_Value_o,
-     &cartesian_trajectory_planner__B.MATLABSystem,
-     &cartesian_trajectory_planner_DW.MATLABSystem);
-
-  // SignalConversion generated from: '<S2>/MATLAB System'
+  // Delay: '<Root>/Delay'
   for (cartesian_trajectory_planner__B.i = 0; cartesian_trajectory_planner__B.i <
        6; cartesian_trajectory_planner__B.i++) {
-    cartesian_trajectory_planner__B.TmpMLSysMemLayoutBufferAt_m[cartesian_trajectory_planner__B.i]
-      =
-      cartesian_trajectory_planner__B.MATLABSystem.MATLABSystem_o1[cartesian_trajectory_planner__B.i];
+    cartesian_trajectory_planner__B.Delay[cartesian_trajectory_planner__B.i] =
+      cartesian_trajectory_planner_DW.Delay_DSTATE[cartesian_trajectory_planner__B.i];
   }
 
-  // End of SignalConversion generated from: '<S2>/MATLAB System'
+  // End of Delay: '<Root>/Delay'
   cartesian_trajecto_MATLABSystem
     (cartesian_trajectory_planner__B.CoordinateTransformationConv_pn.CoordinateTransformationConve_g,
      cartesian_trajectory_planner__B.TmpSignalConversionAtMATLAB,
-     cartesian_trajectory_planner__B.TmpMLSysMemLayoutBufferAt_m,
+     cartesian_trajectory_planner__B.Delay,
      &cartesian_trajectory_planner__B.MATLABSystem_p,
      &cartesian_trajectory_planner_DW.MATLABSystem_p);
 
-  // SignalConversion generated from: '<S3>/MATLAB System'
-  for (cartesian_trajectory_planner__B.i = 0; cartesian_trajectory_planner__B.i <
-       6; cartesian_trajectory_planner__B.i++) {
-    cartesian_trajectory_planner__B.MatrixConcatenate[cartesian_trajectory_planner__B.i]
-      =
-      cartesian_trajectory_planner__B.MATLABSystem_p.MATLABSystem_o1[cartesian_trajectory_planner__B.i];
-  }
+  // SignalConversion generated from: '<Root>/Matrix Concatenate' incorporates:
+  //   SignalConversion generated from: '<S3>/MATLAB System'
 
-  // End of SignalConversion generated from: '<S3>/MATLAB System'
-
-  // SignalConversion generated from: '<Root>/Matrix Concatenate'
   for (cartesian_trajectory_planner__B.i = 0; cartesian_trajectory_planner__B.i <
        6; cartesian_trajectory_planner__B.i++) {
     cartesian_trajectory_planner__B.MatrixConcatenate[cartesian_trajectory_planner__B.i
       + 6] =
-      cartesian_trajectory_planner__B.TmpMLSysMemLayoutBufferAt_m[cartesian_trajectory_planner__B.i];
+      cartesian_trajectory_planner__B.MATLABSystem_p.MATLABSystem_o1[cartesian_trajectory_planner__B.i];
   }
 
   // End of SignalConversion generated from: '<Root>/Matrix Concatenate'
 
-  // MATLABSystem: '<S9>/Get Parameter3'
-  ParamGet_cartesian_trajectory_planner_2_272.get_parameter
-    (&cartesian_trajectory_planner__B.value);
-
-  // MATLABSystem: '<S9>/Get Parameter2'
-  ParamGet_cartesian_trajectory_planner_2_271.get_parameter
-    (&cartesian_trajectory_planner__B.delayed_time);
-
-  // MATLAB Function: '<Root>/MATLAB Function' incorporates:
-  //   MATLABSystem: '<S9>/Get Parameter2'
-  //   MATLABSystem: '<S9>/Get Parameter3'
-
-  cartesian_trajectory_planner__B.t_up =
-    cartesian_trajectory_planner__B.delayed_time /
-    cartesian_trajectory_planner__B.value;
+  // Delay: '<Root>/Delay1'
   for (cartesian_trajectory_planner__B.i = 0; cartesian_trajectory_planner__B.i <
        6; cartesian_trajectory_planner__B.i++) {
-    cartesian_trajectory_planner__B.rtb_res_max_vel_d =
-      cartesian_trajectory_planner__B.delayed_time;
-    cartesian_trajectory_planner__B.d = fabs
-      (cartesian_trajectory_planner__B.MatrixConcatenate[cartesian_trajectory_planner__B.i]
-       - cartesian_trajectory_planner__B.MatrixConcatenate[cartesian_trajectory_planner__B.i
-       + 6]);
-    if (cartesian_trajectory_planner__B.d <
-        cartesian_trajectory_planner__B.delayed_time *
-        cartesian_trajectory_planner__B.t_up) {
-      cartesian_trajectory_planner__B.rtb_res_max_vel_d =
-        cartesian_trajectory_planner__B.d / cartesian_trajectory_planner__B.t_up;
-      if (cartesian_trajectory_planner__B.rtb_res_max_vel_d == 0.0) {
-        cartesian_trajectory_planner__B.rtb_res_max_vel_d = 0.01;
-      }
-    }
-
-    cartesian_trajectory_planner__B.res_max_vel[cartesian_trajectory_planner__B.i]
-      = cartesian_trajectory_planner__B.rtb_res_max_vel_d;
+    cartesian_trajectory_planner__B.Delay1[cartesian_trajectory_planner__B.i] =
+      cartesian_trajectory_planner_DW.Delay1_DSTATE[cartesian_trajectory_planner__B.i];
   }
 
-  // End of MATLAB Function: '<Root>/MATLAB Function'
+  // End of Delay: '<Root>/Delay1'
+  cartesian_trajecto_MATLABSystem
+    (cartesian_trajectory_planner__B.CoordinateTransformationConve_p.CoordinateTransformationConve_g,
+     cartesian_trajectory_planner__B.TmpSignalConversionAtMATLAB,
+     cartesian_trajectory_planner__B.Delay1,
+     &cartesian_trajectory_planner__B.MATLABSystem,
+     &cartesian_trajectory_planner_DW.MATLABSystem);
+
+  // SignalConversion generated from: '<Root>/Matrix Concatenate' incorporates:
+  //   SignalConversion generated from: '<S2>/MATLAB System'
+
+  for (cartesian_trajectory_planner__B.i = 0; cartesian_trajectory_planner__B.i <
+       6; cartesian_trajectory_planner__B.i++) {
+    cartesian_trajectory_planner__B.MatrixConcatenate[cartesian_trajectory_planner__B.i]
+      =
+      cartesian_trajectory_planner__B.MATLABSystem.MATLABSystem_o1[cartesian_trajectory_planner__B.i];
+  }
+
+  // End of SignalConversion generated from: '<Root>/Matrix Concatenate'
+
+  // MATLABSystem: '<S10>/Set Parameter' incorporates:
+  //   SignalConversion generated from: '<S2>/MATLAB System'
+
+  ParamSet_cartesian_trajectory_planner_2_325.set_parameter
+    (cartesian_trajectory_planner__B.MATLABSystem.MATLABSystem_o1[0]);
+
+  // MATLABSystem: '<S10>/Set Parameter1' incorporates:
+  //   SignalConversion generated from: '<S2>/MATLAB System'
+
+  ParamSet_cartesian_trajectory_planner_2_326.set_parameter
+    (cartesian_trajectory_planner__B.MATLABSystem.MATLABSystem_o1[1]);
+
+  // MATLABSystem: '<S10>/Set Parameter2' incorporates:
+  //   SignalConversion generated from: '<S2>/MATLAB System'
+
+  ParamSet_cartesian_trajectory_planner_2_327.set_parameter
+    (cartesian_trajectory_planner__B.MATLABSystem.MATLABSystem_o1[2]);
+
+  // MATLABSystem: '<S10>/Set Parameter3' incorporates:
+  //   SignalConversion generated from: '<S2>/MATLAB System'
+
+  ParamSet_cartesian_trajectory_planner_2_328.set_parameter
+    (cartesian_trajectory_planner__B.MATLABSystem.MATLABSystem_o1[3]);
+
+  // MATLABSystem: '<S10>/Set Parameter4' incorporates:
+  //   SignalConversion generated from: '<S2>/MATLAB System'
+
+  ParamSet_cartesian_trajectory_planner_2_329.set_parameter
+    (cartesian_trajectory_planner__B.MATLABSystem.MATLABSystem_o1[5]);
+
+  // MATLABSystem: '<S10>/Set Parameter5' incorporates:
+  //   SignalConversion generated from: '<S2>/MATLAB System'
+
+  ParamSet_cartesian_trajectory_planner_2_330.set_parameter
+    (cartesian_trajectory_planner__B.MATLABSystem.MATLABSystem_o1[4]);
 
   // Outputs for Atomic SubSystem: '<Root>/Subscribe'
   // MATLABSystem: '<S8>/SourceBlock' incorporates:
-  //   Inport: '<S11>/In1'
+  //   Inport: '<S12>/In1'
 
-  cartesian_trajectory_planner__B.b_varargout_1_h =
+  cartesian_trajectory_planner__B.b_varargout_1 =
     Sub_cartesian_trajectory_planner_2_267.getLatestMessage
-    (&cartesian_trajectory_planner__B.b_varargout_2_j);
+    (&cartesian_trajectory_planner__B.b_varargout_2);
 
   // Outputs for Enabled SubSystem: '<S8>/Enabled Subsystem' incorporates:
-  //   EnablePort: '<S11>/Enable'
+  //   EnablePort: '<S12>/Enable'
 
-  if (cartesian_trajectory_planner__B.b_varargout_1_h) {
+  if (cartesian_trajectory_planner__B.b_varargout_1) {
     cartesian_trajectory_planner__B.In1 =
-      cartesian_trajectory_planner__B.b_varargout_2_j;
+      cartesian_trajectory_planner__B.b_varargout_2;
   }
 
   // End of MATLABSystem: '<S8>/SourceBlock'
@@ -18058,7 +15031,7 @@ void cartesian_trajectory_planner_2_step(void)
 
   // MATLABSystem: '<S9>/Get Parameter'
   ParamGet_cartesian_trajectory_planner_2_270.get_parameter
-    (&cartesian_trajectory_planner__B.delayed_time);
+    (&cartesian_trajectory_planner__B.t_up);
 
   // MATLAB Function: '<Root>/MATLAB Function1' incorporates:
   //   MATLABSystem: '<S9>/Get Parameter'
@@ -18066,31 +15039,96 @@ void cartesian_trajectory_planner_2_step(void)
   cartesian_trajectory_planner__B.delayed_time =
     (cartesian_trajectory_planner__B.In1.Clock_.Nsec / 1.0E+9 +
      cartesian_trajectory_planner__B.In1.Clock_.Sec) -
-    cartesian_trajectory_planner__B.delayed_time;
+    cartesian_trajectory_planner__B.t_up;
   if (cartesian_trajectory_planner__B.delayed_time < 0.0) {
     cartesian_trajectory_planner__B.delayed_time = 0.0;
   }
 
   // End of MATLAB Function: '<Root>/MATLAB Function1'
 
-  // MATLABSystem: '<Root>/Trapezoidal Velocity Profile Trajectory' incorporates:
+  // MATLABSystem: '<S9>/Get Parameter2'
+  ParamGet_cartesian_trajectory_planner_2_271.get_parameter
+    (&cartesian_trajectory_planner__B.t_up);
+
+  // MATLABSystem: '<S9>/Get Parameter3'
+  ParamGet_cartesian_trajectory_planner_2_272.get_parameter
+    (&cartesian_trajectory_planner__B.dist);
+
+  // MATLAB Function: '<Root>/MATLAB Function3' incorporates:
+  //   MATLABSystem: '<S9>/Get Parameter2'
   //   MATLABSystem: '<S9>/Get Parameter3'
 
-  if (cartesian_trajectory_planner_DW.obj.TunablePropsChanged) {
-    cartesian_trajectory_planner_DW.obj.TunablePropsChanged = false;
+  for (cartesian_trajectory_planner__B.i = 0; cartesian_trajectory_planner__B.i <
+       6; cartesian_trajectory_planner__B.i++) {
+    cartesian_trajectory_planner__B.q[cartesian_trajectory_planner__B.i] =
+      cartesian_trajectory_planner__B.MatrixConcatenate[cartesian_trajectory_planner__B.i];
+    cartesian_trajectory_planner__B.qd[cartesian_trajectory_planner__B.i] = 0.0;
+    cartesian_trajectory_planner__B.qdd[cartesian_trajectory_planner__B.i] = 0.0;
+    cartesian_trajectory_planner__B.max_vel[cartesian_trajectory_planner__B.i] =
+      cartesian_trajectory_planner__B.t_up;
+    cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i] =
+      cartesian_trajectory_planner__B.dist;
   }
 
-  cartesi_TrapVelTrajSys_stepImpl(cartesian_trajectory_planner__B.delayed_time,
-    cartesian_trajectory_planner__B.MatrixConcatenate,
-    cartesian_trajectory_planner__B.res_max_vel,
-    cartesian_trajectory_planner__B.value,
-    cartesian_trajectory_planner__B.b_varargout_1,
-    cartesian_trajectory_planner__B.b_varargout_2,
-    cartesian_trajectory_planner__B.b_varargout_3);
+  memset(&cartesian_trajectory_planner__B.t[0], 0, 18U * sizeof(real_T));
+  for (cartesian_trajectory_planner__B.i = 0; cartesian_trajectory_planner__B.i <
+       6; cartesian_trajectory_planner__B.i++) {
+    cartesian_trajectory_planner__B.t_up =
+      cartesian_trajectory_planner__B.max_vel[cartesian_trajectory_planner__B.i]
+      / cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i];
+    cartesian_trajectory_planner__B.dist =
+      cartesian_trajectory_planner__B.MatrixConcatenate[cartesian_trajectory_planner__B.i
+      + 6] -
+      cartesian_trajectory_planner__B.MatrixConcatenate[cartesian_trajectory_planner__B.i];
+    if (cartesian_trajectory_planner__B.dist < 0.0) {
+      cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i] =
+        -1.0;
+    } else if (cartesian_trajectory_planner__B.dist > 0.0) {
+      cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i] =
+        1.0;
+    } else if (cartesian_trajectory_planner__B.dist == 0.0) {
+      cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i] =
+        0.0;
+    } else {
+      cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i] =
+        (rtNaN);
+    }
+
+    cartesian_trajectory_planner__B.dist = fabs
+      (cartesian_trajectory_planner__B.dist);
+    cartesian_trajectory_planner__B.d = cartesian_trajectory_planner__B.t_up *
+      cartesian_trajectory_planner__B.max_vel[cartesian_trajectory_planner__B.i];
+    if (cartesian_trajectory_planner__B.dist < cartesian_trajectory_planner__B.d)
+    {
+      cartesian_trajectory_planner__B.t_up = sqrt
+        (cartesian_trajectory_planner__B.dist /
+         cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i]);
+      cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i + 6] =
+        0.0;
+      cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i] =
+        cartesian_trajectory_planner__B.t_up;
+      cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i + 12] =
+        cartesian_trajectory_planner__B.t_up;
+      cartesian_trajectory_planner__B.act_max_vel[cartesian_trajectory_planner__B.i]
+        = cartesian_trajectory_planner__B.t_up *
+        cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i];
+    } else {
+      cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i] =
+        cartesian_trajectory_planner__B.t_up;
+      cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i + 12] =
+        cartesian_trajectory_planner__B.t_up;
+      cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i + 6] =
+        (cartesian_trajectory_planner__B.dist -
+         cartesian_trajectory_planner__B.d) /
+        cartesian_trajectory_planner__B.max_vel[cartesian_trajectory_planner__B.i];
+      cartesian_trajectory_planner__B.act_max_vel[cartesian_trajectory_planner__B.i]
+        =
+        cartesian_trajectory_planner__B.max_vel[cartesian_trajectory_planner__B.i];
+    }
+  }
 
   // MATLAB Function: '<Root>/MATLAB Function2' incorporates:
   //   Constant: '<S1>/Constant'
-  //   MATLABSystem: '<Root>/Trapezoidal Velocity Profile Trajectory'
 
   cartesian_trajectory_planner__B.msg =
     cartesian_trajectory_planner__P.Constant_Value;
@@ -18099,18 +15137,138 @@ void cartesian_trajectory_planner_2_step(void)
   cartesian_trajectory_planner__B.msg.Accelerations_SL_Info.CurrentLength = 6U;
   for (cartesian_trajectory_planner__B.i = 0; cartesian_trajectory_planner__B.i <
        6; cartesian_trajectory_planner__B.i++) {
-    cartesian_trajectory_planner__B.msg.Velocities[cartesian_trajectory_planner__B.i]
-      =
-      cartesian_trajectory_planner__B.b_varargout_2[cartesian_trajectory_planner__B.i];
-    cartesian_trajectory_planner__B.msg.Positions[cartesian_trajectory_planner__B.i]
-      =
-      cartesian_trajectory_planner__B.b_varargout_1[cartesian_trajectory_planner__B.i];
-    cartesian_trajectory_planner__B.msg.Accelerations[cartesian_trajectory_planner__B.i]
-      =
-      cartesian_trajectory_planner__B.b_varargout_3[cartesian_trajectory_planner__B.i];
-  }
+    // MATLAB Function: '<Root>/MATLAB Function3'
+    cartesian_trajectory_planner__B.t_up =
+      cartesian_trajectory_planner__B.delayed_time;
+    cartesian_trajectory_planner__B.k = 0;
+    exitg1 = false;
+    while ((!exitg1) && (cartesian_trajectory_planner__B.k < 3)) {
+      cartesian_trajectory_planner__B.i_m = 6 *
+        cartesian_trajectory_planner__B.k + cartesian_trajectory_planner__B.i;
+      cartesian_trajectory_planner__B.dist =
+        cartesian_trajectory_planner__B.t_up -
+        cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i_m];
+      if (cartesian_trajectory_planner__B.dist < 0.0) {
+        switch (cartesian_trajectory_planner__B.k + 1) {
+         case 1:
+          cartesian_trajectory_planner__B.q[cartesian_trajectory_planner__B.i] +=
+            0.5 *
+            cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i]
+            * (cartesian_trajectory_planner__B.t_up *
+               cartesian_trajectory_planner__B.t_up) *
+            cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          cartesian_trajectory_planner__B.qd[cartesian_trajectory_planner__B.i] =
+            cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i]
+            * cartesian_trajectory_planner__B.t_up *
+            cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          cartesian_trajectory_planner__B.qdd[cartesian_trajectory_planner__B.i]
+            =
+            cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i]
+            * cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          break;
 
-  // End of MATLAB Function: '<Root>/MATLAB Function2'
+         case 2:
+          cartesian_trajectory_planner__B.q[cartesian_trajectory_planner__B.i] +=
+            cartesian_trajectory_planner__B.max_vel[cartesian_trajectory_planner__B.i]
+            * cartesian_trajectory_planner__B.t_up *
+            cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          cartesian_trajectory_planner__B.qd[cartesian_trajectory_planner__B.i] =
+            cartesian_trajectory_planner__B.max_vel[cartesian_trajectory_planner__B.i]
+            * cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          cartesian_trajectory_planner__B.qdd[cartesian_trajectory_planner__B.i]
+            = 0.0;
+          break;
+
+         default:
+          cartesian_trajectory_planner__B.q[cartesian_trajectory_planner__B.i] +=
+            (cartesian_trajectory_planner__B.act_max_vel[0] *
+             cartesian_trajectory_planner__B.t_up - 0.5 *
+             cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i]
+             * (cartesian_trajectory_planner__B.t_up *
+                cartesian_trajectory_planner__B.t_up)) *
+            cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          cartesian_trajectory_planner__B.qd[cartesian_trajectory_planner__B.i] =
+            (cartesian_trajectory_planner__B.act_max_vel[cartesian_trajectory_planner__B.i]
+             - cartesian_trajectory_planner__B.t_up *
+             cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i])
+            * cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          cartesian_trajectory_planner__B.qdd[cartesian_trajectory_planner__B.i]
+            =
+            -cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i]
+            * cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          break;
+        }
+
+        exitg1 = true;
+      } else {
+        cartesian_trajectory_planner__B.t_up =
+          cartesian_trajectory_planner__B.dist;
+        switch (cartesian_trajectory_planner__B.k + 1) {
+         case 1:
+          cartesian_trajectory_planner__B.q[cartesian_trajectory_planner__B.i] +=
+            cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i_m]
+            * cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i_m]
+            * (0.5 *
+               cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i])
+            * cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          cartesian_trajectory_planner__B.qd[cartesian_trajectory_planner__B.i] =
+            cartesian_trajectory_planner__B.act_max_vel[cartesian_trajectory_planner__B.i]
+            * cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          cartesian_trajectory_planner__B.qdd[cartesian_trajectory_planner__B.i]
+            =
+            cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i]
+            * cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          break;
+
+         case 2:
+          cartesian_trajectory_planner__B.q[cartesian_trajectory_planner__B.i] +=
+            cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i_m]
+            * cartesian_trajectory_planner__B.max_vel[cartesian_trajectory_planner__B.i]
+            * cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          cartesian_trajectory_planner__B.qd[cartesian_trajectory_planner__B.i] =
+            cartesian_trajectory_planner__B.act_max_vel[cartesian_trajectory_planner__B.i]
+            * cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          cartesian_trajectory_planner__B.qdd[cartesian_trajectory_planner__B.i]
+            = 0.0;
+          break;
+
+         default:
+          cartesian_trajectory_planner__B.q[cartesian_trajectory_planner__B.i] +=
+            (cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i_m]
+             * cartesian_trajectory_planner__B.act_max_vel[cartesian_trajectory_planner__B.i]
+             - cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i_m]
+             * cartesian_trajectory_planner__B.t[cartesian_trajectory_planner__B.i_m]
+             * (0.5 *
+                cartesian_trajectory_planner__B.acc[cartesian_trajectory_planner__B.i]))
+            * cartesian_trajectory_planner__B.signes[cartesian_trajectory_planner__B.i];
+          cartesian_trajectory_planner__B.qd[cartesian_trajectory_planner__B.i] =
+            0.0;
+          cartesian_trajectory_planner__B.qdd[cartesian_trajectory_planner__B.i]
+            = 0.0;
+          break;
+        }
+
+        if (cartesian_trajectory_planner__B.dist < 0.0) {
+          exitg1 = true;
+        } else {
+          cartesian_trajectory_planner__B.k++;
+        }
+      }
+    }
+
+    if (cartesian_trajectory_planner__B.delayed_time == 0.0) {
+      cartesian_trajectory_planner__B.qdd[cartesian_trajectory_planner__B.i] =
+        0.0;
+    }
+
+    // MATLAB Function: '<Root>/MATLAB Function2'
+    cartesian_trajectory_planner__B.msg.Velocities[cartesian_trajectory_planner__B.i]
+      = cartesian_trajectory_planner__B.qd[cartesian_trajectory_planner__B.i];
+    cartesian_trajectory_planner__B.msg.Positions[cartesian_trajectory_planner__B.i]
+      = cartesian_trajectory_planner__B.q[cartesian_trajectory_planner__B.i];
+    cartesian_trajectory_planner__B.msg.Accelerations[cartesian_trajectory_planner__B.i]
+      = cartesian_trajectory_planner__B.qdd[cartesian_trajectory_planner__B.i];
+  }
 
   // Outputs for Atomic SubSystem: '<Root>/Publish'
   // MATLABSystem: '<S7>/SinkBlock'
@@ -18118,6 +15276,30 @@ void cartesian_trajectory_planner_2_step(void)
     (&cartesian_trajectory_planner__B.msg);
 
   // End of Outputs for SubSystem: '<Root>/Publish'
+
+  // Update for Delay: '<Root>/Delay' incorporates:
+  //   SignalConversion generated from: '<S3>/MATLAB System'
+
+  for (cartesian_trajectory_planner__B.i = 0; cartesian_trajectory_planner__B.i <
+       6; cartesian_trajectory_planner__B.i++) {
+    cartesian_trajectory_planner_DW.Delay_DSTATE[cartesian_trajectory_planner__B.i]
+      =
+      cartesian_trajectory_planner__B.MATLABSystem_p.MATLABSystem_o1[cartesian_trajectory_planner__B.i];
+  }
+
+  // End of Update for Delay: '<Root>/Delay'
+
+  // Update for Delay: '<Root>/Delay1' incorporates:
+  //   SignalConversion generated from: '<S2>/MATLAB System'
+
+  for (cartesian_trajectory_planner__B.i = 0; cartesian_trajectory_planner__B.i <
+       6; cartesian_trajectory_planner__B.i++) {
+    cartesian_trajectory_planner_DW.Delay1_DSTATE[cartesian_trajectory_planner__B.i]
+      =
+      cartesian_trajectory_planner__B.MATLABSystem.MATLABSystem_o1[cartesian_trajectory_planner__B.i];
+  }
+
+  // End of Update for Delay: '<Root>/Delay1'
 }
 
 // Model initialize function
@@ -18134,33 +15316,33 @@ void cartesian_trajectory_planner_2_initialize(void)
     static const char_T tmp_0[17] = { '/', 'j', 'o', 'i', 'n', 't', '_', 't',
       'r', 'a', 'j', 'e', 'c', 't', 'o', 'r', 'y' };
 
-    static const char_T tmp_1[5] = { '/', 'o', 'f', '_', 'x' };
+    static const char_T tmp_1[5] = { '/', 'o', 'i', '_', 'x' };
 
-    static const char_T tmp_2[5] = { '/', 'o', 'f', '_', 'y' };
+    static const char_T tmp_2[5] = { '/', 'o', 'i', '_', 'y' };
 
-    static const char_T tmp_3[5] = { '/', 'o', 'f', '_', 'z' };
+    static const char_T tmp_3[5] = { '/', 'o', 'i', '_', 'z' };
 
-    static const char_T tmp_4[5] = { '/', 'o', 'f', '_', 'w' };
+    static const char_T tmp_4[5] = { '/', 'o', 'i', '_', 'w' };
 
-    static const char_T tmp_5[5] = { '/', 'p', 'f', '_', 'x' };
+    static const char_T tmp_5[5] = { '/', 'p', 'i', '_', 'x' };
 
-    static const char_T tmp_6[5] = { '/', 'p', 'f', '_', 'y' };
+    static const char_T tmp_6[5] = { '/', 'p', 'i', '_', 'y' };
 
-    static const char_T tmp_7[5] = { '/', 'p', 'f', '_', 'z' };
+    static const char_T tmp_7[5] = { '/', 'p', 'i', '_', 'z' };
 
-    static const char_T tmp_8[5] = { '/', 'o', 'i', '_', 'x' };
+    static const char_T tmp_8[5] = { '/', 'o', 'f', '_', 'x' };
 
-    static const char_T tmp_9[5] = { '/', 'o', 'i', '_', 'y' };
+    static const char_T tmp_9[5] = { '/', 'o', 'f', '_', 'y' };
 
-    static const char_T tmp_a[5] = { '/', 'o', 'i', '_', 'z' };
+    static const char_T tmp_a[5] = { '/', 'o', 'f', '_', 'z' };
 
-    static const char_T tmp_b[5] = { '/', 'o', 'i', '_', 'w' };
+    static const char_T tmp_b[5] = { '/', 'o', 'f', '_', 'w' };
 
-    static const char_T tmp_c[5] = { '/', 'p', 'i', '_', 'x' };
+    static const char_T tmp_c[5] = { '/', 'p', 'f', '_', 'x' };
 
-    static const char_T tmp_d[5] = { '/', 'p', 'i', '_', 'y' };
+    static const char_T tmp_d[5] = { '/', 'p', 'f', '_', 'y' };
 
-    static const char_T tmp_e[5] = { '/', 'p', 'i', '_', 'z' };
+    static const char_T tmp_e[5] = { '/', 'p', 'f', '_', 'z' };
 
     static const char_T tmp_f[10] = { '/', 'w', 'e', 'i', 'g', 'h', 't', '_',
       'o', 'x' };
@@ -18180,18 +15362,36 @@ void cartesian_trajectory_planner_2_initialize(void)
     static const char_T tmp_k[10] = { '/', 'w', 'e', 'i', 'g', 'h', 't', '_',
       'p', 'z' };
 
-    static const char_T tmp_l[12] = { '/', 'm', 'a', 'x', '_', 'a', 'n', 'g',
-      '_', 'a', 'c', 'c' };
+    static const char_T tmp_l[11] = { '/', 'q', '1', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
 
-    static const char_T tmp_m[12] = { '/', 'm', 'a', 'x', '_', 'a', 'n', 'g',
+    static const char_T tmp_m[11] = { '/', 'q', '2', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
+
+    static const char_T tmp_n[11] = { '/', 'q', '3', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
+
+    static const char_T tmp_o[11] = { '/', 'q', '4', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
+
+    static const char_T tmp_p[11] = { '/', 'q', '6', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
+
+    static const char_T tmp_q[11] = { '/', 'q', '5', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
+
+    static const char_T tmp_r[12] = { '/', 's', 't', 'a', 'r', 't', '_', 'd',
+      'e', 'l', 'a', 'y' };
+
+    static const char_T tmp_s[12] = { '/', 'm', 'a', 'x', '_', 'a', 'n', 'g',
       '_', 'v', 'e', 'l' };
 
-    static const char_T tmp_n[12] = { '/', 's', 't', 'a', 'r', 't', '_', 'd',
-      'e', 'l', 'a', 'y' };
+    static const char_T tmp_t[12] = { '/', 'm', 'a', 'x', '_', 'a', 'n', 'g',
+      '_', 'a', 'c', 'c' };
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Subscribe'
     // SystemInitialize for Enabled SubSystem: '<S8>/Enabled Subsystem'
-    // SystemInitialize for Outport: '<S11>/Out1'
+    // SystemInitialize for Outport: '<S12>/Out1'
     cartesian_trajectory_planner__B.In1 =
       cartesian_trajectory_planner__P.Out1_Y0;
 
@@ -18203,19 +15403,30 @@ void cartesian_trajectory_planner_2_initialize(void)
     cartesian_trajectory_planner_DW.obj_cs.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_cs.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_cs.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 6;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv3[cartesian_trajectory_planner__B.i1] =
-        tmp[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 6;
+         cartesian_trajectory_planner__B.i_c++) {
+      // InitializeConditions for Delay: '<Root>/Delay'
+      cartesian_trajectory_planner_DW.Delay_DSTATE[cartesian_trajectory_planner__B.i_c]
+        =
+        cartesian_trajectory_planner__P.Delay_InitialCondition[cartesian_trajectory_planner__B.i_c];
+
+      // InitializeConditions for Delay: '<Root>/Delay1'
+      cartesian_trajectory_planner_DW.Delay1_DSTATE[cartesian_trajectory_planner__B.i_c]
+        =
+        cartesian_trajectory_planner__P.Delay1_InitialCondition[cartesian_trajectory_planner__B.i_c];
+
+      // Start for MATLABSystem: '<S8>/SourceBlock'
+      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i_c] =
+        tmp[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv3[6] = '\x00';
+    // Start for MATLABSystem: '<S8>/SourceBlock'
+    cartesian_trajectory_planner__B.cv4[6] = '\x00';
     Sub_cartesian_trajectory_planner_2_267.createSubscriber
-      (cartesian_trajectory_planner__B.cv3, 1);
+      (cartesian_trajectory_planner__B.cv4, 1);
     cartesian_trajectory_planner_DW.obj_cs.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S8>/SourceBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Subscribe'
 
     // SystemInitialize for Atomic SubSystem: '<Root>/Publish'
@@ -18225,11 +15436,11 @@ void cartesian_trajectory_planner_2_initialize(void)
     cartesian_trajectory_planner_DW.obj_ej.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_ej.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_ej.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 17;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv[cartesian_trajectory_planner__B.i1] =
-        tmp_0[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 17;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv[cartesian_trajectory_planner__B.i_c] =
+        tmp_0[cartesian_trajectory_planner__B.i_c];
     }
 
     cartesian_trajectory_planner__B.cv[17] = '\x00';
@@ -18241,499 +15452,617 @@ void cartesian_trajectory_planner_2_initialize(void)
     // End of SystemInitialize for SubSystem: '<Root>/Publish'
 
     // Start for MATLABSystem: '<S13>/Get Parameter3'
-    cartesian_trajectory_planner_DW.obj_o.matlabCodegenIsDeleted = true;
-    cartesian_trajectory_planner_DW.obj_o.isInitialized = 0;
-    cartesian_trajectory_planner_DW.obj_o.matlabCodegenIsDeleted = false;
-    cartesian_trajectory_planner_DW.obj_o.isSetupComplete = false;
-    cartesian_trajectory_planner_DW.obj_o.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_1[cartesian_trajectory_planner__B.i1];
-    }
-
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
-    ParamGet_cartesian_trajectory_planner_2_290.initialize
-      (cartesian_trajectory_planner__B.cv4);
-    ParamGet_cartesian_trajectory_planner_2_290.initialize_error_codes(0, 1, 2,
-      3);
-    ParamGet_cartesian_trajectory_planner_2_290.set_initial_value(0.39);
-    cartesian_trajectory_planner_DW.obj_o.isSetupComplete = true;
-
-    // End of Start for MATLABSystem: '<S13>/Get Parameter3'
-
-    // Start for MATLABSystem: '<S13>/Get Parameter4'
-    cartesian_trajectory_planner_DW.obj_es.matlabCodegenIsDeleted = true;
-    cartesian_trajectory_planner_DW.obj_es.isInitialized = 0;
-    cartesian_trajectory_planner_DW.obj_es.matlabCodegenIsDeleted = false;
-    cartesian_trajectory_planner_DW.obj_es.isSetupComplete = false;
-    cartesian_trajectory_planner_DW.obj_es.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_2[cartesian_trajectory_planner__B.i1];
-    }
-
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
-    ParamGet_cartesian_trajectory_planner_2_291.initialize
-      (cartesian_trajectory_planner__B.cv4);
-    ParamGet_cartesian_trajectory_planner_2_291.initialize_error_codes(0, 1, 2,
-      3);
-    ParamGet_cartesian_trajectory_planner_2_291.set_initial_value(0.89);
-    cartesian_trajectory_planner_DW.obj_es.isSetupComplete = true;
-
-    // End of Start for MATLABSystem: '<S13>/Get Parameter4'
-
-    // Start for MATLABSystem: '<S13>/Get Parameter5'
-    cartesian_trajectory_planner_DW.obj_f4.matlabCodegenIsDeleted = true;
-    cartesian_trajectory_planner_DW.obj_f4.isInitialized = 0;
-    cartesian_trajectory_planner_DW.obj_f4.matlabCodegenIsDeleted = false;
-    cartesian_trajectory_planner_DW.obj_f4.isSetupComplete = false;
-    cartesian_trajectory_planner_DW.obj_f4.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_3[cartesian_trajectory_planner__B.i1];
-    }
-
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
-    ParamGet_cartesian_trajectory_planner_2_292.initialize
-      (cartesian_trajectory_planner__B.cv4);
-    ParamGet_cartesian_trajectory_planner_2_292.initialize_error_codes(0, 1, 2,
-      3);
-    ParamGet_cartesian_trajectory_planner_2_292.set_initial_value(0.2);
-    cartesian_trajectory_planner_DW.obj_f4.isSetupComplete = true;
-
-    // End of Start for MATLABSystem: '<S13>/Get Parameter5'
-
-    // Start for MATLABSystem: '<S13>/Get Parameter6'
-    cartesian_trajectory_planner_DW.obj_en.matlabCodegenIsDeleted = true;
-    cartesian_trajectory_planner_DW.obj_en.isInitialized = 0;
-    cartesian_trajectory_planner_DW.obj_en.matlabCodegenIsDeleted = false;
-    cartesian_trajectory_planner_DW.obj_en.isSetupComplete = false;
-    cartesian_trajectory_planner_DW.obj_en.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_4[cartesian_trajectory_planner__B.i1];
-    }
-
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
-    ParamGet_cartesian_trajectory_planner_2_293.initialize
-      (cartesian_trajectory_planner__B.cv4);
-    ParamGet_cartesian_trajectory_planner_2_293.initialize_error_codes(0, 1, 2,
-      3);
-    ParamGet_cartesian_trajectory_planner_2_293.set_initial_value(-0.12);
-    cartesian_trajectory_planner_DW.obj_en.isSetupComplete = true;
-
-    // End of Start for MATLABSystem: '<S13>/Get Parameter6'
-
-    // Start for MATLABSystem: '<S13>/Get Parameter'
-    cartesian_trajectory_planner_DW.obj_b.matlabCodegenIsDeleted = true;
-    cartesian_trajectory_planner_DW.obj_b.isInitialized = 0;
-    cartesian_trajectory_planner_DW.obj_b.matlabCodegenIsDeleted = false;
-    cartesian_trajectory_planner_DW.obj_b.isSetupComplete = false;
-    cartesian_trajectory_planner_DW.obj_b.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_5[cartesian_trajectory_planner__B.i1];
-    }
-
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
-    ParamGet_cartesian_trajectory_planner_2_287.initialize
-      (cartesian_trajectory_planner__B.cv4);
-    ParamGet_cartesian_trajectory_planner_2_287.initialize_error_codes(0, 1, 2,
-      3);
-    ParamGet_cartesian_trajectory_planner_2_287.set_initial_value(0.21);
-    cartesian_trajectory_planner_DW.obj_b.isSetupComplete = true;
-
-    // End of Start for MATLABSystem: '<S13>/Get Parameter'
-
-    // Start for MATLABSystem: '<S13>/Get Parameter1'
-    cartesian_trajectory_planner_DW.obj_i.matlabCodegenIsDeleted = true;
-    cartesian_trajectory_planner_DW.obj_i.isInitialized = 0;
-    cartesian_trajectory_planner_DW.obj_i.matlabCodegenIsDeleted = false;
-    cartesian_trajectory_planner_DW.obj_i.isSetupComplete = false;
-    cartesian_trajectory_planner_DW.obj_i.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_6[cartesian_trajectory_planner__B.i1];
-    }
-
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
-    ParamGet_cartesian_trajectory_planner_2_288.initialize
-      (cartesian_trajectory_planner__B.cv4);
-    ParamGet_cartesian_trajectory_planner_2_288.initialize_error_codes(0, 1, 2,
-      3);
-    ParamGet_cartesian_trajectory_planner_2_288.set_initial_value(0.89);
-    cartesian_trajectory_planner_DW.obj_i.isSetupComplete = true;
-
-    // End of Start for MATLABSystem: '<S13>/Get Parameter1'
-
-    // Start for MATLABSystem: '<S13>/Get Parameter2'
-    cartesian_trajectory_planner_DW.obj_db.matlabCodegenIsDeleted = true;
-    cartesian_trajectory_planner_DW.obj_db.isInitialized = 0;
-    cartesian_trajectory_planner_DW.obj_db.matlabCodegenIsDeleted = false;
-    cartesian_trajectory_planner_DW.obj_db.isSetupComplete = false;
-    cartesian_trajectory_planner_DW.obj_db.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_7[cartesian_trajectory_planner__B.i1];
-    }
-
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
-    ParamGet_cartesian_trajectory_planner_2_289.initialize
-      (cartesian_trajectory_planner__B.cv4);
-    ParamGet_cartesian_trajectory_planner_2_289.initialize_error_codes(0, 1, 2,
-      3);
-    ParamGet_cartesian_trajectory_planner_2_289.set_initial_value(0.2);
-    cartesian_trajectory_planner_DW.obj_db.isSetupComplete = true;
-
-    // End of Start for MATLABSystem: '<S13>/Get Parameter2'
-    CoordinateTransformationCo_Init
-      (&cartesian_trajectory_planner_DW.CoordinateTransformationConv_pn);
-
-    // Start for MATLABSystem: '<S12>/Get Parameter3'
     cartesian_trajectory_planner_DW.obj_e0.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_e0.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_e0.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_e0.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_e0.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_8[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_1[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_278.initialize
-      (cartesian_trajectory_planner__B.cv4);
+      (cartesian_trajectory_planner__B.cv5);
     ParamGet_cartesian_trajectory_planner_2_278.initialize_error_codes(0, 1, 2,
       3);
     ParamGet_cartesian_trajectory_planner_2_278.set_initial_value(0.0);
     cartesian_trajectory_planner_DW.obj_e0.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S12>/Get Parameter3'
+    // End of Start for MATLABSystem: '<S13>/Get Parameter3'
 
-    // Start for MATLABSystem: '<S12>/Get Parameter4'
+    // Start for MATLABSystem: '<S13>/Get Parameter4'
     cartesian_trajectory_planner_DW.obj_p.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_p.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_p.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_p.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_p.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_9[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_2[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_279.initialize
-      (cartesian_trajectory_planner__B.cv4);
+      (cartesian_trajectory_planner__B.cv5);
     ParamGet_cartesian_trajectory_planner_2_279.initialize_error_codes(0, 1, 2,
       3);
     ParamGet_cartesian_trajectory_planner_2_279.set_initial_value(0.0);
     cartesian_trajectory_planner_DW.obj_p.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S12>/Get Parameter4'
+    // End of Start for MATLABSystem: '<S13>/Get Parameter4'
 
-    // Start for MATLABSystem: '<S12>/Get Parameter5'
+    // Start for MATLABSystem: '<S13>/Get Parameter5'
     cartesian_trajectory_planner_DW.obj_g.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_g.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_g.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_g.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_g.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_a[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_3[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_280.initialize
-      (cartesian_trajectory_planner__B.cv4);
+      (cartesian_trajectory_planner__B.cv5);
     ParamGet_cartesian_trajectory_planner_2_280.initialize_error_codes(0, 1, 2,
       3);
     ParamGet_cartesian_trajectory_planner_2_280.set_initial_value(0.0);
     cartesian_trajectory_planner_DW.obj_g.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S12>/Get Parameter5'
+    // End of Start for MATLABSystem: '<S13>/Get Parameter5'
 
-    // Start for MATLABSystem: '<S12>/Get Parameter6'
+    // Start for MATLABSystem: '<S13>/Get Parameter6'
     cartesian_trajectory_planner_DW.obj_or.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_or.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_or.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_or.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_or.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_b[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_4[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_281.initialize
-      (cartesian_trajectory_planner__B.cv4);
+      (cartesian_trajectory_planner__B.cv5);
     ParamGet_cartesian_trajectory_planner_2_281.initialize_error_codes(0, 1, 2,
       3);
     ParamGet_cartesian_trajectory_planner_2_281.set_initial_value(1.0);
     cartesian_trajectory_planner_DW.obj_or.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S12>/Get Parameter6'
+    // End of Start for MATLABSystem: '<S13>/Get Parameter6'
 
-    // Start for MATLABSystem: '<S12>/Get Parameter'
+    // Start for MATLABSystem: '<S13>/Get Parameter'
     cartesian_trajectory_planner_DW.obj_a3.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_a3.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_a3.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_a3.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_a3.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_c[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_5[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_275.initialize
-      (cartesian_trajectory_planner__B.cv4);
+      (cartesian_trajectory_planner__B.cv5);
     ParamGet_cartesian_trajectory_planner_2_275.initialize_error_codes(0, 1, 2,
       3);
-    ParamGet_cartesian_trajectory_planner_2_275.set_initial_value(0.0);
+    ParamGet_cartesian_trajectory_planner_2_275.set_initial_value(-0.3);
     cartesian_trajectory_planner_DW.obj_a3.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S12>/Get Parameter'
+    // End of Start for MATLABSystem: '<S13>/Get Parameter'
 
-    // Start for MATLABSystem: '<S12>/Get Parameter1'
+    // Start for MATLABSystem: '<S13>/Get Parameter1'
     cartesian_trajectory_planner_DW.obj_bh.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_bh.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_bh.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_bh.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_bh.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_d[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_6[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_276.initialize
-      (cartesian_trajectory_planner__B.cv4);
+      (cartesian_trajectory_planner__B.cv5);
     ParamGet_cartesian_trajectory_planner_2_276.initialize_error_codes(0, 1, 2,
       3);
-    ParamGet_cartesian_trajectory_planner_2_276.set_initial_value(0.0);
+    ParamGet_cartesian_trajectory_planner_2_276.set_initial_value(-0.3);
     cartesian_trajectory_planner_DW.obj_bh.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S12>/Get Parameter1'
+    // End of Start for MATLABSystem: '<S13>/Get Parameter1'
 
-    // Start for MATLABSystem: '<S12>/Get Parameter2'
+    // Start for MATLABSystem: '<S13>/Get Parameter2'
     cartesian_trajectory_planner_DW.obj_b0.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_b0.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_b0.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_b0.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_b0.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 5;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv4[cartesian_trajectory_planner__B.i1] =
-        tmp_e[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_7[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv4[5] = '\x00';
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_277.initialize
-      (cartesian_trajectory_planner__B.cv4);
+      (cartesian_trajectory_planner__B.cv5);
     ParamGet_cartesian_trajectory_planner_2_277.initialize_error_codes(0, 1, 2,
       3);
-    ParamGet_cartesian_trajectory_planner_2_277.set_initial_value(0.99);
+    ParamGet_cartesian_trajectory_planner_2_277.set_initial_value(0.3);
     cartesian_trajectory_planner_DW.obj_b0.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S12>/Get Parameter2'
+    // End of Start for MATLABSystem: '<S13>/Get Parameter2'
     CoordinateTransformationCo_Init
       (&cartesian_trajectory_planner_DW.CoordinateTransformationConve_p);
 
-    // Start for MATLABSystem: '<S10>/Get Parameter'
+    // Start for MATLABSystem: '<S14>/Get Parameter3'
+    cartesian_trajectory_planner_DW.obj_o.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_o.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_o.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_o.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_o.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_8[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
+    ParamGet_cartesian_trajectory_planner_2_290.initialize
+      (cartesian_trajectory_planner__B.cv5);
+    ParamGet_cartesian_trajectory_planner_2_290.initialize_error_codes(0, 1, 2,
+      3);
+    ParamGet_cartesian_trajectory_planner_2_290.set_initial_value(0.39);
+    cartesian_trajectory_planner_DW.obj_o.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S14>/Get Parameter3'
+
+    // Start for MATLABSystem: '<S14>/Get Parameter4'
+    cartesian_trajectory_planner_DW.obj_es.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_es.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_es.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_es.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_es.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_9[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
+    ParamGet_cartesian_trajectory_planner_2_291.initialize
+      (cartesian_trajectory_planner__B.cv5);
+    ParamGet_cartesian_trajectory_planner_2_291.initialize_error_codes(0, 1, 2,
+      3);
+    ParamGet_cartesian_trajectory_planner_2_291.set_initial_value(0.89);
+    cartesian_trajectory_planner_DW.obj_es.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S14>/Get Parameter4'
+
+    // Start for MATLABSystem: '<S14>/Get Parameter5'
+    cartesian_trajectory_planner_DW.obj_f4.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_f4.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_f4.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_f4.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_f4.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_a[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
+    ParamGet_cartesian_trajectory_planner_2_292.initialize
+      (cartesian_trajectory_planner__B.cv5);
+    ParamGet_cartesian_trajectory_planner_2_292.initialize_error_codes(0, 1, 2,
+      3);
+    ParamGet_cartesian_trajectory_planner_2_292.set_initial_value(0.2);
+    cartesian_trajectory_planner_DW.obj_f4.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S14>/Get Parameter5'
+
+    // Start for MATLABSystem: '<S14>/Get Parameter6'
+    cartesian_trajectory_planner_DW.obj_en.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_en.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_en.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_en.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_en.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_b[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
+    ParamGet_cartesian_trajectory_planner_2_293.initialize
+      (cartesian_trajectory_planner__B.cv5);
+    ParamGet_cartesian_trajectory_planner_2_293.initialize_error_codes(0, 1, 2,
+      3);
+    ParamGet_cartesian_trajectory_planner_2_293.set_initial_value(-0.12);
+    cartesian_trajectory_planner_DW.obj_en.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S14>/Get Parameter6'
+
+    // Start for MATLABSystem: '<S14>/Get Parameter'
+    cartesian_trajectory_planner_DW.obj_b.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_b.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_b.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_b.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_b.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_c[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
+    ParamGet_cartesian_trajectory_planner_2_287.initialize
+      (cartesian_trajectory_planner__B.cv5);
+    ParamGet_cartesian_trajectory_planner_2_287.initialize_error_codes(0, 1, 2,
+      3);
+    ParamGet_cartesian_trajectory_planner_2_287.set_initial_value(0.3);
+    cartesian_trajectory_planner_DW.obj_b.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S14>/Get Parameter'
+
+    // Start for MATLABSystem: '<S14>/Get Parameter1'
+    cartesian_trajectory_planner_DW.obj_i.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_i.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_i.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_i.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_i.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_d[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
+    ParamGet_cartesian_trajectory_planner_2_288.initialize
+      (cartesian_trajectory_planner__B.cv5);
+    ParamGet_cartesian_trajectory_planner_2_288.initialize_error_codes(0, 1, 2,
+      3);
+    ParamGet_cartesian_trajectory_planner_2_288.set_initial_value(0.3);
+    cartesian_trajectory_planner_DW.obj_i.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S14>/Get Parameter1'
+
+    // Start for MATLABSystem: '<S14>/Get Parameter2'
     cartesian_trajectory_planner_DW.obj_d.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_d.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_d.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_d.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_d.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 10;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i1] =
-        tmp_f[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 5;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv5[cartesian_trajectory_planner__B.i_c] =
+        tmp_e[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv2[10] = '\x00';
+    cartesian_trajectory_planner__B.cv5[5] = '\x00';
+    ParamGet_cartesian_trajectory_planner_2_289.initialize
+      (cartesian_trajectory_planner__B.cv5);
+    ParamGet_cartesian_trajectory_planner_2_289.initialize_error_codes(0, 1, 2,
+      3);
+    ParamGet_cartesian_trajectory_planner_2_289.set_initial_value(0.3);
+    cartesian_trajectory_planner_DW.obj_d.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S14>/Get Parameter2'
+    CoordinateTransformationCo_Init
+      (&cartesian_trajectory_planner_DW.CoordinateTransformationConv_pn);
+
+    // Start for MATLABSystem: '<S11>/Get Parameter'
+    cartesian_trajectory_planner_DW.obj.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 10;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv3[cartesian_trajectory_planner__B.i_c] =
+        tmp_f[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv3[10] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_299.initialize
-      (cartesian_trajectory_planner__B.cv2);
+      (cartesian_trajectory_planner__B.cv3);
     ParamGet_cartesian_trajectory_planner_2_299.initialize_error_codes(0, 1, 2,
       3);
     ParamGet_cartesian_trajectory_planner_2_299.set_initial_value(0.0);
-    cartesian_trajectory_planner_DW.obj_d.isSetupComplete = true;
+    cartesian_trajectory_planner_DW.obj.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter1'
+    // Start for MATLABSystem: '<S11>/Get Parameter1'
     cartesian_trajectory_planner_DW.obj_m.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_m.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_m.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_m.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_m.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 10;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i1] =
-        tmp_g[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 10;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv3[cartesian_trajectory_planner__B.i_c] =
+        tmp_g[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv2[10] = '\x00';
+    cartesian_trajectory_planner__B.cv3[10] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_300.initialize
-      (cartesian_trajectory_planner__B.cv2);
+      (cartesian_trajectory_planner__B.cv3);
     ParamGet_cartesian_trajectory_planner_2_300.initialize_error_codes(0, 1, 2,
       3);
     ParamGet_cartesian_trajectory_planner_2_300.set_initial_value(0.0);
     cartesian_trajectory_planner_DW.obj_m.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter1'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter1'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter2'
+    // Start for MATLABSystem: '<S11>/Get Parameter2'
     cartesian_trajectory_planner_DW.obj_c.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_c.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_c.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_c.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_c.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 10;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i1] =
-        tmp_h[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 10;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv3[cartesian_trajectory_planner__B.i_c] =
+        tmp_h[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv2[10] = '\x00';
+    cartesian_trajectory_planner__B.cv3[10] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_301.initialize
-      (cartesian_trajectory_planner__B.cv2);
+      (cartesian_trajectory_planner__B.cv3);
     ParamGet_cartesian_trajectory_planner_2_301.initialize_error_codes(0, 1, 2,
       3);
-    ParamGet_cartesian_trajectory_planner_2_301.set_initial_value(0.99);
+    ParamGet_cartesian_trajectory_planner_2_301.set_initial_value(0.0);
     cartesian_trajectory_planner_DW.obj_c.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter2'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter2'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter3'
+    // Start for MATLABSystem: '<S11>/Get Parameter3'
     cartesian_trajectory_planner_DW.obj_f.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_f.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_f.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_f.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_f.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 10;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i1] =
-        tmp_i[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 10;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv3[cartesian_trajectory_planner__B.i_c] =
+        tmp_i[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv2[10] = '\x00';
+    cartesian_trajectory_planner__B.cv3[10] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_302.initialize
-      (cartesian_trajectory_planner__B.cv2);
+      (cartesian_trajectory_planner__B.cv3);
     ParamGet_cartesian_trajectory_planner_2_302.initialize_error_codes(0, 1, 2,
       3);
     ParamGet_cartesian_trajectory_planner_2_302.set_initial_value(1.0);
     cartesian_trajectory_planner_DW.obj_f.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter3'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter3'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter4'
+    // Start for MATLABSystem: '<S11>/Get Parameter4'
     cartesian_trajectory_planner_DW.obj_e.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_e.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_e.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_e.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_e.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 10;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i1] =
-        tmp_j[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 10;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv3[cartesian_trajectory_planner__B.i_c] =
+        tmp_j[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv2[10] = '\x00';
+    cartesian_trajectory_planner__B.cv3[10] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_303.initialize
-      (cartesian_trajectory_planner__B.cv2);
+      (cartesian_trajectory_planner__B.cv3);
     ParamGet_cartesian_trajectory_planner_2_303.initialize_error_codes(0, 1, 2,
       3);
     ParamGet_cartesian_trajectory_planner_2_303.set_initial_value(1.0);
     cartesian_trajectory_planner_DW.obj_e.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter4'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter4'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter5'
+    // Start for MATLABSystem: '<S11>/Get Parameter5'
     cartesian_trajectory_planner_DW.obj_a.matlabCodegenIsDeleted = true;
     cartesian_trajectory_planner_DW.obj_a.isInitialized = 0;
     cartesian_trajectory_planner_DW.obj_a.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_a.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_a.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 10;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i1] =
-        tmp_k[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 10;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv3[cartesian_trajectory_planner__B.i_c] =
+        tmp_k[cartesian_trajectory_planner__B.i_c];
     }
 
-    cartesian_trajectory_planner__B.cv2[10] = '\x00';
+    cartesian_trajectory_planner__B.cv3[10] = '\x00';
     ParamGet_cartesian_trajectory_planner_2_304.initialize
-      (cartesian_trajectory_planner__B.cv2);
+      (cartesian_trajectory_planner__B.cv3);
     ParamGet_cartesian_trajectory_planner_2_304.initialize_error_codes(0, 1, 2,
       3);
-    ParamGet_cartesian_trajectory_planner_2_304.set_initial_value(0.0);
+    ParamGet_cartesian_trajectory_planner_2_304.set_initial_value(1.0);
     cartesian_trajectory_planner_DW.obj_a.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter5'
-
-    // Constant: '<Root>/Constant'
-    cartesian_tra_MATLABSystem_Init
-      (&cartesian_trajectory_planner__B.MATLABSystem,
-       &cartesian_trajectory_planner_DW.MATLABSystem);
+    // End of Start for MATLABSystem: '<S11>/Get Parameter5'
     cartesian_tra_MATLABSystem_Init
       (&cartesian_trajectory_planner__B.MATLABSystem_p,
        &cartesian_trajectory_planner_DW.MATLABSystem_p);
+    cartesian_tra_MATLABSystem_Init
+      (&cartesian_trajectory_planner__B.MATLABSystem,
+       &cartesian_trajectory_planner_DW.MATLABSystem);
 
-    // Start for MATLABSystem: '<S9>/Get Parameter3'
-    cartesian_trajectory_planner_DW.obj_k.matlabCodegenIsDeleted = true;
-    cartesian_trajectory_planner_DW.obj_k.isInitialized = 0;
-    cartesian_trajectory_planner_DW.obj_k.matlabCodegenIsDeleted = false;
-    cartesian_trajectory_planner_DW.obj_k.isSetupComplete = false;
-    cartesian_trajectory_planner_DW.obj_k.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 12;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv1[cartesian_trajectory_planner__B.i1] =
-        tmp_l[cartesian_trajectory_planner__B.i1];
+    // Start for MATLABSystem: '<S10>/Set Parameter'
+    cartesian_trajectory_planner_DW.obj_gt.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_gt.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_gt.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_gt.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_gt.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 11;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i_c] =
+        tmp_l[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv2[11] = '\x00';
+    ParamSet_cartesian_trajectory_planner_2_325.initialize
+      (cartesian_trajectory_planner__B.cv2);
+    cartesian_trajectory_planner_DW.obj_gt.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S10>/Set Parameter'
+
+    // Start for MATLABSystem: '<S10>/Set Parameter1'
+    cartesian_trajectory_planner_DW.obj_kg.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_kg.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_kg.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_kg.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_kg.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 11;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i_c] =
+        tmp_m[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv2[11] = '\x00';
+    ParamSet_cartesian_trajectory_planner_2_326.initialize
+      (cartesian_trajectory_planner__B.cv2);
+    cartesian_trajectory_planner_DW.obj_kg.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S10>/Set Parameter1'
+
+    // Start for MATLABSystem: '<S10>/Set Parameter2'
+    cartesian_trajectory_planner_DW.obj_ef.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_ef.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_ef.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_ef.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_ef.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 11;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i_c] =
+        tmp_n[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv2[11] = '\x00';
+    ParamSet_cartesian_trajectory_planner_2_327.initialize
+      (cartesian_trajectory_planner__B.cv2);
+    cartesian_trajectory_planner_DW.obj_ef.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S10>/Set Parameter2'
+
+    // Start for MATLABSystem: '<S10>/Set Parameter3'
+    cartesian_trajectory_planner_DW.obj_kf.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_kf.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_kf.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_kf.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_kf.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 11;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i_c] =
+        tmp_o[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv2[11] = '\x00';
+    ParamSet_cartesian_trajectory_planner_2_328.initialize
+      (cartesian_trajectory_planner__B.cv2);
+    cartesian_trajectory_planner_DW.obj_kf.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S10>/Set Parameter3'
+
+    // Start for MATLABSystem: '<S10>/Set Parameter4'
+    cartesian_trajectory_planner_DW.obj_gc.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_gc.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_gc.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_gc.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_gc.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 11;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i_c] =
+        tmp_p[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv2[11] = '\x00';
+    ParamSet_cartesian_trajectory_planner_2_329.initialize
+      (cartesian_trajectory_planner__B.cv2);
+    cartesian_trajectory_planner_DW.obj_gc.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S10>/Set Parameter4'
+
+    // Start for MATLABSystem: '<S10>/Set Parameter5'
+    cartesian_trajectory_planner_DW.obj_oe.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_oe.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_oe.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_oe.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_oe.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 11;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv2[cartesian_trajectory_planner__B.i_c] =
+        tmp_q[cartesian_trajectory_planner__B.i_c];
+    }
+
+    cartesian_trajectory_planner__B.cv2[11] = '\x00';
+    ParamSet_cartesian_trajectory_planner_2_330.initialize
+      (cartesian_trajectory_planner__B.cv2);
+    cartesian_trajectory_planner_DW.obj_oe.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S10>/Set Parameter5'
+
+    // Start for MATLABSystem: '<S9>/Get Parameter'
+    cartesian_trajectory_planner_DW.obj_iy.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_iy.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_iy.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_iy.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_iy.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 12;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv1[cartesian_trajectory_planner__B.i_c] =
+        tmp_r[cartesian_trajectory_planner__B.i_c];
     }
 
     cartesian_trajectory_planner__B.cv1[12] = '\x00';
-    ParamGet_cartesian_trajectory_planner_2_272.initialize
+    ParamGet_cartesian_trajectory_planner_2_270.initialize
       (cartesian_trajectory_planner__B.cv1);
-    ParamGet_cartesian_trajectory_planner_2_272.initialize_error_codes(0, 1, 2,
+    ParamGet_cartesian_trajectory_planner_2_270.initialize_error_codes(0, 1, 2,
       3);
-    ParamGet_cartesian_trajectory_planner_2_272.set_initial_value(1.0);
-    cartesian_trajectory_planner_DW.obj_k.isSetupComplete = true;
+    ParamGet_cartesian_trajectory_planner_2_270.set_initial_value(5.0);
+    cartesian_trajectory_planner_DW.obj_iy.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Get Parameter3'
+    // End of Start for MATLABSystem: '<S9>/Get Parameter'
 
     // Start for MATLABSystem: '<S9>/Get Parameter2'
     cartesian_trajectory_planner_DW.obj_cu.matlabCodegenIsDeleted = true;
@@ -18741,11 +16070,11 @@ void cartesian_trajectory_planner_2_initialize(void)
     cartesian_trajectory_planner_DW.obj_cu.matlabCodegenIsDeleted = false;
     cartesian_trajectory_planner_DW.obj_cu.isSetupComplete = false;
     cartesian_trajectory_planner_DW.obj_cu.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 12;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv1[cartesian_trajectory_planner__B.i1] =
-        tmp_m[cartesian_trajectory_planner__B.i1];
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 12;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv1[cartesian_trajectory_planner__B.i_c] =
+        tmp_s[cartesian_trajectory_planner__B.i_c];
     }
 
     cartesian_trajectory_planner__B.cv1[12] = '\x00';
@@ -18758,36 +16087,28 @@ void cartesian_trajectory_planner_2_initialize(void)
 
     // End of Start for MATLABSystem: '<S9>/Get Parameter2'
 
-    // Start for MATLABSystem: '<S9>/Get Parameter'
-    cartesian_trajectory_planner_DW.obj_iy.matlabCodegenIsDeleted = true;
-    cartesian_trajectory_planner_DW.obj_iy.isInitialized = 0;
-    cartesian_trajectory_planner_DW.obj_iy.matlabCodegenIsDeleted = false;
-    cartesian_trajectory_planner_DW.obj_iy.isSetupComplete = false;
-    cartesian_trajectory_planner_DW.obj_iy.isInitialized = 1;
-    for (cartesian_trajectory_planner__B.i1 = 0;
-         cartesian_trajectory_planner__B.i1 < 12;
-         cartesian_trajectory_planner__B.i1++) {
-      cartesian_trajectory_planner__B.cv1[cartesian_trajectory_planner__B.i1] =
-        tmp_n[cartesian_trajectory_planner__B.i1];
+    // Start for MATLABSystem: '<S9>/Get Parameter3'
+    cartesian_trajectory_planner_DW.obj_k.matlabCodegenIsDeleted = true;
+    cartesian_trajectory_planner_DW.obj_k.isInitialized = 0;
+    cartesian_trajectory_planner_DW.obj_k.matlabCodegenIsDeleted = false;
+    cartesian_trajectory_planner_DW.obj_k.isSetupComplete = false;
+    cartesian_trajectory_planner_DW.obj_k.isInitialized = 1;
+    for (cartesian_trajectory_planner__B.i_c = 0;
+         cartesian_trajectory_planner__B.i_c < 12;
+         cartesian_trajectory_planner__B.i_c++) {
+      cartesian_trajectory_planner__B.cv1[cartesian_trajectory_planner__B.i_c] =
+        tmp_t[cartesian_trajectory_planner__B.i_c];
     }
 
     cartesian_trajectory_planner__B.cv1[12] = '\x00';
-    ParamGet_cartesian_trajectory_planner_2_270.initialize
+    ParamGet_cartesian_trajectory_planner_2_272.initialize
       (cartesian_trajectory_planner__B.cv1);
-    ParamGet_cartesian_trajectory_planner_2_270.initialize_error_codes(0, 1, 2,
+    ParamGet_cartesian_trajectory_planner_2_272.initialize_error_codes(0, 1, 2,
       3);
-    ParamGet_cartesian_trajectory_planner_2_270.set_initial_value(40.0);
-    cartesian_trajectory_planner_DW.obj_iy.isSetupComplete = true;
+    ParamGet_cartesian_trajectory_planner_2_272.set_initial_value(1.0);
+    cartesian_trajectory_planner_DW.obj_k.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Get Parameter'
-
-    // Start for MATLABSystem: '<Root>/Trapezoidal Velocity Profile Trajectory'
-    cartesian_trajectory_planner_DW.obj.PeakVelocity[0] = 2.0;
-    cartesian_trajectory_planner_DW.obj.Acceleration[0] = 1.0;
-    cartesian_trajectory_planner_DW.obj.PeakVelocity[1] = 2.0;
-    cartesian_trajectory_planner_DW.obj.Acceleration[1] = 2.0;
-    cartesian_trajectory_planner_DW.obj.isInitialized = 0;
-    cartesian_traj_SystemCore_setup(&cartesian_trajectory_planner_DW.obj);
+    // End of Start for MATLABSystem: '<S9>/Get Parameter3'
   }
 }
 
@@ -18795,73 +16116,85 @@ void cartesian_trajectory_planner_2_initialize(void)
 void cartesian_trajectory_planner_2_terminate(void)
 {
   // Terminate for MATLABSystem: '<S13>/Get Parameter3'
-  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_o);
-
-  // Terminate for MATLABSystem: '<S13>/Get Parameter4'
-  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_es);
-
-  // Terminate for MATLABSystem: '<S13>/Get Parameter5'
-  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_f4);
-
-  // Terminate for MATLABSystem: '<S13>/Get Parameter6'
-  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_en);
-
-  // Terminate for MATLABSystem: '<S13>/Get Parameter'
-  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_b);
-
-  // Terminate for MATLABSystem: '<S13>/Get Parameter1'
-  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_i);
-
-  // Terminate for MATLABSystem: '<S13>/Get Parameter2'
-  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_db);
-
-  // Terminate for MATLABSystem: '<S12>/Get Parameter3'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_e0);
 
-  // Terminate for MATLABSystem: '<S12>/Get Parameter4'
+  // Terminate for MATLABSystem: '<S13>/Get Parameter4'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_p);
 
-  // Terminate for MATLABSystem: '<S12>/Get Parameter5'
+  // Terminate for MATLABSystem: '<S13>/Get Parameter5'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_g);
 
-  // Terminate for MATLABSystem: '<S12>/Get Parameter6'
+  // Terminate for MATLABSystem: '<S13>/Get Parameter6'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_or);
 
-  // Terminate for MATLABSystem: '<S12>/Get Parameter'
+  // Terminate for MATLABSystem: '<S13>/Get Parameter'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_a3);
 
-  // Terminate for MATLABSystem: '<S12>/Get Parameter1'
+  // Terminate for MATLABSystem: '<S13>/Get Parameter1'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_bh);
 
-  // Terminate for MATLABSystem: '<S12>/Get Parameter2'
+  // Terminate for MATLABSystem: '<S13>/Get Parameter2'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_b0);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter'
+  // Terminate for MATLABSystem: '<S14>/Get Parameter3'
+  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_o);
+
+  // Terminate for MATLABSystem: '<S14>/Get Parameter4'
+  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_es);
+
+  // Terminate for MATLABSystem: '<S14>/Get Parameter5'
+  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_f4);
+
+  // Terminate for MATLABSystem: '<S14>/Get Parameter6'
+  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_en);
+
+  // Terminate for MATLABSystem: '<S14>/Get Parameter'
+  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_b);
+
+  // Terminate for MATLABSystem: '<S14>/Get Parameter1'
+  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_i);
+
+  // Terminate for MATLABSystem: '<S14>/Get Parameter2'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_d);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter1'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter'
+  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj);
+
+  // Terminate for MATLABSystem: '<S11>/Get Parameter1'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_m);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter2'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter2'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_c);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter3'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter3'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_f);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter4'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter4'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_e);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter5'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter5'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_a);
-  cartesian_tra_MATLABSystem_Term(&cartesian_trajectory_planner_DW.MATLABSystem);
   cartesian_tra_MATLABSystem_Term
     (&cartesian_trajectory_planner_DW.MATLABSystem_p);
+  cartesian_tra_MATLABSystem_Term(&cartesian_trajectory_planner_DW.MATLABSystem);
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter3'
-  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_k);
+  // Terminate for MATLABSystem: '<S10>/Set Parameter'
+  cartesian_tr_matlabCodegenHa_ku(&cartesian_trajectory_planner_DW.obj_gt);
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter2'
-  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_cu);
+  // Terminate for MATLABSystem: '<S10>/Set Parameter1'
+  cartesian_tr_matlabCodegenHa_ku(&cartesian_trajectory_planner_DW.obj_kg);
+
+  // Terminate for MATLABSystem: '<S10>/Set Parameter2'
+  cartesian_tr_matlabCodegenHa_ku(&cartesian_trajectory_planner_DW.obj_ef);
+
+  // Terminate for MATLABSystem: '<S10>/Set Parameter3'
+  cartesian_tr_matlabCodegenHa_ku(&cartesian_trajectory_planner_DW.obj_kf);
+
+  // Terminate for MATLABSystem: '<S10>/Set Parameter4'
+  cartesian_tr_matlabCodegenHa_ku(&cartesian_trajectory_planner_DW.obj_gc);
+
+  // Terminate for MATLABSystem: '<S10>/Set Parameter5'
+  cartesian_tr_matlabCodegenHa_ku(&cartesian_trajectory_planner_DW.obj_oe);
 
   // Terminate for Atomic SubSystem: '<Root>/Subscribe'
   // Terminate for MATLABSystem: '<S8>/SourceBlock'
@@ -18871,6 +16204,12 @@ void cartesian_trajectory_planner_2_terminate(void)
 
   // Terminate for MATLABSystem: '<S9>/Get Parameter'
   matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_iy);
+
+  // Terminate for MATLABSystem: '<S9>/Get Parameter2'
+  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_cu);
+
+  // Terminate for MATLABSystem: '<S9>/Get Parameter3'
+  matlabCodegenHandle_matlabC_jbz(&cartesian_trajectory_planner_DW.obj_k);
 
   // Terminate for Atomic SubSystem: '<Root>/Publish'
   // Terminate for MATLABSystem: '<S7>/SinkBlock'

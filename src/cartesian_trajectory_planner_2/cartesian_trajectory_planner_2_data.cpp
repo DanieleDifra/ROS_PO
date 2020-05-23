@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cartesian_trajectory_planner_2'.
 //
-// Model version                  : 1.129
+// Model version                  : 1.136
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Tue May 19 21:41:37 2020
+// C/C++ source code generated on : Sat May 23 17:30:41 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -100,7 +100,7 @@ P_cartesian_trajectory_planne_T cartesian_trajectory_planner__P = {
   },
 
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S11>/Out1'
+  //  Referenced by: '<S12>/Out1'
 
   {
     {
@@ -119,8 +119,13 @@ P_cartesian_trajectory_planne_T cartesian_trajectory_planner__P = {
     }                                  // Clock_
   },
 
-  // Expression: [0, 0, 0, 0, 0, 0]
-  //  Referenced by: '<Root>/Constant'
+  // Expression: zeros(6, 1)
+  //  Referenced by: '<Root>/Delay'
+
+  { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 },
+
+  // Expression: zeros(6,1)
+  //  Referenced by: '<Root>/Delay1'
 
   { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }
 };
