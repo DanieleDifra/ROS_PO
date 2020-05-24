@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'dynamic_simulation'. 
 ## 
 ## Makefile     : dynamic_simulation.mk
-## Generated on : Sat May 16 00:53:26 2020
+## Generated on : Sat May 23 18:36:25 2020
 ## MATLAB Coder version: 5.0 (R2020a)
 ## 
 ## Build Info:
@@ -174,7 +174,7 @@ DEFINES = $(DEFINES_) $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/dynamic_simulation_ert_rtw/dynamic_simulation.cpp $(START_DIR)/dynamic_simulation_ert_rtw/dynamic_simulation_data.cpp $(START_DIR)/dynamic_simulation_ert_rtw/rtGetInf.cpp $(START_DIR)/dynamic_simulation_ert_rtw/rtGetNaN.cpp $(START_DIR)/dynamic_simulation_ert_rtw/rt_nonfinite.cpp $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.cpp $(START_DIR)/dynamic_simulation_ert_rtw/slros_busmsg_conversion.cpp $(START_DIR)/dynamic_simulation_ert_rtw/slros_initialize.cpp $(MATLAB_ROOT)/toolbox/ros/slros/src/slros_generic_param.cpp
+SRCS = $(START_DIR)/dynamic_simulation_ert_rtw/dynamic_simulation.cpp $(START_DIR)/dynamic_simulation_ert_rtw/dynamic_simulation_data.cpp $(START_DIR)/dynamic_simulation_ert_rtw/rtGetInf.cpp $(START_DIR)/dynamic_simulation_ert_rtw/rtGetNaN.cpp $(START_DIR)/dynamic_simulation_ert_rtw/rt_nonfinite.cpp $(START_DIR)/dynamic_simulation_ert_rtw/rt_zcfcn.cpp $(MATLAB_ROOT)/toolbox/target/codertarget/rtos/src/linuxinitialize.cpp $(START_DIR)/dynamic_simulation_ert_rtw/slros_busmsg_conversion.cpp $(START_DIR)/dynamic_simulation_ert_rtw/slros_initialize.cpp $(MATLAB_ROOT)/toolbox/ros/slros/src/slros_generic_param.cpp
 
 MAIN_SRC = $(START_DIR)/dynamic_simulation_ert_rtw/ert_main.cpp
 
@@ -184,7 +184,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = dynamic_simulation.cpp.o dynamic_simulation_data.cpp.o rtGetInf.cpp.o rtGetNaN.cpp.o rt_nonfinite.cpp.o linuxinitialize.cpp.o slros_busmsg_conversion.cpp.o slros_initialize.cpp.o slros_generic_param.cpp.o
+OBJS = dynamic_simulation.cpp.o dynamic_simulation_data.cpp.o rtGetInf.cpp.o rtGetNaN.cpp.o rt_nonfinite.cpp.o rt_zcfcn.cpp.o linuxinitialize.cpp.o slros_busmsg_conversion.cpp.o slros_initialize.cpp.o slros_generic_param.cpp.o
 
 MAIN_OBJ = ert_main.cpp.o
 
@@ -416,6 +416,10 @@ rtGetNaN.cpp.o : $(START_DIR)/dynamic_simulation_ert_rtw/rtGetNaN.cpp
 
 
 rt_nonfinite.cpp.o : $(START_DIR)/dynamic_simulation_ert_rtw/rt_nonfinite.cpp
+	$(CPP) $(CPPFLAGS) -o $@ $<
+
+
+rt_zcfcn.cpp.o : $(START_DIR)/dynamic_simulation_ert_rtw/rt_zcfcn.cpp
 	$(CPP) $(CPPFLAGS) -o $@ $<
 
 

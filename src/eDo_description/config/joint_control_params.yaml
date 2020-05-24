@@ -1,0 +1,29 @@
+q1_initial: 0.0
+q2_initial: 0.0
+q3_initial: 0.0
+q4_initial: 0.0
+q5_initial: 0.0
+q6_initial: 0.0
+
+q1_final: 3.14
+q2_final: 3.14
+q3_final: 3.14
+q4_final: 3.14
+q5_final: 3.14
+q6_final: 3.14
+
+pos_control_1: 0.1
+pos_control_2: 0.1
+pos_control_3: 0.1
+pos_control_4: 0.1
+pos_control_5: 0.1
+pos_control_6: 0.1
+
+pos_control_1: 0.05
+pos_control_2: 0.05
+pos_control_3: 0.05
+pos_control_4: 0.0005
+pos_control_5: 0.05
+pos_control_6: 0.0001
+
+

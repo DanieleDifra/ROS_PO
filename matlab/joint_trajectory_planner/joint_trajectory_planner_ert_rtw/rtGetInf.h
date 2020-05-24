@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'joint_trajectory_planner'.
 //
-// Model version                  : 1.5
+// Model version                  : 1.7
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sun May 17 23:56:12 2020
+// C/C++ source code generated on : Sat May 23 18:25:53 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)

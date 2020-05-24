@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynamic_simulation'.
 //
-// Model version                  : 1.131
+// Model version                  : 1.133
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Fri May 22 10:58:09 2020
+// C/C++ source code generated on : Sun May 24 19:49:06 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -23,12 +23,14 @@
 #include <string.h>
 #include <stddef.h>
 #include "rtwtypes.h"
+#include "zero_crossing_types.h"
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
 #include "slros_initialize.h"
 #include "dynamic_simulation_types.h"
 #include "rtGetNaN.h"
 #include "rt_nonfinite.h"
+#include "rt_zcfcn.h"
 #include "rtGetInf.h"
 
 // Macros for accessing real-time model data structure
@@ -175,6 +177,7 @@ typedef struct {
   real_T R_p[9];
   real_T MatrixDivide[6];              // '<S6>/Matrix Divide'
   real_T Velocity[6];                  // '<S6>/Velocity'
+  real_T TmpSignalConversionAtPositionIn[6];
   real_T q_data[6];
   int8_T msubspace_data[36];
   int8_T msubspace_data_c[36];
@@ -214,12 +217,8 @@ typedef struct {
   char_T b_e[8];
   char_T b_bj[8];
   char_T b_j[8];
-  real_T value;
-  real_T value_f;
-  real_T value_a;
-  real_T value_j;
-  real_T value_jz;
   real_T Clock1;                       // '<Root>/Clock1'
+  real_T rtb_sec_tmp;
   real_T nb;
   real_T vNum;
   real_T pid;
@@ -230,22 +229,23 @@ typedef struct {
   real_T cth;
   real_T sth;
   real_T tempR_tmp;
-  real_T tempR_tmp_o;
-  real_T tempR_tmp_n;
-  real_T tempR_tmp_i;
-  real_T tempR_tmp_oy;
-  real_T b_nv;
+  real_T tempR_tmp_f;
+  real_T tempR_tmp_a;
+  real_T tempR_tmp_j;
+  real_T tempR_tmp_jz;
+  real_T b_o4;
   real_T axang_idx_0;
   real_T axang_idx_1;
   real_T axang_idx_2;
   real_T smax;
-  char_T b_m[5];
-  char_T b_c[5];
+  uint8_T DataTypeConversion1[6];
+  char_T b_ny[5];
+  char_T b_i[5];
   int32_T c;
   int32_T d;
   int32_T i;
   int32_T loop_ub;
-  int32_T c_m;
+  int32_T c_o;
   int32_T f;
   int32_T g;
   int32_T cb;
@@ -255,7 +255,7 @@ typedef struct {
   int32_T boffset;
   int32_T aoffset;
   int32_T k;
-  int32_T loop_ub_m;
+  int32_T loop_ub_n;
   int32_T q_size;
   int32_T c_tmp;
   int32_T pid_tmp;
@@ -264,26 +264,27 @@ typedef struct {
   int32_T b_kstr;
   int32_T obj_tmp;
   int32_T obj_tmp_tmp;
-  int32_T kstr_j;
-  int32_T kstr_h;
-  int32_T b_kstr_c;
-  int32_T obj_tmp_c;
-  int32_T obj_tmp_tmp_p;
-  int32_T i_p;
+  int32_T kstr_m;
+  int32_T kstr_c;
+  int32_T b_kstr_m;
+  int32_T obj_tmp_m;
+  int32_T obj_tmp_tmp_j;
+  int32_T i_h;
   int32_T i1;
-  int32_T X_tmp_a;
+  int32_T X_tmp_c;
   int32_T i2;
   int32_T newNumel;
-  int32_T i_e;
-  int32_T newNumel_a;
+  int32_T i_c;
+  int32_T newNumel_p;
+  int32_T i_p;
   int32_T i_a;
-  int32_T i_i;
-  int32_T i_l;
+  int32_T i_e;
   uint32_T b_varargout_2_Data_SL_Info_Curr;
   uint32_T b_varargout_2_Data_SL_Info_Rece;
   uint32_T b_varargout_2_Layout_DataOffset;
   uint32_T b_varargout_2_Layout_Dim_SL_Inf;
-  uint32_T b_varargout_2_Layout_Dim_SL_I_f;
+  uint32_T b_varargout_2_Layout_Dim_SL_I_l;
+  ZCEventType zcEvent;
   boolean_T b_varargout_1;
 } B_dynamic_simulation_T;
 
@@ -348,6 +349,12 @@ typedef struct {
   boolean_T Position_CSTATE[6];        // '<S6>/Position'
   boolean_T Velocity_CSTATE[6];        // '<S6>/Velocity'
 } XDis_dynamic_simulation_T;
+
+// Zero-crossing (trigger) state
+typedef struct {
+  ZCSigState Position_Reset_ZCE[6];    // '<S6>/Position'
+  ZCSigState Velocity_Reset_ZCE[6];    // '<S6>/Velocity'
+} PrevZCX_dynamic_simulation_T;
 
 #ifndef ODE3_INTG
 #define ODE3_INTG
@@ -457,6 +464,9 @@ extern X_dynamic_simulation_T dynamic_simulation_X;
 
 // Block states (default storage)
 extern DW_dynamic_simulation_T dynamic_simulation_DW;
+
+// Zero-crossing (trigger) state
+extern PrevZCX_dynamic_simulation_T dynamic_simulation_PrevZCX;
 
 #ifdef __cplusplus
 

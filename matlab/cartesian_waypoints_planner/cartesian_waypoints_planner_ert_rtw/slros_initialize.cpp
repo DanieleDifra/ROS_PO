@@ -1,0 +1,77 @@
+#include "slros_initialize.h"
+
+ros::NodeHandle * SLROSNodePtr;
+const std::string SLROSNodeName = "cartesian_waypoints_planner";
+
+// For Block cartesian_waypoints_planner/Publish
+SimulinkPublisher<std_msgs::Float32MultiArray, SL_Bus_cartesian_waypoints_plann_Float32MultiArray_iutvhs> Pub_cartesian_waypoints_planner_344;
+
+// For Block cartesian_waypoints_planner/Subsystem/Get Parameter
+SimulinkParameterGetter<int32_T, int> ParamGet_cartesian_waypoints_planner_346;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem/Get Parameter
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_288;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem/Get Parameter1
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_289;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem/Get Parameter2
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_290;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem/Get Parameter3
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_291;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem/Get Parameter4
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_292;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem/Get Parameter5
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_293;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem/Get Parameter6
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_294;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem1/Get Parameter
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_300;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem1/Get Parameter1
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_301;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem1/Get Parameter2
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_302;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem1/Get Parameter3
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_303;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem1/Get Parameter4
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_304;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem1/Get Parameter5
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_305;
+
+// For Block cartesian_waypoints_planner/Subsystem/Subsystem1/Get Parameter6
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_306;
+
+// For Block cartesian_waypoints_planner/Subsystem1/Get Parameter
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_312;
+
+// For Block cartesian_waypoints_planner/Subsystem1/Get Parameter1
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_313;
+
+// For Block cartesian_waypoints_planner/Subsystem1/Get Parameter2
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_314;
+
+// For Block cartesian_waypoints_planner/Subsystem1/Get Parameter3
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_315;
+
+// For Block cartesian_waypoints_planner/Subsystem1/Get Parameter4
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_316;
+
+// For Block cartesian_waypoints_planner/Subsystem1/Get Parameter5
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_317;
+
+void slros_node_init(int argc, char** argv)
+{
+  ros::init(argc, argv, SLROSNodeName);
+  SLROSNodePtr = new ros::NodeHandle();
+}
+

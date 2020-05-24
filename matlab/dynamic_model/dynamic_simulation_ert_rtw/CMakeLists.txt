@@ -56,6 +56,7 @@ add_executable(${PROJECT_NAME}_node
    rtGetInf.cpp
    rtGetNaN.cpp
    rt_nonfinite.cpp
+   rt_zcfcn.cpp
    linuxinitialize.cpp
    slros_busmsg_conversion.cpp
    slros_initialize.cpp

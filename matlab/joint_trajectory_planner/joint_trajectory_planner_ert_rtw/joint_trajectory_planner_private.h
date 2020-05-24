@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'joint_trajectory_planner'.
 //
-// Model version                  : 1.5
+// Model version                  : 1.7
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sun May 17 23:56:12 2020
+// C/C++ source code generated on : Sat May 23 18:25:53 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -19,10 +19,6 @@
 #ifndef RTW_HEADER_joint_trajectory_planner_private_h_
 #define RTW_HEADER_joint_trajectory_planner_private_h_
 #include "rtwtypes.h"
-
-extern int32_T div_nzp_s32(int32_T numerator, int32_T denominator);
-extern int32_T div_nzp_s32_floor(int32_T numerator, int32_T denominator);
-
 #endif                        // RTW_HEADER_joint_trajectory_planner_private_h_
 
 //
