@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'controller_joint'.
 //
-// Model version                  : 1.25
+// Model version                  : 1.27
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sun May 24 21:25:14 2020
+// C/C++ source code generated on : Mon May 25 12:26:01 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -35,7 +35,7 @@
 
 // Block signals (default storage)
 typedef struct {
-  SL_Bus_controller_joint_sensor_msgs_JointState In1;// '<S8>/In1'
+  SL_Bus_controller_joint_sensor_msgs_JointState In1;// '<S11>/In1'
   SL_Bus_controller_joint_sensor_msgs_JointState b_varargout_2;
   SL_Bus_controller_joint_std_msgs_Float64MultiArray msg;// '<Root>/MATLAB Function' 
   SL_Bus_controller_joint_std_msgs_String b_varargout_2_Name[16];
@@ -45,8 +45,10 @@ typedef struct {
   SL_Bus_controller_joint_std_msgs_Header b_varargout_2_Header;
   real_T Add[6];                       // '<Root>/Add'
   real_T MatrixMultiply1[6];           // '<Root>/MatrixMultiply1'
+  SL_Bus_controller_joint_rosgraph_msgs_Clock In1_p;// '<S12>/In1'
+  SL_Bus_controller_joint_rosgraph_msgs_Clock b_varargout_2_m;
+  char_T cv[15];
   real_T value;
-  real_T value_m;
   real_T value_c;
   real_T value_k;
   real_T value_cx;
@@ -54,42 +56,67 @@ typedef struct {
   real_T value_p;
   real_T value_cv;
   real_T value_f;
+  real_T value_g;
+  real_T value_g1;
+  real_T value_m;
+  real_T value_n;
+  real_T value_pp;
+  real_T value_l;
+  real_T value_j;
+  real_T value_d;
 } B_controller_joint_T;
 
 // Block states (default storage) for system '<Root>'
 typedef struct {
-  ros_slros_internal_block_GetP_T obj; // '<S7>/Get Parameter'
-  ros_slros_internal_block_GetP_T obj_p;// '<S7>/Get Parameter1'
-  ros_slros_internal_block_GetP_T obj_h;// '<S7>/Get Parameter2'
-  ros_slros_internal_block_GetP_T obj_b;// '<S7>/Get Parameter3'
-  ros_slros_internal_block_GetP_T obj_o;// '<S7>/Get Parameter4'
-  ros_slros_internal_block_GetP_T obj_i;// '<S7>/Get Parameter5'
-  ros_slros_internal_block_GetP_T obj_g;// '<S6>/Get Parameter'
-  ros_slros_internal_block_GetP_T obj_k;// '<S6>/Get Parameter1'
-  ros_slros_internal_block_GetP_T obj_a;// '<S6>/Get Parameter2'
-  ros_slros_internal_block_GetP_T obj_n;// '<S6>/Get Parameter3'
-  ros_slros_internal_block_GetP_T obj_nr;// '<S6>/Get Parameter4'
-  ros_slros_internal_block_GetP_T obj_as;// '<S6>/Get Parameter5'
-  ros_slros_internal_block_GetP_T obj_j;// '<S5>/Get Parameter'
-  ros_slros_internal_block_GetP_T obj_l;// '<S5>/Get Parameter1'
-  ros_slros_internal_block_GetP_T obj_nc;// '<S5>/Get Parameter2'
-  ros_slros_internal_block_GetP_T obj_e;// '<S5>/Get Parameter3'
-  ros_slros_internal_block_GetP_T obj_j1;// '<S5>/Get Parameter4'
-  ros_slros_internal_block_GetP_T obj_f;// '<S5>/Get Parameter5'
-  ros_slros_internal_block_Publ_T obj_bq;// '<S3>/SinkBlock'
-  ros_slros_internal_block_Subs_T obj_lb;// '<S4>/SourceBlock'
+  ros_slros_internal_block_GetP_T obj; // '<S10>/Get Parameter'
+  ros_slros_internal_block_GetP_T obj_f;// '<S10>/Get Parameter1'
+  ros_slros_internal_block_GetP_T obj_d;// '<S10>/Get Parameter2'
+  ros_slros_internal_block_GetP_T obj_o;// '<S10>/Get Parameter3'
+  ros_slros_internal_block_GetP_T obj_d5;// '<S10>/Get Parameter4'
+  ros_slros_internal_block_GetP_T obj_l;// '<S10>/Get Parameter5'
+  ros_slros_internal_block_GetP_T obj_fs;// '<S9>/Get Parameter'
+  ros_slros_internal_block_GetP_T obj_p;// '<S9>/Get Parameter1'
+  ros_slros_internal_block_GetP_T obj_h;// '<S9>/Get Parameter2'
+  ros_slros_internal_block_GetP_T obj_b;// '<S9>/Get Parameter3'
+  ros_slros_internal_block_GetP_T obj_ob;// '<S9>/Get Parameter4'
+  ros_slros_internal_block_GetP_T obj_i;// '<S9>/Get Parameter5'
+  ros_slros_internal_block_GetP_T obj_g;// '<S8>/Get Parameter'
+  ros_slros_internal_block_GetP_T obj_k;// '<S8>/Get Parameter1'
+  ros_slros_internal_block_GetP_T obj_a;// '<S8>/Get Parameter2'
+  ros_slros_internal_block_GetP_T obj_n;// '<S8>/Get Parameter3'
+  ros_slros_internal_block_GetP_T obj_nr;// '<S8>/Get Parameter4'
+  ros_slros_internal_block_GetP_T obj_as;// '<S8>/Get Parameter5'
+  ros_slros_internal_block_GetP_T obj_j;// '<S7>/Get Parameter'
+  ros_slros_internal_block_GetP_T obj_lf;// '<S7>/Get Parameter1'
+  ros_slros_internal_block_GetP_T obj_nc;// '<S7>/Get Parameter2'
+  ros_slros_internal_block_GetP_T obj_e;// '<S7>/Get Parameter3'
+  ros_slros_internal_block_GetP_T obj_j1;// '<S7>/Get Parameter4'
+  ros_slros_internal_block_GetP_T obj_f2;// '<S7>/Get Parameter5'
+  ros_slros_internal_block_GetP_T obj_az;// '<Root>/Get Parameter'
+  ros_slros_internal_block_Publ_T obj_bq;// '<S4>/SinkBlock'
+  ros_slros_internal_block_Subs_T obj_dv;// '<S6>/SourceBlock'
+  ros_slros_internal_block_Subs_T obj_lb;// '<S5>/SourceBlock'
 } DW_controller_joint_T;
 
 // Parameters (default storage)
 struct P_controller_joint_T_ {
   SL_Bus_controller_joint_sensor_msgs_JointState Out1_Y0;// Computed Parameter: Out1_Y0
-                                                            //  Referenced by: '<S8>/Out1'
+                                                            //  Referenced by: '<S11>/Out1'
 
   SL_Bus_controller_joint_sensor_msgs_JointState Constant_Value;// Computed Parameter: Constant_Value
-                                                                   //  Referenced by: '<S4>/Constant'
+                                                                   //  Referenced by: '<S5>/Constant'
 
   SL_Bus_controller_joint_std_msgs_Float64MultiArray Constant_Value_d;// Computed Parameter: Constant_Value_d
                                                                       //  Referenced by: '<S1>/Constant'
+
+  SL_Bus_controller_joint_rosgraph_msgs_Clock Out1_Y0_k;// Computed Parameter: Out1_Y0_k
+                                                           //  Referenced by: '<S12>/Out1'
+
+  SL_Bus_controller_joint_rosgraph_msgs_Clock Constant_Value_m;// Computed Parameter: Constant_Value_m
+                                                                  //  Referenced by: '<S6>/Constant'
+
+  real_T Switch_Threshold;             // Expression: 0
+                                          //  Referenced by: '<Root>/Switch'
 
 };
 
@@ -176,12 +203,16 @@ extern "C" {
 //  '<Root>' : 'controller_joint'
 //  '<S1>'   : 'controller_joint/Blank Message'
 //  '<S2>'   : 'controller_joint/MATLAB Function'
-//  '<S3>'   : 'controller_joint/Publish'
-//  '<S4>'   : 'controller_joint/Subscribe'
-//  '<S5>'   : 'controller_joint/Subsystem'
-//  '<S6>'   : 'controller_joint/Subsystem1'
-//  '<S7>'   : 'controller_joint/Subsystem2'
-//  '<S8>'   : 'controller_joint/Subscribe/Enabled Subsystem'
+//  '<S3>'   : 'controller_joint/MATLAB Function2'
+//  '<S4>'   : 'controller_joint/Publish'
+//  '<S5>'   : 'controller_joint/Subscribe'
+//  '<S6>'   : 'controller_joint/Subscribe1'
+//  '<S7>'   : 'controller_joint/Subsystem'
+//  '<S8>'   : 'controller_joint/Subsystem1'
+//  '<S9>'   : 'controller_joint/Subsystem2'
+//  '<S10>'  : 'controller_joint/Subsystem3'
+//  '<S11>'  : 'controller_joint/Subscribe/Enabled Subsystem'
+//  '<S12>'  : 'controller_joint/Subscribe1/Enabled Subsystem'
 
 #endif                                 // RTW_HEADER_controller_joint_h_
 

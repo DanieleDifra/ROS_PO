@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'controller_joint'.
 //
-// Model version                  : 1.25
+// Model version                  : 1.27
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sun May 24 21:25:14 2020
+// C/C++ source code generated on : Mon May 25 12:26:01 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -22,7 +22,7 @@
 // Block parameters (default storage)
 P_controller_joint_T controller_joint_P = {
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S8>/Out1'
+  //  Referenced by: '<S11>/Out1'
 
   {
     {
@@ -368,7 +368,7 @@ P_controller_joint_T controller_joint_P = {
   },
 
   // Computed Parameter: Constant_Value
-  //  Referenced by: '<S4>/Constant'
+  //  Referenced by: '<S5>/Constant'
 
   {
     {
@@ -1034,7 +1034,32 @@ P_controller_joint_T controller_joint_P = {
         0U                             // ReceivedLength
       }                                // Dim_SL_Info
     }                                  // Layout
-  }
+  },
+
+  // Computed Parameter: Out1_Y0_k
+  //  Referenced by: '<S12>/Out1'
+
+  {
+    {
+      0.0,                             // Sec
+      0.0                              // Nsec
+    }                                  // Clock_
+  },
+
+  // Computed Parameter: Constant_Value_m
+  //  Referenced by: '<S6>/Constant'
+
+  {
+    {
+      0.0,                             // Sec
+      0.0                              // Nsec
+    }                                  // Clock_
+  },
+
+  // Expression: 0
+  //  Referenced by: '<Root>/Switch'
+
+  0.0
 };
 
 //

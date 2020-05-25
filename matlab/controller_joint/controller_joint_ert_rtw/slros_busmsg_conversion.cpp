@@ -20,6 +20,23 @@ void convertToBus(SL_Bus_controller_joint_ros_time_Time* busPtr, ros::Time const
 }
 
 
+// Conversions between SL_Bus_controller_joint_rosgraph_msgs_Clock and rosgraph_msgs::Clock
+
+void convertFromBus(rosgraph_msgs::Clock* msgPtr, SL_Bus_controller_joint_rosgraph_msgs_Clock const* busPtr)
+{
+  const std::string rosMessageType("rosgraph_msgs/Clock");
+
+  convertFromBus(&msgPtr->clock, &busPtr->Clock_);
+}
+
+void convertToBus(SL_Bus_controller_joint_rosgraph_msgs_Clock* busPtr, rosgraph_msgs::Clock const* msgPtr)
+{
+  const std::string rosMessageType("rosgraph_msgs/Clock");
+
+  convertToBus(&busPtr->Clock_, &msgPtr->clock);
+}
+
+
 // Conversions between SL_Bus_controller_joint_sensor_msgs_JointState and sensor_msgs::JointState
 
 void convertFromBus(sensor_msgs::JointState* msgPtr, SL_Bus_controller_joint_sensor_msgs_JointState const* busPtr)

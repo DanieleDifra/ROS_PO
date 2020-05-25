@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'controller_joint'.
 //
-// Model version                  : 1.25
+// Model version                  : 1.27
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sun May 24 21:25:14 2020
+// C/C++ source code generated on : Mon May 25 12:26:01 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -159,43 +159,16 @@ typedef struct {
 
 #endif
 
-#ifndef struct_tag_rkSooZHJZnr3Dpfu1LNqfH
-#define struct_tag_rkSooZHJZnr3Dpfu1LNqfH
+#ifndef DEFINED_TYPEDEF_FOR_SL_Bus_controller_joint_rosgraph_msgs_Clock_
+#define DEFINED_TYPEDEF_FOR_SL_Bus_controller_joint_rosgraph_msgs_Clock_
 
-struct tag_rkSooZHJZnr3Dpfu1LNqfH
-{
-  boolean_T matlabCodegenIsDeleted;
-  int32_T isInitialized;
-  boolean_T isSetupComplete;
-};
+// MsgType=rosgraph_msgs/Clock
+typedef struct {
+  // MsgType=ros_time/Time
+  SL_Bus_controller_joint_ros_time_Time Clock_;
+} SL_Bus_controller_joint_rosgraph_msgs_Clock;
 
-#endif                                 //struct_tag_rkSooZHJZnr3Dpfu1LNqfH
-
-#ifndef typedef_ros_slros_internal_block_Publ_T
-#define typedef_ros_slros_internal_block_Publ_T
-
-typedef struct tag_rkSooZHJZnr3Dpfu1LNqfH ros_slros_internal_block_Publ_T;
-
-#endif                                 //typedef_ros_slros_internal_block_Publ_T
-
-#ifndef struct_tag_9SewJ4y3IXNs5GrZti8qkG
-#define struct_tag_9SewJ4y3IXNs5GrZti8qkG
-
-struct tag_9SewJ4y3IXNs5GrZti8qkG
-{
-  boolean_T matlabCodegenIsDeleted;
-  int32_T isInitialized;
-  boolean_T isSetupComplete;
-};
-
-#endif                                 //struct_tag_9SewJ4y3IXNs5GrZti8qkG
-
-#ifndef typedef_ros_slros_internal_block_Subs_T
-#define typedef_ros_slros_internal_block_Subs_T
-
-typedef struct tag_9SewJ4y3IXNs5GrZti8qkG ros_slros_internal_block_Subs_T;
-
-#endif                                 //typedef_ros_slros_internal_block_Subs_T
+#endif
 
 #ifndef struct_tag_KSdGoEc2IyOHz4CLi4rcCD
 #define struct_tag_KSdGoEc2IyOHz4CLi4rcCD
@@ -233,6 +206,44 @@ struct tag_PzhaB0v2Sx4ikuHWZx5WUB
 typedef struct tag_PzhaB0v2Sx4ikuHWZx5WUB ros_slros_internal_block_GetP_T;
 
 #endif                                 //typedef_ros_slros_internal_block_GetP_T
+
+#ifndef struct_tag_rkSooZHJZnr3Dpfu1LNqfH
+#define struct_tag_rkSooZHJZnr3Dpfu1LNqfH
+
+struct tag_rkSooZHJZnr3Dpfu1LNqfH
+{
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+};
+
+#endif                                 //struct_tag_rkSooZHJZnr3Dpfu1LNqfH
+
+#ifndef typedef_ros_slros_internal_block_Publ_T
+#define typedef_ros_slros_internal_block_Publ_T
+
+typedef struct tag_rkSooZHJZnr3Dpfu1LNqfH ros_slros_internal_block_Publ_T;
+
+#endif                                 //typedef_ros_slros_internal_block_Publ_T
+
+#ifndef struct_tag_9SewJ4y3IXNs5GrZti8qkG
+#define struct_tag_9SewJ4y3IXNs5GrZti8qkG
+
+struct tag_9SewJ4y3IXNs5GrZti8qkG
+{
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+};
+
+#endif                                 //struct_tag_9SewJ4y3IXNs5GrZti8qkG
+
+#ifndef typedef_ros_slros_internal_block_Subs_T
+#define typedef_ros_slros_internal_block_Subs_T
+
+typedef struct tag_9SewJ4y3IXNs5GrZti8qkG ros_slros_internal_block_Subs_T;
+
+#endif                                 //typedef_ros_slros_internal_block_Subs_T
 
 // Parameters (default storage)
 typedef struct P_controller_joint_T_ P_controller_joint_T;

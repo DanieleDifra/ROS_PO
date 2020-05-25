@@ -3,6 +3,7 @@
 
 #include <ros/ros.h>
 #include <ros/time.h>
+#include <rosgraph_msgs/Clock.h>
 #include <sensor_msgs/JointState.h>
 #include <std_msgs/Float64MultiArray.h>
 #include <std_msgs/Header.h>
@@ -14,6 +15,9 @@
 
 void convertFromBus(ros::Time* msgPtr, SL_Bus_controller_joint_ros_time_Time const* busPtr);
 void convertToBus(SL_Bus_controller_joint_ros_time_Time* busPtr, ros::Time const* msgPtr);
+
+void convertFromBus(rosgraph_msgs::Clock* msgPtr, SL_Bus_controller_joint_rosgraph_msgs_Clock const* busPtr);
+void convertToBus(SL_Bus_controller_joint_rosgraph_msgs_Clock* busPtr, rosgraph_msgs::Clock const* msgPtr);
 
 void convertFromBus(sensor_msgs::JointState* msgPtr, SL_Bus_controller_joint_sensor_msgs_JointState const* busPtr);
 void convertToBus(SL_Bus_controller_joint_sensor_msgs_JointState* busPtr, sensor_msgs::JointState const* msgPtr);
