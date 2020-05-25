@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'controller_joint'.
 //
-// Model version                  : 1.27
+// Model version                  : 1.32
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Mon May 25 12:26:01 2020
+// C/C++ source code generated on : Mon May 25 15:22:09 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)

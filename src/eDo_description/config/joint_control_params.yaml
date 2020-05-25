@@ -7,12 +7,12 @@ q4_initial: 0.0
 q5_initial: 0.0
 q6_initial: 0.0
 
-q1_final: 3.14
-q2_final: 3.14
-q3_final: 3.14
-q4_final: 3.14
-q5_final: 3.14
-q6_final: 3.14
+q1_final: 1.57
+q2_final: 1.57
+q3_final: 1.57
+q4_final: 1.57
+q5_final: 1.57
+q6_final: 1.57
 
 pos_control_1: 0.2
 pos_control_2: 0.2
@@ -21,11 +21,11 @@ pos_control_4: 0.2
 pos_control_5: 0.2
 pos_control_6: 0.2
 
-pos_control_1: 0.1
-pos_control_2: 0.1
-pos_control_3: 0.1
-pos_control_4: 0.01
-pos_control_5: 0.1
-pos_control_6: 0.0001
+vel_control_1: 0.1
+vel_control_2: 0.1
+vel_control_3: 0.1
+vel_control_4: 0.01
+vel_control_5: 0.1
+vel_control_6: 0.0001
 
 

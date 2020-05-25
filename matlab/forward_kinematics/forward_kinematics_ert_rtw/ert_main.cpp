@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'forward_kinematics'.
 //
-// Model version                  : 1.128
+// Model version                  : 1.129
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sat May 16 00:35:08 2020
+// C/C++ source code generated on : Mon May 25 15:27:21 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -93,7 +93,7 @@ int main(int argc, char **argv)
   forward_kinematics_initialize();
 
   // Call RTOS Initialization function
-  myRTOSInit(0.05, 0);
+  myRTOSInit(0.01, 0);
 
   // Wait for stop semaphore
   sem_wait(&stopSem);

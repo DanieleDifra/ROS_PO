@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'controller_joint'.
 //
-// Model version                  : 1.27
+// Model version                  : 1.32
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Mon May 25 12:26:01 2020
+// C/C++ source code generated on : Mon May 25 15:22:09 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -735,7 +735,7 @@ void controller_joint_initialize(void)
     controller_joint_B.cv[14] = '\x00';
     ParamGet_controller_joint_93.initialize(controller_joint_B.cv);
     ParamGet_controller_joint_93.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_controller_joint_93.set_initial_value(0.1);
+    ParamGet_controller_joint_93.set_initial_value(0.2);
     controller_joint_DW.obj_j.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S7>/Get Parameter'
@@ -750,7 +750,7 @@ void controller_joint_initialize(void)
     controller_joint_B.cv[14] = '\x00';
     ParamGet_controller_joint_94.initialize(controller_joint_B.cv);
     ParamGet_controller_joint_94.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_controller_joint_94.set_initial_value(0.1);
+    ParamGet_controller_joint_94.set_initial_value(0.2);
     controller_joint_DW.obj_lf.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S7>/Get Parameter1'
@@ -765,7 +765,7 @@ void controller_joint_initialize(void)
     controller_joint_B.cv[14] = '\x00';
     ParamGet_controller_joint_95.initialize(controller_joint_B.cv);
     ParamGet_controller_joint_95.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_controller_joint_95.set_initial_value(0.1);
+    ParamGet_controller_joint_95.set_initial_value(0.2);
     controller_joint_DW.obj_nc.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S7>/Get Parameter2'
@@ -780,7 +780,7 @@ void controller_joint_initialize(void)
     controller_joint_B.cv[14] = '\x00';
     ParamGet_controller_joint_96.initialize(controller_joint_B.cv);
     ParamGet_controller_joint_96.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_controller_joint_96.set_initial_value(0.1);
+    ParamGet_controller_joint_96.set_initial_value(0.2);
     controller_joint_DW.obj_e.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S7>/Get Parameter3'
@@ -795,7 +795,7 @@ void controller_joint_initialize(void)
     controller_joint_B.cv[14] = '\x00';
     ParamGet_controller_joint_97.initialize(controller_joint_B.cv);
     ParamGet_controller_joint_97.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_controller_joint_97.set_initial_value(0.1);
+    ParamGet_controller_joint_97.set_initial_value(0.2);
     controller_joint_DW.obj_j1.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S7>/Get Parameter4'
@@ -810,7 +810,7 @@ void controller_joint_initialize(void)
     controller_joint_B.cv[14] = '\x00';
     ParamGet_controller_joint_98.initialize(controller_joint_B.cv);
     ParamGet_controller_joint_98.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_controller_joint_98.set_initial_value(0.1);
+    ParamGet_controller_joint_98.set_initial_value(0.2);
     controller_joint_DW.obj_f2.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S7>/Get Parameter5'

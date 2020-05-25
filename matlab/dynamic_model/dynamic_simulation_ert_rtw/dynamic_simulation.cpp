@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynamic_simulation'.
 //
-// Model version                  : 1.133
+// Model version                  : 1.134
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sun May 24 19:49:06 2020
+// C/C++ source code generated on : Mon May 25 15:25:08 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -3810,9 +3810,9 @@ void dynamic_simulation_step(void)
       (&dynamic_simulation_M->solverInfo);
 
     {
-      // Update absolute timer for sample time: [0.05s, 0.0s]
+      // Update absolute timer for sample time: [0.01s, 0.0s]
       // The "clockTick1" counts the number of times the code of this task has
-      //  been executed. The resolution of this integer timer is 0.05, which is the step size
+      //  been executed. The resolution of this integer timer is 0.01, which is the step size
       //  of the task. Size of "clockTick1" ensures timer will not overflow during the
       //  application lifespan selected.
 
@@ -3880,7 +3880,7 @@ void dynamic_simulation_initialize(void)
                     (&dynamic_simulation_M->intgData));
   rtsiSetSolverName(&dynamic_simulation_M->solverInfo,"ode3");
   rtmSetTPtr(dynamic_simulation_M, &dynamic_simulation_M->Timing.tArray[0]);
-  dynamic_simulation_M->Timing.stepSize0 = 0.05;
+  dynamic_simulation_M->Timing.stepSize0 = 0.01;
   rtmSetFirstInitCond(dynamic_simulation_M, 1);
 
   {

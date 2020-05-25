@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'dynamic_simulation'.
 //
-// Model version                  : 1.133
+// Model version                  : 1.134
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sun May 24 19:49:06 2020
+// C/C++ source code generated on : Mon May 25 15:25:08 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -95,7 +95,7 @@ int main(int argc, char **argv)
   dynamic_simulation_initialize();
 
   // Call RTOS Initialization function
-  myRTOSInit(0.05, 0);
+  myRTOSInit(0.01, 0);
 
   // Wait for stop semaphore
   sem_wait(&stopSem);
