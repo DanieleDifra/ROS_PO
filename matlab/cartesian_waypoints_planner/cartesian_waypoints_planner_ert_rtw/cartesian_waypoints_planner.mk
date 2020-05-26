@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'cartesian_waypoints_planner'. 
 ## 
 ## Makefile     : cartesian_waypoints_planner.mk
-## Generated on : Sun May 24 12:36:40 2020
+## Generated on : Mon May 25 17:24:59 2020
 ## MATLAB Coder version: 5.0 (R2020a)
 ## 
 ## Build Info:
@@ -27,7 +27,7 @@ MATLAB_ROOT               = /usr/local/MATLAB/R2020a
 MATLAB_BIN                = /usr/local/MATLAB/R2020a/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/glnxa64
 MASTER_ANCHOR_DIR         = 
-START_DIR                 = /home/paolo/ROS_PO/matlab/cartesian_trajectory_planner_3
+START_DIR                 = /home/paolo/ROS_PO/matlab/cartesian_waypoints_planner
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0

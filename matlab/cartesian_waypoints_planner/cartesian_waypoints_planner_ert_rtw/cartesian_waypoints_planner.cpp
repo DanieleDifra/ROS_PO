@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cartesian_waypoints_planner'.
 //
-// Model version                  : 1.169
+// Model version                  : 1.173
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sun May 24 12:36:19 2020
+// C/C++ source code generated on : Mon May 25 17:24:48 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -184,6 +184,7 @@ static void emxFreeStruct_f_robotics_manip_(f_robotics_manip_internal_IKE_T
   *pStruct);
 static void emxFreeStruct_h_robotics_core_i(h_robotics_core_internal_Damp_T
   *pStruct);
+static void cartesian_way_matlabCodegenHa_a(ros_slros_internal_block_SetP_T *obj);
 static void matlabCodegenHandle_matlabCo_ev(ros_slros_internal_block_Publ_T *obj);
 static void emxInitStruct_c_rigidBodyJoint(c_rigidBodyJoint_cartesian_wa_T
   *pStruct);
@@ -523,11 +524,11 @@ static void car_inverseKinematics_setupImpl(b_inverseKinematics_cartesian_T *obj
   int32_T c;
   boolean_T b_bool;
   emxArray_char_T_cartesian_way_T *a;
+  int32_T b_kstr;
+  char_T b_0[5];
   int8_T b_I[16];
   int32_T m_0;
   real_T t;
-  int32_T b_kstr;
-  char_T b_0[5];
   real_T pnum_0;
   int32_T loop_ub;
   real_T tmp;
@@ -925,10 +926,10 @@ static void RigidBodyTree_validateConfigu_e(x_robotics_manip_internal_Rig_T *obj
   int32_T ii_data[6];
   boolean_T b_bool;
   emxArray_char_T_cartesian_way_T *a;
-  c_rigidBodyJoint_cartesian_wa_T *obj_0;
-  int32_T idx;
   int32_T b_kstr;
   char_T b[5];
+  c_rigidBodyJoint_cartesian_wa_T *obj_0;
+  int32_T idx;
   int32_T loop_ub;
   emxArray_real_T_cartesian_way_T *limits_0;
   emxArray_real_T_cartesian_way_T *limits_1;
@@ -10308,6 +10309,13 @@ static void emxFreeStruct_h_robotics_core_i(h_robotics_core_internal_Damp_T
   cartesian_waypoi_emxFree_real_T(&pStruct->ConstraintBound);
 }
 
+static void cartesian_way_matlabCodegenHa_a(ros_slros_internal_block_SetP_T *obj)
+{
+  if (!obj->matlabCodegenIsDeleted) {
+    obj->matlabCodegenIsDeleted = true;
+  }
+}
+
 static void matlabCodegenHandle_matlabCo_ev(ros_slros_internal_block_Publ_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
@@ -16269,51 +16277,51 @@ static void cartesian_RigidBodyTree_addBody(x_robotics_manip_internal_Rig_T *obj
   int32_T exitg2;
   cartesian_waypoi_emxInit_char_T(&bname, 2);
   cartesian_waypoints_planner_B.pid = -1.0;
-  cartesian_waypoints_planner_B.b_kstr_i = bname->size[0] * bname->size[1];
+  cartesian_waypoints_planner_B.b_kstr_d = bname->size[0] * bname->size[1];
   bname->size[0] = 1;
   bname->size[1] = obj->Base.NameInternal->size[1];
-  cartes_emxEnsureCapacity_char_T(bname, cartesian_waypoints_planner_B.b_kstr_i);
+  cartes_emxEnsureCapacity_char_T(bname, cartesian_waypoints_planner_B.b_kstr_d);
   cartesian_waypoints_planner_B.loop_ub_b = obj->Base.NameInternal->size[0] *
     obj->Base.NameInternal->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_i = 0;
-       cartesian_waypoints_planner_B.b_kstr_i <=
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <=
        cartesian_waypoints_planner_B.loop_ub_b;
-       cartesian_waypoints_planner_B.b_kstr_i++) {
-    bname->data[cartesian_waypoints_planner_B.b_kstr_i] = obj->
-      Base.NameInternal->data[cartesian_waypoints_planner_B.b_kstr_i];
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    bname->data[cartesian_waypoints_planner_B.b_kstr_d] = obj->
+      Base.NameInternal->data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
   if (cartesian_waypoints_plan_strcmp(bname, parentName)) {
     cartesian_waypoints_planner_B.pid = 0.0;
   } else {
     cartesian_waypoints_planner_B.b_index_c = obj->NumBodies;
-    cartesian_waypoints_planner_B.b_i_d = 0;
+    cartesian_waypoints_planner_B.b_i_i = 0;
     exitg1 = false;
-    while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_d <=
+    while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_i <=
                          static_cast<int32_T>
                          (cartesian_waypoints_planner_B.b_index_c) - 1)) {
-      body = obj->Bodies[cartesian_waypoints_planner_B.b_i_d];
-      cartesian_waypoints_planner_B.b_kstr_i = bname->size[0] * bname->size[1];
+      body = obj->Bodies[cartesian_waypoints_planner_B.b_i_i];
+      cartesian_waypoints_planner_B.b_kstr_d = bname->size[0] * bname->size[1];
       bname->size[0] = 1;
       bname->size[1] = body->NameInternal->size[1];
       cartes_emxEnsureCapacity_char_T(bname,
-        cartesian_waypoints_planner_B.b_kstr_i);
+        cartesian_waypoints_planner_B.b_kstr_d);
       cartesian_waypoints_planner_B.loop_ub_b = body->NameInternal->size[0] *
         body->NameInternal->size[1] - 1;
-      for (cartesian_waypoints_planner_B.b_kstr_i = 0;
-           cartesian_waypoints_planner_B.b_kstr_i <=
+      for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+           cartesian_waypoints_planner_B.b_kstr_d <=
            cartesian_waypoints_planner_B.loop_ub_b;
-           cartesian_waypoints_planner_B.b_kstr_i++) {
-        bname->data[cartesian_waypoints_planner_B.b_kstr_i] = body->
-          NameInternal->data[cartesian_waypoints_planner_B.b_kstr_i];
+           cartesian_waypoints_planner_B.b_kstr_d++) {
+        bname->data[cartesian_waypoints_planner_B.b_kstr_d] = body->
+          NameInternal->data[cartesian_waypoints_planner_B.b_kstr_d];
       }
 
       if (cartesian_waypoints_plan_strcmp(bname, parentName)) {
         cartesian_waypoints_planner_B.pid = static_cast<real_T>
-          (cartesian_waypoints_planner_B.b_i_d) + 1.0;
+          (cartesian_waypoints_planner_B.b_i_i) + 1.0;
         exitg1 = true;
       } else {
-        cartesian_waypoints_planner_B.b_i_d++;
+        cartesian_waypoints_planner_B.b_i_i++;
       }
     }
   }
@@ -16327,41 +16335,41 @@ static void cartesian_RigidBodyTree_addBody(x_robotics_manip_internal_Rig_T *obj
   body->JointInternal->InTree = true;
   obj->NumBodies++;
   jnt = body->JointInternal;
-  cartesian_waypoints_planner_B.b_kstr_i = bname->size[0] * bname->size[1];
+  cartesian_waypoints_planner_B.b_kstr_d = bname->size[0] * bname->size[1];
   bname->size[0] = 1;
   bname->size[1] = jnt->Type->size[1];
-  cartes_emxEnsureCapacity_char_T(bname, cartesian_waypoints_planner_B.b_kstr_i);
+  cartes_emxEnsureCapacity_char_T(bname, cartesian_waypoints_planner_B.b_kstr_d);
   cartesian_waypoints_planner_B.loop_ub_b = jnt->Type->size[0] * jnt->Type->
     size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_i = 0;
-       cartesian_waypoints_planner_B.b_kstr_i <=
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <=
        cartesian_waypoints_planner_B.loop_ub_b;
-       cartesian_waypoints_planner_B.b_kstr_i++) {
-    bname->data[cartesian_waypoints_planner_B.b_kstr_i] = jnt->Type->
-      data[cartesian_waypoints_planner_B.b_kstr_i];
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    bname->data[cartesian_waypoints_planner_B.b_kstr_d] = jnt->Type->
+      data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_i = 0;
-       cartesian_waypoints_planner_B.b_kstr_i < 5;
-       cartesian_waypoints_planner_B.b_kstr_i++) {
-    cartesian_waypoints_planner_B.b_k1[cartesian_waypoints_planner_B.b_kstr_i] =
-      tmp[cartesian_waypoints_planner_B.b_kstr_i];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 5;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    cartesian_waypoints_planner_B.b_k1[cartesian_waypoints_planner_B.b_kstr_d] =
+      tmp[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
   cartesian_waypoints_planner_B.b_bool_i = false;
   if (bname->size[1] == 5) {
-    cartesian_waypoints_planner_B.b_kstr_i = 1;
+    cartesian_waypoints_planner_B.b_kstr_d = 1;
     do {
       exitg2 = 0;
-      if (cartesian_waypoints_planner_B.b_kstr_i - 1 < 5) {
+      if (cartesian_waypoints_planner_B.b_kstr_d - 1 < 5) {
         cartesian_waypoints_planner_B.loop_ub_b =
-          cartesian_waypoints_planner_B.b_kstr_i - 1;
+          cartesian_waypoints_planner_B.b_kstr_d - 1;
         if (bname->data[cartesian_waypoints_planner_B.loop_ub_b] !=
             cartesian_waypoints_planner_B.b_k1[cartesian_waypoints_planner_B.loop_ub_b])
         {
           exitg2 = 1;
         } else {
-          cartesian_waypoints_planner_B.b_kstr_i++;
+          cartesian_waypoints_planner_B.b_kstr_d++;
         }
       } else {
         cartesian_waypoints_planner_B.b_bool_i = true;
@@ -16374,26 +16382,26 @@ static void cartesian_RigidBodyTree_addBody(x_robotics_manip_internal_Rig_T *obj
   if (!cartesian_waypoints_planner_B.b_bool_i) {
     obj->NumNonFixedBodies++;
     jnt = body->JointInternal;
-    cartesian_waypoints_planner_B.b_kstr_i = static_cast<int32_T>(body->Index) -
+    cartesian_waypoints_planner_B.b_kstr_d = static_cast<int32_T>(body->Index) -
       1;
-    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_i] =
+    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_d] =
       obj->PositionNumber + 1.0;
-    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_i + 8] =
+    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_d + 8] =
       obj->PositionNumber + jnt->PositionNumber;
     jnt = body->JointInternal;
-    cartesian_waypoints_planner_B.b_kstr_i = static_cast<int32_T>(body->Index) -
+    cartesian_waypoints_planner_B.b_kstr_d = static_cast<int32_T>(body->Index) -
       1;
-    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_i] =
+    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_d] =
       obj->VelocityNumber + 1.0;
-    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_i + 8] =
+    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_d + 8] =
       obj->VelocityNumber + jnt->VelocityNumber;
   } else {
-    cartesian_waypoints_planner_B.b_kstr_i = static_cast<int32_T>(body->Index);
-    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_i - 1] = 0.0;
-    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_i + 7] = -1.0;
-    cartesian_waypoints_planner_B.b_kstr_i = static_cast<int32_T>(body->Index);
-    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_i - 1] = 0.0;
-    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_i + 7] = -1.0;
+    cartesian_waypoints_planner_B.b_kstr_d = static_cast<int32_T>(body->Index);
+    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_d - 1] = 0.0;
+    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_d + 7] = -1.0;
+    cartesian_waypoints_planner_B.b_kstr_d = static_cast<int32_T>(body->Index);
+    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_d - 1] = 0.0;
+    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_d + 7] = -1.0;
   }
 
   jnt = body->JointInternal;
@@ -17085,59 +17093,59 @@ void cartesian_waypoints_planner_step(void)
   ParamGet_cartesian_waypoints_planner_346.get_parameter
     (&cartesian_waypoints_planner_B.value_al);
 
-  // MATLABSystem: '<S9>/Get Parameter'
+  // MATLABSystem: '<S10>/Get Parameter'
   ParamGet_cartesian_waypoints_planner_288.get_parameter
     (&cartesian_waypoints_planner_B.c_n);
 
-  // MATLABSystem: '<S9>/Get Parameter1'
+  // MATLABSystem: '<S10>/Get Parameter1'
   ParamGet_cartesian_waypoints_planner_289.get_parameter
     (&cartesian_waypoints_planner_B.value_j);
 
-  // MATLABSystem: '<S9>/Get Parameter2'
+  // MATLABSystem: '<S10>/Get Parameter2'
   ParamGet_cartesian_waypoints_planner_290.get_parameter
     (&cartesian_waypoints_planner_B.value_f);
 
-  // MATLABSystem: '<S9>/Get Parameter3'
+  // MATLABSystem: '<S10>/Get Parameter3'
   ParamGet_cartesian_waypoints_planner_291.get_parameter
     (&cartesian_waypoints_planner_B.value_a);
 
-  // MATLABSystem: '<S9>/Get Parameter4'
+  // MATLABSystem: '<S10>/Get Parameter4'
   ParamGet_cartesian_waypoints_planner_292.get_parameter
     (&cartesian_waypoints_planner_B.value_g);
 
-  // MATLABSystem: '<S9>/Get Parameter5'
+  // MATLABSystem: '<S10>/Get Parameter5'
   ParamGet_cartesian_waypoints_planner_293.get_parameter
     (&cartesian_waypoints_planner_B.value_n);
 
-  // MATLABSystem: '<S9>/Get Parameter6'
+  // MATLABSystem: '<S10>/Get Parameter6'
   ParamGet_cartesian_waypoints_planner_294.get_parameter
     (&cartesian_waypoints_planner_B.value_d);
 
-  // MATLABSystem: '<S10>/Get Parameter'
+  // MATLABSystem: '<S11>/Get Parameter'
   ParamGet_cartesian_waypoints_planner_300.get_parameter
     (&cartesian_waypoints_planner_B.value_na);
 
-  // MATLABSystem: '<S10>/Get Parameter1'
+  // MATLABSystem: '<S11>/Get Parameter1'
   ParamGet_cartesian_waypoints_planner_301.get_parameter
     (&cartesian_waypoints_planner_B.value_c);
 
-  // MATLABSystem: '<S10>/Get Parameter2'
+  // MATLABSystem: '<S11>/Get Parameter2'
   ParamGet_cartesian_waypoints_planner_302.get_parameter
     (&cartesian_waypoints_planner_B.value_fx);
 
-  // MATLABSystem: '<S10>/Get Parameter3'
+  // MATLABSystem: '<S11>/Get Parameter3'
   ParamGet_cartesian_waypoints_planner_303.get_parameter
     (&cartesian_waypoints_planner_B.theta0);
 
-  // MATLABSystem: '<S10>/Get Parameter4'
+  // MATLABSystem: '<S11>/Get Parameter4'
   ParamGet_cartesian_waypoints_planner_304.get_parameter
     (&cartesian_waypoints_planner_B.value_p);
 
-  // MATLABSystem: '<S10>/Get Parameter5'
+  // MATLABSystem: '<S11>/Get Parameter5'
   ParamGet_cartesian_waypoints_planner_305.get_parameter
     (&cartesian_waypoints_planner_B.dp);
 
-  // MATLABSystem: '<S10>/Get Parameter6'
+  // MATLABSystem: '<S11>/Get Parameter6'
   ParamGet_cartesian_waypoints_planner_306.get_parameter
     (&cartesian_waypoints_planner_B.d_n);
 
@@ -17150,14 +17158,14 @@ void cartesian_waypoints_planner_step(void)
   //   MATLABSystem: '<S10>/Get Parameter4'
   //   MATLABSystem: '<S10>/Get Parameter5'
   //   MATLABSystem: '<S10>/Get Parameter6'
+  //   MATLABSystem: '<S11>/Get Parameter'
+  //   MATLABSystem: '<S11>/Get Parameter1'
+  //   MATLABSystem: '<S11>/Get Parameter2'
+  //   MATLABSystem: '<S11>/Get Parameter3'
+  //   MATLABSystem: '<S11>/Get Parameter4'
+  //   MATLABSystem: '<S11>/Get Parameter5'
+  //   MATLABSystem: '<S11>/Get Parameter6'
   //   MATLABSystem: '<S7>/Get Parameter'
-  //   MATLABSystem: '<S9>/Get Parameter'
-  //   MATLABSystem: '<S9>/Get Parameter1'
-  //   MATLABSystem: '<S9>/Get Parameter2'
-  //   MATLABSystem: '<S9>/Get Parameter3'
-  //   MATLABSystem: '<S9>/Get Parameter4'
-  //   MATLABSystem: '<S9>/Get Parameter5'
-  //   MATLABSystem: '<S9>/Get Parameter6'
 
   if (cartesian_waypoints_planner_B.value_al > 20) {
     cartesian_waypoints_planner_B.value_al = 20;
@@ -17504,7 +17512,47 @@ void cartesian_waypoints_planner_step(void)
 
   cartesian_waypoints_planner_DW.Delay1_DSTATE++;
 
-  // End of MATLAB Function: '<Root>/MATLAB Function2'
+  // MATLABSystem: '<S9>/Set Parameter' incorporates:
+  //   Delay: '<Root>/Delay2'
+  //   MATLAB Function: '<Root>/MATLAB Function2'
+
+  ParamSet_cartesian_waypoints_planner_364.set_parameter
+    (cartesian_waypoints_planner_DW.Delay2_DSTATE[2]);
+
+  // MATLABSystem: '<S9>/Set Parameter1' incorporates:
+  //   Delay: '<Root>/Delay2'
+  //   MATLAB Function: '<Root>/MATLAB Function2'
+
+  ParamSet_cartesian_waypoints_planner_365.set_parameter
+    (cartesian_waypoints_planner_DW.Delay2_DSTATE[3]);
+
+  // MATLABSystem: '<S9>/Set Parameter2' incorporates:
+  //   Delay: '<Root>/Delay2'
+  //   MATLAB Function: '<Root>/MATLAB Function2'
+
+  ParamSet_cartesian_waypoints_planner_366.set_parameter
+    (cartesian_waypoints_planner_DW.Delay2_DSTATE[4]);
+
+  // MATLABSystem: '<S9>/Set Parameter3' incorporates:
+  //   Delay: '<Root>/Delay2'
+  //   MATLAB Function: '<Root>/MATLAB Function2'
+
+  ParamSet_cartesian_waypoints_planner_371.set_parameter
+    (cartesian_waypoints_planner_DW.Delay2_DSTATE[5]);
+
+  // MATLABSystem: '<S9>/Set Parameter4' incorporates:
+  //   Delay: '<Root>/Delay2'
+  //   MATLAB Function: '<Root>/MATLAB Function2'
+
+  ParamSet_cartesian_waypoints_planner_372.set_parameter
+    (cartesian_waypoints_planner_DW.Delay2_DSTATE[1]);
+
+  // MATLABSystem: '<S9>/Set Parameter5' incorporates:
+  //   Delay: '<Root>/Delay2'
+  //   MATLAB Function: '<Root>/MATLAB Function2'
+
+  ParamSet_cartesian_waypoints_planner_373.set_parameter
+    (cartesian_waypoints_planner_DW.Delay2_DSTATE[0]);
 
   // MATLAB Function: '<Root>/MATLAB Function1' incorporates:
   //   Constant: '<S1>/Constant'
@@ -17619,6 +17667,24 @@ void cartesian_waypoints_planner_initialize(void)
     static const char_T tmp_k[10] = { '/', 'w', 'e', 'i', 'g', 'h', 't', '_',
       'p', 'z' };
 
+    static const char_T tmp_l[11] = { '/', 'q', '3', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
+
+    static const char_T tmp_m[11] = { '/', 'q', '4', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
+
+    static const char_T tmp_n[11] = { '/', 'q', '5', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
+
+    static const char_T tmp_o[11] = { '/', 'q', '6', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
+
+    static const char_T tmp_p[11] = { '/', 'q', '2', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
+
+    static const char_T tmp_q[11] = { '/', 'q', '1', '_', 'i', 'n', 'i', 't',
+      'i', 'a', 'l' };
+
     // InitializeConditions for Delay: '<Root>/Delay2'
     memcpy(&cartesian_waypoints_planner_DW.Delay2_DSTATE[0],
            &cartesian_waypoints_planner_P.Delay2_InitialCondition[0], 120U *
@@ -17668,284 +17734,284 @@ void cartesian_waypoints_planner_initialize(void)
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 9;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
         tmp_0[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv2[9] = '\x00';
+    cartesian_waypoints_planner_B.cv3[9] = '\x00';
     ParamGet_cartesian_waypoints_planner_346.initialize
-      (cartesian_waypoints_planner_B.cv2);
+      (cartesian_waypoints_planner_B.cv3);
     ParamGet_cartesian_waypoints_planner_346.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_346.set_initial_value(10);
     cartesian_waypoints_planner_DW.obj_eq.isSetupComplete = true;
 
     // End of Start for MATLABSystem: '<S7>/Get Parameter'
 
-    // Start for MATLABSystem: '<S9>/Get Parameter'
+    // Start for MATLABSystem: '<S10>/Get Parameter'
     cartesian_waypoints_planner_DW.obj_i.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_i.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_1[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_288.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_288.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_288.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_i.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Get Parameter'
+    // End of Start for MATLABSystem: '<S10>/Get Parameter'
 
-    // Start for MATLABSystem: '<S9>/Get Parameter1'
+    // Start for MATLABSystem: '<S10>/Get Parameter1'
     cartesian_waypoints_planner_DW.obj_db.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_db.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_2[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_289.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_289.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_289.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_db.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Get Parameter1'
+    // End of Start for MATLABSystem: '<S10>/Get Parameter1'
 
-    // Start for MATLABSystem: '<S9>/Get Parameter2'
+    // Start for MATLABSystem: '<S10>/Get Parameter2'
     cartesian_waypoints_planner_DW.obj_oq.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_oq.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_3[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_290.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_290.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_290.set_initial_value(0.99);
     cartesian_waypoints_planner_DW.obj_oq.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Get Parameter2'
+    // End of Start for MATLABSystem: '<S10>/Get Parameter2'
 
-    // Start for MATLABSystem: '<S9>/Get Parameter3'
+    // Start for MATLABSystem: '<S10>/Get Parameter3'
     cartesian_waypoints_planner_DW.obj_es.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_es.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_4[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_291.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_291.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_291.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_es.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Get Parameter3'
+    // End of Start for MATLABSystem: '<S10>/Get Parameter3'
 
-    // Start for MATLABSystem: '<S9>/Get Parameter4'
+    // Start for MATLABSystem: '<S10>/Get Parameter4'
     cartesian_waypoints_planner_DW.obj_f4.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_f4.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_5[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_292.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_292.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_292.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_f4.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Get Parameter4'
+    // End of Start for MATLABSystem: '<S10>/Get Parameter4'
 
-    // Start for MATLABSystem: '<S9>/Get Parameter5'
+    // Start for MATLABSystem: '<S10>/Get Parameter5'
     cartesian_waypoints_planner_DW.obj_en.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_en.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_6[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_293.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_293.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_293.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_en.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Get Parameter5'
+    // End of Start for MATLABSystem: '<S10>/Get Parameter5'
 
-    // Start for MATLABSystem: '<S9>/Get Parameter6'
+    // Start for MATLABSystem: '<S10>/Get Parameter6'
     cartesian_waypoints_planner_DW.obj_l0.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_l0.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_7[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_294.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_294.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_294.set_initial_value(1.0);
     cartesian_waypoints_planner_DW.obj_l0.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Get Parameter6'
+    // End of Start for MATLABSystem: '<S10>/Get Parameter6'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter'
+    // Start for MATLABSystem: '<S11>/Get Parameter'
     cartesian_waypoints_planner_DW.obj_mb.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_mb.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_8[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_300.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_300.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_300.set_initial_value(0.3);
     cartesian_waypoints_planner_DW.obj_mb.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter1'
+    // Start for MATLABSystem: '<S11>/Get Parameter1'
     cartesian_waypoints_planner_DW.obj_c.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_c.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_9[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_301.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_301.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_301.set_initial_value(0.3);
     cartesian_waypoints_planner_DW.obj_c.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter1'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter1'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter2'
+    // Start for MATLABSystem: '<S11>/Get Parameter2'
     cartesian_waypoints_planner_DW.obj_f.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_f.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_a[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_302.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_302.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_302.set_initial_value(0.3);
     cartesian_waypoints_planner_DW.obj_f.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter2'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter2'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter3'
+    // Start for MATLABSystem: '<S11>/Get Parameter3'
     cartesian_waypoints_planner_DW.obj_e0.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_e0.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_b[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_303.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_303.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_303.set_initial_value(0.39);
     cartesian_waypoints_planner_DW.obj_e0.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter3'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter3'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter4'
+    // Start for MATLABSystem: '<S11>/Get Parameter4'
     cartesian_waypoints_planner_DW.obj_a.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_a.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_c[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_304.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_304.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_304.set_initial_value(0.89);
     cartesian_waypoints_planner_DW.obj_a.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter4'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter4'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter5'
+    // Start for MATLABSystem: '<S11>/Get Parameter5'
     cartesian_waypoints_planner_DW.obj_p.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_p.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_d[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_305.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_305.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_305.set_initial_value(0.2);
     cartesian_waypoints_planner_DW.obj_p.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter5'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter5'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter6'
+    // Start for MATLABSystem: '<S11>/Get Parameter6'
     cartesian_waypoints_planner_DW.obj_l.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_l.isInitialized = 1;
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 5;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
         tmp_e[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv3[5] = '\x00';
+    cartesian_waypoints_planner_B.cv4[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_306.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_306.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_306.set_initial_value(-0.12);
     cartesian_waypoints_planner_DW.obj_l.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter6'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter6'
 
     // Start for MATLABSystem: '<S8>/Get Parameter'
     cartesian_waypoints_planner_DW.obj_e.matlabCodegenIsDeleted = false;
@@ -17953,13 +18019,13 @@ void cartesian_waypoints_planner_initialize(void)
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 10;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
         tmp_f[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv1[10] = '\x00';
+    cartesian_waypoints_planner_B.cv2[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_312.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     ParamGet_cartesian_waypoints_planner_312.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_312.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_e.isSetupComplete = true;
@@ -17972,13 +18038,13 @@ void cartesian_waypoints_planner_initialize(void)
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 10;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
         tmp_g[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv1[10] = '\x00';
+    cartesian_waypoints_planner_B.cv2[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_313.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     ParamGet_cartesian_waypoints_planner_313.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_313.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_d.isSetupComplete = true;
@@ -17991,13 +18057,13 @@ void cartesian_waypoints_planner_initialize(void)
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 10;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
         tmp_h[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv1[10] = '\x00';
+    cartesian_waypoints_planner_B.cv2[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_314.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     ParamGet_cartesian_waypoints_planner_314.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_314.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_m.isSetupComplete = true;
@@ -18010,13 +18076,13 @@ void cartesian_waypoints_planner_initialize(void)
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 10;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
         tmp_i[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv1[10] = '\x00';
+    cartesian_waypoints_planner_B.cv2[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_315.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     ParamGet_cartesian_waypoints_planner_315.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_315.set_initial_value(1.0);
     cartesian_waypoints_planner_DW.obj_h.isSetupComplete = true;
@@ -18029,13 +18095,13 @@ void cartesian_waypoints_planner_initialize(void)
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 10;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
         tmp_j[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv1[10] = '\x00';
+    cartesian_waypoints_planner_B.cv2[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_316.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     ParamGet_cartesian_waypoints_planner_316.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_316.set_initial_value(1.0);
     cartesian_waypoints_planner_DW.obj_mf.isSetupComplete = true;
@@ -18048,13 +18114,13 @@ void cartesian_waypoints_planner_initialize(void)
     for (cartesian_waypoints_planner_B.i_e = 0;
          cartesian_waypoints_planner_B.i_e < 10;
          cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
         tmp_k[cartesian_waypoints_planner_B.i_e];
     }
 
-    cartesian_waypoints_planner_B.cv1[10] = '\x00';
+    cartesian_waypoints_planner_B.cv2[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_317.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     ParamGet_cartesian_waypoints_planner_317.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_317.set_initial_value(1.0);
     cartesian_waypoints_planner_DW.obj_o.isSetupComplete = true;
@@ -18239,6 +18305,108 @@ void cartesian_waypoints_planner_initialize(void)
     obj_1->RandomRestart = false;
     obj_1->StepTolerance = 1.0E-14;
     obj_0->matlabCodegenIsDeleted = false;
+
+    // Start for MATLABSystem: '<S9>/Set Parameter'
+    cartesian_waypoints_planner_DW.obj_fb.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_fb.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_e = 0;
+         cartesian_waypoints_planner_B.i_e < 11;
+         cartesian_waypoints_planner_B.i_e++) {
+      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+        tmp_l[cartesian_waypoints_planner_B.i_e];
+    }
+
+    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    ParamSet_cartesian_waypoints_planner_364.initialize
+      (cartesian_waypoints_planner_B.cv1);
+    cartesian_waypoints_planner_DW.obj_fb.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S9>/Set Parameter'
+
+    // Start for MATLABSystem: '<S9>/Set Parameter1'
+    cartesian_waypoints_planner_DW.obj_dr.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_dr.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_e = 0;
+         cartesian_waypoints_planner_B.i_e < 11;
+         cartesian_waypoints_planner_B.i_e++) {
+      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+        tmp_m[cartesian_waypoints_planner_B.i_e];
+    }
+
+    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    ParamSet_cartesian_waypoints_planner_365.initialize
+      (cartesian_waypoints_planner_B.cv1);
+    cartesian_waypoints_planner_DW.obj_dr.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S9>/Set Parameter1'
+
+    // Start for MATLABSystem: '<S9>/Set Parameter2'
+    cartesian_waypoints_planner_DW.obj_a5.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_a5.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_e = 0;
+         cartesian_waypoints_planner_B.i_e < 11;
+         cartesian_waypoints_planner_B.i_e++) {
+      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+        tmp_n[cartesian_waypoints_planner_B.i_e];
+    }
+
+    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    ParamSet_cartesian_waypoints_planner_366.initialize
+      (cartesian_waypoints_planner_B.cv1);
+    cartesian_waypoints_planner_DW.obj_a5.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S9>/Set Parameter2'
+
+    // Start for MATLABSystem: '<S9>/Set Parameter3'
+    cartesian_waypoints_planner_DW.obj_hu.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_hu.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_e = 0;
+         cartesian_waypoints_planner_B.i_e < 11;
+         cartesian_waypoints_planner_B.i_e++) {
+      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+        tmp_o[cartesian_waypoints_planner_B.i_e];
+    }
+
+    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    ParamSet_cartesian_waypoints_planner_371.initialize
+      (cartesian_waypoints_planner_B.cv1);
+    cartesian_waypoints_planner_DW.obj_hu.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S9>/Set Parameter3'
+
+    // Start for MATLABSystem: '<S9>/Set Parameter4'
+    cartesian_waypoints_planner_DW.obj_o1.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_o1.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_e = 0;
+         cartesian_waypoints_planner_B.i_e < 11;
+         cartesian_waypoints_planner_B.i_e++) {
+      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+        tmp_p[cartesian_waypoints_planner_B.i_e];
+    }
+
+    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    ParamSet_cartesian_waypoints_planner_372.initialize
+      (cartesian_waypoints_planner_B.cv1);
+    cartesian_waypoints_planner_DW.obj_o1.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S9>/Set Parameter4'
+
+    // Start for MATLABSystem: '<S9>/Set Parameter5'
+    cartesian_waypoints_planner_DW.obj_ap.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_ap.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_e = 0;
+         cartesian_waypoints_planner_B.i_e < 11;
+         cartesian_waypoints_planner_B.i_e++) {
+      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
+        tmp_q[cartesian_waypoints_planner_B.i_e];
+    }
+
+    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    ParamSet_cartesian_waypoints_planner_373.initialize
+      (cartesian_waypoints_planner_B.cv1);
+    cartesian_waypoints_planner_DW.obj_ap.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<S9>/Set Parameter5'
   }
 }
 
@@ -18248,46 +18416,46 @@ void cartesian_waypoints_planner_terminate(void)
   // Terminate for MATLABSystem: '<S7>/Get Parameter'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_eq);
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter'
+  // Terminate for MATLABSystem: '<S10>/Get Parameter'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_i);
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter1'
+  // Terminate for MATLABSystem: '<S10>/Get Parameter1'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_db);
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter2'
+  // Terminate for MATLABSystem: '<S10>/Get Parameter2'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_oq);
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter3'
+  // Terminate for MATLABSystem: '<S10>/Get Parameter3'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_es);
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter4'
+  // Terminate for MATLABSystem: '<S10>/Get Parameter4'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_f4);
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter5'
+  // Terminate for MATLABSystem: '<S10>/Get Parameter5'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_en);
 
-  // Terminate for MATLABSystem: '<S9>/Get Parameter6'
+  // Terminate for MATLABSystem: '<S10>/Get Parameter6'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_l0);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_mb);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter1'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter1'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_c);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter2'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter2'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_f);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter3'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter3'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_e0);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter4'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter4'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_a);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter5'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter5'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_p);
 
-  // Terminate for MATLABSystem: '<S10>/Get Parameter6'
+  // Terminate for MATLABSystem: '<S11>/Get Parameter6'
   matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_l);
 
   // Terminate for MATLABSystem: '<S8>/Get Parameter'
@@ -18415,6 +18583,24 @@ void cartesian_waypoints_planner_terminate(void)
   emxFreeStruct_v_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_91);
   emxFreeStruct_v_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_90);
   emxFreeStruct_v_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_89);
+
+  // Terminate for MATLABSystem: '<S9>/Set Parameter'
+  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_fb);
+
+  // Terminate for MATLABSystem: '<S9>/Set Parameter1'
+  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_dr);
+
+  // Terminate for MATLABSystem: '<S9>/Set Parameter2'
+  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_a5);
+
+  // Terminate for MATLABSystem: '<S9>/Set Parameter3'
+  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_hu);
+
+  // Terminate for MATLABSystem: '<S9>/Set Parameter4'
+  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_o1);
+
+  // Terminate for MATLABSystem: '<S9>/Set Parameter5'
+  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_ap);
 
   // Terminate for Atomic SubSystem: '<Root>/Publish'
   // Terminate for MATLABSystem: '<S6>/SinkBlock'

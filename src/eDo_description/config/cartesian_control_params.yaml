@@ -1,0 +1,28 @@
+start_delay: 2.0
+max_ang_vel: 5.0
+max_ang_acc: 0.5
+
+n_points: 2
+
+pi_x: -0.2
+pi_y: -0.2
+pi_z: 0.5
+oi_x: 0.0
+oi_y: 0.0
+oi_z: 0.0
+oi_w: 1.0
+
+pf_x: 0.2
+pf_y: 0.2
+pf_z: 0.3
+of_x: 0.0
+of_y: 0.0
+of_z: 0.0
+of_w: 1.0
+
+pos_control_1: 1.0
+pos_control_2: 1.0
+pos_control_3: 1.0
+pos_control_4: 1.0
+pos_control_5: 1.0
+pos_control_6: 1.0

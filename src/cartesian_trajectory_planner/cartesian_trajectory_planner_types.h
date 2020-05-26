@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cartesian_trajectory_planner'.
 //
-// Model version                  : 1.129
+// Model version                  : 1.131
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 20 16:41:34 2020
+// C/C++ source code generated on : Mon May 25 16:42:52 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -191,6 +191,188 @@ typedef struct {
 
 #endif
 
+#ifndef struct_emxArray_char_T
+#define struct_emxArray_char_T
+
+struct emxArray_char_T
+{
+  char_T *data;
+  int32_T *size;
+  int32_T allocatedSize;
+  int32_T numDimensions;
+  boolean_T canFreeData;
+};
+
+#endif                                 //struct_emxArray_char_T
+
+#ifndef typedef_emxArray_char_T_cartesian_tra_T
+#define typedef_emxArray_char_T_cartesian_tra_T
+
+typedef struct emxArray_char_T emxArray_char_T_cartesian_tra_T;
+
+#endif                                 //typedef_emxArray_char_T_cartesian_tra_T
+
+#ifndef struct_tag_sg9AtqjjkXglWcXWTAtiJmG
+#define struct_tag_sg9AtqjjkXglWcXWTAtiJmG
+
+struct tag_sg9AtqjjkXglWcXWTAtiJmG
+{
+  uint8_T Type;
+  real_T NameLength;
+  uint8_T Name[15];
+  real_T VelocityNumber;
+  real_T PositionNumber;
+  real_T MotionSubspace[36];
+  real_T JointAxis[3];
+  real_T PositionLimits[14];
+  real_T HomePosition[7];
+  real_T JointToParentTransform[16];
+  real_T ChildToJointTransform[16];
+};
+
+#endif                                 //struct_tag_sg9AtqjjkXglWcXWTAtiJmG
+
+#ifndef typedef_sg9AtqjjkXglWcXWTAtiJmG_carte_T
+#define typedef_sg9AtqjjkXglWcXWTAtiJmG_carte_T
+
+typedef struct tag_sg9AtqjjkXglWcXWTAtiJmG sg9AtqjjkXglWcXWTAtiJmG_carte_T;
+
+#endif                                 //typedef_sg9AtqjjkXglWcXWTAtiJmG_carte_T
+
+#ifndef struct_tag_8EP4ctv7s0SDnh3V6WCLOG
+#define struct_tag_8EP4ctv7s0SDnh3V6WCLOG
+
+struct tag_8EP4ctv7s0SDnh3V6WCLOG
+{
+  real_T f1[16];
+};
+
+#endif                                 //struct_tag_8EP4ctv7s0SDnh3V6WCLOG
+
+#ifndef typedef_f_cell_wrap_cartesian_traject_T
+#define typedef_f_cell_wrap_cartesian_traject_T
+
+typedef struct tag_8EP4ctv7s0SDnh3V6WCLOG f_cell_wrap_cartesian_traject_T;
+
+#endif                                 //typedef_f_cell_wrap_cartesian_traject_T
+
+#ifndef struct_tag_2xAJzS7rvIyFzfuC7FOGlD
+#define struct_tag_2xAJzS7rvIyFzfuC7FOGlD
+
+struct tag_2xAJzS7rvIyFzfuC7FOGlD
+{
+  emxArray_char_T_cartesian_tra_T *Type;
+  real_T PositionNumber;
+  real_T JointToParentTransform[16];
+  real_T ChildToJointTransform[16];
+  real_T JointAxisInternal[3];
+};
+
+#endif                                 //struct_tag_2xAJzS7rvIyFzfuC7FOGlD
+
+#ifndef typedef_c_rigidBodyJoint_cartesian_tr_T
+#define typedef_c_rigidBodyJoint_cartesian_tr_T
+
+typedef struct tag_2xAJzS7rvIyFzfuC7FOGlD c_rigidBodyJoint_cartesian_tr_T;
+
+#endif                                 //typedef_c_rigidBodyJoint_cartesian_tr_T
+
+#ifndef struct_tag_BPMfb1nwAW0cVckEDiFVnG
+#define struct_tag_BPMfb1nwAW0cVckEDiFVnG
+
+struct tag_BPMfb1nwAW0cVckEDiFVnG
+{
+  emxArray_char_T_cartesian_tra_T *NameInternal;
+  c_rigidBodyJoint_cartesian_tr_T JointInternal;
+  real_T ParentIndex;
+};
+
+#endif                                 //struct_tag_BPMfb1nwAW0cVckEDiFVnG
+
+#ifndef typedef_n_robotics_manip_internal_Rig_T
+#define typedef_n_robotics_manip_internal_Rig_T
+
+typedef struct tag_BPMfb1nwAW0cVckEDiFVnG n_robotics_manip_internal_Rig_T;
+
+#endif                                 //typedef_n_robotics_manip_internal_Rig_T
+
+#ifndef struct_tag_EpnOXkcFkOFmcaZiu2CuCD
+#define struct_tag_EpnOXkcFkOFmcaZiu2CuCD
+
+struct tag_EpnOXkcFkOFmcaZiu2CuCD
+{
+  emxArray_char_T_cartesian_tra_T *NameInternal;
+  c_rigidBodyJoint_cartesian_tr_T JointInternal;
+};
+
+#endif                                 //struct_tag_EpnOXkcFkOFmcaZiu2CuCD
+
+#ifndef typedef_o_robotics_manip_internal_Rig_T
+#define typedef_o_robotics_manip_internal_Rig_T
+
+typedef struct tag_EpnOXkcFkOFmcaZiu2CuCD o_robotics_manip_internal_Rig_T;
+
+#endif                                 //typedef_o_robotics_manip_internal_Rig_T
+
+#ifndef struct_tag_30tOpKFHjBx7LOwU1qyzZE
+#define struct_tag_30tOpKFHjBx7LOwU1qyzZE
+
+struct tag_30tOpKFHjBx7LOwU1qyzZE
+{
+  real_T NumBodies;
+  o_robotics_manip_internal_Rig_T Base;
+  n_robotics_manip_internal_Rig_T *Bodies[8];
+  real_T PositionNumber;
+};
+
+#endif                                 //struct_tag_30tOpKFHjBx7LOwU1qyzZE
+
+#ifndef typedef_p_robotics_manip_internal_Rig_T
+#define typedef_p_robotics_manip_internal_Rig_T
+
+typedef struct tag_30tOpKFHjBx7LOwU1qyzZE p_robotics_manip_internal_Rig_T;
+
+#endif                                 //typedef_p_robotics_manip_internal_Rig_T
+
+#ifndef struct_tag_OhlsWxsKBuXkrIadR09rYF
+#define struct_tag_OhlsWxsKBuXkrIadR09rYF
+
+struct tag_OhlsWxsKBuXkrIadR09rYF
+{
+  int32_T isInitialized;
+  p_robotics_manip_internal_Rig_T TreeInternal;
+};
+
+#endif                                 //struct_tag_OhlsWxsKBuXkrIadR09rYF
+
+#ifndef typedef_robotics_slmanip_internal_blo_T
+#define typedef_robotics_slmanip_internal_blo_T
+
+typedef struct tag_OhlsWxsKBuXkrIadR09rYF robotics_slmanip_internal_blo_T;
+
+#endif                                 //typedef_robotics_slmanip_internal_blo_T
+
+#ifndef struct_emxArray_tag_8EP4ctv7s0SDnh3V6W
+#define struct_emxArray_tag_8EP4ctv7s0SDnh3V6W
+
+struct emxArray_tag_8EP4ctv7s0SDnh3V6W
+{
+  f_cell_wrap_cartesian_traject_T *data;
+  int32_T *size;
+  int32_T allocatedSize;
+  int32_T numDimensions;
+  boolean_T canFreeData;
+};
+
+#endif                                 //struct_emxArray_tag_8EP4ctv7s0SDnh3V6W
+
+#ifndef typedef_emxArray_f_cell_wrap_cartesia_T
+#define typedef_emxArray_f_cell_wrap_cartesia_T
+
+typedef struct emxArray_tag_8EP4ctv7s0SDnh3V6W emxArray_f_cell_wrap_cartesia_T;
+
+#endif                                 //typedef_emxArray_f_cell_wrap_cartesia_T
+
 #ifndef struct_tag_vxHWSOYrO9xtYchIOe7EKG
 #define struct_tag_vxHWSOYrO9xtYchIOe7EKG
 
@@ -300,27 +482,6 @@ typedef struct tag_9SewJ4y3IXNs5GrZti8qkG ros_slros_internal_block_Subs_T;
 
 #endif                                 //typedef_ros_slros_internal_block_Subs_T
 
-#ifndef struct_emxArray_char_T
-#define struct_emxArray_char_T
-
-struct emxArray_char_T
-{
-  char_T *data;
-  int32_T *size;
-  int32_T allocatedSize;
-  int32_T numDimensions;
-  boolean_T canFreeData;
-};
-
-#endif                                 //struct_emxArray_char_T
-
-#ifndef typedef_emxArray_char_T_cartesian_tra_T
-#define typedef_emxArray_char_T_cartesian_tra_T
-
-typedef struct emxArray_char_T emxArray_char_T_cartesian_tra_T;
-
-#endif                                 //typedef_emxArray_char_T_cartesian_tra_T
-
 #ifndef struct_emxArray_real_T
 #define struct_emxArray_real_T
 
@@ -409,49 +570,27 @@ typedef struct tag_sS24XwgKvOMFYbEXa7sc1bB sS24XwgKvOMFYbEXa7sc1bB_carte_T;
 
 #endif                                 //typedef_sS24XwgKvOMFYbEXa7sc1bB_carte_T
 
-#ifndef struct_tag_sg9AtqjjkXglWcXWTAtiJmG
-#define struct_tag_sg9AtqjjkXglWcXWTAtiJmG
+#ifndef typedef_c_robotics_core_internal_NLPS_T
+#define typedef_c_robotics_core_internal_NLPS_T
 
-struct tag_sg9AtqjjkXglWcXWTAtiJmG
-{
-  uint8_T Type;
-  real_T NameLength;
-  uint8_T Name[15];
-  real_T VelocityNumber;
-  real_T PositionNumber;
-  real_T MotionSubspace[36];
-  real_T JointAxis[3];
-  real_T PositionLimits[14];
-  real_T HomePosition[7];
-  real_T JointToParentTransform[16];
-  real_T ChildToJointTransform[16];
-};
+typedef int32_T c_robotics_core_internal_NLPS_T;
 
-#endif                                 //struct_tag_sg9AtqjjkXglWcXWTAtiJmG
+#endif                                 //typedef_c_robotics_core_internal_NLPS_T
 
-#ifndef typedef_sg9AtqjjkXglWcXWTAtiJmG_carte_T
-#define typedef_sg9AtqjjkXglWcXWTAtiJmG_carte_T
+#ifndef robotics_core_internal_NLPSolverExitFlags_constants
+#define robotics_core_internal_NLPSolverExitFlags_constants
 
-typedef struct tag_sg9AtqjjkXglWcXWTAtiJmG sg9AtqjjkXglWcXWTAtiJmG_carte_T;
+// enum robotics_core_internal_NLPSolverExitFlags
+const c_robotics_core_internal_NLPS_T LocalMinimumFound = 1;
+const c_robotics_core_internal_NLPS_T IterationLimitExceeded = 2;
+const c_robotics_core_internal_NLPS_T TimeLimitExceeded = 3;
+const c_robotics_core_internal_NLPS_T StepSizeBelowMinimum = 4;
+const c_robotics_core_internal_NLPS_T ChangeInErrorBelowMinimum = 5;
+const c_robotics_core_internal_NLPS_T SearchDirectionInvalid = 6;
+const c_robotics_core_internal_NLPS_T HessianNotPositiveSemidefinite = 7;
+const c_robotics_core_internal_NLPS_T TrustRegionRadiusBelowMinimum = 8;
 
-#endif                                 //typedef_sg9AtqjjkXglWcXWTAtiJmG_carte_T
-
-#ifndef struct_tag_8EP4ctv7s0SDnh3V6WCLOG
-#define struct_tag_8EP4ctv7s0SDnh3V6WCLOG
-
-struct tag_8EP4ctv7s0SDnh3V6WCLOG
-{
-  real_T f1[16];
-};
-
-#endif                                 //struct_tag_8EP4ctv7s0SDnh3V6WCLOG
-
-#ifndef typedef_f_cell_wrap_cartesian_traject_T
-#define typedef_f_cell_wrap_cartesian_traject_T
-
-typedef struct tag_8EP4ctv7s0SDnh3V6WCLOG f_cell_wrap_cartesian_traject_T;
-
-#endif                                 //typedef_f_cell_wrap_cartesian_traject_T
+#endif                     //robotics_core_internal_NLPSolverExitFlags_constants
 
 #ifndef struct_tag_rHHvNgfpb6xtLaCol8pZFD
 #define struct_tag_rHHvNgfpb6xtLaCol8pZFD
@@ -468,12 +607,12 @@ struct tag_rHHvNgfpb6xtLaCol8pZFD
 
 #endif                                 //struct_tag_rHHvNgfpb6xtLaCol8pZFD
 
-#ifndef typedef_c_rigidBodyJoint_cartesian_tr_T
-#define typedef_c_rigidBodyJoint_cartesian_tr_T
+#ifndef typedef_c_rigidBodyJoint_cartesian__a_T
+#define typedef_c_rigidBodyJoint_cartesian__a_T
 
-typedef struct tag_rHHvNgfpb6xtLaCol8pZFD c_rigidBodyJoint_cartesian_tr_T;
+typedef struct tag_rHHvNgfpb6xtLaCol8pZFD c_rigidBodyJoint_cartesian__a_T;
 
-#endif                                 //typedef_c_rigidBodyJoint_cartesian_tr_T
+#endif                                 //typedef_c_rigidBodyJoint_cartesian__a_T
 
 #ifndef struct_tag_C18ji2bP7k8qnDZFFReimG
 #define struct_tag_C18ji2bP7k8qnDZFFReimG
@@ -482,18 +621,18 @@ struct tag_C18ji2bP7k8qnDZFFReimG
 {
   real_T Index;
   emxArray_char_T_cartesian_tra_T *NameInternal;
-  c_rigidBodyJoint_cartesian_tr_T JointInternal;
+  c_rigidBodyJoint_cartesian__a_T JointInternal;
   real_T ParentIndex;
 };
 
 #endif                                 //struct_tag_C18ji2bP7k8qnDZFFReimG
 
-#ifndef typedef_n_robotics_manip_internal_Rig_T
-#define typedef_n_robotics_manip_internal_Rig_T
+#ifndef typedef_n_robotics_manip_internal_R_a_T
+#define typedef_n_robotics_manip_internal_R_a_T
 
-typedef struct tag_C18ji2bP7k8qnDZFFReimG n_robotics_manip_internal_Rig_T;
+typedef struct tag_C18ji2bP7k8qnDZFFReimG n_robotics_manip_internal_R_a_T;
 
-#endif                                 //typedef_n_robotics_manip_internal_Rig_T
+#endif                                 //typedef_n_robotics_manip_internal_R_a_T
 
 #ifndef struct_tag_9ECOrffzte7r0XovPIluy
 #define struct_tag_9ECOrffzte7r0XovPIluy
@@ -501,17 +640,17 @@ typedef struct tag_C18ji2bP7k8qnDZFFReimG n_robotics_manip_internal_Rig_T;
 struct tag_9ECOrffzte7r0XovPIluy
 {
   emxArray_char_T_cartesian_tra_T *NameInternal;
-  c_rigidBodyJoint_cartesian_tr_T JointInternal;
+  c_rigidBodyJoint_cartesian__a_T JointInternal;
 };
 
 #endif                                 //struct_tag_9ECOrffzte7r0XovPIluy
 
-#ifndef typedef_o_robotics_manip_internal_Rig_T
-#define typedef_o_robotics_manip_internal_Rig_T
+#ifndef typedef_o_robotics_manip_internal_R_a_T
+#define typedef_o_robotics_manip_internal_R_a_T
 
-typedef struct tag_9ECOrffzte7r0XovPIluy o_robotics_manip_internal_Rig_T;
+typedef struct tag_9ECOrffzte7r0XovPIluy o_robotics_manip_internal_R_a_T;
 
-#endif                                 //typedef_o_robotics_manip_internal_Rig_T
+#endif                                 //typedef_o_robotics_manip_internal_R_a_T
 
 #ifndef struct_tag_TOxUAI1qvqVBKNJvydpO7F
 #define struct_tag_TOxUAI1qvqVBKNJvydpO7F
@@ -519,8 +658,8 @@ typedef struct tag_9ECOrffzte7r0XovPIluy o_robotics_manip_internal_Rig_T;
 struct tag_TOxUAI1qvqVBKNJvydpO7F
 {
   real_T NumBodies;
-  o_robotics_manip_internal_Rig_T Base;
-  n_robotics_manip_internal_Rig_T *Bodies[8];
+  o_robotics_manip_internal_R_a_T Base;
+  n_robotics_manip_internal_R_a_T *Bodies[8];
   real_T PositionNumber;
   real_T VelocityNumber;
   real_T PositionDoFMap[16];
@@ -528,12 +667,12 @@ struct tag_TOxUAI1qvqVBKNJvydpO7F
 
 #endif                                 //struct_tag_TOxUAI1qvqVBKNJvydpO7F
 
-#ifndef typedef_p_robotics_manip_internal_Rig_T
-#define typedef_p_robotics_manip_internal_Rig_T
+#ifndef typedef_p_robotics_manip_internal_R_a_T
+#define typedef_p_robotics_manip_internal_R_a_T
 
-typedef struct tag_TOxUAI1qvqVBKNJvydpO7F p_robotics_manip_internal_Rig_T;
+typedef struct tag_TOxUAI1qvqVBKNJvydpO7F p_robotics_manip_internal_R_a_T;
 
-#endif                                 //typedef_p_robotics_manip_internal_Rig_T
+#endif                                 //typedef_p_robotics_manip_internal_R_a_T
 
 #ifndef struct_tag_8WuLxcHshihGuDAyFMTJLD
 #define struct_tag_8WuLxcHshihGuDAyFMTJLD
@@ -541,111 +680,15 @@ typedef struct tag_TOxUAI1qvqVBKNJvydpO7F p_robotics_manip_internal_Rig_T;
 struct tag_8WuLxcHshihGuDAyFMTJLD
 {
   int32_T isInitialized;
-  p_robotics_manip_internal_Rig_T TreeInternal;
+  p_robotics_manip_internal_R_a_T TreeInternal;
 };
 
 #endif                                 //struct_tag_8WuLxcHshihGuDAyFMTJLD
 
-#ifndef typedef_robotics_slmanip_internal_blo_T
-#define typedef_robotics_slmanip_internal_blo_T
-
-typedef struct tag_8WuLxcHshihGuDAyFMTJLD robotics_slmanip_internal_blo_T;
-
-#endif                                 //typedef_robotics_slmanip_internal_blo_T
-
-#ifndef struct_tag_2xAJzS7rvIyFzfuC7FOGlD
-#define struct_tag_2xAJzS7rvIyFzfuC7FOGlD
-
-struct tag_2xAJzS7rvIyFzfuC7FOGlD
-{
-  emxArray_char_T_cartesian_tra_T *Type;
-  real_T PositionNumber;
-  real_T JointToParentTransform[16];
-  real_T ChildToJointTransform[16];
-  real_T JointAxisInternal[3];
-};
-
-#endif                                 //struct_tag_2xAJzS7rvIyFzfuC7FOGlD
-
-#ifndef typedef_c_rigidBodyJoint_cartesian__a_T
-#define typedef_c_rigidBodyJoint_cartesian__a_T
-
-typedef struct tag_2xAJzS7rvIyFzfuC7FOGlD c_rigidBodyJoint_cartesian__a_T;
-
-#endif                                 //typedef_c_rigidBodyJoint_cartesian__a_T
-
-#ifndef struct_tag_BPMfb1nwAW0cVckEDiFVnG
-#define struct_tag_BPMfb1nwAW0cVckEDiFVnG
-
-struct tag_BPMfb1nwAW0cVckEDiFVnG
-{
-  emxArray_char_T_cartesian_tra_T *NameInternal;
-  c_rigidBodyJoint_cartesian__a_T JointInternal;
-  real_T ParentIndex;
-};
-
-#endif                                 //struct_tag_BPMfb1nwAW0cVckEDiFVnG
-
-#ifndef typedef_n_robotics_manip_internal_R_a_T
-#define typedef_n_robotics_manip_internal_R_a_T
-
-typedef struct tag_BPMfb1nwAW0cVckEDiFVnG n_robotics_manip_internal_R_a_T;
-
-#endif                                 //typedef_n_robotics_manip_internal_R_a_T
-
-#ifndef struct_tag_EpnOXkcFkOFmcaZiu2CuCD
-#define struct_tag_EpnOXkcFkOFmcaZiu2CuCD
-
-struct tag_EpnOXkcFkOFmcaZiu2CuCD
-{
-  emxArray_char_T_cartesian_tra_T *NameInternal;
-  c_rigidBodyJoint_cartesian__a_T JointInternal;
-};
-
-#endif                                 //struct_tag_EpnOXkcFkOFmcaZiu2CuCD
-
-#ifndef typedef_o_robotics_manip_internal_R_a_T
-#define typedef_o_robotics_manip_internal_R_a_T
-
-typedef struct tag_EpnOXkcFkOFmcaZiu2CuCD o_robotics_manip_internal_R_a_T;
-
-#endif                                 //typedef_o_robotics_manip_internal_R_a_T
-
-#ifndef struct_tag_30tOpKFHjBx7LOwU1qyzZE
-#define struct_tag_30tOpKFHjBx7LOwU1qyzZE
-
-struct tag_30tOpKFHjBx7LOwU1qyzZE
-{
-  real_T NumBodies;
-  o_robotics_manip_internal_R_a_T Base;
-  n_robotics_manip_internal_R_a_T *Bodies[8];
-  real_T PositionNumber;
-};
-
-#endif                                 //struct_tag_30tOpKFHjBx7LOwU1qyzZE
-
-#ifndef typedef_p_robotics_manip_internal_R_a_T
-#define typedef_p_robotics_manip_internal_R_a_T
-
-typedef struct tag_30tOpKFHjBx7LOwU1qyzZE p_robotics_manip_internal_R_a_T;
-
-#endif                                 //typedef_p_robotics_manip_internal_R_a_T
-
-#ifndef struct_tag_OhlsWxsKBuXkrIadR09rYF
-#define struct_tag_OhlsWxsKBuXkrIadR09rYF
-
-struct tag_OhlsWxsKBuXkrIadR09rYF
-{
-  int32_T isInitialized;
-  p_robotics_manip_internal_R_a_T TreeInternal;
-};
-
-#endif                                 //struct_tag_OhlsWxsKBuXkrIadR09rYF
-
 #ifndef typedef_robotics_slmanip_internal_b_a_T
 #define typedef_robotics_slmanip_internal_b_a_T
 
-typedef struct tag_OhlsWxsKBuXkrIadR09rYF robotics_slmanip_internal_b_a_T;
+typedef struct tag_8WuLxcHshihGuDAyFMTJLD robotics_slmanip_internal_b_a_T;
 
 #endif                                 //typedef_robotics_slmanip_internal_b_a_T
 
@@ -862,49 +905,6 @@ struct tag_sxjfBB9iGq1brg4yDDoQjB
 typedef struct tag_sxjfBB9iGq1brg4yDDoQjB robotics_slmanip_internal__as_T;
 
 #endif                                 //typedef_robotics_slmanip_internal__as_T
-
-#ifndef struct_emxArray_tag_8EP4ctv7s0SDnh3V6W
-#define struct_emxArray_tag_8EP4ctv7s0SDnh3V6W
-
-struct emxArray_tag_8EP4ctv7s0SDnh3V6W
-{
-  f_cell_wrap_cartesian_traject_T *data;
-  int32_T *size;
-  int32_T allocatedSize;
-  int32_T numDimensions;
-  boolean_T canFreeData;
-};
-
-#endif                                 //struct_emxArray_tag_8EP4ctv7s0SDnh3V6W
-
-#ifndef typedef_emxArray_f_cell_wrap_cartesia_T
-#define typedef_emxArray_f_cell_wrap_cartesia_T
-
-typedef struct emxArray_tag_8EP4ctv7s0SDnh3V6W emxArray_f_cell_wrap_cartesia_T;
-
-#endif                                 //typedef_emxArray_f_cell_wrap_cartesia_T
-
-#ifndef typedef_c_robotics_core_internal_NLPS_T
-#define typedef_c_robotics_core_internal_NLPS_T
-
-typedef int32_T c_robotics_core_internal_NLPS_T;
-
-#endif                                 //typedef_c_robotics_core_internal_NLPS_T
-
-#ifndef robotics_core_internal_NLPSolverExitFlags_constants
-#define robotics_core_internal_NLPSolverExitFlags_constants
-
-// enum robotics_core_internal_NLPSolverExitFlags
-const c_robotics_core_internal_NLPS_T LocalMinimumFound = 1;
-const c_robotics_core_internal_NLPS_T IterationLimitExceeded = 2;
-const c_robotics_core_internal_NLPS_T TimeLimitExceeded = 3;
-const c_robotics_core_internal_NLPS_T StepSizeBelowMinimum = 4;
-const c_robotics_core_internal_NLPS_T ChangeInErrorBelowMinimum = 5;
-const c_robotics_core_internal_NLPS_T SearchDirectionInvalid = 6;
-const c_robotics_core_internal_NLPS_T HessianNotPositiveSemidefinite = 7;
-const c_robotics_core_internal_NLPS_T TrustRegionRadiusBelowMinimum = 8;
-
-#endif                     //robotics_core_internal_NLPSolverExitFlags_constants
 
 // Parameters (default storage)
 typedef struct P_cartesian_trajectory_planne_T_ P_cartesian_trajectory_planne_T;

@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'kinematic_simulation'.
 //
-// Model version                  : 1.136
+// Model version                  : 1.137
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sat May 23 12:08:46 2020
+// C/C++ source code generated on : Mon May 25 17:31:29 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -506,9 +506,9 @@ void kinematic_simulation_step(void)
       (&kinematic_simulation_M->solverInfo);
 
     {
-      // Update absolute timer for sample time: [0.05s, 0.0s]
+      // Update absolute timer for sample time: [0.01s, 0.0s]
       // The "clockTick1" counts the number of times the code of this task has
-      //  been executed. The resolution of this integer timer is 0.05, which is the step size
+      //  been executed. The resolution of this integer timer is 0.01, which is the step size
       //  of the task. Size of "clockTick1" ensures timer will not overflow during the
       //  application lifespan selected.
 
@@ -573,7 +573,7 @@ void kinematic_simulation_initialize(void)
                     (&kinematic_simulation_M->intgData));
   rtsiSetSolverName(&kinematic_simulation_M->solverInfo,"ode3");
   rtmSetTPtr(kinematic_simulation_M, &kinematic_simulation_M->Timing.tArray[0]);
-  kinematic_simulation_M->Timing.stepSize0 = 0.05;
+  kinematic_simulation_M->Timing.stepSize0 = 0.01;
   rtmSetFirstInitCond(kinematic_simulation_M, 1);
 
   {

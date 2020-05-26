@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cartesian_waypoints_planner'.
 //
-// Model version                  : 1.169
+// Model version                  : 1.173
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sun May 24 12:36:19 2020
+// C/C++ source code generated on : Mon May 25 17:24:48 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -209,8 +209,9 @@ typedef struct {
   creal_T dc;
   real_T ub[2];
   char_T sol_Status_data[14];
-  char_T cv1[11];
-  char_T cv2[10];
+  char_T cv1[12];
+  char_T cv2[11];
+  char_T cv3[10];
   char_T b_m[9];
   char_T b_c[9];
   char_T b_f[9];
@@ -355,7 +356,7 @@ typedef struct {
   int32_T T_size_e[2];
   int32_T T_size_m[2];
   int32_T T_size_m0[2];
-  char_T cv3[6];
+  char_T cv4[6];
   int8_T iv[6];
   int8_T iv1[6];
   int8_T iv2[6];
@@ -408,8 +409,8 @@ typedef struct {
   int32_T jointSign;
   int32_T g;
   int32_T j_l;
-  int32_T b_i_g;
   int32_T b_kstr;
+  int32_T b_i_g;
   int32_T n_d;
   int32_T loop_ub_d;
   int32_T qv_size;
@@ -471,8 +472,8 @@ typedef struct {
   int32_T jointSign_m;
   int32_T g_g;
   int32_T j_lf;
-  int32_T b_i_m;
-  int32_T b_kstr_n;
+  int32_T b_kstr_m;
+  int32_T b_i_nt;
   int32_T n_g;
   int32_T loop_ub_dj;
   int32_T qv_size_m;
@@ -480,8 +481,8 @@ typedef struct {
   int32_T jointSign_g;
   int32_T g_j;
   int32_T j_c;
-  int32_T b_i_e;
-  int32_T b_kstr_m;
+  int32_T b_kstr_e;
+  int32_T b_i_m;
   int32_T n_of;
   int32_T loop_ub_a;
   int32_T qv_size_j;
@@ -489,8 +490,8 @@ typedef struct {
   int32_T jointSign_j;
   int32_T g_e;
   int32_T j_j;
-  int32_T b_i_j;
-  int32_T b_kstr_g;
+  int32_T b_kstr_jb;
+  int32_T b_i_gi;
   int32_T n_om;
   int32_T loop_ub_hm;
   int32_T qv_size_c;
@@ -498,8 +499,8 @@ typedef struct {
   int32_T jointSign_l;
   int32_T g_jc;
   int32_T j_i;
-  int32_T b_i_mi;
-  int32_T b_kstr_ft;
+  int32_T b_kstr_mi;
+  int32_T b_i_ft;
   int32_T n_on;
   int32_T loop_ub_iz;
   int32_T qv_size_e;
@@ -507,8 +508,8 @@ typedef struct {
   int32_T jointSign_o;
   int32_T g_f;
   int32_T j_m;
-  int32_T b_i_a;
-  int32_T b_kstr_hi;
+  int32_T b_kstr_a;
+  int32_T b_i_hi;
   int32_T n_oc;
   int32_T loop_ub_hn;
   int32_T qv_size_j3;
@@ -525,11 +526,11 @@ typedef struct {
   int32_T c_A_size_idx_0;
   int32_T c_A_size_idx_1;
   int32_T i_n;
-  int32_T b_i_j5;
-  int32_T b_kstr_a;
+  int32_T b_i_j;
+  int32_T b_kstr_a3;
   int32_T loop_ub_hz;
-  int32_T b_kstr_i;
-  int32_T b_i_d;
+  int32_T b_i_i;
+  int32_T b_kstr_d;
   int32_T loop_ub_b;
   int32_T b_kstr_hj;
   int32_T loop_ub_p;
@@ -729,22 +730,28 @@ typedef struct {
   ros_slros_internal_block_GetP_T obj_h;// '<S8>/Get Parameter3'
   ros_slros_internal_block_GetP_T obj_mf;// '<S8>/Get Parameter4'
   ros_slros_internal_block_GetP_T obj_o;// '<S8>/Get Parameter5'
-  ros_slros_internal_block_GetP_T obj_mb;// '<S10>/Get Parameter'
-  ros_slros_internal_block_GetP_T obj_c;// '<S10>/Get Parameter1'
-  ros_slros_internal_block_GetP_T obj_f;// '<S10>/Get Parameter2'
-  ros_slros_internal_block_GetP_T obj_e0;// '<S10>/Get Parameter3'
-  ros_slros_internal_block_GetP_T obj_a;// '<S10>/Get Parameter4'
-  ros_slros_internal_block_GetP_T obj_p;// '<S10>/Get Parameter5'
-  ros_slros_internal_block_GetP_T obj_l;// '<S10>/Get Parameter6'
-  ros_slros_internal_block_GetP_T obj_i;// '<S9>/Get Parameter'
-  ros_slros_internal_block_GetP_T obj_db;// '<S9>/Get Parameter1'
-  ros_slros_internal_block_GetP_T obj_oq;// '<S9>/Get Parameter2'
-  ros_slros_internal_block_GetP_T obj_es;// '<S9>/Get Parameter3'
-  ros_slros_internal_block_GetP_T obj_f4;// '<S9>/Get Parameter4'
-  ros_slros_internal_block_GetP_T obj_en;// '<S9>/Get Parameter5'
-  ros_slros_internal_block_GetP_T obj_l0;// '<S9>/Get Parameter6'
+  ros_slros_internal_block_GetP_T obj_mb;// '<S11>/Get Parameter'
+  ros_slros_internal_block_GetP_T obj_c;// '<S11>/Get Parameter1'
+  ros_slros_internal_block_GetP_T obj_f;// '<S11>/Get Parameter2'
+  ros_slros_internal_block_GetP_T obj_e0;// '<S11>/Get Parameter3'
+  ros_slros_internal_block_GetP_T obj_a;// '<S11>/Get Parameter4'
+  ros_slros_internal_block_GetP_T obj_p;// '<S11>/Get Parameter5'
+  ros_slros_internal_block_GetP_T obj_l;// '<S11>/Get Parameter6'
+  ros_slros_internal_block_GetP_T obj_i;// '<S10>/Get Parameter'
+  ros_slros_internal_block_GetP_T obj_db;// '<S10>/Get Parameter1'
+  ros_slros_internal_block_GetP_T obj_oq;// '<S10>/Get Parameter2'
+  ros_slros_internal_block_GetP_T obj_es;// '<S10>/Get Parameter3'
+  ros_slros_internal_block_GetP_T obj_f4;// '<S10>/Get Parameter4'
+  ros_slros_internal_block_GetP_T obj_en;// '<S10>/Get Parameter5'
+  ros_slros_internal_block_GetP_T obj_l0;// '<S10>/Get Parameter6'
   ros_slros_internal_block_GetP_T obj_eq;// '<S7>/Get Parameter'
   ros_slros_internal_block_Publ_T obj_b;// '<S6>/SinkBlock'
+  ros_slros_internal_block_SetP_T obj_fb;// '<S9>/Set Parameter'
+  ros_slros_internal_block_SetP_T obj_dr;// '<S9>/Set Parameter1'
+  ros_slros_internal_block_SetP_T obj_a5;// '<S9>/Set Parameter2'
+  ros_slros_internal_block_SetP_T obj_hu;// '<S9>/Set Parameter3'
+  ros_slros_internal_block_SetP_T obj_o1;// '<S9>/Set Parameter4'
+  ros_slros_internal_block_SetP_T obj_ap;// '<S9>/Set Parameter5'
   real_T Delay2_DSTATE[120];           // '<Root>/Delay2'
   real_T Delay3_DSTATE;                // '<Root>/Delay3'
   real_T Delay_DSTATE[6];              // '<Root>/Delay'
@@ -866,8 +873,9 @@ extern "C" {
 //  '<S6>'   : 'cartesian_waypoints_planner/Publish'
 //  '<S7>'   : 'cartesian_waypoints_planner/Subsystem'
 //  '<S8>'   : 'cartesian_waypoints_planner/Subsystem1'
-//  '<S9>'   : 'cartesian_waypoints_planner/Subsystem/Subsystem'
-//  '<S10>'  : 'cartesian_waypoints_planner/Subsystem/Subsystem1'
+//  '<S9>'   : 'cartesian_waypoints_planner/Subsystem2'
+//  '<S10>'  : 'cartesian_waypoints_planner/Subsystem/Subsystem'
+//  '<S11>'  : 'cartesian_waypoints_planner/Subsystem/Subsystem1'
 
 #endif                             // RTW_HEADER_cartesian_waypoints_planner_h_
 

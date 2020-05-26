@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cartesian_waypoints_planner'.
 //
-// Model version                  : 1.169
+// Model version                  : 1.173
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Sun May 24 12:36:19 2020
+// C/C++ source code generated on : Mon May 25 17:24:48 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -261,6 +261,25 @@ struct tag_PzhaB0v2Sx4ikuHWZx5WUB
 typedef struct tag_PzhaB0v2Sx4ikuHWZx5WUB ros_slros_internal_block_GetP_T;
 
 #endif                                 //typedef_ros_slros_internal_block_GetP_T
+
+#ifndef struct_tag_rVaL2jCthDg1Nc4cghuMrG
+#define struct_tag_rVaL2jCthDg1Nc4cghuMrG
+
+struct tag_rVaL2jCthDg1Nc4cghuMrG
+{
+  boolean_T matlabCodegenIsDeleted;
+  int32_T isInitialized;
+  boolean_T isSetupComplete;
+};
+
+#endif                                 //struct_tag_rVaL2jCthDg1Nc4cghuMrG
+
+#ifndef typedef_ros_slros_internal_block_SetP_T
+#define typedef_ros_slros_internal_block_SetP_T
+
+typedef struct tag_rVaL2jCthDg1Nc4cghuMrG ros_slros_internal_block_SetP_T;
+
+#endif                                 //typedef_ros_slros_internal_block_SetP_T
 
 #ifndef struct_emxArray_char_T
 #define struct_emxArray_char_T

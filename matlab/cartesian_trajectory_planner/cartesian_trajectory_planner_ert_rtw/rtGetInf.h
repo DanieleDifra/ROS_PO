@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cartesian_trajectory_planner'.
 //
-// Model version                  : 1.129
+// Model version                  : 1.131
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 20 16:41:34 2020
+// C/C++ source code generated on : Mon May 25 16:42:52 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
