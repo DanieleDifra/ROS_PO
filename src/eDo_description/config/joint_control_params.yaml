@@ -1,4 +1,6 @@
-start_delay: 5.0
+start_delay: 2.0
+max_ang_vel: 1.0
+max_ang_acc: 0.5
 
 q1_initial: 0.0
 q2_initial: 0.0
@@ -14,12 +16,12 @@ q4_final: 1.57
 q5_final: 1.57
 q6_final: 1.57
 
-pos_control_1: 0.2
-pos_control_2: 0.2
-pos_control_3: 0.2
-pos_control_4: 0.2
-pos_control_5: 0.2
-pos_control_6: 0.2
+pos_control_1: 0.5
+pos_control_2: 0.5
+pos_control_3: 0.5
+pos_control_4: 0.5
+pos_control_5: 0.5
+pos_control_6: 0.5
 
 vel_control_1: 0.1
 vel_control_2: 0.1
