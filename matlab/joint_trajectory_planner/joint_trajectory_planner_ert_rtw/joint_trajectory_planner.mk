@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'joint_trajectory_planner'. 
 ## 
 ## Makefile     : joint_trajectory_planner.mk
-## Generated on : Sun May 17 22:26:11 2020
+## Generated on : Wed May 27 15:59:06 2020
 ## MATLAB Coder version: 5.0 (R2020a)
 ## 
 ## Build Info:
@@ -216,7 +216,7 @@ SYSTEM_LIBS =
 # C Compiler
 #---------------
 
-CFLAGS_SKIPFORSIL =   -fpermissive
+CFLAGS_SKIPFORSIL =   -fpermissive -fpermissive
 CFLAGS_BASIC = $(DEFINES) $(INCLUDES)
 
 CFLAGS += $(CFLAGS_SKIPFORSIL) $(CFLAGS_BASIC)
@@ -225,7 +225,7 @@ CFLAGS += $(CFLAGS_SKIPFORSIL) $(CFLAGS_BASIC)
 # C++ Compiler
 #-----------------
 
-CPPFLAGS_SKIPFORSIL =   -fpermissive
+CPPFLAGS_SKIPFORSIL =   -fpermissive -fpermissive
 CPPFLAGS_BASIC = $(DEFINES) $(INCLUDES)
 
 CPPFLAGS += $(CPPFLAGS_SKIPFORSIL) $(CPPFLAGS_BASIC)

@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'joint_trajectory_planner'.
 //
-// Model version                  : 1.8
+// Model version                  : 1.10
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Mon May 25 17:28:28 2020
+// C/C++ source code generated on : Wed May 27 15:51:41 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -47,8 +47,8 @@ static void PolyTrajSys_computePPDerivative(const real_T pp_breaks[4], const
   real_T ppdd_breaks[4], real_T ppdd_coefs[72]);
 static void joint_trajectory_planne_ppval_a(const real_T pp_breaks[4], const
   real_T pp_coefs[72], real_T x, real_T v[6]);
-static void matlabCodegenHandle_matlabCodeg(ros_slros_internal_block_GetP_T *obj);
 static void joint_traject_matlabCodegenHa_n(ros_slros_internal_block_Subs_T *obj);
+static void matlabCodegenHandle_matlabCodeg(ros_slros_internal_block_GetP_T *obj);
 static void joint_traject_matlabCodegenHa_a(ros_slros_internal_block_Publ_T *obj);
 static void joint_trajecto_SystemCore_setup(robotics_slcore_internal_bloc_T *obj);
 static real_T joint_trajectory_pl_rt_powd_snf(real_T u0, real_T u1)
@@ -441,14 +441,14 @@ static void joint_trajectory_planne_ppval_a(const real_T pp_breaks[4], const
   }
 }
 
-static void matlabCodegenHandle_matlabCodeg(ros_slros_internal_block_GetP_T *obj)
+static void joint_traject_matlabCodegenHa_n(ros_slros_internal_block_Subs_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
   }
 }
 
-static void joint_traject_matlabCodegenHa_n(ros_slros_internal_block_Subs_T *obj)
+static void matlabCodegenHandle_matlabCodeg(ros_slros_internal_block_GetP_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
@@ -477,10 +477,6 @@ void joint_trajectory_planner_step(void)
   int32_T tmp;
   boolean_T exitg1;
 
-  // MATLABSystem: '<S2>/Get Parameter'
-  ParamGet_joint_trajectory_planner_26.get_parameter
-    (&joint_trajectory_planner_B.t_up);
-
   // Outputs for Atomic SubSystem: '<Root>/Subscribe'
   // MATLABSystem: '<S7>/SourceBlock' incorporates:
   //   Inport: '<S10>/In1'
@@ -498,6 +494,10 @@ void joint_trajectory_planner_step(void)
   // End of MATLABSystem: '<S7>/SourceBlock'
   // End of Outputs for SubSystem: '<S7>/Enabled Subsystem'
   // End of Outputs for SubSystem: '<Root>/Subscribe'
+
+  // MATLABSystem: '<S2>/Get Parameter'
+  ParamGet_joint_trajectory_planner_26.get_parameter
+    (&joint_trajectory_planner_B.t_up);
 
   // MATLAB Function: '<Root>/MATLAB Function1' incorporates:
   //   MATLABSystem: '<S2>/Get Parameter'
@@ -685,9 +685,20 @@ void joint_trajectory_planner_step(void)
   }
 
   // MATLAB Function: '<Root>/MATLAB Function' incorporates:
+  //   BusAssignment: '<Root>/Bus Assignment'
   //   Constant: '<S1>/Constant'
 
   joint_trajectory_planner_B.msg = joint_trajectory_planner_P.Constant_Value;
+
+  // BusAssignment: '<Root>/Bus Assignment' incorporates:
+  //   MATLAB Function: '<Root>/MATLAB Function'
+
+  joint_trajectory_planner_B.msg.TimeFromStart.Sec =
+    joint_trajectory_planner_B.In1.Clock_.Sec;
+  joint_trajectory_planner_B.msg.TimeFromStart.Nsec =
+    joint_trajectory_planner_B.In1.Clock_.Nsec;
+
+  // MATLAB Function: '<Root>/MATLAB Function'
   joint_trajectory_planner_B.msg.Velocities_SL_Info.CurrentLength = 6U;
 
   // Switch: '<Root>/Switch' incorporates:
@@ -1264,14 +1275,14 @@ void joint_trajectory_planner_initialize(void)
 // Model terminate function
 void joint_trajectory_planner_terminate(void)
 {
-  // Terminate for MATLABSystem: '<S2>/Get Parameter'
-  matlabCodegenHandle_matlabCodeg(&joint_trajectory_planner_DW.obj_g);
-
   // Terminate for Atomic SubSystem: '<Root>/Subscribe'
   // Terminate for MATLABSystem: '<S7>/SourceBlock'
   joint_traject_matlabCodegenHa_n(&joint_trajectory_planner_DW.obj_c);
 
   // End of Terminate for SubSystem: '<Root>/Subscribe'
+
+  // Terminate for MATLABSystem: '<S2>/Get Parameter'
+  matlabCodegenHandle_matlabCodeg(&joint_trajectory_planner_DW.obj_g);
 
   // Terminate for MATLABSystem: '<S8>/Get Parameter'
   matlabCodegenHandle_matlabCodeg(&joint_trajectory_planner_DW.obj_bh);

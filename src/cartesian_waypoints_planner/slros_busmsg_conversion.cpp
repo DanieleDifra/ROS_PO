@@ -1,61 +1,82 @@
 #include "slros_busmsg_conversion.h"
 
 
-// Conversions between SL_Bus_cartesian_waypoints_plann_Float32MultiArray_iutvhs and std_msgs::Float32MultiArray
+// Conversions between SL_Bus_cartesian_waypoints_planner_ros_time_Duration and ros::Duration
 
-void convertFromBus(std_msgs::Float32MultiArray* msgPtr, SL_Bus_cartesian_waypoints_plann_Float32MultiArray_iutvhs const* busPtr)
+void convertFromBus(ros::Duration* msgPtr, SL_Bus_cartesian_waypoints_planner_ros_time_Duration const* busPtr)
 {
-  const std::string rosMessageType("std_msgs/Float32MultiArray");
+  const std::string rosMessageType("ros_time/Duration");
 
-  convertFromBusVariablePrimitiveArray(msgPtr->data, busPtr->Data, busPtr->Data_SL_Info);
-  convertFromBus(&msgPtr->layout, &busPtr->Layout);
+  msgPtr->sec =  busPtr->Sec;
+  msgPtr->nsec =  busPtr->Nsec;
 }
 
-void convertToBus(SL_Bus_cartesian_waypoints_plann_Float32MultiArray_iutvhs* busPtr, std_msgs::Float32MultiArray const* msgPtr)
+void convertToBus(SL_Bus_cartesian_waypoints_planner_ros_time_Duration* busPtr, ros::Duration const* msgPtr)
 {
-  const std::string rosMessageType("std_msgs/Float32MultiArray");
+  const std::string rosMessageType("ros_time/Duration");
 
-  convertToBusVariablePrimitiveArray(busPtr->Data, busPtr->Data_SL_Info, msgPtr->data, slros::EnabledWarning(rosMessageType, "data"));
-  convertToBus(&busPtr->Layout, &msgPtr->layout);
-}
-
-
-// Conversions between SL_Bus_cartesian_waypoints_plann_MultiArrayDimension_u6izuj and std_msgs::MultiArrayDimension
-
-void convertFromBus(std_msgs::MultiArrayDimension* msgPtr, SL_Bus_cartesian_waypoints_plann_MultiArrayDimension_u6izuj const* busPtr)
-{
-  const std::string rosMessageType("std_msgs/MultiArrayDimension");
-
-  convertFromBusVariablePrimitiveArray(msgPtr->label, busPtr->Label, busPtr->Label_SL_Info);
-  msgPtr->size =  busPtr->Size;
-  msgPtr->stride =  busPtr->Stride;
-}
-
-void convertToBus(SL_Bus_cartesian_waypoints_plann_MultiArrayDimension_u6izuj* busPtr, std_msgs::MultiArrayDimension const* msgPtr)
-{
-  const std::string rosMessageType("std_msgs/MultiArrayDimension");
-
-  convertToBusVariablePrimitiveArray(busPtr->Label, busPtr->Label_SL_Info, msgPtr->label, slros::EnabledWarning(rosMessageType, "label"));
-  busPtr->Size =  msgPtr->size;
-  busPtr->Stride =  msgPtr->stride;
+  busPtr->Sec =  msgPtr->sec;
+  busPtr->Nsec =  msgPtr->nsec;
 }
 
 
-// Conversions between SL_Bus_cartesian_waypoints_plann_MultiArrayLayout_ldqki3 and std_msgs::MultiArrayLayout
+// Conversions between SL_Bus_cartesian_waypoints_planner_ros_time_Time and ros::Time
 
-void convertFromBus(std_msgs::MultiArrayLayout* msgPtr, SL_Bus_cartesian_waypoints_plann_MultiArrayLayout_ldqki3 const* busPtr)
+void convertFromBus(ros::Time* msgPtr, SL_Bus_cartesian_waypoints_planner_ros_time_Time const* busPtr)
 {
-  const std::string rosMessageType("std_msgs/MultiArrayLayout");
+  const std::string rosMessageType("ros_time/Time");
 
-  msgPtr->data_offset =  busPtr->DataOffset;
-  convertFromBusVariableNestedArray(msgPtr->dim, busPtr->Dim, busPtr->Dim_SL_Info);
+  msgPtr->sec =  busPtr->Sec;
+  msgPtr->nsec =  busPtr->Nsec;
 }
 
-void convertToBus(SL_Bus_cartesian_waypoints_plann_MultiArrayLayout_ldqki3* busPtr, std_msgs::MultiArrayLayout const* msgPtr)
+void convertToBus(SL_Bus_cartesian_waypoints_planner_ros_time_Time* busPtr, ros::Time const* msgPtr)
 {
-  const std::string rosMessageType("std_msgs/MultiArrayLayout");
+  const std::string rosMessageType("ros_time/Time");
 
-  busPtr->DataOffset =  msgPtr->data_offset;
-  convertToBusVariableNestedArray(busPtr->Dim, busPtr->Dim_SL_Info, msgPtr->dim, slros::EnabledWarning(rosMessageType, "dim"));
+  busPtr->Sec =  msgPtr->sec;
+  busPtr->Nsec =  msgPtr->nsec;
+}
+
+
+// Conversions between SL_Bus_cartesian_waypoints_planner_rosgraph_msgs_Clock and rosgraph_msgs::Clock
+
+void convertFromBus(rosgraph_msgs::Clock* msgPtr, SL_Bus_cartesian_waypoints_planner_rosgraph_msgs_Clock const* busPtr)
+{
+  const std::string rosMessageType("rosgraph_msgs/Clock");
+
+  convertFromBus(&msgPtr->clock, &busPtr->Clock_);
+}
+
+void convertToBus(SL_Bus_cartesian_waypoints_planner_rosgraph_msgs_Clock* busPtr, rosgraph_msgs::Clock const* msgPtr)
+{
+  const std::string rosMessageType("rosgraph_msgs/Clock");
+
+  convertToBus(&busPtr->Clock_, &msgPtr->clock);
+}
+
+
+// Conversions between SL_Bus_cartesian_waypoints_plann_JointTrajectoryPoint_rocwzq and trajectory_msgs::JointTrajectoryPoint
+
+void convertFromBus(trajectory_msgs::JointTrajectoryPoint* msgPtr, SL_Bus_cartesian_waypoints_plann_JointTrajectoryPoint_rocwzq const* busPtr)
+{
+  const std::string rosMessageType("trajectory_msgs/JointTrajectoryPoint");
+
+  convertFromBusVariablePrimitiveArray(msgPtr->accelerations, busPtr->Accelerations, busPtr->Accelerations_SL_Info);
+  convertFromBusVariablePrimitiveArray(msgPtr->effort, busPtr->Effort, busPtr->Effort_SL_Info);
+  convertFromBusVariablePrimitiveArray(msgPtr->positions, busPtr->Positions, busPtr->Positions_SL_Info);
+  convertFromBus(&msgPtr->time_from_start, &busPtr->TimeFromStart);
+  convertFromBusVariablePrimitiveArray(msgPtr->velocities, busPtr->Velocities, busPtr->Velocities_SL_Info);
+}
+
+void convertToBus(SL_Bus_cartesian_waypoints_plann_JointTrajectoryPoint_rocwzq* busPtr, trajectory_msgs::JointTrajectoryPoint const* msgPtr)
+{
+  const std::string rosMessageType("trajectory_msgs/JointTrajectoryPoint");
+
+  convertToBusVariablePrimitiveArray(busPtr->Accelerations, busPtr->Accelerations_SL_Info, msgPtr->accelerations, slros::EnabledWarning(rosMessageType, "accelerations"));
+  convertToBusVariablePrimitiveArray(busPtr->Effort, busPtr->Effort_SL_Info, msgPtr->effort, slros::EnabledWarning(rosMessageType, "effort"));
+  convertToBusVariablePrimitiveArray(busPtr->Positions, busPtr->Positions_SL_Info, msgPtr->positions, slros::EnabledWarning(rosMessageType, "positions"));
+  convertToBus(&busPtr->TimeFromStart, &msgPtr->time_from_start);
+  convertToBusVariablePrimitiveArray(busPtr->Velocities, busPtr->Velocities_SL_Info, msgPtr->velocities, slros::EnabledWarning(rosMessageType, "velocities"));
 }
 

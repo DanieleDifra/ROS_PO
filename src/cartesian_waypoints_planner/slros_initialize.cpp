@@ -3,8 +3,20 @@
 ros::NodeHandle * SLROSNodePtr;
 const std::string SLROSNodeName = "cartesian_waypoints_planner";
 
+// For Block cartesian_waypoints_planner/Subscribe1
+SimulinkSubscriber<rosgraph_msgs::Clock, SL_Bus_cartesian_waypoints_planner_rosgraph_msgs_Clock> Sub_cartesian_waypoints_planner_384;
+
 // For Block cartesian_waypoints_planner/Publish
-SimulinkPublisher<std_msgs::Float32MultiArray, SL_Bus_cartesian_waypoints_plann_Float32MultiArray_iutvhs> Pub_cartesian_waypoints_planner_344;
+SimulinkPublisher<trajectory_msgs::JointTrajectoryPoint, SL_Bus_cartesian_waypoints_plann_JointTrajectoryPoint_rocwzq> Pub_cartesian_waypoints_planner_392;
+
+// For Block cartesian_waypoints_planner/Get Parameter
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_378;
+
+// For Block cartesian_waypoints_planner/Get Parameter1
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_379;
+
+// For Block cartesian_waypoints_planner/Get Parameter2
+SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_380;
 
 // For Block cartesian_waypoints_planner/Subsystem/Get Parameter
 SimulinkParameterGetter<int32_T, int> ParamGet_cartesian_waypoints_planner_346;

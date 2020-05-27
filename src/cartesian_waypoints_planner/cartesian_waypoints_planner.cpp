@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cartesian_waypoints_planner'.
 //
-// Model version                  : 1.173
+// Model version                  : 1.183
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Mon May 25 17:24:48 2020
+// C/C++ source code generated on : Wed May 27 16:30:19 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -54,16 +54,16 @@ static void RigidBodyTree_validateConfigu_e(x_robotics_manip_internal_Rig_T *obj
   real_T Q[6]);
 static boolean_T cartesian_waypoints_plan_strcmp(const
   emxArray_char_T_cartesian_way_T *a, const emxArray_char_T_cartesian_way_T *b);
-static void ca_rigidBodyJoint_get_JointAxis(const
-  c_rigidBodyJoint_cartesian_wa_T *obj, real_T ax[3]);
+static void rigidBodyJoint_get_JointAxis_e(const c_rigidBodyJoint_cartesian__e_T
+  *obj, real_T ax[3]);
 static void cartesian_waypoints_planner_cat(real_T varargin_1, real_T varargin_2,
   real_T varargin_3, real_T varargin_4, real_T varargin_5, real_T varargin_6,
   real_T varargin_7, real_T varargin_8, real_T varargin_9, real_T y[9]);
 static void rigidBodyJoint_transformBodyT_e(const
-  c_rigidBodyJoint_cartesian_wa_T *obj, const real_T q_data[], const int32_T
+  c_rigidBodyJoint_cartesian__e_T *obj, const real_T q_data[], const int32_T
   *q_size, real_T T[16]);
 static void rigidBodyJoint_transformBodyToP(const
-  c_rigidBodyJoint_cartesian_wa_T *obj, real_T T[16]);
+  c_rigidBodyJoint_cartesian__e_T *obj, real_T T[16]);
 static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj,
   const real_T qv[6], const emxArray_char_T_cartesian_way_T *body1Name, real_T
   T_data[], int32_T T_size[2], emxArray_real_T_cartesian_way_T *Jac);
@@ -161,12 +161,22 @@ static void cartes_NLPSolverInterface_solve(h_robotics_core_internal_Damp_T *obj
 static void cart_inverseKinematics_stepImpl(b_inverseKinematics_cartesian_T *obj,
   const real_T tform[16], const real_T weights[6], const real_T initialGuess[6],
   real_T QSol[6]);
-static void matlabCodegenHandle_matlabC_evq(ros_slros_internal_block_GetP_T *obj);
-static void matlabCodegenHandle_matlabCod_e(robotics_slmanip_internal_blo_T *obj);
+static void cartesian_w_emxInit_f_cell_wrap(emxArray_f_cell_wrap_cartesia_T
+  **pEmxArray, int32_T numDimensions);
+static void c_emxEnsureCapacity_f_cell_wrap(emxArray_f_cell_wrap_cartesia_T
+  *emxArray, int32_T oldNumel);
+static void ca_rigidBodyJoint_get_JointAxis(const
+  c_rigidBodyJoint_cartesian_wa_T *obj, real_T ax[3]);
+static void RigidBodyTree_forwardKinematics(p_robotics_manip_internal_Rig_T *obj,
+  const real_T qvec[6], emxArray_f_cell_wrap_cartesia_T *Ttree);
+static void cartesian_w_emxFree_f_cell_wrap(emxArray_f_cell_wrap_cartesia_T
+  **pEmxArray);
+static void matlabCodegenHandle_matlabCodeg(ros_slros_internal_block_GetP_T *obj);
+static void matlabCodegenHandle_matlab_evqu(robotics_slmanip_internal_b_e_T *obj);
 static void cartesian_wa_SystemCore_release(b_inverseKinematics_cartesian_T *obj);
-static void cartesian_way_SystemCore_delete(b_inverseKinematics_cartesian_T *obj);
-static void matlabCodegenHandle_matlabCodeg(b_inverseKinematics_cartesian_T *obj);
-static void emxFreeStruct_c_rigidBodyJoint(c_rigidBodyJoint_cartesian_wa_T
+static void cartesian_SystemCore_delete_evq(b_inverseKinematics_cartesian_T *obj);
+static void matlabCodegenHandle_matlabC_evq(b_inverseKinematics_cartesian_T *obj);
+static void emxFreeStruct_c_rigidBodyJoint(c_rigidBodyJoint_cartesian__e_T
   *pStruct);
 static void emxFreeStruct_v_robotics_manip_(v_robotics_manip_internal_Rig_T
   *pStruct);
@@ -174,7 +184,7 @@ static void emxFreeStruct_y_robotics_manip_(y_robotics_manip_internal_Rig_T
   *pStruct);
 static void emxFreeStruct_b_inverseKinemati(b_inverseKinematics_cartesian_T
   *pStruct);
-static void emxFreeStruct_robotics_slmanip_(robotics_slmanip_internal_blo_T
+static void emxFreeStruct_robotics_slmanip_(robotics_slmanip_internal_b_e_T
   *pStruct);
 static void emxFreeStruct_w_robotics_manip_(w_robotics_manip_internal_Rig_T
   *pStruct);
@@ -184,9 +194,20 @@ static void emxFreeStruct_f_robotics_manip_(f_robotics_manip_internal_IKE_T
   *pStruct);
 static void emxFreeStruct_h_robotics_core_i(h_robotics_core_internal_Damp_T
   *pStruct);
-static void cartesian_way_matlabCodegenHa_a(ros_slros_internal_block_SetP_T *obj);
-static void matlabCodegenHandle_matlabCo_ev(ros_slros_internal_block_Publ_T *obj);
-static void emxInitStruct_c_rigidBodyJoint(c_rigidBodyJoint_cartesian_wa_T
+static void emxFreeStruct_c_rigidBodyJoint1(c_rigidBodyJoint_cartesian_wa_T
+  *pStruct);
+static void emxFreeStruct_o_robotics_manip_(o_robotics_manip_internal_Rig_T
+  *pStruct);
+static void emxFreeStruct_p_robotics_manip_(p_robotics_manip_internal_Rig_T
+  *pStruct);
+static void emxFreeStruct_robotics_slmani_e(robotics_slmanip_internal_blo_T
+  *pStruct);
+static void emxFreeStruct_n_robotics_manip_(n_robotics_manip_internal_Rig_T
+  *pStruct);
+static void matlabCodegenHandle_matl_evqusn(ros_slros_internal_block_Subs_T *obj);
+static void cartesian_way_matlabCodegenHa_j(ros_slros_internal_block_SetP_T *obj);
+static void matlabCodegenHandle_matla_evqus(ros_slros_internal_block_Publ_T *obj);
+static void emxInitStruct_c_rigidBodyJoint(c_rigidBodyJoint_cartesian__e_T
   *pStruct);
 static void emxInitStruct_v_robotics_manip_(v_robotics_manip_internal_Rig_T
   *pStruct);
@@ -194,7 +215,7 @@ static void emxInitStruct_y_robotics_manip_(y_robotics_manip_internal_Rig_T
   *pStruct);
 static void emxInitStruct_b_inverseKinemati(b_inverseKinematics_cartesian_T
   *pStruct);
-static void emxInitStruct_robotics_slmanip_(robotics_slmanip_internal_blo_T
+static void emxInitStruct_robotics_slmanip_(robotics_slmanip_internal_b_e_T
   *pStruct);
 static void emxInitStruct_w_robotics_manip_(w_robotics_manip_internal_Rig_T
   *pStruct);
@@ -206,21 +227,21 @@ static void emxInitStruct_h_robotics_core_i(h_robotics_core_internal_Damp_T
   *pStruct);
 static void cartesia_twister_state_vector_e(uint32_T mt[625]);
 static void cartesian_wa_eml_rand_mt19937ar(uint32_T state[625]);
-static v_robotics_manip_internal_Rig_T *cartesian_w_RigidBody_RigidBody
-  (v_robotics_manip_internal_Rig_T *obj);
-static v_robotics_manip_internal_Rig_T *cartesian_RigidBody_RigidBody_e
-  (v_robotics_manip_internal_Rig_T *obj);
-static v_robotics_manip_internal_Rig_T *cartesia_RigidBody_RigidBody_ev
-  (v_robotics_manip_internal_Rig_T *obj);
-static v_robotics_manip_internal_Rig_T *cartesi_RigidBody_RigidBody_evq
-  (v_robotics_manip_internal_Rig_T *obj);
-static v_robotics_manip_internal_Rig_T *cartes_RigidBody_RigidBody_evqu
-  (v_robotics_manip_internal_Rig_T *obj);
 static v_robotics_manip_internal_Rig_T *carte_RigidBody_RigidBody_evqus
   (v_robotics_manip_internal_Rig_T *obj);
 static v_robotics_manip_internal_Rig_T *cart_RigidBody_RigidBody_evqusn
   (v_robotics_manip_internal_Rig_T *obj);
-static y_robotics_manip_internal_Rig_T *car_RigidBodyTree_RigidBodyTree
+static v_robotics_manip_internal_Rig_T *car_RigidBody_RigidBody_evqusng
+  (v_robotics_manip_internal_Rig_T *obj);
+static v_robotics_manip_internal_Rig_T *ca_RigidBody_RigidBody_evqusngv
+  (v_robotics_manip_internal_Rig_T *obj);
+static v_robotics_manip_internal_Rig_T *c_RigidBody_RigidBody_evqusngvo
+  (v_robotics_manip_internal_Rig_T *obj);
+static v_robotics_manip_internal_Rig_T *RigidBody_RigidBody_evqusngvo0
+  (v_robotics_manip_internal_Rig_T *obj);
+static v_robotics_manip_internal_Rig_T *RigidBody_RigidBody_evqusngvo0a
+  (v_robotics_manip_internal_Rig_T *obj);
+static y_robotics_manip_internal_Rig_T *c_RigidBodyTree_RigidBodyTree_e
   (y_robotics_manip_internal_Rig_T *obj, v_robotics_manip_internal_Rig_T *iobj_0,
    v_robotics_manip_internal_Rig_T *iobj_1, v_robotics_manip_internal_Rig_T
    *iobj_2, v_robotics_manip_internal_Rig_T *iobj_3,
@@ -228,52 +249,52 @@ static y_robotics_manip_internal_Rig_T *car_RigidBodyTree_RigidBodyTree
    *iobj_5, v_robotics_manip_internal_Rig_T *iobj_6,
    v_robotics_manip_internal_Rig_T *iobj_7);
 static void cartesian_waypoints_planne_rand(real_T r[5]);
-static w_robotics_manip_internal_Rig_T *car_RigidBody_RigidBody_evqusng
-  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0);
-static w_robotics_manip_internal_Rig_T *ca_RigidBody_RigidBody_evqusngv
-  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0);
-static w_robotics_manip_internal_Rig_T *c_RigidBody_RigidBody_evqusngvo
-  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0);
-static w_robotics_manip_internal_Rig_T *RigidBody_RigidBody_evqusngvo0
-  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0);
-static w_robotics_manip_internal_Rig_T *RigidBody_RigidBody_evqusngvo0a
-  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0);
+static w_robotics_manip_internal_Rig_T *RigidBody_RigidBod_evqusngvo0ar
+  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0);
+static w_robotics_manip_internal_Rig_T *RigidBody_RigidBo_evqusngvo0ar1
+  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0);
+static w_robotics_manip_internal_Rig_T *RigidBody_RigidB_evqusngvo0ar1d
+  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0);
+static w_robotics_manip_internal_Rig_T *RigidBody_Rigid_evqusngvo0ar1db
+  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0);
+static w_robotics_manip_internal_Rig_T *c_RigidBody_Rigid_c
+  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0);
 static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj,
   w_robotics_manip_internal_Rig_T *iobj_0, w_robotics_manip_internal_Rig_T
   *iobj_1, w_robotics_manip_internal_Rig_T *iobj_2,
   w_robotics_manip_internal_Rig_T *iobj_3, w_robotics_manip_internal_Rig_T
   *iobj_4, w_robotics_manip_internal_Rig_T *iobj_5,
-  w_robotics_manip_internal_Rig_T *iobj_6, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_7, c_rigidBodyJoint_cartesian_wa_T *iobj_8,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_9, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_10, c_rigidBodyJoint_cartesian_wa_T *iobj_11,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_12, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_13, c_rigidBodyJoint_cartesian_wa_T *iobj_14,
+  w_robotics_manip_internal_Rig_T *iobj_6, c_rigidBodyJoint_cartesian__e_T
+  *iobj_7, c_rigidBodyJoint_cartesian__e_T *iobj_8,
+  c_rigidBodyJoint_cartesian__e_T *iobj_9, c_rigidBodyJoint_cartesian__e_T
+  *iobj_10, c_rigidBodyJoint_cartesian__e_T *iobj_11,
+  c_rigidBodyJoint_cartesian__e_T *iobj_12, c_rigidBodyJoint_cartesian__e_T
+  *iobj_13, c_rigidBodyJoint_cartesian__e_T *iobj_14,
   w_robotics_manip_internal_Rig_T *iobj_15);
-static x_robotics_manip_internal_Rig_T *c_RigidBodyTree_RigidBodyTree_e
+static x_robotics_manip_internal_Rig_T *RigidBodyTree_RigidBodyTree_ev
   (x_robotics_manip_internal_Rig_T *obj, w_robotics_manip_internal_Rig_T *iobj_0,
    w_robotics_manip_internal_Rig_T *iobj_1, w_robotics_manip_internal_Rig_T
    *iobj_2, w_robotics_manip_internal_Rig_T *iobj_3,
    w_robotics_manip_internal_Rig_T *iobj_4, w_robotics_manip_internal_Rig_T
    *iobj_5, w_robotics_manip_internal_Rig_T *iobj_6,
-   c_rigidBodyJoint_cartesian_wa_T *iobj_7, c_rigidBodyJoint_cartesian_wa_T
-   *iobj_8, c_rigidBodyJoint_cartesian_wa_T *iobj_9,
-   c_rigidBodyJoint_cartesian_wa_T *iobj_10, c_rigidBodyJoint_cartesian_wa_T
-   *iobj_11, c_rigidBodyJoint_cartesian_wa_T *iobj_12,
-   c_rigidBodyJoint_cartesian_wa_T *iobj_13, c_rigidBodyJoint_cartesian_wa_T
-   *iobj_14, c_rigidBodyJoint_cartesian_wa_T *iobj_15,
+   c_rigidBodyJoint_cartesian__e_T *iobj_7, c_rigidBodyJoint_cartesian__e_T
+   *iobj_8, c_rigidBodyJoint_cartesian__e_T *iobj_9,
+   c_rigidBodyJoint_cartesian__e_T *iobj_10, c_rigidBodyJoint_cartesian__e_T
+   *iobj_11, c_rigidBodyJoint_cartesian__e_T *iobj_12,
+   c_rigidBodyJoint_cartesian__e_T *iobj_13, c_rigidBodyJoint_cartesian__e_T
+   *iobj_14, c_rigidBodyJoint_cartesian__e_T *iobj_15,
    w_robotics_manip_internal_Rig_T *iobj_16);
-static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
-  (c_rigidBodyJoint_cartesian_wa_T *obj, const emxArray_char_T_cartesian_way_T
+static c_rigidBodyJoint_cartesian__e_T *c_rigidBodyJoint_rigidBodyJoint
+  (c_rigidBodyJoint_cartesian__e_T *obj, const emxArray_char_T_cartesian_way_T
    *jname, const emxArray_char_T_cartesian_way_T *jtype);
 static w_robotics_manip_internal_Rig_T *cartesian_waypoi_RigidBody_copy(const
-  v_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_1, w_robotics_manip_internal_Rig_T
+  v_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0,
+  c_rigidBodyJoint_cartesian__e_T *iobj_1, w_robotics_manip_internal_Rig_T
   *iobj_2);
 static void cartesian_RigidBodyTree_addBody(x_robotics_manip_internal_Rig_T *obj,
   v_robotics_manip_internal_Rig_T *bodyin, const emxArray_char_T_cartesian_way_T
-  *parentName, c_rigidBodyJoint_cartesian_wa_T *iobj_0,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_1, w_robotics_manip_internal_Rig_T
+  *parentName, c_rigidBodyJoint_cartesian__e_T *iobj_0,
+  c_rigidBodyJoint_cartesian__e_T *iobj_1, w_robotics_manip_internal_Rig_T
   *iobj_2);
 static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj,
   y_robotics_manip_internal_Rig_T *rigidbodytree,
@@ -287,26 +308,53 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
   *iobj_10, w_robotics_manip_internal_Rig_T *iobj_11,
   w_robotics_manip_internal_Rig_T *iobj_12, w_robotics_manip_internal_Rig_T
   *iobj_13, w_robotics_manip_internal_Rig_T *iobj_14,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_15, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_16, c_rigidBodyJoint_cartesian_wa_T *iobj_17,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_18, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_19, c_rigidBodyJoint_cartesian_wa_T *iobj_20,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_21, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_22, c_rigidBodyJoint_cartesian_wa_T *iobj_23,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_24, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_25, c_rigidBodyJoint_cartesian_wa_T *iobj_26,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_27, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_28, c_rigidBodyJoint_cartesian_wa_T *iobj_29,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_30, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_31, c_rigidBodyJoint_cartesian_wa_T *iobj_32,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_33, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_34, c_rigidBodyJoint_cartesian_wa_T *iobj_35,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_36, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_37, c_rigidBodyJoint_cartesian_wa_T *iobj_38,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_39, w_robotics_manip_internal_Rig_T
+  c_rigidBodyJoint_cartesian__e_T *iobj_15, c_rigidBodyJoint_cartesian__e_T
+  *iobj_16, c_rigidBodyJoint_cartesian__e_T *iobj_17,
+  c_rigidBodyJoint_cartesian__e_T *iobj_18, c_rigidBodyJoint_cartesian__e_T
+  *iobj_19, c_rigidBodyJoint_cartesian__e_T *iobj_20,
+  c_rigidBodyJoint_cartesian__e_T *iobj_21, c_rigidBodyJoint_cartesian__e_T
+  *iobj_22, c_rigidBodyJoint_cartesian__e_T *iobj_23,
+  c_rigidBodyJoint_cartesian__e_T *iobj_24, c_rigidBodyJoint_cartesian__e_T
+  *iobj_25, c_rigidBodyJoint_cartesian__e_T *iobj_26,
+  c_rigidBodyJoint_cartesian__e_T *iobj_27, c_rigidBodyJoint_cartesian__e_T
+  *iobj_28, c_rigidBodyJoint_cartesian__e_T *iobj_29,
+  c_rigidBodyJoint_cartesian__e_T *iobj_30, c_rigidBodyJoint_cartesian__e_T
+  *iobj_31, c_rigidBodyJoint_cartesian__e_T *iobj_32,
+  c_rigidBodyJoint_cartesian__e_T *iobj_33, c_rigidBodyJoint_cartesian__e_T
+  *iobj_34, c_rigidBodyJoint_cartesian__e_T *iobj_35,
+  c_rigidBodyJoint_cartesian__e_T *iobj_36, c_rigidBodyJoint_cartesian__e_T
+  *iobj_37, c_rigidBodyJoint_cartesian__e_T *iobj_38,
+  c_rigidBodyJoint_cartesian__e_T *iobj_39, w_robotics_manip_internal_Rig_T
   *iobj_40, x_robotics_manip_internal_Rig_T *iobj_41);
 static h_robotics_core_internal_Damp_T *DampedBFGSwGradientProjection_D
   (h_robotics_core_internal_Damp_T *obj);
+static void emxInitStruct_c_rigidBodyJoint1(c_rigidBodyJoint_cartesian_wa_T
+  *pStruct);
+static void emxInitStruct_o_robotics_manip_(o_robotics_manip_internal_Rig_T
+  *pStruct);
+static void emxInitStruct_p_robotics_manip_(p_robotics_manip_internal_Rig_T
+  *pStruct);
+static void emxInitStruct_robotics_slmani_e(robotics_slmanip_internal_blo_T
+  *pStruct);
+static void emxInitStruct_n_robotics_manip_(n_robotics_manip_internal_Rig_T
+  *pStruct);
+static n_robotics_manip_internal_Rig_T *cartesian_w_RigidBody_RigidBody
+  (n_robotics_manip_internal_Rig_T *obj);
+static n_robotics_manip_internal_Rig_T *cartesian_RigidBody_RigidBody_e
+  (n_robotics_manip_internal_Rig_T *obj);
+static n_robotics_manip_internal_Rig_T *cartesia_RigidBody_RigidBody_ev
+  (n_robotics_manip_internal_Rig_T *obj);
+static n_robotics_manip_internal_Rig_T *cartesi_RigidBody_RigidBody_evq
+  (n_robotics_manip_internal_Rig_T *obj);
+static n_robotics_manip_internal_Rig_T *cartes_RigidBody_RigidBody_evqu
+  (n_robotics_manip_internal_Rig_T *obj);
+static p_robotics_manip_internal_Rig_T *car_RigidBodyTree_RigidBodyTree
+  (p_robotics_manip_internal_Rig_T *obj, n_robotics_manip_internal_Rig_T *iobj_0,
+   n_robotics_manip_internal_Rig_T *iobj_1, n_robotics_manip_internal_Rig_T
+   *iobj_2, n_robotics_manip_internal_Rig_T *iobj_3,
+   n_robotics_manip_internal_Rig_T *iobj_4, n_robotics_manip_internal_Rig_T
+   *iobj_5, n_robotics_manip_internal_Rig_T *iobj_6,
+   n_robotics_manip_internal_Rig_T *iobj_7);
 int32_T div_s32_floor(int32_T numerator, int32_T denominator)
 {
   int32_T quotient;
@@ -361,9 +409,9 @@ static void cartesian_waypoi_emxInit_real_T(emxArray_real_T_cartesian_way_T
   emxArray->size = (int32_T *)malloc(sizeof(int32_T) * numDimensions);
   emxArray->allocatedSize = 0;
   emxArray->canFreeData = true;
-  for (cartesian_waypoints_planner_B.i_n = 0; cartesian_waypoints_planner_B.i_n <
-       numDimensions; cartesian_waypoints_planner_B.i_n++) {
-    emxArray->size[cartesian_waypoints_planner_B.i_n] = 0;
+  for (cartesian_waypoints_planner_B.i_i = 0; cartesian_waypoints_planner_B.i_i <
+       numDimensions; cartesian_waypoints_planner_B.i_i++) {
+    emxArray->size[cartesian_waypoints_planner_B.i_i] = 0;
   }
 }
 
@@ -375,30 +423,30 @@ static void cartes_emxEnsureCapacity_real_T(emxArray_real_T_cartesian_way_T
     oldNumel = 0;
   }
 
-  cartesian_waypoints_planner_B.newNumel_h = 1;
-  for (cartesian_waypoints_planner_B.i_be = 0;
-       cartesian_waypoints_planner_B.i_be < emxArray->numDimensions;
-       cartesian_waypoints_planner_B.i_be++) {
-    cartesian_waypoints_planner_B.newNumel_h *= emxArray->
-      size[cartesian_waypoints_planner_B.i_be];
+  cartesian_waypoints_planner_B.newNumel_m = 1;
+  for (cartesian_waypoints_planner_B.i_ft = 0;
+       cartesian_waypoints_planner_B.i_ft < emxArray->numDimensions;
+       cartesian_waypoints_planner_B.i_ft++) {
+    cartesian_waypoints_planner_B.newNumel_m *= emxArray->
+      size[cartesian_waypoints_planner_B.i_ft];
   }
 
-  if (cartesian_waypoints_planner_B.newNumel_h > emxArray->allocatedSize) {
-    cartesian_waypoints_planner_B.i_be = emxArray->allocatedSize;
-    if (cartesian_waypoints_planner_B.i_be < 16) {
-      cartesian_waypoints_planner_B.i_be = 16;
+  if (cartesian_waypoints_planner_B.newNumel_m > emxArray->allocatedSize) {
+    cartesian_waypoints_planner_B.i_ft = emxArray->allocatedSize;
+    if (cartesian_waypoints_planner_B.i_ft < 16) {
+      cartesian_waypoints_planner_B.i_ft = 16;
     }
 
-    while (cartesian_waypoints_planner_B.i_be <
-           cartesian_waypoints_planner_B.newNumel_h) {
-      if (cartesian_waypoints_planner_B.i_be > 1073741823) {
-        cartesian_waypoints_planner_B.i_be = MAX_int32_T;
+    while (cartesian_waypoints_planner_B.i_ft <
+           cartesian_waypoints_planner_B.newNumel_m) {
+      if (cartesian_waypoints_planner_B.i_ft > 1073741823) {
+        cartesian_waypoints_planner_B.i_ft = MAX_int32_T;
       } else {
-        cartesian_waypoints_planner_B.i_be <<= 1;
+        cartesian_waypoints_planner_B.i_ft <<= 1;
       }
     }
 
-    newData = calloc(static_cast<uint32_T>(cartesian_waypoints_planner_B.i_be),
+    newData = calloc(static_cast<uint32_T>(cartesian_waypoints_planner_B.i_ft),
                      sizeof(real_T));
     if (emxArray->data != NULL) {
       memcpy(newData, emxArray->data, sizeof(real_T) * oldNumel);
@@ -408,7 +456,7 @@ static void cartes_emxEnsureCapacity_real_T(emxArray_real_T_cartesian_way_T
     }
 
     emxArray->data = (real_T *)newData;
-    emxArray->allocatedSize = cartesian_waypoints_planner_B.i_be;
+    emxArray->allocatedSize = cartesian_waypoints_planner_B.i_ft;
     emxArray->canFreeData = true;
   }
 }
@@ -425,9 +473,9 @@ static void cartesian_waypoi_emxInit_char_T(emxArray_char_T_cartesian_way_T
   emxArray->size = (int32_T *)malloc(sizeof(int32_T) * numDimensions);
   emxArray->allocatedSize = 0;
   emxArray->canFreeData = true;
-  for (cartesian_waypoints_planner_B.i_f = 0; cartesian_waypoints_planner_B.i_f <
-       numDimensions; cartesian_waypoints_planner_B.i_f++) {
-    emxArray->size[cartesian_waypoints_planner_B.i_f] = 0;
+  for (cartesian_waypoints_planner_B.i_l = 0; cartesian_waypoints_planner_B.i_l <
+       numDimensions; cartesian_waypoints_planner_B.i_l++) {
+    emxArray->size[cartesian_waypoints_planner_B.i_l] = 0;
   }
 }
 
@@ -440,28 +488,28 @@ static void cartes_emxEnsureCapacity_char_T(emxArray_char_T_cartesian_way_T
   }
 
   cartesian_waypoints_planner_B.newNumel = 1;
-  for (cartesian_waypoints_planner_B.i_c = 0; cartesian_waypoints_planner_B.i_c <
-       emxArray->numDimensions; cartesian_waypoints_planner_B.i_c++) {
+  for (cartesian_waypoints_planner_B.i_h = 0; cartesian_waypoints_planner_B.i_h <
+       emxArray->numDimensions; cartesian_waypoints_planner_B.i_h++) {
     cartesian_waypoints_planner_B.newNumel *= emxArray->
-      size[cartesian_waypoints_planner_B.i_c];
+      size[cartesian_waypoints_planner_B.i_h];
   }
 
   if (cartesian_waypoints_planner_B.newNumel > emxArray->allocatedSize) {
-    cartesian_waypoints_planner_B.i_c = emxArray->allocatedSize;
-    if (cartesian_waypoints_planner_B.i_c < 16) {
-      cartesian_waypoints_planner_B.i_c = 16;
+    cartesian_waypoints_planner_B.i_h = emxArray->allocatedSize;
+    if (cartesian_waypoints_planner_B.i_h < 16) {
+      cartesian_waypoints_planner_B.i_h = 16;
     }
 
-    while (cartesian_waypoints_planner_B.i_c <
+    while (cartesian_waypoints_planner_B.i_h <
            cartesian_waypoints_planner_B.newNumel) {
-      if (cartesian_waypoints_planner_B.i_c > 1073741823) {
-        cartesian_waypoints_planner_B.i_c = MAX_int32_T;
+      if (cartesian_waypoints_planner_B.i_h > 1073741823) {
+        cartesian_waypoints_planner_B.i_h = MAX_int32_T;
       } else {
-        cartesian_waypoints_planner_B.i_c <<= 1;
+        cartesian_waypoints_planner_B.i_h <<= 1;
       }
     }
 
-    newData = calloc(static_cast<uint32_T>(cartesian_waypoints_planner_B.i_c),
+    newData = calloc(static_cast<uint32_T>(cartesian_waypoints_planner_B.i_h),
                      sizeof(char_T));
     if (emxArray->data != NULL) {
       memcpy(newData, emxArray->data, sizeof(char_T) * oldNumel);
@@ -471,7 +519,7 @@ static void cartes_emxEnsureCapacity_char_T(emxArray_char_T_cartesian_way_T
     }
 
     emxArray->data = (char_T *)newData;
-    emxArray->allocatedSize = cartesian_waypoints_planner_B.i_c;
+    emxArray->allocatedSize = cartesian_waypoints_planner_B.i_h;
     emxArray->canFreeData = true;
   }
 }
@@ -511,7 +559,7 @@ static void car_inverseKinematics_setupImpl(b_inverseKinematics_cartesian_T *obj
   emxArray_real_T_cartesian_way_T *A;
   emxArray_real_T_cartesian_way_T *b;
   real_T m;
-  c_rigidBodyJoint_cartesian_wa_T *joint;
+  c_rigidBodyJoint_cartesian__e_T *joint;
   real_T pnum;
   int32_T d;
   int32_T b_i;
@@ -928,7 +976,7 @@ static void RigidBodyTree_validateConfigu_e(x_robotics_manip_internal_Rig_T *obj
   emxArray_char_T_cartesian_way_T *a;
   int32_T b_kstr;
   char_T b[5];
-  c_rigidBodyJoint_cartesian_wa_T *obj_0;
+  c_rigidBodyJoint_cartesian__e_T *obj_0;
   int32_T idx;
   int32_T loop_ub;
   emxArray_real_T_cartesian_way_T *limits_0;
@@ -1169,8 +1217,8 @@ static boolean_T cartesian_waypoints_plan_strcmp(const
   return b_bool;
 }
 
-static void ca_rigidBodyJoint_get_JointAxis(const
-  c_rigidBodyJoint_cartesian_wa_T *obj, real_T ax[3])
+static void rigidBodyJoint_get_JointAxis_e(const c_rigidBodyJoint_cartesian__e_T
+  *obj, real_T ax[3])
 {
   emxArray_char_T_cartesian_way_T *a;
   static const char_T tmp[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
@@ -1180,41 +1228,41 @@ static void ca_rigidBodyJoint_get_JointAxis(const
   boolean_T guard1 = false;
   int32_T exitg1;
   cartesian_waypoi_emxInit_char_T(&a, 2);
-  cartesian_waypoints_planner_B.b_kstr_js = a->size[0] * a->size[1];
+  cartesian_waypoints_planner_B.b_kstr_n = a->size[0] * a->size[1];
   a->size[0] = 1;
   a->size[1] = obj->Type->size[1];
-  cartes_emxEnsureCapacity_char_T(a, cartesian_waypoints_planner_B.b_kstr_js);
+  cartes_emxEnsureCapacity_char_T(a, cartesian_waypoints_planner_B.b_kstr_n);
   cartesian_waypoints_planner_B.loop_ub_h = obj->Type->size[0] * obj->Type->
     size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_js = 0;
-       cartesian_waypoints_planner_B.b_kstr_js <=
+  for (cartesian_waypoints_planner_B.b_kstr_n = 0;
+       cartesian_waypoints_planner_B.b_kstr_n <=
        cartesian_waypoints_planner_B.loop_ub_h;
-       cartesian_waypoints_planner_B.b_kstr_js++) {
-    a->data[cartesian_waypoints_planner_B.b_kstr_js] = obj->Type->
-      data[cartesian_waypoints_planner_B.b_kstr_js];
+       cartesian_waypoints_planner_B.b_kstr_n++) {
+    a->data[cartesian_waypoints_planner_B.b_kstr_n] = obj->Type->
+      data[cartesian_waypoints_planner_B.b_kstr_n];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_js = 0;
-       cartesian_waypoints_planner_B.b_kstr_js < 8;
-       cartesian_waypoints_planner_B.b_kstr_js++) {
-    cartesian_waypoints_planner_B.b_k[cartesian_waypoints_planner_B.b_kstr_js] =
-      tmp[cartesian_waypoints_planner_B.b_kstr_js];
+  for (cartesian_waypoints_planner_B.b_kstr_n = 0;
+       cartesian_waypoints_planner_B.b_kstr_n < 8;
+       cartesian_waypoints_planner_B.b_kstr_n++) {
+    cartesian_waypoints_planner_B.b_e[cartesian_waypoints_planner_B.b_kstr_n] =
+      tmp[cartesian_waypoints_planner_B.b_kstr_n];
   }
 
   cartesian_waypoints_planner_B.b_bool_n = false;
   if (a->size[1] == 8) {
-    cartesian_waypoints_planner_B.b_kstr_js = 1;
+    cartesian_waypoints_planner_B.b_kstr_n = 1;
     do {
       exitg1 = 0;
-      if (cartesian_waypoints_planner_B.b_kstr_js - 1 < 8) {
+      if (cartesian_waypoints_planner_B.b_kstr_n - 1 < 8) {
         cartesian_waypoints_planner_B.loop_ub_h =
-          cartesian_waypoints_planner_B.b_kstr_js - 1;
+          cartesian_waypoints_planner_B.b_kstr_n - 1;
         if (a->data[cartesian_waypoints_planner_B.loop_ub_h] !=
-            cartesian_waypoints_planner_B.b_k[cartesian_waypoints_planner_B.loop_ub_h])
+            cartesian_waypoints_planner_B.b_e[cartesian_waypoints_planner_B.loop_ub_h])
         {
           exitg1 = 1;
         } else {
-          cartesian_waypoints_planner_B.b_kstr_js++;
+          cartesian_waypoints_planner_B.b_kstr_n++;
         }
       } else {
         cartesian_waypoints_planner_B.b_bool_n = true;
@@ -1227,41 +1275,41 @@ static void ca_rigidBodyJoint_get_JointAxis(const
   if (cartesian_waypoints_planner_B.b_bool_n) {
     guard1 = true;
   } else {
-    cartesian_waypoints_planner_B.b_kstr_js = a->size[0] * a->size[1];
+    cartesian_waypoints_planner_B.b_kstr_n = a->size[0] * a->size[1];
     a->size[0] = 1;
     a->size[1] = obj->Type->size[1];
-    cartes_emxEnsureCapacity_char_T(a, cartesian_waypoints_planner_B.b_kstr_js);
+    cartes_emxEnsureCapacity_char_T(a, cartesian_waypoints_planner_B.b_kstr_n);
     cartesian_waypoints_planner_B.loop_ub_h = obj->Type->size[0] * obj->
       Type->size[1] - 1;
-    for (cartesian_waypoints_planner_B.b_kstr_js = 0;
-         cartesian_waypoints_planner_B.b_kstr_js <=
+    for (cartesian_waypoints_planner_B.b_kstr_n = 0;
+         cartesian_waypoints_planner_B.b_kstr_n <=
          cartesian_waypoints_planner_B.loop_ub_h;
-         cartesian_waypoints_planner_B.b_kstr_js++) {
-      a->data[cartesian_waypoints_planner_B.b_kstr_js] = obj->Type->
-        data[cartesian_waypoints_planner_B.b_kstr_js];
+         cartesian_waypoints_planner_B.b_kstr_n++) {
+      a->data[cartesian_waypoints_planner_B.b_kstr_n] = obj->Type->
+        data[cartesian_waypoints_planner_B.b_kstr_n];
     }
 
-    for (cartesian_waypoints_planner_B.b_kstr_js = 0;
-         cartesian_waypoints_planner_B.b_kstr_js < 9;
-         cartesian_waypoints_planner_B.b_kstr_js++) {
-      cartesian_waypoints_planner_B.b_m[cartesian_waypoints_planner_B.b_kstr_js]
-        = tmp_0[cartesian_waypoints_planner_B.b_kstr_js];
+    for (cartesian_waypoints_planner_B.b_kstr_n = 0;
+         cartesian_waypoints_planner_B.b_kstr_n < 9;
+         cartesian_waypoints_planner_B.b_kstr_n++) {
+      cartesian_waypoints_planner_B.b_p[cartesian_waypoints_planner_B.b_kstr_n] =
+        tmp_0[cartesian_waypoints_planner_B.b_kstr_n];
     }
 
     cartesian_waypoints_planner_B.b_bool_n = false;
     if (a->size[1] == 9) {
-      cartesian_waypoints_planner_B.b_kstr_js = 1;
+      cartesian_waypoints_planner_B.b_kstr_n = 1;
       do {
         exitg1 = 0;
-        if (cartesian_waypoints_planner_B.b_kstr_js - 1 < 9) {
+        if (cartesian_waypoints_planner_B.b_kstr_n - 1 < 9) {
           cartesian_waypoints_planner_B.loop_ub_h =
-            cartesian_waypoints_planner_B.b_kstr_js - 1;
+            cartesian_waypoints_planner_B.b_kstr_n - 1;
           if (a->data[cartesian_waypoints_planner_B.loop_ub_h] !=
-              cartesian_waypoints_planner_B.b_m[cartesian_waypoints_planner_B.loop_ub_h])
+              cartesian_waypoints_planner_B.b_p[cartesian_waypoints_planner_B.loop_ub_h])
           {
             exitg1 = 1;
           } else {
-            cartesian_waypoints_planner_B.b_kstr_js++;
+            cartesian_waypoints_planner_B.b_kstr_n++;
           }
         } else {
           cartesian_waypoints_planner_B.b_bool_n = true;
@@ -1304,8 +1352,335 @@ static void cartesian_waypoints_planner_cat(real_T varargin_1, real_T varargin_2
 }
 
 static void rigidBodyJoint_transformBodyT_e(const
-  c_rigidBodyJoint_cartesian_wa_T *obj, const real_T q_data[], const int32_T
+  c_rigidBodyJoint_cartesian__e_T *obj, const real_T q_data[], const int32_T
   *q_size, real_T T[16])
+{
+  emxArray_char_T_cartesian_way_T *switch_expression;
+  static const char_T tmp[5] = { 'f', 'i', 'x', 'e', 'd' };
+
+  static const char_T tmp_0[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+
+  int32_T exitg1;
+  cartesian_waypoi_emxInit_char_T(&switch_expression, 2);
+  cartesian_waypoints_planner_B.b_kstr_f = switch_expression->size[0] *
+    switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = obj->Type->size[1];
+  cartes_emxEnsureCapacity_char_T(switch_expression,
+    cartesian_waypoints_planner_B.b_kstr_f);
+  cartesian_waypoints_planner_B.loop_ub_e = obj->Type->size[0] * obj->Type->
+    size[1] - 1;
+  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
+       cartesian_waypoints_planner_B.b_kstr_f <=
+       cartesian_waypoints_planner_B.loop_ub_e;
+       cartesian_waypoints_planner_B.b_kstr_f++) {
+    switch_expression->data[cartesian_waypoints_planner_B.b_kstr_f] = obj->
+      Type->data[cartesian_waypoints_planner_B.b_kstr_f];
+  }
+
+  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
+       cartesian_waypoints_planner_B.b_kstr_f < 5;
+       cartesian_waypoints_planner_B.b_kstr_f++) {
+    cartesian_waypoints_planner_B.b_il[cartesian_waypoints_planner_B.b_kstr_f] =
+      tmp[cartesian_waypoints_planner_B.b_kstr_f];
+  }
+
+  cartesian_waypoints_planner_B.b_bool_h = false;
+  if (switch_expression->size[1] == 5) {
+    cartesian_waypoints_planner_B.b_kstr_f = 1;
+    do {
+      exitg1 = 0;
+      if (cartesian_waypoints_planner_B.b_kstr_f - 1 < 5) {
+        cartesian_waypoints_planner_B.loop_ub_e =
+          cartesian_waypoints_planner_B.b_kstr_f - 1;
+        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_e] !=
+            cartesian_waypoints_planner_B.b_il[cartesian_waypoints_planner_B.loop_ub_e])
+        {
+          exitg1 = 1;
+        } else {
+          cartesian_waypoints_planner_B.b_kstr_f++;
+        }
+      } else {
+        cartesian_waypoints_planner_B.b_bool_h = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (cartesian_waypoints_planner_B.b_bool_h) {
+    cartesian_waypoints_planner_B.b_kstr_f = 0;
+  } else {
+    for (cartesian_waypoints_planner_B.b_kstr_f = 0;
+         cartesian_waypoints_planner_B.b_kstr_f < 8;
+         cartesian_waypoints_planner_B.b_kstr_f++) {
+      cartesian_waypoints_planner_B.b_j[cartesian_waypoints_planner_B.b_kstr_f] =
+        tmp_0[cartesian_waypoints_planner_B.b_kstr_f];
+    }
+
+    cartesian_waypoints_planner_B.b_bool_h = false;
+    if (switch_expression->size[1] == 8) {
+      cartesian_waypoints_planner_B.b_kstr_f = 1;
+      do {
+        exitg1 = 0;
+        if (cartesian_waypoints_planner_B.b_kstr_f - 1 < 8) {
+          cartesian_waypoints_planner_B.loop_ub_e =
+            cartesian_waypoints_planner_B.b_kstr_f - 1;
+          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_e]
+              !=
+              cartesian_waypoints_planner_B.b_j[cartesian_waypoints_planner_B.loop_ub_e])
+          {
+            exitg1 = 1;
+          } else {
+            cartesian_waypoints_planner_B.b_kstr_f++;
+          }
+        } else {
+          cartesian_waypoints_planner_B.b_bool_h = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (cartesian_waypoints_planner_B.b_bool_h) {
+      cartesian_waypoints_planner_B.b_kstr_f = 1;
+    } else {
+      cartesian_waypoints_planner_B.b_kstr_f = -1;
+    }
+  }
+
+  cartesian_waypoi_emxFree_char_T(&switch_expression);
+  switch (cartesian_waypoints_planner_B.b_kstr_f) {
+   case 0:
+    memset(&cartesian_waypoints_planner_B.TJ[0], 0, sizeof(real_T) << 4U);
+    cartesian_waypoints_planner_B.TJ[0] = 1.0;
+    cartesian_waypoints_planner_B.TJ[5] = 1.0;
+    cartesian_waypoints_planner_B.TJ[10] = 1.0;
+    cartesian_waypoints_planner_B.TJ[15] = 1.0;
+    break;
+
+   case 1:
+    rigidBodyJoint_get_JointAxis_e(obj, cartesian_waypoints_planner_B.v_m);
+    cartesian_waypoints_planner_B.loop_ub_e = (*q_size != 0) - 1;
+    cartesian_waypoints_planner_B.result_data[0] =
+      cartesian_waypoints_planner_B.v_m[0];
+    cartesian_waypoints_planner_B.result_data[1] =
+      cartesian_waypoints_planner_B.v_m[1];
+    cartesian_waypoints_planner_B.result_data[2] =
+      cartesian_waypoints_planner_B.v_m[2];
+    for (cartesian_waypoints_planner_B.b_kstr_f = 0;
+         cartesian_waypoints_planner_B.b_kstr_f <=
+         cartesian_waypoints_planner_B.loop_ub_e;
+         cartesian_waypoints_planner_B.b_kstr_f++) {
+      cartesian_waypoints_planner_B.result_data[3] = q_data[0];
+    }
+
+    cartesian_waypoints_planner_B.cth = 1.0 / sqrt
+      ((cartesian_waypoints_planner_B.result_data[0] *
+        cartesian_waypoints_planner_B.result_data[0] +
+        cartesian_waypoints_planner_B.result_data[1] *
+        cartesian_waypoints_planner_B.result_data[1]) +
+       cartesian_waypoints_planner_B.result_data[2] *
+       cartesian_waypoints_planner_B.result_data[2]);
+    cartesian_waypoints_planner_B.v_m[0] =
+      cartesian_waypoints_planner_B.result_data[0] *
+      cartesian_waypoints_planner_B.cth;
+    cartesian_waypoints_planner_B.v_m[1] =
+      cartesian_waypoints_planner_B.result_data[1] *
+      cartesian_waypoints_planner_B.cth;
+    cartesian_waypoints_planner_B.v_m[2] =
+      cartesian_waypoints_planner_B.result_data[2] *
+      cartesian_waypoints_planner_B.cth;
+    cartesian_waypoints_planner_B.cth = cos
+      (cartesian_waypoints_planner_B.result_data[3]);
+    cartesian_waypoints_planner_B.sth = sin
+      (cartesian_waypoints_planner_B.result_data[3]);
+    cartesian_waypoints_planner_B.tempR_tmp = cartesian_waypoints_planner_B.v_m
+      [1] * cartesian_waypoints_planner_B.v_m[0] * (1.0 -
+      cartesian_waypoints_planner_B.cth);
+    cartesian_waypoints_planner_B.tempR_tmp_c =
+      cartesian_waypoints_planner_B.v_m[2] * cartesian_waypoints_planner_B.sth;
+    cartesian_waypoints_planner_B.tempR_tmp_i =
+      cartesian_waypoints_planner_B.v_m[2] * cartesian_waypoints_planner_B.v_m[0]
+      * (1.0 - cartesian_waypoints_planner_B.cth);
+    cartesian_waypoints_planner_B.tempR_tmp_d =
+      cartesian_waypoints_planner_B.v_m[1] * cartesian_waypoints_planner_B.sth;
+    cartesian_waypoints_planner_B.tempR_tmp_g =
+      cartesian_waypoints_planner_B.v_m[2] * cartesian_waypoints_planner_B.v_m[1]
+      * (1.0 - cartesian_waypoints_planner_B.cth);
+    cartesian_waypoints_planner_B.sth *= cartesian_waypoints_planner_B.v_m[0];
+    cartesian_waypoints_planner_cat(cartesian_waypoints_planner_B.v_m[0] *
+      cartesian_waypoints_planner_B.v_m[0] * (1.0 -
+      cartesian_waypoints_planner_B.cth) + cartesian_waypoints_planner_B.cth,
+      cartesian_waypoints_planner_B.tempR_tmp -
+      cartesian_waypoints_planner_B.tempR_tmp_c,
+      cartesian_waypoints_planner_B.tempR_tmp_i +
+      cartesian_waypoints_planner_B.tempR_tmp_d,
+      cartesian_waypoints_planner_B.tempR_tmp +
+      cartesian_waypoints_planner_B.tempR_tmp_c,
+      cartesian_waypoints_planner_B.v_m[1] * cartesian_waypoints_planner_B.v_m[1]
+      * (1.0 - cartesian_waypoints_planner_B.cth) +
+      cartesian_waypoints_planner_B.cth,
+      cartesian_waypoints_planner_B.tempR_tmp_g -
+      cartesian_waypoints_planner_B.sth,
+      cartesian_waypoints_planner_B.tempR_tmp_i -
+      cartesian_waypoints_planner_B.tempR_tmp_d,
+      cartesian_waypoints_planner_B.tempR_tmp_g +
+      cartesian_waypoints_planner_B.sth, cartesian_waypoints_planner_B.v_m[2] *
+      cartesian_waypoints_planner_B.v_m[2] * (1.0 -
+      cartesian_waypoints_planner_B.cth) + cartesian_waypoints_planner_B.cth,
+      cartesian_waypoints_planner_B.tempR_o);
+    for (cartesian_waypoints_planner_B.b_kstr_f = 0;
+         cartesian_waypoints_planner_B.b_kstr_f < 3;
+         cartesian_waypoints_planner_B.b_kstr_f++) {
+      cartesian_waypoints_planner_B.loop_ub_e =
+        cartesian_waypoints_planner_B.b_kstr_f + 1;
+      cartesian_waypoints_planner_B.R_l[cartesian_waypoints_planner_B.loop_ub_e
+        - 1] = cartesian_waypoints_planner_B.tempR_o
+        [(cartesian_waypoints_planner_B.loop_ub_e - 1) * 3];
+      cartesian_waypoints_planner_B.loop_ub_e =
+        cartesian_waypoints_planner_B.b_kstr_f + 1;
+      cartesian_waypoints_planner_B.R_l[cartesian_waypoints_planner_B.loop_ub_e
+        + 2] = cartesian_waypoints_planner_B.tempR_o
+        [(cartesian_waypoints_planner_B.loop_ub_e - 1) * 3 + 1];
+      cartesian_waypoints_planner_B.loop_ub_e =
+        cartesian_waypoints_planner_B.b_kstr_f + 1;
+      cartesian_waypoints_planner_B.R_l[cartesian_waypoints_planner_B.loop_ub_e
+        + 5] = cartesian_waypoints_planner_B.tempR_o
+        [(cartesian_waypoints_planner_B.loop_ub_e - 1) * 3 + 2];
+    }
+
+    memset(&cartesian_waypoints_planner_B.TJ[0], 0, sizeof(real_T) << 4U);
+    for (cartesian_waypoints_planner_B.b_kstr_f = 0;
+         cartesian_waypoints_planner_B.b_kstr_f < 3;
+         cartesian_waypoints_planner_B.b_kstr_f++) {
+      cartesian_waypoints_planner_B.loop_ub_e =
+        cartesian_waypoints_planner_B.b_kstr_f << 2;
+      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_e] =
+        cartesian_waypoints_planner_B.R_l[3 *
+        cartesian_waypoints_planner_B.b_kstr_f];
+      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_e +
+        1] = cartesian_waypoints_planner_B.R_l[3 *
+        cartesian_waypoints_planner_B.b_kstr_f + 1];
+      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_e +
+        2] = cartesian_waypoints_planner_B.R_l[3 *
+        cartesian_waypoints_planner_B.b_kstr_f + 2];
+    }
+
+    cartesian_waypoints_planner_B.TJ[15] = 1.0;
+    break;
+
+   default:
+    rigidBodyJoint_get_JointAxis_e(obj, cartesian_waypoints_planner_B.v_m);
+    memset(&cartesian_waypoints_planner_B.tempR_o[0], 0, 9U * sizeof(real_T));
+    cartesian_waypoints_planner_B.tempR_o[0] = 1.0;
+    cartesian_waypoints_planner_B.tempR_o[4] = 1.0;
+    cartesian_waypoints_planner_B.tempR_o[8] = 1.0;
+    for (cartesian_waypoints_planner_B.b_kstr_f = 0;
+         cartesian_waypoints_planner_B.b_kstr_f < 3;
+         cartesian_waypoints_planner_B.b_kstr_f++) {
+      cartesian_waypoints_planner_B.loop_ub_e =
+        cartesian_waypoints_planner_B.b_kstr_f << 2;
+      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_e] =
+        cartesian_waypoints_planner_B.tempR_o[3 *
+        cartesian_waypoints_planner_B.b_kstr_f];
+      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_e +
+        1] = cartesian_waypoints_planner_B.tempR_o[3 *
+        cartesian_waypoints_planner_B.b_kstr_f + 1];
+      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_e +
+        2] = cartesian_waypoints_planner_B.tempR_o[3 *
+        cartesian_waypoints_planner_B.b_kstr_f + 2];
+      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.b_kstr_f +
+        12] =
+        cartesian_waypoints_planner_B.v_m[cartesian_waypoints_planner_B.b_kstr_f]
+        * q_data[0];
+    }
+
+    cartesian_waypoints_planner_B.TJ[3] = 0.0;
+    cartesian_waypoints_planner_B.TJ[7] = 0.0;
+    cartesian_waypoints_planner_B.TJ[11] = 0.0;
+    cartesian_waypoints_planner_B.TJ[15] = 1.0;
+    break;
+  }
+
+  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
+       cartesian_waypoints_planner_B.b_kstr_f < 16;
+       cartesian_waypoints_planner_B.b_kstr_f++) {
+    cartesian_waypoints_planner_B.a[cartesian_waypoints_planner_B.b_kstr_f] =
+      obj->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_f];
+  }
+
+  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
+       cartesian_waypoints_planner_B.b_kstr_f < 16;
+       cartesian_waypoints_planner_B.b_kstr_f++) {
+    cartesian_waypoints_planner_B.b[cartesian_waypoints_planner_B.b_kstr_f] =
+      obj->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_f];
+  }
+
+  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
+       cartesian_waypoints_planner_B.b_kstr_f < 4;
+       cartesian_waypoints_planner_B.b_kstr_f++) {
+    for (cartesian_waypoints_planner_B.loop_ub_e = 0;
+         cartesian_waypoints_planner_B.loop_ub_e < 4;
+         cartesian_waypoints_planner_B.loop_ub_e++) {
+      cartesian_waypoints_planner_B.a_tmp_tmp =
+        cartesian_waypoints_planner_B.loop_ub_e << 2;
+      cartesian_waypoints_planner_B.a_tmp =
+        cartesian_waypoints_planner_B.b_kstr_f +
+        cartesian_waypoints_planner_B.a_tmp_tmp;
+      cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.a_tmp] =
+        0.0;
+      cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.a_tmp] +=
+        cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.a_tmp_tmp]
+        * cartesian_waypoints_planner_B.a[cartesian_waypoints_planner_B.b_kstr_f];
+      cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.a_tmp] +=
+        cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.a_tmp_tmp
+        + 1] *
+        cartesian_waypoints_planner_B.a[cartesian_waypoints_planner_B.b_kstr_f +
+        4];
+      cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.a_tmp] +=
+        cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.a_tmp_tmp
+        + 2] *
+        cartesian_waypoints_planner_B.a[cartesian_waypoints_planner_B.b_kstr_f +
+        8];
+      cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.a_tmp] +=
+        cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.a_tmp_tmp
+        + 3] *
+        cartesian_waypoints_planner_B.a[cartesian_waypoints_planner_B.b_kstr_f +
+        12];
+    }
+
+    for (cartesian_waypoints_planner_B.loop_ub_e = 0;
+         cartesian_waypoints_planner_B.loop_ub_e < 4;
+         cartesian_waypoints_planner_B.loop_ub_e++) {
+      cartesian_waypoints_planner_B.a_tmp_tmp =
+        cartesian_waypoints_planner_B.loop_ub_e << 2;
+      cartesian_waypoints_planner_B.a_tmp =
+        cartesian_waypoints_planner_B.b_kstr_f +
+        cartesian_waypoints_planner_B.a_tmp_tmp;
+      T[cartesian_waypoints_planner_B.a_tmp] = 0.0;
+      T[cartesian_waypoints_planner_B.a_tmp] +=
+        cartesian_waypoints_planner_B.b[cartesian_waypoints_planner_B.a_tmp_tmp]
+        * cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.b_kstr_f];
+      T[cartesian_waypoints_planner_B.a_tmp] +=
+        cartesian_waypoints_planner_B.b[cartesian_waypoints_planner_B.a_tmp_tmp
+        + 1] *
+        cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.b_kstr_f
+        + 4];
+      T[cartesian_waypoints_planner_B.a_tmp] +=
+        cartesian_waypoints_planner_B.b[cartesian_waypoints_planner_B.a_tmp_tmp
+        + 2] *
+        cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.b_kstr_f
+        + 8];
+      T[cartesian_waypoints_planner_B.a_tmp] +=
+        cartesian_waypoints_planner_B.b[cartesian_waypoints_planner_B.a_tmp_tmp
+        + 3] *
+        cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.b_kstr_f
+        + 12];
+    }
+  }
+}
+
+static void rigidBodyJoint_transformBodyToP(const
+  c_rigidBodyJoint_cartesian__e_T *obj, real_T T[16])
 {
   emxArray_char_T_cartesian_way_T *switch_expression;
   static const char_T tmp[5] = { 'f', 'i', 'x', 'e', 'd' };
@@ -1320,11 +1695,11 @@ static void rigidBodyJoint_transformBodyT_e(const
   switch_expression->size[1] = obj->Type->size[1];
   cartes_emxEnsureCapacity_char_T(switch_expression,
     cartesian_waypoints_planner_B.b_kstr_j);
-  cartesian_waypoints_planner_B.loop_ub_f = obj->Type->size[0] * obj->Type->
-    size[1] - 1;
+  cartesian_waypoints_planner_B.loop_ub_hc = obj->Type->size[0] * obj->
+    Type->size[1] - 1;
   for (cartesian_waypoints_planner_B.b_kstr_j = 0;
        cartesian_waypoints_planner_B.b_kstr_j <=
-       cartesian_waypoints_planner_B.loop_ub_f;
+       cartesian_waypoints_planner_B.loop_ub_hc;
        cartesian_waypoints_planner_B.b_kstr_j++) {
     switch_expression->data[cartesian_waypoints_planner_B.b_kstr_j] = obj->
       Type->data[cartesian_waypoints_planner_B.b_kstr_j];
@@ -1333,66 +1708,66 @@ static void rigidBodyJoint_transformBodyT_e(const
   for (cartesian_waypoints_planner_B.b_kstr_j = 0;
        cartesian_waypoints_planner_B.b_kstr_j < 5;
        cartesian_waypoints_planner_B.b_kstr_j++) {
-    cartesian_waypoints_planner_B.b_kv[cartesian_waypoints_planner_B.b_kstr_j] =
+    cartesian_waypoints_planner_B.b_f[cartesian_waypoints_planner_B.b_kstr_j] =
       tmp[cartesian_waypoints_planner_B.b_kstr_j];
   }
 
-  cartesian_waypoints_planner_B.b_bool_j = false;
+  cartesian_waypoints_planner_B.b_bool_a = false;
   if (switch_expression->size[1] == 5) {
     cartesian_waypoints_planner_B.b_kstr_j = 1;
     do {
       exitg1 = 0;
       if (cartesian_waypoints_planner_B.b_kstr_j - 1 < 5) {
-        cartesian_waypoints_planner_B.loop_ub_f =
+        cartesian_waypoints_planner_B.loop_ub_hc =
           cartesian_waypoints_planner_B.b_kstr_j - 1;
-        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_f] !=
-            cartesian_waypoints_planner_B.b_kv[cartesian_waypoints_planner_B.loop_ub_f])
+        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_hc] !=
+            cartesian_waypoints_planner_B.b_f[cartesian_waypoints_planner_B.loop_ub_hc])
         {
           exitg1 = 1;
         } else {
           cartesian_waypoints_planner_B.b_kstr_j++;
         }
       } else {
-        cartesian_waypoints_planner_B.b_bool_j = true;
+        cartesian_waypoints_planner_B.b_bool_a = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (cartesian_waypoints_planner_B.b_bool_j) {
+  if (cartesian_waypoints_planner_B.b_bool_a) {
     cartesian_waypoints_planner_B.b_kstr_j = 0;
   } else {
     for (cartesian_waypoints_planner_B.b_kstr_j = 0;
          cartesian_waypoints_planner_B.b_kstr_j < 8;
          cartesian_waypoints_planner_B.b_kstr_j++) {
-      cartesian_waypoints_planner_B.b_a[cartesian_waypoints_planner_B.b_kstr_j] =
-        tmp_0[cartesian_waypoints_planner_B.b_kstr_j];
+      cartesian_waypoints_planner_B.b_mv[cartesian_waypoints_planner_B.b_kstr_j]
+        = tmp_0[cartesian_waypoints_planner_B.b_kstr_j];
     }
 
-    cartesian_waypoints_planner_B.b_bool_j = false;
+    cartesian_waypoints_planner_B.b_bool_a = false;
     if (switch_expression->size[1] == 8) {
       cartesian_waypoints_planner_B.b_kstr_j = 1;
       do {
         exitg1 = 0;
         if (cartesian_waypoints_planner_B.b_kstr_j - 1 < 8) {
-          cartesian_waypoints_planner_B.loop_ub_f =
+          cartesian_waypoints_planner_B.loop_ub_hc =
             cartesian_waypoints_planner_B.b_kstr_j - 1;
-          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_f]
+          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_hc]
               !=
-              cartesian_waypoints_planner_B.b_a[cartesian_waypoints_planner_B.loop_ub_f])
+              cartesian_waypoints_planner_B.b_mv[cartesian_waypoints_planner_B.loop_ub_hc])
           {
             exitg1 = 1;
           } else {
             cartesian_waypoints_planner_B.b_kstr_j++;
           }
         } else {
-          cartesian_waypoints_planner_B.b_bool_j = true;
+          cartesian_waypoints_planner_B.b_bool_a = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (cartesian_waypoints_planner_B.b_bool_j) {
+    if (cartesian_waypoints_planner_B.b_bool_a) {
       cartesian_waypoints_planner_B.b_kstr_j = 1;
     } else {
       cartesian_waypoints_planner_B.b_kstr_j = -1;
@@ -1402,333 +1777,6 @@ static void rigidBodyJoint_transformBodyT_e(const
   cartesian_waypoi_emxFree_char_T(&switch_expression);
   switch (cartesian_waypoints_planner_B.b_kstr_j) {
    case 0:
-    memset(&cartesian_waypoints_planner_B.TJ[0], 0, sizeof(real_T) << 4U);
-    cartesian_waypoints_planner_B.TJ[0] = 1.0;
-    cartesian_waypoints_planner_B.TJ[5] = 1.0;
-    cartesian_waypoints_planner_B.TJ[10] = 1.0;
-    cartesian_waypoints_planner_B.TJ[15] = 1.0;
-    break;
-
-   case 1:
-    ca_rigidBodyJoint_get_JointAxis(obj, cartesian_waypoints_planner_B.v_f);
-    cartesian_waypoints_planner_B.loop_ub_f = (*q_size != 0) - 1;
-    cartesian_waypoints_planner_B.result_data[0] =
-      cartesian_waypoints_planner_B.v_f[0];
-    cartesian_waypoints_planner_B.result_data[1] =
-      cartesian_waypoints_planner_B.v_f[1];
-    cartesian_waypoints_planner_B.result_data[2] =
-      cartesian_waypoints_planner_B.v_f[2];
-    for (cartesian_waypoints_planner_B.b_kstr_j = 0;
-         cartesian_waypoints_planner_B.b_kstr_j <=
-         cartesian_waypoints_planner_B.loop_ub_f;
-         cartesian_waypoints_planner_B.b_kstr_j++) {
-      cartesian_waypoints_planner_B.result_data[3] = q_data[0];
-    }
-
-    cartesian_waypoints_planner_B.cth = 1.0 / sqrt
-      ((cartesian_waypoints_planner_B.result_data[0] *
-        cartesian_waypoints_planner_B.result_data[0] +
-        cartesian_waypoints_planner_B.result_data[1] *
-        cartesian_waypoints_planner_B.result_data[1]) +
-       cartesian_waypoints_planner_B.result_data[2] *
-       cartesian_waypoints_planner_B.result_data[2]);
-    cartesian_waypoints_planner_B.v_f[0] =
-      cartesian_waypoints_planner_B.result_data[0] *
-      cartesian_waypoints_planner_B.cth;
-    cartesian_waypoints_planner_B.v_f[1] =
-      cartesian_waypoints_planner_B.result_data[1] *
-      cartesian_waypoints_planner_B.cth;
-    cartesian_waypoints_planner_B.v_f[2] =
-      cartesian_waypoints_planner_B.result_data[2] *
-      cartesian_waypoints_planner_B.cth;
-    cartesian_waypoints_planner_B.cth = cos
-      (cartesian_waypoints_planner_B.result_data[3]);
-    cartesian_waypoints_planner_B.sth = sin
-      (cartesian_waypoints_planner_B.result_data[3]);
-    cartesian_waypoints_planner_B.tempR_tmp = cartesian_waypoints_planner_B.v_f
-      [1] * cartesian_waypoints_planner_B.v_f[0] * (1.0 -
-      cartesian_waypoints_planner_B.cth);
-    cartesian_waypoints_planner_B.tempR_tmp_c =
-      cartesian_waypoints_planner_B.v_f[2] * cartesian_waypoints_planner_B.sth;
-    cartesian_waypoints_planner_B.tempR_tmp_cj =
-      cartesian_waypoints_planner_B.v_f[2] * cartesian_waypoints_planner_B.v_f[0]
-      * (1.0 - cartesian_waypoints_planner_B.cth);
-    cartesian_waypoints_planner_B.tempR_tmp_m =
-      cartesian_waypoints_planner_B.v_f[1] * cartesian_waypoints_planner_B.sth;
-    cartesian_waypoints_planner_B.tempR_tmp_j =
-      cartesian_waypoints_planner_B.v_f[2] * cartesian_waypoints_planner_B.v_f[1]
-      * (1.0 - cartesian_waypoints_planner_B.cth);
-    cartesian_waypoints_planner_B.sth *= cartesian_waypoints_planner_B.v_f[0];
-    cartesian_waypoints_planner_cat(cartesian_waypoints_planner_B.v_f[0] *
-      cartesian_waypoints_planner_B.v_f[0] * (1.0 -
-      cartesian_waypoints_planner_B.cth) + cartesian_waypoints_planner_B.cth,
-      cartesian_waypoints_planner_B.tempR_tmp -
-      cartesian_waypoints_planner_B.tempR_tmp_c,
-      cartesian_waypoints_planner_B.tempR_tmp_cj +
-      cartesian_waypoints_planner_B.tempR_tmp_m,
-      cartesian_waypoints_planner_B.tempR_tmp +
-      cartesian_waypoints_planner_B.tempR_tmp_c,
-      cartesian_waypoints_planner_B.v_f[1] * cartesian_waypoints_planner_B.v_f[1]
-      * (1.0 - cartesian_waypoints_planner_B.cth) +
-      cartesian_waypoints_planner_B.cth,
-      cartesian_waypoints_planner_B.tempR_tmp_j -
-      cartesian_waypoints_planner_B.sth,
-      cartesian_waypoints_planner_B.tempR_tmp_cj -
-      cartesian_waypoints_planner_B.tempR_tmp_m,
-      cartesian_waypoints_planner_B.tempR_tmp_j +
-      cartesian_waypoints_planner_B.sth, cartesian_waypoints_planner_B.v_f[2] *
-      cartesian_waypoints_planner_B.v_f[2] * (1.0 -
-      cartesian_waypoints_planner_B.cth) + cartesian_waypoints_planner_B.cth,
-      cartesian_waypoints_planner_B.tempR_a);
-    for (cartesian_waypoints_planner_B.b_kstr_j = 0;
-         cartesian_waypoints_planner_B.b_kstr_j < 3;
-         cartesian_waypoints_planner_B.b_kstr_j++) {
-      cartesian_waypoints_planner_B.loop_ub_f =
-        cartesian_waypoints_planner_B.b_kstr_j + 1;
-      cartesian_waypoints_planner_B.R_ax[cartesian_waypoints_planner_B.loop_ub_f
-        - 1] = cartesian_waypoints_planner_B.tempR_a
-        [(cartesian_waypoints_planner_B.loop_ub_f - 1) * 3];
-      cartesian_waypoints_planner_B.loop_ub_f =
-        cartesian_waypoints_planner_B.b_kstr_j + 1;
-      cartesian_waypoints_planner_B.R_ax[cartesian_waypoints_planner_B.loop_ub_f
-        + 2] = cartesian_waypoints_planner_B.tempR_a
-        [(cartesian_waypoints_planner_B.loop_ub_f - 1) * 3 + 1];
-      cartesian_waypoints_planner_B.loop_ub_f =
-        cartesian_waypoints_planner_B.b_kstr_j + 1;
-      cartesian_waypoints_planner_B.R_ax[cartesian_waypoints_planner_B.loop_ub_f
-        + 5] = cartesian_waypoints_planner_B.tempR_a
-        [(cartesian_waypoints_planner_B.loop_ub_f - 1) * 3 + 2];
-    }
-
-    memset(&cartesian_waypoints_planner_B.TJ[0], 0, sizeof(real_T) << 4U);
-    for (cartesian_waypoints_planner_B.b_kstr_j = 0;
-         cartesian_waypoints_planner_B.b_kstr_j < 3;
-         cartesian_waypoints_planner_B.b_kstr_j++) {
-      cartesian_waypoints_planner_B.loop_ub_f =
-        cartesian_waypoints_planner_B.b_kstr_j << 2;
-      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_f] =
-        cartesian_waypoints_planner_B.R_ax[3 *
-        cartesian_waypoints_planner_B.b_kstr_j];
-      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_f +
-        1] = cartesian_waypoints_planner_B.R_ax[3 *
-        cartesian_waypoints_planner_B.b_kstr_j + 1];
-      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_f +
-        2] = cartesian_waypoints_planner_B.R_ax[3 *
-        cartesian_waypoints_planner_B.b_kstr_j + 2];
-    }
-
-    cartesian_waypoints_planner_B.TJ[15] = 1.0;
-    break;
-
-   default:
-    ca_rigidBodyJoint_get_JointAxis(obj, cartesian_waypoints_planner_B.v_f);
-    memset(&cartesian_waypoints_planner_B.tempR_a[0], 0, 9U * sizeof(real_T));
-    cartesian_waypoints_planner_B.tempR_a[0] = 1.0;
-    cartesian_waypoints_planner_B.tempR_a[4] = 1.0;
-    cartesian_waypoints_planner_B.tempR_a[8] = 1.0;
-    for (cartesian_waypoints_planner_B.b_kstr_j = 0;
-         cartesian_waypoints_planner_B.b_kstr_j < 3;
-         cartesian_waypoints_planner_B.b_kstr_j++) {
-      cartesian_waypoints_planner_B.loop_ub_f =
-        cartesian_waypoints_planner_B.b_kstr_j << 2;
-      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_f] =
-        cartesian_waypoints_planner_B.tempR_a[3 *
-        cartesian_waypoints_planner_B.b_kstr_j];
-      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_f +
-        1] = cartesian_waypoints_planner_B.tempR_a[3 *
-        cartesian_waypoints_planner_B.b_kstr_j + 1];
-      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.loop_ub_f +
-        2] = cartesian_waypoints_planner_B.tempR_a[3 *
-        cartesian_waypoints_planner_B.b_kstr_j + 2];
-      cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.b_kstr_j +
-        12] =
-        cartesian_waypoints_planner_B.v_f[cartesian_waypoints_planner_B.b_kstr_j]
-        * q_data[0];
-    }
-
-    cartesian_waypoints_planner_B.TJ[3] = 0.0;
-    cartesian_waypoints_planner_B.TJ[7] = 0.0;
-    cartesian_waypoints_planner_B.TJ[11] = 0.0;
-    cartesian_waypoints_planner_B.TJ[15] = 1.0;
-    break;
-  }
-
-  for (cartesian_waypoints_planner_B.b_kstr_j = 0;
-       cartesian_waypoints_planner_B.b_kstr_j < 16;
-       cartesian_waypoints_planner_B.b_kstr_j++) {
-    cartesian_waypoints_planner_B.a[cartesian_waypoints_planner_B.b_kstr_j] =
-      obj->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_j];
-  }
-
-  for (cartesian_waypoints_planner_B.b_kstr_j = 0;
-       cartesian_waypoints_planner_B.b_kstr_j < 16;
-       cartesian_waypoints_planner_B.b_kstr_j++) {
-    cartesian_waypoints_planner_B.b[cartesian_waypoints_planner_B.b_kstr_j] =
-      obj->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_j];
-  }
-
-  for (cartesian_waypoints_planner_B.b_kstr_j = 0;
-       cartesian_waypoints_planner_B.b_kstr_j < 4;
-       cartesian_waypoints_planner_B.b_kstr_j++) {
-    for (cartesian_waypoints_planner_B.loop_ub_f = 0;
-         cartesian_waypoints_planner_B.loop_ub_f < 4;
-         cartesian_waypoints_planner_B.loop_ub_f++) {
-      cartesian_waypoints_planner_B.a_tmp_tmp =
-        cartesian_waypoints_planner_B.loop_ub_f << 2;
-      cartesian_waypoints_planner_B.a_tmp =
-        cartesian_waypoints_planner_B.b_kstr_j +
-        cartesian_waypoints_planner_B.a_tmp_tmp;
-      cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.a_tmp] =
-        0.0;
-      cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.a_tmp] +=
-        cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.a_tmp_tmp]
-        * cartesian_waypoints_planner_B.a[cartesian_waypoints_planner_B.b_kstr_j];
-      cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.a_tmp] +=
-        cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.a_tmp_tmp
-        + 1] *
-        cartesian_waypoints_planner_B.a[cartesian_waypoints_planner_B.b_kstr_j +
-        4];
-      cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.a_tmp] +=
-        cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.a_tmp_tmp
-        + 2] *
-        cartesian_waypoints_planner_B.a[cartesian_waypoints_planner_B.b_kstr_j +
-        8];
-      cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.a_tmp] +=
-        cartesian_waypoints_planner_B.TJ[cartesian_waypoints_planner_B.a_tmp_tmp
-        + 3] *
-        cartesian_waypoints_planner_B.a[cartesian_waypoints_planner_B.b_kstr_j +
-        12];
-    }
-
-    for (cartesian_waypoints_planner_B.loop_ub_f = 0;
-         cartesian_waypoints_planner_B.loop_ub_f < 4;
-         cartesian_waypoints_planner_B.loop_ub_f++) {
-      cartesian_waypoints_planner_B.a_tmp_tmp =
-        cartesian_waypoints_planner_B.loop_ub_f << 2;
-      cartesian_waypoints_planner_B.a_tmp =
-        cartesian_waypoints_planner_B.b_kstr_j +
-        cartesian_waypoints_planner_B.a_tmp_tmp;
-      T[cartesian_waypoints_planner_B.a_tmp] = 0.0;
-      T[cartesian_waypoints_planner_B.a_tmp] +=
-        cartesian_waypoints_planner_B.b[cartesian_waypoints_planner_B.a_tmp_tmp]
-        * cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.b_kstr_j];
-      T[cartesian_waypoints_planner_B.a_tmp] +=
-        cartesian_waypoints_planner_B.b[cartesian_waypoints_planner_B.a_tmp_tmp
-        + 1] *
-        cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.b_kstr_j
-        + 4];
-      T[cartesian_waypoints_planner_B.a_tmp] +=
-        cartesian_waypoints_planner_B.b[cartesian_waypoints_planner_B.a_tmp_tmp
-        + 2] *
-        cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.b_kstr_j
-        + 8];
-      T[cartesian_waypoints_planner_B.a_tmp] +=
-        cartesian_waypoints_planner_B.b[cartesian_waypoints_planner_B.a_tmp_tmp
-        + 3] *
-        cartesian_waypoints_planner_B.a_p[cartesian_waypoints_planner_B.b_kstr_j
-        + 12];
-    }
-  }
-}
-
-static void rigidBodyJoint_transformBodyToP(const
-  c_rigidBodyJoint_cartesian_wa_T *obj, real_T T[16])
-{
-  emxArray_char_T_cartesian_way_T *switch_expression;
-  static const char_T tmp[5] = { 'f', 'i', 'x', 'e', 'd' };
-
-  static const char_T tmp_0[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
-
-  int32_T exitg1;
-  cartesian_waypoi_emxInit_char_T(&switch_expression, 2);
-  cartesian_waypoints_planner_B.b_kstr_c = switch_expression->size[0] *
-    switch_expression->size[1];
-  switch_expression->size[0] = 1;
-  switch_expression->size[1] = obj->Type->size[1];
-  cartes_emxEnsureCapacity_char_T(switch_expression,
-    cartesian_waypoints_planner_B.b_kstr_c);
-  cartesian_waypoints_planner_B.loop_ub_hw = obj->Type->size[0] * obj->
-    Type->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_c = 0;
-       cartesian_waypoints_planner_B.b_kstr_c <=
-       cartesian_waypoints_planner_B.loop_ub_hw;
-       cartesian_waypoints_planner_B.b_kstr_c++) {
-    switch_expression->data[cartesian_waypoints_planner_B.b_kstr_c] = obj->
-      Type->data[cartesian_waypoints_planner_B.b_kstr_c];
-  }
-
-  for (cartesian_waypoints_planner_B.b_kstr_c = 0;
-       cartesian_waypoints_planner_B.b_kstr_c < 5;
-       cartesian_waypoints_planner_B.b_kstr_c++) {
-    cartesian_waypoints_planner_B.b_j[cartesian_waypoints_planner_B.b_kstr_c] =
-      tmp[cartesian_waypoints_planner_B.b_kstr_c];
-  }
-
-  cartesian_waypoints_planner_B.b_bool_l = false;
-  if (switch_expression->size[1] == 5) {
-    cartesian_waypoints_planner_B.b_kstr_c = 1;
-    do {
-      exitg1 = 0;
-      if (cartesian_waypoints_planner_B.b_kstr_c - 1 < 5) {
-        cartesian_waypoints_planner_B.loop_ub_hw =
-          cartesian_waypoints_planner_B.b_kstr_c - 1;
-        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_hw] !=
-            cartesian_waypoints_planner_B.b_j[cartesian_waypoints_planner_B.loop_ub_hw])
-        {
-          exitg1 = 1;
-        } else {
-          cartesian_waypoints_planner_B.b_kstr_c++;
-        }
-      } else {
-        cartesian_waypoints_planner_B.b_bool_l = true;
-        exitg1 = 1;
-      }
-    } while (exitg1 == 0);
-  }
-
-  if (cartesian_waypoints_planner_B.b_bool_l) {
-    cartesian_waypoints_planner_B.b_kstr_c = 0;
-  } else {
-    for (cartesian_waypoints_planner_B.b_kstr_c = 0;
-         cartesian_waypoints_planner_B.b_kstr_c < 8;
-         cartesian_waypoints_planner_B.b_kstr_c++) {
-      cartesian_waypoints_planner_B.b_p[cartesian_waypoints_planner_B.b_kstr_c] =
-        tmp_0[cartesian_waypoints_planner_B.b_kstr_c];
-    }
-
-    cartesian_waypoints_planner_B.b_bool_l = false;
-    if (switch_expression->size[1] == 8) {
-      cartesian_waypoints_planner_B.b_kstr_c = 1;
-      do {
-        exitg1 = 0;
-        if (cartesian_waypoints_planner_B.b_kstr_c - 1 < 8) {
-          cartesian_waypoints_planner_B.loop_ub_hw =
-            cartesian_waypoints_planner_B.b_kstr_c - 1;
-          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_hw]
-              !=
-              cartesian_waypoints_planner_B.b_p[cartesian_waypoints_planner_B.loop_ub_hw])
-          {
-            exitg1 = 1;
-          } else {
-            cartesian_waypoints_planner_B.b_kstr_c++;
-          }
-        } else {
-          cartesian_waypoints_planner_B.b_bool_l = true;
-          exitg1 = 1;
-        }
-      } while (exitg1 == 0);
-    }
-
-    if (cartesian_waypoints_planner_B.b_bool_l) {
-      cartesian_waypoints_planner_B.b_kstr_c = 1;
-    } else {
-      cartesian_waypoints_planner_B.b_kstr_c = -1;
-    }
-  }
-
-  cartesian_waypoi_emxFree_char_T(&switch_expression);
-  switch (cartesian_waypoints_planner_B.b_kstr_c) {
-   case 0:
     memset(&cartesian_waypoints_planner_B.TJ_l[0], 0, sizeof(real_T) << 4U);
     cartesian_waypoints_planner_B.TJ_l[0] = 1.0;
     cartesian_waypoints_planner_B.TJ_l[5] = 1.0;
@@ -1737,118 +1785,118 @@ static void rigidBodyJoint_transformBodyToP(const
     break;
 
    case 1:
-    ca_rigidBodyJoint_get_JointAxis(obj, cartesian_waypoints_planner_B.v_i);
+    rigidBodyJoint_get_JointAxis_e(obj, cartesian_waypoints_planner_B.v_c);
     cartesian_waypoints_planner_B.axang_idx_0 =
-      cartesian_waypoints_planner_B.v_i[0];
+      cartesian_waypoints_planner_B.v_c[0];
     cartesian_waypoints_planner_B.axang_idx_1 =
-      cartesian_waypoints_planner_B.v_i[1];
+      cartesian_waypoints_planner_B.v_c[1];
     cartesian_waypoints_planner_B.axang_idx_2 =
-      cartesian_waypoints_planner_B.v_i[2];
-    cartesian_waypoints_planner_B.b_g = 1.0 / sqrt
+      cartesian_waypoints_planner_B.v_c[2];
+    cartesian_waypoints_planner_B.b_bd = 1.0 / sqrt
       ((cartesian_waypoints_planner_B.axang_idx_0 *
         cartesian_waypoints_planner_B.axang_idx_0 +
         cartesian_waypoints_planner_B.axang_idx_1 *
         cartesian_waypoints_planner_B.axang_idx_1) +
        cartesian_waypoints_planner_B.axang_idx_2 *
        cartesian_waypoints_planner_B.axang_idx_2);
-    cartesian_waypoints_planner_B.v_i[0] =
+    cartesian_waypoints_planner_B.v_c[0] =
       cartesian_waypoints_planner_B.axang_idx_0 *
-      cartesian_waypoints_planner_B.b_g;
-    cartesian_waypoints_planner_B.v_i[1] =
+      cartesian_waypoints_planner_B.b_bd;
+    cartesian_waypoints_planner_B.v_c[1] =
       cartesian_waypoints_planner_B.axang_idx_1 *
-      cartesian_waypoints_planner_B.b_g;
-    cartesian_waypoints_planner_B.v_i[2] =
+      cartesian_waypoints_planner_B.b_bd;
+    cartesian_waypoints_planner_B.v_c[2] =
       cartesian_waypoints_planner_B.axang_idx_2 *
-      cartesian_waypoints_planner_B.b_g;
+      cartesian_waypoints_planner_B.b_bd;
     cartesian_waypoints_planner_B.axang_idx_0 =
-      cartesian_waypoints_planner_B.v_i[1] * cartesian_waypoints_planner_B.v_i[0]
+      cartesian_waypoints_planner_B.v_c[1] * cartesian_waypoints_planner_B.v_c[0]
       * 0.0;
     cartesian_waypoints_planner_B.axang_idx_1 =
-      cartesian_waypoints_planner_B.v_i[2] * cartesian_waypoints_planner_B.v_i[0]
+      cartesian_waypoints_planner_B.v_c[2] * cartesian_waypoints_planner_B.v_c[0]
       * 0.0;
     cartesian_waypoints_planner_B.axang_idx_2 =
-      cartesian_waypoints_planner_B.v_i[2] * cartesian_waypoints_planner_B.v_i[1]
+      cartesian_waypoints_planner_B.v_c[2] * cartesian_waypoints_planner_B.v_c[1]
       * 0.0;
-    cartesian_waypoints_planner_cat(cartesian_waypoints_planner_B.v_i[0] *
-      cartesian_waypoints_planner_B.v_i[0] * 0.0 + 1.0,
+    cartesian_waypoints_planner_cat(cartesian_waypoints_planner_B.v_c[0] *
+      cartesian_waypoints_planner_B.v_c[0] * 0.0 + 1.0,
       cartesian_waypoints_planner_B.axang_idx_0 -
-      cartesian_waypoints_planner_B.v_i[2] * 0.0,
+      cartesian_waypoints_planner_B.v_c[2] * 0.0,
       cartesian_waypoints_planner_B.axang_idx_1 +
-      cartesian_waypoints_planner_B.v_i[1] * 0.0,
+      cartesian_waypoints_planner_B.v_c[1] * 0.0,
       cartesian_waypoints_planner_B.axang_idx_0 +
-      cartesian_waypoints_planner_B.v_i[2] * 0.0,
-      cartesian_waypoints_planner_B.v_i[1] * cartesian_waypoints_planner_B.v_i[1]
+      cartesian_waypoints_planner_B.v_c[2] * 0.0,
+      cartesian_waypoints_planner_B.v_c[1] * cartesian_waypoints_planner_B.v_c[1]
       * 0.0 + 1.0, cartesian_waypoints_planner_B.axang_idx_2 -
-      cartesian_waypoints_planner_B.v_i[0] * 0.0,
+      cartesian_waypoints_planner_B.v_c[0] * 0.0,
       cartesian_waypoints_planner_B.axang_idx_1 -
-      cartesian_waypoints_planner_B.v_i[1] * 0.0,
+      cartesian_waypoints_planner_B.v_c[1] * 0.0,
       cartesian_waypoints_planner_B.axang_idx_2 +
-      cartesian_waypoints_planner_B.v_i[0] * 0.0,
-      cartesian_waypoints_planner_B.v_i[2] * cartesian_waypoints_planner_B.v_i[2]
-      * 0.0 + 1.0, cartesian_waypoints_planner_B.tempR_l);
-    for (cartesian_waypoints_planner_B.b_kstr_c = 0;
-         cartesian_waypoints_planner_B.b_kstr_c < 3;
-         cartesian_waypoints_planner_B.b_kstr_c++) {
-      cartesian_waypoints_planner_B.loop_ub_hw =
-        cartesian_waypoints_planner_B.b_kstr_c + 1;
-      cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.loop_ub_hw
-        - 1] = cartesian_waypoints_planner_B.tempR_l
-        [(cartesian_waypoints_planner_B.loop_ub_hw - 1) * 3];
-      cartesian_waypoints_planner_B.loop_ub_hw =
-        cartesian_waypoints_planner_B.b_kstr_c + 1;
-      cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.loop_ub_hw
-        + 2] = cartesian_waypoints_planner_B.tempR_l
-        [(cartesian_waypoints_planner_B.loop_ub_hw - 1) * 3 + 1];
-      cartesian_waypoints_planner_B.loop_ub_hw =
-        cartesian_waypoints_planner_B.b_kstr_c + 1;
-      cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.loop_ub_hw
-        + 5] = cartesian_waypoints_planner_B.tempR_l
-        [(cartesian_waypoints_planner_B.loop_ub_hw - 1) * 3 + 2];
+      cartesian_waypoints_planner_B.v_c[0] * 0.0,
+      cartesian_waypoints_planner_B.v_c[2] * cartesian_waypoints_planner_B.v_c[2]
+      * 0.0 + 1.0, cartesian_waypoints_planner_B.tempR_i);
+    for (cartesian_waypoints_planner_B.b_kstr_j = 0;
+         cartesian_waypoints_planner_B.b_kstr_j < 3;
+         cartesian_waypoints_planner_B.b_kstr_j++) {
+      cartesian_waypoints_planner_B.loop_ub_hc =
+        cartesian_waypoints_planner_B.b_kstr_j + 1;
+      cartesian_waypoints_planner_B.R_o[cartesian_waypoints_planner_B.loop_ub_hc
+        - 1] = cartesian_waypoints_planner_B.tempR_i
+        [(cartesian_waypoints_planner_B.loop_ub_hc - 1) * 3];
+      cartesian_waypoints_planner_B.loop_ub_hc =
+        cartesian_waypoints_planner_B.b_kstr_j + 1;
+      cartesian_waypoints_planner_B.R_o[cartesian_waypoints_planner_B.loop_ub_hc
+        + 2] = cartesian_waypoints_planner_B.tempR_i
+        [(cartesian_waypoints_planner_B.loop_ub_hc - 1) * 3 + 1];
+      cartesian_waypoints_planner_B.loop_ub_hc =
+        cartesian_waypoints_planner_B.b_kstr_j + 1;
+      cartesian_waypoints_planner_B.R_o[cartesian_waypoints_planner_B.loop_ub_hc
+        + 5] = cartesian_waypoints_planner_B.tempR_i
+        [(cartesian_waypoints_planner_B.loop_ub_hc - 1) * 3 + 2];
     }
 
     memset(&cartesian_waypoints_planner_B.TJ_l[0], 0, sizeof(real_T) << 4U);
-    for (cartesian_waypoints_planner_B.b_kstr_c = 0;
-         cartesian_waypoints_planner_B.b_kstr_c < 3;
-         cartesian_waypoints_planner_B.b_kstr_c++) {
-      cartesian_waypoints_planner_B.loop_ub_hw =
-        cartesian_waypoints_planner_B.b_kstr_c << 2;
-      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hw]
-        = cartesian_waypoints_planner_B.R_i[3 *
-        cartesian_waypoints_planner_B.b_kstr_c];
-      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hw
-        + 1] = cartesian_waypoints_planner_B.R_i[3 *
-        cartesian_waypoints_planner_B.b_kstr_c + 1];
-      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hw
-        + 2] = cartesian_waypoints_planner_B.R_i[3 *
-        cartesian_waypoints_planner_B.b_kstr_c + 2];
+    for (cartesian_waypoints_planner_B.b_kstr_j = 0;
+         cartesian_waypoints_planner_B.b_kstr_j < 3;
+         cartesian_waypoints_planner_B.b_kstr_j++) {
+      cartesian_waypoints_planner_B.loop_ub_hc =
+        cartesian_waypoints_planner_B.b_kstr_j << 2;
+      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hc]
+        = cartesian_waypoints_planner_B.R_o[3 *
+        cartesian_waypoints_planner_B.b_kstr_j];
+      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hc
+        + 1] = cartesian_waypoints_planner_B.R_o[3 *
+        cartesian_waypoints_planner_B.b_kstr_j + 1];
+      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hc
+        + 2] = cartesian_waypoints_planner_B.R_o[3 *
+        cartesian_waypoints_planner_B.b_kstr_j + 2];
     }
 
     cartesian_waypoints_planner_B.TJ_l[15] = 1.0;
     break;
 
    default:
-    ca_rigidBodyJoint_get_JointAxis(obj, cartesian_waypoints_planner_B.v_i);
-    memset(&cartesian_waypoints_planner_B.tempR_l[0], 0, 9U * sizeof(real_T));
-    cartesian_waypoints_planner_B.tempR_l[0] = 1.0;
-    cartesian_waypoints_planner_B.tempR_l[4] = 1.0;
-    cartesian_waypoints_planner_B.tempR_l[8] = 1.0;
-    for (cartesian_waypoints_planner_B.b_kstr_c = 0;
-         cartesian_waypoints_planner_B.b_kstr_c < 3;
-         cartesian_waypoints_planner_B.b_kstr_c++) {
-      cartesian_waypoints_planner_B.loop_ub_hw =
-        cartesian_waypoints_planner_B.b_kstr_c << 2;
-      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hw]
-        = cartesian_waypoints_planner_B.tempR_l[3 *
-        cartesian_waypoints_planner_B.b_kstr_c];
-      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hw
-        + 1] = cartesian_waypoints_planner_B.tempR_l[3 *
-        cartesian_waypoints_planner_B.b_kstr_c + 1];
-      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hw
-        + 2] = cartesian_waypoints_planner_B.tempR_l[3 *
-        cartesian_waypoints_planner_B.b_kstr_c + 2];
-      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.b_kstr_c
+    rigidBodyJoint_get_JointAxis_e(obj, cartesian_waypoints_planner_B.v_c);
+    memset(&cartesian_waypoints_planner_B.tempR_i[0], 0, 9U * sizeof(real_T));
+    cartesian_waypoints_planner_B.tempR_i[0] = 1.0;
+    cartesian_waypoints_planner_B.tempR_i[4] = 1.0;
+    cartesian_waypoints_planner_B.tempR_i[8] = 1.0;
+    for (cartesian_waypoints_planner_B.b_kstr_j = 0;
+         cartesian_waypoints_planner_B.b_kstr_j < 3;
+         cartesian_waypoints_planner_B.b_kstr_j++) {
+      cartesian_waypoints_planner_B.loop_ub_hc =
+        cartesian_waypoints_planner_B.b_kstr_j << 2;
+      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hc]
+        = cartesian_waypoints_planner_B.tempR_i[3 *
+        cartesian_waypoints_planner_B.b_kstr_j];
+      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hc
+        + 1] = cartesian_waypoints_planner_B.tempR_i[3 *
+        cartesian_waypoints_planner_B.b_kstr_j + 1];
+      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.loop_ub_hc
+        + 2] = cartesian_waypoints_planner_B.tempR_i[3 *
+        cartesian_waypoints_planner_B.b_kstr_j + 2];
+      cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.b_kstr_j
         + 12] =
-        cartesian_waypoints_planner_B.v_i[cartesian_waypoints_planner_B.b_kstr_c]
+        cartesian_waypoints_planner_B.v_c[cartesian_waypoints_planner_B.b_kstr_j]
         * 0.0;
     }
 
@@ -1859,79 +1907,79 @@ static void rigidBodyJoint_transformBodyToP(const
     break;
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_c = 0;
-       cartesian_waypoints_planner_B.b_kstr_c < 16;
-       cartesian_waypoints_planner_B.b_kstr_c++) {
-    cartesian_waypoints_planner_B.a_j[cartesian_waypoints_planner_B.b_kstr_c] =
-      obj->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_c];
+  for (cartesian_waypoints_planner_B.b_kstr_j = 0;
+       cartesian_waypoints_planner_B.b_kstr_j < 16;
+       cartesian_waypoints_planner_B.b_kstr_j++) {
+    cartesian_waypoints_planner_B.a_j[cartesian_waypoints_planner_B.b_kstr_j] =
+      obj->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_j];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_c = 0;
-       cartesian_waypoints_planner_B.b_kstr_c < 16;
-       cartesian_waypoints_planner_B.b_kstr_c++) {
-    cartesian_waypoints_planner_B.b_d[cartesian_waypoints_planner_B.b_kstr_c] =
-      obj->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_c];
+  for (cartesian_waypoints_planner_B.b_kstr_j = 0;
+       cartesian_waypoints_planner_B.b_kstr_j < 16;
+       cartesian_waypoints_planner_B.b_kstr_j++) {
+    cartesian_waypoints_planner_B.b_d[cartesian_waypoints_planner_B.b_kstr_j] =
+      obj->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_j];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_c = 0;
-       cartesian_waypoints_planner_B.b_kstr_c < 4;
-       cartesian_waypoints_planner_B.b_kstr_c++) {
-    for (cartesian_waypoints_planner_B.loop_ub_hw = 0;
-         cartesian_waypoints_planner_B.loop_ub_hw < 4;
-         cartesian_waypoints_planner_B.loop_ub_hw++) {
-      cartesian_waypoints_planner_B.a_tmp_tmp_p =
-        cartesian_waypoints_planner_B.loop_ub_hw << 2;
-      cartesian_waypoints_planner_B.a_tmp_i =
-        cartesian_waypoints_planner_B.b_kstr_c +
-        cartesian_waypoints_planner_B.a_tmp_tmp_p;
-      cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.a_tmp_i] =
+  for (cartesian_waypoints_planner_B.b_kstr_j = 0;
+       cartesian_waypoints_planner_B.b_kstr_j < 4;
+       cartesian_waypoints_planner_B.b_kstr_j++) {
+    for (cartesian_waypoints_planner_B.loop_ub_hc = 0;
+         cartesian_waypoints_planner_B.loop_ub_hc < 4;
+         cartesian_waypoints_planner_B.loop_ub_hc++) {
+      cartesian_waypoints_planner_B.a_tmp_tmp_d =
+        cartesian_waypoints_planner_B.loop_ub_hc << 2;
+      cartesian_waypoints_planner_B.a_tmp_f =
+        cartesian_waypoints_planner_B.b_kstr_j +
+        cartesian_waypoints_planner_B.a_tmp_tmp_d;
+      cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.a_tmp_f] =
         0.0;
-      cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.a_tmp_i] +=
-        cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.a_tmp_tmp_p]
-        * cartesian_waypoints_planner_B.a_j[cartesian_waypoints_planner_B.b_kstr_c];
-      cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.a_tmp_i] +=
-        cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.a_tmp_tmp_p
+      cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.a_tmp_f] +=
+        cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.a_tmp_tmp_d]
+        * cartesian_waypoints_planner_B.a_j[cartesian_waypoints_planner_B.b_kstr_j];
+      cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.a_tmp_f] +=
+        cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.a_tmp_tmp_d
         + 1] *
-        cartesian_waypoints_planner_B.a_j[cartesian_waypoints_planner_B.b_kstr_c
+        cartesian_waypoints_planner_B.a_j[cartesian_waypoints_planner_B.b_kstr_j
         + 4];
-      cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.a_tmp_i] +=
-        cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.a_tmp_tmp_p
+      cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.a_tmp_f] +=
+        cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.a_tmp_tmp_d
         + 2] *
-        cartesian_waypoints_planner_B.a_j[cartesian_waypoints_planner_B.b_kstr_c
+        cartesian_waypoints_planner_B.a_j[cartesian_waypoints_planner_B.b_kstr_j
         + 8];
-      cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.a_tmp_i] +=
-        cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.a_tmp_tmp_p
+      cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.a_tmp_f] +=
+        cartesian_waypoints_planner_B.TJ_l[cartesian_waypoints_planner_B.a_tmp_tmp_d
         + 3] *
-        cartesian_waypoints_planner_B.a_j[cartesian_waypoints_planner_B.b_kstr_c
+        cartesian_waypoints_planner_B.a_j[cartesian_waypoints_planner_B.b_kstr_j
         + 12];
     }
 
-    for (cartesian_waypoints_planner_B.loop_ub_hw = 0;
-         cartesian_waypoints_planner_B.loop_ub_hw < 4;
-         cartesian_waypoints_planner_B.loop_ub_hw++) {
-      cartesian_waypoints_planner_B.a_tmp_tmp_p =
-        cartesian_waypoints_planner_B.loop_ub_hw << 2;
-      cartesian_waypoints_planner_B.a_tmp_i =
-        cartesian_waypoints_planner_B.b_kstr_c +
-        cartesian_waypoints_planner_B.a_tmp_tmp_p;
-      T[cartesian_waypoints_planner_B.a_tmp_i] = 0.0;
-      T[cartesian_waypoints_planner_B.a_tmp_i] +=
-        cartesian_waypoints_planner_B.b_d[cartesian_waypoints_planner_B.a_tmp_tmp_p]
-        * cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.b_kstr_c];
-      T[cartesian_waypoints_planner_B.a_tmp_i] +=
-        cartesian_waypoints_planner_B.b_d[cartesian_waypoints_planner_B.a_tmp_tmp_p
+    for (cartesian_waypoints_planner_B.loop_ub_hc = 0;
+         cartesian_waypoints_planner_B.loop_ub_hc < 4;
+         cartesian_waypoints_planner_B.loop_ub_hc++) {
+      cartesian_waypoints_planner_B.a_tmp_tmp_d =
+        cartesian_waypoints_planner_B.loop_ub_hc << 2;
+      cartesian_waypoints_planner_B.a_tmp_f =
+        cartesian_waypoints_planner_B.b_kstr_j +
+        cartesian_waypoints_planner_B.a_tmp_tmp_d;
+      T[cartesian_waypoints_planner_B.a_tmp_f] = 0.0;
+      T[cartesian_waypoints_planner_B.a_tmp_f] +=
+        cartesian_waypoints_planner_B.b_d[cartesian_waypoints_planner_B.a_tmp_tmp_d]
+        * cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.b_kstr_j];
+      T[cartesian_waypoints_planner_B.a_tmp_f] +=
+        cartesian_waypoints_planner_B.b_d[cartesian_waypoints_planner_B.a_tmp_tmp_d
         + 1] *
-        cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.b_kstr_c
+        cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.b_kstr_j
         + 4];
-      T[cartesian_waypoints_planner_B.a_tmp_i] +=
-        cartesian_waypoints_planner_B.b_d[cartesian_waypoints_planner_B.a_tmp_tmp_p
+      T[cartesian_waypoints_planner_B.a_tmp_f] +=
+        cartesian_waypoints_planner_B.b_d[cartesian_waypoints_planner_B.a_tmp_tmp_d
         + 2] *
-        cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.b_kstr_c
+        cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.b_kstr_j
         + 8];
-      T[cartesian_waypoints_planner_B.a_tmp_i] +=
-        cartesian_waypoints_planner_B.b_d[cartesian_waypoints_planner_B.a_tmp_tmp_p
+      T[cartesian_waypoints_planner_B.a_tmp_f] +=
+        cartesian_waypoints_planner_B.b_d[cartesian_waypoints_planner_B.a_tmp_tmp_d
         + 3] *
-        cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.b_kstr_c
+        cartesian_waypoints_planner_B.a_g[cartesian_waypoints_planner_B.b_kstr_j
         + 12];
     }
   }
@@ -1944,7 +1992,7 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   w_robotics_manip_internal_Rig_T *body1;
   w_robotics_manip_internal_Rig_T *body2;
   emxArray_real_T_cartesian_way_T *kinematicPathIndices;
-  c_rigidBodyJoint_cartesian_wa_T *joint;
+  c_rigidBodyJoint_cartesian__e_T *joint;
   emxArray_char_T_cartesian_way_T *body2Name;
   emxArray_real_T_cartesian_way_T *ancestorIndices1;
   emxArray_real_T_cartesian_way_T *ancestorIndices2;
@@ -1964,11 +2012,11 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   body2Name->size[1] = obj->Base.NameInternal->size[1];
   cartes_emxEnsureCapacity_char_T(body2Name,
     cartesian_waypoints_planner_B.b_kstr);
-  cartesian_waypoints_planner_B.loop_ub_d = obj->Base.NameInternal->size[0] *
+  cartesian_waypoints_planner_B.loop_ub_p = obj->Base.NameInternal->size[0] *
     obj->Base.NameInternal->size[1] - 1;
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <=
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     body2Name->data[cartesian_waypoints_planner_B.b_kstr] =
       obj->Base.NameInternal->data[cartesian_waypoints_planner_B.b_kstr];
@@ -1980,11 +2028,11 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   bname->size[0] = 1;
   bname->size[1] = obj->Base.NameInternal->size[1];
   cartes_emxEnsureCapacity_char_T(bname, cartesian_waypoints_planner_B.b_kstr);
-  cartesian_waypoints_planner_B.loop_ub_d = obj->Base.NameInternal->size[0] *
+  cartesian_waypoints_planner_B.loop_ub_p = obj->Base.NameInternal->size[0] *
     obj->Base.NameInternal->size[1] - 1;
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <=
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     bname->data[cartesian_waypoints_planner_B.b_kstr] = obj->
       Base.NameInternal->data[cartesian_waypoints_planner_B.b_kstr];
@@ -1994,22 +2042,22 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
     cartesian_waypoints_planner_B.bid1 = 0.0;
   } else {
     cartesian_waypoints_planner_B.qidx_idx_1 = obj->NumBodies;
-    cartesian_waypoints_planner_B.b_i_g = 0;
+    cartesian_waypoints_planner_B.b_i_hw = 0;
     exitg1 = false;
-    while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_g <=
+    while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_hw <=
                          static_cast<int32_T>
                          (cartesian_waypoints_planner_B.qidx_idx_1) - 1)) {
-      body1 = obj->Bodies[cartesian_waypoints_planner_B.b_i_g];
+      body1 = obj->Bodies[cartesian_waypoints_planner_B.b_i_hw];
       cartesian_waypoints_planner_B.b_kstr = bname->size[0] * bname->size[1];
       bname->size[0] = 1;
       bname->size[1] = body1->NameInternal->size[1];
       cartes_emxEnsureCapacity_char_T(bname,
         cartesian_waypoints_planner_B.b_kstr);
-      cartesian_waypoints_planner_B.loop_ub_d = body1->NameInternal->size[0] *
+      cartesian_waypoints_planner_B.loop_ub_p = body1->NameInternal->size[0] *
         body1->NameInternal->size[1] - 1;
       for (cartesian_waypoints_planner_B.b_kstr = 0;
            cartesian_waypoints_planner_B.b_kstr <=
-           cartesian_waypoints_planner_B.loop_ub_d;
+           cartesian_waypoints_planner_B.loop_ub_p;
            cartesian_waypoints_planner_B.b_kstr++) {
         bname->data[cartesian_waypoints_planner_B.b_kstr] = body1->
           NameInternal->data[cartesian_waypoints_planner_B.b_kstr];
@@ -2017,10 +2065,10 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
 
       if (cartesian_waypoints_plan_strcmp(bname, body1Name)) {
         cartesian_waypoints_planner_B.bid1 = static_cast<real_T>
-          (cartesian_waypoints_planner_B.b_i_g) + 1.0;
+          (cartesian_waypoints_planner_B.b_i_hw) + 1.0;
         exitg1 = true;
       } else {
-        cartesian_waypoints_planner_B.b_i_g++;
+        cartesian_waypoints_planner_B.b_i_hw++;
       }
     }
   }
@@ -2030,11 +2078,11 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   bname->size[0] = 1;
   bname->size[1] = obj->Base.NameInternal->size[1];
   cartes_emxEnsureCapacity_char_T(bname, cartesian_waypoints_planner_B.b_kstr);
-  cartesian_waypoints_planner_B.loop_ub_d = obj->Base.NameInternal->size[0] *
+  cartesian_waypoints_planner_B.loop_ub_p = obj->Base.NameInternal->size[0] *
     obj->Base.NameInternal->size[1] - 1;
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <=
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     bname->data[cartesian_waypoints_planner_B.b_kstr] = obj->
       Base.NameInternal->data[cartesian_waypoints_planner_B.b_kstr];
@@ -2044,22 +2092,22 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
     cartesian_waypoints_planner_B.bid2 = 0.0;
   } else {
     cartesian_waypoints_planner_B.qidx_idx_1 = obj->NumBodies;
-    cartesian_waypoints_planner_B.b_i_g = 0;
+    cartesian_waypoints_planner_B.b_i_hw = 0;
     exitg1 = false;
-    while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_g <=
+    while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_hw <=
                          static_cast<int32_T>
                          (cartesian_waypoints_planner_B.qidx_idx_1) - 1)) {
-      body1 = obj->Bodies[cartesian_waypoints_planner_B.b_i_g];
+      body1 = obj->Bodies[cartesian_waypoints_planner_B.b_i_hw];
       cartesian_waypoints_planner_B.b_kstr = bname->size[0] * bname->size[1];
       bname->size[0] = 1;
       bname->size[1] = body1->NameInternal->size[1];
       cartes_emxEnsureCapacity_char_T(bname,
         cartesian_waypoints_planner_B.b_kstr);
-      cartesian_waypoints_planner_B.loop_ub_d = body1->NameInternal->size[0] *
+      cartesian_waypoints_planner_B.loop_ub_p = body1->NameInternal->size[0] *
         body1->NameInternal->size[1] - 1;
       for (cartesian_waypoints_planner_B.b_kstr = 0;
            cartesian_waypoints_planner_B.b_kstr <=
-           cartesian_waypoints_planner_B.loop_ub_d;
+           cartesian_waypoints_planner_B.loop_ub_p;
            cartesian_waypoints_planner_B.b_kstr++) {
         bname->data[cartesian_waypoints_planner_B.b_kstr] = body1->
           NameInternal->data[cartesian_waypoints_planner_B.b_kstr];
@@ -2067,10 +2115,10 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
 
       if (cartesian_waypoints_plan_strcmp(bname, body2Name)) {
         cartesian_waypoints_planner_B.bid2 = static_cast<real_T>
-          (cartesian_waypoints_planner_B.b_i_g) + 1.0;
+          (cartesian_waypoints_planner_B.b_i_hw) + 1.0;
         exitg1 = true;
       } else {
-        cartesian_waypoints_planner_B.b_i_g++;
+        cartesian_waypoints_planner_B.b_i_hw++;
       }
     }
   }
@@ -2098,11 +2146,11 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   ancestorIndices1->size[1] = static_cast<int32_T>(obj->NumBodies + 1.0);
   cartes_emxEnsureCapacity_real_T(ancestorIndices1,
     cartesian_waypoints_planner_B.b_kstr);
-  cartesian_waypoints_planner_B.loop_ub_d = static_cast<int32_T>(obj->NumBodies
+  cartesian_waypoints_planner_B.loop_ub_p = static_cast<int32_T>(obj->NumBodies
     + 1.0) - 1;
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <=
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     ancestorIndices1->data[cartesian_waypoints_planner_B.b_kstr] = 0.0;
   }
@@ -2123,17 +2171,17 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   }
 
   cartesian_waypoi_emxInit_real_T(&ancestorIndices1_0, 2);
-  cartesian_waypoints_planner_B.loop_ub_d = static_cast<int32_T>
+  cartesian_waypoints_planner_B.loop_ub_p = static_cast<int32_T>
     (cartesian_waypoints_planner_B.bid1 - 1.0);
   cartesian_waypoints_planner_B.b_kstr = ancestorIndices1_0->size[0] *
     ancestorIndices1_0->size[1];
   ancestorIndices1_0->size[0] = 1;
-  ancestorIndices1_0->size[1] = cartesian_waypoints_planner_B.loop_ub_d;
+  ancestorIndices1_0->size[1] = cartesian_waypoints_planner_B.loop_ub_p;
   cartes_emxEnsureCapacity_real_T(ancestorIndices1_0,
     cartesian_waypoints_planner_B.b_kstr);
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     ancestorIndices1_0->data[cartesian_waypoints_planner_B.b_kstr] =
       ancestorIndices1->data[cartesian_waypoints_planner_B.b_kstr];
@@ -2145,11 +2193,11 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   ancestorIndices1->size[1] = ancestorIndices1_0->size[1];
   cartes_emxEnsureCapacity_real_T(ancestorIndices1,
     cartesian_waypoints_planner_B.b_kstr);
-  cartesian_waypoints_planner_B.loop_ub_d = ancestorIndices1_0->size[0] *
+  cartesian_waypoints_planner_B.loop_ub_p = ancestorIndices1_0->size[0] *
     ancestorIndices1_0->size[1];
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     ancestorIndices1->data[cartesian_waypoints_planner_B.b_kstr] =
       ancestorIndices1_0->data[cartesian_waypoints_planner_B.b_kstr];
@@ -2164,11 +2212,11 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   ancestorIndices2->size[1] = static_cast<int32_T>(obj->NumBodies + 1.0);
   cartes_emxEnsureCapacity_real_T(ancestorIndices2,
     cartesian_waypoints_planner_B.b_kstr);
-  cartesian_waypoints_planner_B.loop_ub_d = static_cast<int32_T>(obj->NumBodies
+  cartesian_waypoints_planner_B.loop_ub_p = static_cast<int32_T>(obj->NumBodies
     + 1.0) - 1;
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <=
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     ancestorIndices2->data[cartesian_waypoints_planner_B.b_kstr] = 0.0;
   }
@@ -2189,17 +2237,17 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   }
 
   cartesian_waypoi_emxInit_real_T(&ancestorIndices2_0, 2);
-  cartesian_waypoints_planner_B.loop_ub_d = static_cast<int32_T>
+  cartesian_waypoints_planner_B.loop_ub_p = static_cast<int32_T>
     (cartesian_waypoints_planner_B.bid1 - 1.0);
   cartesian_waypoints_planner_B.b_kstr = ancestorIndices2_0->size[0] *
     ancestorIndices2_0->size[1];
   ancestorIndices2_0->size[0] = 1;
-  ancestorIndices2_0->size[1] = cartesian_waypoints_planner_B.loop_ub_d;
+  ancestorIndices2_0->size[1] = cartesian_waypoints_planner_B.loop_ub_p;
   cartes_emxEnsureCapacity_real_T(ancestorIndices2_0,
     cartesian_waypoints_planner_B.b_kstr);
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     ancestorIndices2_0->data[cartesian_waypoints_planner_B.b_kstr] =
       ancestorIndices2->data[cartesian_waypoints_planner_B.b_kstr];
@@ -2211,11 +2259,11 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   ancestorIndices2->size[1] = ancestorIndices2_0->size[1];
   cartes_emxEnsureCapacity_real_T(ancestorIndices2,
     cartesian_waypoints_planner_B.b_kstr);
-  cartesian_waypoints_planner_B.loop_ub_d = ancestorIndices2_0->size[0] *
+  cartesian_waypoints_planner_B.loop_ub_p = ancestorIndices2_0->size[0] *
     ancestorIndices2_0->size[1];
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     ancestorIndices2->data[cartesian_waypoints_planner_B.b_kstr] =
       ancestorIndices2_0->data[cartesian_waypoints_planner_B.b_kstr];
@@ -2232,42 +2280,42 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
 
   cartesian_waypoints_planner_B.bid1 = static_cast<int32_T>
     (cartesian_waypoints_planner_B.qidx_idx_1);
-  cartesian_waypoints_planner_B.b_i_g = 0;
+  cartesian_waypoints_planner_B.b_i_hw = 0;
   exitg1 = false;
-  while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_g <=
+  while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_hw <=
                        static_cast<int32_T>
                        (cartesian_waypoints_planner_B.qidx_idx_1) - 2)) {
     if (ancestorIndices1->data[static_cast<int32_T>(static_cast<real_T>
          (ancestorIndices1->size[1]) - (static_cast<real_T>
-          (cartesian_waypoints_planner_B.b_i_g) + 1.0)) - 1] !=
+          (cartesian_waypoints_planner_B.b_i_hw) + 1.0)) - 1] !=
         ancestorIndices2->data[static_cast<int32_T>(static_cast<real_T>
          (ancestorIndices2->size[1]) - (static_cast<real_T>
-          (cartesian_waypoints_planner_B.b_i_g) + 1.0)) - 1]) {
+          (cartesian_waypoints_planner_B.b_i_hw) + 1.0)) - 1]) {
       cartesian_waypoints_planner_B.bid1 = static_cast<real_T>
-        (cartesian_waypoints_planner_B.b_i_g) + 1.0;
+        (cartesian_waypoints_planner_B.b_i_hw) + 1.0;
       exitg1 = true;
     } else {
-      cartesian_waypoints_planner_B.b_i_g++;
+      cartesian_waypoints_planner_B.b_i_hw++;
     }
   }
 
   cartesian_waypoints_planner_B.qidx_idx_1 = static_cast<real_T>
     (ancestorIndices1->size[1]) - cartesian_waypoints_planner_B.bid1;
   if (1.0 > cartesian_waypoints_planner_B.qidx_idx_1) {
-    cartesian_waypoints_planner_B.b_i_g = -1;
+    cartesian_waypoints_planner_B.b_i_hw = -1;
   } else {
-    cartesian_waypoints_planner_B.b_i_g = static_cast<int32_T>
+    cartesian_waypoints_planner_B.b_i_hw = static_cast<int32_T>
       (cartesian_waypoints_planner_B.qidx_idx_1) - 1;
   }
 
   cartesian_waypoints_planner_B.qidx_idx_1 = static_cast<real_T>
     (ancestorIndices2->size[1]) - cartesian_waypoints_planner_B.bid1;
   if (1.0 > cartesian_waypoints_planner_B.qidx_idx_1) {
-    cartesian_waypoints_planner_B.j_l = 0;
+    cartesian_waypoints_planner_B.j_c = 0;
     cartesian_waypoints_planner_B.jointSign = 1;
     cartesian_waypoints_planner_B.g = -1;
   } else {
-    cartesian_waypoints_planner_B.j_l = static_cast<int32_T>
+    cartesian_waypoints_planner_B.j_c = static_cast<int32_T>
       (cartesian_waypoints_planner_B.qidx_idx_1) - 1;
     cartesian_waypoints_planner_B.jointSign = -1;
     cartesian_waypoints_planner_B.g = 0;
@@ -2277,33 +2325,33 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   cartesian_waypoints_planner_B.b_kstr = kinematicPathIndices->size[0] *
     kinematicPathIndices->size[1];
   kinematicPathIndices->size[0] = 1;
-  cartesian_waypoints_planner_B.loop_ub_d = div_s32_floor
-    (cartesian_waypoints_planner_B.g - cartesian_waypoints_planner_B.j_l,
+  cartesian_waypoints_planner_B.loop_ub_p = div_s32_floor
+    (cartesian_waypoints_planner_B.g - cartesian_waypoints_planner_B.j_c,
      cartesian_waypoints_planner_B.jointSign);
-  kinematicPathIndices->size[1] = (cartesian_waypoints_planner_B.loop_ub_d +
-    cartesian_waypoints_planner_B.b_i_g) + 3;
+  kinematicPathIndices->size[1] = (cartesian_waypoints_planner_B.loop_ub_p +
+    cartesian_waypoints_planner_B.b_i_hw) + 3;
   cartes_emxEnsureCapacity_real_T(kinematicPathIndices,
     cartesian_waypoints_planner_B.b_kstr);
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <=
-       cartesian_waypoints_planner_B.b_i_g; cartesian_waypoints_planner_B.b_kstr
-       ++) {
+       cartesian_waypoints_planner_B.b_i_hw;
+       cartesian_waypoints_planner_B.b_kstr++) {
     kinematicPathIndices->data[cartesian_waypoints_planner_B.b_kstr] =
       ancestorIndices1->data[cartesian_waypoints_planner_B.b_kstr];
   }
 
-  kinematicPathIndices->data[cartesian_waypoints_planner_B.b_i_g + 1] =
+  kinematicPathIndices->data[cartesian_waypoints_planner_B.b_i_hw + 1] =
     ancestorIndices1->data[static_cast<int32_T>((static_cast<real_T>
     (ancestorIndices1->size[1]) - cartesian_waypoints_planner_B.bid1) + 1.0) - 1];
   cartesian_waypoi_emxFree_real_T(&ancestorIndices1);
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <=
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     kinematicPathIndices->data[(cartesian_waypoints_planner_B.b_kstr +
-      cartesian_waypoints_planner_B.b_i_g) + 2] = ancestorIndices2->
+      cartesian_waypoints_planner_B.b_i_hw) + 2] = ancestorIndices2->
       data[cartesian_waypoints_planner_B.jointSign *
-      cartesian_waypoints_planner_B.b_kstr + cartesian_waypoints_planner_B.j_l];
+      cartesian_waypoints_planner_B.b_kstr + cartesian_waypoints_planner_B.j_c];
   }
 
   cartesian_waypoi_emxFree_real_T(&ancestorIndices2);
@@ -2316,41 +2364,41 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   Jac->size[0] = 6;
   Jac->size[1] = static_cast<int32_T>(obj->PositionNumber);
   cartes_emxEnsureCapacity_real_T(Jac, cartesian_waypoints_planner_B.b_kstr);
-  cartesian_waypoints_planner_B.loop_ub_d = 6 * static_cast<int32_T>
+  cartesian_waypoints_planner_B.loop_ub_p = 6 * static_cast<int32_T>
     (obj->PositionNumber) - 1;
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <=
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     Jac->data[cartesian_waypoints_planner_B.b_kstr] = 0.0;
   }
 
-  cartesian_waypoints_planner_B.j_l = kinematicPathIndices->size[1] - 2;
+  cartesian_waypoints_planner_B.j_c = kinematicPathIndices->size[1] - 2;
   cartesian_waypoi_emxInit_real_T(&y, 2);
   cartesian_waypoi_emxInit_real_T(&b, 2);
-  if (0 <= cartesian_waypoints_planner_B.j_l) {
+  if (0 <= cartesian_waypoints_planner_B.j_c) {
     for (cartesian_waypoints_planner_B.b_kstr = 0;
          cartesian_waypoints_planner_B.b_kstr < 5;
          cartesian_waypoints_planner_B.b_kstr++) {
-      cartesian_waypoints_planner_B.b_l[cartesian_waypoints_planner_B.b_kstr] =
+      cartesian_waypoints_planner_B.b_a0[cartesian_waypoints_planner_B.b_kstr] =
         tmp[cartesian_waypoints_planner_B.b_kstr];
     }
   }
 
-  for (cartesian_waypoints_planner_B.b_i_g = 0;
-       cartesian_waypoints_planner_B.b_i_g <= cartesian_waypoints_planner_B.j_l;
-       cartesian_waypoints_planner_B.b_i_g++) {
-    if (kinematicPathIndices->data[cartesian_waypoints_planner_B.b_i_g] != 0.0)
+  for (cartesian_waypoints_planner_B.b_i_hw = 0;
+       cartesian_waypoints_planner_B.b_i_hw <= cartesian_waypoints_planner_B.j_c;
+       cartesian_waypoints_planner_B.b_i_hw++) {
+    if (kinematicPathIndices->data[cartesian_waypoints_planner_B.b_i_hw] != 0.0)
     {
       body1 = obj->Bodies[static_cast<int32_T>(kinematicPathIndices->
-        data[cartesian_waypoints_planner_B.b_i_g]) - 1];
+        data[cartesian_waypoints_planner_B.b_i_hw]) - 1];
     } else {
       body1 = &obj->Base;
     }
 
     cartesian_waypoints_planner_B.b_kstr = static_cast<int32_T>
-      ((static_cast<real_T>(cartesian_waypoints_planner_B.b_i_g) + 1.0) + 1.0) -
-      1;
+      ((static_cast<real_T>(cartesian_waypoints_planner_B.b_i_hw) + 1.0) + 1.0)
+      - 1;
     if (kinematicPathIndices->data[cartesian_waypoints_planner_B.b_kstr] != 0.0)
     {
       body2 = obj->Bodies[static_cast<int32_T>(kinematicPathIndices->
@@ -2375,11 +2423,11 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
     body2Name->size[1] = joint->Type->size[1];
     cartes_emxEnsureCapacity_char_T(body2Name,
       cartesian_waypoints_planner_B.b_kstr);
-    cartesian_waypoints_planner_B.loop_ub_d = joint->Type->size[0] * joint->
+    cartesian_waypoints_planner_B.loop_ub_p = joint->Type->size[0] * joint->
       Type->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr = 0;
          cartesian_waypoints_planner_B.b_kstr <=
-         cartesian_waypoints_planner_B.loop_ub_d;
+         cartesian_waypoints_planner_B.loop_ub_p;
          cartesian_waypoints_planner_B.b_kstr++) {
       body2Name->data[cartesian_waypoints_planner_B.b_kstr] = joint->Type->
         data[cartesian_waypoints_planner_B.b_kstr];
@@ -2394,7 +2442,7 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
           cartesian_waypoints_planner_B.g = cartesian_waypoints_planner_B.b_kstr
             - 1;
           if (body2Name->data[cartesian_waypoints_planner_B.g] !=
-              cartesian_waypoints_planner_B.b_l[cartesian_waypoints_planner_B.g])
+              cartesian_waypoints_planner_B.b_a0[cartesian_waypoints_planner_B.g])
           {
             exitg2 = 1;
           } else {
@@ -2426,13 +2474,13 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
           (cartesian_waypoints_planner_B.qidx_idx_1) - 1;
       }
 
-      cartesian_waypoints_planner_B.loop_ub_d =
+      cartesian_waypoints_planner_B.loop_ub_p =
         cartesian_waypoints_planner_B.b_kstr - cartesian_waypoints_planner_B.g;
       cartesian_waypoints_planner_B.qv_size =
-        cartesian_waypoints_planner_B.loop_ub_d + 1;
+        cartesian_waypoints_planner_B.loop_ub_p + 1;
       for (cartesian_waypoints_planner_B.b_kstr = 0;
            cartesian_waypoints_planner_B.b_kstr <=
-           cartesian_waypoints_planner_B.loop_ub_d;
+           cartesian_waypoints_planner_B.loop_ub_p;
            cartesian_waypoints_planner_B.b_kstr++) {
         cartesian_waypoints_planner_B.qv_data[cartesian_waypoints_planner_B.b_kstr]
           = qv[cartesian_waypoints_planner_B.g +
@@ -2482,7 +2530,7 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
         for (cartesian_waypoints_planner_B.b_kstr = 0;
              cartesian_waypoints_planner_B.b_kstr < 9;
              cartesian_waypoints_planner_B.b_kstr++) {
-          cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr]
+          cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr]
             =
             -cartesian_waypoints_planner_B.R_a[cartesian_waypoints_planner_B.b_kstr];
         }
@@ -2503,11 +2551,11 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
             cartesian_waypoints_planner_B.b_kstr + 2];
           cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.b_kstr
             + 12] =
-            cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr
+            cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr
             + 6] * cartesian_waypoints_planner_B.T1j[14] +
-            (cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr
+            (cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr
              + 3] * cartesian_waypoints_planner_B.T1j[13] +
-             cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr]
+             cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr]
              * cartesian_waypoints_planner_B.T1j[12]);
         }
 
@@ -2523,28 +2571,28 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
         for (cartesian_waypoints_planner_B.g = 0;
              cartesian_waypoints_planner_B.g < 4;
              cartesian_waypoints_planner_B.g++) {
-          cartesian_waypoints_planner_B.loop_ub_d =
+          cartesian_waypoints_planner_B.loop_ub_p =
             cartesian_waypoints_planner_B.g << 2;
-          cartesian_waypoints_planner_B.n_d =
+          cartesian_waypoints_planner_B.n_i =
             cartesian_waypoints_planner_B.b_kstr +
-            cartesian_waypoints_planner_B.loop_ub_d;
-          cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.n_d] =
+            cartesian_waypoints_planner_B.loop_ub_p;
+          cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.n_i] =
             0.0;
-          cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.n_d] +=
-            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_d]
+          cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.n_i] +=
+            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_p]
             * cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.b_kstr];
-          cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.n_d] +=
-            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_d
+          cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.n_i] +=
+            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_p
             + 1] *
             cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.b_kstr
             + 4];
-          cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.n_d] +=
-            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_d
+          cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.n_i] +=
+            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_p
             + 2] *
             cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.b_kstr
             + 8];
-          cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.n_d] +=
-            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_d
+          cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.n_i] +=
+            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_p
             + 3] *
             cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.b_kstr
             + 12];
@@ -2570,7 +2618,7 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
       for (cartesian_waypoints_planner_B.b_kstr = 0;
            cartesian_waypoints_planner_B.b_kstr < 9;
            cartesian_waypoints_planner_B.b_kstr++) {
-        cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr] =
+        cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr] =
           -cartesian_waypoints_planner_B.R_a[cartesian_waypoints_planner_B.b_kstr];
       }
 
@@ -2590,11 +2638,11 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
           cartesian_waypoints_planner_B.b_kstr + 2];
         cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.b_kstr +
           12] =
-          cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr
+          cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr
           + 6] * cartesian_waypoints_planner_B.T1j[14] +
-          (cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr
+          (cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr
            + 3] * cartesian_waypoints_planner_B.T1j[13] +
-           cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr]
+           cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr]
            * cartesian_waypoints_planner_B.T1j[12]);
       }
 
@@ -2620,26 +2668,26 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
         for (cartesian_waypoints_planner_B.g = 0;
              cartesian_waypoints_planner_B.g < 3;
              cartesian_waypoints_planner_B.g++) {
-          cartesian_waypoints_planner_B.loop_ub_d =
+          cartesian_waypoints_planner_B.loop_ub_p =
             cartesian_waypoints_planner_B.b_kstr + 3 *
             cartesian_waypoints_planner_B.g;
-          cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.loop_ub_d]
+          cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.loop_ub_p]
             = 0.0;
-          cartesian_waypoints_planner_B.n_d = cartesian_waypoints_planner_B.g <<
+          cartesian_waypoints_planner_B.n_i = cartesian_waypoints_planner_B.g <<
             2;
-          cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.loop_ub_d]
+          cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.loop_ub_p]
             +=
-            cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.n_d] *
+            cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.n_i] *
             cartesian_waypoints_planner_B.R_a[cartesian_waypoints_planner_B.b_kstr];
-          cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.loop_ub_d]
+          cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.loop_ub_p]
             +=
-            cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.n_d +
+            cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.n_i +
             1] *
             cartesian_waypoints_planner_B.R_a[cartesian_waypoints_planner_B.b_kstr
             + 3];
-          cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.loop_ub_d]
+          cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.loop_ub_p]
             +=
-            cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.n_d +
+            cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.n_i +
             2] *
             cartesian_waypoints_planner_B.R_a[cartesian_waypoints_planner_B.b_kstr
             + 6];
@@ -2657,25 +2705,25 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
            cartesian_waypoints_planner_B.b_kstr < 3;
            cartesian_waypoints_planner_B.b_kstr++) {
         cartesian_waypoints_planner_B.X[6 * cartesian_waypoints_planner_B.b_kstr
-          + 3] = cartesian_waypoints_planner_B.R_e[3 *
+          + 3] = cartesian_waypoints_planner_B.R_i[3 *
           cartesian_waypoints_planner_B.b_kstr];
         cartesian_waypoints_planner_B.g = cartesian_waypoints_planner_B.b_kstr <<
           2;
-        cartesian_waypoints_planner_B.loop_ub_d = 6 *
+        cartesian_waypoints_planner_B.loop_ub_p = 6 *
           (cartesian_waypoints_planner_B.b_kstr + 3);
-        cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.loop_ub_d
+        cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.loop_ub_p
           + 3] =
           cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.g];
         cartesian_waypoints_planner_B.X[6 * cartesian_waypoints_planner_B.b_kstr
-          + 4] = cartesian_waypoints_planner_B.R_e[3 *
+          + 4] = cartesian_waypoints_planner_B.R_i[3 *
           cartesian_waypoints_planner_B.b_kstr + 1];
-        cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.loop_ub_d
+        cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.loop_ub_p
           + 4] =
           cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.g + 1];
         cartesian_waypoints_planner_B.X[6 * cartesian_waypoints_planner_B.b_kstr
-          + 5] = cartesian_waypoints_planner_B.R_e[3 *
+          + 5] = cartesian_waypoints_planner_B.R_i[3 *
           cartesian_waypoints_planner_B.b_kstr + 2];
-        cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.loop_ub_d
+        cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.loop_ub_p
           + 5] =
           cartesian_waypoints_planner_B.Tj[cartesian_waypoints_planner_B.g + 2];
       }
@@ -2684,24 +2732,24 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
       b->size[0] = 6;
       b->size[1] = joint->MotionSubspace->size[1];
       cartes_emxEnsureCapacity_real_T(b, cartesian_waypoints_planner_B.b_kstr);
-      cartesian_waypoints_planner_B.loop_ub_d = joint->MotionSubspace->size[0] *
+      cartesian_waypoints_planner_B.loop_ub_p = joint->MotionSubspace->size[0] *
         joint->MotionSubspace->size[1] - 1;
       for (cartesian_waypoints_planner_B.b_kstr = 0;
            cartesian_waypoints_planner_B.b_kstr <=
-           cartesian_waypoints_planner_B.loop_ub_d;
+           cartesian_waypoints_planner_B.loop_ub_p;
            cartesian_waypoints_planner_B.b_kstr++) {
         b->data[cartesian_waypoints_planner_B.b_kstr] = joint->
           MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr];
       }
 
-      cartesian_waypoints_planner_B.n_d = b->size[1] - 1;
+      cartesian_waypoints_planner_B.n_i = b->size[1] - 1;
       cartesian_waypoints_planner_B.b_kstr = y->size[0] * y->size[1];
       y->size[0] = 6;
       y->size[1] = b->size[1];
       cartes_emxEnsureCapacity_real_T(y, cartesian_waypoints_planner_B.b_kstr);
       for (cartesian_waypoints_planner_B.b_kstr = 0;
            cartesian_waypoints_planner_B.b_kstr <=
-           cartesian_waypoints_planner_B.n_d;
+           cartesian_waypoints_planner_B.n_i;
            cartesian_waypoints_planner_B.b_kstr++) {
         cartesian_waypoints_planner_B.coffset_tmp =
           cartesian_waypoints_planner_B.b_kstr * 6 - 1;
@@ -2709,14 +2757,14 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
              cartesian_waypoints_planner_B.g < 6;
              cartesian_waypoints_planner_B.g++) {
           cartesian_waypoints_planner_B.bid2 = 0.0;
-          for (cartesian_waypoints_planner_B.loop_ub_d = 0;
-               cartesian_waypoints_planner_B.loop_ub_d < 6;
-               cartesian_waypoints_planner_B.loop_ub_d++) {
+          for (cartesian_waypoints_planner_B.loop_ub_p = 0;
+               cartesian_waypoints_planner_B.loop_ub_p < 6;
+               cartesian_waypoints_planner_B.loop_ub_p++) {
             cartesian_waypoints_planner_B.bid2 +=
-              cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.loop_ub_d
+              cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.loop_ub_p
               * 6 + cartesian_waypoints_planner_B.g] * b->data
               [(cartesian_waypoints_planner_B.coffset_tmp +
-                cartesian_waypoints_planner_B.loop_ub_d) + 1];
+                cartesian_waypoints_planner_B.loop_ub_p) + 1];
           }
 
           y->data[(cartesian_waypoints_planner_B.coffset_tmp +
@@ -2727,22 +2775,22 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
 
       if (cartesian_waypoints_planner_B.bid1 >
           cartesian_waypoints_planner_B.qidx_idx_1) {
-        cartesian_waypoints_planner_B.n_d = 0;
+        cartesian_waypoints_planner_B.n_i = 0;
       } else {
-        cartesian_waypoints_planner_B.n_d = static_cast<int32_T>
+        cartesian_waypoints_planner_B.n_i = static_cast<int32_T>
           (cartesian_waypoints_planner_B.bid1) - 1;
       }
 
-      cartesian_waypoints_planner_B.loop_ub_d = y->size[1];
+      cartesian_waypoints_planner_B.loop_ub_p = y->size[1];
       for (cartesian_waypoints_planner_B.b_kstr = 0;
            cartesian_waypoints_planner_B.b_kstr <
-           cartesian_waypoints_planner_B.loop_ub_d;
+           cartesian_waypoints_planner_B.loop_ub_p;
            cartesian_waypoints_planner_B.b_kstr++) {
         for (cartesian_waypoints_planner_B.g = 0;
              cartesian_waypoints_planner_B.g < 6;
              cartesian_waypoints_planner_B.g++) {
           Jac->data[cartesian_waypoints_planner_B.g + 6 *
-            (cartesian_waypoints_planner_B.n_d +
+            (cartesian_waypoints_planner_B.n_i +
              cartesian_waypoints_planner_B.b_kstr)] = y->data[6 *
             cartesian_waypoints_planner_B.b_kstr +
             cartesian_waypoints_planner_B.g] * static_cast<real_T>
@@ -2758,32 +2806,32 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
         for (cartesian_waypoints_planner_B.g = 0;
              cartesian_waypoints_planner_B.g < 4;
              cartesian_waypoints_planner_B.g++) {
-          cartesian_waypoints_planner_B.loop_ub_d =
+          cartesian_waypoints_planner_B.loop_ub_p =
             cartesian_waypoints_planner_B.g << 2;
           cartesian_waypoints_planner_B.jointSign =
             cartesian_waypoints_planner_B.b_kstr +
-            cartesian_waypoints_planner_B.loop_ub_d;
+            cartesian_waypoints_planner_B.loop_ub_p;
           cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.jointSign]
             = 0.0;
           cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.jointSign]
             +=
-            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_d]
+            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_p]
             * cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.b_kstr];
           cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.jointSign]
             +=
-            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_d
+            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_p
             + 1] *
             cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.b_kstr
             + 4];
           cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.jointSign]
             +=
-            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_d
+            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_p
             + 2] *
             cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.b_kstr
             + 8];
           cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.jointSign]
             +=
-            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_d
+            cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.loop_ub_p
             + 3] *
             cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.b_kstr
             + 12];
@@ -2812,31 +2860,31 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
       for (cartesian_waypoints_planner_B.b_kstr = 0;
            cartesian_waypoints_planner_B.b_kstr < 9;
            cartesian_waypoints_planner_B.b_kstr++) {
-        cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr] =
+        cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr] =
           -cartesian_waypoints_planner_B.R_a[cartesian_waypoints_planner_B.b_kstr];
       }
 
       for (cartesian_waypoints_planner_B.b_kstr = 0;
            cartesian_waypoints_planner_B.b_kstr < 3;
            cartesian_waypoints_planner_B.b_kstr++) {
-        cartesian_waypoints_planner_B.loop_ub_d =
+        cartesian_waypoints_planner_B.loop_ub_p =
           cartesian_waypoints_planner_B.b_kstr << 2;
-        cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.loop_ub_d]
+        cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.loop_ub_p]
           = cartesian_waypoints_planner_B.R_a[3 *
           cartesian_waypoints_planner_B.b_kstr];
-        cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.loop_ub_d
+        cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.loop_ub_p
           + 1] = cartesian_waypoints_planner_B.R_a[3 *
           cartesian_waypoints_planner_B.b_kstr + 1];
-        cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.loop_ub_d
+        cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.loop_ub_p
           + 2] = cartesian_waypoints_planner_B.R_a[3 *
           cartesian_waypoints_planner_B.b_kstr + 2];
         cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.b_kstr +
           12] =
-          cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr
+          cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr
           + 6] * cartesian_waypoints_planner_B.Tc2p[14] +
-          (cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr
+          (cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr
            + 3] * cartesian_waypoints_planner_B.Tc2p[13] +
-           cartesian_waypoints_planner_B.R_e[cartesian_waypoints_planner_B.b_kstr]
+           cartesian_waypoints_planner_B.R_i[cartesian_waypoints_planner_B.b_kstr]
            * cartesian_waypoints_planner_B.Tc2p[12]);
       }
 
@@ -2852,28 +2900,28 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
              cartesian_waypoints_planner_B.g++) {
           cartesian_waypoints_planner_B.jointSign =
             cartesian_waypoints_planner_B.g << 2;
-          cartesian_waypoints_planner_B.loop_ub_d =
+          cartesian_waypoints_planner_B.loop_ub_p =
             cartesian_waypoints_planner_B.b_kstr +
             cartesian_waypoints_planner_B.jointSign;
-          cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.loop_ub_d]
+          cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.loop_ub_p]
             = 0.0;
-          cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.loop_ub_d]
+          cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.loop_ub_p]
             +=
             cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.jointSign]
             * cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.b_kstr];
-          cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.loop_ub_d]
+          cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.loop_ub_p]
             +=
             cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.jointSign
             + 1] *
             cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.b_kstr
             + 4];
-          cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.loop_ub_d]
+          cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.loop_ub_p]
             +=
             cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.jointSign
             + 2] *
             cartesian_waypoints_planner_B.T1j[cartesian_waypoints_planner_B.b_kstr
             + 8];
-          cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.loop_ub_d]
+          cartesian_waypoints_planner_B.Tc2p[cartesian_waypoints_planner_B.loop_ub_p]
             +=
             cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.jointSign
             + 3] *
@@ -2893,19 +2941,19 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr < 3;
        cartesian_waypoints_planner_B.b_kstr++) {
-    cartesian_waypoints_planner_B.b_i_g = cartesian_waypoints_planner_B.b_kstr <<
+    cartesian_waypoints_planner_B.b_i_hw = cartesian_waypoints_planner_B.b_kstr <<
       2;
     cartesian_waypoints_planner_B.X[6 * cartesian_waypoints_planner_B.b_kstr] =
-      cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.b_i_g];
+      cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.b_i_hw];
     cartesian_waypoints_planner_B.g = 6 * (cartesian_waypoints_planner_B.b_kstr
       + 3);
     cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.g] = 0.0;
     cartesian_waypoints_planner_B.X[6 * cartesian_waypoints_planner_B.b_kstr + 3]
       = 0.0;
     cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.g + 3] =
-      cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.b_i_g];
+      cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.b_i_hw];
     cartesian_waypoints_planner_B.bid1 =
-      cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.b_i_g + 1];
+      cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.b_i_hw + 1];
     cartesian_waypoints_planner_B.X[6 * cartesian_waypoints_planner_B.b_kstr + 1]
       = cartesian_waypoints_planner_B.bid1;
     cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.g + 1] = 0.0;
@@ -2914,7 +2962,7 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
     cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.g + 4] =
       cartesian_waypoints_planner_B.bid1;
     cartesian_waypoints_planner_B.bid1 =
-      cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.b_i_g + 2];
+      cartesian_waypoints_planner_B.T1[cartesian_waypoints_planner_B.b_i_hw + 2];
     cartesian_waypoints_planner_B.X[6 * cartesian_waypoints_planner_B.b_kstr + 2]
       = cartesian_waypoints_planner_B.bid1;
     cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.g + 2] = 0.0;
@@ -2924,15 +2972,15 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
       cartesian_waypoints_planner_B.bid1;
   }
 
-  cartesian_waypoints_planner_B.n_d = Jac->size[1];
+  cartesian_waypoints_planner_B.n_i = Jac->size[1];
   cartesian_waypoints_planner_B.b_kstr = y->size[0] * y->size[1];
   y->size[0] = 6;
   y->size[1] = Jac->size[1];
   cartes_emxEnsureCapacity_real_T(y, cartesian_waypoints_planner_B.b_kstr);
-  cartesian_waypoints_planner_B.loop_ub_d = Jac->size[0] * Jac->size[1] - 1;
+  cartesian_waypoints_planner_B.loop_ub_p = Jac->size[0] * Jac->size[1] - 1;
   for (cartesian_waypoints_planner_B.b_kstr = 0;
        cartesian_waypoints_planner_B.b_kstr <=
-       cartesian_waypoints_planner_B.loop_ub_d;
+       cartesian_waypoints_planner_B.loop_ub_p;
        cartesian_waypoints_planner_B.b_kstr++) {
     y->data[cartesian_waypoints_planner_B.b_kstr] = Jac->
       data[cartesian_waypoints_planner_B.b_kstr];
@@ -2940,29 +2988,29 @@ static void RigidBodyTree_efficientFKAndJac(x_robotics_manip_internal_Rig_T *obj
 
   cartesian_waypoints_planner_B.b_kstr = Jac->size[0] * Jac->size[1];
   Jac->size[0] = 6;
-  Jac->size[1] = cartesian_waypoints_planner_B.n_d;
+  Jac->size[1] = cartesian_waypoints_planner_B.n_i;
   cartes_emxEnsureCapacity_real_T(Jac, cartesian_waypoints_planner_B.b_kstr);
   for (cartesian_waypoints_planner_B.b_kstr = 0;
-       cartesian_waypoints_planner_B.b_kstr < cartesian_waypoints_planner_B.n_d;
+       cartesian_waypoints_planner_B.b_kstr < cartesian_waypoints_planner_B.n_i;
        cartesian_waypoints_planner_B.b_kstr++) {
     cartesian_waypoints_planner_B.coffset_tmp =
       cartesian_waypoints_planner_B.b_kstr * 6 - 1;
-    for (cartesian_waypoints_planner_B.b_i_g = 0;
-         cartesian_waypoints_planner_B.b_i_g < 6;
-         cartesian_waypoints_planner_B.b_i_g++) {
+    for (cartesian_waypoints_planner_B.b_i_hw = 0;
+         cartesian_waypoints_planner_B.b_i_hw < 6;
+         cartesian_waypoints_planner_B.b_i_hw++) {
       cartesian_waypoints_planner_B.bid2 = 0.0;
-      for (cartesian_waypoints_planner_B.loop_ub_d = 0;
-           cartesian_waypoints_planner_B.loop_ub_d < 6;
-           cartesian_waypoints_planner_B.loop_ub_d++) {
+      for (cartesian_waypoints_planner_B.loop_ub_p = 0;
+           cartesian_waypoints_planner_B.loop_ub_p < 6;
+           cartesian_waypoints_planner_B.loop_ub_p++) {
         cartesian_waypoints_planner_B.bid2 +=
-          cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.loop_ub_d
-          * 6 + cartesian_waypoints_planner_B.b_i_g] * y->data
+          cartesian_waypoints_planner_B.X[cartesian_waypoints_planner_B.loop_ub_p
+          * 6 + cartesian_waypoints_planner_B.b_i_hw] * y->data
           [(cartesian_waypoints_planner_B.coffset_tmp +
-            cartesian_waypoints_planner_B.loop_ub_d) + 1];
+            cartesian_waypoints_planner_B.loop_ub_p) + 1];
       }
 
       Jac->data[(cartesian_waypoints_planner_B.coffset_tmp +
-                 cartesian_waypoints_planner_B.b_i_g) + 1] =
+                 cartesian_waypoints_planner_B.b_i_hw) + 1] =
         cartesian_waypoints_planner_B.bid2;
     }
   }
@@ -3329,11 +3377,11 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
   int32_T c_q;
   int32_T d_k;
   boolean_T exitg1;
-  cartesian_waypoints_planner_B.e_k[0] = 0.0;
+  cartesian_waypoints_planner_B.e_h[0] = 0.0;
   cartesian_waypoints_planner_B.work[0] = 0.0;
-  cartesian_waypoints_planner_B.e_k[1] = 0.0;
+  cartesian_waypoints_planner_B.e_h[1] = 0.0;
   cartesian_waypoints_planner_B.work[1] = 0.0;
-  cartesian_waypoints_planner_B.e_k[2] = 0.0;
+  cartesian_waypoints_planner_B.e_h[2] = 0.0;
   cartesian_waypoints_planner_B.work[2] = 0.0;
   for (m = 0; m < 9; m++) {
     cartesian_waypoints_planner_B.A[m] = A[m];
@@ -3375,15 +3423,15 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
   for (m = 2; m < 4; m++) {
     qjj = (m - 1) * 3 + 1;
     if (apply_transform) {
-      memcpy(&cartesian_waypoints_planner_B.A_f[0],
+      memcpy(&cartesian_waypoints_planner_B.A_g[0],
              &cartesian_waypoints_planner_B.A[0], 9U * sizeof(real_T));
       cartesian_waypoints_plann_xaxpy(3, -(cartesian_waypoints_plann_xdotc(3,
         cartesian_waypoints_planner_B.A, 1, cartesian_waypoints_planner_B.A, qjj)
         / cartesian_waypoints_planner_B.A[0]), 1,
-        cartesian_waypoints_planner_B.A_f, qjj, cartesian_waypoints_planner_B.A);
+        cartesian_waypoints_planner_B.A_g, qjj, cartesian_waypoints_planner_B.A);
     }
 
-    cartesian_waypoints_planner_B.e_k[m - 1] =
+    cartesian_waypoints_planner_B.e_h[m - 1] =
       cartesian_waypoints_planner_B.A[qjj - 1];
   }
 
@@ -3392,55 +3440,55 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
   }
 
   cartesian_waypoints_planner_B.nrm = cartesian_waypoints_pla_xnrm2_e
-    (cartesian_waypoints_planner_B.e_k, 2);
+    (cartesian_waypoints_planner_B.e_h, 2);
   if (cartesian_waypoints_planner_B.nrm == 0.0) {
-    cartesian_waypoints_planner_B.e_k[0] = 0.0;
+    cartesian_waypoints_planner_B.e_h[0] = 0.0;
   } else {
-    if (cartesian_waypoints_planner_B.e_k[1] < 0.0) {
+    if (cartesian_waypoints_planner_B.e_h[1] < 0.0) {
       cartesian_waypoints_planner_B.rt = -cartesian_waypoints_planner_B.nrm;
-      cartesian_waypoints_planner_B.e_k[0] = -cartesian_waypoints_planner_B.nrm;
+      cartesian_waypoints_planner_B.e_h[0] = -cartesian_waypoints_planner_B.nrm;
     } else {
       cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.nrm;
-      cartesian_waypoints_planner_B.e_k[0] = cartesian_waypoints_planner_B.nrm;
+      cartesian_waypoints_planner_B.e_h[0] = cartesian_waypoints_planner_B.nrm;
     }
 
     if (fabs(cartesian_waypoints_planner_B.rt) >= 1.0020841800044864E-292) {
       cartesian_waypoints_planner_B.nrm = 1.0 / cartesian_waypoints_planner_B.rt;
       for (qq = 2; qq < 4; qq++) {
-        cartesian_waypoints_planner_B.e_k[qq - 1] *=
+        cartesian_waypoints_planner_B.e_h[qq - 1] *=
           cartesian_waypoints_planner_B.nrm;
       }
     } else {
       for (qq = 2; qq < 4; qq++) {
-        cartesian_waypoints_planner_B.e_k[qq - 1] /=
+        cartesian_waypoints_planner_B.e_h[qq - 1] /=
           cartesian_waypoints_planner_B.rt;
       }
     }
 
-    cartesian_waypoints_planner_B.e_k[1]++;
-    cartesian_waypoints_planner_B.e_k[0] = -cartesian_waypoints_planner_B.e_k[0];
+    cartesian_waypoints_planner_B.e_h[1]++;
+    cartesian_waypoints_planner_B.e_h[0] = -cartesian_waypoints_planner_B.e_h[0];
     for (m = 2; m < 4; m++) {
       cartesian_waypoints_planner_B.work[m - 1] = 0.0;
     }
 
     for (m = 2; m < 4; m++) {
-      cartesian_waypoints_p_xaxpy_evq(2, cartesian_waypoints_planner_B.e_k[m - 1],
+      cartesian_waypoints_p_xaxpy_evq(2, cartesian_waypoints_planner_B.e_h[m - 1],
         cartesian_waypoints_planner_B.A, 3 * (m - 1) + 2,
         cartesian_waypoints_planner_B.work, 2);
     }
 
     for (m = 2; m < 4; m++) {
-      memcpy(&cartesian_waypoints_planner_B.A_f[0],
+      memcpy(&cartesian_waypoints_planner_B.A_g[0],
              &cartesian_waypoints_planner_B.A[0], 9U * sizeof(real_T));
-      cartesian_waypoints_pl_xaxpy_ev(2, -cartesian_waypoints_planner_B.e_k[m -
-        1] / cartesian_waypoints_planner_B.e_k[1],
-        cartesian_waypoints_planner_B.work, 2, cartesian_waypoints_planner_B.A_f,
+      cartesian_waypoints_pl_xaxpy_ev(2, -cartesian_waypoints_planner_B.e_h[m -
+        1] / cartesian_waypoints_planner_B.e_h[1],
+        cartesian_waypoints_planner_B.work, 2, cartesian_waypoints_planner_B.A_g,
         (m - 1) * 3 + 2, cartesian_waypoints_planner_B.A);
     }
   }
 
   for (m = 2; m < 4; m++) {
-    V[m - 1] = cartesian_waypoints_planner_B.e_k[m - 1];
+    V[m - 1] = cartesian_waypoints_planner_B.e_h[m - 1];
   }
 
   apply_transform = false;
@@ -3476,12 +3524,12 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
 
   if (apply_transform) {
     for (m = 3; m < 4; m++) {
-      memcpy(&cartesian_waypoints_planner_B.A_f[0],
+      memcpy(&cartesian_waypoints_planner_B.A_g[0],
              &cartesian_waypoints_planner_B.A[0], 9U * sizeof(real_T));
       cartesian_waypoints_plann_xaxpy(2, -(cartesian_waypoints_plann_xdotc(2,
         cartesian_waypoints_planner_B.A, 5, cartesian_waypoints_planner_B.A, 8) /
         cartesian_waypoints_planner_B.A[4]), 5,
-        cartesian_waypoints_planner_B.A_f, 8, cartesian_waypoints_planner_B.A);
+        cartesian_waypoints_planner_B.A_g, 8, cartesian_waypoints_planner_B.A);
     }
   }
 
@@ -3491,8 +3539,8 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
 
   m = 2;
   cartesian_waypoints_planner_B.s[2] = cartesian_waypoints_planner_B.A[8];
-  cartesian_waypoints_planner_B.e_k[1] = cartesian_waypoints_planner_B.A[7];
-  cartesian_waypoints_planner_B.e_k[2] = 0.0;
+  cartesian_waypoints_planner_B.e_h[1] = cartesian_waypoints_planner_B.A[7];
+  cartesian_waypoints_planner_B.e_h[2] = 0.0;
   U[6] = 0.0;
   U[7] = 0.0;
   U[8] = 1.0;
@@ -3525,7 +3573,7 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
   }
 
   for (c_q = 2; c_q >= 0; c_q--) {
-    if ((c_q + 1 <= 1) && (cartesian_waypoints_planner_B.e_k[0] != 0.0)) {
+    if ((c_q + 1 <= 1) && (cartesian_waypoints_planner_B.e_h[0] != 0.0)) {
       memcpy(&cartesian_waypoints_planner_B.A[0], &V[0], 9U * sizeof(real_T));
       cartesian_waypoints_plann_xaxpy(2, -(cartesian_waypoints_plann_xdotc(2, V,
         2, V, 5) / V[1]), 2, cartesian_waypoints_planner_B.A, 5, V);
@@ -3541,7 +3589,7 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
   }
 
   for (c_q = 0; c_q < 3; c_q++) {
-    cartesian_waypoints_planner_B.ztest = cartesian_waypoints_planner_B.e_k[c_q];
+    cartesian_waypoints_planner_B.ztest = cartesian_waypoints_planner_B.e_h[c_q];
     if (cartesian_waypoints_planner_B.s[c_q] != 0.0) {
       cartesian_waypoints_planner_B.rt = fabs
         (cartesian_waypoints_planner_B.s[c_q]);
@@ -3550,7 +3598,7 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
       cartesian_waypoints_planner_B.s[c_q] = cartesian_waypoints_planner_B.rt;
       if (c_q + 1 < 3) {
         cartesian_waypoints_planner_B.ztest =
-          cartesian_waypoints_planner_B.e_k[c_q] /
+          cartesian_waypoints_planner_B.e_h[c_q] /
           cartesian_waypoints_planner_B.nrm;
       }
 
@@ -3574,13 +3622,13 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
       }
     }
 
-    cartesian_waypoints_planner_B.e_k[c_q] = cartesian_waypoints_planner_B.ztest;
+    cartesian_waypoints_planner_B.e_h[c_q] = cartesian_waypoints_planner_B.ztest;
   }
 
   qq = 0;
   cartesian_waypoints_planner_B.nrm = 0.0;
   cartesian_waypoints_planner_B.ztest = fabs(cartesian_waypoints_planner_B.s[0]);
-  cartesian_waypoints_planner_B.rt = fabs(cartesian_waypoints_planner_B.e_k[0]);
+  cartesian_waypoints_planner_B.rt = fabs(cartesian_waypoints_planner_B.e_h[0]);
   if ((cartesian_waypoints_planner_B.ztest > cartesian_waypoints_planner_B.rt) ||
       rtIsNaN(cartesian_waypoints_planner_B.rt)) {
     cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.ztest;
@@ -3591,7 +3639,7 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
   }
 
   cartesian_waypoints_planner_B.ztest = fabs(cartesian_waypoints_planner_B.s[1]);
-  cartesian_waypoints_planner_B.rt = fabs(cartesian_waypoints_planner_B.e_k[1]);
+  cartesian_waypoints_planner_B.rt = fabs(cartesian_waypoints_planner_B.e_h[1]);
   if ((cartesian_waypoints_planner_B.ztest > cartesian_waypoints_planner_B.rt) ||
       rtIsNaN(cartesian_waypoints_planner_B.rt)) {
     cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.ztest;
@@ -3603,7 +3651,7 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
   }
 
   cartesian_waypoints_planner_B.ztest = fabs(cartesian_waypoints_planner_B.s[2]);
-  cartesian_waypoints_planner_B.rt = fabs(cartesian_waypoints_planner_B.e_k[2]);
+  cartesian_waypoints_planner_B.rt = fabs(cartesian_waypoints_planner_B.e_h[2]);
   if ((cartesian_waypoints_planner_B.ztest > cartesian_waypoints_planner_B.rt) ||
       rtIsNaN(cartesian_waypoints_planner_B.rt)) {
     cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.ztest;
@@ -3624,7 +3672,7 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
         exitg1 = true;
       } else {
         cartesian_waypoints_planner_B.rt = fabs
-          (cartesian_waypoints_planner_B.e_k[qjj - 1]);
+          (cartesian_waypoints_planner_B.e_h[qjj - 1]);
         if ((cartesian_waypoints_planner_B.rt <= (fabs
               (cartesian_waypoints_planner_B.s[qjj - 1]) + fabs
               (cartesian_waypoints_planner_B.s[qjj])) * 2.2204460492503131E-16) ||
@@ -3632,7 +3680,7 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
             ((qq > 20) && (cartesian_waypoints_planner_B.rt <=
                            2.2204460492503131E-16 *
                            cartesian_waypoints_planner_B.nrm))) {
-          cartesian_waypoints_planner_B.e_k[qjj - 1] = 0.0;
+          cartesian_waypoints_planner_B.e_h[qjj - 1] = 0.0;
           exitg1 = true;
         } else {
           qjj--;
@@ -3654,12 +3702,12 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
           cartesian_waypoints_planner_B.rt = 0.0;
           if (kase < m + 1) {
             cartesian_waypoints_planner_B.rt = fabs
-              (cartesian_waypoints_planner_B.e_k[kase - 1]);
+              (cartesian_waypoints_planner_B.e_h[kase - 1]);
           }
 
           if (kase > c_q + 1) {
             cartesian_waypoints_planner_B.rt += fabs
-              (cartesian_waypoints_planner_B.e_k[kase - 2]);
+              (cartesian_waypoints_planner_B.e_h[kase - 2]);
           }
 
           cartesian_waypoints_planner_B.ztest = fabs
@@ -3688,54 +3736,54 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
 
     switch (kase) {
      case 1:
-      cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.e_k[m - 1];
-      cartesian_waypoints_planner_B.e_k[m - 1] = 0.0;
+      cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.e_h[m - 1];
+      cartesian_waypoints_planner_B.e_h[m - 1] = 0.0;
       for (qjj = m; qjj >= c_q + 1; qjj--) {
-        cartesian_waypoints_planner_B.ztest = cartesian_waypoints_planner_B.e_k
+        cartesian_waypoints_planner_B.ztest = cartesian_waypoints_planner_B.e_h
           [0];
         cartesian_waypoints_plann_xrotg(cartesian_waypoints_planner_B.s[qjj - 1],
           cartesian_waypoints_planner_B.rt, &cartesian_waypoints_planner_B.s[qjj
           - 1], &cartesian_waypoints_planner_B.rt,
           &cartesian_waypoints_planner_B.sqds,
-          &cartesian_waypoints_planner_B.b_i3);
+          &cartesian_waypoints_planner_B.b_l);
         if (qjj > c_q + 1) {
-          cartesian_waypoints_planner_B.rt = -cartesian_waypoints_planner_B.b_i3
-            * cartesian_waypoints_planner_B.e_k[0];
+          cartesian_waypoints_planner_B.rt = -cartesian_waypoints_planner_B.b_l *
+            cartesian_waypoints_planner_B.e_h[0];
           cartesian_waypoints_planner_B.ztest =
-            cartesian_waypoints_planner_B.e_k[0] *
+            cartesian_waypoints_planner_B.e_h[0] *
             cartesian_waypoints_planner_B.sqds;
         }
 
         memcpy(&cartesian_waypoints_planner_B.A[0], &V[0], 9U * sizeof(real_T));
         cartesian_waypoints_planne_xrot(cartesian_waypoints_planner_B.A, (qjj -
           1) * 3 + 1, 3 * m + 1, cartesian_waypoints_planner_B.sqds,
-          cartesian_waypoints_planner_B.b_i3, V);
-        cartesian_waypoints_planner_B.e_k[0] =
+          cartesian_waypoints_planner_B.b_l, V);
+        cartesian_waypoints_planner_B.e_h[0] =
           cartesian_waypoints_planner_B.ztest;
       }
       break;
 
      case 2:
-      cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.e_k[c_q -
+      cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.e_h[c_q -
         1];
-      cartesian_waypoints_planner_B.e_k[c_q - 1] = 0.0;
+      cartesian_waypoints_planner_B.e_h[c_q - 1] = 0.0;
       for (qjj = c_q + 1; qjj <= m + 1; qjj++) {
         cartesian_waypoints_plann_xrotg(cartesian_waypoints_planner_B.s[qjj - 1],
           cartesian_waypoints_planner_B.rt, &cartesian_waypoints_planner_B.s[qjj
           - 1], &cartesian_waypoints_planner_B.ztest,
           &cartesian_waypoints_planner_B.sqds,
-          &cartesian_waypoints_planner_B.b_i3);
+          &cartesian_waypoints_planner_B.b_l);
         cartesian_waypoints_planner_B.ztest =
-          cartesian_waypoints_planner_B.e_k[qjj - 1];
+          cartesian_waypoints_planner_B.e_h[qjj - 1];
         cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.ztest *
-          -cartesian_waypoints_planner_B.b_i3;
-        cartesian_waypoints_planner_B.e_k[qjj - 1] =
+          -cartesian_waypoints_planner_B.b_l;
+        cartesian_waypoints_planner_B.e_h[qjj - 1] =
           cartesian_waypoints_planner_B.ztest *
           cartesian_waypoints_planner_B.sqds;
         memcpy(&cartesian_waypoints_planner_B.A[0], &U[0], 9U * sizeof(real_T));
         cartesian_waypoints_planne_xrot(cartesian_waypoints_planner_B.A, (qjj -
           1) * 3 + 1, (c_q - 1) * 3 + 1, cartesian_waypoints_planner_B.sqds,
-          cartesian_waypoints_planner_B.b_i3, U);
+          cartesian_waypoints_planner_B.b_l, U);
       }
       break;
 
@@ -3750,10 +3798,10 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
         cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.ztest;
       }
 
-      cartesian_waypoints_planner_B.b_i3 = cartesian_waypoints_planner_B.e_k[m -
+      cartesian_waypoints_planner_B.b_l = cartesian_waypoints_planner_B.e_h[m -
         1];
       cartesian_waypoints_planner_B.ztest = fabs
-        (cartesian_waypoints_planner_B.b_i3);
+        (cartesian_waypoints_planner_B.b_l);
       if ((cartesian_waypoints_planner_B.rt >
            cartesian_waypoints_planner_B.ztest) || rtIsNaN
           (cartesian_waypoints_planner_B.ztest)) {
@@ -3769,7 +3817,7 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
       }
 
       cartesian_waypoints_planner_B.ztest = fabs
-        (cartesian_waypoints_planner_B.e_k[c_q]);
+        (cartesian_waypoints_planner_B.e_h[c_q]);
       if ((cartesian_waypoints_planner_B.rt >
            cartesian_waypoints_planner_B.ztest) || rtIsNaN
           (cartesian_waypoints_planner_B.ztest)) {
@@ -3780,31 +3828,29 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
         cartesian_waypoints_planner_B.ztest;
       cartesian_waypoints_planner_B.smm1 = cartesian_waypoints_planner_B.sqds /
         cartesian_waypoints_planner_B.ztest;
-      cartesian_waypoints_planner_B.emm1 = cartesian_waypoints_planner_B.b_i3 /
+      cartesian_waypoints_planner_B.emm1 = cartesian_waypoints_planner_B.b_l /
         cartesian_waypoints_planner_B.ztest;
       cartesian_waypoints_planner_B.sqds = cartesian_waypoints_planner_B.s[c_q] /
         cartesian_waypoints_planner_B.ztest;
-      cartesian_waypoints_planner_B.b_i3 = ((cartesian_waypoints_planner_B.smm1
-        + cartesian_waypoints_planner_B.rt) *
-        (cartesian_waypoints_planner_B.smm1 - cartesian_waypoints_planner_B.rt)
-        + cartesian_waypoints_planner_B.emm1 *
-        cartesian_waypoints_planner_B.emm1) / 2.0;
+      cartesian_waypoints_planner_B.b_l = ((cartesian_waypoints_planner_B.smm1 +
+        cartesian_waypoints_planner_B.rt) * (cartesian_waypoints_planner_B.smm1
+        - cartesian_waypoints_planner_B.rt) + cartesian_waypoints_planner_B.emm1
+        * cartesian_waypoints_planner_B.emm1) / 2.0;
       cartesian_waypoints_planner_B.smm1 = cartesian_waypoints_planner_B.rt *
         cartesian_waypoints_planner_B.emm1;
       cartesian_waypoints_planner_B.smm1 *= cartesian_waypoints_planner_B.smm1;
-      if ((cartesian_waypoints_planner_B.b_i3 != 0.0) ||
+      if ((cartesian_waypoints_planner_B.b_l != 0.0) ||
           (cartesian_waypoints_planner_B.smm1 != 0.0)) {
         cartesian_waypoints_planner_B.emm1 = sqrt
-          (cartesian_waypoints_planner_B.b_i3 *
-           cartesian_waypoints_planner_B.b_i3 +
-           cartesian_waypoints_planner_B.smm1);
-        if (cartesian_waypoints_planner_B.b_i3 < 0.0) {
+          (cartesian_waypoints_planner_B.b_l * cartesian_waypoints_planner_B.b_l
+           + cartesian_waypoints_planner_B.smm1);
+        if (cartesian_waypoints_planner_B.b_l < 0.0) {
           cartesian_waypoints_planner_B.emm1 =
             -cartesian_waypoints_planner_B.emm1;
         }
 
         cartesian_waypoints_planner_B.emm1 = cartesian_waypoints_planner_B.smm1 /
-          (cartesian_waypoints_planner_B.b_i3 +
+          (cartesian_waypoints_planner_B.b_l +
            cartesian_waypoints_planner_B.emm1);
       } else {
         cartesian_waypoints_planner_B.emm1 = 0.0;
@@ -3814,58 +3860,58 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
         cartesian_waypoints_planner_B.rt) * (cartesian_waypoints_planner_B.sqds
         - cartesian_waypoints_planner_B.rt) + cartesian_waypoints_planner_B.emm1;
       cartesian_waypoints_planner_B.sqds *=
-        cartesian_waypoints_planner_B.e_k[c_q] /
+        cartesian_waypoints_planner_B.e_h[c_q] /
         cartesian_waypoints_planner_B.ztest;
       for (d_k = c_q + 1; d_k <= m; d_k++) {
         cartesian_waypoints_plann_xrotg(cartesian_waypoints_planner_B.rt,
           cartesian_waypoints_planner_B.sqds,
           &cartesian_waypoints_planner_B.ztest,
           &cartesian_waypoints_planner_B.emm1,
-          &cartesian_waypoints_planner_B.b_i3,
+          &cartesian_waypoints_planner_B.b_l,
           &cartesian_waypoints_planner_B.smm1);
         if (d_k > c_q + 1) {
-          cartesian_waypoints_planner_B.e_k[0] =
+          cartesian_waypoints_planner_B.e_h[0] =
             cartesian_waypoints_planner_B.ztest;
         }
 
         cartesian_waypoints_planner_B.ztest =
-          cartesian_waypoints_planner_B.e_k[d_k - 1];
+          cartesian_waypoints_planner_B.e_h[d_k - 1];
         cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.s[d_k -
           1];
-        cartesian_waypoints_planner_B.e_k[d_k - 1] =
+        cartesian_waypoints_planner_B.e_h[d_k - 1] =
           cartesian_waypoints_planner_B.ztest *
-          cartesian_waypoints_planner_B.b_i3 - cartesian_waypoints_planner_B.rt *
+          cartesian_waypoints_planner_B.b_l - cartesian_waypoints_planner_B.rt *
           cartesian_waypoints_planner_B.smm1;
         cartesian_waypoints_planner_B.sqds = cartesian_waypoints_planner_B.smm1 *
           cartesian_waypoints_planner_B.s[d_k];
         cartesian_waypoints_planner_B.s[d_k] *=
-          cartesian_waypoints_planner_B.b_i3;
+          cartesian_waypoints_planner_B.b_l;
         qjj = (d_k - 1) * 3 + 1;
         kase = 3 * d_k + 1;
         memcpy(&cartesian_waypoints_planner_B.A[0], &V[0], 9U * sizeof(real_T));
         cartesian_waypoints_planne_xrot(cartesian_waypoints_planner_B.A, qjj,
-          kase, cartesian_waypoints_planner_B.b_i3,
+          kase, cartesian_waypoints_planner_B.b_l,
           cartesian_waypoints_planner_B.smm1, V);
         cartesian_waypoints_plann_xrotg(cartesian_waypoints_planner_B.rt *
-          cartesian_waypoints_planner_B.b_i3 +
+          cartesian_waypoints_planner_B.b_l +
           cartesian_waypoints_planner_B.ztest *
           cartesian_waypoints_planner_B.smm1, cartesian_waypoints_planner_B.sqds,
           &cartesian_waypoints_planner_B.s[d_k - 1],
           &cartesian_waypoints_planner_B.unusedU2,
           &cartesian_waypoints_planner_B.emm1,
           &cartesian_waypoints_planner_B.d_sn);
-        cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.e_k[d_k
+        cartesian_waypoints_planner_B.rt = cartesian_waypoints_planner_B.e_h[d_k
           - 1] * cartesian_waypoints_planner_B.emm1 +
           cartesian_waypoints_planner_B.d_sn *
           cartesian_waypoints_planner_B.s[d_k];
         cartesian_waypoints_planner_B.s[d_k] =
-          cartesian_waypoints_planner_B.e_k[d_k - 1] *
+          cartesian_waypoints_planner_B.e_h[d_k - 1] *
           -cartesian_waypoints_planner_B.d_sn +
           cartesian_waypoints_planner_B.emm1 *
           cartesian_waypoints_planner_B.s[d_k];
         cartesian_waypoints_planner_B.sqds = cartesian_waypoints_planner_B.d_sn *
-          cartesian_waypoints_planner_B.e_k[d_k];
-        cartesian_waypoints_planner_B.e_k[d_k] *=
+          cartesian_waypoints_planner_B.e_h[d_k];
+        cartesian_waypoints_planner_B.e_h[d_k] *=
           cartesian_waypoints_planner_B.emm1;
         memcpy(&cartesian_waypoints_planner_B.A[0], &U[0], 9U * sizeof(real_T));
         cartesian_waypoints_planne_xrot(cartesian_waypoints_planner_B.A, qjj,
@@ -3873,7 +3919,7 @@ static void cartesian_waypoints_planner_svd(const real_T A[9], real_T U[9],
           cartesian_waypoints_planner_B.d_sn, U);
       }
 
-      cartesian_waypoints_planner_B.e_k[m - 1] =
+      cartesian_waypoints_planner_B.e_h[m - 1] =
         cartesian_waypoints_planner_B.rt;
       qq++;
       break;
@@ -3927,161 +3973,161 @@ static void cartesian_waypoints__rotm2axang(const real_T R[9], real_T axang[4])
   boolean_T exitg1;
   cartesian_waypoints_planner_B.u.re = (((R[0] + R[4]) + R[8]) - 1.0) * 0.5;
   if (!(fabs(cartesian_waypoints_planner_B.u.re) > 1.0)) {
-    cartesian_waypoints_planner_B.v_ie.re = acos
+    cartesian_waypoints_planner_B.v_a.re = acos
       (cartesian_waypoints_planner_B.u.re);
   } else {
-    cartesian_waypoints_planner_B.u_o.re = cartesian_waypoints_planner_B.u.re +
+    cartesian_waypoints_planner_B.u_k.re = cartesian_waypoints_planner_B.u.re +
       1.0;
-    cartesian_waypoints_planner_B.u_o.im = 0.0;
+    cartesian_waypoints_planner_B.u_k.im = 0.0;
     cartesian_waypoints_planner_B.dc.re = 1.0 -
       cartesian_waypoints_planner_B.u.re;
     cartesian_waypoints_planner_B.dc.im = 0.0;
-    cartesian_waypoints_planner_B.v_ie.re = 2.0 * rt_atan2d_snf
+    cartesian_waypoints_planner_B.v_a.re = 2.0 * rt_atan2d_snf
       ((cartesian_waypoints_planne_sqrt(cartesian_waypoints_planner_B.dc)).re,
-       (cartesian_waypoints_planne_sqrt(cartesian_waypoints_planner_B.u_o)).re);
+       (cartesian_waypoints_planne_sqrt(cartesian_waypoints_planner_B.u_k)).re);
   }
 
-  cartesian_waypoints_planner_B.a_jr = 2.0 * sin
-    (cartesian_waypoints_planner_B.v_ie.re);
-  cartesian_waypoints_planner_B.v_ox[0] = (R[5] - R[7]) /
-    cartesian_waypoints_planner_B.a_jr;
-  cartesian_waypoints_planner_B.v_ox[1] = (R[6] - R[2]) /
-    cartesian_waypoints_planner_B.a_jr;
-  cartesian_waypoints_planner_B.v_ox[2] = (R[1] - R[3]) /
-    cartesian_waypoints_planner_B.a_jr;
-  if (rtIsNaN(cartesian_waypoints_planner_B.v_ie.re) || rtIsInf
-      (cartesian_waypoints_planner_B.v_ie.re)) {
-    cartesian_waypoints_planner_B.a_jr = (rtNaN);
-  } else if (cartesian_waypoints_planner_B.v_ie.re == 0.0) {
-    cartesian_waypoints_planner_B.a_jr = 0.0;
+  cartesian_waypoints_planner_B.a_gs = 2.0 * sin
+    (cartesian_waypoints_planner_B.v_a.re);
+  cartesian_waypoints_planner_B.v_fb[0] = (R[5] - R[7]) /
+    cartesian_waypoints_planner_B.a_gs;
+  cartesian_waypoints_planner_B.v_fb[1] = (R[6] - R[2]) /
+    cartesian_waypoints_planner_B.a_gs;
+  cartesian_waypoints_planner_B.v_fb[2] = (R[1] - R[3]) /
+    cartesian_waypoints_planner_B.a_gs;
+  if (rtIsNaN(cartesian_waypoints_planner_B.v_a.re) || rtIsInf
+      (cartesian_waypoints_planner_B.v_a.re)) {
+    cartesian_waypoints_planner_B.a_gs = (rtNaN);
+  } else if (cartesian_waypoints_planner_B.v_a.re == 0.0) {
+    cartesian_waypoints_planner_B.a_gs = 0.0;
   } else {
-    cartesian_waypoints_planner_B.a_jr = fmod
-      (cartesian_waypoints_planner_B.v_ie.re, 3.1415926535897931);
-    rEQ0 = (cartesian_waypoints_planner_B.a_jr == 0.0);
+    cartesian_waypoints_planner_B.a_gs = fmod
+      (cartesian_waypoints_planner_B.v_a.re, 3.1415926535897931);
+    rEQ0 = (cartesian_waypoints_planner_B.a_gs == 0.0);
     if (!rEQ0) {
-      cartesian_waypoints_planner_B.q = fabs
-        (cartesian_waypoints_planner_B.v_ie.re / 3.1415926535897931);
-      rEQ0 = !(fabs(cartesian_waypoints_planner_B.q - floor
-                    (cartesian_waypoints_planner_B.q + 0.5)) >
-               2.2204460492503131E-16 * cartesian_waypoints_planner_B.q);
+      cartesian_waypoints_planner_B.q_n = fabs
+        (cartesian_waypoints_planner_B.v_a.re / 3.1415926535897931);
+      rEQ0 = !(fabs(cartesian_waypoints_planner_B.q_n - floor
+                    (cartesian_waypoints_planner_B.q_n + 0.5)) >
+               2.2204460492503131E-16 * cartesian_waypoints_planner_B.q_n);
     }
 
     if (rEQ0) {
-      cartesian_waypoints_planner_B.a_jr = 0.0;
+      cartesian_waypoints_planner_B.a_gs = 0.0;
     } else {
-      if (cartesian_waypoints_planner_B.v_ie.re < 0.0) {
-        cartesian_waypoints_planner_B.a_jr += 3.1415926535897931;
+      if (cartesian_waypoints_planner_B.v_a.re < 0.0) {
+        cartesian_waypoints_planner_B.a_gs += 3.1415926535897931;
       }
     }
   }
 
-  rEQ0 = (cartesian_waypoints_planner_B.a_jr == 0.0);
+  rEQ0 = (cartesian_waypoints_planner_B.a_gs == 0.0);
   e = true;
-  cartesian_waypoints_planner_B.b_k_i = 0;
+  cartesian_waypoints_planner_B.b_k_e = 0;
   exitg1 = false;
-  while ((!exitg1) && (cartesian_waypoints_planner_B.b_k_i < 3)) {
-    if (!(cartesian_waypoints_planner_B.v_ox[cartesian_waypoints_planner_B.b_k_i]
+  while ((!exitg1) && (cartesian_waypoints_planner_B.b_k_e < 3)) {
+    if (!(cartesian_waypoints_planner_B.v_fb[cartesian_waypoints_planner_B.b_k_e]
           == 0.0)) {
       e = false;
       exitg1 = true;
     } else {
-      cartesian_waypoints_planner_B.b_k_i++;
+      cartesian_waypoints_planner_B.b_k_e++;
     }
   }
 
   if (rEQ0 || e) {
     loop_ub_tmp = (rEQ0 || e);
-    cartesian_waypoints_planner_B.loop_ub_h5 = loop_ub_tmp * 3 - 1;
-    if (0 <= cartesian_waypoints_planner_B.loop_ub_h5) {
+    cartesian_waypoints_planner_B.loop_ub_j = loop_ub_tmp * 3 - 1;
+    if (0 <= cartesian_waypoints_planner_B.loop_ub_j) {
       memset(&cartesian_waypoints_planner_B.vspecial_data[0], 0,
-             (cartesian_waypoints_planner_B.loop_ub_h5 + 1) * sizeof(real_T));
+             (cartesian_waypoints_planner_B.loop_ub_j + 1) * sizeof(real_T));
     }
 
     loop_ub_tmp--;
-    for (cartesian_waypoints_planner_B.loop_ub_h5 = 0;
-         cartesian_waypoints_planner_B.loop_ub_h5 <= loop_ub_tmp;
-         cartesian_waypoints_planner_B.loop_ub_h5++) {
+    for (cartesian_waypoints_planner_B.loop_ub_j = 0;
+         cartesian_waypoints_planner_B.loop_ub_j <= loop_ub_tmp;
+         cartesian_waypoints_planner_B.loop_ub_j++) {
       memset(&cartesian_waypoints_planner_B.b_I[0], 0, 9U * sizeof(real_T));
       cartesian_waypoints_planner_B.b_I[0] = 1.0;
       cartesian_waypoints_planner_B.b_I[4] = 1.0;
       cartesian_waypoints_planner_B.b_I[8] = 1.0;
       p = true;
-      for (cartesian_waypoints_planner_B.b_k_i = 0;
-           cartesian_waypoints_planner_B.b_k_i < 9;
-           cartesian_waypoints_planner_B.b_k_i++) {
-        cartesian_waypoints_planner_B.a_jr =
-          cartesian_waypoints_planner_B.b_I[cartesian_waypoints_planner_B.b_k_i]
-          - R[cartesian_waypoints_planner_B.b_k_i];
-        if (p && ((!rtIsInf(cartesian_waypoints_planner_B.a_jr)) && (!rtIsNaN
-              (cartesian_waypoints_planner_B.a_jr)))) {
+      for (cartesian_waypoints_planner_B.b_k_e = 0;
+           cartesian_waypoints_planner_B.b_k_e < 9;
+           cartesian_waypoints_planner_B.b_k_e++) {
+        cartesian_waypoints_planner_B.a_gs =
+          cartesian_waypoints_planner_B.b_I[cartesian_waypoints_planner_B.b_k_e]
+          - R[cartesian_waypoints_planner_B.b_k_e];
+        if (p && ((!rtIsInf(cartesian_waypoints_planner_B.a_gs)) && (!rtIsNaN
+              (cartesian_waypoints_planner_B.a_gs)))) {
         } else {
           p = false;
         }
 
-        cartesian_waypoints_planner_B.b_I[cartesian_waypoints_planner_B.b_k_i] =
-          cartesian_waypoints_planner_B.a_jr;
+        cartesian_waypoints_planner_B.b_I[cartesian_waypoints_planner_B.b_k_e] =
+          cartesian_waypoints_planner_B.a_gs;
       }
 
       if (p) {
         cartesian_waypoints_planner_svd(cartesian_waypoints_planner_B.b_I,
           cartesian_waypoints_planner_B.b_U,
           cartesian_waypoints_planner_B.vspecial_data,
-          cartesian_waypoints_planner_B.V_i);
+          cartesian_waypoints_planner_B.V_f);
       } else {
-        for (cartesian_waypoints_planner_B.b_k_i = 0;
-             cartesian_waypoints_planner_B.b_k_i < 9;
-             cartesian_waypoints_planner_B.b_k_i++) {
-          cartesian_waypoints_planner_B.V_i[cartesian_waypoints_planner_B.b_k_i]
+        for (cartesian_waypoints_planner_B.b_k_e = 0;
+             cartesian_waypoints_planner_B.b_k_e < 9;
+             cartesian_waypoints_planner_B.b_k_e++) {
+          cartesian_waypoints_planner_B.V_f[cartesian_waypoints_planner_B.b_k_e]
             = (rtNaN);
         }
       }
 
       cartesian_waypoints_planner_B.vspecial_data[0] =
-        cartesian_waypoints_planner_B.V_i[6];
+        cartesian_waypoints_planner_B.V_f[6];
       cartesian_waypoints_planner_B.vspecial_data[1] =
-        cartesian_waypoints_planner_B.V_i[7];
+        cartesian_waypoints_planner_B.V_f[7];
       cartesian_waypoints_planner_B.vspecial_data[2] =
-        cartesian_waypoints_planner_B.V_i[8];
+        cartesian_waypoints_planner_B.V_f[8];
     }
 
     loop_ub_tmp = 0;
     if (rEQ0 || e) {
-      for (cartesian_waypoints_planner_B.loop_ub_h5 = 0;
-           cartesian_waypoints_planner_B.loop_ub_h5 < 1;
-           cartesian_waypoints_planner_B.loop_ub_h5++) {
+      for (cartesian_waypoints_planner_B.loop_ub_j = 0;
+           cartesian_waypoints_planner_B.loop_ub_j < 1;
+           cartesian_waypoints_planner_B.loop_ub_j++) {
         loop_ub_tmp++;
       }
     }
 
-    for (cartesian_waypoints_planner_B.b_k_i = 0;
-         cartesian_waypoints_planner_B.b_k_i < loop_ub_tmp;
-         cartesian_waypoints_planner_B.b_k_i++) {
-      cartesian_waypoints_planner_B.v_ox[0] =
+    for (cartesian_waypoints_planner_B.b_k_e = 0;
+         cartesian_waypoints_planner_B.b_k_e < loop_ub_tmp;
+         cartesian_waypoints_planner_B.b_k_e++) {
+      cartesian_waypoints_planner_B.v_fb[0] =
         cartesian_waypoints_planner_B.vspecial_data[3 *
-        cartesian_waypoints_planner_B.b_k_i];
-      cartesian_waypoints_planner_B.v_ox[1] =
+        cartesian_waypoints_planner_B.b_k_e];
+      cartesian_waypoints_planner_B.v_fb[1] =
         cartesian_waypoints_planner_B.vspecial_data[3 *
-        cartesian_waypoints_planner_B.b_k_i + 1];
-      cartesian_waypoints_planner_B.v_ox[2] =
+        cartesian_waypoints_planner_B.b_k_e + 1];
+      cartesian_waypoints_planner_B.v_fb[2] =
         cartesian_waypoints_planner_B.vspecial_data[3 *
-        cartesian_waypoints_planner_B.b_k_i + 2];
+        cartesian_waypoints_planner_B.b_k_e + 2];
     }
   }
 
-  cartesian_waypoints_planner_B.a_jr = 1.0 / sqrt
-    ((cartesian_waypoints_planner_B.v_ox[0] *
-      cartesian_waypoints_planner_B.v_ox[0] +
-      cartesian_waypoints_planner_B.v_ox[1] *
-      cartesian_waypoints_planner_B.v_ox[1]) +
-     cartesian_waypoints_planner_B.v_ox[2] * cartesian_waypoints_planner_B.v_ox
+  cartesian_waypoints_planner_B.a_gs = 1.0 / sqrt
+    ((cartesian_waypoints_planner_B.v_fb[0] *
+      cartesian_waypoints_planner_B.v_fb[0] +
+      cartesian_waypoints_planner_B.v_fb[1] *
+      cartesian_waypoints_planner_B.v_fb[1]) +
+     cartesian_waypoints_planner_B.v_fb[2] * cartesian_waypoints_planner_B.v_fb
      [2]);
-  cartesian_waypoints_planner_B.v_ox[0] *= cartesian_waypoints_planner_B.a_jr;
-  cartesian_waypoints_planner_B.v_ox[1] *= cartesian_waypoints_planner_B.a_jr;
-  axang[0] = cartesian_waypoints_planner_B.v_ox[0];
-  axang[1] = cartesian_waypoints_planner_B.v_ox[1];
-  axang[2] = cartesian_waypoints_planner_B.v_ox[2] *
-    cartesian_waypoints_planner_B.a_jr;
-  axang[3] = cartesian_waypoints_planner_B.v_ie.re;
+  cartesian_waypoints_planner_B.v_fb[0] *= cartesian_waypoints_planner_B.a_gs;
+  cartesian_waypoints_planner_B.v_fb[1] *= cartesian_waypoints_planner_B.a_gs;
+  axang[0] = cartesian_waypoints_planner_B.v_fb[0];
+  axang[1] = cartesian_waypoints_planner_B.v_fb[1];
+  axang[2] = cartesian_waypoints_planner_B.v_fb[2] *
+    cartesian_waypoints_planner_B.a_gs;
+  axang[3] = cartesian_waypoints_planner_B.v_a.re;
 }
 
 static void cartesian_IKHelpers_computeCost(const real_T x[6],
@@ -4095,91 +4141,91 @@ static void cartesian_IKHelpers_computeCost(const real_T x[6],
   cartesian_waypoi_emxInit_char_T(&bodyName, 2);
   *b_args = args;
   treeInternal = args->Robot;
-  cartesian_waypoints_planner_B.b_j_o = bodyName->size[0] * bodyName->size[1];
+  cartesian_waypoints_planner_B.b_j_j = bodyName->size[0] * bodyName->size[1];
   bodyName->size[0] = 1;
   bodyName->size[1] = args->BodyName->size[1];
-  cartes_emxEnsureCapacity_char_T(bodyName, cartesian_waypoints_planner_B.b_j_o);
-  cartesian_waypoints_planner_B.loop_ub_l = args->BodyName->size[0] *
+  cartes_emxEnsureCapacity_char_T(bodyName, cartesian_waypoints_planner_B.b_j_j);
+  cartesian_waypoints_planner_B.loop_ub_o = args->BodyName->size[0] *
     args->BodyName->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_j_o = 0;
-       cartesian_waypoints_planner_B.b_j_o <=
-       cartesian_waypoints_planner_B.loop_ub_l;
-       cartesian_waypoints_planner_B.b_j_o++) {
-    bodyName->data[cartesian_waypoints_planner_B.b_j_o] = args->BodyName->
-      data[cartesian_waypoints_planner_B.b_j_o];
+  for (cartesian_waypoints_planner_B.b_j_j = 0;
+       cartesian_waypoints_planner_B.b_j_j <=
+       cartesian_waypoints_planner_B.loop_ub_o;
+       cartesian_waypoints_planner_B.b_j_j++) {
+    bodyName->data[cartesian_waypoints_planner_B.b_j_j] = args->BodyName->
+      data[cartesian_waypoints_planner_B.b_j_j];
   }
 
-  for (cartesian_waypoints_planner_B.b_j_o = 0;
-       cartesian_waypoints_planner_B.b_j_o < 16;
-       cartesian_waypoints_planner_B.b_j_o++) {
-    cartesian_waypoints_planner_B.Td[cartesian_waypoints_planner_B.b_j_o] =
-      args->Tform[cartesian_waypoints_planner_B.b_j_o];
+  for (cartesian_waypoints_planner_B.b_j_j = 0;
+       cartesian_waypoints_planner_B.b_j_j < 16;
+       cartesian_waypoints_planner_B.b_j_j++) {
+    cartesian_waypoints_planner_B.Td[cartesian_waypoints_planner_B.b_j_j] =
+      args->Tform[cartesian_waypoints_planner_B.b_j_j];
   }
 
-  for (cartesian_waypoints_planner_B.b_j_o = 0;
-       cartesian_waypoints_planner_B.b_j_o < 36;
-       cartesian_waypoints_planner_B.b_j_o++) {
-    W[cartesian_waypoints_planner_B.b_j_o] = args->
-      WeightMatrix[cartesian_waypoints_planner_B.b_j_o];
+  for (cartesian_waypoints_planner_B.b_j_j = 0;
+       cartesian_waypoints_planner_B.b_j_j < 36;
+       cartesian_waypoints_planner_B.b_j_j++) {
+    W[cartesian_waypoints_planner_B.b_j_j] = args->
+      WeightMatrix[cartesian_waypoints_planner_B.b_j_j];
   }
 
   cartesian_waypoi_emxInit_real_T(&J, 2);
   RigidBodyTree_efficientFKAndJac(treeInternal, x, bodyName,
     cartesian_waypoints_planner_B.T_data, cartesian_waypoints_planner_B.T_size,
     J);
-  cartesian_waypoints_planner_B.b_j_o = Jac->size[0] * Jac->size[1];
+  cartesian_waypoints_planner_B.b_j_j = Jac->size[0] * Jac->size[1];
   Jac->size[0] = 6;
   Jac->size[1] = J->size[1];
-  cartes_emxEnsureCapacity_real_T(Jac, cartesian_waypoints_planner_B.b_j_o);
-  cartesian_waypoints_planner_B.loop_ub_l = J->size[0] * J->size[1] - 1;
+  cartes_emxEnsureCapacity_real_T(Jac, cartesian_waypoints_planner_B.b_j_j);
+  cartesian_waypoints_planner_B.loop_ub_o = J->size[0] * J->size[1] - 1;
   cartesian_waypoi_emxFree_char_T(&bodyName);
-  for (cartesian_waypoints_planner_B.b_j_o = 0;
-       cartesian_waypoints_planner_B.b_j_o <=
-       cartesian_waypoints_planner_B.loop_ub_l;
-       cartesian_waypoints_planner_B.b_j_o++) {
-    Jac->data[cartesian_waypoints_planner_B.b_j_o] = -J->
-      data[cartesian_waypoints_planner_B.b_j_o];
+  for (cartesian_waypoints_planner_B.b_j_j = 0;
+       cartesian_waypoints_planner_B.b_j_j <=
+       cartesian_waypoints_planner_B.loop_ub_o;
+       cartesian_waypoints_planner_B.b_j_j++) {
+    Jac->data[cartesian_waypoints_planner_B.b_j_j] = -J->
+      data[cartesian_waypoints_planner_B.b_j_j];
   }
 
   cartesian_waypoi_emxFree_real_T(&J);
-  for (cartesian_waypoints_planner_B.b_j_o = 0;
-       cartesian_waypoints_planner_B.b_j_o < 3;
-       cartesian_waypoints_planner_B.b_j_o++) {
-    cartesian_waypoints_planner_B.T[3 * cartesian_waypoints_planner_B.b_j_o] =
-      cartesian_waypoints_planner_B.T_data[cartesian_waypoints_planner_B.b_j_o];
-    cartesian_waypoints_planner_B.n_o = 3 * cartesian_waypoints_planner_B.b_j_o
+  for (cartesian_waypoints_planner_B.b_j_j = 0;
+       cartesian_waypoints_planner_B.b_j_j < 3;
+       cartesian_waypoints_planner_B.b_j_j++) {
+    cartesian_waypoints_planner_B.T[3 * cartesian_waypoints_planner_B.b_j_j] =
+      cartesian_waypoints_planner_B.T_data[cartesian_waypoints_planner_B.b_j_j];
+    cartesian_waypoints_planner_B.n_h = 3 * cartesian_waypoints_planner_B.b_j_j
       + 1;
-    cartesian_waypoints_planner_B.T[cartesian_waypoints_planner_B.n_o] =
-      cartesian_waypoints_planner_B.T_data[((cartesian_waypoints_planner_B.b_j_o
+    cartesian_waypoints_planner_B.T[cartesian_waypoints_planner_B.n_h] =
+      cartesian_waypoints_planner_B.T_data[((cartesian_waypoints_planner_B.b_j_j
       + 1) + cartesian_waypoints_planner_B.T_size[0]) - 1];
-    cartesian_waypoints_planner_B.boffset_f = 3 *
-      cartesian_waypoints_planner_B.b_j_o + 2;
-    cartesian_waypoints_planner_B.T[cartesian_waypoints_planner_B.boffset_f] =
-      cartesian_waypoints_planner_B.T_data[((cartesian_waypoints_planner_B.b_j_o
+    cartesian_waypoints_planner_B.boffset_k = 3 *
+      cartesian_waypoints_planner_B.b_j_j + 2;
+    cartesian_waypoints_planner_B.T[cartesian_waypoints_planner_B.boffset_k] =
+      cartesian_waypoints_planner_B.T_data[((cartesian_waypoints_planner_B.b_j_j
       + 1) + (cartesian_waypoints_planner_B.T_size[0] << 1)) - 1];
-    for (cartesian_waypoints_planner_B.loop_ub_l = 0;
-         cartesian_waypoints_planner_B.loop_ub_l < 3;
-         cartesian_waypoints_planner_B.loop_ub_l++) {
+    for (cartesian_waypoints_planner_B.loop_ub_o = 0;
+         cartesian_waypoints_planner_B.loop_ub_o < 3;
+         cartesian_waypoints_planner_B.loop_ub_o++) {
       cartesian_waypoints_planner_B.Td_tmp =
-        cartesian_waypoints_planner_B.loop_ub_l + 3 *
-        cartesian_waypoints_planner_B.b_j_o;
-      cartesian_waypoints_planner_B.Td_p[cartesian_waypoints_planner_B.Td_tmp] =
+        cartesian_waypoints_planner_B.loop_ub_o + 3 *
+        cartesian_waypoints_planner_B.b_j_j;
+      cartesian_waypoints_planner_B.Td_a[cartesian_waypoints_planner_B.Td_tmp] =
         0.0;
-      cartesian_waypoints_planner_B.Td_p[cartesian_waypoints_planner_B.Td_tmp] +=
-        cartesian_waypoints_planner_B.T[3 * cartesian_waypoints_planner_B.b_j_o]
-        * cartesian_waypoints_planner_B.Td[cartesian_waypoints_planner_B.loop_ub_l];
-      cartesian_waypoints_planner_B.Td_p[cartesian_waypoints_planner_B.Td_tmp] +=
-        cartesian_waypoints_planner_B.T[cartesian_waypoints_planner_B.n_o] *
-        cartesian_waypoints_planner_B.Td[cartesian_waypoints_planner_B.loop_ub_l
+      cartesian_waypoints_planner_B.Td_a[cartesian_waypoints_planner_B.Td_tmp] +=
+        cartesian_waypoints_planner_B.T[3 * cartesian_waypoints_planner_B.b_j_j]
+        * cartesian_waypoints_planner_B.Td[cartesian_waypoints_planner_B.loop_ub_o];
+      cartesian_waypoints_planner_B.Td_a[cartesian_waypoints_planner_B.Td_tmp] +=
+        cartesian_waypoints_planner_B.T[cartesian_waypoints_planner_B.n_h] *
+        cartesian_waypoints_planner_B.Td[cartesian_waypoints_planner_B.loop_ub_o
         + 4];
-      cartesian_waypoints_planner_B.Td_p[cartesian_waypoints_planner_B.Td_tmp] +=
-        cartesian_waypoints_planner_B.T[cartesian_waypoints_planner_B.boffset_f]
-        * cartesian_waypoints_planner_B.Td[cartesian_waypoints_planner_B.loop_ub_l
+      cartesian_waypoints_planner_B.Td_a[cartesian_waypoints_planner_B.Td_tmp] +=
+        cartesian_waypoints_planner_B.T[cartesian_waypoints_planner_B.boffset_k]
+        * cartesian_waypoints_planner_B.Td[cartesian_waypoints_planner_B.loop_ub_o
         + 8];
     }
   }
 
-  cartesian_waypoints__rotm2axang(cartesian_waypoints_planner_B.Td_p,
+  cartesian_waypoints__rotm2axang(cartesian_waypoints_planner_B.Td_a,
     cartesian_waypoints_planner_B.v);
   cartesian_waypoints_planner_B.e[0] = cartesian_waypoints_planner_B.v[3] *
     cartesian_waypoints_planner_B.v[0];
@@ -4196,102 +4242,102 @@ static void cartesian_IKHelpers_computeCost(const real_T x[6],
   cartesian_waypoints_planner_B.e[5] = cartesian_waypoints_planner_B.Td[14] -
     cartesian_waypoints_planner_B.T_data[cartesian_waypoints_planner_B.T_size[0]
     * 3 + 2];
-  cartesian_waypoints_planner_B.b_j_o = args->ErrTemp->size[0];
+  cartesian_waypoints_planner_B.b_j_j = args->ErrTemp->size[0];
   args->ErrTemp->size[0] = 6;
   cartes_emxEnsureCapacity_real_T(args->ErrTemp,
-    cartesian_waypoints_planner_B.b_j_o);
-  for (cartesian_waypoints_planner_B.b_j_o = 0;
-       cartesian_waypoints_planner_B.b_j_o < 6;
-       cartesian_waypoints_planner_B.b_j_o++) {
-    args->ErrTemp->data[cartesian_waypoints_planner_B.b_j_o] =
-      cartesian_waypoints_planner_B.e[cartesian_waypoints_planner_B.b_j_o];
+    cartesian_waypoints_planner_B.b_j_j);
+  for (cartesian_waypoints_planner_B.b_j_j = 0;
+       cartesian_waypoints_planner_B.b_j_j < 6;
+       cartesian_waypoints_planner_B.b_j_j++) {
+    args->ErrTemp->data[cartesian_waypoints_planner_B.b_j_j] =
+      cartesian_waypoints_planner_B.e[cartesian_waypoints_planner_B.b_j_j];
   }
 
-  for (cartesian_waypoints_planner_B.b_j_o = 0;
-       cartesian_waypoints_planner_B.b_j_o < 6;
-       cartesian_waypoints_planner_B.b_j_o++) {
-    cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_o] = 0.0;
-    for (cartesian_waypoints_planner_B.loop_ub_l = 0;
-         cartesian_waypoints_planner_B.loop_ub_l < 6;
-         cartesian_waypoints_planner_B.loop_ub_l++) {
-      cartesian_waypoints_planner_B.s_g = W[6 *
-        cartesian_waypoints_planner_B.b_j_o +
-        cartesian_waypoints_planner_B.loop_ub_l] * (0.5 *
-        cartesian_waypoints_planner_B.e[cartesian_waypoints_planner_B.loop_ub_l])
-        + cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_o];
-      cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_o] =
-        cartesian_waypoints_planner_B.s_g;
+  for (cartesian_waypoints_planner_B.b_j_j = 0;
+       cartesian_waypoints_planner_B.b_j_j < 6;
+       cartesian_waypoints_planner_B.b_j_j++) {
+    cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_j] = 0.0;
+    for (cartesian_waypoints_planner_B.loop_ub_o = 0;
+         cartesian_waypoints_planner_B.loop_ub_o < 6;
+         cartesian_waypoints_planner_B.loop_ub_o++) {
+      cartesian_waypoints_planner_B.s_c = W[6 *
+        cartesian_waypoints_planner_B.b_j_j +
+        cartesian_waypoints_planner_B.loop_ub_o] * (0.5 *
+        cartesian_waypoints_planner_B.e[cartesian_waypoints_planner_B.loop_ub_o])
+        + cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_j];
+      cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_j] =
+        cartesian_waypoints_planner_B.s_c;
     }
   }
 
-  cartesian_waypoints_planner_B.s_g = 0.0;
-  for (cartesian_waypoints_planner_B.b_j_o = 0;
-       cartesian_waypoints_planner_B.b_j_o < 6;
-       cartesian_waypoints_planner_B.b_j_o++) {
-    cartesian_waypoints_planner_B.s_g +=
-      cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_o] *
-      cartesian_waypoints_planner_B.e[cartesian_waypoints_planner_B.b_j_o];
+  cartesian_waypoints_planner_B.s_c = 0.0;
+  for (cartesian_waypoints_planner_B.b_j_j = 0;
+       cartesian_waypoints_planner_B.b_j_j < 6;
+       cartesian_waypoints_planner_B.b_j_j++) {
+    cartesian_waypoints_planner_B.s_c +=
+      cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_j] *
+      cartesian_waypoints_planner_B.e[cartesian_waypoints_planner_B.b_j_j];
   }
 
-  args->CostTemp = cartesian_waypoints_planner_B.s_g;
-  for (cartesian_waypoints_planner_B.b_j_o = 0;
-       cartesian_waypoints_planner_B.b_j_o < 6;
-       cartesian_waypoints_planner_B.b_j_o++) {
-    cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_o] = 0.0;
-    for (cartesian_waypoints_planner_B.loop_ub_l = 0;
-         cartesian_waypoints_planner_B.loop_ub_l < 6;
-         cartesian_waypoints_planner_B.loop_ub_l++) {
-      cartesian_waypoints_planner_B.s_g = W[6 *
-        cartesian_waypoints_planner_B.b_j_o +
-        cartesian_waypoints_planner_B.loop_ub_l] *
-        cartesian_waypoints_planner_B.e[cartesian_waypoints_planner_B.loop_ub_l]
-        + cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_o];
-      cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_o] =
-        cartesian_waypoints_planner_B.s_g;
+  args->CostTemp = cartesian_waypoints_planner_B.s_c;
+  for (cartesian_waypoints_planner_B.b_j_j = 0;
+       cartesian_waypoints_planner_B.b_j_j < 6;
+       cartesian_waypoints_planner_B.b_j_j++) {
+    cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_j] = 0.0;
+    for (cartesian_waypoints_planner_B.loop_ub_o = 0;
+         cartesian_waypoints_planner_B.loop_ub_o < 6;
+         cartesian_waypoints_planner_B.loop_ub_o++) {
+      cartesian_waypoints_planner_B.s_c = W[6 *
+        cartesian_waypoints_planner_B.b_j_j +
+        cartesian_waypoints_planner_B.loop_ub_o] *
+        cartesian_waypoints_planner_B.e[cartesian_waypoints_planner_B.loop_ub_o]
+        + cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_j];
+      cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.b_j_j] =
+        cartesian_waypoints_planner_B.s_c;
     }
   }
 
   cartesian_waypoi_emxInit_real_T(&y, 2);
-  cartesian_waypoints_planner_B.n_o = Jac->size[1] - 1;
-  cartesian_waypoints_planner_B.b_j_o = y->size[0] * y->size[1];
+  cartesian_waypoints_planner_B.n_h = Jac->size[1] - 1;
+  cartesian_waypoints_planner_B.b_j_j = y->size[0] * y->size[1];
   y->size[0] = 1;
   y->size[1] = Jac->size[1];
-  cartes_emxEnsureCapacity_real_T(y, cartesian_waypoints_planner_B.b_j_o);
-  for (cartesian_waypoints_planner_B.b_j_o = 0;
-       cartesian_waypoints_planner_B.b_j_o <= cartesian_waypoints_planner_B.n_o;
-       cartesian_waypoints_planner_B.b_j_o++) {
-    cartesian_waypoints_planner_B.boffset_f =
-      cartesian_waypoints_planner_B.b_j_o * 6 - 1;
-    cartesian_waypoints_planner_B.s_g = 0.0;
-    for (cartesian_waypoints_planner_B.loop_ub_l = 0;
-         cartesian_waypoints_planner_B.loop_ub_l < 6;
-         cartesian_waypoints_planner_B.loop_ub_l++) {
-      cartesian_waypoints_planner_B.s_g += Jac->data
-        [(cartesian_waypoints_planner_B.boffset_f +
-          cartesian_waypoints_planner_B.loop_ub_l) + 1] *
-        cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.loop_ub_l];
+  cartes_emxEnsureCapacity_real_T(y, cartesian_waypoints_planner_B.b_j_j);
+  for (cartesian_waypoints_planner_B.b_j_j = 0;
+       cartesian_waypoints_planner_B.b_j_j <= cartesian_waypoints_planner_B.n_h;
+       cartesian_waypoints_planner_B.b_j_j++) {
+    cartesian_waypoints_planner_B.boffset_k =
+      cartesian_waypoints_planner_B.b_j_j * 6 - 1;
+    cartesian_waypoints_planner_B.s_c = 0.0;
+    for (cartesian_waypoints_planner_B.loop_ub_o = 0;
+         cartesian_waypoints_planner_B.loop_ub_o < 6;
+         cartesian_waypoints_planner_B.loop_ub_o++) {
+      cartesian_waypoints_planner_B.s_c += Jac->data
+        [(cartesian_waypoints_planner_B.boffset_k +
+          cartesian_waypoints_planner_B.loop_ub_o) + 1] *
+        cartesian_waypoints_planner_B.y[cartesian_waypoints_planner_B.loop_ub_o];
     }
 
-    y->data[cartesian_waypoints_planner_B.b_j_o] =
-      cartesian_waypoints_planner_B.s_g;
+    y->data[cartesian_waypoints_planner_B.b_j_j] =
+      cartesian_waypoints_planner_B.s_c;
   }
 
-  cartesian_waypoints_planner_B.b_j_o = args->GradTemp->size[0];
+  cartesian_waypoints_planner_B.b_j_j = args->GradTemp->size[0];
   args->GradTemp->size[0] = y->size[1];
   cartes_emxEnsureCapacity_real_T(args->GradTemp,
-    cartesian_waypoints_planner_B.b_j_o);
-  cartesian_waypoints_planner_B.loop_ub_l = y->size[1];
-  for (cartesian_waypoints_planner_B.b_j_o = 0;
-       cartesian_waypoints_planner_B.b_j_o <
-       cartesian_waypoints_planner_B.loop_ub_l;
-       cartesian_waypoints_planner_B.b_j_o++) {
-    args->GradTemp->data[cartesian_waypoints_planner_B.b_j_o] = y->
-      data[cartesian_waypoints_planner_B.b_j_o];
+    cartesian_waypoints_planner_B.b_j_j);
+  cartesian_waypoints_planner_B.loop_ub_o = y->size[1];
+  for (cartesian_waypoints_planner_B.b_j_j = 0;
+       cartesian_waypoints_planner_B.b_j_j <
+       cartesian_waypoints_planner_B.loop_ub_o;
+       cartesian_waypoints_planner_B.b_j_j++) {
+    args->GradTemp->data[cartesian_waypoints_planner_B.b_j_j] = y->
+      data[cartesian_waypoints_planner_B.b_j_j];
   }
 
   cartesian_waypoi_emxFree_real_T(&y);
-  cartesian_waypoints_planner_B.s_g = args->CostTemp;
-  *cost = cartesian_waypoints_planner_B.s_g;
+  cartesian_waypoints_planner_B.s_c = args->CostTemp;
+  *cost = cartesian_waypoints_planner_B.s_c;
 }
 
 static void cartesian_waypoints_planner_eye(real_T b_I[36])
@@ -4466,33 +4512,33 @@ static real_T cartesian_waypoints_pl_xnrm2_ev(int32_T n, const
     if (n == 1) {
       y = fabs(x->data[ix0 - 1]);
     } else {
-      cartesian_waypoints_planner_B.scale_o = 3.3121686421112381E-170;
-      cartesian_waypoints_planner_B.kend_c = ix0 + n;
-      for (cartesian_waypoints_planner_B.k_jk = ix0;
-           cartesian_waypoints_planner_B.k_jk <
-           cartesian_waypoints_planner_B.kend_c;
-           cartesian_waypoints_planner_B.k_jk++) {
-        cartesian_waypoints_planner_B.absxk_j = fabs(x->
-          data[cartesian_waypoints_planner_B.k_jk - 1]);
-        if (cartesian_waypoints_planner_B.absxk_j >
-            cartesian_waypoints_planner_B.scale_o) {
-          cartesian_waypoints_planner_B.t_p =
-            cartesian_waypoints_planner_B.scale_o /
-            cartesian_waypoints_planner_B.absxk_j;
-          y = y * cartesian_waypoints_planner_B.t_p *
-            cartesian_waypoints_planner_B.t_p + 1.0;
-          cartesian_waypoints_planner_B.scale_o =
-            cartesian_waypoints_planner_B.absxk_j;
+      cartesian_waypoints_planner_B.scale_i3 = 3.3121686421112381E-170;
+      cartesian_waypoints_planner_B.kend_d = ix0 + n;
+      for (cartesian_waypoints_planner_B.k_j1 = ix0;
+           cartesian_waypoints_planner_B.k_j1 <
+           cartesian_waypoints_planner_B.kend_d;
+           cartesian_waypoints_planner_B.k_j1++) {
+        cartesian_waypoints_planner_B.absxk_k = fabs(x->
+          data[cartesian_waypoints_planner_B.k_j1 - 1]);
+        if (cartesian_waypoints_planner_B.absxk_k >
+            cartesian_waypoints_planner_B.scale_i3) {
+          cartesian_waypoints_planner_B.t_f =
+            cartesian_waypoints_planner_B.scale_i3 /
+            cartesian_waypoints_planner_B.absxk_k;
+          y = y * cartesian_waypoints_planner_B.t_f *
+            cartesian_waypoints_planner_B.t_f + 1.0;
+          cartesian_waypoints_planner_B.scale_i3 =
+            cartesian_waypoints_planner_B.absxk_k;
         } else {
-          cartesian_waypoints_planner_B.t_p =
-            cartesian_waypoints_planner_B.absxk_j /
-            cartesian_waypoints_planner_B.scale_o;
-          y += cartesian_waypoints_planner_B.t_p *
-            cartesian_waypoints_planner_B.t_p;
+          cartesian_waypoints_planner_B.t_f =
+            cartesian_waypoints_planner_B.absxk_k /
+            cartesian_waypoints_planner_B.scale_i3;
+          y += cartesian_waypoints_planner_B.t_f *
+            cartesian_waypoints_planner_B.t_f;
         }
       }
 
-      y = cartesian_waypoints_planner_B.scale_o * sqrt(y);
+      y = cartesian_waypoints_planner_B.scale_i3 * sqrt(y);
     }
   }
 
@@ -4515,9 +4561,9 @@ static void cartesian_waypoints_plan_qrpf_e(const
   b_jpvt->size[0] = 1;
   b_jpvt->size[1] = jpvt->size[1];
   carte_emxEnsureCapacity_int32_T(b_jpvt, cartesian_waypoints_planner_B.kend);
-  cartesian_waypoints_planner_B.ix_p = jpvt->size[0] * jpvt->size[1] - 1;
+  cartesian_waypoints_planner_B.ix_f = jpvt->size[0] * jpvt->size[1] - 1;
   for (cartesian_waypoints_planner_B.kend = 0;
-       cartesian_waypoints_planner_B.kend <= cartesian_waypoints_planner_B.ix_p;
+       cartesian_waypoints_planner_B.kend <= cartesian_waypoints_planner_B.ix_f;
        cartesian_waypoints_planner_B.kend++) {
     b_jpvt->data[cartesian_waypoints_planner_B.kend] = jpvt->
       data[cartesian_waypoints_planner_B.kend];
@@ -4527,9 +4573,9 @@ static void cartesian_waypoints_plan_qrpf_e(const
   b_A->size[0] = A->size[0];
   b_A->size[1] = A->size[1];
   cartes_emxEnsureCapacity_real_T(b_A, cartesian_waypoints_planner_B.kend);
-  cartesian_waypoints_planner_B.ix_p = A->size[0] * A->size[1] - 1;
+  cartesian_waypoints_planner_B.ix_f = A->size[0] * A->size[1] - 1;
   for (cartesian_waypoints_planner_B.kend = 0;
-       cartesian_waypoints_planner_B.kend <= cartesian_waypoints_planner_B.ix_p;
+       cartesian_waypoints_planner_B.kend <= cartesian_waypoints_planner_B.ix_f;
        cartesian_waypoints_planner_B.kend++) {
     b_A->data[cartesian_waypoints_planner_B.kend] = A->
       data[cartesian_waypoints_planner_B.kend];
@@ -4538,18 +4584,18 @@ static void cartesian_waypoints_plan_qrpf_e(const
   cartesian_waypoi_emxInit_real_T(&work, 1);
   cartesian_waypoints_planner_B.ma = A->size[0];
   if (m < n) {
-    cartesian_waypoints_planner_B.m_ft = m;
+    cartesian_waypoints_planner_B.m_hj = m;
   } else {
-    cartesian_waypoints_planner_B.m_ft = n;
+    cartesian_waypoints_planner_B.m_hj = n;
   }
 
-  cartesian_waypoints_planner_B.minmn_p = cartesian_waypoints_planner_B.m_ft - 1;
+  cartesian_waypoints_planner_B.minmn_a = cartesian_waypoints_planner_B.m_hj - 1;
   cartesian_waypoints_planner_B.kend = work->size[0];
   work->size[0] = A->size[1];
   cartes_emxEnsureCapacity_real_T(work, cartesian_waypoints_planner_B.kend);
-  cartesian_waypoints_planner_B.ix_p = A->size[1];
+  cartesian_waypoints_planner_B.ix_f = A->size[1];
   for (cartesian_waypoints_planner_B.kend = 0;
-       cartesian_waypoints_planner_B.kend < cartesian_waypoints_planner_B.ix_p;
+       cartesian_waypoints_planner_B.kend < cartesian_waypoints_planner_B.ix_f;
        cartesian_waypoints_planner_B.kend++) {
     work->data[cartesian_waypoints_planner_B.kend] = 0.0;
   }
@@ -4558,9 +4604,9 @@ static void cartesian_waypoints_plan_qrpf_e(const
   cartesian_waypoints_planner_B.kend = vn1->size[0];
   vn1->size[0] = A->size[1];
   cartes_emxEnsureCapacity_real_T(vn1, cartesian_waypoints_planner_B.kend);
-  cartesian_waypoints_planner_B.ix_p = A->size[1];
+  cartesian_waypoints_planner_B.ix_f = A->size[1];
   for (cartesian_waypoints_planner_B.kend = 0;
-       cartesian_waypoints_planner_B.kend < cartesian_waypoints_planner_B.ix_p;
+       cartesian_waypoints_planner_B.kend < cartesian_waypoints_planner_B.ix_f;
        cartesian_waypoints_planner_B.kend++) {
     vn1->data[cartesian_waypoints_planner_B.kend] = 0.0;
   }
@@ -4569,17 +4615,17 @@ static void cartesian_waypoints_plan_qrpf_e(const
   cartesian_waypoints_planner_B.kend = vn2->size[0];
   vn2->size[0] = A->size[1];
   cartes_emxEnsureCapacity_real_T(vn2, cartesian_waypoints_planner_B.kend);
-  cartesian_waypoints_planner_B.ix_p = A->size[1];
+  cartesian_waypoints_planner_B.ix_f = A->size[1];
   for (cartesian_waypoints_planner_B.kend = 0;
-       cartesian_waypoints_planner_B.kend < cartesian_waypoints_planner_B.ix_p;
+       cartesian_waypoints_planner_B.kend < cartesian_waypoints_planner_B.ix_f;
        cartesian_waypoints_planner_B.kend++) {
     vn2->data[cartesian_waypoints_planner_B.kend] = 0.0;
   }
 
-  for (cartesian_waypoints_planner_B.m_ft = 0;
-       cartesian_waypoints_planner_B.m_ft < n;
-       cartesian_waypoints_planner_B.m_ft++) {
-    cartesian_waypoints_planner_B.pvt = cartesian_waypoints_planner_B.m_ft *
+  for (cartesian_waypoints_planner_B.m_hj = 0;
+       cartesian_waypoints_planner_B.m_hj < n;
+       cartesian_waypoints_planner_B.m_hj++) {
+    cartesian_waypoints_planner_B.pvt = cartesian_waypoints_planner_B.m_hj *
       cartesian_waypoints_planner_B.ma;
     cartesian_waypoints_planner_B.smax = 0.0;
     if (m >= 1) {
@@ -4587,7 +4633,7 @@ static void cartesian_waypoints_plan_qrpf_e(const
         cartesian_waypoints_planner_B.smax = fabs(A->
           data[cartesian_waypoints_planner_B.pvt]);
       } else {
-        cartesian_waypoints_planner_B.scale_a = 3.3121686421112381E-170;
+        cartesian_waypoints_planner_B.scale_i = 3.3121686421112381E-170;
         cartesian_waypoints_planner_B.kend = cartesian_waypoints_planner_B.pvt +
           m;
         for (cartesian_waypoints_planner_B.itemp =
@@ -4598,115 +4644,116 @@ static void cartesian_waypoints_plan_qrpf_e(const
           cartesian_waypoints_planner_B.absxk = fabs(A->
             data[cartesian_waypoints_planner_B.itemp - 1]);
           if (cartesian_waypoints_planner_B.absxk >
-              cartesian_waypoints_planner_B.scale_a) {
-            cartesian_waypoints_planner_B.t =
-              cartesian_waypoints_planner_B.scale_a /
+              cartesian_waypoints_planner_B.scale_i) {
+            cartesian_waypoints_planner_B.t_l =
+              cartesian_waypoints_planner_B.scale_i /
               cartesian_waypoints_planner_B.absxk;
             cartesian_waypoints_planner_B.smax =
               cartesian_waypoints_planner_B.smax *
-              cartesian_waypoints_planner_B.t * cartesian_waypoints_planner_B.t
-              + 1.0;
-            cartesian_waypoints_planner_B.scale_a =
+              cartesian_waypoints_planner_B.t_l *
+              cartesian_waypoints_planner_B.t_l + 1.0;
+            cartesian_waypoints_planner_B.scale_i =
               cartesian_waypoints_planner_B.absxk;
           } else {
-            cartesian_waypoints_planner_B.t =
+            cartesian_waypoints_planner_B.t_l =
               cartesian_waypoints_planner_B.absxk /
-              cartesian_waypoints_planner_B.scale_a;
+              cartesian_waypoints_planner_B.scale_i;
             cartesian_waypoints_planner_B.smax +=
-              cartesian_waypoints_planner_B.t * cartesian_waypoints_planner_B.t;
+              cartesian_waypoints_planner_B.t_l *
+              cartesian_waypoints_planner_B.t_l;
           }
         }
 
         cartesian_waypoints_planner_B.smax =
-          cartesian_waypoints_planner_B.scale_a * sqrt
+          cartesian_waypoints_planner_B.scale_i * sqrt
           (cartesian_waypoints_planner_B.smax);
       }
     }
 
-    vn1->data[cartesian_waypoints_planner_B.m_ft] =
+    vn1->data[cartesian_waypoints_planner_B.m_hj] =
       cartesian_waypoints_planner_B.smax;
-    vn2->data[cartesian_waypoints_planner_B.m_ft] = vn1->
-      data[cartesian_waypoints_planner_B.m_ft];
+    vn2->data[cartesian_waypoints_planner_B.m_hj] = vn1->
+      data[cartesian_waypoints_planner_B.m_hj];
   }
 
   cartesian_waypoi_emxInit_real_T(&c_x, 2);
-  for (cartesian_waypoints_planner_B.m_ft = 0;
-       cartesian_waypoints_planner_B.m_ft <=
-       cartesian_waypoints_planner_B.minmn_p; cartesian_waypoints_planner_B.m_ft
+  for (cartesian_waypoints_planner_B.m_hj = 0;
+       cartesian_waypoints_planner_B.m_hj <=
+       cartesian_waypoints_planner_B.minmn_a; cartesian_waypoints_planner_B.m_hj
        ++) {
-    cartesian_waypoints_planner_B.iy_m = cartesian_waypoints_planner_B.m_ft *
+    cartesian_waypoints_planner_B.iy_c = cartesian_waypoints_planner_B.m_hj *
       cartesian_waypoints_planner_B.ma;
-    cartesian_waypoints_planner_B.ii = cartesian_waypoints_planner_B.iy_m +
-      cartesian_waypoints_planner_B.m_ft;
-    cartesian_waypoints_planner_B.nmi = n - cartesian_waypoints_planner_B.m_ft;
-    cartesian_waypoints_planner_B.mmi = (m - cartesian_waypoints_planner_B.m_ft)
+    cartesian_waypoints_planner_B.ii = cartesian_waypoints_planner_B.iy_c +
+      cartesian_waypoints_planner_B.m_hj;
+    cartesian_waypoints_planner_B.nmi = n - cartesian_waypoints_planner_B.m_hj;
+    cartesian_waypoints_planner_B.mmi = (m - cartesian_waypoints_planner_B.m_hj)
       - 1;
     if (cartesian_waypoints_planner_B.nmi < 1) {
       cartesian_waypoints_planner_B.kend = 0;
     } else {
       cartesian_waypoints_planner_B.kend = 1;
       if (cartesian_waypoints_planner_B.nmi > 1) {
-        cartesian_waypoints_planner_B.ix_p = cartesian_waypoints_planner_B.m_ft;
+        cartesian_waypoints_planner_B.ix_f = cartesian_waypoints_planner_B.m_hj;
         cartesian_waypoints_planner_B.smax = fabs(vn1->
-          data[cartesian_waypoints_planner_B.m_ft]);
+          data[cartesian_waypoints_planner_B.m_hj]);
         for (cartesian_waypoints_planner_B.itemp = 2;
              cartesian_waypoints_planner_B.itemp <=
              cartesian_waypoints_planner_B.nmi;
              cartesian_waypoints_planner_B.itemp++) {
-          cartesian_waypoints_planner_B.ix_p++;
-          cartesian_waypoints_planner_B.scale_a = fabs(vn1->
-            data[cartesian_waypoints_planner_B.ix_p]);
-          if (cartesian_waypoints_planner_B.scale_a >
+          cartesian_waypoints_planner_B.ix_f++;
+          cartesian_waypoints_planner_B.scale_i = fabs(vn1->
+            data[cartesian_waypoints_planner_B.ix_f]);
+          if (cartesian_waypoints_planner_B.scale_i >
               cartesian_waypoints_planner_B.smax) {
             cartesian_waypoints_planner_B.kend =
               cartesian_waypoints_planner_B.itemp;
             cartesian_waypoints_planner_B.smax =
-              cartesian_waypoints_planner_B.scale_a;
+              cartesian_waypoints_planner_B.scale_i;
           }
         }
       }
     }
 
-    cartesian_waypoints_planner_B.pvt = (cartesian_waypoints_planner_B.m_ft +
+    cartesian_waypoints_planner_B.pvt = (cartesian_waypoints_planner_B.m_hj +
       cartesian_waypoints_planner_B.kend) - 1;
     if (cartesian_waypoints_planner_B.pvt + 1 !=
-        cartesian_waypoints_planner_B.m_ft + 1) {
+        cartesian_waypoints_planner_B.m_hj + 1) {
       cartesian_waypoints_planner_B.kend = c_x->size[0] * c_x->size[1];
       c_x->size[0] = b_A->size[0];
       c_x->size[1] = b_A->size[1];
       cartes_emxEnsureCapacity_real_T(c_x, cartesian_waypoints_planner_B.kend);
-      cartesian_waypoints_planner_B.ix_p = b_A->size[0] * b_A->size[1] - 1;
+      cartesian_waypoints_planner_B.ix_f = b_A->size[0] * b_A->size[1] - 1;
       for (cartesian_waypoints_planner_B.kend = 0;
            cartesian_waypoints_planner_B.kend <=
-           cartesian_waypoints_planner_B.ix_p;
+           cartesian_waypoints_planner_B.ix_f;
            cartesian_waypoints_planner_B.kend++) {
         c_x->data[cartesian_waypoints_planner_B.kend] = b_A->
           data[cartesian_waypoints_planner_B.kend];
       }
 
-      cartesian_waypoints_planner_B.ix_p = cartesian_waypoints_planner_B.pvt *
+      cartesian_waypoints_planner_B.ix_f = cartesian_waypoints_planner_B.pvt *
         cartesian_waypoints_planner_B.ma;
       for (cartesian_waypoints_planner_B.itemp = 0;
            cartesian_waypoints_planner_B.itemp < m;
            cartesian_waypoints_planner_B.itemp++) {
-        cartesian_waypoints_planner_B.scale_a = c_x->
-          data[cartesian_waypoints_planner_B.ix_p];
-        c_x->data[cartesian_waypoints_planner_B.ix_p] = c_x->
-          data[cartesian_waypoints_planner_B.iy_m];
-        c_x->data[cartesian_waypoints_planner_B.iy_m] =
-          cartesian_waypoints_planner_B.scale_a;
-        cartesian_waypoints_planner_B.ix_p++;
-        cartesian_waypoints_planner_B.iy_m++;
+        cartesian_waypoints_planner_B.scale_i = c_x->
+          data[cartesian_waypoints_planner_B.ix_f];
+        c_x->data[cartesian_waypoints_planner_B.ix_f] = c_x->
+          data[cartesian_waypoints_planner_B.iy_c];
+        c_x->data[cartesian_waypoints_planner_B.iy_c] =
+          cartesian_waypoints_planner_B.scale_i;
+        cartesian_waypoints_planner_B.ix_f++;
+        cartesian_waypoints_planner_B.iy_c++;
       }
 
       cartesian_waypoints_planner_B.kend = b_A->size[0] * b_A->size[1];
       b_A->size[0] = c_x->size[0];
       b_A->size[1] = c_x->size[1];
       cartes_emxEnsureCapacity_real_T(b_A, cartesian_waypoints_planner_B.kend);
-      cartesian_waypoints_planner_B.ix_p = c_x->size[0] * c_x->size[1] - 1;
+      cartesian_waypoints_planner_B.ix_f = c_x->size[0] * c_x->size[1] - 1;
       for (cartesian_waypoints_planner_B.kend = 0;
            cartesian_waypoints_planner_B.kend <=
-           cartesian_waypoints_planner_B.ix_p;
+           cartesian_waypoints_planner_B.ix_f;
            cartesian_waypoints_planner_B.kend++) {
         b_A->data[cartesian_waypoints_planner_B.kend] = c_x->
           data[cartesian_waypoints_planner_B.kend];
@@ -4715,25 +4762,25 @@ static void cartesian_waypoints_plan_qrpf_e(const
       cartesian_waypoints_planner_B.itemp = b_jpvt->
         data[cartesian_waypoints_planner_B.pvt];
       b_jpvt->data[cartesian_waypoints_planner_B.pvt] = b_jpvt->
-        data[cartesian_waypoints_planner_B.m_ft];
-      b_jpvt->data[cartesian_waypoints_planner_B.m_ft] =
+        data[cartesian_waypoints_planner_B.m_hj];
+      b_jpvt->data[cartesian_waypoints_planner_B.m_hj] =
         cartesian_waypoints_planner_B.itemp;
       vn1->data[cartesian_waypoints_planner_B.pvt] = vn1->
-        data[cartesian_waypoints_planner_B.m_ft];
+        data[cartesian_waypoints_planner_B.m_hj];
       vn2->data[cartesian_waypoints_planner_B.pvt] = vn2->
-        data[cartesian_waypoints_planner_B.m_ft];
+        data[cartesian_waypoints_planner_B.m_hj];
     }
 
-    if (cartesian_waypoints_planner_B.m_ft + 1 < m) {
+    if (cartesian_waypoints_planner_B.m_hj + 1 < m) {
       cartesian_waypoints_planner_B.pvt = cartesian_waypoints_planner_B.ii + 2;
       cartesian_waypoints_planner_B.kend = c_x->size[0] * c_x->size[1];
       c_x->size[0] = b_A->size[0];
       c_x->size[1] = b_A->size[1];
       cartes_emxEnsureCapacity_real_T(c_x, cartesian_waypoints_planner_B.kend);
-      cartesian_waypoints_planner_B.ix_p = b_A->size[0] * b_A->size[1] - 1;
+      cartesian_waypoints_planner_B.ix_f = b_A->size[0] * b_A->size[1] - 1;
       for (cartesian_waypoints_planner_B.kend = 0;
            cartesian_waypoints_planner_B.kend <=
-           cartesian_waypoints_planner_B.ix_p;
+           cartesian_waypoints_planner_B.ix_f;
            cartesian_waypoints_planner_B.kend++) {
         c_x->data[cartesian_waypoints_planner_B.kend] = b_A->
           data[cartesian_waypoints_planner_B.kend];
@@ -4741,24 +4788,24 @@ static void cartesian_waypoints_plan_qrpf_e(const
 
       cartesian_waypoints_planner_B.smax = b_A->
         data[cartesian_waypoints_planner_B.ii];
-      tau->data[cartesian_waypoints_planner_B.m_ft] = 0.0;
+      tau->data[cartesian_waypoints_planner_B.m_hj] = 0.0;
       if (cartesian_waypoints_planner_B.mmi + 1 > 0) {
-        cartesian_waypoints_planner_B.scale_a = cartesian_waypoints_pl_xnrm2_ev
+        cartesian_waypoints_planner_B.scale_i = cartesian_waypoints_pl_xnrm2_ev
           (cartesian_waypoints_planner_B.mmi, b_A,
            cartesian_waypoints_planner_B.ii + 2);
-        if (cartesian_waypoints_planner_B.scale_a != 0.0) {
-          cartesian_waypoints_planner_B.scale_a = rt_hypotd_snf(b_A->
+        if (cartesian_waypoints_planner_B.scale_i != 0.0) {
+          cartesian_waypoints_planner_B.scale_i = rt_hypotd_snf(b_A->
             data[cartesian_waypoints_planner_B.ii],
-            cartesian_waypoints_planner_B.scale_a);
+            cartesian_waypoints_planner_B.scale_i);
           if (b_A->data[cartesian_waypoints_planner_B.ii] >= 0.0) {
-            cartesian_waypoints_planner_B.scale_a =
-              -cartesian_waypoints_planner_B.scale_a;
+            cartesian_waypoints_planner_B.scale_i =
+              -cartesian_waypoints_planner_B.scale_i;
           }
 
-          if (fabs(cartesian_waypoints_planner_B.scale_a) <
+          if (fabs(cartesian_waypoints_planner_B.scale_i) <
               1.0020841800044864E-292) {
             cartesian_waypoints_planner_B.kend = -1;
-            cartesian_waypoints_planner_B.ix_p =
+            cartesian_waypoints_planner_B.ix_f =
               (cartesian_waypoints_planner_B.ii +
                cartesian_waypoints_planner_B.mmi) + 1;
             do {
@@ -4766,37 +4813,37 @@ static void cartesian_waypoints_plan_qrpf_e(const
               for (cartesian_waypoints_planner_B.itemp =
                    cartesian_waypoints_planner_B.pvt;
                    cartesian_waypoints_planner_B.itemp <=
-                   cartesian_waypoints_planner_B.ix_p;
+                   cartesian_waypoints_planner_B.ix_f;
                    cartesian_waypoints_planner_B.itemp++) {
                 c_x->data[cartesian_waypoints_planner_B.itemp - 1] *=
                   9.9792015476736E+291;
               }
 
-              cartesian_waypoints_planner_B.scale_a *= 9.9792015476736E+291;
+              cartesian_waypoints_planner_B.scale_i *= 9.9792015476736E+291;
               cartesian_waypoints_planner_B.smax *= 9.9792015476736E+291;
-            } while (!(fabs(cartesian_waypoints_planner_B.scale_a) >=
+            } while (!(fabs(cartesian_waypoints_planner_B.scale_i) >=
                        1.0020841800044864E-292));
 
-            cartesian_waypoints_planner_B.scale_a = rt_hypotd_snf
+            cartesian_waypoints_planner_B.scale_i = rt_hypotd_snf
               (cartesian_waypoints_planner_B.smax,
                cartesian_waypoints_pl_xnrm2_ev(cartesian_waypoints_planner_B.mmi,
                 c_x, cartesian_waypoints_planner_B.ii + 2));
             if (cartesian_waypoints_planner_B.smax >= 0.0) {
-              cartesian_waypoints_planner_B.scale_a =
-                -cartesian_waypoints_planner_B.scale_a;
+              cartesian_waypoints_planner_B.scale_i =
+                -cartesian_waypoints_planner_B.scale_i;
             }
 
-            tau->data[cartesian_waypoints_planner_B.m_ft] =
-              (cartesian_waypoints_planner_B.scale_a -
+            tau->data[cartesian_waypoints_planner_B.m_hj] =
+              (cartesian_waypoints_planner_B.scale_i -
                cartesian_waypoints_planner_B.smax) /
-              cartesian_waypoints_planner_B.scale_a;
+              cartesian_waypoints_planner_B.scale_i;
             cartesian_waypoints_planner_B.smax = 1.0 /
               (cartesian_waypoints_planner_B.smax -
-               cartesian_waypoints_planner_B.scale_a);
+               cartesian_waypoints_planner_B.scale_i);
             for (cartesian_waypoints_planner_B.itemp =
                  cartesian_waypoints_planner_B.pvt;
                  cartesian_waypoints_planner_B.itemp <=
-                 cartesian_waypoints_planner_B.ix_p;
+                 cartesian_waypoints_planner_B.ix_f;
                  cartesian_waypoints_planner_B.itemp++) {
               c_x->data[cartesian_waypoints_planner_B.itemp - 1] *=
                 cartesian_waypoints_planner_B.smax;
@@ -4806,47 +4853,47 @@ static void cartesian_waypoints_plan_qrpf_e(const
                  cartesian_waypoints_planner_B.itemp <=
                  cartesian_waypoints_planner_B.kend;
                  cartesian_waypoints_planner_B.itemp++) {
-              cartesian_waypoints_planner_B.scale_a *= 1.0020841800044864E-292;
+              cartesian_waypoints_planner_B.scale_i *= 1.0020841800044864E-292;
             }
 
             cartesian_waypoints_planner_B.smax =
-              cartesian_waypoints_planner_B.scale_a;
+              cartesian_waypoints_planner_B.scale_i;
           } else {
-            tau->data[cartesian_waypoints_planner_B.m_ft] =
-              (cartesian_waypoints_planner_B.scale_a - b_A->
+            tau->data[cartesian_waypoints_planner_B.m_hj] =
+              (cartesian_waypoints_planner_B.scale_i - b_A->
                data[cartesian_waypoints_planner_B.ii]) /
-              cartesian_waypoints_planner_B.scale_a;
+              cartesian_waypoints_planner_B.scale_i;
             cartesian_waypoints_planner_B.smax = 1.0 / (b_A->
               data[cartesian_waypoints_planner_B.ii] -
-              cartesian_waypoints_planner_B.scale_a);
+              cartesian_waypoints_planner_B.scale_i);
             cartesian_waypoints_planner_B.kend = c_x->size[0] * c_x->size[1];
             c_x->size[0] = b_A->size[0];
             c_x->size[1] = b_A->size[1];
             cartes_emxEnsureCapacity_real_T(c_x,
               cartesian_waypoints_planner_B.kend);
-            cartesian_waypoints_planner_B.ix_p = b_A->size[0] * b_A->size[1] - 1;
+            cartesian_waypoints_planner_B.ix_f = b_A->size[0] * b_A->size[1] - 1;
             for (cartesian_waypoints_planner_B.kend = 0;
                  cartesian_waypoints_planner_B.kend <=
-                 cartesian_waypoints_planner_B.ix_p;
+                 cartesian_waypoints_planner_B.ix_f;
                  cartesian_waypoints_planner_B.kend++) {
               c_x->data[cartesian_waypoints_planner_B.kend] = b_A->
                 data[cartesian_waypoints_planner_B.kend];
             }
 
-            cartesian_waypoints_planner_B.b_a0 =
+            cartesian_waypoints_planner_B.b_kb =
               (cartesian_waypoints_planner_B.ii +
                cartesian_waypoints_planner_B.mmi) + 1;
             for (cartesian_waypoints_planner_B.itemp =
                  cartesian_waypoints_planner_B.pvt;
                  cartesian_waypoints_planner_B.itemp <=
-                 cartesian_waypoints_planner_B.b_a0;
+                 cartesian_waypoints_planner_B.b_kb;
                  cartesian_waypoints_planner_B.itemp++) {
               c_x->data[cartesian_waypoints_planner_B.itemp - 1] *=
                 cartesian_waypoints_planner_B.smax;
             }
 
             cartesian_waypoints_planner_B.smax =
-              cartesian_waypoints_planner_B.scale_a;
+              cartesian_waypoints_planner_B.scale_i;
           }
         }
       }
@@ -4855,10 +4902,10 @@ static void cartesian_waypoints_plan_qrpf_e(const
       b_A->size[0] = c_x->size[0];
       b_A->size[1] = c_x->size[1];
       cartes_emxEnsureCapacity_real_T(b_A, cartesian_waypoints_planner_B.kend);
-      cartesian_waypoints_planner_B.ix_p = c_x->size[0] * c_x->size[1] - 1;
+      cartesian_waypoints_planner_B.ix_f = c_x->size[0] * c_x->size[1] - 1;
       for (cartesian_waypoints_planner_B.kend = 0;
            cartesian_waypoints_planner_B.kend <=
-           cartesian_waypoints_planner_B.ix_p;
+           cartesian_waypoints_planner_B.ix_f;
            cartesian_waypoints_planner_B.kend++) {
         b_A->data[cartesian_waypoints_planner_B.kend] = c_x->
           data[cartesian_waypoints_planner_B.kend];
@@ -4867,10 +4914,10 @@ static void cartesian_waypoints_plan_qrpf_e(const
       b_A->data[cartesian_waypoints_planner_B.ii] =
         cartesian_waypoints_planner_B.smax;
     } else {
-      tau->data[cartesian_waypoints_planner_B.m_ft] = 0.0;
+      tau->data[cartesian_waypoints_planner_B.m_hj] = 0.0;
     }
 
-    if (cartesian_waypoints_planner_B.m_ft + 1 < n) {
+    if (cartesian_waypoints_planner_B.m_hj + 1 < n) {
       cartesian_waypoints_planner_B.smax = b_A->
         data[cartesian_waypoints_planner_B.ii];
       b_A->data[cartesian_waypoints_planner_B.ii] = 1.0;
@@ -4880,16 +4927,16 @@ static void cartesian_waypoints_plan_qrpf_e(const
       c_x->size[0] = b_A->size[0];
       c_x->size[1] = b_A->size[1];
       cartes_emxEnsureCapacity_real_T(c_x, cartesian_waypoints_planner_B.kend);
-      cartesian_waypoints_planner_B.ix_p = b_A->size[0] * b_A->size[1] - 1;
+      cartesian_waypoints_planner_B.ix_f = b_A->size[0] * b_A->size[1] - 1;
       for (cartesian_waypoints_planner_B.kend = 0;
            cartesian_waypoints_planner_B.kend <=
-           cartesian_waypoints_planner_B.ix_p;
+           cartesian_waypoints_planner_B.ix_f;
            cartesian_waypoints_planner_B.kend++) {
         c_x->data[cartesian_waypoints_planner_B.kend] = b_A->
           data[cartesian_waypoints_planner_B.kend];
       }
 
-      if (tau->data[cartesian_waypoints_planner_B.m_ft] != 0.0) {
+      if (tau->data[cartesian_waypoints_planner_B.m_hj] != 0.0) {
         cartesian_waypoints_planner_B.itemp = cartesian_waypoints_planner_B.mmi;
         cartesian_waypoints_planner_B.kend = cartesian_waypoints_planner_B.ii +
           cartesian_waypoints_planner_B.mmi;
@@ -4902,15 +4949,15 @@ static void cartesian_waypoints_plan_qrpf_e(const
         cartesian_waypoints_planner_B.nmi--;
         exitg2 = false;
         while ((!exitg2) && (cartesian_waypoints_planner_B.nmi > 0)) {
-          cartesian_waypoints_planner_B.ix_p =
+          cartesian_waypoints_planner_B.ix_f =
             (cartesian_waypoints_planner_B.nmi - 1) *
             cartesian_waypoints_planner_B.ma + cartesian_waypoints_planner_B.pvt;
           cartesian_waypoints_planner_B.kend =
-            cartesian_waypoints_planner_B.ix_p;
+            cartesian_waypoints_planner_B.ix_f;
           do {
             exitg1 = 0;
             if (cartesian_waypoints_planner_B.kend <=
-                cartesian_waypoints_planner_B.ix_p +
+                cartesian_waypoints_planner_B.ix_f +
                 cartesian_waypoints_planner_B.itemp) {
               if (b_A->data[cartesian_waypoints_planner_B.kend - 1] != 0.0) {
                 exitg1 = 1;
@@ -4934,10 +4981,10 @@ static void cartesian_waypoints_plan_qrpf_e(const
         c_x->size[0] = b_A->size[0];
         c_x->size[1] = b_A->size[1];
         cartes_emxEnsureCapacity_real_T(c_x, cartesian_waypoints_planner_B.kend);
-        cartesian_waypoints_planner_B.ix_p = b_A->size[0] * b_A->size[1] - 1;
+        cartesian_waypoints_planner_B.ix_f = b_A->size[0] * b_A->size[1] - 1;
         for (cartesian_waypoints_planner_B.kend = 0;
              cartesian_waypoints_planner_B.kend <=
-             cartesian_waypoints_planner_B.ix_p;
+             cartesian_waypoints_planner_B.ix_f;
              cartesian_waypoints_planner_B.kend++) {
           c_x->data[cartesian_waypoints_planner_B.kend] = b_A->
             data[cartesian_waypoints_planner_B.kend];
@@ -4956,70 +5003,70 @@ static void cartesian_waypoints_plan_qrpf_e(const
             work->data[cartesian_waypoints_planner_B.kend] = 0.0;
           }
 
-          cartesian_waypoints_planner_B.iy_m = 0;
-          cartesian_waypoints_planner_B.b_a0 = cartesian_waypoints_planner_B.ma *
+          cartesian_waypoints_planner_B.iy_c = 0;
+          cartesian_waypoints_planner_B.b_kb = cartesian_waypoints_planner_B.ma *
             cartesian_waypoints_planner_B.lastc +
             cartesian_waypoints_planner_B.pvt;
           for (cartesian_waypoints_planner_B.nmi =
                cartesian_waypoints_planner_B.pvt;
                cartesian_waypoints_planner_B.ma < 0 ?
                cartesian_waypoints_planner_B.nmi >=
-               cartesian_waypoints_planner_B.b_a0 :
+               cartesian_waypoints_planner_B.b_kb :
                cartesian_waypoints_planner_B.nmi <=
-               cartesian_waypoints_planner_B.b_a0;
+               cartesian_waypoints_planner_B.b_kb;
                cartesian_waypoints_planner_B.nmi +=
                cartesian_waypoints_planner_B.ma) {
-            cartesian_waypoints_planner_B.ix_p =
+            cartesian_waypoints_planner_B.ix_f =
               cartesian_waypoints_planner_B.ii;
-            cartesian_waypoints_planner_B.scale_a = 0.0;
-            cartesian_waypoints_planner_B.d_k =
+            cartesian_waypoints_planner_B.scale_i = 0.0;
+            cartesian_waypoints_planner_B.d_j =
               cartesian_waypoints_planner_B.nmi +
               cartesian_waypoints_planner_B.itemp;
             for (cartesian_waypoints_planner_B.kend =
                  cartesian_waypoints_planner_B.nmi;
                  cartesian_waypoints_planner_B.kend <=
-                 cartesian_waypoints_planner_B.d_k;
+                 cartesian_waypoints_planner_B.d_j;
                  cartesian_waypoints_planner_B.kend++) {
-              cartesian_waypoints_planner_B.scale_a += c_x->
+              cartesian_waypoints_planner_B.scale_i += c_x->
                 data[cartesian_waypoints_planner_B.kend - 1] * c_x->
-                data[cartesian_waypoints_planner_B.ix_p];
-              cartesian_waypoints_planner_B.ix_p++;
+                data[cartesian_waypoints_planner_B.ix_f];
+              cartesian_waypoints_planner_B.ix_f++;
             }
 
-            work->data[cartesian_waypoints_planner_B.iy_m] +=
-              cartesian_waypoints_planner_B.scale_a;
-            cartesian_waypoints_planner_B.iy_m++;
+            work->data[cartesian_waypoints_planner_B.iy_c] +=
+              cartesian_waypoints_planner_B.scale_i;
+            cartesian_waypoints_planner_B.iy_c++;
           }
         }
 
-        if (!(-tau->data[cartesian_waypoints_planner_B.m_ft] == 0.0)) {
-          cartesian_waypoints_planner_B.iy_m = 0;
+        if (!(-tau->data[cartesian_waypoints_planner_B.m_hj] == 0.0)) {
+          cartesian_waypoints_planner_B.iy_c = 0;
           for (cartesian_waypoints_planner_B.kend = 0;
                cartesian_waypoints_planner_B.kend <=
                cartesian_waypoints_planner_B.lastc;
                cartesian_waypoints_planner_B.kend++) {
-            if (work->data[cartesian_waypoints_planner_B.iy_m] != 0.0) {
-              cartesian_waypoints_planner_B.scale_a = work->
-                data[cartesian_waypoints_planner_B.iy_m] * -tau->
-                data[cartesian_waypoints_planner_B.m_ft];
-              cartesian_waypoints_planner_B.ix_p =
+            if (work->data[cartesian_waypoints_planner_B.iy_c] != 0.0) {
+              cartesian_waypoints_planner_B.scale_i = work->
+                data[cartesian_waypoints_planner_B.iy_c] * -tau->
+                data[cartesian_waypoints_planner_B.m_hj];
+              cartesian_waypoints_planner_B.ix_f =
                 cartesian_waypoints_planner_B.ii;
-              cartesian_waypoints_planner_B.b_a0 =
+              cartesian_waypoints_planner_B.b_kb =
                 cartesian_waypoints_planner_B.itemp +
                 cartesian_waypoints_planner_B.pvt;
               for (cartesian_waypoints_planner_B.nmi =
                    cartesian_waypoints_planner_B.pvt;
                    cartesian_waypoints_planner_B.nmi <=
-                   cartesian_waypoints_planner_B.b_a0;
+                   cartesian_waypoints_planner_B.b_kb;
                    cartesian_waypoints_planner_B.nmi++) {
                 c_x->data[cartesian_waypoints_planner_B.nmi - 1] += c_x->
-                  data[cartesian_waypoints_planner_B.ix_p] *
-                  cartesian_waypoints_planner_B.scale_a;
-                cartesian_waypoints_planner_B.ix_p++;
+                  data[cartesian_waypoints_planner_B.ix_f] *
+                  cartesian_waypoints_planner_B.scale_i;
+                cartesian_waypoints_planner_B.ix_f++;
               }
             }
 
-            cartesian_waypoints_planner_B.iy_m++;
+            cartesian_waypoints_planner_B.iy_c++;
             cartesian_waypoints_planner_B.pvt +=
               cartesian_waypoints_planner_B.ma;
           }
@@ -5030,10 +5077,10 @@ static void cartesian_waypoints_plan_qrpf_e(const
       b_A->size[0] = c_x->size[0];
       b_A->size[1] = c_x->size[1];
       cartes_emxEnsureCapacity_real_T(b_A, cartesian_waypoints_planner_B.kend);
-      cartesian_waypoints_planner_B.ix_p = c_x->size[0] * c_x->size[1] - 1;
+      cartesian_waypoints_planner_B.ix_f = c_x->size[0] * c_x->size[1] - 1;
       for (cartesian_waypoints_planner_B.kend = 0;
            cartesian_waypoints_planner_B.kend <=
-           cartesian_waypoints_planner_B.ix_p;
+           cartesian_waypoints_planner_B.ix_f;
            cartesian_waypoints_planner_B.kend++) {
         b_A->data[cartesian_waypoints_planner_B.kend] = c_x->
           data[cartesian_waypoints_planner_B.kend];
@@ -5043,11 +5090,11 @@ static void cartesian_waypoints_plan_qrpf_e(const
         cartesian_waypoints_planner_B.smax;
     }
 
-    for (cartesian_waypoints_planner_B.ii = cartesian_waypoints_planner_B.m_ft +
+    for (cartesian_waypoints_planner_B.ii = cartesian_waypoints_planner_B.m_hj +
          2; cartesian_waypoints_planner_B.ii <= n;
          cartesian_waypoints_planner_B.ii++) {
       cartesian_waypoints_planner_B.pvt = ((cartesian_waypoints_planner_B.ii - 1)
-        * cartesian_waypoints_planner_B.ma + cartesian_waypoints_planner_B.m_ft)
+        * cartesian_waypoints_planner_B.ma + cartesian_waypoints_planner_B.m_hj)
         + 1;
       if (vn1->data[cartesian_waypoints_planner_B.ii - 1] != 0.0) {
         cartesian_waypoints_planner_B.smax = fabs(b_A->
@@ -5060,22 +5107,22 @@ static void cartesian_waypoints_plan_qrpf_e(const
           cartesian_waypoints_planner_B.smax = 0.0;
         }
 
-        cartesian_waypoints_planner_B.scale_a = vn1->
+        cartesian_waypoints_planner_B.scale_i = vn1->
           data[cartesian_waypoints_planner_B.ii - 1] / vn2->
           data[cartesian_waypoints_planner_B.ii - 1];
-        cartesian_waypoints_planner_B.scale_a =
-          cartesian_waypoints_planner_B.scale_a *
-          cartesian_waypoints_planner_B.scale_a *
+        cartesian_waypoints_planner_B.scale_i =
+          cartesian_waypoints_planner_B.scale_i *
+          cartesian_waypoints_planner_B.scale_i *
           cartesian_waypoints_planner_B.smax;
-        if (cartesian_waypoints_planner_B.scale_a <= 1.4901161193847656E-8) {
-          if (cartesian_waypoints_planner_B.m_ft + 1 < m) {
+        if (cartesian_waypoints_planner_B.scale_i <= 1.4901161193847656E-8) {
+          if (cartesian_waypoints_planner_B.m_hj + 1 < m) {
             cartesian_waypoints_planner_B.smax = 0.0;
             if (cartesian_waypoints_planner_B.mmi >= 1) {
               if (cartesian_waypoints_planner_B.mmi == 1) {
                 cartesian_waypoints_planner_B.smax = fabs(b_A->
                   data[cartesian_waypoints_planner_B.pvt]);
               } else {
-                cartesian_waypoints_planner_B.scale_a = 3.3121686421112381E-170;
+                cartesian_waypoints_planner_B.scale_i = 3.3121686421112381E-170;
                 cartesian_waypoints_planner_B.kend =
                   cartesian_waypoints_planner_B.pvt +
                   cartesian_waypoints_planner_B.mmi;
@@ -5087,28 +5134,28 @@ static void cartesian_waypoints_plan_qrpf_e(const
                   cartesian_waypoints_planner_B.absxk = fabs(b_A->
                     data[cartesian_waypoints_planner_B.itemp - 1]);
                   if (cartesian_waypoints_planner_B.absxk >
-                      cartesian_waypoints_planner_B.scale_a) {
-                    cartesian_waypoints_planner_B.t =
-                      cartesian_waypoints_planner_B.scale_a /
+                      cartesian_waypoints_planner_B.scale_i) {
+                    cartesian_waypoints_planner_B.t_l =
+                      cartesian_waypoints_planner_B.scale_i /
                       cartesian_waypoints_planner_B.absxk;
                     cartesian_waypoints_planner_B.smax =
                       cartesian_waypoints_planner_B.smax *
-                      cartesian_waypoints_planner_B.t *
-                      cartesian_waypoints_planner_B.t + 1.0;
-                    cartesian_waypoints_planner_B.scale_a =
+                      cartesian_waypoints_planner_B.t_l *
+                      cartesian_waypoints_planner_B.t_l + 1.0;
+                    cartesian_waypoints_planner_B.scale_i =
                       cartesian_waypoints_planner_B.absxk;
                   } else {
-                    cartesian_waypoints_planner_B.t =
+                    cartesian_waypoints_planner_B.t_l =
                       cartesian_waypoints_planner_B.absxk /
-                      cartesian_waypoints_planner_B.scale_a;
+                      cartesian_waypoints_planner_B.scale_i;
                     cartesian_waypoints_planner_B.smax +=
-                      cartesian_waypoints_planner_B.t *
-                      cartesian_waypoints_planner_B.t;
+                      cartesian_waypoints_planner_B.t_l *
+                      cartesian_waypoints_planner_B.t_l;
                   }
                 }
 
                 cartesian_waypoints_planner_B.smax =
-                  cartesian_waypoints_planner_B.scale_a * sqrt
+                  cartesian_waypoints_planner_B.scale_i * sqrt
                   (cartesian_waypoints_planner_B.smax);
               }
             }
@@ -5423,7 +5470,7 @@ static void cartesian_waypoints_pl_mldivide(const
              cartesian_waypoints_planner_B.minmana <=
              cartesian_waypoints_planner_B.nb;
              cartesian_waypoints_planner_B.minmana++) {
-          cartesian_waypoints_planner_B.tol_p = B_0->data[B_0->size[0] *
+          cartesian_waypoints_planner_B.tol_n = B_0->data[B_0->size[0] *
             cartesian_waypoints_planner_B.minmana +
             cartesian_waypoints_planner_B.b_i_k];
           B_0->data[cartesian_waypoints_planner_B.b_i_k + B_0->size[0] *
@@ -5432,7 +5479,7 @@ static void cartesian_waypoints_pl_mldivide(const
             cartesian_waypoints_planner_B.na];
           B_0->data[cartesian_waypoints_planner_B.na + B_0->size[0] *
             cartesian_waypoints_planner_B.minmana] =
-            cartesian_waypoints_planner_B.tol_p;
+            cartesian_waypoints_planner_B.tol_n;
         }
       }
     }
@@ -5443,17 +5490,17 @@ static void cartesian_waypoints_pl_mldivide(const
            cartesian_waypoints_planner_B.minmana <=
            cartesian_waypoints_planner_B.nb;
            cartesian_waypoints_planner_B.minmana++) {
-        cartesian_waypoints_planner_B.m_k = B->size[0] *
+        cartesian_waypoints_planner_B.m_p = B->size[0] *
           cartesian_waypoints_planner_B.minmana - 1;
         for (cartesian_waypoints_planner_B.minmn = 0;
              cartesian_waypoints_planner_B.minmn <
              cartesian_waypoints_planner_B.rankR;
              cartesian_waypoints_planner_B.minmn++) {
-          cartesian_waypoints_planner_B.nb_d = c_A->size[0] *
+          cartesian_waypoints_planner_B.nb_m = c_A->size[0] *
             cartesian_waypoints_planner_B.minmn - 1;
           cartesian_waypoints_planner_B.b_i_k =
             (cartesian_waypoints_planner_B.minmn +
-             cartesian_waypoints_planner_B.m_k) + 1;
+             cartesian_waypoints_planner_B.m_p) + 1;
           if (B_0->data[cartesian_waypoints_planner_B.b_i_k] != 0.0) {
             for (cartesian_waypoints_planner_B.na =
                  cartesian_waypoints_planner_B.minmn + 2;
@@ -5462,11 +5509,11 @@ static void cartesian_waypoints_pl_mldivide(const
                  cartesian_waypoints_planner_B.na++) {
               cartesian_waypoints_planner_B.mn =
                 cartesian_waypoints_planner_B.na +
-                cartesian_waypoints_planner_B.m_k;
+                cartesian_waypoints_planner_B.m_p;
               B_0->data[cartesian_waypoints_planner_B.mn] -= B_0->
                 data[cartesian_waypoints_planner_B.b_i_k] * c_A->
                 data[cartesian_waypoints_planner_B.na +
-                cartesian_waypoints_planner_B.nb_d];
+                cartesian_waypoints_planner_B.nb_m];
             }
           }
         }
@@ -5597,18 +5644,18 @@ static void cartesian_waypoints_pl_mldivide(const
     }
 
     if (cartesian_waypoints_planner_B.minmn > 0) {
-      cartesian_waypoints_planner_B.tol_p = 2.2204460492503131E-15 *
+      cartesian_waypoints_planner_B.tol_n = 2.2204460492503131E-15 *
         static_cast<real_T>(cartesian_waypoints_planner_B.minmana);
-      if (1.4901161193847656E-8 < cartesian_waypoints_planner_B.tol_p) {
-        cartesian_waypoints_planner_B.tol_p = 1.4901161193847656E-8;
+      if (1.4901161193847656E-8 < cartesian_waypoints_planner_B.tol_n) {
+        cartesian_waypoints_planner_B.tol_n = 1.4901161193847656E-8;
       }
 
-      cartesian_waypoints_planner_B.tol_p *= fabs(c_A->data[0]);
+      cartesian_waypoints_planner_B.tol_n *= fabs(c_A->data[0]);
       while ((cartesian_waypoints_planner_B.rankR <
               cartesian_waypoints_planner_B.minmn) && (!(fabs(c_A->data
                 [c_A->size[0] * cartesian_waypoints_planner_B.rankR +
                 cartesian_waypoints_planner_B.rankR]) <=
-               cartesian_waypoints_planner_B.tol_p))) {
+               cartesian_waypoints_planner_B.tol_n))) {
         cartesian_waypoints_planner_B.rankR++;
       }
     }
@@ -5642,8 +5689,8 @@ static void cartesian_waypoints_pl_mldivide(const
         data[cartesian_waypoints_planner_B.b_i_k];
     }
 
-    cartesian_waypoints_planner_B.m_k = c_A->size[0];
-    cartesian_waypoints_planner_B.nb_d = B->size[1] - 1;
+    cartesian_waypoints_planner_B.m_p = c_A->size[0];
+    cartesian_waypoints_planner_B.nb_m = B->size[1] - 1;
     cartesian_waypoints_planner_B.minmn = c_A->size[0];
     cartesian_waypoints_planner_B.minmana = c_A->size[1];
     if (cartesian_waypoints_planner_B.minmn <
@@ -5660,39 +5707,39 @@ static void cartesian_waypoints_pl_mldivide(const
       if (b_tau->data[cartesian_waypoints_planner_B.minmana] != 0.0) {
         for (cartesian_waypoints_planner_B.minmn = 0;
              cartesian_waypoints_planner_B.minmn <=
-             cartesian_waypoints_planner_B.nb_d;
+             cartesian_waypoints_planner_B.nb_m;
              cartesian_waypoints_planner_B.minmn++) {
-          cartesian_waypoints_planner_B.tol_p = B_0->data[B_0->size[0] *
+          cartesian_waypoints_planner_B.tol_n = B_0->data[B_0->size[0] *
             cartesian_waypoints_planner_B.minmn +
             cartesian_waypoints_planner_B.minmana];
           for (cartesian_waypoints_planner_B.na =
                cartesian_waypoints_planner_B.minmana + 2;
                cartesian_waypoints_planner_B.na <=
-               cartesian_waypoints_planner_B.m_k;
+               cartesian_waypoints_planner_B.m_p;
                cartesian_waypoints_planner_B.na++) {
-            cartesian_waypoints_planner_B.tol_p += c_A->data[(c_A->size[0] *
+            cartesian_waypoints_planner_B.tol_n += c_A->data[(c_A->size[0] *
               cartesian_waypoints_planner_B.minmana +
               cartesian_waypoints_planner_B.na) - 1] * B_0->data[(B_0->size[0] *
               cartesian_waypoints_planner_B.minmn +
               cartesian_waypoints_planner_B.na) - 1];
           }
 
-          cartesian_waypoints_planner_B.tol_p *= b_tau->
+          cartesian_waypoints_planner_B.tol_n *= b_tau->
             data[cartesian_waypoints_planner_B.minmana];
-          if (cartesian_waypoints_planner_B.tol_p != 0.0) {
+          if (cartesian_waypoints_planner_B.tol_n != 0.0) {
             B_0->data[cartesian_waypoints_planner_B.minmana + B_0->size[0] *
               cartesian_waypoints_planner_B.minmn] -=
-              cartesian_waypoints_planner_B.tol_p;
+              cartesian_waypoints_planner_B.tol_n;
             for (cartesian_waypoints_planner_B.b_i_k =
                  cartesian_waypoints_planner_B.minmana + 2;
                  cartesian_waypoints_planner_B.b_i_k <=
-                 cartesian_waypoints_planner_B.m_k;
+                 cartesian_waypoints_planner_B.m_p;
                  cartesian_waypoints_planner_B.b_i_k++) {
               B_0->data[(cartesian_waypoints_planner_B.b_i_k + B_0->size[0] *
                          cartesian_waypoints_planner_B.minmn) - 1] -= c_A->data
                 [(c_A->size[0] * cartesian_waypoints_planner_B.minmana +
                   cartesian_waypoints_planner_B.b_i_k) - 1] *
-                cartesian_waypoints_planner_B.tol_p;
+                cartesian_waypoints_planner_B.tol_n;
             }
           }
         }
@@ -5970,26 +6017,26 @@ static boolean_T cartesian_wa_isPositiveDefinite(const real_T B[36])
   cartesian_waypoints_planner_B.c_A_size_idx_1 = 6;
   memcpy(&cartesian_waypoints_planner_B.c_A_data[0], &B[0], 36U * sizeof(real_T));
   cartesian_waypoints_planner_B.b_info = 0;
-  cartesian_waypoints_planner_B.b_j_j = 1;
+  cartesian_waypoints_planner_B.b_j_m = 1;
   cartesian_waypoi_emxInit_real_T(&b_x, 2);
   exitg1 = false;
-  while ((!exitg1) && (cartesian_waypoints_planner_B.b_j_j - 1 < 6)) {
-    cartesian_waypoints_planner_B.jm1 = cartesian_waypoints_planner_B.b_j_j - 2;
-    cartesian_waypoints_planner_B.idxAjj = ((cartesian_waypoints_planner_B.b_j_j
-      - 1) * 6 + cartesian_waypoints_planner_B.b_j_j) - 1;
+  while ((!exitg1) && (cartesian_waypoints_planner_B.b_j_m - 1 < 6)) {
+    cartesian_waypoints_planner_B.jm1 = cartesian_waypoints_planner_B.b_j_m - 2;
+    cartesian_waypoints_planner_B.idxAjj = ((cartesian_waypoints_planner_B.b_j_m
+      - 1) * 6 + cartesian_waypoints_planner_B.b_j_m) - 1;
     cartesian_waypoints_planner_B.ssq = 0.0;
-    if (cartesian_waypoints_planner_B.b_j_j - 1 >= 1) {
-      cartesian_waypoints_planner_B.ix_k = cartesian_waypoints_planner_B.b_j_j -
+    if (cartesian_waypoints_planner_B.b_j_m - 1 >= 1) {
+      cartesian_waypoints_planner_B.ix_g = cartesian_waypoints_planner_B.b_j_m -
         1;
-      cartesian_waypoints_planner_B.iy = cartesian_waypoints_planner_B.b_j_j - 1;
-      for (cartesian_waypoints_planner_B.k_d = 0;
-           cartesian_waypoints_planner_B.k_d <=
-           cartesian_waypoints_planner_B.jm1; cartesian_waypoints_planner_B.k_d
+      cartesian_waypoints_planner_B.iy = cartesian_waypoints_planner_B.b_j_m - 1;
+      for (cartesian_waypoints_planner_B.k_e = 0;
+           cartesian_waypoints_planner_B.k_e <=
+           cartesian_waypoints_planner_B.jm1; cartesian_waypoints_planner_B.k_e
            ++) {
         cartesian_waypoints_planner_B.ssq +=
-          cartesian_waypoints_planner_B.c_A_data[cartesian_waypoints_planner_B.ix_k]
+          cartesian_waypoints_planner_B.c_A_data[cartesian_waypoints_planner_B.ix_g]
           * cartesian_waypoints_planner_B.c_A_data[cartesian_waypoints_planner_B.iy];
-        cartesian_waypoints_planner_B.ix_k += 6;
+        cartesian_waypoints_planner_B.ix_g += 6;
         cartesian_waypoints_planner_B.iy += 6;
       }
     }
@@ -6001,29 +6048,29 @@ static boolean_T cartesian_wa_isPositiveDefinite(const real_T B[36])
       cartesian_waypoints_planner_B.ssq = sqrt(cartesian_waypoints_planner_B.ssq);
       cartesian_waypoints_planner_B.c_A_data[cartesian_waypoints_planner_B.idxAjj]
         = cartesian_waypoints_planner_B.ssq;
-      if (cartesian_waypoints_planner_B.b_j_j < 6) {
-        if (cartesian_waypoints_planner_B.b_j_j - 1 != 0) {
-          cartesian_waypoints_planner_B.ix_k =
-            cartesian_waypoints_planner_B.b_j_j - 1;
+      if (cartesian_waypoints_planner_B.b_j_m < 6) {
+        if (cartesian_waypoints_planner_B.b_j_m - 1 != 0) {
+          cartesian_waypoints_planner_B.ix_g =
+            cartesian_waypoints_planner_B.b_j_m - 1;
           cartesian_waypoints_planner_B.jm1 =
-            (cartesian_waypoints_planner_B.b_j_j - 2) * 6 +
-            cartesian_waypoints_planner_B.b_j_j;
-          for (cartesian_waypoints_planner_B.k_d =
-               cartesian_waypoints_planner_B.b_j_j + 1;
-               cartesian_waypoints_planner_B.k_d <=
+            (cartesian_waypoints_planner_B.b_j_m - 2) * 6 +
+            cartesian_waypoints_planner_B.b_j_m;
+          for (cartesian_waypoints_planner_B.k_e =
+               cartesian_waypoints_planner_B.b_j_m + 1;
+               cartesian_waypoints_planner_B.k_e <=
                cartesian_waypoints_planner_B.jm1 + 1;
-               cartesian_waypoints_planner_B.k_d += 6) {
+               cartesian_waypoints_planner_B.k_e += 6) {
             cartesian_waypoints_planner_B.c =
-              -cartesian_waypoints_planner_B.c_A_data[cartesian_waypoints_planner_B.ix_k];
+              -cartesian_waypoints_planner_B.c_A_data[cartesian_waypoints_planner_B.ix_g];
             cartesian_waypoints_planner_B.iy =
               cartesian_waypoints_planner_B.idxAjj + 1;
-            cartesian_waypoints_planner_B.d_l =
-              cartesian_waypoints_planner_B.k_d -
-              cartesian_waypoints_planner_B.b_j_j;
+            cartesian_waypoints_planner_B.d_o =
+              cartesian_waypoints_planner_B.k_e -
+              cartesian_waypoints_planner_B.b_j_m;
             for (cartesian_waypoints_planner_B.ia =
-                 cartesian_waypoints_planner_B.k_d;
+                 cartesian_waypoints_planner_B.k_e;
                  cartesian_waypoints_planner_B.ia <=
-                 cartesian_waypoints_planner_B.d_l + 5;
+                 cartesian_waypoints_planner_B.d_o + 5;
                  cartesian_waypoints_planner_B.ia++) {
               cartesian_waypoints_planner_B.c_A_data[cartesian_waypoints_planner_B.iy]
                 +=
@@ -6032,51 +6079,51 @@ static boolean_T cartesian_wa_isPositiveDefinite(const real_T B[36])
               cartesian_waypoints_planner_B.iy++;
             }
 
-            cartesian_waypoints_planner_B.ix_k += 6;
+            cartesian_waypoints_planner_B.ix_g += 6;
           }
         }
 
         cartesian_waypoints_planner_B.ssq = 1.0 /
           cartesian_waypoints_planner_B.ssq;
-        cartesian_waypoints_planner_B.ix_k = b_x->size[0] * b_x->size[1];
+        cartesian_waypoints_planner_B.ix_g = b_x->size[0] * b_x->size[1];
         b_x->size[0] = 6;
         b_x->size[1] = 6;
-        cartes_emxEnsureCapacity_real_T(b_x, cartesian_waypoints_planner_B.ix_k);
+        cartes_emxEnsureCapacity_real_T(b_x, cartesian_waypoints_planner_B.ix_g);
         cartesian_waypoints_planner_B.c_A_size_idx_0 =
           cartesian_waypoints_planner_B.c_A_size_idx_0 *
           cartesian_waypoints_planner_B.c_A_size_idx_1 - 1;
-        for (cartesian_waypoints_planner_B.ix_k = 0;
-             cartesian_waypoints_planner_B.ix_k <=
+        for (cartesian_waypoints_planner_B.ix_g = 0;
+             cartesian_waypoints_planner_B.ix_g <=
              cartesian_waypoints_planner_B.c_A_size_idx_0;
-             cartesian_waypoints_planner_B.ix_k++) {
-          b_x->data[cartesian_waypoints_planner_B.ix_k] =
-            cartesian_waypoints_planner_B.c_A_data[cartesian_waypoints_planner_B.ix_k];
+             cartesian_waypoints_planner_B.ix_g++) {
+          b_x->data[cartesian_waypoints_planner_B.ix_g] =
+            cartesian_waypoints_planner_B.c_A_data[cartesian_waypoints_planner_B.ix_g];
         }
 
         cartesian_waypoints_planner_B.jm1 = cartesian_waypoints_planner_B.idxAjj
-          - cartesian_waypoints_planner_B.b_j_j;
-        for (cartesian_waypoints_planner_B.k_d =
+          - cartesian_waypoints_planner_B.b_j_m;
+        for (cartesian_waypoints_planner_B.k_e =
              cartesian_waypoints_planner_B.idxAjj + 2;
-             cartesian_waypoints_planner_B.k_d <=
+             cartesian_waypoints_planner_B.k_e <=
              cartesian_waypoints_planner_B.jm1 + 7;
-             cartesian_waypoints_planner_B.k_d++) {
-          b_x->data[cartesian_waypoints_planner_B.k_d - 1] *=
+             cartesian_waypoints_planner_B.k_e++) {
+          b_x->data[cartesian_waypoints_planner_B.k_e - 1] *=
             cartesian_waypoints_planner_B.ssq;
         }
 
         cartesian_waypoints_planner_B.c_A_size_idx_0 = b_x->size[0];
         cartesian_waypoints_planner_B.c_A_size_idx_1 = b_x->size[1];
-        for (cartesian_waypoints_planner_B.ix_k = 0;
-             cartesian_waypoints_planner_B.ix_k < 36;
-             cartesian_waypoints_planner_B.ix_k++) {
-          cartesian_waypoints_planner_B.c_A_data[cartesian_waypoints_planner_B.ix_k]
-            = b_x->data[cartesian_waypoints_planner_B.ix_k];
+        for (cartesian_waypoints_planner_B.ix_g = 0;
+             cartesian_waypoints_planner_B.ix_g < 36;
+             cartesian_waypoints_planner_B.ix_g++) {
+          cartesian_waypoints_planner_B.c_A_data[cartesian_waypoints_planner_B.ix_g]
+            = b_x->data[cartesian_waypoints_planner_B.ix_g];
         }
       }
 
-      cartesian_waypoints_planner_B.b_j_j++;
+      cartesian_waypoints_planner_B.b_j_m++;
     } else {
-      cartesian_waypoints_planner_B.b_info = cartesian_waypoints_planner_B.b_j_j;
+      cartesian_waypoints_planner_B.b_info = cartesian_waypoints_planner_B.b_j_m;
       exitg1 = true;
     }
   }
@@ -6197,10 +6244,10 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
   boolean_T exitg3;
   boolean_T guard1 = false;
   boolean_T guard2 = false;
-  for (cartesian_waypoints_planner_B.i_j = 0; cartesian_waypoints_planner_B.i_j <
-       6; cartesian_waypoints_planner_B.i_j++) {
-    cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.i_j] =
-      obj->SeedInternal[cartesian_waypoints_planner_B.i_j];
+  for (cartesian_waypoints_planner_B.i_e = 0; cartesian_waypoints_planner_B.i_e <
+       6; cartesian_waypoints_planner_B.i_e++) {
+    cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.i_e] =
+      obj->SeedInternal[cartesian_waypoints_planner_B.i_e];
   }
 
   cartesian_waypoi_emxInit_real_T(&unusedU1, 2);
@@ -6211,15 +6258,15 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
     cartesian_waypoints_planner_B.unusedU0, unusedU1, &b);
   obj->ExtraArgs = b;
   args = obj->ExtraArgs;
-  cartesian_waypoints_planner_B.b_i_f = grad->size[0];
+  cartesian_waypoints_planner_B.b_i_h = grad->size[0];
   grad->size[0] = args->GradTemp->size[0];
-  cartes_emxEnsureCapacity_real_T(grad, cartesian_waypoints_planner_B.b_i_f);
-  cartesian_waypoints_planner_B.i_j = args->GradTemp->size[0];
-  for (cartesian_waypoints_planner_B.b_i_f = 0;
-       cartesian_waypoints_planner_B.b_i_f < cartesian_waypoints_planner_B.i_j;
-       cartesian_waypoints_planner_B.b_i_f++) {
-    grad->data[cartesian_waypoints_planner_B.b_i_f] = args->GradTemp->
-      data[cartesian_waypoints_planner_B.b_i_f];
+  cartes_emxEnsureCapacity_real_T(grad, cartesian_waypoints_planner_B.b_i_h);
+  cartesian_waypoints_planner_B.i_e = args->GradTemp->size[0];
+  for (cartesian_waypoints_planner_B.b_i_h = 0;
+       cartesian_waypoints_planner_B.b_i_h < cartesian_waypoints_planner_B.i_e;
+       cartesian_waypoints_planner_B.b_i_h++) {
+    grad->data[cartesian_waypoints_planner_B.b_i_h] = args->GradTemp->
+      data[cartesian_waypoints_planner_B.b_i_h];
   }
 
   cartesian_waypoints_planner_eye(cartesian_waypoints_planner_B.unusedU0);
@@ -6230,115 +6277,115 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
   cartesian_waypoi_emxInit_real_T(&alpha, 1);
   cartesian_waypo_emxInit_int32_T(&ii, 1);
   if (obj->ConstraintsOn) {
-    cartesian_waypoints_planner_B.b_i_f = A->size[0] * A->size[1];
+    cartesian_waypoints_planner_B.b_i_h = A->size[0] * A->size[1];
     A->size[0] = obj->ConstraintMatrix->size[0];
     A->size[1] = obj->ConstraintMatrix->size[1];
-    cartes_emxEnsureCapacity_real_T(A, cartesian_waypoints_planner_B.b_i_f);
-    cartesian_waypoints_planner_B.i_j = obj->ConstraintMatrix->size[0] *
+    cartes_emxEnsureCapacity_real_T(A, cartesian_waypoints_planner_B.b_i_h);
+    cartesian_waypoints_planner_B.i_e = obj->ConstraintMatrix->size[0] *
       obj->ConstraintMatrix->size[1] - 1;
-    for (cartesian_waypoints_planner_B.b_i_f = 0;
-         cartesian_waypoints_planner_B.b_i_f <=
-         cartesian_waypoints_planner_B.i_j; cartesian_waypoints_planner_B.b_i_f
+    for (cartesian_waypoints_planner_B.b_i_h = 0;
+         cartesian_waypoints_planner_B.b_i_h <=
+         cartesian_waypoints_planner_B.i_e; cartesian_waypoints_planner_B.b_i_h
          ++) {
-      A->data[cartesian_waypoints_planner_B.b_i_f] = obj->ConstraintMatrix->
-        data[cartesian_waypoints_planner_B.b_i_f];
+      A->data[cartesian_waypoints_planner_B.b_i_h] = obj->ConstraintMatrix->
+        data[cartesian_waypoints_planner_B.b_i_h];
     }
 
-    cartesian_waypoints_planner_B.m_i = A->size[1] - 1;
+    cartesian_waypoints_planner_B.m_k = A->size[1] - 1;
     cartesian_waypoints_planner_B.inner = A->size[0] - 1;
-    cartesian_waypoints_planner_B.b_i_f = alpha->size[0];
+    cartesian_waypoints_planner_B.b_i_h = alpha->size[0];
     alpha->size[0] = A->size[1];
-    cartes_emxEnsureCapacity_real_T(alpha, cartesian_waypoints_planner_B.b_i_f);
-    for (cartesian_waypoints_planner_B.b_i_f = 0;
-         cartesian_waypoints_planner_B.b_i_f <=
-         cartesian_waypoints_planner_B.m_i; cartesian_waypoints_planner_B.b_i_f
+    cartes_emxEnsureCapacity_real_T(alpha, cartesian_waypoints_planner_B.b_i_h);
+    for (cartesian_waypoints_planner_B.b_i_h = 0;
+         cartesian_waypoints_planner_B.b_i_h <=
+         cartesian_waypoints_planner_B.m_k; cartesian_waypoints_planner_B.b_i_h
          ++) {
-      alpha->data[cartesian_waypoints_planner_B.b_i_f] = 0.0;
+      alpha->data[cartesian_waypoints_planner_B.b_i_h] = 0.0;
     }
 
-    for (cartesian_waypoints_planner_B.nx_a = 0;
-         cartesian_waypoints_planner_B.nx_a <=
-         cartesian_waypoints_planner_B.inner; cartesian_waypoints_planner_B.nx_a
+    for (cartesian_waypoints_planner_B.nx_j = 0;
+         cartesian_waypoints_planner_B.nx_j <=
+         cartesian_waypoints_planner_B.inner; cartesian_waypoints_planner_B.nx_j
          ++) {
       for (cartesian_waypoints_planner_B.g_idx_0 = 0;
            cartesian_waypoints_planner_B.g_idx_0 <=
-           cartesian_waypoints_planner_B.m_i;
+           cartesian_waypoints_planner_B.m_k;
            cartesian_waypoints_planner_B.g_idx_0++) {
         alpha->data[cartesian_waypoints_planner_B.g_idx_0] += A->
           data[cartesian_waypoints_planner_B.g_idx_0 * A->size[0] +
-          cartesian_waypoints_planner_B.nx_a] *
-          cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.nx_a];
+          cartesian_waypoints_planner_B.nx_j] *
+          cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.nx_j];
       }
     }
 
-    cartesian_waypoints_planner_B.b_i_f = activeSet->size[0];
+    cartesian_waypoints_planner_B.b_i_h = activeSet->size[0];
     activeSet->size[0] = alpha->size[0];
     car_emxEnsureCapacity_boolean_T(activeSet,
-      cartesian_waypoints_planner_B.b_i_f);
-    cartesian_waypoints_planner_B.i_j = alpha->size[0];
-    for (cartesian_waypoints_planner_B.b_i_f = 0;
-         cartesian_waypoints_planner_B.b_i_f < cartesian_waypoints_planner_B.i_j;
-         cartesian_waypoints_planner_B.b_i_f++) {
-      activeSet->data[cartesian_waypoints_planner_B.b_i_f] = (alpha->
-        data[cartesian_waypoints_planner_B.b_i_f] >= obj->ConstraintBound->
-        data[cartesian_waypoints_planner_B.b_i_f]);
+      cartesian_waypoints_planner_B.b_i_h);
+    cartesian_waypoints_planner_B.i_e = alpha->size[0];
+    for (cartesian_waypoints_planner_B.b_i_h = 0;
+         cartesian_waypoints_planner_B.b_i_h < cartesian_waypoints_planner_B.i_e;
+         cartesian_waypoints_planner_B.b_i_h++) {
+      activeSet->data[cartesian_waypoints_planner_B.b_i_h] = (alpha->
+        data[cartesian_waypoints_planner_B.b_i_h] >= obj->ConstraintBound->
+        data[cartesian_waypoints_planner_B.b_i_h]);
     }
 
-    cartesian_waypoints_planner_B.nx_a = activeSet->size[0] - 1;
+    cartesian_waypoints_planner_B.nx_j = activeSet->size[0] - 1;
     cartesian_waypoints_planner_B.idx = 0;
     for (cartesian_waypoints_planner_B.g_idx_0 = 0;
          cartesian_waypoints_planner_B.g_idx_0 <=
-         cartesian_waypoints_planner_B.nx_a;
+         cartesian_waypoints_planner_B.nx_j;
          cartesian_waypoints_planner_B.g_idx_0++) {
       if (activeSet->data[cartesian_waypoints_planner_B.g_idx_0]) {
         cartesian_waypoints_planner_B.idx++;
       }
     }
 
-    cartesian_waypoints_planner_B.b_i_f = ii->size[0];
+    cartesian_waypoints_planner_B.b_i_h = ii->size[0];
     ii->size[0] = cartesian_waypoints_planner_B.idx;
-    carte_emxEnsureCapacity_int32_T(ii, cartesian_waypoints_planner_B.b_i_f);
-    cartesian_waypoints_planner_B.b_i_f = 0;
+    carte_emxEnsureCapacity_int32_T(ii, cartesian_waypoints_planner_B.b_i_h);
+    cartesian_waypoints_planner_B.b_i_h = 0;
     for (cartesian_waypoints_planner_B.g_idx_0 = 0;
          cartesian_waypoints_planner_B.g_idx_0 <=
-         cartesian_waypoints_planner_B.nx_a;
+         cartesian_waypoints_planner_B.nx_j;
          cartesian_waypoints_planner_B.g_idx_0++) {
       if (activeSet->data[cartesian_waypoints_planner_B.g_idx_0]) {
-        ii->data[cartesian_waypoints_planner_B.b_i_f] =
+        ii->data[cartesian_waypoints_planner_B.b_i_h] =
           cartesian_waypoints_planner_B.g_idx_0 + 1;
-        cartesian_waypoints_planner_B.b_i_f++;
+        cartesian_waypoints_planner_B.b_i_h++;
       }
     }
 
-    cartesian_waypoints_planner_B.i_j = obj->ConstraintMatrix->size[0];
-    cartesian_waypoints_planner_B.b_i_f = A->size[0] * A->size[1];
-    A->size[0] = cartesian_waypoints_planner_B.i_j;
+    cartesian_waypoints_planner_B.i_e = obj->ConstraintMatrix->size[0];
+    cartesian_waypoints_planner_B.b_i_h = A->size[0] * A->size[1];
+    A->size[0] = cartesian_waypoints_planner_B.i_e;
     A->size[1] = ii->size[0];
-    cartes_emxEnsureCapacity_real_T(A, cartesian_waypoints_planner_B.b_i_f);
-    cartesian_waypoints_planner_B.n = ii->size[0];
-    for (cartesian_waypoints_planner_B.b_i_f = 0;
-         cartesian_waypoints_planner_B.b_i_f < cartesian_waypoints_planner_B.n;
-         cartesian_waypoints_planner_B.b_i_f++) {
+    cartes_emxEnsureCapacity_real_T(A, cartesian_waypoints_planner_B.b_i_h);
+    cartesian_waypoints_planner_B.n_b = ii->size[0];
+    for (cartesian_waypoints_planner_B.b_i_h = 0;
+         cartesian_waypoints_planner_B.b_i_h < cartesian_waypoints_planner_B.n_b;
+         cartesian_waypoints_planner_B.b_i_h++) {
       for (cartesian_waypoints_planner_B.idx = 0;
-           cartesian_waypoints_planner_B.idx < cartesian_waypoints_planner_B.i_j;
+           cartesian_waypoints_planner_B.idx < cartesian_waypoints_planner_B.i_e;
            cartesian_waypoints_planner_B.idx++) {
         A->data[cartesian_waypoints_planner_B.idx + A->size[0] *
-          cartesian_waypoints_planner_B.b_i_f] = obj->ConstraintMatrix->data
-          [(ii->data[cartesian_waypoints_planner_B.b_i_f] - 1) *
+          cartesian_waypoints_planner_B.b_i_h] = obj->ConstraintMatrix->data
+          [(ii->data[cartesian_waypoints_planner_B.b_i_h] - 1) *
           obj->ConstraintMatrix->size[0] + cartesian_waypoints_planner_B.idx];
       }
     }
   } else {
     cartesian_waypoints_planner_B.g_idx_0 = obj->ConstraintBound->size[0];
-    cartesian_waypoints_planner_B.b_i_f = activeSet->size[0];
+    cartesian_waypoints_planner_B.b_i_h = activeSet->size[0];
     activeSet->size[0] = cartesian_waypoints_planner_B.g_idx_0;
     car_emxEnsureCapacity_boolean_T(activeSet,
-      cartesian_waypoints_planner_B.b_i_f);
-    for (cartesian_waypoints_planner_B.b_i_f = 0;
-         cartesian_waypoints_planner_B.b_i_f <
+      cartesian_waypoints_planner_B.b_i_h);
+    for (cartesian_waypoints_planner_B.b_i_h = 0;
+         cartesian_waypoints_planner_B.b_i_h <
          cartesian_waypoints_planner_B.g_idx_0;
-         cartesian_waypoints_planner_B.b_i_f++) {
-      activeSet->data[cartesian_waypoints_planner_B.b_i_f] = false;
+         cartesian_waypoints_planner_B.b_i_h++) {
+      activeSet->data[cartesian_waypoints_planner_B.b_i_h] = false;
     }
 
     A->size[0] = 6;
@@ -6349,141 +6396,141 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
   cartesian_waypoi_emxInit_real_T(&AIn, 2);
   cartesian_waypoi_emxInit_real_T(&A_0, 2);
   cartesian_waypoi_emxInit_real_T(&A_1, 1);
-  for (cartesian_waypoints_planner_B.nx_a = 0;
-       cartesian_waypoints_planner_B.nx_a <= cartesian_waypoints_planner_B.j;
-       cartesian_waypoints_planner_B.nx_a++) {
-    cartesian_waypoints_planner_B.i_j = A->size[0];
-    cartesian_waypoints_planner_B.b_i_f = A_0->size[0] * A_0->size[1];
+  for (cartesian_waypoints_planner_B.nx_j = 0;
+       cartesian_waypoints_planner_B.nx_j <= cartesian_waypoints_planner_B.j;
+       cartesian_waypoints_planner_B.nx_j++) {
+    cartesian_waypoints_planner_B.i_e = A->size[0];
+    cartesian_waypoints_planner_B.b_i_h = A_0->size[0] * A_0->size[1];
     A_0->size[0] = 1;
-    A_0->size[1] = cartesian_waypoints_planner_B.i_j;
-    cartes_emxEnsureCapacity_real_T(A_0, cartesian_waypoints_planner_B.b_i_f);
-    for (cartesian_waypoints_planner_B.b_i_f = 0;
-         cartesian_waypoints_planner_B.b_i_f < cartesian_waypoints_planner_B.i_j;
-         cartesian_waypoints_planner_B.b_i_f++) {
-      A_0->data[cartesian_waypoints_planner_B.b_i_f] = A->data[A->size[0] *
-        cartesian_waypoints_planner_B.nx_a + cartesian_waypoints_planner_B.b_i_f];
+    A_0->size[1] = cartesian_waypoints_planner_B.i_e;
+    cartes_emxEnsureCapacity_real_T(A_0, cartesian_waypoints_planner_B.b_i_h);
+    for (cartesian_waypoints_planner_B.b_i_h = 0;
+         cartesian_waypoints_planner_B.b_i_h < cartesian_waypoints_planner_B.i_e;
+         cartesian_waypoints_planner_B.b_i_h++) {
+      A_0->data[cartesian_waypoints_planner_B.b_i_h] = A->data[A->size[0] *
+        cartesian_waypoints_planner_B.nx_j + cartesian_waypoints_planner_B.b_i_h];
     }
 
-    cartesian_waypoints_planner_B.i_j = A->size[0];
-    cartesian_waypoints_planner_B.b_i_f = A_1->size[0];
-    A_1->size[0] = cartesian_waypoints_planner_B.i_j;
-    cartes_emxEnsureCapacity_real_T(A_1, cartesian_waypoints_planner_B.b_i_f);
-    for (cartesian_waypoints_planner_B.b_i_f = 0;
-         cartesian_waypoints_planner_B.b_i_f < cartesian_waypoints_planner_B.i_j;
-         cartesian_waypoints_planner_B.b_i_f++) {
-      A_1->data[cartesian_waypoints_planner_B.b_i_f] = A->data[A->size[0] *
-        cartesian_waypoints_planner_B.nx_a + cartesian_waypoints_planner_B.b_i_f];
+    cartesian_waypoints_planner_B.i_e = A->size[0];
+    cartesian_waypoints_planner_B.b_i_h = A_1->size[0];
+    A_1->size[0] = cartesian_waypoints_planner_B.i_e;
+    cartes_emxEnsureCapacity_real_T(A_1, cartesian_waypoints_planner_B.b_i_h);
+    for (cartesian_waypoints_planner_B.b_i_h = 0;
+         cartesian_waypoints_planner_B.b_i_h < cartesian_waypoints_planner_B.i_e;
+         cartesian_waypoints_planner_B.b_i_h++) {
+      A_1->data[cartesian_waypoints_planner_B.b_i_h] = A->data[A->size[0] *
+        cartesian_waypoints_planner_B.nx_j + cartesian_waypoints_planner_B.b_i_h];
     }
 
-    cartesian_waypoints_planner_B.A_n = 0.0;
-    for (cartesian_waypoints_planner_B.b_i_f = 0;
-         cartesian_waypoints_planner_B.b_i_f < 6;
-         cartesian_waypoints_planner_B.b_i_f++) {
-      cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f] =
+    cartesian_waypoints_planner_B.A_d = 0.0;
+    for (cartesian_waypoints_planner_B.b_i_h = 0;
+         cartesian_waypoints_planner_B.b_i_h < 6;
+         cartesian_waypoints_planner_B.b_i_h++) {
+      cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h] =
         0.0;
       for (cartesian_waypoints_planner_B.idx = 0;
            cartesian_waypoints_planner_B.idx < 6;
            cartesian_waypoints_planner_B.idx++) {
-        cartesian_waypoints_planner_B.s_k = cartesian_waypoints_planner_B.H[6 *
-          cartesian_waypoints_planner_B.b_i_f +
+        cartesian_waypoints_planner_B.s_p = cartesian_waypoints_planner_B.H[6 *
+          cartesian_waypoints_planner_B.b_i_h +
           cartesian_waypoints_planner_B.idx] * A_0->
           data[cartesian_waypoints_planner_B.idx] +
-          cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f];
-        cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f] =
-          cartesian_waypoints_planner_B.s_k;
+          cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h];
+        cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h] =
+          cartesian_waypoints_planner_B.s_p;
       }
 
-      cartesian_waypoints_planner_B.A_n +=
-        cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f] *
-        A_1->data[cartesian_waypoints_planner_B.b_i_f];
+      cartesian_waypoints_planner_B.A_d +=
+        cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h] *
+        A_1->data[cartesian_waypoints_planner_B.b_i_h];
     }
 
-    cartesian_waypoints_planner_B.s_k = 1.0 / cartesian_waypoints_planner_B.A_n;
-    for (cartesian_waypoints_planner_B.b_i_f = 0;
-         cartesian_waypoints_planner_B.b_i_f < 36;
-         cartesian_waypoints_planner_B.b_i_f++) {
-      cartesian_waypoints_planner_B.V[cartesian_waypoints_planner_B.b_i_f] =
-        cartesian_waypoints_planner_B.s_k *
-        cartesian_waypoints_planner_B.H[cartesian_waypoints_planner_B.b_i_f];
+    cartesian_waypoints_planner_B.s_p = 1.0 / cartesian_waypoints_planner_B.A_d;
+    for (cartesian_waypoints_planner_B.b_i_h = 0;
+         cartesian_waypoints_planner_B.b_i_h < 36;
+         cartesian_waypoints_planner_B.b_i_h++) {
+      cartesian_waypoints_planner_B.V[cartesian_waypoints_planner_B.b_i_h] =
+        cartesian_waypoints_planner_B.s_p *
+        cartesian_waypoints_planner_B.H[cartesian_waypoints_planner_B.b_i_h];
     }
 
-    cartesian_waypoints_planner_B.i_j = A->size[0];
-    cartesian_waypoints_planner_B.n = A->size[0];
-    cartesian_waypoints_planner_B.b_i_f = AIn->size[0] * AIn->size[1];
-    AIn->size[0] = cartesian_waypoints_planner_B.i_j;
-    AIn->size[1] = cartesian_waypoints_planner_B.n;
-    cartes_emxEnsureCapacity_real_T(AIn, cartesian_waypoints_planner_B.b_i_f);
-    for (cartesian_waypoints_planner_B.b_i_f = 0;
-         cartesian_waypoints_planner_B.b_i_f < cartesian_waypoints_planner_B.n;
-         cartesian_waypoints_planner_B.b_i_f++) {
+    cartesian_waypoints_planner_B.i_e = A->size[0];
+    cartesian_waypoints_planner_B.n_b = A->size[0];
+    cartesian_waypoints_planner_B.b_i_h = AIn->size[0] * AIn->size[1];
+    AIn->size[0] = cartesian_waypoints_planner_B.i_e;
+    AIn->size[1] = cartesian_waypoints_planner_B.n_b;
+    cartes_emxEnsureCapacity_real_T(AIn, cartesian_waypoints_planner_B.b_i_h);
+    for (cartesian_waypoints_planner_B.b_i_h = 0;
+         cartesian_waypoints_planner_B.b_i_h < cartesian_waypoints_planner_B.n_b;
+         cartesian_waypoints_planner_B.b_i_h++) {
       for (cartesian_waypoints_planner_B.idx = 0;
-           cartesian_waypoints_planner_B.idx < cartesian_waypoints_planner_B.i_j;
+           cartesian_waypoints_planner_B.idx < cartesian_waypoints_planner_B.i_e;
            cartesian_waypoints_planner_B.idx++) {
         AIn->data[cartesian_waypoints_planner_B.idx + AIn->size[0] *
-          cartesian_waypoints_planner_B.b_i_f] = A->data[A->size[0] *
-          cartesian_waypoints_planner_B.nx_a + cartesian_waypoints_planner_B.idx]
-          * A->data[A->size[0] * cartesian_waypoints_planner_B.nx_a +
-          cartesian_waypoints_planner_B.b_i_f];
+          cartesian_waypoints_planner_B.b_i_h] = A->data[A->size[0] *
+          cartesian_waypoints_planner_B.nx_j + cartesian_waypoints_planner_B.idx]
+          * A->data[A->size[0] * cartesian_waypoints_planner_B.nx_j +
+          cartesian_waypoints_planner_B.b_i_h];
       }
     }
 
-    cartesian_waypoints_planner_B.n = AIn->size[1] - 1;
-    cartesian_waypoints_planner_B.b_i_f = unusedU1->size[0] * unusedU1->size[1];
+    cartesian_waypoints_planner_B.n_b = AIn->size[1] - 1;
+    cartesian_waypoints_planner_B.b_i_h = unusedU1->size[0] * unusedU1->size[1];
     unusedU1->size[0] = 6;
     unusedU1->size[1] = AIn->size[1];
     cartes_emxEnsureCapacity_real_T(unusedU1,
-      cartesian_waypoints_planner_B.b_i_f);
+      cartesian_waypoints_planner_B.b_i_h);
     for (cartesian_waypoints_planner_B.idx = 0;
-         cartesian_waypoints_planner_B.idx <= cartesian_waypoints_planner_B.n;
+         cartesian_waypoints_planner_B.idx <= cartesian_waypoints_planner_B.n_b;
          cartesian_waypoints_planner_B.idx++) {
       cartesian_waypoints_planner_B.coffset = cartesian_waypoints_planner_B.idx *
         6 - 1;
       cartesian_waypoints_planner_B.boffset = cartesian_waypoints_planner_B.idx *
         AIn->size[0] - 1;
-      for (cartesian_waypoints_planner_B.b_i_f = 0;
-           cartesian_waypoints_planner_B.b_i_f < 6;
-           cartesian_waypoints_planner_B.b_i_f++) {
-        cartesian_waypoints_planner_B.s_k = 0.0;
+      for (cartesian_waypoints_planner_B.b_i_h = 0;
+           cartesian_waypoints_planner_B.b_i_h < 6;
+           cartesian_waypoints_planner_B.b_i_h++) {
+        cartesian_waypoints_planner_B.s_p = 0.0;
         for (cartesian_waypoints_planner_B.g_idx_0 = 0;
              cartesian_waypoints_planner_B.g_idx_0 < 6;
              cartesian_waypoints_planner_B.g_idx_0++) {
-          cartesian_waypoints_planner_B.s_k +=
+          cartesian_waypoints_planner_B.s_p +=
             cartesian_waypoints_planner_B.V[cartesian_waypoints_planner_B.g_idx_0
-            * 6 + cartesian_waypoints_planner_B.b_i_f] * AIn->data
+            * 6 + cartesian_waypoints_planner_B.b_i_h] * AIn->data
             [(cartesian_waypoints_planner_B.boffset +
               cartesian_waypoints_planner_B.g_idx_0) + 1];
         }
 
         unusedU1->data[(cartesian_waypoints_planner_B.coffset +
-                        cartesian_waypoints_planner_B.b_i_f) + 1] =
-          cartesian_waypoints_planner_B.s_k;
+                        cartesian_waypoints_planner_B.b_i_h) + 1] =
+          cartesian_waypoints_planner_B.s_p;
       }
     }
 
-    for (cartesian_waypoints_planner_B.b_i_f = 0;
-         cartesian_waypoints_planner_B.b_i_f < 6;
-         cartesian_waypoints_planner_B.b_i_f++) {
+    for (cartesian_waypoints_planner_B.b_i_h = 0;
+         cartesian_waypoints_planner_B.b_i_h < 6;
+         cartesian_waypoints_planner_B.b_i_h++) {
       for (cartesian_waypoints_planner_B.idx = 0;
            cartesian_waypoints_planner_B.idx < 6;
            cartesian_waypoints_planner_B.idx++) {
-        cartesian_waypoints_planner_B.s_k = 0.0;
-        for (cartesian_waypoints_planner_B.i_j = 0;
-             cartesian_waypoints_planner_B.i_j < 6;
-             cartesian_waypoints_planner_B.i_j++) {
-          cartesian_waypoints_planner_B.s_k += unusedU1->data[6 *
-            cartesian_waypoints_planner_B.i_j +
-            cartesian_waypoints_planner_B.b_i_f] *
+        cartesian_waypoints_planner_B.s_p = 0.0;
+        for (cartesian_waypoints_planner_B.i_e = 0;
+             cartesian_waypoints_planner_B.i_e < 6;
+             cartesian_waypoints_planner_B.i_e++) {
+          cartesian_waypoints_planner_B.s_p += unusedU1->data[6 *
+            cartesian_waypoints_planner_B.i_e +
+            cartesian_waypoints_planner_B.b_i_h] *
             cartesian_waypoints_planner_B.H[6 *
             cartesian_waypoints_planner_B.idx +
-            cartesian_waypoints_planner_B.i_j];
+            cartesian_waypoints_planner_B.i_e];
         }
 
         cartesian_waypoints_planner_B.idxl = 6 *
           cartesian_waypoints_planner_B.idx +
-          cartesian_waypoints_planner_B.b_i_f;
+          cartesian_waypoints_planner_B.b_i_h;
         cartesian_waypoints_planner_B.H_m[cartesian_waypoints_planner_B.idxl] =
           cartesian_waypoints_planner_B.H[cartesian_waypoints_planner_B.idxl] -
-          cartesian_waypoints_planner_B.s_k;
+          cartesian_waypoints_planner_B.s_p;
       }
     }
 
@@ -6493,13 +6540,13 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
 
   cartesian_waypoi_emxFree_real_T(&A_1);
   cartesian_waypoi_emxFree_real_T(&A_0);
-  for (cartesian_waypoints_planner_B.i_j = 0; cartesian_waypoints_planner_B.i_j <
-       6; cartesian_waypoints_planner_B.i_j++) {
-    xSol[cartesian_waypoints_planner_B.i_j] =
-      cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.i_j];
+  for (cartesian_waypoints_planner_B.i_e = 0; cartesian_waypoints_planner_B.i_e <
+       6; cartesian_waypoints_planner_B.i_e++) {
+    xSol[cartesian_waypoints_planner_B.i_e] =
+      cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.i_e];
   }
 
-  cartesian_waypoints_planner_B.A_n = obj->MaxNumIterationInternal;
+  cartesian_waypoints_planner_B.A_d = obj->MaxNumIterationInternal;
   cartesian_waypoints_planner_B.g_idx_0 = 0;
   cartesian_waypoi_emxInit_real_T(&L, 1);
   cartesian_waypo_emxInit_int32_T(&cb, 1);
@@ -6527,50 +6574,50 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
   do {
     exitg2 = 0;
     if (cartesian_waypoints_planner_B.g_idx_0 <= static_cast<int32_T>
-        (cartesian_waypoints_planner_B.A_n) - 1) {
-      cartesian_waypoints_planner_B.s_k = SystemTimeProvider_getElapsedTi
+        (cartesian_waypoints_planner_B.A_d) - 1) {
+      cartesian_waypoints_planner_B.s_p = SystemTimeProvider_getElapsedTi
         (&obj->TimeObjInternal);
-      cartesian_waypoints_planner_B.flag = (cartesian_waypoints_planner_B.s_k >
+      cartesian_waypoints_planner_B.flag = (cartesian_waypoints_planner_B.s_p >
         obj->MaxTimeInternal);
       if (cartesian_waypoints_planner_B.flag) {
         *exitFlag = TimeLimitExceeded;
         args = obj->ExtraArgs;
-        for (cartesian_waypoints_planner_B.b_i_f = 0;
-             cartesian_waypoints_planner_B.b_i_f < 36;
-             cartesian_waypoints_planner_B.b_i_f++) {
-          cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_f]
-            = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_f];
+        for (cartesian_waypoints_planner_B.b_i_h = 0;
+             cartesian_waypoints_planner_B.b_i_h < 36;
+             cartesian_waypoints_planner_B.b_i_h++) {
+          cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_h]
+            = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_h];
         }
 
-        cartesian_waypoints_planner_B.b_i_f = grad->size[0];
+        cartesian_waypoints_planner_B.b_i_h = grad->size[0];
         grad->size[0] = args->ErrTemp->size[0];
         cartes_emxEnsureCapacity_real_T(grad,
-          cartesian_waypoints_planner_B.b_i_f);
-        cartesian_waypoints_planner_B.i_j = args->ErrTemp->size[0];
-        for (cartesian_waypoints_planner_B.b_i_f = 0;
-             cartesian_waypoints_planner_B.b_i_f <
-             cartesian_waypoints_planner_B.i_j;
-             cartesian_waypoints_planner_B.b_i_f++) {
-          grad->data[cartesian_waypoints_planner_B.b_i_f] = args->ErrTemp->
-            data[cartesian_waypoints_planner_B.b_i_f];
+          cartesian_waypoints_planner_B.b_i_h);
+        cartesian_waypoints_planner_B.i_e = args->ErrTemp->size[0];
+        for (cartesian_waypoints_planner_B.b_i_h = 0;
+             cartesian_waypoints_planner_B.b_i_h <
+             cartesian_waypoints_planner_B.i_e;
+             cartesian_waypoints_planner_B.b_i_h++) {
+          grad->data[cartesian_waypoints_planner_B.b_i_h] = args->ErrTemp->
+            data[cartesian_waypoints_planner_B.b_i_h];
         }
 
-        for (cartesian_waypoints_planner_B.b_i_f = 0;
-             cartesian_waypoints_planner_B.b_i_f < 6;
-             cartesian_waypoints_planner_B.b_i_f++) {
-          cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f] =
+        for (cartesian_waypoints_planner_B.b_i_h = 0;
+             cartesian_waypoints_planner_B.b_i_h < 6;
+             cartesian_waypoints_planner_B.b_i_h++) {
+          cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h] =
             0.0;
           for (cartesian_waypoints_planner_B.idx = 0;
                cartesian_waypoints_planner_B.idx < 6;
                cartesian_waypoints_planner_B.idx++) {
-            cartesian_waypoints_planner_B.A_n =
+            cartesian_waypoints_planner_B.A_d =
               cartesian_waypoints_planner_B.unusedU0[6 *
               cartesian_waypoints_planner_B.idx +
-              cartesian_waypoints_planner_B.b_i_f] * grad->
+              cartesian_waypoints_planner_B.b_i_h] * grad->
               data[cartesian_waypoints_planner_B.idx] +
-              cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f];
-            cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f]
-              = cartesian_waypoints_planner_B.A_n;
+              cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h];
+            cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h]
+              = cartesian_waypoints_planner_B.A_d;
           }
         }
 
@@ -6579,117 +6626,117 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
         exitg2 = 1;
       } else {
         if ((A->size[0] == 0) || (A->size[1] == 0)) {
-          cartesian_waypoints_planner_B.b_i_f = alpha->size[0];
+          cartesian_waypoints_planner_B.b_i_h = alpha->size[0];
           alpha->size[0] = 1;
           cartes_emxEnsureCapacity_real_T(alpha,
-            cartesian_waypoints_planner_B.b_i_f);
+            cartesian_waypoints_planner_B.b_i_h);
           alpha->data[0] = 0.0;
         } else {
-          cartesian_waypoints_planner_B.m_i = A->size[1] - 1;
+          cartesian_waypoints_planner_B.m_k = A->size[1] - 1;
           cartesian_waypoints_planner_B.inner = A->size[0] - 1;
-          cartesian_waypoints_planner_B.n = A->size[1] - 1;
-          cartesian_waypoints_planner_B.b_i_f = AIn->size[0] * AIn->size[1];
+          cartesian_waypoints_planner_B.n_b = A->size[1] - 1;
+          cartesian_waypoints_planner_B.b_i_h = AIn->size[0] * AIn->size[1];
           AIn->size[0] = A->size[1];
           AIn->size[1] = A->size[1];
           cartes_emxEnsureCapacity_real_T(AIn,
-            cartesian_waypoints_planner_B.b_i_f);
+            cartesian_waypoints_planner_B.b_i_h);
           for (cartesian_waypoints_planner_B.idx = 0;
                cartesian_waypoints_planner_B.idx <=
-               cartesian_waypoints_planner_B.n;
+               cartesian_waypoints_planner_B.n_b;
                cartesian_waypoints_planner_B.idx++) {
             cartesian_waypoints_planner_B.coffset =
-              (cartesian_waypoints_planner_B.m_i + 1) *
+              (cartesian_waypoints_planner_B.m_k + 1) *
               cartesian_waypoints_planner_B.idx - 1;
             cartesian_waypoints_planner_B.boffset =
               cartesian_waypoints_planner_B.idx * A->size[0] - 1;
-            for (cartesian_waypoints_planner_B.b_i_f = 0;
-                 cartesian_waypoints_planner_B.b_i_f <=
-                 cartesian_waypoints_planner_B.m_i;
-                 cartesian_waypoints_planner_B.b_i_f++) {
+            for (cartesian_waypoints_planner_B.b_i_h = 0;
+                 cartesian_waypoints_planner_B.b_i_h <=
+                 cartesian_waypoints_planner_B.m_k;
+                 cartesian_waypoints_planner_B.b_i_h++) {
               AIn->data[(cartesian_waypoints_planner_B.coffset +
-                         cartesian_waypoints_planner_B.b_i_f) + 1] = 0.0;
+                         cartesian_waypoints_planner_B.b_i_h) + 1] = 0.0;
             }
 
-            for (cartesian_waypoints_planner_B.nx_a = 0;
-                 cartesian_waypoints_planner_B.nx_a <=
+            for (cartesian_waypoints_planner_B.nx_j = 0;
+                 cartesian_waypoints_planner_B.nx_j <=
                  cartesian_waypoints_planner_B.inner;
-                 cartesian_waypoints_planner_B.nx_a++) {
-              cartesian_waypoints_planner_B.s_k = A->data
+                 cartesian_waypoints_planner_B.nx_j++) {
+              cartesian_waypoints_planner_B.s_p = A->data
                 [(cartesian_waypoints_planner_B.boffset +
-                  cartesian_waypoints_planner_B.nx_a) + 1];
+                  cartesian_waypoints_planner_B.nx_j) + 1];
               for (cartesian_waypoints_planner_B.j = 0;
                    cartesian_waypoints_planner_B.j <=
-                   cartesian_waypoints_planner_B.m_i;
+                   cartesian_waypoints_planner_B.m_k;
                    cartesian_waypoints_planner_B.j++) {
-                cartesian_waypoints_planner_B.b_i_f =
+                cartesian_waypoints_planner_B.b_i_h =
                   (cartesian_waypoints_planner_B.coffset +
                    cartesian_waypoints_planner_B.j) + 1;
-                AIn->data[cartesian_waypoints_planner_B.b_i_f] += A->
+                AIn->data[cartesian_waypoints_planner_B.b_i_h] += A->
                   data[cartesian_waypoints_planner_B.j * A->size[0] +
-                  cartesian_waypoints_planner_B.nx_a] *
-                  cartesian_waypoints_planner_B.s_k;
+                  cartesian_waypoints_planner_B.nx_j] *
+                  cartesian_waypoints_planner_B.s_p;
               }
             }
           }
 
-          cartesian_waypoints_planner_B.b_i_f = A_2->size[0] * A_2->size[1];
+          cartesian_waypoints_planner_B.b_i_h = A_2->size[0] * A_2->size[1];
           A_2->size[0] = A->size[1];
           A_2->size[1] = A->size[0];
           cartes_emxEnsureCapacity_real_T(A_2,
-            cartesian_waypoints_planner_B.b_i_f);
-          cartesian_waypoints_planner_B.i_j = A->size[0];
-          for (cartesian_waypoints_planner_B.b_i_f = 0;
-               cartesian_waypoints_planner_B.b_i_f <
-               cartesian_waypoints_planner_B.i_j;
-               cartesian_waypoints_planner_B.b_i_f++) {
-            cartesian_waypoints_planner_B.n = A->size[1];
+            cartesian_waypoints_planner_B.b_i_h);
+          cartesian_waypoints_planner_B.i_e = A->size[0];
+          for (cartesian_waypoints_planner_B.b_i_h = 0;
+               cartesian_waypoints_planner_B.b_i_h <
+               cartesian_waypoints_planner_B.i_e;
+               cartesian_waypoints_planner_B.b_i_h++) {
+            cartesian_waypoints_planner_B.n_b = A->size[1];
             for (cartesian_waypoints_planner_B.idx = 0;
                  cartesian_waypoints_planner_B.idx <
-                 cartesian_waypoints_planner_B.n;
+                 cartesian_waypoints_planner_B.n_b;
                  cartesian_waypoints_planner_B.idx++) {
               A_2->data[cartesian_waypoints_planner_B.idx + A_2->size[0] *
-                cartesian_waypoints_planner_B.b_i_f] = A->data[A->size[0] *
+                cartesian_waypoints_planner_B.b_i_h] = A->data[A->size[0] *
                 cartesian_waypoints_planner_B.idx +
-                cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.b_i_h];
             }
           }
 
           cartesian_waypoints_pl_mldivide(AIn, A_2, a);
-          cartesian_waypoints_planner_B.m_i = a->size[0] - 1;
+          cartesian_waypoints_planner_B.m_k = a->size[0] - 1;
           cartesian_waypoints_planner_B.inner = a->size[1] - 1;
-          cartesian_waypoints_planner_B.b_i_f = alpha->size[0];
+          cartesian_waypoints_planner_B.b_i_h = alpha->size[0];
           alpha->size[0] = a->size[0];
           cartes_emxEnsureCapacity_real_T(alpha,
-            cartesian_waypoints_planner_B.b_i_f);
-          for (cartesian_waypoints_planner_B.b_i_f = 0;
-               cartesian_waypoints_planner_B.b_i_f <=
-               cartesian_waypoints_planner_B.m_i;
-               cartesian_waypoints_planner_B.b_i_f++) {
-            alpha->data[cartesian_waypoints_planner_B.b_i_f] = 0.0;
+            cartesian_waypoints_planner_B.b_i_h);
+          for (cartesian_waypoints_planner_B.b_i_h = 0;
+               cartesian_waypoints_planner_B.b_i_h <=
+               cartesian_waypoints_planner_B.m_k;
+               cartesian_waypoints_planner_B.b_i_h++) {
+            alpha->data[cartesian_waypoints_planner_B.b_i_h] = 0.0;
           }
 
-          for (cartesian_waypoints_planner_B.nx_a = 0;
-               cartesian_waypoints_planner_B.nx_a <=
+          for (cartesian_waypoints_planner_B.nx_j = 0;
+               cartesian_waypoints_planner_B.nx_j <=
                cartesian_waypoints_planner_B.inner;
-               cartesian_waypoints_planner_B.nx_a++) {
+               cartesian_waypoints_planner_B.nx_j++) {
             cartesian_waypoints_planner_B.aoffset =
-              cartesian_waypoints_planner_B.nx_a * a->size[0] - 1;
+              cartesian_waypoints_planner_B.nx_j * a->size[0] - 1;
             for (cartesian_waypoints_planner_B.j = 0;
                  cartesian_waypoints_planner_B.j <=
-                 cartesian_waypoints_planner_B.m_i;
+                 cartesian_waypoints_planner_B.m_k;
                  cartesian_waypoints_planner_B.j++) {
               alpha->data[cartesian_waypoints_planner_B.j] += a->data
                 [(cartesian_waypoints_planner_B.aoffset +
                   cartesian_waypoints_planner_B.j) + 1] * grad->
-                data[cartesian_waypoints_planner_B.nx_a];
+                data[cartesian_waypoints_planner_B.nx_j];
             }
           }
         }
 
-        for (cartesian_waypoints_planner_B.b_i_f = 0;
-             cartesian_waypoints_planner_B.b_i_f < 6;
-             cartesian_waypoints_planner_B.b_i_f++) {
-          cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f] =
+        for (cartesian_waypoints_planner_B.b_i_h = 0;
+             cartesian_waypoints_planner_B.b_i_h < 6;
+             cartesian_waypoints_planner_B.b_i_h++) {
+          cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h] =
             0.0;
           for (cartesian_waypoints_planner_B.idx = 0;
                cartesian_waypoints_planner_B.idx < 6;
@@ -6697,10 +6744,10 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
             cartesian_waypoints_planner_B.b_gamma =
               cartesian_waypoints_planner_B.H[6 *
               cartesian_waypoints_planner_B.idx +
-              cartesian_waypoints_planner_B.b_i_f] * grad->
+              cartesian_waypoints_planner_B.b_i_h] * grad->
               data[cartesian_waypoints_planner_B.idx] +
-              cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f];
-            cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f]
+              cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h];
+            cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h]
               = cartesian_waypoints_planner_B.b_gamma;
           }
         }
@@ -6709,42 +6756,42 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
              cartesian_waypoints_planner_B.Hg, alpha)) {
           *exitFlag = LocalMinimumFound;
           args = obj->ExtraArgs;
-          for (cartesian_waypoints_planner_B.b_i_f = 0;
-               cartesian_waypoints_planner_B.b_i_f < 36;
-               cartesian_waypoints_planner_B.b_i_f++) {
-            cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_f]
-              = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_f];
+          for (cartesian_waypoints_planner_B.b_i_h = 0;
+               cartesian_waypoints_planner_B.b_i_h < 36;
+               cartesian_waypoints_planner_B.b_i_h++) {
+            cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_h]
+              = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_h];
           }
 
-          cartesian_waypoints_planner_B.b_i_f = grad->size[0];
+          cartesian_waypoints_planner_B.b_i_h = grad->size[0];
           grad->size[0] = args->ErrTemp->size[0];
           cartes_emxEnsureCapacity_real_T(grad,
-            cartesian_waypoints_planner_B.b_i_f);
-          cartesian_waypoints_planner_B.i_j = args->ErrTemp->size[0];
-          for (cartesian_waypoints_planner_B.b_i_f = 0;
-               cartesian_waypoints_planner_B.b_i_f <
-               cartesian_waypoints_planner_B.i_j;
-               cartesian_waypoints_planner_B.b_i_f++) {
-            grad->data[cartesian_waypoints_planner_B.b_i_f] = args->
-              ErrTemp->data[cartesian_waypoints_planner_B.b_i_f];
+            cartesian_waypoints_planner_B.b_i_h);
+          cartesian_waypoints_planner_B.i_e = args->ErrTemp->size[0];
+          for (cartesian_waypoints_planner_B.b_i_h = 0;
+               cartesian_waypoints_planner_B.b_i_h <
+               cartesian_waypoints_planner_B.i_e;
+               cartesian_waypoints_planner_B.b_i_h++) {
+            grad->data[cartesian_waypoints_planner_B.b_i_h] = args->
+              ErrTemp->data[cartesian_waypoints_planner_B.b_i_h];
           }
 
-          for (cartesian_waypoints_planner_B.b_i_f = 0;
-               cartesian_waypoints_planner_B.b_i_f < 6;
-               cartesian_waypoints_planner_B.b_i_f++) {
-            cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f]
+          for (cartesian_waypoints_planner_B.b_i_h = 0;
+               cartesian_waypoints_planner_B.b_i_h < 6;
+               cartesian_waypoints_planner_B.b_i_h++) {
+            cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h]
               = 0.0;
             for (cartesian_waypoints_planner_B.idx = 0;
                  cartesian_waypoints_planner_B.idx < 6;
                  cartesian_waypoints_planner_B.idx++) {
-              cartesian_waypoints_planner_B.A_n =
+              cartesian_waypoints_planner_B.A_d =
                 cartesian_waypoints_planner_B.unusedU0[6 *
                 cartesian_waypoints_planner_B.idx +
-                cartesian_waypoints_planner_B.b_i_f] * grad->
+                cartesian_waypoints_planner_B.b_i_h] * grad->
                 data[cartesian_waypoints_planner_B.idx] +
-                cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f];
-              cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f]
-                = cartesian_waypoints_planner_B.A_n;
+                cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h];
+              cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h]
+                = cartesian_waypoints_planner_B.A_d;
             }
           }
 
@@ -6756,49 +6803,49 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
           guard1 = false;
           guard2 = false;
           if (obj->ConstraintsOn && ((A->size[0] != 0) && (A->size[1] != 0))) {
-            cartesian_waypoints_planner_B.m_i = A->size[1] - 1;
+            cartesian_waypoints_planner_B.m_k = A->size[1] - 1;
             cartesian_waypoints_planner_B.inner = A->size[0] - 1;
-            cartesian_waypoints_planner_B.n = A->size[1] - 1;
-            cartesian_waypoints_planner_B.b_i_f = AIn->size[0] * AIn->size[1];
+            cartesian_waypoints_planner_B.n_b = A->size[1] - 1;
+            cartesian_waypoints_planner_B.b_i_h = AIn->size[0] * AIn->size[1];
             AIn->size[0] = A->size[1];
             AIn->size[1] = A->size[1];
             cartes_emxEnsureCapacity_real_T(AIn,
-              cartesian_waypoints_planner_B.b_i_f);
+              cartesian_waypoints_planner_B.b_i_h);
             for (cartesian_waypoints_planner_B.idx = 0;
                  cartesian_waypoints_planner_B.idx <=
-                 cartesian_waypoints_planner_B.n;
+                 cartesian_waypoints_planner_B.n_b;
                  cartesian_waypoints_planner_B.idx++) {
               cartesian_waypoints_planner_B.coffset =
-                (cartesian_waypoints_planner_B.m_i + 1) *
+                (cartesian_waypoints_planner_B.m_k + 1) *
                 cartesian_waypoints_planner_B.idx - 1;
               cartesian_waypoints_planner_B.boffset =
                 cartesian_waypoints_planner_B.idx * A->size[0] - 1;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <=
-                   cartesian_waypoints_planner_B.m_i;
-                   cartesian_waypoints_planner_B.b_i_f++) {
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <=
+                   cartesian_waypoints_planner_B.m_k;
+                   cartesian_waypoints_planner_B.b_i_h++) {
                 AIn->data[(cartesian_waypoints_planner_B.coffset +
-                           cartesian_waypoints_planner_B.b_i_f) + 1] = 0.0;
+                           cartesian_waypoints_planner_B.b_i_h) + 1] = 0.0;
               }
 
-              for (cartesian_waypoints_planner_B.nx_a = 0;
-                   cartesian_waypoints_planner_B.nx_a <=
+              for (cartesian_waypoints_planner_B.nx_j = 0;
+                   cartesian_waypoints_planner_B.nx_j <=
                    cartesian_waypoints_planner_B.inner;
-                   cartesian_waypoints_planner_B.nx_a++) {
-                cartesian_waypoints_planner_B.s_k = A->data
+                   cartesian_waypoints_planner_B.nx_j++) {
+                cartesian_waypoints_planner_B.s_p = A->data
                   [(cartesian_waypoints_planner_B.boffset +
-                    cartesian_waypoints_planner_B.nx_a) + 1];
+                    cartesian_waypoints_planner_B.nx_j) + 1];
                 for (cartesian_waypoints_planner_B.j = 0;
                      cartesian_waypoints_planner_B.j <=
-                     cartesian_waypoints_planner_B.m_i;
+                     cartesian_waypoints_planner_B.m_k;
                      cartesian_waypoints_planner_B.j++) {
-                  cartesian_waypoints_planner_B.b_i_f =
+                  cartesian_waypoints_planner_B.b_i_h =
                     (cartesian_waypoints_planner_B.coffset +
                      cartesian_waypoints_planner_B.j) + 1;
-                  AIn->data[cartesian_waypoints_planner_B.b_i_f] += A->
+                  AIn->data[cartesian_waypoints_planner_B.b_i_h] += A->
                     data[cartesian_waypoints_planner_B.j * A->size[0] +
-                    cartesian_waypoints_planner_B.nx_a] *
-                    cartesian_waypoints_planner_B.s_k;
+                    cartesian_waypoints_planner_B.nx_j] *
+                    cartesian_waypoints_planner_B.s_p;
                 }
               }
             }
@@ -6806,29 +6853,29 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
             cartesian_waypoints_planner_inv(AIn, a);
             cartesian_waypoints_planne_diag(a, L);
             cartesian_waypoints_pla_sqrt_ev(L);
-            cartesian_waypoints_planner_B.b_i_f = alpha->size[0];
+            cartesian_waypoints_planner_B.b_i_h = alpha->size[0];
             cartes_emxEnsureCapacity_real_T(alpha,
-              cartesian_waypoints_planner_B.b_i_f);
-            cartesian_waypoints_planner_B.i_j = alpha->size[0];
-            for (cartesian_waypoints_planner_B.b_i_f = 0;
-                 cartesian_waypoints_planner_B.b_i_f <
-                 cartesian_waypoints_planner_B.i_j;
-                 cartesian_waypoints_planner_B.b_i_f++) {
-              alpha->data[cartesian_waypoints_planner_B.b_i_f] /= L->
-                data[cartesian_waypoints_planner_B.b_i_f];
+              cartesian_waypoints_planner_B.b_i_h);
+            cartesian_waypoints_planner_B.i_e = alpha->size[0];
+            for (cartesian_waypoints_planner_B.b_i_h = 0;
+                 cartesian_waypoints_planner_B.b_i_h <
+                 cartesian_waypoints_planner_B.i_e;
+                 cartesian_waypoints_planner_B.b_i_h++) {
+              alpha->data[cartesian_waypoints_planner_B.b_i_h] /= L->
+                data[cartesian_waypoints_planner_B.b_i_h];
             }
 
-            cartesian_waypoints_planner_B.n = alpha->size[0];
+            cartesian_waypoints_planner_B.n_b = alpha->size[0];
             if (alpha->size[0] <= 2) {
               if (alpha->size[0] == 1) {
-                cartesian_waypoints_planner_B.s_k = alpha->data[0];
+                cartesian_waypoints_planner_B.s_p = alpha->data[0];
                 cartesian_waypoints_planner_B.idxl = 0;
               } else if ((alpha->data[0] < alpha->data[1]) || (rtIsNaN
                           (alpha->data[0]) && (!rtIsNaN(alpha->data[1])))) {
-                cartesian_waypoints_planner_B.s_k = alpha->data[1];
+                cartesian_waypoints_planner_B.s_p = alpha->data[1];
                 cartesian_waypoints_planner_B.idxl = 1;
               } else {
-                cartesian_waypoints_planner_B.s_k = alpha->data[0];
+                cartesian_waypoints_planner_B.s_p = alpha->data[0];
                 cartesian_waypoints_planner_B.idxl = 0;
               }
             } else {
@@ -6836,71 +6883,71 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
                 cartesian_waypoints_planner_B.idxl = 1;
               } else {
                 cartesian_waypoints_planner_B.idxl = 0;
-                cartesian_waypoints_planner_B.b_i_f = 2;
+                cartesian_waypoints_planner_B.b_i_h = 2;
                 exitg3 = false;
-                while ((!exitg3) && (cartesian_waypoints_planner_B.b_i_f <=
+                while ((!exitg3) && (cartesian_waypoints_planner_B.b_i_h <=
                                      alpha->size[0])) {
-                  if (!rtIsNaN(alpha->data[cartesian_waypoints_planner_B.b_i_f -
+                  if (!rtIsNaN(alpha->data[cartesian_waypoints_planner_B.b_i_h -
                                1])) {
                     cartesian_waypoints_planner_B.idxl =
-                      cartesian_waypoints_planner_B.b_i_f;
+                      cartesian_waypoints_planner_B.b_i_h;
                     exitg3 = true;
                   } else {
-                    cartesian_waypoints_planner_B.b_i_f++;
+                    cartesian_waypoints_planner_B.b_i_h++;
                   }
                 }
               }
 
               if (cartesian_waypoints_planner_B.idxl == 0) {
-                cartesian_waypoints_planner_B.s_k = alpha->data[0];
+                cartesian_waypoints_planner_B.s_p = alpha->data[0];
               } else {
-                cartesian_waypoints_planner_B.s_k = alpha->
+                cartesian_waypoints_planner_B.s_p = alpha->
                   data[cartesian_waypoints_planner_B.idxl - 1];
-                cartesian_waypoints_planner_B.nx_a =
+                cartesian_waypoints_planner_B.nx_j =
                   cartesian_waypoints_planner_B.idxl;
-                for (cartesian_waypoints_planner_B.b_i_f =
+                for (cartesian_waypoints_planner_B.b_i_h =
                      cartesian_waypoints_planner_B.idxl + 1;
-                     cartesian_waypoints_planner_B.b_i_f <=
-                     cartesian_waypoints_planner_B.n;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  if (cartesian_waypoints_planner_B.s_k < alpha->
-                      data[cartesian_waypoints_planner_B.b_i_f - 1]) {
-                    cartesian_waypoints_planner_B.s_k = alpha->
-                      data[cartesian_waypoints_planner_B.b_i_f - 1];
-                    cartesian_waypoints_planner_B.nx_a =
-                      cartesian_waypoints_planner_B.b_i_f;
+                     cartesian_waypoints_planner_B.b_i_h <=
+                     cartesian_waypoints_planner_B.n_b;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  if (cartesian_waypoints_planner_B.s_p < alpha->
+                      data[cartesian_waypoints_planner_B.b_i_h - 1]) {
+                    cartesian_waypoints_planner_B.s_p = alpha->
+                      data[cartesian_waypoints_planner_B.b_i_h - 1];
+                    cartesian_waypoints_planner_B.nx_j =
+                      cartesian_waypoints_planner_B.b_i_h;
                   }
                 }
 
                 cartesian_waypoints_planner_B.idxl =
-                  cartesian_waypoints_planner_B.nx_a - 1;
+                  cartesian_waypoints_planner_B.nx_j - 1;
               }
             }
 
             if (cartesian_waypoints_plan_norm_e(cartesian_waypoints_planner_B.Hg)
-                < 0.5 * cartesian_waypoints_planner_B.s_k) {
-              cartesian_waypoints_planner_B.nx_a = activeSet->size[0];
+                < 0.5 * cartesian_waypoints_planner_B.s_p) {
+              cartesian_waypoints_planner_B.nx_j = activeSet->size[0];
               cartesian_waypoints_planner_B.idx = 0;
-              cartesian_waypoints_planner_B.b_i_f = ii->size[0];
+              cartesian_waypoints_planner_B.b_i_h = ii->size[0];
               ii->size[0] = activeSet->size[0];
               carte_emxEnsureCapacity_int32_T(ii,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.b_i_f = 1;
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.b_i_h = 1;
               exitg3 = false;
-              while ((!exitg3) && (cartesian_waypoints_planner_B.b_i_f - 1 <=
-                                   cartesian_waypoints_planner_B.nx_a - 1)) {
-                if (activeSet->data[cartesian_waypoints_planner_B.b_i_f - 1]) {
+              while ((!exitg3) && (cartesian_waypoints_planner_B.b_i_h - 1 <=
+                                   cartesian_waypoints_planner_B.nx_j - 1)) {
+                if (activeSet->data[cartesian_waypoints_planner_B.b_i_h - 1]) {
                   cartesian_waypoints_planner_B.idx++;
                   ii->data[cartesian_waypoints_planner_B.idx - 1] =
-                    cartesian_waypoints_planner_B.b_i_f;
+                    cartesian_waypoints_planner_B.b_i_h;
                   if (cartesian_waypoints_planner_B.idx >=
-                      cartesian_waypoints_planner_B.nx_a) {
+                      cartesian_waypoints_planner_B.nx_j) {
                     exitg3 = true;
                   } else {
-                    cartesian_waypoints_planner_B.b_i_f++;
+                    cartesian_waypoints_planner_B.b_i_h++;
                   }
                 } else {
-                  cartesian_waypoints_planner_B.b_i_f++;
+                  cartesian_waypoints_planner_B.b_i_h++;
                 }
               }
 
@@ -6913,377 +6960,377 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
                   cartesian_waypoints_planner_B.idx = 0;
                 }
 
-                cartesian_waypoints_planner_B.b_i_f = ii_1->size[0];
+                cartesian_waypoints_planner_B.b_i_h = ii_1->size[0];
                 ii_1->size[0] = cartesian_waypoints_planner_B.idx;
                 carte_emxEnsureCapacity_int32_T(ii_1,
-                  cartesian_waypoints_planner_B.b_i_f);
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <
+                  cartesian_waypoints_planner_B.b_i_h);
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <
                      cartesian_waypoints_planner_B.idx;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  ii_1->data[cartesian_waypoints_planner_B.b_i_f] = ii->
-                    data[cartesian_waypoints_planner_B.b_i_f];
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  ii_1->data[cartesian_waypoints_planner_B.b_i_h] = ii->
+                    data[cartesian_waypoints_planner_B.b_i_h];
                 }
 
-                cartesian_waypoints_planner_B.b_i_f = ii->size[0];
+                cartesian_waypoints_planner_B.b_i_h = ii->size[0];
                 ii->size[0] = ii_1->size[0];
                 carte_emxEnsureCapacity_int32_T(ii,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.i_j = ii_1->size[0];
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <
-                     cartesian_waypoints_planner_B.i_j;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  ii->data[cartesian_waypoints_planner_B.b_i_f] = ii_1->
-                    data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.i_e = ii_1->size[0];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <
+                     cartesian_waypoints_planner_B.i_e;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  ii->data[cartesian_waypoints_planner_B.b_i_h] = ii_1->
+                    data[cartesian_waypoints_planner_B.b_i_h];
                 }
               }
 
-              cartesian_waypoints_planner_B.b_i_f = alpha->size[0];
+              cartesian_waypoints_planner_B.b_i_h = alpha->size[0];
               alpha->size[0] = ii->size[0];
               cartes_emxEnsureCapacity_real_T(alpha,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = ii->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                alpha->data[cartesian_waypoints_planner_B.b_i_f] = ii->
-                  data[cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = ii->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                alpha->data[cartesian_waypoints_planner_B.b_i_h] = ii->
+                  data[cartesian_waypoints_planner_B.b_i_h];
               }
 
               activeSet->data[static_cast<int32_T>(alpha->
                 data[cartesian_waypoints_planner_B.idxl]) - 1] = false;
-              cartesian_waypoints_planner_B.nx_a = activeSet->size[0] - 1;
+              cartesian_waypoints_planner_B.nx_j = activeSet->size[0] - 1;
               cartesian_waypoints_planner_B.idx = 0;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <=
-                   cartesian_waypoints_planner_B.nx_a;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                if (activeSet->data[cartesian_waypoints_planner_B.b_i_f]) {
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <=
+                   cartesian_waypoints_planner_B.nx_j;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                if (activeSet->data[cartesian_waypoints_planner_B.b_i_h]) {
                   cartesian_waypoints_planner_B.idx++;
                 }
               }
 
-              cartesian_waypoints_planner_B.b_i_f = eb->size[0];
+              cartesian_waypoints_planner_B.b_i_h = eb->size[0];
               eb->size[0] = cartesian_waypoints_planner_B.idx;
               carte_emxEnsureCapacity_int32_T(eb,
-                cartesian_waypoints_planner_B.b_i_f);
+                cartesian_waypoints_planner_B.b_i_h);
               cartesian_waypoints_planner_B.idx = 0;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <=
-                   cartesian_waypoints_planner_B.nx_a;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                if (activeSet->data[cartesian_waypoints_planner_B.b_i_f]) {
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <=
+                   cartesian_waypoints_planner_B.nx_j;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                if (activeSet->data[cartesian_waypoints_planner_B.b_i_h]) {
                   eb->data[cartesian_waypoints_planner_B.idx] =
-                    cartesian_waypoints_planner_B.b_i_f + 1;
+                    cartesian_waypoints_planner_B.b_i_h + 1;
                   cartesian_waypoints_planner_B.idx++;
                 }
               }
 
-              cartesian_waypoints_planner_B.i_j = obj->ConstraintMatrix->size[0];
-              cartesian_waypoints_planner_B.b_i_f = A->size[0] * A->size[1];
-              A->size[0] = cartesian_waypoints_planner_B.i_j;
+              cartesian_waypoints_planner_B.i_e = obj->ConstraintMatrix->size[0];
+              cartesian_waypoints_planner_B.b_i_h = A->size[0] * A->size[1];
+              A->size[0] = cartesian_waypoints_planner_B.i_e;
               A->size[1] = eb->size[0];
               cartes_emxEnsureCapacity_real_T(A,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.n = eb->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.n;
-                   cartesian_waypoints_planner_B.b_i_f++) {
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.n_b = eb->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.n_b;
+                   cartesian_waypoints_planner_B.b_i_h++) {
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx <
-                     cartesian_waypoints_planner_B.i_j;
+                     cartesian_waypoints_planner_B.i_e;
                      cartesian_waypoints_planner_B.idx++) {
                   A->data[cartesian_waypoints_planner_B.idx + A->size[0] *
-                    cartesian_waypoints_planner_B.b_i_f] = obj->
+                    cartesian_waypoints_planner_B.b_i_h] = obj->
                     ConstraintMatrix->data[(eb->
-                    data[cartesian_waypoints_planner_B.b_i_f] - 1) *
+                    data[cartesian_waypoints_planner_B.b_i_h] - 1) *
                     obj->ConstraintMatrix->size[0] +
                     cartesian_waypoints_planner_B.idx];
                 }
               }
 
-              cartesian_waypoints_planner_B.m_i = A->size[1] - 1;
+              cartesian_waypoints_planner_B.m_k = A->size[1] - 1;
               cartesian_waypoints_planner_B.inner = A->size[0] - 1;
-              cartesian_waypoints_planner_B.n = A->size[1] - 1;
-              cartesian_waypoints_planner_B.b_i_f = AIn->size[0] * AIn->size[1];
+              cartesian_waypoints_planner_B.n_b = A->size[1] - 1;
+              cartesian_waypoints_planner_B.b_i_h = AIn->size[0] * AIn->size[1];
               AIn->size[0] = A->size[1];
               AIn->size[1] = A->size[1];
               cartes_emxEnsureCapacity_real_T(AIn,
-                cartesian_waypoints_planner_B.b_i_f);
+                cartesian_waypoints_planner_B.b_i_h);
               for (cartesian_waypoints_planner_B.idx = 0;
                    cartesian_waypoints_planner_B.idx <=
-                   cartesian_waypoints_planner_B.n;
+                   cartesian_waypoints_planner_B.n_b;
                    cartesian_waypoints_planner_B.idx++) {
                 cartesian_waypoints_planner_B.coffset =
-                  (cartesian_waypoints_planner_B.m_i + 1) *
+                  (cartesian_waypoints_planner_B.m_k + 1) *
                   cartesian_waypoints_planner_B.idx - 1;
                 cartesian_waypoints_planner_B.boffset =
                   cartesian_waypoints_planner_B.idx * A->size[0] - 1;
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <=
-                     cartesian_waypoints_planner_B.m_i;
-                     cartesian_waypoints_planner_B.b_i_f++) {
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <=
+                     cartesian_waypoints_planner_B.m_k;
+                     cartesian_waypoints_planner_B.b_i_h++) {
                   AIn->data[(cartesian_waypoints_planner_B.coffset +
-                             cartesian_waypoints_planner_B.b_i_f) + 1] = 0.0;
+                             cartesian_waypoints_planner_B.b_i_h) + 1] = 0.0;
                 }
 
-                for (cartesian_waypoints_planner_B.nx_a = 0;
-                     cartesian_waypoints_planner_B.nx_a <=
+                for (cartesian_waypoints_planner_B.nx_j = 0;
+                     cartesian_waypoints_planner_B.nx_j <=
                      cartesian_waypoints_planner_B.inner;
-                     cartesian_waypoints_planner_B.nx_a++) {
-                  cartesian_waypoints_planner_B.s_k = A->data
+                     cartesian_waypoints_planner_B.nx_j++) {
+                  cartesian_waypoints_planner_B.s_p = A->data
                     [(cartesian_waypoints_planner_B.boffset +
-                      cartesian_waypoints_planner_B.nx_a) + 1];
+                      cartesian_waypoints_planner_B.nx_j) + 1];
                   for (cartesian_waypoints_planner_B.j = 0;
                        cartesian_waypoints_planner_B.j <=
-                       cartesian_waypoints_planner_B.m_i;
+                       cartesian_waypoints_planner_B.m_k;
                        cartesian_waypoints_planner_B.j++) {
-                    cartesian_waypoints_planner_B.b_i_f =
+                    cartesian_waypoints_planner_B.b_i_h =
                       (cartesian_waypoints_planner_B.coffset +
                        cartesian_waypoints_planner_B.j) + 1;
-                    AIn->data[cartesian_waypoints_planner_B.b_i_f] += A->
+                    AIn->data[cartesian_waypoints_planner_B.b_i_h] += A->
                       data[cartesian_waypoints_planner_B.j * A->size[0] +
-                      cartesian_waypoints_planner_B.nx_a] *
-                      cartesian_waypoints_planner_B.s_k;
+                      cartesian_waypoints_planner_B.nx_j] *
+                      cartesian_waypoints_planner_B.s_p;
                   }
                 }
               }
 
-              cartesian_waypoints_planner_B.b_i_f = A_3->size[0] * A_3->size[1];
+              cartesian_waypoints_planner_B.b_i_h = A_3->size[0] * A_3->size[1];
               A_3->size[0] = A->size[1];
               A_3->size[1] = A->size[0];
               cartes_emxEnsureCapacity_real_T(A_3,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = A->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.n = A->size[1];
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = A->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.n_b = A->size[1];
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx <
-                     cartesian_waypoints_planner_B.n;
+                     cartesian_waypoints_planner_B.n_b;
                      cartesian_waypoints_planner_B.idx++) {
                   A_3->data[cartesian_waypoints_planner_B.idx + A_3->size[0] *
-                    cartesian_waypoints_planner_B.b_i_f] = A->data[A->size[0] *
+                    cartesian_waypoints_planner_B.b_i_h] = A->data[A->size[0] *
                     cartesian_waypoints_planner_B.idx +
-                    cartesian_waypoints_planner_B.b_i_f];
+                    cartesian_waypoints_planner_B.b_i_h];
                 }
               }
 
               cartesian_waypoints_pl_mldivide(AIn, A_3, a);
-              cartesian_waypoints_planner_B.m_i = A->size[0] - 1;
+              cartesian_waypoints_planner_B.m_k = A->size[0] - 1;
               cartesian_waypoints_planner_B.inner = A->size[1] - 1;
-              cartesian_waypoints_planner_B.n = a->size[1] - 1;
-              cartesian_waypoints_planner_B.b_i_f = AIn->size[0] * AIn->size[1];
+              cartesian_waypoints_planner_B.n_b = a->size[1] - 1;
+              cartesian_waypoints_planner_B.b_i_h = AIn->size[0] * AIn->size[1];
               AIn->size[0] = A->size[0];
               AIn->size[1] = a->size[1];
               cartes_emxEnsureCapacity_real_T(AIn,
-                cartesian_waypoints_planner_B.b_i_f);
+                cartesian_waypoints_planner_B.b_i_h);
               for (cartesian_waypoints_planner_B.idx = 0;
                    cartesian_waypoints_planner_B.idx <=
-                   cartesian_waypoints_planner_B.n;
+                   cartesian_waypoints_planner_B.n_b;
                    cartesian_waypoints_planner_B.idx++) {
                 cartesian_waypoints_planner_B.coffset =
-                  (cartesian_waypoints_planner_B.m_i + 1) *
+                  (cartesian_waypoints_planner_B.m_k + 1) *
                   cartesian_waypoints_planner_B.idx - 1;
                 cartesian_waypoints_planner_B.boffset =
                   cartesian_waypoints_planner_B.idx * a->size[0] - 1;
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <=
-                     cartesian_waypoints_planner_B.m_i;
-                     cartesian_waypoints_planner_B.b_i_f++) {
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <=
+                     cartesian_waypoints_planner_B.m_k;
+                     cartesian_waypoints_planner_B.b_i_h++) {
                   AIn->data[(cartesian_waypoints_planner_B.coffset +
-                             cartesian_waypoints_planner_B.b_i_f) + 1] = 0.0;
+                             cartesian_waypoints_planner_B.b_i_h) + 1] = 0.0;
                 }
 
-                for (cartesian_waypoints_planner_B.nx_a = 0;
-                     cartesian_waypoints_planner_B.nx_a <=
+                for (cartesian_waypoints_planner_B.nx_j = 0;
+                     cartesian_waypoints_planner_B.nx_j <=
                      cartesian_waypoints_planner_B.inner;
-                     cartesian_waypoints_planner_B.nx_a++) {
+                     cartesian_waypoints_planner_B.nx_j++) {
                   cartesian_waypoints_planner_B.aoffset =
-                    cartesian_waypoints_planner_B.nx_a * A->size[0] - 1;
-                  cartesian_waypoints_planner_B.s_k = a->data
+                    cartesian_waypoints_planner_B.nx_j * A->size[0] - 1;
+                  cartesian_waypoints_planner_B.s_p = a->data
                     [(cartesian_waypoints_planner_B.boffset +
-                      cartesian_waypoints_planner_B.nx_a) + 1];
+                      cartesian_waypoints_planner_B.nx_j) + 1];
                   for (cartesian_waypoints_planner_B.j = 0;
                        cartesian_waypoints_planner_B.j <=
-                       cartesian_waypoints_planner_B.m_i;
+                       cartesian_waypoints_planner_B.m_k;
                        cartesian_waypoints_planner_B.j++) {
-                    cartesian_waypoints_planner_B.i_j =
+                    cartesian_waypoints_planner_B.i_e =
                       cartesian_waypoints_planner_B.j + 1;
-                    cartesian_waypoints_planner_B.b_i_f =
+                    cartesian_waypoints_planner_B.b_i_h =
                       cartesian_waypoints_planner_B.coffset +
-                      cartesian_waypoints_planner_B.i_j;
-                    AIn->data[cartesian_waypoints_planner_B.b_i_f] += A->
+                      cartesian_waypoints_planner_B.i_e;
+                    AIn->data[cartesian_waypoints_planner_B.b_i_h] += A->
                       data[cartesian_waypoints_planner_B.aoffset +
-                      cartesian_waypoints_planner_B.i_j] *
-                      cartesian_waypoints_planner_B.s_k;
+                      cartesian_waypoints_planner_B.i_e] *
+                      cartesian_waypoints_planner_B.s_p;
                   }
                 }
               }
 
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 36;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.P[cartesian_waypoints_planner_B.b_i_f]
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 36;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.P[cartesian_waypoints_planner_B.b_i_h]
                   =
-                  cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_f]
-                  - AIn->data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_h]
+                  - AIn->data[cartesian_waypoints_planner_B.b_i_h];
               }
 
-              cartesian_waypoints_planner_B.s_k = alpha->
+              cartesian_waypoints_planner_B.s_p = alpha->
                 data[cartesian_waypoints_planner_B.idxl];
-              cartesian_waypoints_planner_B.b_i_f = static_cast<int32_T>
-                (cartesian_waypoints_planner_B.s_k);
-              cartesian_waypoints_planner_B.i_j = obj->ConstraintMatrix->size[0];
+              cartesian_waypoints_planner_B.b_i_h = static_cast<int32_T>
+                (cartesian_waypoints_planner_B.s_p);
+              cartesian_waypoints_planner_B.i_e = obj->ConstraintMatrix->size[0];
               cartesian_waypoints_planner_B.idx = alpha->size[0];
-              alpha->size[0] = cartesian_waypoints_planner_B.i_j;
+              alpha->size[0] = cartesian_waypoints_planner_B.i_e;
               cartes_emxEnsureCapacity_real_T(alpha,
                 cartesian_waypoints_planner_B.idx);
               for (cartesian_waypoints_planner_B.idx = 0;
                    cartesian_waypoints_planner_B.idx <
-                   cartesian_waypoints_planner_B.i_j;
+                   cartesian_waypoints_planner_B.i_e;
                    cartesian_waypoints_planner_B.idx++) {
                 alpha->data[cartesian_waypoints_planner_B.idx] =
                   obj->ConstraintMatrix->data
-                  [(cartesian_waypoints_planner_B.b_i_f - 1) *
+                  [(cartesian_waypoints_planner_B.b_i_h - 1) *
                   obj->ConstraintMatrix->size[0] +
                   cartesian_waypoints_planner_B.idx];
               }
 
-              cartesian_waypoints_planner_B.b_i_f = alpha_0->size[0] *
+              cartesian_waypoints_planner_B.b_i_h = alpha_0->size[0] *
                 alpha_0->size[1];
               alpha_0->size[0] = 1;
               alpha_0->size[1] = alpha->size[0];
               cartes_emxEnsureCapacity_real_T(alpha_0,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = alpha->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                alpha_0->data[cartesian_waypoints_planner_B.b_i_f] = alpha->
-                  data[cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = alpha->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                alpha_0->data[cartesian_waypoints_planner_B.b_i_h] = alpha->
+                  data[cartesian_waypoints_planner_B.b_i_h];
               }
 
-              cartesian_waypoints_planner_B.s_k = 0.0;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f]
+              cartesian_waypoints_planner_B.s_p = 0.0;
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h]
                   = 0.0;
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx < 6;
                      cartesian_waypoints_planner_B.idx++) {
                   cartesian_waypoints_planner_B.b_gamma =
                     cartesian_waypoints_planner_B.P[6 *
-                    cartesian_waypoints_planner_B.b_i_f +
+                    cartesian_waypoints_planner_B.b_i_h +
                     cartesian_waypoints_planner_B.idx] * alpha_0->
                     data[cartesian_waypoints_planner_B.idx] +
-                    cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f];
-                  cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f]
+                    cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h];
+                  cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h]
                     = cartesian_waypoints_planner_B.b_gamma;
                 }
 
-                cartesian_waypoints_planner_B.s_k +=
-                  cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f]
-                  * alpha->data[cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.s_p +=
+                  cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h]
+                  * alpha->data[cartesian_waypoints_planner_B.b_i_h];
               }
 
-              cartesian_waypoints_planner_B.s_k = 1.0 /
-                cartesian_waypoints_planner_B.s_k;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 36;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.V[cartesian_waypoints_planner_B.b_i_f]
-                  = cartesian_waypoints_planner_B.s_k *
-                  cartesian_waypoints_planner_B.P[cartesian_waypoints_planner_B.b_i_f];
+              cartesian_waypoints_planner_B.s_p = 1.0 /
+                cartesian_waypoints_planner_B.s_p;
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 36;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.V[cartesian_waypoints_planner_B.b_i_h]
+                  = cartesian_waypoints_planner_B.s_p *
+                  cartesian_waypoints_planner_B.P[cartesian_waypoints_planner_B.b_i_h];
               }
 
-              cartesian_waypoints_planner_B.b_i_f = AIn->size[0] * AIn->size[1];
+              cartesian_waypoints_planner_B.b_i_h = AIn->size[0] * AIn->size[1];
               AIn->size[0] = alpha->size[0];
               AIn->size[1] = alpha->size[0];
               cartes_emxEnsureCapacity_real_T(AIn,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = alpha->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.n = alpha->size[0];
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = alpha->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.n_b = alpha->size[0];
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx <
-                     cartesian_waypoints_planner_B.n;
+                     cartesian_waypoints_planner_B.n_b;
                      cartesian_waypoints_planner_B.idx++) {
                   AIn->data[cartesian_waypoints_planner_B.idx + AIn->size[0] *
-                    cartesian_waypoints_planner_B.b_i_f] = alpha->
+                    cartesian_waypoints_planner_B.b_i_h] = alpha->
                     data[cartesian_waypoints_planner_B.idx] * alpha->
-                    data[cartesian_waypoints_planner_B.b_i_f];
+                    data[cartesian_waypoints_planner_B.b_i_h];
                 }
               }
 
-              cartesian_waypoints_planner_B.n = AIn->size[1] - 1;
-              cartesian_waypoints_planner_B.b_i_f = unusedU1->size[0] *
+              cartesian_waypoints_planner_B.n_b = AIn->size[1] - 1;
+              cartesian_waypoints_planner_B.b_i_h = unusedU1->size[0] *
                 unusedU1->size[1];
               unusedU1->size[0] = 6;
               unusedU1->size[1] = AIn->size[1];
               cartes_emxEnsureCapacity_real_T(unusedU1,
-                cartesian_waypoints_planner_B.b_i_f);
+                cartesian_waypoints_planner_B.b_i_h);
               for (cartesian_waypoints_planner_B.idx = 0;
                    cartesian_waypoints_planner_B.idx <=
-                   cartesian_waypoints_planner_B.n;
+                   cartesian_waypoints_planner_B.n_b;
                    cartesian_waypoints_planner_B.idx++) {
                 cartesian_waypoints_planner_B.coffset =
                   cartesian_waypoints_planner_B.idx * 6 - 1;
                 cartesian_waypoints_planner_B.boffset =
                   cartesian_waypoints_planner_B.idx * AIn->size[0] - 1;
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f < 6;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  cartesian_waypoints_planner_B.s_k = 0.0;
-                  for (cartesian_waypoints_planner_B.nx_a = 0;
-                       cartesian_waypoints_planner_B.nx_a < 6;
-                       cartesian_waypoints_planner_B.nx_a++) {
-                    cartesian_waypoints_planner_B.s_k +=
-                      cartesian_waypoints_planner_B.V[cartesian_waypoints_planner_B.nx_a
-                      * 6 + cartesian_waypoints_planner_B.b_i_f] * AIn->data
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h < 6;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  cartesian_waypoints_planner_B.s_p = 0.0;
+                  for (cartesian_waypoints_planner_B.nx_j = 0;
+                       cartesian_waypoints_planner_B.nx_j < 6;
+                       cartesian_waypoints_planner_B.nx_j++) {
+                    cartesian_waypoints_planner_B.s_p +=
+                      cartesian_waypoints_planner_B.V[cartesian_waypoints_planner_B.nx_j
+                      * 6 + cartesian_waypoints_planner_B.b_i_h] * AIn->data
                       [(cartesian_waypoints_planner_B.boffset +
-                        cartesian_waypoints_planner_B.nx_a) + 1];
+                        cartesian_waypoints_planner_B.nx_j) + 1];
                   }
 
                   unusedU1->data[(cartesian_waypoints_planner_B.coffset +
-                                  cartesian_waypoints_planner_B.b_i_f) + 1] =
-                    cartesian_waypoints_planner_B.s_k;
+                                  cartesian_waypoints_planner_B.b_i_h) + 1] =
+                    cartesian_waypoints_planner_B.s_p;
                 }
               }
 
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx < 6;
                      cartesian_waypoints_planner_B.idx++) {
-                  cartesian_waypoints_planner_B.s_k = 0.0;
-                  for (cartesian_waypoints_planner_B.i_j = 0;
-                       cartesian_waypoints_planner_B.i_j < 6;
-                       cartesian_waypoints_planner_B.i_j++) {
-                    cartesian_waypoints_planner_B.s_k += unusedU1->data[6 *
-                      cartesian_waypoints_planner_B.i_j +
-                      cartesian_waypoints_planner_B.b_i_f] *
+                  cartesian_waypoints_planner_B.s_p = 0.0;
+                  for (cartesian_waypoints_planner_B.i_e = 0;
+                       cartesian_waypoints_planner_B.i_e < 6;
+                       cartesian_waypoints_planner_B.i_e++) {
+                    cartesian_waypoints_planner_B.s_p += unusedU1->data[6 *
+                      cartesian_waypoints_planner_B.i_e +
+                      cartesian_waypoints_planner_B.b_i_h] *
                       cartesian_waypoints_planner_B.P[6 *
                       cartesian_waypoints_planner_B.idx +
-                      cartesian_waypoints_planner_B.i_j];
+                      cartesian_waypoints_planner_B.i_e];
                   }
 
                   cartesian_waypoints_planner_B.idxl = 6 *
                     cartesian_waypoints_planner_B.idx +
-                    cartesian_waypoints_planner_B.b_i_f;
+                    cartesian_waypoints_planner_B.b_i_h;
                   cartesian_waypoints_planner_B.H[cartesian_waypoints_planner_B.idxl]
-                    += cartesian_waypoints_planner_B.s_k;
+                    += cartesian_waypoints_planner_B.s_p;
                 }
               }
 
@@ -7296,145 +7343,145 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
           }
 
           if (guard2) {
-            for (cartesian_waypoints_planner_B.b_i_f = 0;
-                 cartesian_waypoints_planner_B.b_i_f < 6;
-                 cartesian_waypoints_planner_B.b_i_f++) {
-              cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f]
+            for (cartesian_waypoints_planner_B.b_i_h = 0;
+                 cartesian_waypoints_planner_B.b_i_h < 6;
+                 cartesian_waypoints_planner_B.b_i_h++) {
+              cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h]
                 =
-                -cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f];
+                -cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h];
             }
 
             cartesian_waypoints_planner_B.idxl = -1;
             if (obj->ConstraintsOn) {
-              cartesian_waypoints_planner_B.b_i_f = x->size[0];
+              cartesian_waypoints_planner_B.b_i_h = x->size[0];
               x->size[0] = activeSet->size[0];
               car_emxEnsureCapacity_boolean_T(x,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = activeSet->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                x->data[cartesian_waypoints_planner_B.b_i_f] = !activeSet->
-                  data[cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = activeSet->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                x->data[cartesian_waypoints_planner_B.b_i_h] = !activeSet->
+                  data[cartesian_waypoints_planner_B.b_i_h];
               }
 
               if (cartesian_waypoints_planner_any(x)) {
-                cartesian_waypoints_planner_B.nx_a = activeSet->size[0] - 1;
+                cartesian_waypoints_planner_B.nx_j = activeSet->size[0] - 1;
                 cartesian_waypoints_planner_B.idx = 0;
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <=
-                     cartesian_waypoints_planner_B.nx_a;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  if (!activeSet->data[cartesian_waypoints_planner_B.b_i_f]) {
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <=
+                     cartesian_waypoints_planner_B.nx_j;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  if (!activeSet->data[cartesian_waypoints_planner_B.b_i_h]) {
                     cartesian_waypoints_planner_B.idx++;
                   }
                 }
 
-                cartesian_waypoints_planner_B.b_i_f = cb->size[0];
+                cartesian_waypoints_planner_B.b_i_h = cb->size[0];
                 cb->size[0] = cartesian_waypoints_planner_B.idx;
                 carte_emxEnsureCapacity_int32_T(cb,
-                  cartesian_waypoints_planner_B.b_i_f);
+                  cartesian_waypoints_planner_B.b_i_h);
                 cartesian_waypoints_planner_B.idx = 0;
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <=
-                     cartesian_waypoints_planner_B.nx_a;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  if (!activeSet->data[cartesian_waypoints_planner_B.b_i_f]) {
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <=
+                     cartesian_waypoints_planner_B.nx_j;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  if (!activeSet->data[cartesian_waypoints_planner_B.b_i_h]) {
                     cb->data[cartesian_waypoints_planner_B.idx] =
-                      cartesian_waypoints_planner_B.b_i_f + 1;
+                      cartesian_waypoints_planner_B.b_i_h + 1;
                     cartesian_waypoints_planner_B.idx++;
                   }
                 }
 
-                cartesian_waypoints_planner_B.b_i_f = alpha->size[0];
+                cartesian_waypoints_planner_B.b_i_h = alpha->size[0];
                 alpha->size[0] = cb->size[0];
                 cartes_emxEnsureCapacity_real_T(alpha,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.i_j = cb->size[0];
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <
-                     cartesian_waypoints_planner_B.i_j;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  alpha->data[cartesian_waypoints_planner_B.b_i_f] =
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.i_e = cb->size[0];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <
+                     cartesian_waypoints_planner_B.i_e;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  alpha->data[cartesian_waypoints_planner_B.b_i_h] =
                     obj->ConstraintBound->data[cb->
-                    data[cartesian_waypoints_planner_B.b_i_f] - 1];
+                    data[cartesian_waypoints_planner_B.b_i_h] - 1];
                 }
 
-                cartesian_waypoints_planner_B.nx_a = activeSet->size[0] - 1;
+                cartesian_waypoints_planner_B.nx_j = activeSet->size[0] - 1;
                 cartesian_waypoints_planner_B.idx = 0;
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <=
-                     cartesian_waypoints_planner_B.nx_a;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  if (!activeSet->data[cartesian_waypoints_planner_B.b_i_f]) {
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <=
+                     cartesian_waypoints_planner_B.nx_j;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  if (!activeSet->data[cartesian_waypoints_planner_B.b_i_h]) {
                     cartesian_waypoints_planner_B.idx++;
                   }
                 }
 
-                cartesian_waypoints_planner_B.b_i_f = db->size[0];
+                cartesian_waypoints_planner_B.b_i_h = db->size[0];
                 db->size[0] = cartesian_waypoints_planner_B.idx;
                 carte_emxEnsureCapacity_int32_T(db,
-                  cartesian_waypoints_planner_B.b_i_f);
+                  cartesian_waypoints_planner_B.b_i_h);
                 cartesian_waypoints_planner_B.idx = 0;
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <=
-                     cartesian_waypoints_planner_B.nx_a;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  if (!activeSet->data[cartesian_waypoints_planner_B.b_i_f]) {
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <=
+                     cartesian_waypoints_planner_B.nx_j;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  if (!activeSet->data[cartesian_waypoints_planner_B.b_i_h]) {
                     db->data[cartesian_waypoints_planner_B.idx] =
-                      cartesian_waypoints_planner_B.b_i_f + 1;
+                      cartesian_waypoints_planner_B.b_i_h + 1;
                     cartesian_waypoints_planner_B.idx++;
                   }
                 }
 
-                cartesian_waypoints_planner_B.i_j = obj->ConstraintMatrix->size
+                cartesian_waypoints_planner_B.i_e = obj->ConstraintMatrix->size
                   [0];
-                cartesian_waypoints_planner_B.b_i_f = AIn->size[0] * AIn->size[1];
-                AIn->size[0] = cartesian_waypoints_planner_B.i_j;
+                cartesian_waypoints_planner_B.b_i_h = AIn->size[0] * AIn->size[1];
+                AIn->size[0] = cartesian_waypoints_planner_B.i_e;
                 AIn->size[1] = db->size[0];
                 cartes_emxEnsureCapacity_real_T(AIn,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.n = db->size[0];
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <
-                     cartesian_waypoints_planner_B.n;
-                     cartesian_waypoints_planner_B.b_i_f++) {
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.n_b = db->size[0];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <
+                     cartesian_waypoints_planner_B.n_b;
+                     cartesian_waypoints_planner_B.b_i_h++) {
                   for (cartesian_waypoints_planner_B.idx = 0;
                        cartesian_waypoints_planner_B.idx <
-                       cartesian_waypoints_planner_B.i_j;
+                       cartesian_waypoints_planner_B.i_e;
                        cartesian_waypoints_planner_B.idx++) {
                     AIn->data[cartesian_waypoints_planner_B.idx + AIn->size[0] *
-                      cartesian_waypoints_planner_B.b_i_f] =
+                      cartesian_waypoints_planner_B.b_i_h] =
                       obj->ConstraintMatrix->data[(db->
-                      data[cartesian_waypoints_planner_B.b_i_f] - 1) *
+                      data[cartesian_waypoints_planner_B.b_i_h] - 1) *
                       obj->ConstraintMatrix->size[0] +
                       cartesian_waypoints_planner_B.idx];
                   }
                 }
 
-                cartesian_waypoints_planner_B.nx_a = x->size[0];
+                cartesian_waypoints_planner_B.nx_j = x->size[0];
                 cartesian_waypoints_planner_B.idx = 0;
-                cartesian_waypoints_planner_B.b_i_f = ii->size[0];
+                cartesian_waypoints_planner_B.b_i_h = ii->size[0];
                 ii->size[0] = x->size[0];
                 carte_emxEnsureCapacity_int32_T(ii,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.b_i_f = 1;
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.b_i_h = 1;
                 exitg3 = false;
-                while ((!exitg3) && (cartesian_waypoints_planner_B.b_i_f - 1 <=
-                                     cartesian_waypoints_planner_B.nx_a - 1)) {
-                  if (x->data[cartesian_waypoints_planner_B.b_i_f - 1]) {
+                while ((!exitg3) && (cartesian_waypoints_planner_B.b_i_h - 1 <=
+                                     cartesian_waypoints_planner_B.nx_j - 1)) {
+                  if (x->data[cartesian_waypoints_planner_B.b_i_h - 1]) {
                     cartesian_waypoints_planner_B.idx++;
                     ii->data[cartesian_waypoints_planner_B.idx - 1] =
-                      cartesian_waypoints_planner_B.b_i_f;
+                      cartesian_waypoints_planner_B.b_i_h;
                     if (cartesian_waypoints_planner_B.idx >=
-                        cartesian_waypoints_planner_B.nx_a) {
+                        cartesian_waypoints_planner_B.nx_j) {
                       exitg3 = true;
                     } else {
-                      cartesian_waypoints_planner_B.b_i_f++;
+                      cartesian_waypoints_planner_B.b_i_h++;
                     }
                   } else {
-                    cartesian_waypoints_planner_B.b_i_f++;
+                    cartesian_waypoints_planner_B.b_i_h++;
                   }
                 }
 
@@ -7447,137 +7494,137 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
                     cartesian_waypoints_planner_B.idx = 0;
                   }
 
-                  cartesian_waypoints_planner_B.b_i_f = ii_2->size[0];
+                  cartesian_waypoints_planner_B.b_i_h = ii_2->size[0];
                   ii_2->size[0] = cartesian_waypoints_planner_B.idx;
                   carte_emxEnsureCapacity_int32_T(ii_2,
-                    cartesian_waypoints_planner_B.b_i_f);
-                  for (cartesian_waypoints_planner_B.b_i_f = 0;
-                       cartesian_waypoints_planner_B.b_i_f <
+                    cartesian_waypoints_planner_B.b_i_h);
+                  for (cartesian_waypoints_planner_B.b_i_h = 0;
+                       cartesian_waypoints_planner_B.b_i_h <
                        cartesian_waypoints_planner_B.idx;
-                       cartesian_waypoints_planner_B.b_i_f++) {
-                    ii_2->data[cartesian_waypoints_planner_B.b_i_f] = ii->
-                      data[cartesian_waypoints_planner_B.b_i_f];
+                       cartesian_waypoints_planner_B.b_i_h++) {
+                    ii_2->data[cartesian_waypoints_planner_B.b_i_h] = ii->
+                      data[cartesian_waypoints_planner_B.b_i_h];
                   }
 
-                  cartesian_waypoints_planner_B.b_i_f = ii->size[0];
+                  cartesian_waypoints_planner_B.b_i_h = ii->size[0];
                   ii->size[0] = ii_2->size[0];
                   carte_emxEnsureCapacity_int32_T(ii,
-                    cartesian_waypoints_planner_B.b_i_f);
-                  cartesian_waypoints_planner_B.i_j = ii_2->size[0];
-                  for (cartesian_waypoints_planner_B.b_i_f = 0;
-                       cartesian_waypoints_planner_B.b_i_f <
-                       cartesian_waypoints_planner_B.i_j;
-                       cartesian_waypoints_planner_B.b_i_f++) {
-                    ii->data[cartesian_waypoints_planner_B.b_i_f] = ii_2->
-                      data[cartesian_waypoints_planner_B.b_i_f];
+                    cartesian_waypoints_planner_B.b_i_h);
+                  cartesian_waypoints_planner_B.i_e = ii_2->size[0];
+                  for (cartesian_waypoints_planner_B.b_i_h = 0;
+                       cartesian_waypoints_planner_B.b_i_h <
+                       cartesian_waypoints_planner_B.i_e;
+                       cartesian_waypoints_planner_B.b_i_h++) {
+                    ii->data[cartesian_waypoints_planner_B.b_i_h] = ii_2->
+                      data[cartesian_waypoints_planner_B.b_i_h];
                   }
                 }
 
-                cartesian_waypoints_planner_B.m_i = AIn->size[1] - 1;
+                cartesian_waypoints_planner_B.m_k = AIn->size[1] - 1;
                 cartesian_waypoints_planner_B.inner = AIn->size[0] - 1;
-                cartesian_waypoints_planner_B.b_i_f = L->size[0];
+                cartesian_waypoints_planner_B.b_i_h = L->size[0];
                 L->size[0] = AIn->size[1];
                 cartes_emxEnsureCapacity_real_T(L,
-                  cartesian_waypoints_planner_B.b_i_f);
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <=
-                     cartesian_waypoints_planner_B.m_i;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  L->data[cartesian_waypoints_planner_B.b_i_f] = 0.0;
+                  cartesian_waypoints_planner_B.b_i_h);
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <=
+                     cartesian_waypoints_planner_B.m_k;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  L->data[cartesian_waypoints_planner_B.b_i_h] = 0.0;
                 }
 
-                for (cartesian_waypoints_planner_B.nx_a = 0;
-                     cartesian_waypoints_planner_B.nx_a <=
+                for (cartesian_waypoints_planner_B.nx_j = 0;
+                     cartesian_waypoints_planner_B.nx_j <=
                      cartesian_waypoints_planner_B.inner;
-                     cartesian_waypoints_planner_B.nx_a++) {
+                     cartesian_waypoints_planner_B.nx_j++) {
                   for (cartesian_waypoints_planner_B.j = 0;
                        cartesian_waypoints_planner_B.j <=
-                       cartesian_waypoints_planner_B.m_i;
+                       cartesian_waypoints_planner_B.m_k;
                        cartesian_waypoints_planner_B.j++) {
                     L->data[cartesian_waypoints_planner_B.j] += AIn->
                       data[cartesian_waypoints_planner_B.j * AIn->size[0] +
-                      cartesian_waypoints_planner_B.nx_a] *
-                      cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.nx_a];
+                      cartesian_waypoints_planner_B.nx_j] *
+                      cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.nx_j];
                   }
                 }
 
-                cartesian_waypoints_planner_B.m_i = AIn->size[1] - 1;
+                cartesian_waypoints_planner_B.m_k = AIn->size[1] - 1;
                 cartesian_waypoints_planner_B.inner = AIn->size[0] - 1;
-                cartesian_waypoints_planner_B.b_i_f = y->size[0];
+                cartesian_waypoints_planner_B.b_i_h = y->size[0];
                 y->size[0] = AIn->size[1];
                 cartes_emxEnsureCapacity_real_T(y,
-                  cartesian_waypoints_planner_B.b_i_f);
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <=
-                     cartesian_waypoints_planner_B.m_i;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  y->data[cartesian_waypoints_planner_B.b_i_f] = 0.0;
+                  cartesian_waypoints_planner_B.b_i_h);
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <=
+                     cartesian_waypoints_planner_B.m_k;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  y->data[cartesian_waypoints_planner_B.b_i_h] = 0.0;
                 }
 
-                for (cartesian_waypoints_planner_B.nx_a = 0;
-                     cartesian_waypoints_planner_B.nx_a <=
+                for (cartesian_waypoints_planner_B.nx_j = 0;
+                     cartesian_waypoints_planner_B.nx_j <=
                      cartesian_waypoints_planner_B.inner;
-                     cartesian_waypoints_planner_B.nx_a++) {
+                     cartesian_waypoints_planner_B.nx_j++) {
                   for (cartesian_waypoints_planner_B.j = 0;
                        cartesian_waypoints_planner_B.j <=
-                       cartesian_waypoints_planner_B.m_i;
+                       cartesian_waypoints_planner_B.m_k;
                        cartesian_waypoints_planner_B.j++) {
                     y->data[cartesian_waypoints_planner_B.j] += AIn->
                       data[cartesian_waypoints_planner_B.j * AIn->size[0] +
-                      cartesian_waypoints_planner_B.nx_a] *
-                      cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.nx_a];
+                      cartesian_waypoints_planner_B.nx_j] *
+                      cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.nx_j];
                   }
                 }
 
-                cartesian_waypoints_planner_B.b_i_f = alpha->size[0];
+                cartesian_waypoints_planner_B.b_i_h = alpha->size[0];
                 cartes_emxEnsureCapacity_real_T(alpha,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.i_j = alpha->size[0];
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <
-                     cartesian_waypoints_planner_B.i_j;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  alpha->data[cartesian_waypoints_planner_B.b_i_f] =
-                    (alpha->data[cartesian_waypoints_planner_B.b_i_f] - L->
-                     data[cartesian_waypoints_planner_B.b_i_f]) / y->
-                    data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.i_e = alpha->size[0];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <
+                     cartesian_waypoints_planner_B.i_e;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  alpha->data[cartesian_waypoints_planner_B.b_i_h] =
+                    (alpha->data[cartesian_waypoints_planner_B.b_i_h] - L->
+                     data[cartesian_waypoints_planner_B.b_i_h]) / y->
+                    data[cartesian_waypoints_planner_B.b_i_h];
                 }
 
-                cartesian_waypoints_planner_B.b_i_f = x->size[0];
+                cartesian_waypoints_planner_B.b_i_h = x->size[0];
                 x->size[0] = alpha->size[0];
                 car_emxEnsureCapacity_boolean_T(x,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.i_j = alpha->size[0];
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <
-                     cartesian_waypoints_planner_B.i_j;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  x->data[cartesian_waypoints_planner_B.b_i_f] = (alpha->
-                    data[cartesian_waypoints_planner_B.b_i_f] > 0.0);
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.i_e = alpha->size[0];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <
+                     cartesian_waypoints_planner_B.i_e;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  x->data[cartesian_waypoints_planner_B.b_i_h] = (alpha->
+                    data[cartesian_waypoints_planner_B.b_i_h] > 0.0);
                 }
 
-                cartesian_waypoints_planner_B.nx_a = x->size[0];
+                cartesian_waypoints_planner_B.nx_j = x->size[0];
                 cartesian_waypoints_planner_B.idx = 0;
-                cartesian_waypoints_planner_B.b_i_f = ii_0->size[0];
+                cartesian_waypoints_planner_B.b_i_h = ii_0->size[0];
                 ii_0->size[0] = x->size[0];
                 carte_emxEnsureCapacity_int32_T(ii_0,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.b_i_f = 1;
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.b_i_h = 1;
                 exitg3 = false;
-                while ((!exitg3) && (cartesian_waypoints_planner_B.b_i_f - 1 <=
-                                     cartesian_waypoints_planner_B.nx_a - 1)) {
-                  if (x->data[cartesian_waypoints_planner_B.b_i_f - 1]) {
+                while ((!exitg3) && (cartesian_waypoints_planner_B.b_i_h - 1 <=
+                                     cartesian_waypoints_planner_B.nx_j - 1)) {
+                  if (x->data[cartesian_waypoints_planner_B.b_i_h - 1]) {
                     cartesian_waypoints_planner_B.idx++;
                     ii_0->data[cartesian_waypoints_planner_B.idx - 1] =
-                      cartesian_waypoints_planner_B.b_i_f;
+                      cartesian_waypoints_planner_B.b_i_h;
                     if (cartesian_waypoints_planner_B.idx >=
-                        cartesian_waypoints_planner_B.nx_a) {
+                        cartesian_waypoints_planner_B.nx_j) {
                       exitg3 = true;
                     } else {
-                      cartesian_waypoints_planner_B.b_i_f++;
+                      cartesian_waypoints_planner_B.b_i_h++;
                     }
                   } else {
-                    cartesian_waypoints_planner_B.b_i_f++;
+                    cartesian_waypoints_planner_B.b_i_h++;
                   }
                 }
 
@@ -7590,90 +7637,90 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
                     cartesian_waypoints_planner_B.idx = 0;
                   }
 
-                  cartesian_waypoints_planner_B.b_i_f = ii_3->size[0];
+                  cartesian_waypoints_planner_B.b_i_h = ii_3->size[0];
                   ii_3->size[0] = cartesian_waypoints_planner_B.idx;
                   carte_emxEnsureCapacity_int32_T(ii_3,
-                    cartesian_waypoints_planner_B.b_i_f);
-                  for (cartesian_waypoints_planner_B.b_i_f = 0;
-                       cartesian_waypoints_planner_B.b_i_f <
+                    cartesian_waypoints_planner_B.b_i_h);
+                  for (cartesian_waypoints_planner_B.b_i_h = 0;
+                       cartesian_waypoints_planner_B.b_i_h <
                        cartesian_waypoints_planner_B.idx;
-                       cartesian_waypoints_planner_B.b_i_f++) {
-                    ii_3->data[cartesian_waypoints_planner_B.b_i_f] = ii_0->
-                      data[cartesian_waypoints_planner_B.b_i_f];
+                       cartesian_waypoints_planner_B.b_i_h++) {
+                    ii_3->data[cartesian_waypoints_planner_B.b_i_h] = ii_0->
+                      data[cartesian_waypoints_planner_B.b_i_h];
                   }
 
-                  cartesian_waypoints_planner_B.b_i_f = ii_0->size[0];
+                  cartesian_waypoints_planner_B.b_i_h = ii_0->size[0];
                   ii_0->size[0] = ii_3->size[0];
                   carte_emxEnsureCapacity_int32_T(ii_0,
-                    cartesian_waypoints_planner_B.b_i_f);
-                  cartesian_waypoints_planner_B.i_j = ii_3->size[0];
-                  for (cartesian_waypoints_planner_B.b_i_f = 0;
-                       cartesian_waypoints_planner_B.b_i_f <
-                       cartesian_waypoints_planner_B.i_j;
-                       cartesian_waypoints_planner_B.b_i_f++) {
-                    ii_0->data[cartesian_waypoints_planner_B.b_i_f] = ii_3->
-                      data[cartesian_waypoints_planner_B.b_i_f];
+                    cartesian_waypoints_planner_B.b_i_h);
+                  cartesian_waypoints_planner_B.i_e = ii_3->size[0];
+                  for (cartesian_waypoints_planner_B.b_i_h = 0;
+                       cartesian_waypoints_planner_B.b_i_h <
+                       cartesian_waypoints_planner_B.i_e;
+                       cartesian_waypoints_planner_B.b_i_h++) {
+                    ii_0->data[cartesian_waypoints_planner_B.b_i_h] = ii_3->
+                      data[cartesian_waypoints_planner_B.b_i_h];
                   }
                 }
 
-                cartesian_waypoints_planner_B.b_i_f = L->size[0];
+                cartesian_waypoints_planner_B.b_i_h = L->size[0];
                 L->size[0] = ii_0->size[0];
                 cartes_emxEnsureCapacity_real_T(L,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.i_j = ii_0->size[0];
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <
-                     cartesian_waypoints_planner_B.i_j;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  L->data[cartesian_waypoints_planner_B.b_i_f] = ii_0->
-                    data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.i_e = ii_0->size[0];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <
+                     cartesian_waypoints_planner_B.i_e;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  L->data[cartesian_waypoints_planner_B.b_i_h] = ii_0->
+                    data[cartesian_waypoints_planner_B.b_i_h];
                 }
 
                 if (L->size[0] != 0) {
-                  cartesian_waypoints_planner_B.nx_a = alpha->size[0] - 1;
+                  cartesian_waypoints_planner_B.nx_j = alpha->size[0] - 1;
                   cartesian_waypoints_planner_B.idx = 0;
-                  for (cartesian_waypoints_planner_B.b_i_f = 0;
-                       cartesian_waypoints_planner_B.b_i_f <=
-                       cartesian_waypoints_planner_B.nx_a;
-                       cartesian_waypoints_planner_B.b_i_f++) {
-                    if (alpha->data[cartesian_waypoints_planner_B.b_i_f] > 0.0)
+                  for (cartesian_waypoints_planner_B.b_i_h = 0;
+                       cartesian_waypoints_planner_B.b_i_h <=
+                       cartesian_waypoints_planner_B.nx_j;
+                       cartesian_waypoints_planner_B.b_i_h++) {
+                    if (alpha->data[cartesian_waypoints_planner_B.b_i_h] > 0.0)
                     {
                       cartesian_waypoints_planner_B.idx++;
                     }
                   }
 
-                  cartesian_waypoints_planner_B.b_i_f = fb->size[0];
+                  cartesian_waypoints_planner_B.b_i_h = fb->size[0];
                   fb->size[0] = cartesian_waypoints_planner_B.idx;
                   carte_emxEnsureCapacity_int32_T(fb,
-                    cartesian_waypoints_planner_B.b_i_f);
+                    cartesian_waypoints_planner_B.b_i_h);
                   cartesian_waypoints_planner_B.idx = 0;
-                  for (cartesian_waypoints_planner_B.b_i_f = 0;
-                       cartesian_waypoints_planner_B.b_i_f <=
-                       cartesian_waypoints_planner_B.nx_a;
-                       cartesian_waypoints_planner_B.b_i_f++) {
-                    if (alpha->data[cartesian_waypoints_planner_B.b_i_f] > 0.0)
+                  for (cartesian_waypoints_planner_B.b_i_h = 0;
+                       cartesian_waypoints_planner_B.b_i_h <=
+                       cartesian_waypoints_planner_B.nx_j;
+                       cartesian_waypoints_planner_B.b_i_h++) {
+                    if (alpha->data[cartesian_waypoints_planner_B.b_i_h] > 0.0)
                     {
                       fb->data[cartesian_waypoints_planner_B.idx] =
-                        cartesian_waypoints_planner_B.b_i_f + 1;
+                        cartesian_waypoints_planner_B.b_i_h + 1;
                       cartesian_waypoints_planner_B.idx++;
                     }
                   }
 
-                  cartesian_waypoints_planner_B.n = fb->size[0];
+                  cartesian_waypoints_planner_B.n_b = fb->size[0];
                   if (fb->size[0] <= 2) {
                     if (fb->size[0] == 1) {
-                      cartesian_waypoints_planner_B.s_k = alpha->data[fb->data[0]
+                      cartesian_waypoints_planner_B.s_p = alpha->data[fb->data[0]
                         - 1];
                       cartesian_waypoints_planner_B.idxl = 0;
                     } else if ((alpha->data[fb->data[0] - 1] > alpha->data
                                 [fb->data[1] - 1]) || (rtIsNaN(alpha->data
                                  [fb->data[0] - 1]) && (!rtIsNaN(alpha->data
                                   [fb->data[1] - 1])))) {
-                      cartesian_waypoints_planner_B.s_k = alpha->data[fb->data[1]
+                      cartesian_waypoints_planner_B.s_p = alpha->data[fb->data[1]
                         - 1];
                       cartesian_waypoints_planner_B.idxl = 1;
                     } else {
-                      cartesian_waypoints_planner_B.s_k = alpha->data[fb->data[0]
+                      cartesian_waypoints_planner_B.s_p = alpha->data[fb->data[0]
                         - 1];
                       cartesian_waypoints_planner_B.idxl = 0;
                     }
@@ -7682,48 +7729,48 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
                       cartesian_waypoints_planner_B.idxl = 1;
                     } else {
                       cartesian_waypoints_planner_B.idxl = 0;
-                      cartesian_waypoints_planner_B.b_i_f = 2;
+                      cartesian_waypoints_planner_B.b_i_h = 2;
                       exitg3 = false;
-                      while ((!exitg3) && (cartesian_waypoints_planner_B.b_i_f <=
+                      while ((!exitg3) && (cartesian_waypoints_planner_B.b_i_h <=
                                            fb->size[0])) {
                         if (!rtIsNaN(alpha->data[fb->
-                                     data[cartesian_waypoints_planner_B.b_i_f -
+                                     data[cartesian_waypoints_planner_B.b_i_h -
                                      1] - 1])) {
                           cartesian_waypoints_planner_B.idxl =
-                            cartesian_waypoints_planner_B.b_i_f;
+                            cartesian_waypoints_planner_B.b_i_h;
                           exitg3 = true;
                         } else {
-                          cartesian_waypoints_planner_B.b_i_f++;
+                          cartesian_waypoints_planner_B.b_i_h++;
                         }
                       }
                     }
 
                     if (cartesian_waypoints_planner_B.idxl == 0) {
-                      cartesian_waypoints_planner_B.s_k = alpha->data[fb->data[0]
+                      cartesian_waypoints_planner_B.s_p = alpha->data[fb->data[0]
                         - 1];
                     } else {
-                      cartesian_waypoints_planner_B.s_k = alpha->data[fb->
+                      cartesian_waypoints_planner_B.s_p = alpha->data[fb->
                         data[cartesian_waypoints_planner_B.idxl - 1] - 1];
-                      cartesian_waypoints_planner_B.nx_a =
+                      cartesian_waypoints_planner_B.nx_j =
                         cartesian_waypoints_planner_B.idxl;
-                      for (cartesian_waypoints_planner_B.b_i_f =
+                      for (cartesian_waypoints_planner_B.b_i_h =
                            cartesian_waypoints_planner_B.idxl + 1;
-                           cartesian_waypoints_planner_B.b_i_f <=
-                           cartesian_waypoints_planner_B.n;
-                           cartesian_waypoints_planner_B.b_i_f++) {
-                        if (cartesian_waypoints_planner_B.s_k > alpha->data
-                            [fb->data[cartesian_waypoints_planner_B.b_i_f - 1] -
+                           cartesian_waypoints_planner_B.b_i_h <=
+                           cartesian_waypoints_planner_B.n_b;
+                           cartesian_waypoints_planner_B.b_i_h++) {
+                        if (cartesian_waypoints_planner_B.s_p > alpha->data
+                            [fb->data[cartesian_waypoints_planner_B.b_i_h - 1] -
                             1]) {
-                          cartesian_waypoints_planner_B.s_k = alpha->data
-                            [fb->data[cartesian_waypoints_planner_B.b_i_f - 1] -
+                          cartesian_waypoints_planner_B.s_p = alpha->data
+                            [fb->data[cartesian_waypoints_planner_B.b_i_h - 1] -
                             1];
-                          cartesian_waypoints_planner_B.nx_a =
-                            cartesian_waypoints_planner_B.b_i_f;
+                          cartesian_waypoints_planner_B.nx_j =
+                            cartesian_waypoints_planner_B.b_i_h;
                         }
                       }
 
                       cartesian_waypoints_planner_B.idxl =
-                        cartesian_waypoints_planner_B.nx_a - 1;
+                        cartesian_waypoints_planner_B.nx_j - 1;
                     }
                   }
 
@@ -7731,21 +7778,21 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
                     [static_cast<int32_T>(L->
                     data[cartesian_waypoints_planner_B.idxl]) - 1];
                 } else {
-                  cartesian_waypoints_planner_B.s_k = 0.0;
+                  cartesian_waypoints_planner_B.s_p = 0.0;
                 }
               } else {
-                cartesian_waypoints_planner_B.s_k = 0.0;
+                cartesian_waypoints_planner_B.s_p = 0.0;
               }
             } else {
-              cartesian_waypoints_planner_B.s_k = 0.0;
+              cartesian_waypoints_planner_B.s_p = 0.0;
             }
 
-            if (cartesian_waypoints_planner_B.s_k > 0.0) {
-              if (1.0 < cartesian_waypoints_planner_B.s_k) {
+            if (cartesian_waypoints_planner_B.s_p > 0.0) {
+              if (1.0 < cartesian_waypoints_planner_B.s_p) {
                 cartesian_waypoints_planner_B.b_gamma = 1.0;
               } else {
                 cartesian_waypoints_planner_B.b_gamma =
-                  cartesian_waypoints_planner_B.s_k;
+                  cartesian_waypoints_planner_B.s_p;
               }
             } else {
               cartesian_waypoints_planner_B.b_gamma = 1.0;
@@ -7753,106 +7800,106 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
 
             cartesian_waypoints_planner_B.beta = obj->ArmijoRuleBeta;
             cartesian_waypoints_planner_B.sigma = obj->ArmijoRuleSigma;
-            for (cartesian_waypoints_planner_B.b_i_f = 0;
-                 cartesian_waypoints_planner_B.b_i_f < 6;
-                 cartesian_waypoints_planner_B.b_i_f++) {
-              cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
+            for (cartesian_waypoints_planner_B.b_i_h = 0;
+                 cartesian_waypoints_planner_B.b_i_h < 6;
+                 cartesian_waypoints_planner_B.b_i_h++) {
+              cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
                 = cartesian_waypoints_planner_B.b_gamma *
-                cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f]
-                + cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h]
+                + cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h];
             }
 
-            cartesian_IKHelpers_computeCost(cartesian_waypoints_planner_B.sNew_h,
+            cartesian_IKHelpers_computeCost(cartesian_waypoints_planner_B.sNew_p,
               obj->ExtraArgs, &cartesian_waypoints_planner_B.costNew,
               cartesian_waypoints_planner_B.V, unusedU1, &c);
             obj->ExtraArgs = c;
             cartesian_waypoints_planner_B.m = 0.0;
             do {
               exitg1 = 0;
-              for (cartesian_waypoints_planner_B.i_j = 0;
-                   cartesian_waypoints_planner_B.i_j < 6;
-                   cartesian_waypoints_planner_B.i_j++) {
-                xSol[cartesian_waypoints_planner_B.i_j] =
+              for (cartesian_waypoints_planner_B.i_e = 0;
+                   cartesian_waypoints_planner_B.i_e < 6;
+                   cartesian_waypoints_planner_B.i_e++) {
+                xSol[cartesian_waypoints_planner_B.i_e] =
                   cartesian_waypoints_planner_B.b_gamma *
-                  cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.i_j];
+                  cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.i_e];
               }
 
-              cartesian_waypoints_planner_B.b_i_f = sigma->size[0] * sigma->
+              cartesian_waypoints_planner_B.b_i_h = sigma->size[0] * sigma->
                 size[1];
               sigma->size[0] = 1;
               sigma->size[1] = grad->size[0];
               cartes_emxEnsureCapacity_real_T(sigma,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = grad->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                sigma->data[cartesian_waypoints_planner_B.b_i_f] =
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = grad->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                sigma->data[cartesian_waypoints_planner_B.b_i_h] =
                   -cartesian_waypoints_planner_B.sigma * grad->
-                  data[cartesian_waypoints_planner_B.b_i_f];
+                  data[cartesian_waypoints_planner_B.b_i_h];
               }
 
-              cartesian_waypoints_planner_B.sigma_o = 0.0;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.sigma_o += sigma->
-                  data[cartesian_waypoints_planner_B.b_i_f] *
-                  xSol[cartesian_waypoints_planner_B.b_i_f];
+              cartesian_waypoints_planner_B.sigma_g = 0.0;
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.sigma_g += sigma->
+                  data[cartesian_waypoints_planner_B.b_i_h] *
+                  xSol[cartesian_waypoints_planner_B.b_i_h];
               }
 
               if (cartesian_waypoints_planner_B.cost -
                   cartesian_waypoints_planner_B.costNew <
-                  cartesian_waypoints_planner_B.sigma_o) {
+                  cartesian_waypoints_planner_B.sigma_g) {
                 cartesian_waypoints_planner_B.flag =
                   (cartesian_waypoints_planner_B.b_gamma < obj->StepTolerance);
                 if (cartesian_waypoints_planner_B.flag) {
-                  for (cartesian_waypoints_planner_B.i_j = 0;
-                       cartesian_waypoints_planner_B.i_j < 6;
-                       cartesian_waypoints_planner_B.i_j++) {
-                    xSol[cartesian_waypoints_planner_B.i_j] =
-                      cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.i_j];
+                  for (cartesian_waypoints_planner_B.i_e = 0;
+                       cartesian_waypoints_planner_B.i_e < 6;
+                       cartesian_waypoints_planner_B.i_e++) {
+                    xSol[cartesian_waypoints_planner_B.i_e] =
+                      cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.i_e];
                   }
 
                   *exitFlag = StepSizeBelowMinimum;
                   args = obj->ExtraArgs;
-                  for (cartesian_waypoints_planner_B.b_i_f = 0;
-                       cartesian_waypoints_planner_B.b_i_f < 36;
-                       cartesian_waypoints_planner_B.b_i_f++) {
-                    cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_f]
-                      = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_f];
+                  for (cartesian_waypoints_planner_B.b_i_h = 0;
+                       cartesian_waypoints_planner_B.b_i_h < 36;
+                       cartesian_waypoints_planner_B.b_i_h++) {
+                    cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_h]
+                      = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_h];
                   }
 
-                  cartesian_waypoints_planner_B.b_i_f = grad->size[0];
+                  cartesian_waypoints_planner_B.b_i_h = grad->size[0];
                   grad->size[0] = args->ErrTemp->size[0];
                   cartes_emxEnsureCapacity_real_T(grad,
-                    cartesian_waypoints_planner_B.b_i_f);
-                  cartesian_waypoints_planner_B.i_j = args->ErrTemp->size[0];
-                  for (cartesian_waypoints_planner_B.b_i_f = 0;
-                       cartesian_waypoints_planner_B.b_i_f <
-                       cartesian_waypoints_planner_B.i_j;
-                       cartesian_waypoints_planner_B.b_i_f++) {
-                    grad->data[cartesian_waypoints_planner_B.b_i_f] =
-                      args->ErrTemp->data[cartesian_waypoints_planner_B.b_i_f];
+                    cartesian_waypoints_planner_B.b_i_h);
+                  cartesian_waypoints_planner_B.i_e = args->ErrTemp->size[0];
+                  for (cartesian_waypoints_planner_B.b_i_h = 0;
+                       cartesian_waypoints_planner_B.b_i_h <
+                       cartesian_waypoints_planner_B.i_e;
+                       cartesian_waypoints_planner_B.b_i_h++) {
+                    grad->data[cartesian_waypoints_planner_B.b_i_h] =
+                      args->ErrTemp->data[cartesian_waypoints_planner_B.b_i_h];
                   }
 
-                  for (cartesian_waypoints_planner_B.b_i_f = 0;
-                       cartesian_waypoints_planner_B.b_i_f < 6;
-                       cartesian_waypoints_planner_B.b_i_f++) {
-                    cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f]
+                  for (cartesian_waypoints_planner_B.b_i_h = 0;
+                       cartesian_waypoints_planner_B.b_i_h < 6;
+                       cartesian_waypoints_planner_B.b_i_h++) {
+                    cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h]
                       = 0.0;
                     for (cartesian_waypoints_planner_B.idx = 0;
                          cartesian_waypoints_planner_B.idx < 6;
                          cartesian_waypoints_planner_B.idx++) {
-                      cartesian_waypoints_planner_B.A_n =
+                      cartesian_waypoints_planner_B.A_d =
                         cartesian_waypoints_planner_B.unusedU0[6 *
                         cartesian_waypoints_planner_B.idx +
-                        cartesian_waypoints_planner_B.b_i_f] * grad->
+                        cartesian_waypoints_planner_B.b_i_h] * grad->
                         data[cartesian_waypoints_planner_B.idx] +
-                        cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f];
-                      cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f]
-                        = cartesian_waypoints_planner_B.A_n;
+                        cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h];
+                      cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h]
+                        = cartesian_waypoints_planner_B.A_d;
                     }
                   }
 
@@ -7865,41 +7912,41 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
                   cartesian_waypoints_planner_B.b_gamma *=
                     cartesian_waypoints_planner_B.beta;
                   cartesian_waypoints_planner_B.m++;
-                  for (cartesian_waypoints_planner_B.b_i_f = 0;
-                       cartesian_waypoints_planner_B.b_i_f < 6;
-                       cartesian_waypoints_planner_B.b_i_f++) {
-                    cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
+                  for (cartesian_waypoints_planner_B.b_i_h = 0;
+                       cartesian_waypoints_planner_B.b_i_h < 6;
+                       cartesian_waypoints_planner_B.b_i_h++) {
+                    cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
                       = cartesian_waypoints_planner_B.b_gamma *
-                      cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f]
-                      + cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f];
+                      cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h]
+                      + cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h];
                   }
 
                   cartesian_IKHelpers_computeCost
-                    (cartesian_waypoints_planner_B.sNew_h, obj->ExtraArgs,
+                    (cartesian_waypoints_planner_B.sNew_p, obj->ExtraArgs,
                      &cartesian_waypoints_planner_B.costNew,
                      cartesian_waypoints_planner_B.V, unusedU1, &d);
                   obj->ExtraArgs = d;
                 }
               } else {
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f < 6;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  xSol[cartesian_waypoints_planner_B.b_i_f] +=
-                    cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h < 6;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  xSol[cartesian_waypoints_planner_B.b_i_h] +=
+                    cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h];
                 }
 
                 args = obj->ExtraArgs;
-                cartesian_waypoints_planner_B.b_i_f = alpha->size[0];
+                cartesian_waypoints_planner_B.b_i_h = alpha->size[0];
                 alpha->size[0] = args->GradTemp->size[0];
                 cartes_emxEnsureCapacity_real_T(alpha,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.i_j = args->GradTemp->size[0];
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <
-                     cartesian_waypoints_planner_B.i_j;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  alpha->data[cartesian_waypoints_planner_B.b_i_f] =
-                    args->GradTemp->data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.i_e = args->GradTemp->size[0];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <
+                     cartesian_waypoints_planner_B.i_e;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  alpha->data[cartesian_waypoints_planner_B.b_i_h] =
+                    args->GradTemp->data[cartesian_waypoints_planner_B.b_i_h];
                 }
 
                 exitg1 = 2;
@@ -7910,370 +7957,370 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
               exitg2 = 1;
             } else if ((cartesian_waypoints_planner_B.m == 0.0) && (fabs
                         (cartesian_waypoints_planner_B.b_gamma -
-                         cartesian_waypoints_planner_B.s_k) <
+                         cartesian_waypoints_planner_B.s_p) <
                         1.4901161193847656E-8)) {
-              cartesian_waypoints_planner_B.i_j = obj->ConstraintMatrix->size[0];
-              cartesian_waypoints_planner_B.b_i_f = grad->size[0];
-              grad->size[0] = cartesian_waypoints_planner_B.i_j;
+              cartesian_waypoints_planner_B.i_e = obj->ConstraintMatrix->size[0];
+              cartesian_waypoints_planner_B.b_i_h = grad->size[0];
+              grad->size[0] = cartesian_waypoints_planner_B.i_e;
               cartes_emxEnsureCapacity_real_T(grad,
-                cartesian_waypoints_planner_B.b_i_f);
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                grad->data[cartesian_waypoints_planner_B.b_i_f] =
+                cartesian_waypoints_planner_B.b_i_h);
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                grad->data[cartesian_waypoints_planner_B.b_i_h] =
                   obj->ConstraintMatrix->data
                   [(cartesian_waypoints_planner_B.idxl - 1) *
                   obj->ConstraintMatrix->size[0] +
-                  cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.b_i_h];
               }
 
               activeSet->data[cartesian_waypoints_planner_B.idxl - 1] = true;
-              cartesian_waypoints_planner_B.nx_a = activeSet->size[0] - 1;
+              cartesian_waypoints_planner_B.nx_j = activeSet->size[0] - 1;
               cartesian_waypoints_planner_B.idx = 0;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <=
-                   cartesian_waypoints_planner_B.nx_a;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                if (activeSet->data[cartesian_waypoints_planner_B.b_i_f]) {
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <=
+                   cartesian_waypoints_planner_B.nx_j;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                if (activeSet->data[cartesian_waypoints_planner_B.b_i_h]) {
                   cartesian_waypoints_planner_B.idx++;
                 }
               }
 
-              cartesian_waypoints_planner_B.b_i_f = gb->size[0];
+              cartesian_waypoints_planner_B.b_i_h = gb->size[0];
               gb->size[0] = cartesian_waypoints_planner_B.idx;
               carte_emxEnsureCapacity_int32_T(gb,
-                cartesian_waypoints_planner_B.b_i_f);
+                cartesian_waypoints_planner_B.b_i_h);
               cartesian_waypoints_planner_B.idx = 0;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <=
-                   cartesian_waypoints_planner_B.nx_a;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                if (activeSet->data[cartesian_waypoints_planner_B.b_i_f]) {
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <=
+                   cartesian_waypoints_planner_B.nx_j;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                if (activeSet->data[cartesian_waypoints_planner_B.b_i_h]) {
                   gb->data[cartesian_waypoints_planner_B.idx] =
-                    cartesian_waypoints_planner_B.b_i_f + 1;
+                    cartesian_waypoints_planner_B.b_i_h + 1;
                   cartesian_waypoints_planner_B.idx++;
                 }
               }
 
-              cartesian_waypoints_planner_B.i_j = obj->ConstraintMatrix->size[0];
-              cartesian_waypoints_planner_B.b_i_f = A->size[0] * A->size[1];
-              A->size[0] = cartesian_waypoints_planner_B.i_j;
+              cartesian_waypoints_planner_B.i_e = obj->ConstraintMatrix->size[0];
+              cartesian_waypoints_planner_B.b_i_h = A->size[0] * A->size[1];
+              A->size[0] = cartesian_waypoints_planner_B.i_e;
               A->size[1] = gb->size[0];
               cartes_emxEnsureCapacity_real_T(A,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.n = gb->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.n;
-                   cartesian_waypoints_planner_B.b_i_f++) {
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.n_b = gb->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.n_b;
+                   cartesian_waypoints_planner_B.b_i_h++) {
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx <
-                     cartesian_waypoints_planner_B.i_j;
+                     cartesian_waypoints_planner_B.i_e;
                      cartesian_waypoints_planner_B.idx++) {
                   A->data[cartesian_waypoints_planner_B.idx + A->size[0] *
-                    cartesian_waypoints_planner_B.b_i_f] = obj->
+                    cartesian_waypoints_planner_B.b_i_h] = obj->
                     ConstraintMatrix->data[(gb->
-                    data[cartesian_waypoints_planner_B.b_i_f] - 1) *
+                    data[cartesian_waypoints_planner_B.b_i_h] - 1) *
                     obj->ConstraintMatrix->size[0] +
                     cartesian_waypoints_planner_B.idx];
                 }
               }
 
-              cartesian_waypoints_planner_B.b_i_f = AIn->size[0] * AIn->size[1];
+              cartesian_waypoints_planner_B.b_i_h = AIn->size[0] * AIn->size[1];
               AIn->size[0] = grad->size[0];
               AIn->size[1] = grad->size[0];
               cartes_emxEnsureCapacity_real_T(AIn,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = grad->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.n = grad->size[0];
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = grad->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.n_b = grad->size[0];
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx <
-                     cartesian_waypoints_planner_B.n;
+                     cartesian_waypoints_planner_B.n_b;
                      cartesian_waypoints_planner_B.idx++) {
                   AIn->data[cartesian_waypoints_planner_B.idx + AIn->size[0] *
-                    cartesian_waypoints_planner_B.b_i_f] = grad->
+                    cartesian_waypoints_planner_B.b_i_h] = grad->
                     data[cartesian_waypoints_planner_B.idx] * grad->
-                    data[cartesian_waypoints_planner_B.b_i_f];
+                    data[cartesian_waypoints_planner_B.b_i_h];
                 }
               }
 
-              cartesian_waypoints_planner_B.m_i = AIn->size[0] - 1;
+              cartesian_waypoints_planner_B.m_k = AIn->size[0] - 1;
               cartesian_waypoints_planner_B.inner = AIn->size[1] - 1;
-              cartesian_waypoints_planner_B.b_i_f = y_0->size[0] * y_0->size[1];
+              cartesian_waypoints_planner_B.b_i_h = y_0->size[0] * y_0->size[1];
               y_0->size[0] = AIn->size[0];
               y_0->size[1] = 6;
               cartes_emxEnsureCapacity_real_T(y_0,
-                cartesian_waypoints_planner_B.b_i_f);
+                cartesian_waypoints_planner_B.b_i_h);
               for (cartesian_waypoints_planner_B.idx = 0;
                    cartesian_waypoints_planner_B.idx < 6;
                    cartesian_waypoints_planner_B.idx++) {
                 cartesian_waypoints_planner_B.coffset =
-                  (cartesian_waypoints_planner_B.m_i + 1) *
+                  (cartesian_waypoints_planner_B.m_k + 1) *
                   cartesian_waypoints_planner_B.idx - 1;
                 cartesian_waypoints_planner_B.boffset =
                   cartesian_waypoints_planner_B.idx * 6 - 1;
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <=
-                     cartesian_waypoints_planner_B.m_i;
-                     cartesian_waypoints_planner_B.b_i_f++) {
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <=
+                     cartesian_waypoints_planner_B.m_k;
+                     cartesian_waypoints_planner_B.b_i_h++) {
                   y_0->data[(cartesian_waypoints_planner_B.coffset +
-                             cartesian_waypoints_planner_B.b_i_f) + 1] = 0.0;
+                             cartesian_waypoints_planner_B.b_i_h) + 1] = 0.0;
                 }
 
-                for (cartesian_waypoints_planner_B.nx_a = 0;
-                     cartesian_waypoints_planner_B.nx_a <=
+                for (cartesian_waypoints_planner_B.nx_j = 0;
+                     cartesian_waypoints_planner_B.nx_j <=
                      cartesian_waypoints_planner_B.inner;
-                     cartesian_waypoints_planner_B.nx_a++) {
+                     cartesian_waypoints_planner_B.nx_j++) {
                   cartesian_waypoints_planner_B.aoffset =
-                    cartesian_waypoints_planner_B.nx_a * AIn->size[0] - 1;
-                  cartesian_waypoints_planner_B.s_k =
+                    cartesian_waypoints_planner_B.nx_j * AIn->size[0] - 1;
+                  cartesian_waypoints_planner_B.s_p =
                     cartesian_waypoints_planner_B.H
                     [(cartesian_waypoints_planner_B.boffset +
-                      cartesian_waypoints_planner_B.nx_a) + 1];
+                      cartesian_waypoints_planner_B.nx_j) + 1];
                   for (cartesian_waypoints_planner_B.j = 0;
                        cartesian_waypoints_planner_B.j <=
-                       cartesian_waypoints_planner_B.m_i;
+                       cartesian_waypoints_planner_B.m_k;
                        cartesian_waypoints_planner_B.j++) {
-                    cartesian_waypoints_planner_B.i_j =
+                    cartesian_waypoints_planner_B.i_e =
                       cartesian_waypoints_planner_B.j + 1;
-                    cartesian_waypoints_planner_B.b_i_f =
+                    cartesian_waypoints_planner_B.b_i_h =
                       cartesian_waypoints_planner_B.coffset +
-                      cartesian_waypoints_planner_B.i_j;
-                    y_0->data[cartesian_waypoints_planner_B.b_i_f] += AIn->
+                      cartesian_waypoints_planner_B.i_e;
+                    y_0->data[cartesian_waypoints_planner_B.b_i_h] += AIn->
                       data[cartesian_waypoints_planner_B.aoffset +
-                      cartesian_waypoints_planner_B.i_j] *
-                      cartesian_waypoints_planner_B.s_k;
+                      cartesian_waypoints_planner_B.i_e] *
+                      cartesian_waypoints_planner_B.s_p;
                   }
                 }
               }
 
-              cartesian_waypoints_planner_B.b_i_f = grad_1->size[0] *
+              cartesian_waypoints_planner_B.b_i_h = grad_1->size[0] *
                 grad_1->size[1];
               grad_1->size[0] = 1;
               grad_1->size[1] = grad->size[0];
               cartes_emxEnsureCapacity_real_T(grad_1,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = grad->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                grad_1->data[cartesian_waypoints_planner_B.b_i_f] = grad->
-                  data[cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = grad->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                grad_1->data[cartesian_waypoints_planner_B.b_i_h] = grad->
+                  data[cartesian_waypoints_planner_B.b_i_h];
               }
 
               cartesian_waypoints_planner_B.beta = 0.0;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
                   = 0.0;
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx < 6;
                      cartesian_waypoints_planner_B.idx++) {
                   cartesian_waypoints_planner_B.sigma =
                     cartesian_waypoints_planner_B.H[6 *
-                    cartesian_waypoints_planner_B.b_i_f +
+                    cartesian_waypoints_planner_B.b_i_h +
                     cartesian_waypoints_planner_B.idx] * grad_1->
                     data[cartesian_waypoints_planner_B.idx] +
-                    cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f];
-                  cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
+                    cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h];
+                  cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
                     = cartesian_waypoints_planner_B.sigma;
                 }
 
                 cartesian_waypoints_planner_B.beta +=
-                  cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
-                  * grad->data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
+                  * grad->data[cartesian_waypoints_planner_B.b_i_h];
               }
 
-              cartesian_waypoints_planner_B.s_k = 1.0 /
+              cartesian_waypoints_planner_B.s_p = 1.0 /
                 cartesian_waypoints_planner_B.beta;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx < 6;
                      cartesian_waypoints_planner_B.idx++) {
                   cartesian_waypoints_planner_B.idxl =
-                    cartesian_waypoints_planner_B.b_i_f + 6 *
+                    cartesian_waypoints_planner_B.b_i_h + 6 *
                     cartesian_waypoints_planner_B.idx;
                   cartesian_waypoints_planner_B.H_m[cartesian_waypoints_planner_B.idxl]
                     = 0.0;
-                  for (cartesian_waypoints_planner_B.i_j = 0;
-                       cartesian_waypoints_planner_B.i_j < 6;
-                       cartesian_waypoints_planner_B.i_j++) {
+                  for (cartesian_waypoints_planner_B.i_e = 0;
+                       cartesian_waypoints_planner_B.i_e < 6;
+                       cartesian_waypoints_planner_B.i_e++) {
                     cartesian_waypoints_planner_B.H_m[cartesian_waypoints_planner_B.idxl]
                       += cartesian_waypoints_planner_B.H[6 *
-                      cartesian_waypoints_planner_B.i_j +
-                      cartesian_waypoints_planner_B.b_i_f] * y_0->data[6 *
+                      cartesian_waypoints_planner_B.i_e +
+                      cartesian_waypoints_planner_B.b_i_h] * y_0->data[6 *
                       cartesian_waypoints_planner_B.idx +
-                      cartesian_waypoints_planner_B.i_j];
+                      cartesian_waypoints_planner_B.i_e];
                   }
                 }
               }
 
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 36;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.H[cartesian_waypoints_planner_B.b_i_f]
-                  -= cartesian_waypoints_planner_B.s_k *
-                  cartesian_waypoints_planner_B.H_m[cartesian_waypoints_planner_B.b_i_f];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 36;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.H[cartesian_waypoints_planner_B.b_i_h]
+                  -= cartesian_waypoints_planner_B.s_p *
+                  cartesian_waypoints_planner_B.H_m[cartesian_waypoints_planner_B.b_i_h];
               }
 
               guard1 = true;
             } else {
-              cartesian_waypoints_planner_B.b_i_f = grad->size[0];
+              cartesian_waypoints_planner_B.b_i_h = grad->size[0];
               grad->size[0] = alpha->size[0];
               cartes_emxEnsureCapacity_real_T(grad,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = alpha->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                grad->data[cartesian_waypoints_planner_B.b_i_f] = alpha->
-                  data[cartesian_waypoints_planner_B.b_i_f] - grad->
-                  data[cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = alpha->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                grad->data[cartesian_waypoints_planner_B.b_i_h] = alpha->
+                  data[cartesian_waypoints_planner_B.b_i_h] - grad->
+                  data[cartesian_waypoints_planner_B.b_i_h];
               }
 
               cartesian_waypoints_planner_B.b_gamma = 0.0;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
                 cartesian_waypoints_planner_B.b_gamma +=
-                  cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f]
-                  * grad->data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h]
+                  * grad->data[cartesian_waypoints_planner_B.b_i_h];
               }
 
-              cartesian_waypoints_planner_B.b_i_f = tmp->size[0] * tmp->size[1];
+              cartesian_waypoints_planner_B.b_i_h = tmp->size[0] * tmp->size[1];
               tmp->size[0] = 1;
               tmp->size[1] = grad->size[0];
               cartes_emxEnsureCapacity_real_T(tmp,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = grad->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                tmp->data[cartesian_waypoints_planner_B.b_i_f] = 0.2 *
-                  grad->data[cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = grad->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                tmp->data[cartesian_waypoints_planner_B.b_i_h] = 0.2 *
+                  grad->data[cartesian_waypoints_planner_B.b_i_h];
               }
 
-              cartesian_waypoints_planner_B.s_k = 0.0;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
+              cartesian_waypoints_planner_B.s_p = 0.0;
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
                   = 0.0;
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx < 6;
                      cartesian_waypoints_planner_B.idx++) {
                   cartesian_waypoints_planner_B.beta =
                     cartesian_waypoints_planner_B.H[6 *
-                    cartesian_waypoints_planner_B.b_i_f +
+                    cartesian_waypoints_planner_B.b_i_h +
                     cartesian_waypoints_planner_B.idx] * tmp->
                     data[cartesian_waypoints_planner_B.idx] +
-                    cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f];
-                  cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
+                    cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h];
+                  cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
                     = cartesian_waypoints_planner_B.beta;
                 }
 
-                cartesian_waypoints_planner_B.s_k +=
-                  cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
-                  * grad->data[cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.s_p +=
+                  cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
+                  * grad->data[cartesian_waypoints_planner_B.b_i_h];
               }
 
               if (cartesian_waypoints_planner_B.b_gamma <
-                  cartesian_waypoints_planner_B.s_k) {
-                cartesian_waypoints_planner_B.b_i_f = tmp_0->size[0] *
+                  cartesian_waypoints_planner_B.s_p) {
+                cartesian_waypoints_planner_B.b_i_h = tmp_0->size[0] *
                   tmp_0->size[1];
                 tmp_0->size[0] = 1;
                 tmp_0->size[1] = grad->size[0];
                 cartes_emxEnsureCapacity_real_T(tmp_0,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.i_j = grad->size[0];
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <
-                     cartesian_waypoints_planner_B.i_j;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  tmp_0->data[cartesian_waypoints_planner_B.b_i_f] = 0.8 *
-                    grad->data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.i_e = grad->size[0];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <
+                     cartesian_waypoints_planner_B.i_e;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  tmp_0->data[cartesian_waypoints_planner_B.b_i_h] = 0.8 *
+                    grad->data[cartesian_waypoints_planner_B.b_i_h];
                 }
 
-                cartesian_waypoints_planner_B.s_k = 0.0;
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f < 6;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
+                cartesian_waypoints_planner_B.s_p = 0.0;
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h < 6;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
                     = 0.0;
                   for (cartesian_waypoints_planner_B.idx = 0;
                        cartesian_waypoints_planner_B.idx < 6;
                        cartesian_waypoints_planner_B.idx++) {
                     cartesian_waypoints_planner_B.beta =
                       cartesian_waypoints_planner_B.H[6 *
-                      cartesian_waypoints_planner_B.b_i_f +
+                      cartesian_waypoints_planner_B.b_i_h +
                       cartesian_waypoints_planner_B.idx] * tmp_0->
                       data[cartesian_waypoints_planner_B.idx] +
-                      cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f];
-                    cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
+                      cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h];
+                    cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
                       = cartesian_waypoints_planner_B.beta;
                   }
 
-                  cartesian_waypoints_planner_B.s_k +=
-                    cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
-                    * grad->data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.s_p +=
+                    cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
+                    * grad->data[cartesian_waypoints_planner_B.b_i_h];
                 }
 
-                cartesian_waypoints_planner_B.b_i_f = grad_0->size[0] *
+                cartesian_waypoints_planner_B.b_i_h = grad_0->size[0] *
                   grad_0->size[1];
                 grad_0->size[0] = 1;
                 grad_0->size[1] = grad->size[0];
                 cartes_emxEnsureCapacity_real_T(grad_0,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.i_j = grad->size[0];
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <
-                     cartesian_waypoints_planner_B.i_j;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  grad_0->data[cartesian_waypoints_planner_B.b_i_f] = grad->
-                    data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.i_e = grad->size[0];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <
+                     cartesian_waypoints_planner_B.i_e;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  grad_0->data[cartesian_waypoints_planner_B.b_i_h] = grad->
+                    data[cartesian_waypoints_planner_B.b_i_h];
                 }
 
                 cartesian_waypoints_planner_B.beta = 0.0;
                 cartesian_waypoints_planner_B.b_gamma = 0.0;
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f < 6;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h < 6;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
                     = 0.0;
                   for (cartesian_waypoints_planner_B.idx = 0;
                        cartesian_waypoints_planner_B.idx < 6;
                        cartesian_waypoints_planner_B.idx++) {
                     cartesian_waypoints_planner_B.sigma =
                       cartesian_waypoints_planner_B.H[6 *
-                      cartesian_waypoints_planner_B.b_i_f +
+                      cartesian_waypoints_planner_B.b_i_h +
                       cartesian_waypoints_planner_B.idx] * grad_0->
                       data[cartesian_waypoints_planner_B.idx] +
-                      cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f];
-                    cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
+                      cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h];
+                    cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
                       = cartesian_waypoints_planner_B.sigma;
                   }
 
                   cartesian_waypoints_planner_B.beta +=
-                    cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
-                    * grad->data[cartesian_waypoints_planner_B.b_i_f];
+                    cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
+                    * grad->data[cartesian_waypoints_planner_B.b_i_h];
                   cartesian_waypoints_planner_B.b_gamma +=
-                    cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f]
-                    * grad->data[cartesian_waypoints_planner_B.b_i_f];
+                    cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h]
+                    * grad->data[cartesian_waypoints_planner_B.b_i_h];
                 }
 
                 cartesian_waypoints_planner_B.b_gamma =
-                  cartesian_waypoints_planner_B.s_k /
+                  cartesian_waypoints_planner_B.s_p /
                   (cartesian_waypoints_planner_B.beta -
                    cartesian_waypoints_planner_B.b_gamma);
               } else {
@@ -8281,181 +8328,181 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
               }
 
               cartesian_waypoints_planner_B.beta = 0.0;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.s_k = 0.0;
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.s_p = 0.0;
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx < 6;
                      cartesian_waypoints_planner_B.idx++) {
-                  cartesian_waypoints_planner_B.s_k +=
+                  cartesian_waypoints_planner_B.s_p +=
                     cartesian_waypoints_planner_B.H[6 *
                     cartesian_waypoints_planner_B.idx +
-                    cartesian_waypoints_planner_B.b_i_f] * (1.0 -
+                    cartesian_waypoints_planner_B.b_i_h] * (1.0 -
                     cartesian_waypoints_planner_B.b_gamma) * grad->
                     data[cartesian_waypoints_planner_B.idx];
                 }
 
-                cartesian_waypoints_planner_B.s_k +=
+                cartesian_waypoints_planner_B.s_p +=
                   cartesian_waypoints_planner_B.b_gamma *
-                  cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.Hg[cartesian_waypoints_planner_B.b_i_h];
                 cartesian_waypoints_planner_B.beta +=
-                  cartesian_waypoints_planner_B.s_k * grad->
-                  data[cartesian_waypoints_planner_B.b_i_f];
-                cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
-                  = cartesian_waypoints_planner_B.s_k;
+                  cartesian_waypoints_planner_B.s_p * grad->
+                  data[cartesian_waypoints_planner_B.b_i_h];
+                cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
+                  = cartesian_waypoints_planner_B.s_p;
               }
 
-              cartesian_waypoints_planner_B.b_i_f = sNew->size[0] * sNew->size[1];
+              cartesian_waypoints_planner_B.b_i_h = sNew->size[0] * sNew->size[1];
               sNew->size[0] = 6;
               sNew->size[1] = grad->size[0];
               cartes_emxEnsureCapacity_real_T(sNew,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = grad->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = grad->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx < 6;
                      cartesian_waypoints_planner_B.idx++) {
-                  cartesian_waypoints_planner_B.s_k =
-                    cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.idx]
-                    * grad->data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.s_p =
+                    cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.idx]
+                    * grad->data[cartesian_waypoints_planner_B.b_i_h];
                   sNew->data[cartesian_waypoints_planner_B.idx + 6 *
-                    cartesian_waypoints_planner_B.b_i_f] =
-                    cartesian_waypoints_planner_B.s_k /
+                    cartesian_waypoints_planner_B.b_i_h] =
+                    cartesian_waypoints_planner_B.s_p /
                     cartesian_waypoints_planner_B.beta;
                 }
               }
 
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 36;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.V[cartesian_waypoints_planner_B.b_i_f]
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 36;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.V[cartesian_waypoints_planner_B.b_i_h]
                   =
-                  cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_f]
-                  - sNew->data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_h]
+                  - sNew->data[cartesian_waypoints_planner_B.b_i_h];
               }
 
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx < 6;
                      cartesian_waypoints_planner_B.idx++) {
-                  cartesian_waypoints_planner_B.nx_a =
-                    cartesian_waypoints_planner_B.b_i_f + 6 *
+                  cartesian_waypoints_planner_B.nx_j =
+                    cartesian_waypoints_planner_B.b_i_h + 6 *
                     cartesian_waypoints_planner_B.idx;
-                  cartesian_waypoints_planner_B.H_m[cartesian_waypoints_planner_B.nx_a]
+                  cartesian_waypoints_planner_B.H_m[cartesian_waypoints_planner_B.nx_j]
                     = 0.0;
-                  for (cartesian_waypoints_planner_B.i_j = 0;
-                       cartesian_waypoints_planner_B.i_j < 6;
-                       cartesian_waypoints_planner_B.i_j++) {
-                    cartesian_waypoints_planner_B.H_m[cartesian_waypoints_planner_B.nx_a]
+                  for (cartesian_waypoints_planner_B.i_e = 0;
+                       cartesian_waypoints_planner_B.i_e < 6;
+                       cartesian_waypoints_planner_B.i_e++) {
+                    cartesian_waypoints_planner_B.H_m[cartesian_waypoints_planner_B.nx_j]
                       += cartesian_waypoints_planner_B.V[6 *
-                      cartesian_waypoints_planner_B.i_j +
-                      cartesian_waypoints_planner_B.b_i_f] *
+                      cartesian_waypoints_planner_B.i_e +
+                      cartesian_waypoints_planner_B.b_i_h] *
                       cartesian_waypoints_planner_B.H[6 *
                       cartesian_waypoints_planner_B.idx +
-                      cartesian_waypoints_planner_B.i_j];
+                      cartesian_waypoints_planner_B.i_e];
                   }
                 }
               }
 
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx < 6;
                      cartesian_waypoints_planner_B.idx++) {
-                  cartesian_waypoints_planner_B.nx_a =
-                    cartesian_waypoints_planner_B.b_i_f + 6 *
+                  cartesian_waypoints_planner_B.nx_j =
+                    cartesian_waypoints_planner_B.b_i_h + 6 *
                     cartesian_waypoints_planner_B.idx;
-                  cartesian_waypoints_planner_B.P[cartesian_waypoints_planner_B.nx_a]
+                  cartesian_waypoints_planner_B.P[cartesian_waypoints_planner_B.nx_j]
                     = 0.0;
-                  for (cartesian_waypoints_planner_B.i_j = 0;
-                       cartesian_waypoints_planner_B.i_j < 6;
-                       cartesian_waypoints_planner_B.i_j++) {
-                    cartesian_waypoints_planner_B.P[cartesian_waypoints_planner_B.nx_a]
+                  for (cartesian_waypoints_planner_B.i_e = 0;
+                       cartesian_waypoints_planner_B.i_e < 6;
+                       cartesian_waypoints_planner_B.i_e++) {
+                    cartesian_waypoints_planner_B.P[cartesian_waypoints_planner_B.nx_j]
                       += cartesian_waypoints_planner_B.H_m[6 *
-                      cartesian_waypoints_planner_B.i_j +
-                      cartesian_waypoints_planner_B.b_i_f] *
+                      cartesian_waypoints_planner_B.i_e +
+                      cartesian_waypoints_planner_B.b_i_h] *
                       cartesian_waypoints_planner_B.V[6 *
-                      cartesian_waypoints_planner_B.i_j +
+                      cartesian_waypoints_planner_B.i_e +
                       cartesian_waypoints_planner_B.idx];
                   }
                 }
               }
 
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx < 6;
                      cartesian_waypoints_planner_B.idx++) {
                   cartesian_waypoints_planner_B.sNew[cartesian_waypoints_planner_B.idx
-                    + 6 * cartesian_waypoints_planner_B.b_i_f] =
-                    cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.idx]
-                    * cartesian_waypoints_planner_B.sNew_h[cartesian_waypoints_planner_B.b_i_f]
+                    + 6 * cartesian_waypoints_planner_B.b_i_h] =
+                    cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.idx]
+                    * cartesian_waypoints_planner_B.sNew_p[cartesian_waypoints_planner_B.b_i_h]
                     / cartesian_waypoints_planner_B.beta;
                 }
               }
 
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 36;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.s_k =
-                  cartesian_waypoints_planner_B.P[cartesian_waypoints_planner_B.b_i_f]
-                  + cartesian_waypoints_planner_B.sNew[cartesian_waypoints_planner_B.b_i_f];
-                cartesian_waypoints_planner_B.H_m[cartesian_waypoints_planner_B.b_i_f]
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 36;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.s_p =
+                  cartesian_waypoints_planner_B.P[cartesian_waypoints_planner_B.b_i_h]
+                  + cartesian_waypoints_planner_B.sNew[cartesian_waypoints_planner_B.b_i_h];
+                cartesian_waypoints_planner_B.H_m[cartesian_waypoints_planner_B.b_i_h]
                   = 1.4901161193847656E-8 * static_cast<real_T>
-                  (tmp_1[cartesian_waypoints_planner_B.b_i_f]) +
-                  cartesian_waypoints_planner_B.s_k;
-                cartesian_waypoints_planner_B.H[cartesian_waypoints_planner_B.b_i_f]
-                  = cartesian_waypoints_planner_B.s_k;
+                  (tmp_1[cartesian_waypoints_planner_B.b_i_h]) +
+                  cartesian_waypoints_planner_B.s_p;
+                cartesian_waypoints_planner_B.H[cartesian_waypoints_planner_B.b_i_h]
+                  = cartesian_waypoints_planner_B.s_p;
               }
 
               if (!cartesian_wa_isPositiveDefinite
                   (cartesian_waypoints_planner_B.H_m)) {
                 *exitFlag = HessianNotPositiveSemidefinite;
                 args = obj->ExtraArgs;
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f < 36;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_f]
-                    = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_f];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h < 36;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_h]
+                    = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_h];
                 }
 
-                cartesian_waypoints_planner_B.b_i_f = grad->size[0];
+                cartesian_waypoints_planner_B.b_i_h = grad->size[0];
                 grad->size[0] = args->ErrTemp->size[0];
                 cartes_emxEnsureCapacity_real_T(grad,
-                  cartesian_waypoints_planner_B.b_i_f);
-                cartesian_waypoints_planner_B.i_j = args->ErrTemp->size[0];
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f <
-                     cartesian_waypoints_planner_B.i_j;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  grad->data[cartesian_waypoints_planner_B.b_i_f] =
-                    args->ErrTemp->data[cartesian_waypoints_planner_B.b_i_f];
+                  cartesian_waypoints_planner_B.b_i_h);
+                cartesian_waypoints_planner_B.i_e = args->ErrTemp->size[0];
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h <
+                     cartesian_waypoints_planner_B.i_e;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  grad->data[cartesian_waypoints_planner_B.b_i_h] =
+                    args->ErrTemp->data[cartesian_waypoints_planner_B.b_i_h];
                 }
 
-                for (cartesian_waypoints_planner_B.b_i_f = 0;
-                     cartesian_waypoints_planner_B.b_i_f < 6;
-                     cartesian_waypoints_planner_B.b_i_f++) {
-                  cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f]
+                for (cartesian_waypoints_planner_B.b_i_h = 0;
+                     cartesian_waypoints_planner_B.b_i_h < 6;
+                     cartesian_waypoints_planner_B.b_i_h++) {
+                  cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h]
                     = 0.0;
                   for (cartesian_waypoints_planner_B.idx = 0;
                        cartesian_waypoints_planner_B.idx < 6;
                        cartesian_waypoints_planner_B.idx++) {
-                    cartesian_waypoints_planner_B.A_n =
+                    cartesian_waypoints_planner_B.A_d =
                       cartesian_waypoints_planner_B.unusedU0[6 *
                       cartesian_waypoints_planner_B.idx +
-                      cartesian_waypoints_planner_B.b_i_f] * grad->
+                      cartesian_waypoints_planner_B.b_i_h] * grad->
                       data[cartesian_waypoints_planner_B.idx] +
-                      cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f];
-                    cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f]
-                      = cartesian_waypoints_planner_B.A_n;
+                      cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h];
+                    cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h]
+                      = cartesian_waypoints_planner_B.A_d;
                   }
                 }
 
@@ -8472,51 +8519,51 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
 
           if (guard1) {
             if (DampedBFGSwGradientProjection_e(obj, xSol)) {
-              for (cartesian_waypoints_planner_B.i_j = 0;
-                   cartesian_waypoints_planner_B.i_j < 6;
-                   cartesian_waypoints_planner_B.i_j++) {
-                xSol[cartesian_waypoints_planner_B.i_j] =
-                  cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.i_j];
+              for (cartesian_waypoints_planner_B.i_e = 0;
+                   cartesian_waypoints_planner_B.i_e < 6;
+                   cartesian_waypoints_planner_B.i_e++) {
+                xSol[cartesian_waypoints_planner_B.i_e] =
+                  cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.i_e];
               }
 
               *exitFlag = SearchDirectionInvalid;
               args = obj->ExtraArgs;
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 36;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_f]
-                  = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_f];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 36;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_h]
+                  = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_h];
               }
 
-              cartesian_waypoints_planner_B.b_i_f = grad->size[0];
+              cartesian_waypoints_planner_B.b_i_h = grad->size[0];
               grad->size[0] = args->ErrTemp->size[0];
               cartes_emxEnsureCapacity_real_T(grad,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = args->ErrTemp->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                grad->data[cartesian_waypoints_planner_B.b_i_f] = args->
-                  ErrTemp->data[cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = args->ErrTemp->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                grad->data[cartesian_waypoints_planner_B.b_i_h] = args->
+                  ErrTemp->data[cartesian_waypoints_planner_B.b_i_h];
               }
 
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f < 6;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f]
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h < 6;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h]
                   = 0.0;
                 for (cartesian_waypoints_planner_B.idx = 0;
                      cartesian_waypoints_planner_B.idx < 6;
                      cartesian_waypoints_planner_B.idx++) {
-                  cartesian_waypoints_planner_B.A_n =
+                  cartesian_waypoints_planner_B.A_d =
                     cartesian_waypoints_planner_B.unusedU0[6 *
                     cartesian_waypoints_planner_B.idx +
-                    cartesian_waypoints_planner_B.b_i_f] * grad->
+                    cartesian_waypoints_planner_B.b_i_h] * grad->
                     data[cartesian_waypoints_planner_B.idx] +
-                    cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f];
-                  cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f]
-                    = cartesian_waypoints_planner_B.A_n;
+                    cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h];
+                  cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h]
+                    = cartesian_waypoints_planner_B.A_d;
                 }
               }
 
@@ -8526,24 +8573,24 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
                 + 1.0;
               exitg2 = 1;
             } else {
-              for (cartesian_waypoints_planner_B.i_j = 0;
-                   cartesian_waypoints_planner_B.i_j < 6;
-                   cartesian_waypoints_planner_B.i_j++) {
-                cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.i_j]
-                  = xSol[cartesian_waypoints_planner_B.i_j];
+              for (cartesian_waypoints_planner_B.i_e = 0;
+                   cartesian_waypoints_planner_B.i_e < 6;
+                   cartesian_waypoints_planner_B.i_e++) {
+                cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.i_e]
+                  = xSol[cartesian_waypoints_planner_B.i_e];
               }
 
-              cartesian_waypoints_planner_B.b_i_f = grad->size[0];
+              cartesian_waypoints_planner_B.b_i_h = grad->size[0];
               grad->size[0] = alpha->size[0];
               cartes_emxEnsureCapacity_real_T(grad,
-                cartesian_waypoints_planner_B.b_i_f);
-              cartesian_waypoints_planner_B.i_j = alpha->size[0];
-              for (cartesian_waypoints_planner_B.b_i_f = 0;
-                   cartesian_waypoints_planner_B.b_i_f <
-                   cartesian_waypoints_planner_B.i_j;
-                   cartesian_waypoints_planner_B.b_i_f++) {
-                grad->data[cartesian_waypoints_planner_B.b_i_f] = alpha->
-                  data[cartesian_waypoints_planner_B.b_i_f];
+                cartesian_waypoints_planner_B.b_i_h);
+              cartesian_waypoints_planner_B.i_e = alpha->size[0];
+              for (cartesian_waypoints_planner_B.b_i_h = 0;
+                   cartesian_waypoints_planner_B.b_i_h <
+                   cartesian_waypoints_planner_B.i_e;
+                   cartesian_waypoints_planner_B.b_i_h++) {
+                grad->data[cartesian_waypoints_planner_B.b_i_h] = alpha->
+                  data[cartesian_waypoints_planner_B.b_i_h];
               }
 
               cartesian_waypoints_planner_B.cost =
@@ -8556,41 +8603,41 @@ static void DampedBFGSwGradientProjection_s(h_robotics_core_internal_Damp_T *obj
     } else {
       *exitFlag = IterationLimitExceeded;
       args = obj->ExtraArgs;
-      for (cartesian_waypoints_planner_B.b_i_f = 0;
-           cartesian_waypoints_planner_B.b_i_f < 36;
-           cartesian_waypoints_planner_B.b_i_f++) {
-        cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_f]
-          = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_f];
+      for (cartesian_waypoints_planner_B.b_i_h = 0;
+           cartesian_waypoints_planner_B.b_i_h < 36;
+           cartesian_waypoints_planner_B.b_i_h++) {
+        cartesian_waypoints_planner_B.unusedU0[cartesian_waypoints_planner_B.b_i_h]
+          = args->WeightMatrix[cartesian_waypoints_planner_B.b_i_h];
       }
 
-      cartesian_waypoints_planner_B.b_i_f = grad->size[0];
+      cartesian_waypoints_planner_B.b_i_h = grad->size[0];
       grad->size[0] = args->ErrTemp->size[0];
-      cartes_emxEnsureCapacity_real_T(grad, cartesian_waypoints_planner_B.b_i_f);
-      cartesian_waypoints_planner_B.i_j = args->ErrTemp->size[0];
-      for (cartesian_waypoints_planner_B.b_i_f = 0;
-           cartesian_waypoints_planner_B.b_i_f <
-           cartesian_waypoints_planner_B.i_j;
-           cartesian_waypoints_planner_B.b_i_f++) {
-        grad->data[cartesian_waypoints_planner_B.b_i_f] = args->ErrTemp->
-          data[cartesian_waypoints_planner_B.b_i_f];
+      cartes_emxEnsureCapacity_real_T(grad, cartesian_waypoints_planner_B.b_i_h);
+      cartesian_waypoints_planner_B.i_e = args->ErrTemp->size[0];
+      for (cartesian_waypoints_planner_B.b_i_h = 0;
+           cartesian_waypoints_planner_B.b_i_h <
+           cartesian_waypoints_planner_B.i_e;
+           cartesian_waypoints_planner_B.b_i_h++) {
+        grad->data[cartesian_waypoints_planner_B.b_i_h] = args->ErrTemp->
+          data[cartesian_waypoints_planner_B.b_i_h];
       }
 
-      for (cartesian_waypoints_planner_B.b_i_f = 0;
-           cartesian_waypoints_planner_B.b_i_f < 6;
-           cartesian_waypoints_planner_B.b_i_f++) {
-        cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f] =
+      for (cartesian_waypoints_planner_B.b_i_h = 0;
+           cartesian_waypoints_planner_B.b_i_h < 6;
+           cartesian_waypoints_planner_B.b_i_h++) {
+        cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h] =
           0.0;
         for (cartesian_waypoints_planner_B.idx = 0;
              cartesian_waypoints_planner_B.idx < 6;
              cartesian_waypoints_planner_B.idx++) {
-          cartesian_waypoints_planner_B.A_n =
+          cartesian_waypoints_planner_B.A_d =
             cartesian_waypoints_planner_B.unusedU0[6 *
             cartesian_waypoints_planner_B.idx +
-            cartesian_waypoints_planner_B.b_i_f] * grad->
+            cartesian_waypoints_planner_B.b_i_h] * grad->
             data[cartesian_waypoints_planner_B.idx] +
-            cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f];
-          cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_f] =
-            cartesian_waypoints_planner_B.A_n;
+            cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h];
+          cartesian_waypoints_planner_B.x[cartesian_waypoints_planner_B.b_i_h] =
+            cartesian_waypoints_planner_B.A_d;
         }
       }
 
@@ -8667,71 +8714,71 @@ static void cartesian_waypoints_pl_isfinite(const
 
 static void cartesi_genrand_uint32_vector_e(uint32_T mt[625], uint32_T u[2])
 {
-  for (cartesian_waypoints_planner_B.b_j_h = 0;
-       cartesian_waypoints_planner_B.b_j_h < 2;
-       cartesian_waypoints_planner_B.b_j_h++) {
+  for (cartesian_waypoints_planner_B.b_j_g = 0;
+       cartesian_waypoints_planner_B.b_j_g < 2;
+       cartesian_waypoints_planner_B.b_j_g++) {
     cartesian_waypoints_planner_B.mti = mt[624] + 1U;
     if (cartesian_waypoints_planner_B.mti >= 625U) {
       for (cartesian_waypoints_planner_B.b_kk = 0;
            cartesian_waypoints_planner_B.b_kk < 227;
            cartesian_waypoints_planner_B.b_kk++) {
-        cartesian_waypoints_planner_B.y_k =
+        cartesian_waypoints_planner_B.y_i =
           (mt[cartesian_waypoints_planner_B.b_kk + 1] & 2147483647U) |
           (mt[cartesian_waypoints_planner_B.b_kk] & 2147483648U);
-        if ((cartesian_waypoints_planner_B.y_k & 1U) == 0U) {
-          cartesian_waypoints_planner_B.y_k >>= 1U;
+        if ((cartesian_waypoints_planner_B.y_i & 1U) == 0U) {
+          cartesian_waypoints_planner_B.y_i >>= 1U;
         } else {
-          cartesian_waypoints_planner_B.y_k = cartesian_waypoints_planner_B.y_k >>
+          cartesian_waypoints_planner_B.y_i = cartesian_waypoints_planner_B.y_i >>
             1U ^ 2567483615U;
         }
 
         mt[cartesian_waypoints_planner_B.b_kk] =
           mt[cartesian_waypoints_planner_B.b_kk + 397] ^
-          cartesian_waypoints_planner_B.y_k;
+          cartesian_waypoints_planner_B.y_i;
       }
 
       for (cartesian_waypoints_planner_B.b_kk = 0;
            cartesian_waypoints_planner_B.b_kk < 396;
            cartesian_waypoints_planner_B.b_kk++) {
-        cartesian_waypoints_planner_B.y_k =
+        cartesian_waypoints_planner_B.y_i =
           (mt[cartesian_waypoints_planner_B.b_kk + 227] & 2147483648U) |
           (mt[cartesian_waypoints_planner_B.b_kk + 228] & 2147483647U);
-        if ((cartesian_waypoints_planner_B.y_k & 1U) == 0U) {
-          cartesian_waypoints_planner_B.y_k >>= 1U;
+        if ((cartesian_waypoints_planner_B.y_i & 1U) == 0U) {
+          cartesian_waypoints_planner_B.y_i >>= 1U;
         } else {
-          cartesian_waypoints_planner_B.y_k = cartesian_waypoints_planner_B.y_k >>
+          cartesian_waypoints_planner_B.y_i = cartesian_waypoints_planner_B.y_i >>
             1U ^ 2567483615U;
         }
 
         mt[cartesian_waypoints_planner_B.b_kk + 227] =
           mt[cartesian_waypoints_planner_B.b_kk] ^
-          cartesian_waypoints_planner_B.y_k;
+          cartesian_waypoints_planner_B.y_i;
       }
 
-      cartesian_waypoints_planner_B.y_k = (mt[623] & 2147483648U) | (mt[0] &
+      cartesian_waypoints_planner_B.y_i = (mt[623] & 2147483648U) | (mt[0] &
         2147483647U);
-      if ((cartesian_waypoints_planner_B.y_k & 1U) == 0U) {
-        cartesian_waypoints_planner_B.y_k >>= 1U;
+      if ((cartesian_waypoints_planner_B.y_i & 1U) == 0U) {
+        cartesian_waypoints_planner_B.y_i >>= 1U;
       } else {
-        cartesian_waypoints_planner_B.y_k = cartesian_waypoints_planner_B.y_k >>
+        cartesian_waypoints_planner_B.y_i = cartesian_waypoints_planner_B.y_i >>
           1U ^ 2567483615U;
       }
 
-      mt[623] = mt[396] ^ cartesian_waypoints_planner_B.y_k;
+      mt[623] = mt[396] ^ cartesian_waypoints_planner_B.y_i;
       cartesian_waypoints_planner_B.mti = 1U;
     }
 
-    cartesian_waypoints_planner_B.y_k = mt[static_cast<int32_T>
+    cartesian_waypoints_planner_B.y_i = mt[static_cast<int32_T>
       (cartesian_waypoints_planner_B.mti) - 1];
     mt[624] = cartesian_waypoints_planner_B.mti;
-    cartesian_waypoints_planner_B.y_k ^= cartesian_waypoints_planner_B.y_k >>
+    cartesian_waypoints_planner_B.y_i ^= cartesian_waypoints_planner_B.y_i >>
       11U;
-    cartesian_waypoints_planner_B.y_k ^= cartesian_waypoints_planner_B.y_k << 7U
+    cartesian_waypoints_planner_B.y_i ^= cartesian_waypoints_planner_B.y_i << 7U
       & 2636928640U;
-    cartesian_waypoints_planner_B.y_k ^= cartesian_waypoints_planner_B.y_k <<
+    cartesian_waypoints_planner_B.y_i ^= cartesian_waypoints_planner_B.y_i <<
       15U & 4022730752U;
-    u[cartesian_waypoints_planner_B.b_j_h] = cartesian_waypoints_planner_B.y_k >>
-      18U ^ cartesian_waypoints_planner_B.y_k;
+    u[cartesian_waypoints_planner_B.b_j_g] = cartesian_waypoints_planner_B.y_i >>
+      18U ^ cartesian_waypoints_planner_B.y_i;
   }
 }
 
@@ -8747,11 +8794,11 @@ static boolean_T cartesian_waypoi_is_valid_state(const uint32_T mt[625])
 
   if (isvalid) {
     isvalid = false;
-    cartesian_waypoints_planner_B.k_j = 0;
+    cartesian_waypoints_planner_B.k_m = 0;
     exitg1 = false;
-    while ((!exitg1) && (cartesian_waypoints_planner_B.k_j + 1 < 625)) {
-      if (mt[cartesian_waypoints_planner_B.k_j] == 0U) {
-        cartesian_waypoints_planner_B.k_j++;
+    while ((!exitg1) && (cartesian_waypoints_planner_B.k_m + 1 < 625)) {
+      if (mt[cartesian_waypoints_planner_B.k_m] == 0U) {
+        cartesian_waypoints_planner_B.k_m++;
       } else {
         isvalid = true;
         exitg1 = true;
@@ -8807,23 +8854,23 @@ static real_T cartesian_waypoints__genrandu_e(uint32_T mt[625])
   // =============================   END   =================================
   do {
     exitg1 = 0;
-    cartesi_genrand_uint32_vector_e(mt, cartesian_waypoints_planner_B.b_u_o);
-    r = (static_cast<real_T>(cartesian_waypoints_planner_B.b_u_o[0] >> 5U) *
-         6.7108864E+7 + static_cast<real_T>(cartesian_waypoints_planner_B.b_u_o
+    cartesi_genrand_uint32_vector_e(mt, cartesian_waypoints_planner_B.b_u_b);
+    r = (static_cast<real_T>(cartesian_waypoints_planner_B.b_u_b[0] >> 5U) *
+         6.7108864E+7 + static_cast<real_T>(cartesian_waypoints_planner_B.b_u_b
           [1] >> 6U)) * 1.1102230246251565E-16;
     if (r == 0.0) {
       if (!cartesian_waypoi_is_valid_state(mt)) {
-        cartesian_waypoints_planner_B.r_h = 5489U;
+        cartesian_waypoints_planner_B.r_k = 5489U;
         mt[0] = 5489U;
-        for (cartesian_waypoints_planner_B.b_mti_k = 0;
-             cartesian_waypoints_planner_B.b_mti_k < 623;
-             cartesian_waypoints_planner_B.b_mti_k++) {
-          cartesian_waypoints_planner_B.r_h =
-            ((cartesian_waypoints_planner_B.r_h >> 30U ^
-              cartesian_waypoints_planner_B.r_h) * 1812433253U +
-             cartesian_waypoints_planner_B.b_mti_k) + 1U;
-          mt[cartesian_waypoints_planner_B.b_mti_k + 1] =
-            cartesian_waypoints_planner_B.r_h;
+        for (cartesian_waypoints_planner_B.b_mti_e = 0;
+             cartesian_waypoints_planner_B.b_mti_e < 623;
+             cartesian_waypoints_planner_B.b_mti_e++) {
+          cartesian_waypoints_planner_B.r_k =
+            ((cartesian_waypoints_planner_B.r_k >> 30U ^
+              cartesian_waypoints_planner_B.r_k) * 1812433253U +
+             cartesian_waypoints_planner_B.b_mti_e) + 1U;
+          mt[cartesian_waypoints_planner_B.b_mti_e + 1] =
+            cartesian_waypoints_planner_B.r_k;
         }
 
         mt[624] = 624U;
@@ -9172,41 +9219,41 @@ static real_T cartesia_eml_rand_mt19937ar_evq(uint32_T state[625])
   do {
     exitg1 = 0;
     cartesi_genrand_uint32_vector_e(state, cartesian_waypoints_planner_B.u32);
-    cartesian_waypoints_planner_B.i_m = static_cast<int32_T>
+    cartesian_waypoints_planner_B.i_c = static_cast<int32_T>
       ((cartesian_waypoints_planner_B.u32[1] >> 24U) + 1U);
     r = ((static_cast<real_T>(cartesian_waypoints_planner_B.u32[0] >> 3U) *
           1.6777216E+7 + static_cast<real_T>(static_cast<int32_T>
            (cartesian_waypoints_planner_B.u32[1]) & 16777215)) *
          2.2204460492503131E-16 - 1.0) *
-      cartesian_waypoints_planner_B.xi[cartesian_waypoints_planner_B.i_m];
+      cartesian_waypoints_planner_B.xi[cartesian_waypoints_planner_B.i_c];
     if (fabs(r) <=
-        cartesian_waypoints_planner_B.xi[cartesian_waypoints_planner_B.i_m - 1])
+        cartesian_waypoints_planner_B.xi[cartesian_waypoints_planner_B.i_c - 1])
     {
       exitg1 = 1;
-    } else if (cartesian_waypoints_planner_B.i_m < 256) {
-      cartesian_waypoints_planner_B.x_f = cartesian_waypoints__genrandu_e(state);
-      if ((fitab[cartesian_waypoints_planner_B.i_m - 1] -
-           fitab[cartesian_waypoints_planner_B.i_m]) *
-          cartesian_waypoints_planner_B.x_f +
-          fitab[cartesian_waypoints_planner_B.i_m] < exp(-0.5 * r * r)) {
+    } else if (cartesian_waypoints_planner_B.i_c < 256) {
+      cartesian_waypoints_planner_B.x_d = cartesian_waypoints__genrandu_e(state);
+      if ((fitab[cartesian_waypoints_planner_B.i_c - 1] -
+           fitab[cartesian_waypoints_planner_B.i_c]) *
+          cartesian_waypoints_planner_B.x_d +
+          fitab[cartesian_waypoints_planner_B.i_c] < exp(-0.5 * r * r)) {
         exitg1 = 1;
       }
     } else {
       do {
-        cartesian_waypoints_planner_B.x_f = cartesian_waypoints__genrandu_e
+        cartesian_waypoints_planner_B.x_d = cartesian_waypoints__genrandu_e
           (state);
-        cartesian_waypoints_planner_B.x_f = log
-          (cartesian_waypoints_planner_B.x_f) * 0.273661237329758;
+        cartesian_waypoints_planner_B.x_d = log
+          (cartesian_waypoints_planner_B.x_d) * 0.273661237329758;
         cartesian_waypoints_planner_B.d_u = cartesian_waypoints__genrandu_e
           (state);
       } while (!(-2.0 * log(cartesian_waypoints_planner_B.d_u) >
-                 cartesian_waypoints_planner_B.x_f *
-                 cartesian_waypoints_planner_B.x_f));
+                 cartesian_waypoints_planner_B.x_d *
+                 cartesian_waypoints_planner_B.x_d));
 
       if (r < 0.0) {
-        r = cartesian_waypoints_planner_B.x_f - 3.65415288536101;
+        r = cartesian_waypoints_planner_B.x_d - 3.65415288536101;
       } else {
-        r = 3.65415288536101 - cartesian_waypoints_planner_B.x_f;
+        r = 3.65415288536101 - cartesian_waypoints_planner_B.x_d;
       }
 
       exitg1 = 1;
@@ -9219,15 +9266,15 @@ static real_T cartesia_eml_rand_mt19937ar_evq(uint32_T state[625])
 static void cartesian_waypoints_plann_randn(const real_T varargin_1[2],
   emxArray_real_T_cartesian_way_T *r)
 {
-  cartesian_waypoints_planner_B.b_k_nq = r->size[0] * r->size[1];
+  cartesian_waypoints_planner_B.b_k_j = r->size[0] * r->size[1];
   r->size[0] = static_cast<int32_T>(varargin_1[0]);
   r->size[1] = 1;
-  cartes_emxEnsureCapacity_real_T(r, cartesian_waypoints_planner_B.b_k_nq);
-  cartesian_waypoints_planner_B.d_o = r->size[0] - 1;
-  for (cartesian_waypoints_planner_B.b_k_nq = 0;
-       cartesian_waypoints_planner_B.b_k_nq <= cartesian_waypoints_planner_B.d_o;
-       cartesian_waypoints_planner_B.b_k_nq++) {
-    r->data[cartesian_waypoints_planner_B.b_k_nq] =
+  cartes_emxEnsureCapacity_real_T(r, cartesian_waypoints_planner_B.b_k_j);
+  cartesian_waypoints_planner_B.d_g = r->size[0] - 1;
+  for (cartesian_waypoints_planner_B.b_k_j = 0;
+       cartesian_waypoints_planner_B.b_k_j <= cartesian_waypoints_planner_B.d_g;
+       cartesian_waypoints_planner_B.b_k_j++) {
+    r->data[cartesian_waypoints_planner_B.b_k_j] =
       cartesia_eml_rand_mt19937ar_evq(cartesian_waypoints_planner_DW.state_m);
   }
 }
@@ -9307,19 +9354,19 @@ static void cartesian__eml_rand_mt19937ar_e(const uint32_T state[625], uint32_T
 static void cartesian_waypoints_plan_rand_e(real_T varargin_1,
   emxArray_real_T_cartesian_way_T *r)
 {
-  cartesian_waypoints_planner_B.b_k_k = r->size[0];
+  cartesian_waypoints_planner_B.b_k_d = r->size[0];
   cartesian_waypoints_planner_B.d = static_cast<int32_T>(varargin_1);
   r->size[0] = cartesian_waypoints_planner_B.d;
-  cartes_emxEnsureCapacity_real_T(r, cartesian_waypoints_planner_B.b_k_k);
+  cartes_emxEnsureCapacity_real_T(r, cartesian_waypoints_planner_B.b_k_d);
   cartesian_waypoints_planner_B.d--;
-  for (cartesian_waypoints_planner_B.b_k_k = 0;
-       cartesian_waypoints_planner_B.b_k_k <= cartesian_waypoints_planner_B.d;
-       cartesian_waypoints_planner_B.b_k_k++) {
+  for (cartesian_waypoints_planner_B.b_k_d = 0;
+       cartesian_waypoints_planner_B.b_k_d <= cartesian_waypoints_planner_B.d;
+       cartesian_waypoints_planner_B.b_k_d++) {
     memcpy(&cartesian_waypoints_planner_B.uv1[0],
            &cartesian_waypoints_planner_DW.state_m[0], 625U * sizeof(uint32_T));
     cartesian__eml_rand_mt19937ar_e(cartesian_waypoints_planner_B.uv1,
       cartesian_waypoints_planner_DW.state_m, &r->
-      data[cartesian_waypoints_planner_B.b_k_k]);
+      data[cartesian_waypoints_planner_B.b_k_d]);
   }
 }
 
@@ -9333,7 +9380,7 @@ static void cartes_NLPSolverInterface_solve(h_robotics_core_internal_Damp_T *obj
   f_robotics_manip_internal_IKE_T *args;
   x_robotics_manip_internal_Rig_T *obj_0;
   emxArray_real_T_cartesian_way_T *qi;
-  c_rigidBodyJoint_cartesian_wa_T *obj_1;
+  c_rigidBodyJoint_cartesian__e_T *obj_1;
   emxArray_real_T_cartesian_way_T *ub;
   emxArray_real_T_cartesian_way_T *lb;
   emxArray_real_T_cartesian_way_T *rn;
@@ -9354,10 +9401,10 @@ static void cartes_NLPSolverInterface_solve(h_robotics_core_internal_Damp_T *obj
   boolean_T exitg2;
   obj->MaxNumIterationInternal = obj->MaxNumIteration;
   obj->MaxTimeInternal = obj->MaxTime;
-  for (cartesian_waypoints_planner_B.i_b = 0; cartesian_waypoints_planner_B.i_b <
-       6; cartesian_waypoints_planner_B.i_b++) {
-    obj->SeedInternal[cartesian_waypoints_planner_B.i_b] =
-      seed[cartesian_waypoints_planner_B.i_b];
+  for (cartesian_waypoints_planner_B.i_f = 0; cartesian_waypoints_planner_B.i_f <
+       6; cartesian_waypoints_planner_B.i_f++) {
+    obj->SeedInternal[cartesian_waypoints_planner_B.i_f] =
+      seed[cartesian_waypoints_planner_B.i_f];
   }
 
   cartesian_waypoints_planner_B.tol = obj->SolutionTolerance;
@@ -9411,19 +9458,19 @@ static void cartes_NLPSolverInterface_solve(h_robotics_core_internal_Damp_T *obj
       }
 
       cartesian_waypoints_planner_B.err = obj_0->NumBodies;
-      cartesian_waypoints_planner_B.c_eh = static_cast<int32_T>
+      cartesian_waypoints_planner_B.c_a = static_cast<int32_T>
         (cartesian_waypoints_planner_B.err) - 1;
-      for (cartesian_waypoints_planner_B.i_b = 0;
-           cartesian_waypoints_planner_B.i_b <=
-           cartesian_waypoints_planner_B.c_eh; cartesian_waypoints_planner_B.i_b
+      for (cartesian_waypoints_planner_B.i_f = 0;
+           cartesian_waypoints_planner_B.i_f <=
+           cartesian_waypoints_planner_B.c_a; cartesian_waypoints_planner_B.i_f
            ++) {
         cartesian_waypoints_planner_B.err = obj_0->
-          PositionDoFMap[cartesian_waypoints_planner_B.i_b];
+          PositionDoFMap[cartesian_waypoints_planner_B.i_f];
         cartesian_waypoints_planner_B.iter = obj_0->
-          PositionDoFMap[cartesian_waypoints_planner_B.i_b + 8];
+          PositionDoFMap[cartesian_waypoints_planner_B.i_f + 8];
         if (cartesian_waypoints_planner_B.err <=
             cartesian_waypoints_planner_B.iter) {
-          obj_1 = obj_0->Bodies[cartesian_waypoints_planner_B.i_b]
+          obj_1 = obj_0->Bodies[cartesian_waypoints_planner_B.i_f]
             ->JointInternal;
           if (static_cast<int32_T>(obj_1->PositionNumber) == 0) {
             cartesian_waypoints_planner_B.ix = qi->size[0] * qi->size[1];
@@ -9462,13 +9509,13 @@ static void cartes_NLPSolverInterface_solve(h_robotics_core_internal_Damp_T *obj
             }
 
             cartesian_waypoints_pl_isfinite(lb, x_tmp);
-            cartesian_waypoints_planner_B.y_d = true;
+            cartesian_waypoints_planner_B.y_da = true;
             cartesian_waypoints_planner_B.ix = 0;
             exitg2 = false;
             while ((!exitg2) && (cartesian_waypoints_planner_B.ix + 1 <=
                                  x_tmp->size[0])) {
               if (!x_tmp->data[cartesian_waypoints_planner_B.ix]) {
-                cartesian_waypoints_planner_B.y_d = false;
+                cartesian_waypoints_planner_B.y_da = false;
                 exitg2 = true;
               } else {
                 cartesian_waypoints_planner_B.ix++;
@@ -9478,22 +9525,22 @@ static void cartes_NLPSolverInterface_solve(h_robotics_core_internal_Damp_T *obj
             guard1 = false;
             guard2 = false;
             guard3 = false;
-            if (cartesian_waypoints_planner_B.y_d) {
+            if (cartesian_waypoints_planner_B.y_da) {
               cartesian_waypoints_pl_isfinite(ub, x);
-              cartesian_waypoints_planner_B.y_d = true;
+              cartesian_waypoints_planner_B.y_da = true;
               cartesian_waypoints_planner_B.ix = 0;
               exitg2 = false;
               while ((!exitg2) && (cartesian_waypoints_planner_B.ix + 1 <=
                                    x->size[0])) {
                 if (!x->data[cartesian_waypoints_planner_B.ix]) {
-                  cartesian_waypoints_planner_B.y_d = false;
+                  cartesian_waypoints_planner_B.y_da = false;
                   exitg2 = true;
                 } else {
                   cartesian_waypoints_planner_B.ix++;
                 }
               }
 
-              if (cartesian_waypoints_planner_B.y_d) {
+              if (cartesian_waypoints_planner_B.y_da) {
                 cartesian_waypoints_plan_rand_e(obj_1->PositionNumber, rn);
                 cartesian_waypoints_planner_B.ix = qi->size[0] * qi->size[1];
                 qi->size[0] = lb->size[0];
@@ -9519,20 +9566,20 @@ static void cartes_NLPSolverInterface_solve(h_robotics_core_internal_Damp_T *obj
             }
 
             if (guard3) {
-              cartesian_waypoints_planner_B.y_d = true;
+              cartesian_waypoints_planner_B.y_da = true;
               cartesian_waypoints_planner_B.ix = 0;
               exitg2 = false;
               while ((!exitg2) && (cartesian_waypoints_planner_B.ix + 1 <=
                                    x_tmp->size[0])) {
                 if (!x_tmp->data[cartesian_waypoints_planner_B.ix]) {
-                  cartesian_waypoints_planner_B.y_d = false;
+                  cartesian_waypoints_planner_B.y_da = false;
                   exitg2 = true;
                 } else {
                   cartesian_waypoints_planner_B.ix++;
                 }
               }
 
-              if (cartesian_waypoints_planner_B.y_d) {
+              if (cartesian_waypoints_planner_B.y_da) {
                 cartesian_waypoints_pl_isfinite(ub, x);
                 cartesian_waypoints_planner_B.ix = x_0->size[0];
                 x_0->size[0] = x->size[0];
@@ -9604,20 +9651,20 @@ static void cartes_NLPSolverInterface_solve(h_robotics_core_internal_Damp_T *obj
 
               if (cartesian_waypoints_planner_any(x_tmp_0)) {
                 cartesian_waypoints_pl_isfinite(ub, x);
-                cartesian_waypoints_planner_B.y_d = true;
+                cartesian_waypoints_planner_B.y_da = true;
                 cartesian_waypoints_planner_B.ix = 0;
                 exitg2 = false;
                 while ((!exitg2) && (cartesian_waypoints_planner_B.ix + 1 <=
                                      x->size[0])) {
                   if (!x->data[cartesian_waypoints_planner_B.ix]) {
-                    cartesian_waypoints_planner_B.y_d = false;
+                    cartesian_waypoints_planner_B.y_da = false;
                     exitg2 = true;
                   } else {
                     cartesian_waypoints_planner_B.ix++;
                   }
                 }
 
-                if (cartesian_waypoints_planner_B.y_d) {
+                if (cartesian_waypoints_planner_B.y_da) {
                   cartesian_waypoints_planner_B.ub[0] = ub->size[0];
                   cartesian_waypoints_planner_B.ub[1] = 1.0;
                   cartesian_waypoints_plann_randn
@@ -9701,11 +9748,11 @@ static void cartes_NLPSolverInterface_solve(h_robotics_core_internal_Damp_T *obj
         &cartesian_waypoints_planner_B.exitFlag,
         &cartesian_waypoints_planner_B.err, &cartesian_waypoints_planner_B.iter);
       if (cartesian_waypoints_planner_B.err < *solutionInfo_Error) {
-        for (cartesian_waypoints_planner_B.i_b = 0;
-             cartesian_waypoints_planner_B.i_b < 6;
-             cartesian_waypoints_planner_B.i_b++) {
-          xSol[cartesian_waypoints_planner_B.i_b] =
-            cartesian_waypoints_planner_B.c_xSol[cartesian_waypoints_planner_B.i_b];
+        for (cartesian_waypoints_planner_B.i_f = 0;
+             cartesian_waypoints_planner_B.i_f < 6;
+             cartesian_waypoints_planner_B.i_f++) {
+          xSol[cartesian_waypoints_planner_B.i_f] =
+            cartesian_waypoints_planner_B.c_xSol[cartesian_waypoints_planner_B.i_f];
         }
 
         *solutionInfo_Error = cartesian_waypoints_planner_B.err;
@@ -9885,27 +9932,27 @@ static void cart_inverseKinematics_stepImpl(b_inverseKinematics_cartesian_T *obj
     }
 
     if (1.0 > cartesian_waypoints_planner_B.bid - 1.0) {
-      cartesian_waypoints_planner_B.c_d = -1;
+      cartesian_waypoints_planner_B.c_c = -1;
     } else {
-      cartesian_waypoints_planner_B.c_d = static_cast<int32_T>
+      cartesian_waypoints_planner_B.c_c = static_cast<int32_T>
         (cartesian_waypoints_planner_B.bid - 1.0) - 1;
     }
 
     cartesian_waypoi_emxInit_real_T(&bodyIndices_0, 1);
     cartesian_waypoints_planner_B.partialTrueCount = bodyIndices_0->size[0];
-    bodyIndices_0->size[0] = cartesian_waypoints_planner_B.c_d + 3;
+    bodyIndices_0->size[0] = cartesian_waypoints_planner_B.c_c + 3;
     cartes_emxEnsureCapacity_real_T(bodyIndices_0,
       cartesian_waypoints_planner_B.partialTrueCount);
     for (cartesian_waypoints_planner_B.partialTrueCount = 0;
          cartesian_waypoints_planner_B.partialTrueCount <=
-         cartesian_waypoints_planner_B.c_d;
+         cartesian_waypoints_planner_B.c_c;
          cartesian_waypoints_planner_B.partialTrueCount++) {
       bodyIndices_0->data[cartesian_waypoints_planner_B.partialTrueCount] =
         bodyIndices->data[cartesian_waypoints_planner_B.partialTrueCount];
     }
 
-    bodyIndices_0->data[cartesian_waypoints_planner_B.c_d + 1] = body->Index;
-    bodyIndices_0->data[cartesian_waypoints_planner_B.c_d + 2] = 0.0;
+    bodyIndices_0->data[cartesian_waypoints_planner_B.c_c + 1] = body->Index;
+    bodyIndices_0->data[cartesian_waypoints_planner_B.c_c + 2] = 0.0;
     cartesian_waypoints_planner_B.partialTrueCount = bodyIndices->size[0];
     bodyIndices->size[0] = bodyIndices_0->size[0];
     cartes_emxEnsureCapacity_real_T(bodyIndices,
@@ -9923,10 +9970,10 @@ static void cart_inverseKinematics_stepImpl(b_inverseKinematics_cartesian_T *obj
   }
 
   obj_0 = obj->RigidBodyTreeInternal;
-  cartesian_waypoints_planner_B.c_d = bodyIndices->size[0] - 1;
+  cartesian_waypoints_planner_B.c_c = bodyIndices->size[0] - 1;
   cartesian_waypoints_planner_B.loop_ub = 0;
   for (cartesian_waypoints_planner_B.i = 0; cartesian_waypoints_planner_B.i <=
-       cartesian_waypoints_planner_B.c_d; cartesian_waypoints_planner_B.i++) {
+       cartesian_waypoints_planner_B.c_c; cartesian_waypoints_planner_B.i++) {
     if (bodyIndices->data[cartesian_waypoints_planner_B.i] != 0.0) {
       cartesian_waypoints_planner_B.loop_ub++;
     }
@@ -9939,7 +9986,7 @@ static void cart_inverseKinematics_stepImpl(b_inverseKinematics_cartesian_T *obj
     cartesian_waypoints_planner_B.partialTrueCount);
   cartesian_waypoints_planner_B.partialTrueCount = 0;
   for (cartesian_waypoints_planner_B.i = 0; cartesian_waypoints_planner_B.i <=
-       cartesian_waypoints_planner_B.c_d; cartesian_waypoints_planner_B.i++) {
+       cartesian_waypoints_planner_B.c_c; cartesian_waypoints_planner_B.i++) {
     if (bodyIndices->data[cartesian_waypoints_planner_B.i] != 0.0) {
       h->data[cartesian_waypoints_planner_B.partialTrueCount] =
         cartesian_waypoints_planner_B.i + 1;
@@ -9994,11 +10041,11 @@ static void cart_inverseKinematics_stepImpl(b_inverseKinematics_cartesian_T *obj
   }
 
   cartesian_waypoints_planner_B.bid = 0.0;
-  cartesian_waypoints_planner_B.c_d = positionMap->size[0] - 1;
+  cartesian_waypoints_planner_B.c_c = positionMap->size[0] - 1;
   cartesian_waypoi_emxInit_real_T(&e, 2);
   cartesian_waypoi_emxInit_real_T(&y, 2);
   for (cartesian_waypoints_planner_B.i = 0; cartesian_waypoints_planner_B.i <=
-       cartesian_waypoints_planner_B.c_d; cartesian_waypoints_planner_B.i++) {
+       cartesian_waypoints_planner_B.c_c; cartesian_waypoints_planner_B.i++) {
     cartesian_waypoints_planner_B.numPositions = (positionMap->
       data[cartesian_waypoints_planner_B.i + positionMap->size[0]] -
       positionMap->data[cartesian_waypoints_planner_B.i]) + 1.0;
@@ -10130,21 +10177,21 @@ static void cart_inverseKinematics_stepImpl(b_inverseKinematics_cartesian_T *obj
             cartesian_waypoints_planner_B.nm1d2 =
               ((cartesian_waypoints_planner_B.loop_ub < 0) +
                cartesian_waypoints_planner_B.loop_ub) >> 1;
-            cartesian_waypoints_planner_B.c_e =
+            cartesian_waypoints_planner_B.c_k =
               cartesian_waypoints_planner_B.nm1d2 - 2;
             for (cartesian_waypoints_planner_B.partialTrueCount = 0;
                  cartesian_waypoints_planner_B.partialTrueCount <=
-                 cartesian_waypoints_planner_B.c_e;
+                 cartesian_waypoints_planner_B.c_k;
                  cartesian_waypoints_planner_B.partialTrueCount++) {
-              cartesian_waypoints_planner_B.k =
+              cartesian_waypoints_planner_B.k_n =
                 cartesian_waypoints_planner_B.partialTrueCount + 1;
-              e->data[cartesian_waypoints_planner_B.k] = positionMap->
+              e->data[cartesian_waypoints_planner_B.k_n] = positionMap->
                 data[cartesian_waypoints_planner_B.i] + static_cast<real_T>
-                (cartesian_waypoints_planner_B.k);
+                (cartesian_waypoints_planner_B.k_n);
               e->data[cartesian_waypoints_planner_B.loop_ub -
-                cartesian_waypoints_planner_B.k] =
+                cartesian_waypoints_planner_B.k_n] =
                 cartesian_waypoints_planner_B.apnd - static_cast<real_T>
-                (cartesian_waypoints_planner_B.k);
+                (cartesian_waypoints_planner_B.k_n);
             }
 
             if (cartesian_waypoints_planner_B.nm1d2 << 1 ==
@@ -10212,14 +10259,651 @@ static void cart_inverseKinematics_stepImpl(b_inverseKinematics_cartesian_T *obj
   cartesian_waypoi_emxFree_real_T(&positionIndices);
 }
 
-static void matlabCodegenHandle_matlabC_evq(ros_slros_internal_block_GetP_T *obj)
+static void cartesian_w_emxInit_f_cell_wrap(emxArray_f_cell_wrap_cartesia_T
+  **pEmxArray, int32_T numDimensions)
+{
+  emxArray_f_cell_wrap_cartesia_T *emxArray;
+  int32_T i;
+  *pEmxArray = (emxArray_f_cell_wrap_cartesia_T *)malloc(sizeof
+    (emxArray_f_cell_wrap_cartesia_T));
+  emxArray = *pEmxArray;
+  emxArray->data = (f_cell_wrap_cartesian_waypoin_T *)NULL;
+  emxArray->numDimensions = numDimensions;
+  emxArray->size = (int32_T *)malloc(sizeof(int32_T) * numDimensions);
+  emxArray->allocatedSize = 0;
+  emxArray->canFreeData = true;
+  for (i = 0; i < numDimensions; i++) {
+    emxArray->size[i] = 0;
+  }
+}
+
+static void c_emxEnsureCapacity_f_cell_wrap(emxArray_f_cell_wrap_cartesia_T
+  *emxArray, int32_T oldNumel)
+{
+  int32_T newNumel;
+  int32_T i;
+  void *newData;
+  if (oldNumel < 0) {
+    oldNumel = 0;
+  }
+
+  newNumel = 1;
+  for (i = 0; i < emxArray->numDimensions; i++) {
+    newNumel *= emxArray->size[i];
+  }
+
+  if (newNumel > emxArray->allocatedSize) {
+    i = emxArray->allocatedSize;
+    if (i < 16) {
+      i = 16;
+    }
+
+    while (i < newNumel) {
+      if (i > 1073741823) {
+        i = MAX_int32_T;
+      } else {
+        i <<= 1;
+      }
+    }
+
+    newData = calloc(static_cast<uint32_T>(i), sizeof
+                     (f_cell_wrap_cartesian_waypoin_T));
+    if (emxArray->data != NULL) {
+      memcpy(newData, emxArray->data, sizeof(f_cell_wrap_cartesian_waypoin_T)
+             * oldNumel);
+      if (emxArray->canFreeData) {
+        free(emxArray->data);
+      }
+    }
+
+    emxArray->data = (f_cell_wrap_cartesian_waypoin_T *)newData;
+    emxArray->allocatedSize = i;
+    emxArray->canFreeData = true;
+  }
+}
+
+static void ca_rigidBodyJoint_get_JointAxis(const
+  c_rigidBodyJoint_cartesian_wa_T *obj, real_T ax[3])
+{
+  boolean_T b_bool;
+  emxArray_char_T_cartesian_way_T *a;
+  int32_T b_kstr;
+  int32_T loop_ub;
+  static const char_T tmp[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+
+  static const char_T tmp_0[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
+
+  boolean_T guard1 = false;
+  int32_T exitg1;
+  cartesian_waypoi_emxInit_char_T(&a, 2);
+  b_kstr = a->size[0] * a->size[1];
+  a->size[0] = 1;
+  a->size[1] = obj->Type->size[1];
+  cartes_emxEnsureCapacity_char_T(a, b_kstr);
+  loop_ub = obj->Type->size[0] * obj->Type->size[1] - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    a->data[b_kstr] = obj->Type->data[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    cartesian_waypoints_planner_B.b_g[b_kstr] = tmp[b_kstr];
+  }
+
+  b_bool = false;
+  if (a->size[1] == 8) {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        loop_ub = b_kstr - 1;
+        if (a->data[loop_ub] != cartesian_waypoints_planner_B.b_g[loop_ub]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  guard1 = false;
+  if (b_bool) {
+    guard1 = true;
+  } else {
+    b_kstr = a->size[0] * a->size[1];
+    a->size[0] = 1;
+    a->size[1] = obj->Type->size[1];
+    cartes_emxEnsureCapacity_char_T(a, b_kstr);
+    loop_ub = obj->Type->size[0] * obj->Type->size[1] - 1;
+    for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+      a->data[b_kstr] = obj->Type->data[b_kstr];
+    }
+
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      cartesian_waypoints_planner_B.b_nb[b_kstr] = tmp_0[b_kstr];
+    }
+
+    b_bool = false;
+    if (a->size[1] == 9) {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          loop_ub = b_kstr - 1;
+          if (a->data[loop_ub] != cartesian_waypoints_planner_B.b_nb[loop_ub]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      guard1 = true;
+    } else {
+      ax[0] = (rtNaN);
+      ax[1] = (rtNaN);
+      ax[2] = (rtNaN);
+    }
+  }
+
+  if (guard1) {
+    ax[0] = obj->JointAxisInternal[0];
+    ax[1] = obj->JointAxisInternal[1];
+    ax[2] = obj->JointAxisInternal[2];
+  }
+
+  cartesian_waypoi_emxFree_char_T(&a);
+}
+
+static void RigidBodyTree_forwardKinematics(p_robotics_manip_internal_Rig_T *obj,
+  const real_T qvec[6], emxArray_f_cell_wrap_cartesia_T *Ttree)
+{
+  n_robotics_manip_internal_Rig_T *body;
+  emxArray_char_T_cartesian_way_T *switch_expression;
+  boolean_T b_bool;
+  int32_T loop_ub;
+  static const int8_T tmp[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
+  };
+
+  static const char_T tmp_0[5] = { 'f', 'i', 'x', 'e', 'd' };
+
+  static const char_T tmp_1[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+
+  int32_T exitg1;
+  cartesian_waypoints_planner_B.n = obj->NumBodies;
+  for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+       cartesian_waypoints_planner_B.b_kstr_og < 16;
+       cartesian_waypoints_planner_B.b_kstr_og++) {
+    cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.b_kstr_og] =
+      tmp[cartesian_waypoints_planner_B.b_kstr_og];
+  }
+
+  cartesian_waypoints_planner_B.b_kstr_og = Ttree->size[0] * Ttree->size[1];
+  Ttree->size[0] = 1;
+  cartesian_waypoints_planner_B.e_p = static_cast<int32_T>
+    (cartesian_waypoints_planner_B.n);
+  Ttree->size[1] = cartesian_waypoints_planner_B.e_p;
+  c_emxEnsureCapacity_f_cell_wrap(Ttree, cartesian_waypoints_planner_B.b_kstr_og);
+  if (cartesian_waypoints_planner_B.e_p != 0) {
+    cartesian_waypoints_planner_B.ntilecols = cartesian_waypoints_planner_B.e_p
+      - 1;
+    if (0 <= cartesian_waypoints_planner_B.ntilecols) {
+      memcpy(&cartesian_waypoints_planner_B.expl_temp.f1[0],
+             &cartesian_waypoints_planner_B.c_f1[0], sizeof(real_T) << 4U);
+    }
+
+    for (cartesian_waypoints_planner_B.b_jtilecol = 0;
+         cartesian_waypoints_planner_B.b_jtilecol <=
+         cartesian_waypoints_planner_B.ntilecols;
+         cartesian_waypoints_planner_B.b_jtilecol++) {
+      Ttree->data[cartesian_waypoints_planner_B.b_jtilecol] =
+        cartesian_waypoints_planner_B.expl_temp;
+    }
+  }
+
+  cartesian_waypoints_planner_B.k = 1.0;
+  cartesian_waypoints_planner_B.ntilecols = static_cast<int32_T>
+    (cartesian_waypoints_planner_B.n) - 1;
+  cartesian_waypoi_emxInit_char_T(&switch_expression, 2);
+  if (0 <= cartesian_waypoints_planner_B.ntilecols) {
+    for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+         cartesian_waypoints_planner_B.b_kstr_og < 5;
+         cartesian_waypoints_planner_B.b_kstr_og++) {
+      cartesian_waypoints_planner_B.b_gf[cartesian_waypoints_planner_B.b_kstr_og]
+        = tmp_0[cartesian_waypoints_planner_B.b_kstr_og];
+    }
+  }
+
+  for (cartesian_waypoints_planner_B.b_jtilecol = 0;
+       cartesian_waypoints_planner_B.b_jtilecol <=
+       cartesian_waypoints_planner_B.ntilecols;
+       cartesian_waypoints_planner_B.b_jtilecol++) {
+    body = obj->Bodies[cartesian_waypoints_planner_B.b_jtilecol];
+    cartesian_waypoints_planner_B.n = body->JointInternal.PositionNumber;
+    cartesian_waypoints_planner_B.n += cartesian_waypoints_planner_B.k;
+    if (cartesian_waypoints_planner_B.k > cartesian_waypoints_planner_B.n - 1.0)
+    {
+      cartesian_waypoints_planner_B.e_p = 0;
+      cartesian_waypoints_planner_B.d_i = 0;
+    } else {
+      cartesian_waypoints_planner_B.e_p = static_cast<int32_T>
+        (cartesian_waypoints_planner_B.k) - 1;
+      cartesian_waypoints_planner_B.d_i = static_cast<int32_T>
+        (cartesian_waypoints_planner_B.n - 1.0);
+    }
+
+    cartesian_waypoints_planner_B.b_kstr_og = switch_expression->size[0] *
+      switch_expression->size[1];
+    switch_expression->size[0] = 1;
+    switch_expression->size[1] = body->JointInternal.Type->size[1];
+    cartes_emxEnsureCapacity_char_T(switch_expression,
+      cartesian_waypoints_planner_B.b_kstr_og);
+    loop_ub = body->JointInternal.Type->size[0] * body->JointInternal.Type->
+      size[1] - 1;
+    for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+         cartesian_waypoints_planner_B.b_kstr_og <= loop_ub;
+         cartesian_waypoints_planner_B.b_kstr_og++) {
+      switch_expression->data[cartesian_waypoints_planner_B.b_kstr_og] =
+        body->JointInternal.Type->data[cartesian_waypoints_planner_B.b_kstr_og];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] == 5) {
+      cartesian_waypoints_planner_B.b_kstr_og = 1;
+      do {
+        exitg1 = 0;
+        if (cartesian_waypoints_planner_B.b_kstr_og - 1 < 5) {
+          loop_ub = cartesian_waypoints_planner_B.b_kstr_og - 1;
+          if (switch_expression->data[loop_ub] !=
+              cartesian_waypoints_planner_B.b_gf[loop_ub]) {
+            exitg1 = 1;
+          } else {
+            cartesian_waypoints_planner_B.b_kstr_og++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      cartesian_waypoints_planner_B.b_kstr_og = 0;
+    } else {
+      for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+           cartesian_waypoints_planner_B.b_kstr_og < 8;
+           cartesian_waypoints_planner_B.b_kstr_og++) {
+        cartesian_waypoints_planner_B.b_a[cartesian_waypoints_planner_B.b_kstr_og]
+          = tmp_1[cartesian_waypoints_planner_B.b_kstr_og];
+      }
+
+      b_bool = false;
+      if (switch_expression->size[1] == 8) {
+        cartesian_waypoints_planner_B.b_kstr_og = 1;
+        do {
+          exitg1 = 0;
+          if (cartesian_waypoints_planner_B.b_kstr_og - 1 < 8) {
+            loop_ub = cartesian_waypoints_planner_B.b_kstr_og - 1;
+            if (switch_expression->data[loop_ub] !=
+                cartesian_waypoints_planner_B.b_a[loop_ub]) {
+              exitg1 = 1;
+            } else {
+              cartesian_waypoints_planner_B.b_kstr_og++;
+            }
+          } else {
+            b_bool = true;
+            exitg1 = 1;
+          }
+        } while (exitg1 == 0);
+      }
+
+      if (b_bool) {
+        cartesian_waypoints_planner_B.b_kstr_og = 1;
+      } else {
+        cartesian_waypoints_planner_B.b_kstr_og = -1;
+      }
+    }
+
+    switch (cartesian_waypoints_planner_B.b_kstr_og) {
+     case 0:
+      memset(&cartesian_waypoints_planner_B.c_f1[0], 0, sizeof(real_T) << 4U);
+      cartesian_waypoints_planner_B.c_f1[0] = 1.0;
+      cartesian_waypoints_planner_B.c_f1[5] = 1.0;
+      cartesian_waypoints_planner_B.c_f1[10] = 1.0;
+      cartesian_waypoints_planner_B.c_f1[15] = 1.0;
+      break;
+
+     case 1:
+      ca_rigidBodyJoint_get_JointAxis(&body->JointInternal,
+        cartesian_waypoints_planner_B.v_m4);
+      cartesian_waypoints_planner_B.d_i -= cartesian_waypoints_planner_B.e_p;
+      for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+           cartesian_waypoints_planner_B.b_kstr_og <
+           cartesian_waypoints_planner_B.d_i;
+           cartesian_waypoints_planner_B.b_kstr_og++) {
+        cartesian_waypoints_planner_B.e_data[cartesian_waypoints_planner_B.b_kstr_og]
+          = cartesian_waypoints_planner_B.e_p +
+          cartesian_waypoints_planner_B.b_kstr_og;
+      }
+
+      cartesian_waypoints_planner_B.result_data_i[0] =
+        cartesian_waypoints_planner_B.v_m4[0];
+      cartesian_waypoints_planner_B.result_data_i[1] =
+        cartesian_waypoints_planner_B.v_m4[1];
+      cartesian_waypoints_planner_B.result_data_i[2] =
+        cartesian_waypoints_planner_B.v_m4[2];
+      if (0 <= (cartesian_waypoints_planner_B.d_i != 0) - 1) {
+        cartesian_waypoints_planner_B.result_data_i[3] =
+          qvec[cartesian_waypoints_planner_B.e_data[0]];
+      }
+
+      cartesian_waypoints_planner_B.k = 1.0 / sqrt
+        ((cartesian_waypoints_planner_B.result_data_i[0] *
+          cartesian_waypoints_planner_B.result_data_i[0] +
+          cartesian_waypoints_planner_B.result_data_i[1] *
+          cartesian_waypoints_planner_B.result_data_i[1]) +
+         cartesian_waypoints_planner_B.result_data_i[2] *
+         cartesian_waypoints_planner_B.result_data_i[2]);
+      cartesian_waypoints_planner_B.v_m4[0] =
+        cartesian_waypoints_planner_B.result_data_i[0] *
+        cartesian_waypoints_planner_B.k;
+      cartesian_waypoints_planner_B.v_m4[1] =
+        cartesian_waypoints_planner_B.result_data_i[1] *
+        cartesian_waypoints_planner_B.k;
+      cartesian_waypoints_planner_B.v_m4[2] =
+        cartesian_waypoints_planner_B.result_data_i[2] *
+        cartesian_waypoints_planner_B.k;
+      cartesian_waypoints_planner_B.k = cos
+        (cartesian_waypoints_planner_B.result_data_i[3]);
+      cartesian_waypoints_planner_B.sth_p = sin
+        (cartesian_waypoints_planner_B.result_data_i[3]);
+      cartesian_waypoints_planner_B.tempR_l[0] =
+        cartesian_waypoints_planner_B.v_m4[0] *
+        cartesian_waypoints_planner_B.v_m4[0] * (1.0 -
+        cartesian_waypoints_planner_B.k) + cartesian_waypoints_planner_B.k;
+      cartesian_waypoints_planner_B.tempR_tmp_o =
+        cartesian_waypoints_planner_B.v_m4[1] *
+        cartesian_waypoints_planner_B.v_m4[0] * (1.0 -
+        cartesian_waypoints_planner_B.k);
+      cartesian_waypoints_planner_B.tempR_tmp_l =
+        cartesian_waypoints_planner_B.v_m4[2] *
+        cartesian_waypoints_planner_B.sth_p;
+      cartesian_waypoints_planner_B.tempR_l[1] =
+        cartesian_waypoints_planner_B.tempR_tmp_o -
+        cartesian_waypoints_planner_B.tempR_tmp_l;
+      cartesian_waypoints_planner_B.tempR_tmp_k =
+        cartesian_waypoints_planner_B.v_m4[2] *
+        cartesian_waypoints_planner_B.v_m4[0] * (1.0 -
+        cartesian_waypoints_planner_B.k);
+      cartesian_waypoints_planner_B.tempR_tmp_j =
+        cartesian_waypoints_planner_B.v_m4[1] *
+        cartesian_waypoints_planner_B.sth_p;
+      cartesian_waypoints_planner_B.tempR_l[2] =
+        cartesian_waypoints_planner_B.tempR_tmp_k +
+        cartesian_waypoints_planner_B.tempR_tmp_j;
+      cartesian_waypoints_planner_B.tempR_l[3] =
+        cartesian_waypoints_planner_B.tempR_tmp_o +
+        cartesian_waypoints_planner_B.tempR_tmp_l;
+      cartesian_waypoints_planner_B.tempR_l[4] =
+        cartesian_waypoints_planner_B.v_m4[1] *
+        cartesian_waypoints_planner_B.v_m4[1] * (1.0 -
+        cartesian_waypoints_planner_B.k) + cartesian_waypoints_planner_B.k;
+      cartesian_waypoints_planner_B.tempR_tmp_o =
+        cartesian_waypoints_planner_B.v_m4[2] *
+        cartesian_waypoints_planner_B.v_m4[1] * (1.0 -
+        cartesian_waypoints_planner_B.k);
+      cartesian_waypoints_planner_B.tempR_tmp_l =
+        cartesian_waypoints_planner_B.v_m4[0] *
+        cartesian_waypoints_planner_B.sth_p;
+      cartesian_waypoints_planner_B.tempR_l[5] =
+        cartesian_waypoints_planner_B.tempR_tmp_o -
+        cartesian_waypoints_planner_B.tempR_tmp_l;
+      cartesian_waypoints_planner_B.tempR_l[6] =
+        cartesian_waypoints_planner_B.tempR_tmp_k -
+        cartesian_waypoints_planner_B.tempR_tmp_j;
+      cartesian_waypoints_planner_B.tempR_l[7] =
+        cartesian_waypoints_planner_B.tempR_tmp_o +
+        cartesian_waypoints_planner_B.tempR_tmp_l;
+      cartesian_waypoints_planner_B.tempR_l[8] =
+        cartesian_waypoints_planner_B.v_m4[2] *
+        cartesian_waypoints_planner_B.v_m4[2] * (1.0 -
+        cartesian_waypoints_planner_B.k) + cartesian_waypoints_planner_B.k;
+      for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+           cartesian_waypoints_planner_B.b_kstr_og < 3;
+           cartesian_waypoints_planner_B.b_kstr_og++) {
+        cartesian_waypoints_planner_B.e_p =
+          cartesian_waypoints_planner_B.b_kstr_og + 1;
+        cartesian_waypoints_planner_B.R_h[cartesian_waypoints_planner_B.e_p - 1]
+          = cartesian_waypoints_planner_B.tempR_l
+          [(cartesian_waypoints_planner_B.e_p - 1) * 3];
+        cartesian_waypoints_planner_B.e_p =
+          cartesian_waypoints_planner_B.b_kstr_og + 1;
+        cartesian_waypoints_planner_B.R_h[cartesian_waypoints_planner_B.e_p + 2]
+          = cartesian_waypoints_planner_B.tempR_l
+          [(cartesian_waypoints_planner_B.e_p - 1) * 3 + 1];
+        cartesian_waypoints_planner_B.e_p =
+          cartesian_waypoints_planner_B.b_kstr_og + 1;
+        cartesian_waypoints_planner_B.R_h[cartesian_waypoints_planner_B.e_p + 5]
+          = cartesian_waypoints_planner_B.tempR_l
+          [(cartesian_waypoints_planner_B.e_p - 1) * 3 + 2];
+      }
+
+      memset(&cartesian_waypoints_planner_B.c_f1[0], 0, sizeof(real_T) << 4U);
+      for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+           cartesian_waypoints_planner_B.b_kstr_og < 3;
+           cartesian_waypoints_planner_B.b_kstr_og++) {
+        cartesian_waypoints_planner_B.d_i =
+          cartesian_waypoints_planner_B.b_kstr_og << 2;
+        cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.d_i] =
+          cartesian_waypoints_planner_B.R_h[3 *
+          cartesian_waypoints_planner_B.b_kstr_og];
+        cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.d_i + 1]
+          = cartesian_waypoints_planner_B.R_h[3 *
+          cartesian_waypoints_planner_B.b_kstr_og + 1];
+        cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.d_i + 2]
+          = cartesian_waypoints_planner_B.R_h[3 *
+          cartesian_waypoints_planner_B.b_kstr_og + 2];
+      }
+
+      cartesian_waypoints_planner_B.c_f1[15] = 1.0;
+      break;
+
+     default:
+      ca_rigidBodyJoint_get_JointAxis(&body->JointInternal,
+        cartesian_waypoints_planner_B.v_m4);
+      memset(&cartesian_waypoints_planner_B.tempR_l[0], 0, 9U * sizeof(real_T));
+      cartesian_waypoints_planner_B.tempR_l[0] = 1.0;
+      cartesian_waypoints_planner_B.tempR_l[4] = 1.0;
+      cartesian_waypoints_planner_B.tempR_l[8] = 1.0;
+      for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+           cartesian_waypoints_planner_B.b_kstr_og < 3;
+           cartesian_waypoints_planner_B.b_kstr_og++) {
+        cartesian_waypoints_planner_B.d_i =
+          cartesian_waypoints_planner_B.b_kstr_og << 2;
+        cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.d_i] =
+          cartesian_waypoints_planner_B.tempR_l[3 *
+          cartesian_waypoints_planner_B.b_kstr_og];
+        cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.d_i + 1]
+          = cartesian_waypoints_planner_B.tempR_l[3 *
+          cartesian_waypoints_planner_B.b_kstr_og + 1];
+        cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.d_i + 2]
+          = cartesian_waypoints_planner_B.tempR_l[3 *
+          cartesian_waypoints_planner_B.b_kstr_og + 2];
+        cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.b_kstr_og
+          + 12] =
+          cartesian_waypoints_planner_B.v_m4[cartesian_waypoints_planner_B.b_kstr_og]
+          * qvec[cartesian_waypoints_planner_B.e_p];
+      }
+
+      cartesian_waypoints_planner_B.c_f1[3] = 0.0;
+      cartesian_waypoints_planner_B.c_f1[7] = 0.0;
+      cartesian_waypoints_planner_B.c_f1[11] = 0.0;
+      cartesian_waypoints_planner_B.c_f1[15] = 1.0;
+      break;
+    }
+
+    for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+         cartesian_waypoints_planner_B.b_kstr_og < 16;
+         cartesian_waypoints_planner_B.b_kstr_og++) {
+      cartesian_waypoints_planner_B.a_o[cartesian_waypoints_planner_B.b_kstr_og]
+        = body->
+        JointInternal.JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_og];
+    }
+
+    for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+         cartesian_waypoints_planner_B.b_kstr_og < 16;
+         cartesian_waypoints_planner_B.b_kstr_og++) {
+      cartesian_waypoints_planner_B.b_n[cartesian_waypoints_planner_B.b_kstr_og]
+        = body->
+        JointInternal.ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_og];
+    }
+
+    for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+         cartesian_waypoints_planner_B.b_kstr_og < 4;
+         cartesian_waypoints_planner_B.b_kstr_og++) {
+      for (cartesian_waypoints_planner_B.e_p = 0;
+           cartesian_waypoints_planner_B.e_p < 4;
+           cartesian_waypoints_planner_B.e_p++) {
+        cartesian_waypoints_planner_B.d_i = cartesian_waypoints_planner_B.e_p <<
+          2;
+        loop_ub = cartesian_waypoints_planner_B.b_kstr_og +
+          cartesian_waypoints_planner_B.d_i;
+        cartesian_waypoints_planner_B.a_m[loop_ub] = 0.0;
+        cartesian_waypoints_planner_B.a_m[loop_ub] +=
+          cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.d_i] *
+          cartesian_waypoints_planner_B.a_o[cartesian_waypoints_planner_B.b_kstr_og];
+        cartesian_waypoints_planner_B.a_m[loop_ub] +=
+          cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.d_i +
+          1] *
+          cartesian_waypoints_planner_B.a_o[cartesian_waypoints_planner_B.b_kstr_og
+          + 4];
+        cartesian_waypoints_planner_B.a_m[loop_ub] +=
+          cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.d_i +
+          2] *
+          cartesian_waypoints_planner_B.a_o[cartesian_waypoints_planner_B.b_kstr_og
+          + 8];
+        cartesian_waypoints_planner_B.a_m[loop_ub] +=
+          cartesian_waypoints_planner_B.c_f1[cartesian_waypoints_planner_B.d_i +
+          3] *
+          cartesian_waypoints_planner_B.a_o[cartesian_waypoints_planner_B.b_kstr_og
+          + 12];
+      }
+
+      for (cartesian_waypoints_planner_B.e_p = 0;
+           cartesian_waypoints_planner_B.e_p < 4;
+           cartesian_waypoints_planner_B.e_p++) {
+        cartesian_waypoints_planner_B.d_i = cartesian_waypoints_planner_B.e_p <<
+          2;
+        loop_ub = cartesian_waypoints_planner_B.b_kstr_og +
+          cartesian_waypoints_planner_B.d_i;
+        Ttree->data[cartesian_waypoints_planner_B.b_jtilecol].f1[loop_ub] = 0.0;
+        Ttree->data[cartesian_waypoints_planner_B.b_jtilecol].f1[loop_ub] +=
+          cartesian_waypoints_planner_B.b_n[cartesian_waypoints_planner_B.d_i] *
+          cartesian_waypoints_planner_B.a_m[cartesian_waypoints_planner_B.b_kstr_og];
+        Ttree->data[cartesian_waypoints_planner_B.b_jtilecol].f1[loop_ub] +=
+          cartesian_waypoints_planner_B.b_n[cartesian_waypoints_planner_B.d_i +
+          1] *
+          cartesian_waypoints_planner_B.a_m[cartesian_waypoints_planner_B.b_kstr_og
+          + 4];
+        Ttree->data[cartesian_waypoints_planner_B.b_jtilecol].f1[loop_ub] +=
+          cartesian_waypoints_planner_B.b_n[cartesian_waypoints_planner_B.d_i +
+          2] *
+          cartesian_waypoints_planner_B.a_m[cartesian_waypoints_planner_B.b_kstr_og
+          + 8];
+        Ttree->data[cartesian_waypoints_planner_B.b_jtilecol].f1[loop_ub] +=
+          cartesian_waypoints_planner_B.b_n[cartesian_waypoints_planner_B.d_i +
+          3] *
+          cartesian_waypoints_planner_B.a_m[cartesian_waypoints_planner_B.b_kstr_og
+          + 12];
+      }
+    }
+
+    cartesian_waypoints_planner_B.k = cartesian_waypoints_planner_B.n;
+    if (body->ParentIndex > 0.0) {
+      for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+           cartesian_waypoints_planner_B.b_kstr_og < 16;
+           cartesian_waypoints_planner_B.b_kstr_og++) {
+        cartesian_waypoints_planner_B.a_o[cartesian_waypoints_planner_B.b_kstr_og]
+          = Ttree->data[static_cast<int32_T>(body->ParentIndex) - 1]
+          .f1[cartesian_waypoints_planner_B.b_kstr_og];
+      }
+
+      for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+           cartesian_waypoints_planner_B.b_kstr_og < 4;
+           cartesian_waypoints_planner_B.b_kstr_og++) {
+        for (cartesian_waypoints_planner_B.e_p = 0;
+             cartesian_waypoints_planner_B.e_p < 4;
+             cartesian_waypoints_planner_B.e_p++) {
+          cartesian_waypoints_planner_B.d_i = cartesian_waypoints_planner_B.e_p <<
+            2;
+          loop_ub = cartesian_waypoints_planner_B.b_kstr_og +
+            cartesian_waypoints_planner_B.d_i;
+          cartesian_waypoints_planner_B.a_m[loop_ub] = 0.0;
+          cartesian_waypoints_planner_B.a_m[loop_ub] += Ttree->
+            data[cartesian_waypoints_planner_B.b_jtilecol]
+            .f1[cartesian_waypoints_planner_B.d_i] *
+            cartesian_waypoints_planner_B.a_o[cartesian_waypoints_planner_B.b_kstr_og];
+          cartesian_waypoints_planner_B.a_m[loop_ub] += Ttree->
+            data[cartesian_waypoints_planner_B.b_jtilecol]
+            .f1[cartesian_waypoints_planner_B.d_i + 1] *
+            cartesian_waypoints_planner_B.a_o[cartesian_waypoints_planner_B.b_kstr_og
+            + 4];
+          cartesian_waypoints_planner_B.a_m[loop_ub] += Ttree->
+            data[cartesian_waypoints_planner_B.b_jtilecol]
+            .f1[cartesian_waypoints_planner_B.d_i + 2] *
+            cartesian_waypoints_planner_B.a_o[cartesian_waypoints_planner_B.b_kstr_og
+            + 8];
+          cartesian_waypoints_planner_B.a_m[loop_ub] += Ttree->
+            data[cartesian_waypoints_planner_B.b_jtilecol]
+            .f1[cartesian_waypoints_planner_B.d_i + 3] *
+            cartesian_waypoints_planner_B.a_o[cartesian_waypoints_planner_B.b_kstr_og
+            + 12];
+        }
+      }
+
+      for (cartesian_waypoints_planner_B.b_kstr_og = 0;
+           cartesian_waypoints_planner_B.b_kstr_og < 16;
+           cartesian_waypoints_planner_B.b_kstr_og++) {
+        Ttree->data[cartesian_waypoints_planner_B.b_jtilecol]
+          .f1[cartesian_waypoints_planner_B.b_kstr_og] =
+          cartesian_waypoints_planner_B.a_m[cartesian_waypoints_planner_B.b_kstr_og];
+      }
+    }
+  }
+
+  cartesian_waypoi_emxFree_char_T(&switch_expression);
+}
+
+static void cartesian_w_emxFree_f_cell_wrap(emxArray_f_cell_wrap_cartesia_T
+  **pEmxArray)
+{
+  if (*pEmxArray != (emxArray_f_cell_wrap_cartesia_T *)NULL) {
+    if (((*pEmxArray)->data != (f_cell_wrap_cartesian_waypoin_T *)NULL) &&
+        (*pEmxArray)->canFreeData) {
+      free((*pEmxArray)->data);
+    }
+
+    free((*pEmxArray)->size);
+    free(*pEmxArray);
+    *pEmxArray = (emxArray_f_cell_wrap_cartesia_T *)NULL;
+  }
+}
+
+static void matlabCodegenHandle_matlabCodeg(ros_slros_internal_block_GetP_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
   }
 }
 
-static void matlabCodegenHandle_matlabCod_e(robotics_slmanip_internal_blo_T *obj)
+static void matlabCodegenHandle_matlab_evqu(robotics_slmanip_internal_b_e_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
@@ -10233,20 +10917,20 @@ static void cartesian_wa_SystemCore_release(b_inverseKinematics_cartesian_T *obj
   }
 }
 
-static void cartesian_way_SystemCore_delete(b_inverseKinematics_cartesian_T *obj)
+static void cartesian_SystemCore_delete_evq(b_inverseKinematics_cartesian_T *obj)
 {
   cartesian_wa_SystemCore_release(obj);
 }
 
-static void matlabCodegenHandle_matlabCodeg(b_inverseKinematics_cartesian_T *obj)
+static void matlabCodegenHandle_matlabC_evq(b_inverseKinematics_cartesian_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
-    cartesian_way_SystemCore_delete(obj);
+    cartesian_SystemCore_delete_evq(obj);
   }
 }
 
-static void emxFreeStruct_c_rigidBodyJoint(c_rigidBodyJoint_cartesian_wa_T
+static void emxFreeStruct_c_rigidBodyJoint(c_rigidBodyJoint_cartesian__e_T
   *pStruct)
 {
   cartesian_waypoi_emxFree_char_T(&pStruct->Type);
@@ -10275,7 +10959,7 @@ static void emxFreeStruct_b_inverseKinemati(b_inverseKinematics_cartesian_T
   cartesian_waypoi_emxFree_real_T(&pStruct->Limits);
 }
 
-static void emxFreeStruct_robotics_slmanip_(robotics_slmanip_internal_blo_T
+static void emxFreeStruct_robotics_slmanip_(robotics_slmanip_internal_b_e_T
   *pStruct)
 {
   emxFreeStruct_y_robotics_manip_(&pStruct->TreeInternal);
@@ -10309,21 +10993,60 @@ static void emxFreeStruct_h_robotics_core_i(h_robotics_core_internal_Damp_T
   cartesian_waypoi_emxFree_real_T(&pStruct->ConstraintBound);
 }
 
-static void cartesian_way_matlabCodegenHa_a(ros_slros_internal_block_SetP_T *obj)
+static void emxFreeStruct_c_rigidBodyJoint1(c_rigidBodyJoint_cartesian_wa_T
+  *pStruct)
+{
+  cartesian_waypoi_emxFree_char_T(&pStruct->Type);
+}
+
+static void emxFreeStruct_o_robotics_manip_(o_robotics_manip_internal_Rig_T
+  *pStruct)
+{
+  cartesian_waypoi_emxFree_char_T(&pStruct->NameInternal);
+  emxFreeStruct_c_rigidBodyJoint1(&pStruct->JointInternal);
+}
+
+static void emxFreeStruct_p_robotics_manip_(p_robotics_manip_internal_Rig_T
+  *pStruct)
+{
+  emxFreeStruct_o_robotics_manip_(&pStruct->Base);
+}
+
+static void emxFreeStruct_robotics_slmani_e(robotics_slmanip_internal_blo_T
+  *pStruct)
+{
+  emxFreeStruct_p_robotics_manip_(&pStruct->TreeInternal);
+}
+
+static void emxFreeStruct_n_robotics_manip_(n_robotics_manip_internal_Rig_T
+  *pStruct)
+{
+  cartesian_waypoi_emxFree_char_T(&pStruct->NameInternal);
+  emxFreeStruct_c_rigidBodyJoint1(&pStruct->JointInternal);
+}
+
+static void matlabCodegenHandle_matl_evqusn(ros_slros_internal_block_Subs_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
   }
 }
 
-static void matlabCodegenHandle_matlabCo_ev(ros_slros_internal_block_Publ_T *obj)
+static void cartesian_way_matlabCodegenHa_j(ros_slros_internal_block_SetP_T *obj)
 {
   if (!obj->matlabCodegenIsDeleted) {
     obj->matlabCodegenIsDeleted = true;
   }
 }
 
-static void emxInitStruct_c_rigidBodyJoint(c_rigidBodyJoint_cartesian_wa_T
+static void matlabCodegenHandle_matla_evqus(ros_slros_internal_block_Publ_T *obj)
+{
+  if (!obj->matlabCodegenIsDeleted) {
+    obj->matlabCodegenIsDeleted = true;
+  }
+}
+
+static void emxInitStruct_c_rigidBodyJoint(c_rigidBodyJoint_cartesian__e_T
   *pStruct)
 {
   cartesian_waypoi_emxInit_char_T(&pStruct->Type, 2);
@@ -10352,7 +11075,7 @@ static void emxInitStruct_b_inverseKinemati(b_inverseKinematics_cartesian_T
   cartesian_waypoi_emxInit_real_T(&pStruct->Limits, 2);
 }
 
-static void emxInitStruct_robotics_slmanip_(robotics_slmanip_internal_blo_T
+static void emxInitStruct_robotics_slmanip_(robotics_slmanip_internal_b_e_T
   *pStruct)
 {
   emxInitStruct_y_robotics_manip_(&pStruct->TreeInternal);
@@ -10406,7 +11129,7 @@ static void cartesian_wa_eml_rand_mt19937ar(uint32_T state[625])
   cartesia_twister_state_vector_e(state);
 }
 
-static v_robotics_manip_internal_Rig_T *cartesian_w_RigidBody_RigidBody
+static v_robotics_manip_internal_Rig_T *carte_RigidBody_RigidBody_evqus
   (v_robotics_manip_internal_Rig_T *obj)
 {
   v_robotics_manip_internal_Rig_T *b_obj;
@@ -10694,7 +11417,7 @@ static v_robotics_manip_internal_Rig_T *cartesian_w_RigidBody_RigidBody
   return b_obj;
 }
 
-static v_robotics_manip_internal_Rig_T *cartesian_RigidBody_RigidBody_e
+static v_robotics_manip_internal_Rig_T *cart_RigidBody_RigidBody_evqusn
   (v_robotics_manip_internal_Rig_T *obj)
 {
   v_robotics_manip_internal_Rig_T *b_obj;
@@ -10982,7 +11705,7 @@ static v_robotics_manip_internal_Rig_T *cartesian_RigidBody_RigidBody_e
   return b_obj;
 }
 
-static v_robotics_manip_internal_Rig_T *cartesia_RigidBody_RigidBody_ev
+static v_robotics_manip_internal_Rig_T *car_RigidBody_RigidBody_evqusng
   (v_robotics_manip_internal_Rig_T *obj)
 {
   v_robotics_manip_internal_Rig_T *b_obj;
@@ -11273,7 +11996,7 @@ static v_robotics_manip_internal_Rig_T *cartesia_RigidBody_RigidBody_ev
   return b_obj;
 }
 
-static v_robotics_manip_internal_Rig_T *cartesi_RigidBody_RigidBody_evq
+static v_robotics_manip_internal_Rig_T *ca_RigidBody_RigidBody_evqusngv
   (v_robotics_manip_internal_Rig_T *obj)
 {
   v_robotics_manip_internal_Rig_T *b_obj;
@@ -11565,7 +12288,7 @@ static v_robotics_manip_internal_Rig_T *cartesi_RigidBody_RigidBody_evq
   return b_obj;
 }
 
-static v_robotics_manip_internal_Rig_T *cartes_RigidBody_RigidBody_evqu
+static v_robotics_manip_internal_Rig_T *c_RigidBody_RigidBody_evqusngvo
   (v_robotics_manip_internal_Rig_T *obj)
 {
   v_robotics_manip_internal_Rig_T *b_obj;
@@ -11856,7 +12579,7 @@ static v_robotics_manip_internal_Rig_T *cartes_RigidBody_RigidBody_evqu
   return b_obj;
 }
 
-static v_robotics_manip_internal_Rig_T *carte_RigidBody_RigidBody_evqus
+static v_robotics_manip_internal_Rig_T *RigidBody_RigidBody_evqusngvo0
   (v_robotics_manip_internal_Rig_T *obj)
 {
   v_robotics_manip_internal_Rig_T *b_obj;
@@ -12146,7 +12869,7 @@ static v_robotics_manip_internal_Rig_T *carte_RigidBody_RigidBody_evqus
   return b_obj;
 }
 
-static v_robotics_manip_internal_Rig_T *cart_RigidBody_RigidBody_evqusn
+static v_robotics_manip_internal_Rig_T *RigidBody_RigidBody_evqusngvo0a
   (v_robotics_manip_internal_Rig_T *obj)
 {
   v_robotics_manip_internal_Rig_T *b_obj;
@@ -12436,7 +13159,7 @@ static v_robotics_manip_internal_Rig_T *cart_RigidBody_RigidBody_evqusn
   return b_obj;
 }
 
-static y_robotics_manip_internal_Rig_T *car_RigidBodyTree_RigidBodyTree
+static y_robotics_manip_internal_Rig_T *c_RigidBodyTree_RigidBodyTree_e
   (y_robotics_manip_internal_Rig_T *obj, v_robotics_manip_internal_Rig_T *iobj_0,
    v_robotics_manip_internal_Rig_T *iobj_1, v_robotics_manip_internal_Rig_T
    *iobj_2, v_robotics_manip_internal_Rig_T *iobj_3,
@@ -12487,19 +13210,19 @@ static y_robotics_manip_internal_Rig_T *car_RigidBodyTree_RigidBodyTree
 
   int32_T exitg1;
   b_obj = obj;
-  obj->Bodies[0] = cartesian_w_RigidBody_RigidBody(iobj_7);
+  obj->Bodies[0] = carte_RigidBody_RigidBody_evqus(iobj_7);
   obj->Bodies[0]->Index = 1.0;
-  obj->Bodies[1] = cartesian_RigidBody_RigidBody_e(iobj_0);
+  obj->Bodies[1] = cart_RigidBody_RigidBody_evqusn(iobj_0);
   obj->Bodies[1]->Index = 2.0;
-  obj->Bodies[2] = cartesia_RigidBody_RigidBody_ev(iobj_1);
+  obj->Bodies[2] = car_RigidBody_RigidBody_evqusng(iobj_1);
   obj->Bodies[2]->Index = 3.0;
-  obj->Bodies[3] = cartesi_RigidBody_RigidBody_evq(iobj_2);
+  obj->Bodies[3] = ca_RigidBody_RigidBody_evqusngv(iobj_2);
   obj->Bodies[3]->Index = 4.0;
-  obj->Bodies[4] = cartes_RigidBody_RigidBody_evqu(iobj_3);
+  obj->Bodies[4] = c_RigidBody_RigidBody_evqusngvo(iobj_3);
   obj->Bodies[4]->Index = 5.0;
-  obj->Bodies[5] = carte_RigidBody_RigidBody_evqus(iobj_4);
+  obj->Bodies[5] = RigidBody_RigidBody_evqusngvo0(iobj_4);
   obj->Bodies[5]->Index = 6.0;
-  obj->Bodies[6] = cart_RigidBody_RigidBody_evqusn(iobj_5);
+  obj->Bodies[6] = RigidBody_RigidBody_evqusngvo0a(iobj_5);
   obj->Bodies[6]->Index = 7.0;
   b_kstr = iobj_6->NameInternal->size[0] * iobj_6->NameInternal->size[1];
   iobj_6->NameInternal->size[0] = 1;
@@ -12958,19 +13681,18 @@ static y_robotics_manip_internal_Rig_T *car_RigidBodyTree_RigidBodyTree
 
 static void cartesian_waypoints_planne_rand(real_T r[5])
 {
-  for (cartesian_waypoints_planner_B.b_k_n = 0;
-       cartesian_waypoints_planner_B.b_k_n < 5;
-       cartesian_waypoints_planner_B.b_k_n++) {
+  for (cartesian_waypoints_planner_B.b_k = 0; cartesian_waypoints_planner_B.b_k <
+       5; cartesian_waypoints_planner_B.b_k++) {
     memcpy(&cartesian_waypoints_planner_B.uv[0],
            &cartesian_waypoints_planner_DW.state_m[0], 625U * sizeof(uint32_T));
     cartesian__eml_rand_mt19937ar_e(cartesian_waypoints_planner_B.uv,
       cartesian_waypoints_planner_DW.state_m,
-      &r[cartesian_waypoints_planner_B.b_k_n]);
+      &r[cartesian_waypoints_planner_B.b_k]);
   }
 }
 
-static w_robotics_manip_internal_Rig_T *car_RigidBody_RigidBody_evqusng
-  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0)
+static w_robotics_manip_internal_Rig_T *RigidBody_RigidBod_evqusngvo0ar
+  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0)
 {
   w_robotics_manip_internal_Rig_T *b_obj;
   int8_T msubspace_data[36];
@@ -13185,8 +13907,8 @@ static w_robotics_manip_internal_Rig_T *car_RigidBody_RigidBody_evqusng
   return b_obj;
 }
 
-static w_robotics_manip_internal_Rig_T *ca_RigidBody_RigidBody_evqusngv
-  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0)
+static w_robotics_manip_internal_Rig_T *RigidBody_RigidBo_evqusngvo0ar1
+  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0)
 {
   w_robotics_manip_internal_Rig_T *b_obj;
   int8_T msubspace_data[36];
@@ -13401,8 +14123,8 @@ static w_robotics_manip_internal_Rig_T *ca_RigidBody_RigidBody_evqusngv
   return b_obj;
 }
 
-static w_robotics_manip_internal_Rig_T *c_RigidBody_RigidBody_evqusngvo
-  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0)
+static w_robotics_manip_internal_Rig_T *RigidBody_RigidB_evqusngvo0ar1d
+  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0)
 {
   w_robotics_manip_internal_Rig_T *b_obj;
   int8_T msubspace_data[36];
@@ -13617,8 +14339,8 @@ static w_robotics_manip_internal_Rig_T *c_RigidBody_RigidBody_evqusngvo
   return b_obj;
 }
 
-static w_robotics_manip_internal_Rig_T *RigidBody_RigidBody_evqusngvo0
-  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0)
+static w_robotics_manip_internal_Rig_T *RigidBody_Rigid_evqusngvo0ar1db
+  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0)
 {
   w_robotics_manip_internal_Rig_T *b_obj;
   int8_T msubspace_data[36];
@@ -13833,8 +14555,8 @@ static w_robotics_manip_internal_Rig_T *RigidBody_RigidBody_evqusngvo0
   return b_obj;
 }
 
-static w_robotics_manip_internal_Rig_T *RigidBody_RigidBody_evqusngvo0a
-  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0)
+static w_robotics_manip_internal_Rig_T *c_RigidBody_Rigid_c
+  (w_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0)
 {
   w_robotics_manip_internal_Rig_T *b_obj;
   int8_T msubspace_data[36];
@@ -14054,12 +14776,12 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
   *iobj_1, w_robotics_manip_internal_Rig_T *iobj_2,
   w_robotics_manip_internal_Rig_T *iobj_3, w_robotics_manip_internal_Rig_T
   *iobj_4, w_robotics_manip_internal_Rig_T *iobj_5,
-  w_robotics_manip_internal_Rig_T *iobj_6, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_7, c_rigidBodyJoint_cartesian_wa_T *iobj_8,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_9, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_10, c_rigidBodyJoint_cartesian_wa_T *iobj_11,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_12, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_13, c_rigidBodyJoint_cartesian_wa_T *iobj_14,
+  w_robotics_manip_internal_Rig_T *iobj_6, c_rigidBodyJoint_cartesian__e_T
+  *iobj_7, c_rigidBodyJoint_cartesian__e_T *iobj_8,
+  c_rigidBodyJoint_cartesian__e_T *iobj_9, c_rigidBodyJoint_cartesian__e_T
+  *iobj_10, c_rigidBodyJoint_cartesian__e_T *iobj_11,
+  c_rigidBodyJoint_cartesian__e_T *iobj_12, c_rigidBodyJoint_cartesian__e_T
+  *iobj_13, c_rigidBodyJoint_cartesian__e_T *iobj_14,
   w_robotics_manip_internal_Rig_T *iobj_15)
 {
   emxArray_char_T_cartesian_way_T *switch_expression;
@@ -14091,152 +14813,152 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     '\x08', '_', 'j', 'n', 't' };
 
   int32_T exitg1;
-  obj->Bodies[0] = car_RigidBody_RigidBody_evqusng(iobj_15, iobj_14);
-  obj->Bodies[1] = ca_RigidBody_RigidBody_evqusngv(iobj_0, iobj_7);
-  obj->Bodies[2] = c_RigidBody_RigidBody_evqusngvo(iobj_1, iobj_8);
-  obj->Bodies[3] = RigidBody_RigidBody_evqusngvo0(iobj_2, iobj_9);
-  obj->Bodies[4] = RigidBody_RigidBody_evqusngvo0a(iobj_3, iobj_10);
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_4->NameInternal->size[0] *
+  obj->Bodies[0] = RigidBody_RigidBod_evqusngvo0ar(iobj_15, iobj_14);
+  obj->Bodies[1] = RigidBody_RigidBo_evqusngvo0ar1(iobj_0, iobj_7);
+  obj->Bodies[2] = RigidBody_RigidB_evqusngvo0ar1d(iobj_1, iobj_8);
+  obj->Bodies[3] = RigidBody_Rigid_evqusngvo0ar1db(iobj_2, iobj_9);
+  obj->Bodies[4] = c_RigidBody_Rigid_c(iobj_3, iobj_10);
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_4->NameInternal->size[0] *
     iobj_4->NameInternal->size[1];
   iobj_4->NameInternal->size[0] = 1;
   iobj_4->NameInternal->size[1] = 10;
   cartes_emxEnsureCapacity_char_T(iobj_4->NameInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 10;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_4->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 10;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_4->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
   iobj_11->InTree = false;
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 16;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_11->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_0[cartesian_waypoints_planner_B.b_kstr_f4];
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 16;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_11->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_0[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 16;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_11->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_0[cartesian_waypoints_planner_B.b_kstr_f4];
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 16;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_11->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_0[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_11->NameInternal->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_11->NameInternal->size[0] *
     iobj_11->NameInternal->size[1];
   iobj_11->NameInternal->size[0] = 1;
   iobj_11->NameInternal->size[1] = 14;
   cartes_emxEnsureCapacity_char_T(iobj_11->NameInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 14;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_11->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_1[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 14;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_11->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_1[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_11->Type->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_11->Type->size[0] *
     iobj_11->Type->size[1];
   iobj_11->Type->size[0] = 1;
   iobj_11->Type->size[1] = 5;
   cartes_emxEnsureCapacity_char_T(iobj_11->Type,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 5;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_11->Type->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_2[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 5;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_11->Type->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_2[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
   cartesian_waypoi_emxInit_char_T(&switch_expression, 2);
-  cartesian_waypoints_planner_B.b_kstr_f4 = switch_expression->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = switch_expression->size[0] *
     switch_expression->size[1];
   switch_expression->size[0] = 1;
   switch_expression->size[1] = iobj_11->Type->size[1];
   cartes_emxEnsureCapacity_char_T(switch_expression,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  cartesian_waypoints_planner_B.loop_ub_c = iobj_11->Type->size[0] *
+    cartesian_waypoints_planner_B.b_kstr_m);
+  cartesian_waypoints_planner_B.loop_ub_n = iobj_11->Type->size[0] *
     iobj_11->Type->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 <=
-       cartesian_waypoints_planner_B.loop_ub_c;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    switch_expression->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      iobj_11->Type->data[cartesian_waypoints_planner_B.b_kstr_f4];
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m <=
+       cartesian_waypoints_planner_B.loop_ub_n;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    switch_expression->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      iobj_11->Type->data[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 8;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    cartesian_waypoints_planner_B.b_ch[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_3[cartesian_waypoints_planner_B.b_kstr_f4];
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 8;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    cartesian_waypoints_planner_B.b_jg[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_3[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_bool_ly = false;
+  cartesian_waypoints_planner_B.b_bool_nh = false;
   if (switch_expression->size[1] == 8) {
-    cartesian_waypoints_planner_B.b_kstr_f4 = 1;
+    cartesian_waypoints_planner_B.b_kstr_m = 1;
     do {
       exitg1 = 0;
-      if (cartesian_waypoints_planner_B.b_kstr_f4 - 1 < 8) {
-        cartesian_waypoints_planner_B.loop_ub_c =
-          cartesian_waypoints_planner_B.b_kstr_f4 - 1;
-        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_c] !=
-            cartesian_waypoints_planner_B.b_ch[cartesian_waypoints_planner_B.loop_ub_c])
+      if (cartesian_waypoints_planner_B.b_kstr_m - 1 < 8) {
+        cartesian_waypoints_planner_B.loop_ub_n =
+          cartesian_waypoints_planner_B.b_kstr_m - 1;
+        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_n] !=
+            cartesian_waypoints_planner_B.b_jg[cartesian_waypoints_planner_B.loop_ub_n])
         {
           exitg1 = 1;
         } else {
-          cartesian_waypoints_planner_B.b_kstr_f4++;
+          cartesian_waypoints_planner_B.b_kstr_m++;
         }
       } else {
-        cartesian_waypoints_planner_B.b_bool_ly = true;
+        cartesian_waypoints_planner_B.b_bool_nh = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (cartesian_waypoints_planner_B.b_bool_ly) {
-    cartesian_waypoints_planner_B.b_kstr_f4 = 0;
+  if (cartesian_waypoints_planner_B.b_bool_nh) {
+    cartesian_waypoints_planner_B.b_kstr_m = 0;
   } else {
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 9;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.b_f[cartesian_waypoints_planner_B.b_kstr_f4]
-        = tmp_4[cartesian_waypoints_planner_B.b_kstr_f4];
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 9;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.b_c[cartesian_waypoints_planner_B.b_kstr_m] =
+        tmp_4[cartesian_waypoints_planner_B.b_kstr_m];
     }
 
-    cartesian_waypoints_planner_B.b_bool_ly = false;
+    cartesian_waypoints_planner_B.b_bool_nh = false;
     if (switch_expression->size[1] == 9) {
-      cartesian_waypoints_planner_B.b_kstr_f4 = 1;
+      cartesian_waypoints_planner_B.b_kstr_m = 1;
       do {
         exitg1 = 0;
-        if (cartesian_waypoints_planner_B.b_kstr_f4 - 1 < 9) {
-          cartesian_waypoints_planner_B.loop_ub_c =
-            cartesian_waypoints_planner_B.b_kstr_f4 - 1;
-          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_c]
+        if (cartesian_waypoints_planner_B.b_kstr_m - 1 < 9) {
+          cartesian_waypoints_planner_B.loop_ub_n =
+            cartesian_waypoints_planner_B.b_kstr_m - 1;
+          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_n]
               !=
-              cartesian_waypoints_planner_B.b_f[cartesian_waypoints_planner_B.loop_ub_c])
+              cartesian_waypoints_planner_B.b_c[cartesian_waypoints_planner_B.loop_ub_n])
           {
             exitg1 = 1;
           } else {
-            cartesian_waypoints_planner_B.b_kstr_f4++;
+            cartesian_waypoints_planner_B.b_kstr_m++;
           }
         } else {
-          cartesian_waypoints_planner_B.b_bool_ly = true;
+          cartesian_waypoints_planner_B.b_bool_nh = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (cartesian_waypoints_planner_B.b_bool_ly) {
-      cartesian_waypoints_planner_B.b_kstr_f4 = 1;
+    if (cartesian_waypoints_planner_B.b_bool_nh) {
+      cartesian_waypoints_planner_B.b_kstr_m = 1;
     } else {
-      cartesian_waypoints_planner_B.b_kstr_f4 = -1;
+      cartesian_waypoints_planner_B.b_kstr_m = -1;
     }
   }
 
-  switch (cartesian_waypoints_planner_B.b_kstr_f4) {
+  switch (cartesian_waypoints_planner_B.b_kstr_m) {
    case 0:
     cartesian_waypoints_planner_B.iv1[0] = 0;
     cartesian_waypoints_planner_B.iv1[1] = 0;
@@ -14244,16 +14966,16 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     cartesian_waypoints_planner_B.iv1[3] = 0;
     cartesian_waypoints_planner_B.iv1[4] = 0;
     cartesian_waypoints_planner_B.iv1[5] = 0;
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4]
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 6;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m]
         =
-        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_f4];
+        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_m];
     }
 
-    cartesian_waypoints_planner_B.poslim_data_c[0] = -3.1415926535897931;
-    cartesian_waypoints_planner_B.poslim_data_c[1] = 3.1415926535897931;
+    cartesian_waypoints_planner_B.poslim_data_p[0] = -3.1415926535897931;
+    cartesian_waypoints_planner_B.poslim_data_p[1] = 3.1415926535897931;
     iobj_11->VelocityNumber = 1.0;
     iobj_11->PositionNumber = 1.0;
     iobj_11->JointAxisInternal[0] = 0.0;
@@ -14268,16 +14990,16 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     cartesian_waypoints_planner_B.iv1[3] = 0;
     cartesian_waypoints_planner_B.iv1[4] = 0;
     cartesian_waypoints_planner_B.iv1[5] = 1;
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4]
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 6;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m]
         =
-        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_f4];
+        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_m];
     }
 
-    cartesian_waypoints_planner_B.poslim_data_c[0] = -0.5;
-    cartesian_waypoints_planner_B.poslim_data_c[1] = 0.5;
+    cartesian_waypoints_planner_B.poslim_data_p[0] = -0.5;
+    cartesian_waypoints_planner_B.poslim_data_p[1] = 0.5;
     iobj_11->VelocityNumber = 1.0;
     iobj_11->PositionNumber = 1.0;
     iobj_11->JointAxisInternal[0] = 0.0;
@@ -14286,15 +15008,15 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     break;
 
    default:
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4]
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 6;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m]
         = 0;
     }
 
-    cartesian_waypoints_planner_B.poslim_data_c[0] = 0.0;
-    cartesian_waypoints_planner_B.poslim_data_c[1] = 0.0;
+    cartesian_waypoints_planner_B.poslim_data_p[0] = 0.0;
+    cartesian_waypoints_planner_B.poslim_data_p[1] = 0.0;
     iobj_11->VelocityNumber = 0.0;
     iobj_11->PositionNumber = 0.0;
     iobj_11->JointAxisInternal[0] = 0.0;
@@ -14303,41 +15025,40 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     break;
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_11->MotionSubspace->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_11->MotionSubspace->size[0] *
     iobj_11->MotionSubspace->size[1];
   iobj_11->MotionSubspace->size[0] = 6;
   iobj_11->MotionSubspace->size[1] = 1;
   cartes_emxEnsureCapacity_real_T(iobj_11->MotionSubspace,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_11->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 6;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_11->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_11->
-    PositionLimitsInternal->size[0] * iobj_11->PositionLimitsInternal->size[1];
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_11->PositionLimitsInternal->
+    size[0] * iobj_11->PositionLimitsInternal->size[1];
   iobj_11->PositionLimitsInternal->size[0] = 1;
   iobj_11->PositionLimitsInternal->size[1] = 2;
   cartes_emxEnsureCapacity_real_T(iobj_11->PositionLimitsInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 2;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_11->PositionLimitsInternal->
-      data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      cartesian_waypoints_planner_B.poslim_data_c[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 2;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_11->PositionLimitsInternal->data[cartesian_waypoints_planner_B.b_kstr_m]
+      =
+      cartesian_waypoints_planner_B.poslim_data_p[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_11->HomePositionInternal->size
-    [0];
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_11->HomePositionInternal->size[0];
   iobj_11->HomePositionInternal->size[0] = 1;
   cartes_emxEnsureCapacity_real_T(iobj_11->HomePositionInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 1;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 1;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
     iobj_11->HomePositionInternal->data[0] = 0.0;
   }
 
@@ -14345,139 +15066,139 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
   iobj_4->Index = -1.0;
   iobj_4->ParentIndex = -1.0;
   obj->Bodies[5] = iobj_4;
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_5->NameInternal->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_5->NameInternal->size[0] *
     iobj_5->NameInternal->size[1];
   iobj_5->NameInternal->size[0] = 1;
   iobj_5->NameInternal->size[1] = 10;
   cartes_emxEnsureCapacity_char_T(iobj_5->NameInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 10;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_5->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_5[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 10;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_5->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_5[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
   iobj_12->InTree = false;
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 16;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_12->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_0[cartesian_waypoints_planner_B.b_kstr_f4];
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 16;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_12->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_0[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 16;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_12->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_0[cartesian_waypoints_planner_B.b_kstr_f4];
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 16;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_12->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_0[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_12->NameInternal->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_12->NameInternal->size[0] *
     iobj_12->NameInternal->size[1];
   iobj_12->NameInternal->size[0] = 1;
   iobj_12->NameInternal->size[1] = 14;
   cartes_emxEnsureCapacity_char_T(iobj_12->NameInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 14;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_12->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_6[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 14;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_12->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_6[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_12->Type->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_12->Type->size[0] *
     iobj_12->Type->size[1];
   iobj_12->Type->size[0] = 1;
   iobj_12->Type->size[1] = 5;
   cartes_emxEnsureCapacity_char_T(iobj_12->Type,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 5;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_12->Type->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_2[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 5;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_12->Type->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_2[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = switch_expression->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = switch_expression->size[0] *
     switch_expression->size[1];
   switch_expression->size[0] = 1;
   switch_expression->size[1] = iobj_12->Type->size[1];
   cartes_emxEnsureCapacity_char_T(switch_expression,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  cartesian_waypoints_planner_B.loop_ub_c = iobj_12->Type->size[0] *
+    cartesian_waypoints_planner_B.b_kstr_m);
+  cartesian_waypoints_planner_B.loop_ub_n = iobj_12->Type->size[0] *
     iobj_12->Type->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 <=
-       cartesian_waypoints_planner_B.loop_ub_c;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    switch_expression->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      iobj_12->Type->data[cartesian_waypoints_planner_B.b_kstr_f4];
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m <=
+       cartesian_waypoints_planner_B.loop_ub_n;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    switch_expression->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      iobj_12->Type->data[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_bool_ly = false;
+  cartesian_waypoints_planner_B.b_bool_nh = false;
   if (switch_expression->size[1] == 8) {
-    cartesian_waypoints_planner_B.b_kstr_f4 = 1;
+    cartesian_waypoints_planner_B.b_kstr_m = 1;
     do {
       exitg1 = 0;
-      if (cartesian_waypoints_planner_B.b_kstr_f4 - 1 < 8) {
-        cartesian_waypoints_planner_B.loop_ub_c =
-          cartesian_waypoints_planner_B.b_kstr_f4 - 1;
-        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_c] !=
-            cartesian_waypoints_planner_B.b_ch[cartesian_waypoints_planner_B.loop_ub_c])
+      if (cartesian_waypoints_planner_B.b_kstr_m - 1 < 8) {
+        cartesian_waypoints_planner_B.loop_ub_n =
+          cartesian_waypoints_planner_B.b_kstr_m - 1;
+        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_n] !=
+            cartesian_waypoints_planner_B.b_jg[cartesian_waypoints_planner_B.loop_ub_n])
         {
           exitg1 = 1;
         } else {
-          cartesian_waypoints_planner_B.b_kstr_f4++;
+          cartesian_waypoints_planner_B.b_kstr_m++;
         }
       } else {
-        cartesian_waypoints_planner_B.b_bool_ly = true;
+        cartesian_waypoints_planner_B.b_bool_nh = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (cartesian_waypoints_planner_B.b_bool_ly) {
-    cartesian_waypoints_planner_B.b_kstr_f4 = 0;
+  if (cartesian_waypoints_planner_B.b_bool_nh) {
+    cartesian_waypoints_planner_B.b_kstr_m = 0;
   } else {
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 9;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.b_f[cartesian_waypoints_planner_B.b_kstr_f4]
-        = tmp_4[cartesian_waypoints_planner_B.b_kstr_f4];
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 9;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.b_c[cartesian_waypoints_planner_B.b_kstr_m] =
+        tmp_4[cartesian_waypoints_planner_B.b_kstr_m];
     }
 
-    cartesian_waypoints_planner_B.b_bool_ly = false;
+    cartesian_waypoints_planner_B.b_bool_nh = false;
     if (switch_expression->size[1] == 9) {
-      cartesian_waypoints_planner_B.b_kstr_f4 = 1;
+      cartesian_waypoints_planner_B.b_kstr_m = 1;
       do {
         exitg1 = 0;
-        if (cartesian_waypoints_planner_B.b_kstr_f4 - 1 < 9) {
-          cartesian_waypoints_planner_B.loop_ub_c =
-            cartesian_waypoints_planner_B.b_kstr_f4 - 1;
-          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_c]
+        if (cartesian_waypoints_planner_B.b_kstr_m - 1 < 9) {
+          cartesian_waypoints_planner_B.loop_ub_n =
+            cartesian_waypoints_planner_B.b_kstr_m - 1;
+          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_n]
               !=
-              cartesian_waypoints_planner_B.b_f[cartesian_waypoints_planner_B.loop_ub_c])
+              cartesian_waypoints_planner_B.b_c[cartesian_waypoints_planner_B.loop_ub_n])
           {
             exitg1 = 1;
           } else {
-            cartesian_waypoints_planner_B.b_kstr_f4++;
+            cartesian_waypoints_planner_B.b_kstr_m++;
           }
         } else {
-          cartesian_waypoints_planner_B.b_bool_ly = true;
+          cartesian_waypoints_planner_B.b_bool_nh = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (cartesian_waypoints_planner_B.b_bool_ly) {
-      cartesian_waypoints_planner_B.b_kstr_f4 = 1;
+    if (cartesian_waypoints_planner_B.b_bool_nh) {
+      cartesian_waypoints_planner_B.b_kstr_m = 1;
     } else {
-      cartesian_waypoints_planner_B.b_kstr_f4 = -1;
+      cartesian_waypoints_planner_B.b_kstr_m = -1;
     }
   }
 
-  switch (cartesian_waypoints_planner_B.b_kstr_f4) {
+  switch (cartesian_waypoints_planner_B.b_kstr_m) {
    case 0:
     cartesian_waypoints_planner_B.iv1[0] = 0;
     cartesian_waypoints_planner_B.iv1[1] = 0;
@@ -14485,16 +15206,16 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     cartesian_waypoints_planner_B.iv1[3] = 0;
     cartesian_waypoints_planner_B.iv1[4] = 0;
     cartesian_waypoints_planner_B.iv1[5] = 0;
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4]
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 6;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m]
         =
-        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_f4];
+        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_m];
     }
 
-    cartesian_waypoints_planner_B.poslim_data_c[0] = -3.1415926535897931;
-    cartesian_waypoints_planner_B.poslim_data_c[1] = 3.1415926535897931;
+    cartesian_waypoints_planner_B.poslim_data_p[0] = -3.1415926535897931;
+    cartesian_waypoints_planner_B.poslim_data_p[1] = 3.1415926535897931;
     iobj_12->VelocityNumber = 1.0;
     iobj_12->PositionNumber = 1.0;
     iobj_12->JointAxisInternal[0] = 0.0;
@@ -14509,16 +15230,16 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     cartesian_waypoints_planner_B.iv1[3] = 0;
     cartesian_waypoints_planner_B.iv1[4] = 0;
     cartesian_waypoints_planner_B.iv1[5] = 1;
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4]
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 6;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m]
         =
-        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_f4];
+        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_m];
     }
 
-    cartesian_waypoints_planner_B.poslim_data_c[0] = -0.5;
-    cartesian_waypoints_planner_B.poslim_data_c[1] = 0.5;
+    cartesian_waypoints_planner_B.poslim_data_p[0] = -0.5;
+    cartesian_waypoints_planner_B.poslim_data_p[1] = 0.5;
     iobj_12->VelocityNumber = 1.0;
     iobj_12->PositionNumber = 1.0;
     iobj_12->JointAxisInternal[0] = 0.0;
@@ -14527,15 +15248,15 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     break;
 
    default:
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4]
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 6;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m]
         = 0;
     }
 
-    cartesian_waypoints_planner_B.poslim_data_c[0] = 0.0;
-    cartesian_waypoints_planner_B.poslim_data_c[1] = 0.0;
+    cartesian_waypoints_planner_B.poslim_data_p[0] = 0.0;
+    cartesian_waypoints_planner_B.poslim_data_p[1] = 0.0;
     iobj_12->VelocityNumber = 0.0;
     iobj_12->PositionNumber = 0.0;
     iobj_12->JointAxisInternal[0] = 0.0;
@@ -14544,41 +15265,40 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     break;
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_12->MotionSubspace->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_12->MotionSubspace->size[0] *
     iobj_12->MotionSubspace->size[1];
   iobj_12->MotionSubspace->size[0] = 6;
   iobj_12->MotionSubspace->size[1] = 1;
   cartes_emxEnsureCapacity_real_T(iobj_12->MotionSubspace,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_12->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 6;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_12->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_12->
-    PositionLimitsInternal->size[0] * iobj_12->PositionLimitsInternal->size[1];
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_12->PositionLimitsInternal->
+    size[0] * iobj_12->PositionLimitsInternal->size[1];
   iobj_12->PositionLimitsInternal->size[0] = 1;
   iobj_12->PositionLimitsInternal->size[1] = 2;
   cartes_emxEnsureCapacity_real_T(iobj_12->PositionLimitsInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 2;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_12->PositionLimitsInternal->
-      data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      cartesian_waypoints_planner_B.poslim_data_c[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 2;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_12->PositionLimitsInternal->data[cartesian_waypoints_planner_B.b_kstr_m]
+      =
+      cartesian_waypoints_planner_B.poslim_data_p[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_12->HomePositionInternal->size
-    [0];
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_12->HomePositionInternal->size[0];
   iobj_12->HomePositionInternal->size[0] = 1;
   cartes_emxEnsureCapacity_real_T(iobj_12->HomePositionInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 1;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 1;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
     iobj_12->HomePositionInternal->data[0] = 0.0;
   }
 
@@ -14586,140 +15306,140 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
   iobj_5->Index = -1.0;
   iobj_5->ParentIndex = -1.0;
   obj->Bodies[6] = iobj_5;
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_6->NameInternal->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_6->NameInternal->size[0] *
     iobj_6->NameInternal->size[1];
   iobj_6->NameInternal->size[0] = 1;
   iobj_6->NameInternal->size[1] = 10;
   cartes_emxEnsureCapacity_char_T(iobj_6->NameInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 10;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_6->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_7[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 10;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_6->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_7[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
   iobj_13->InTree = false;
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 16;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_13->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_0[cartesian_waypoints_planner_B.b_kstr_f4];
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 16;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_13->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_0[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 16;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_13->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_0[cartesian_waypoints_planner_B.b_kstr_f4];
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 16;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_13->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_0[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_13->NameInternal->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_13->NameInternal->size[0] *
     iobj_13->NameInternal->size[1];
   iobj_13->NameInternal->size[0] = 1;
   iobj_13->NameInternal->size[1] = 14;
   cartes_emxEnsureCapacity_char_T(iobj_13->NameInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 14;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_13->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_8[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 14;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_13->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_8[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_13->Type->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_13->Type->size[0] *
     iobj_13->Type->size[1];
   iobj_13->Type->size[0] = 1;
   iobj_13->Type->size[1] = 5;
   cartes_emxEnsureCapacity_char_T(iobj_13->Type,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 5;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_13->Type->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      tmp_2[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 5;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_13->Type->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      tmp_2[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = switch_expression->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = switch_expression->size[0] *
     switch_expression->size[1];
   switch_expression->size[0] = 1;
   switch_expression->size[1] = iobj_13->Type->size[1];
   cartes_emxEnsureCapacity_char_T(switch_expression,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  cartesian_waypoints_planner_B.loop_ub_c = iobj_13->Type->size[0] *
+    cartesian_waypoints_planner_B.b_kstr_m);
+  cartesian_waypoints_planner_B.loop_ub_n = iobj_13->Type->size[0] *
     iobj_13->Type->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 <=
-       cartesian_waypoints_planner_B.loop_ub_c;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    switch_expression->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      iobj_13->Type->data[cartesian_waypoints_planner_B.b_kstr_f4];
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m <=
+       cartesian_waypoints_planner_B.loop_ub_n;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    switch_expression->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      iobj_13->Type->data[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_bool_ly = false;
+  cartesian_waypoints_planner_B.b_bool_nh = false;
   if (switch_expression->size[1] == 8) {
-    cartesian_waypoints_planner_B.b_kstr_f4 = 1;
+    cartesian_waypoints_planner_B.b_kstr_m = 1;
     do {
       exitg1 = 0;
-      if (cartesian_waypoints_planner_B.b_kstr_f4 - 1 < 8) {
-        cartesian_waypoints_planner_B.loop_ub_c =
-          cartesian_waypoints_planner_B.b_kstr_f4 - 1;
-        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_c] !=
-            cartesian_waypoints_planner_B.b_ch[cartesian_waypoints_planner_B.loop_ub_c])
+      if (cartesian_waypoints_planner_B.b_kstr_m - 1 < 8) {
+        cartesian_waypoints_planner_B.loop_ub_n =
+          cartesian_waypoints_planner_B.b_kstr_m - 1;
+        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_n] !=
+            cartesian_waypoints_planner_B.b_jg[cartesian_waypoints_planner_B.loop_ub_n])
         {
           exitg1 = 1;
         } else {
-          cartesian_waypoints_planner_B.b_kstr_f4++;
+          cartesian_waypoints_planner_B.b_kstr_m++;
         }
       } else {
-        cartesian_waypoints_planner_B.b_bool_ly = true;
+        cartesian_waypoints_planner_B.b_bool_nh = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (cartesian_waypoints_planner_B.b_bool_ly) {
-    cartesian_waypoints_planner_B.b_kstr_f4 = 0;
+  if (cartesian_waypoints_planner_B.b_bool_nh) {
+    cartesian_waypoints_planner_B.b_kstr_m = 0;
   } else {
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 9;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.b_f[cartesian_waypoints_planner_B.b_kstr_f4]
-        = tmp_4[cartesian_waypoints_planner_B.b_kstr_f4];
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 9;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.b_c[cartesian_waypoints_planner_B.b_kstr_m] =
+        tmp_4[cartesian_waypoints_planner_B.b_kstr_m];
     }
 
-    cartesian_waypoints_planner_B.b_bool_ly = false;
+    cartesian_waypoints_planner_B.b_bool_nh = false;
     if (switch_expression->size[1] == 9) {
-      cartesian_waypoints_planner_B.b_kstr_f4 = 1;
+      cartesian_waypoints_planner_B.b_kstr_m = 1;
       do {
         exitg1 = 0;
-        if (cartesian_waypoints_planner_B.b_kstr_f4 - 1 < 9) {
-          cartesian_waypoints_planner_B.loop_ub_c =
-            cartesian_waypoints_planner_B.b_kstr_f4 - 1;
-          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_c]
+        if (cartesian_waypoints_planner_B.b_kstr_m - 1 < 9) {
+          cartesian_waypoints_planner_B.loop_ub_n =
+            cartesian_waypoints_planner_B.b_kstr_m - 1;
+          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_n]
               !=
-              cartesian_waypoints_planner_B.b_f[cartesian_waypoints_planner_B.loop_ub_c])
+              cartesian_waypoints_planner_B.b_c[cartesian_waypoints_planner_B.loop_ub_n])
           {
             exitg1 = 1;
           } else {
-            cartesian_waypoints_planner_B.b_kstr_f4++;
+            cartesian_waypoints_planner_B.b_kstr_m++;
           }
         } else {
-          cartesian_waypoints_planner_B.b_bool_ly = true;
+          cartesian_waypoints_planner_B.b_bool_nh = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (cartesian_waypoints_planner_B.b_bool_ly) {
-      cartesian_waypoints_planner_B.b_kstr_f4 = 1;
+    if (cartesian_waypoints_planner_B.b_bool_nh) {
+      cartesian_waypoints_planner_B.b_kstr_m = 1;
     } else {
-      cartesian_waypoints_planner_B.b_kstr_f4 = -1;
+      cartesian_waypoints_planner_B.b_kstr_m = -1;
     }
   }
 
   cartesian_waypoi_emxFree_char_T(&switch_expression);
-  switch (cartesian_waypoints_planner_B.b_kstr_f4) {
+  switch (cartesian_waypoints_planner_B.b_kstr_m) {
    case 0:
     cartesian_waypoints_planner_B.iv1[0] = 0;
     cartesian_waypoints_planner_B.iv1[1] = 0;
@@ -14727,16 +15447,16 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     cartesian_waypoints_planner_B.iv1[3] = 0;
     cartesian_waypoints_planner_B.iv1[4] = 0;
     cartesian_waypoints_planner_B.iv1[5] = 0;
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4]
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 6;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m]
         =
-        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_f4];
+        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_m];
     }
 
-    cartesian_waypoints_planner_B.poslim_data_c[0] = -3.1415926535897931;
-    cartesian_waypoints_planner_B.poslim_data_c[1] = 3.1415926535897931;
+    cartesian_waypoints_planner_B.poslim_data_p[0] = -3.1415926535897931;
+    cartesian_waypoints_planner_B.poslim_data_p[1] = 3.1415926535897931;
     iobj_13->VelocityNumber = 1.0;
     iobj_13->PositionNumber = 1.0;
     iobj_13->JointAxisInternal[0] = 0.0;
@@ -14751,16 +15471,16 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     cartesian_waypoints_planner_B.iv1[3] = 0;
     cartesian_waypoints_planner_B.iv1[4] = 0;
     cartesian_waypoints_planner_B.iv1[5] = 1;
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4]
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 6;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m]
         =
-        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_f4];
+        cartesian_waypoints_planner_B.iv1[cartesian_waypoints_planner_B.b_kstr_m];
     }
 
-    cartesian_waypoints_planner_B.poslim_data_c[0] = -0.5;
-    cartesian_waypoints_planner_B.poslim_data_c[1] = 0.5;
+    cartesian_waypoints_planner_B.poslim_data_p[0] = -0.5;
+    cartesian_waypoints_planner_B.poslim_data_p[1] = 0.5;
     iobj_13->VelocityNumber = 1.0;
     iobj_13->PositionNumber = 1.0;
     iobj_13->JointAxisInternal[0] = 0.0;
@@ -14769,15 +15489,15 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     break;
 
    default:
-    for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-         cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-         cartesian_waypoints_planner_B.b_kstr_f4++) {
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4]
+    for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+         cartesian_waypoints_planner_B.b_kstr_m < 6;
+         cartesian_waypoints_planner_B.b_kstr_m++) {
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m]
         = 0;
     }
 
-    cartesian_waypoints_planner_B.poslim_data_c[0] = 0.0;
-    cartesian_waypoints_planner_B.poslim_data_c[1] = 0.0;
+    cartesian_waypoints_planner_B.poslim_data_p[0] = 0.0;
+    cartesian_waypoints_planner_B.poslim_data_p[1] = 0.0;
     iobj_13->VelocityNumber = 0.0;
     iobj_13->PositionNumber = 0.0;
     iobj_13->JointAxisInternal[0] = 0.0;
@@ -14786,41 +15506,40 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
     break;
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_13->MotionSubspace->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_13->MotionSubspace->size[0] *
     iobj_13->MotionSubspace->size[1];
   iobj_13->MotionSubspace->size[0] = 6;
   iobj_13->MotionSubspace->size[1] = 1;
   cartes_emxEnsureCapacity_real_T(iobj_13->MotionSubspace,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 6;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_13->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      cartesian_waypoints_planner_B.msubspace_data_a[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 6;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_13->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_m] =
+      cartesian_waypoints_planner_B.msubspace_data_l[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_13->
-    PositionLimitsInternal->size[0] * iobj_13->PositionLimitsInternal->size[1];
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_13->PositionLimitsInternal->
+    size[0] * iobj_13->PositionLimitsInternal->size[1];
   iobj_13->PositionLimitsInternal->size[0] = 1;
   iobj_13->PositionLimitsInternal->size[1] = 2;
   cartes_emxEnsureCapacity_real_T(iobj_13->PositionLimitsInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 2;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    iobj_13->PositionLimitsInternal->
-      data[cartesian_waypoints_planner_B.b_kstr_f4] =
-      cartesian_waypoints_planner_B.poslim_data_c[cartesian_waypoints_planner_B.b_kstr_f4];
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 2;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    iobj_13->PositionLimitsInternal->data[cartesian_waypoints_planner_B.b_kstr_m]
+      =
+      cartesian_waypoints_planner_B.poslim_data_p[cartesian_waypoints_planner_B.b_kstr_m];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f4 = iobj_13->HomePositionInternal->size
-    [0];
+  cartesian_waypoints_planner_B.b_kstr_m = iobj_13->HomePositionInternal->size[0];
   iobj_13->HomePositionInternal->size[0] = 1;
   cartes_emxEnsureCapacity_real_T(iobj_13->HomePositionInternal,
-    cartesian_waypoints_planner_B.b_kstr_f4);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 1;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
+    cartesian_waypoints_planner_B.b_kstr_m);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 1;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
     iobj_13->HomePositionInternal->data[0] = 0.0;
   }
 
@@ -14832,44 +15551,44 @@ static void ca_RigidBodyTree_clearAllBodies(x_robotics_manip_internal_Rig_T *obj
   obj->NumNonFixedBodies = 0.0;
   obj->PositionNumber = 0.0;
   obj->VelocityNumber = 0.0;
-  cartesian_waypoints_planne_rand(cartesian_waypoints_planner_B.unusedExpr_d);
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 8;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_f4] = 0.0;
+  cartesian_waypoints_planne_rand(cartesian_waypoints_planner_B.unusedExpr_n);
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 8;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_m] = 0.0;
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 8;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_f4 + 8] = -1.0;
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 8;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_m + 8] = -1.0;
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 8;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_f4] = 0.0;
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 8;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_m] = 0.0;
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_f4 = 0;
-       cartesian_waypoints_planner_B.b_kstr_f4 < 8;
-       cartesian_waypoints_planner_B.b_kstr_f4++) {
-    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_f4 + 8] = -1.0;
+  for (cartesian_waypoints_planner_B.b_kstr_m = 0;
+       cartesian_waypoints_planner_B.b_kstr_m < 8;
+       cartesian_waypoints_planner_B.b_kstr_m++) {
+    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_m + 8] = -1.0;
   }
 }
 
-static x_robotics_manip_internal_Rig_T *c_RigidBodyTree_RigidBodyTree_e
+static x_robotics_manip_internal_Rig_T *RigidBodyTree_RigidBodyTree_ev
   (x_robotics_manip_internal_Rig_T *obj, w_robotics_manip_internal_Rig_T *iobj_0,
    w_robotics_manip_internal_Rig_T *iobj_1, w_robotics_manip_internal_Rig_T
    *iobj_2, w_robotics_manip_internal_Rig_T *iobj_3,
    w_robotics_manip_internal_Rig_T *iobj_4, w_robotics_manip_internal_Rig_T
    *iobj_5, w_robotics_manip_internal_Rig_T *iobj_6,
-   c_rigidBodyJoint_cartesian_wa_T *iobj_7, c_rigidBodyJoint_cartesian_wa_T
-   *iobj_8, c_rigidBodyJoint_cartesian_wa_T *iobj_9,
-   c_rigidBodyJoint_cartesian_wa_T *iobj_10, c_rigidBodyJoint_cartesian_wa_T
-   *iobj_11, c_rigidBodyJoint_cartesian_wa_T *iobj_12,
-   c_rigidBodyJoint_cartesian_wa_T *iobj_13, c_rigidBodyJoint_cartesian_wa_T
-   *iobj_14, c_rigidBodyJoint_cartesian_wa_T *iobj_15,
+   c_rigidBodyJoint_cartesian__e_T *iobj_7, c_rigidBodyJoint_cartesian__e_T
+   *iobj_8, c_rigidBodyJoint_cartesian__e_T *iobj_9,
+   c_rigidBodyJoint_cartesian__e_T *iobj_10, c_rigidBodyJoint_cartesian__e_T
+   *iobj_11, c_rigidBodyJoint_cartesian__e_T *iobj_12,
+   c_rigidBodyJoint_cartesian__e_T *iobj_13, c_rigidBodyJoint_cartesian__e_T
+   *iobj_14, c_rigidBodyJoint_cartesian__e_T *iobj_15,
    w_robotics_manip_internal_Rig_T *iobj_16)
 {
   x_robotics_manip_internal_Rig_T *b_obj;
@@ -14887,145 +15606,145 @@ static x_robotics_manip_internal_Rig_T *c_RigidBodyTree_RigidBodyTree_e
 
   int32_T exitg1;
   b_obj = obj;
-  cartesian_waypoints_planner_B.b_kstr_f = obj->Base.NameInternal->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_g = obj->Base.NameInternal->size[0] *
     obj->Base.NameInternal->size[1];
   obj->Base.NameInternal->size[0] = 1;
   obj->Base.NameInternal->size[1] = 4;
   cartes_emxEnsureCapacity_char_T(obj->Base.NameInternal,
-    cartesian_waypoints_planner_B.b_kstr_f);
+    cartesian_waypoints_planner_B.b_kstr_g);
   obj->Base.NameInternal->data[0] = 'b';
   obj->Base.NameInternal->data[1] = 'a';
   obj->Base.NameInternal->data[2] = 's';
   obj->Base.NameInternal->data[3] = 'e';
   iobj_15->InTree = false;
-  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-       cartesian_waypoints_planner_B.b_kstr_f < 16;
-       cartesian_waypoints_planner_B.b_kstr_f++) {
-    iobj_15->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_f] =
-      tmp[cartesian_waypoints_planner_B.b_kstr_f];
+  for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+       cartesian_waypoints_planner_B.b_kstr_g < 16;
+       cartesian_waypoints_planner_B.b_kstr_g++) {
+    iobj_15->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_g] =
+      tmp[cartesian_waypoints_planner_B.b_kstr_g];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-       cartesian_waypoints_planner_B.b_kstr_f < 16;
-       cartesian_waypoints_planner_B.b_kstr_f++) {
-    iobj_15->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_f] =
-      tmp[cartesian_waypoints_planner_B.b_kstr_f];
+  for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+       cartesian_waypoints_planner_B.b_kstr_g < 16;
+       cartesian_waypoints_planner_B.b_kstr_g++) {
+    iobj_15->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_g] =
+      tmp[cartesian_waypoints_planner_B.b_kstr_g];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f = iobj_15->NameInternal->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_g = iobj_15->NameInternal->size[0] *
     iobj_15->NameInternal->size[1];
   iobj_15->NameInternal->size[0] = 1;
   iobj_15->NameInternal->size[1] = 8;
   cartes_emxEnsureCapacity_char_T(iobj_15->NameInternal,
-    cartesian_waypoints_planner_B.b_kstr_f);
-  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-       cartesian_waypoints_planner_B.b_kstr_f < 8;
-       cartesian_waypoints_planner_B.b_kstr_f++) {
-    iobj_15->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_f] =
-      tmp_0[cartesian_waypoints_planner_B.b_kstr_f];
+    cartesian_waypoints_planner_B.b_kstr_g);
+  for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+       cartesian_waypoints_planner_B.b_kstr_g < 8;
+       cartesian_waypoints_planner_B.b_kstr_g++) {
+    iobj_15->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_g] =
+      tmp_0[cartesian_waypoints_planner_B.b_kstr_g];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f = iobj_15->Type->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_g = iobj_15->Type->size[0] *
     iobj_15->Type->size[1];
   iobj_15->Type->size[0] = 1;
   iobj_15->Type->size[1] = 5;
   cartes_emxEnsureCapacity_char_T(iobj_15->Type,
-    cartesian_waypoints_planner_B.b_kstr_f);
-  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-       cartesian_waypoints_planner_B.b_kstr_f < 5;
-       cartesian_waypoints_planner_B.b_kstr_f++) {
-    iobj_15->Type->data[cartesian_waypoints_planner_B.b_kstr_f] =
-      tmp_1[cartesian_waypoints_planner_B.b_kstr_f];
+    cartesian_waypoints_planner_B.b_kstr_g);
+  for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+       cartesian_waypoints_planner_B.b_kstr_g < 5;
+       cartesian_waypoints_planner_B.b_kstr_g++) {
+    iobj_15->Type->data[cartesian_waypoints_planner_B.b_kstr_g] =
+      tmp_1[cartesian_waypoints_planner_B.b_kstr_g];
   }
 
   cartesian_waypoi_emxInit_char_T(&switch_expression, 2);
-  cartesian_waypoints_planner_B.b_kstr_f = switch_expression->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_g = switch_expression->size[0] *
     switch_expression->size[1];
   switch_expression->size[0] = 1;
   switch_expression->size[1] = iobj_15->Type->size[1];
   cartes_emxEnsureCapacity_char_T(switch_expression,
-    cartesian_waypoints_planner_B.b_kstr_f);
-  cartesian_waypoints_planner_B.loop_ub_i = iobj_15->Type->size[0] *
+    cartesian_waypoints_planner_B.b_kstr_g);
+  cartesian_waypoints_planner_B.loop_ub_l = iobj_15->Type->size[0] *
     iobj_15->Type->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-       cartesian_waypoints_planner_B.b_kstr_f <=
-       cartesian_waypoints_planner_B.loop_ub_i;
-       cartesian_waypoints_planner_B.b_kstr_f++) {
-    switch_expression->data[cartesian_waypoints_planner_B.b_kstr_f] =
-      iobj_15->Type->data[cartesian_waypoints_planner_B.b_kstr_f];
+  for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+       cartesian_waypoints_planner_B.b_kstr_g <=
+       cartesian_waypoints_planner_B.loop_ub_l;
+       cartesian_waypoints_planner_B.b_kstr_g++) {
+    switch_expression->data[cartesian_waypoints_planner_B.b_kstr_g] =
+      iobj_15->Type->data[cartesian_waypoints_planner_B.b_kstr_g];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-       cartesian_waypoints_planner_B.b_kstr_f < 8;
-       cartesian_waypoints_planner_B.b_kstr_f++) {
-    cartesian_waypoints_planner_B.b_b[cartesian_waypoints_planner_B.b_kstr_f] =
-      tmp_2[cartesian_waypoints_planner_B.b_kstr_f];
+  for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+       cartesian_waypoints_planner_B.b_kstr_g < 8;
+       cartesian_waypoints_planner_B.b_kstr_g++) {
+    cartesian_waypoints_planner_B.b_m0[cartesian_waypoints_planner_B.b_kstr_g] =
+      tmp_2[cartesian_waypoints_planner_B.b_kstr_g];
   }
 
-  cartesian_waypoints_planner_B.b_bool_po = false;
+  cartesian_waypoints_planner_B.b_bool_g = false;
   if (switch_expression->size[1] == 8) {
-    cartesian_waypoints_planner_B.b_kstr_f = 1;
+    cartesian_waypoints_planner_B.b_kstr_g = 1;
     do {
       exitg1 = 0;
-      if (cartesian_waypoints_planner_B.b_kstr_f - 1 < 8) {
-        cartesian_waypoints_planner_B.loop_ub_i =
-          cartesian_waypoints_planner_B.b_kstr_f - 1;
-        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_i] !=
-            cartesian_waypoints_planner_B.b_b[cartesian_waypoints_planner_B.loop_ub_i])
+      if (cartesian_waypoints_planner_B.b_kstr_g - 1 < 8) {
+        cartesian_waypoints_planner_B.loop_ub_l =
+          cartesian_waypoints_planner_B.b_kstr_g - 1;
+        if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_l] !=
+            cartesian_waypoints_planner_B.b_m0[cartesian_waypoints_planner_B.loop_ub_l])
         {
           exitg1 = 1;
         } else {
-          cartesian_waypoints_planner_B.b_kstr_f++;
+          cartesian_waypoints_planner_B.b_kstr_g++;
         }
       } else {
-        cartesian_waypoints_planner_B.b_bool_po = true;
+        cartesian_waypoints_planner_B.b_bool_g = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (cartesian_waypoints_planner_B.b_bool_po) {
-    cartesian_waypoints_planner_B.b_kstr_f = 0;
+  if (cartesian_waypoints_planner_B.b_bool_g) {
+    cartesian_waypoints_planner_B.b_kstr_g = 0;
   } else {
-    for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-         cartesian_waypoints_planner_B.b_kstr_f < 9;
-         cartesian_waypoints_planner_B.b_kstr_f++) {
-      cartesian_waypoints_planner_B.b_c[cartesian_waypoints_planner_B.b_kstr_f] =
-        tmp_3[cartesian_waypoints_planner_B.b_kstr_f];
+    for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+         cartesian_waypoints_planner_B.b_kstr_g < 9;
+         cartesian_waypoints_planner_B.b_kstr_g++) {
+      cartesian_waypoints_planner_B.b_b[cartesian_waypoints_planner_B.b_kstr_g] =
+        tmp_3[cartesian_waypoints_planner_B.b_kstr_g];
     }
 
-    cartesian_waypoints_planner_B.b_bool_po = false;
+    cartesian_waypoints_planner_B.b_bool_g = false;
     if (switch_expression->size[1] == 9) {
-      cartesian_waypoints_planner_B.b_kstr_f = 1;
+      cartesian_waypoints_planner_B.b_kstr_g = 1;
       do {
         exitg1 = 0;
-        if (cartesian_waypoints_planner_B.b_kstr_f - 1 < 9) {
-          cartesian_waypoints_planner_B.loop_ub_i =
-            cartesian_waypoints_planner_B.b_kstr_f - 1;
-          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_i]
+        if (cartesian_waypoints_planner_B.b_kstr_g - 1 < 9) {
+          cartesian_waypoints_planner_B.loop_ub_l =
+            cartesian_waypoints_planner_B.b_kstr_g - 1;
+          if (switch_expression->data[cartesian_waypoints_planner_B.loop_ub_l]
               !=
-              cartesian_waypoints_planner_B.b_c[cartesian_waypoints_planner_B.loop_ub_i])
+              cartesian_waypoints_planner_B.b_b[cartesian_waypoints_planner_B.loop_ub_l])
           {
             exitg1 = 1;
           } else {
-            cartesian_waypoints_planner_B.b_kstr_f++;
+            cartesian_waypoints_planner_B.b_kstr_g++;
           }
         } else {
-          cartesian_waypoints_planner_B.b_bool_po = true;
+          cartesian_waypoints_planner_B.b_bool_g = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (cartesian_waypoints_planner_B.b_bool_po) {
-      cartesian_waypoints_planner_B.b_kstr_f = 1;
+    if (cartesian_waypoints_planner_B.b_bool_g) {
+      cartesian_waypoints_planner_B.b_kstr_g = 1;
     } else {
-      cartesian_waypoints_planner_B.b_kstr_f = -1;
+      cartesian_waypoints_planner_B.b_kstr_g = -1;
     }
   }
 
   cartesian_waypoi_emxFree_char_T(&switch_expression);
-  switch (cartesian_waypoints_planner_B.b_kstr_f) {
+  switch (cartesian_waypoints_planner_B.b_kstr_g) {
    case 0:
     cartesian_waypoints_planner_B.iv[0] = 0;
     cartesian_waypoints_planner_B.iv[1] = 0;
@@ -15033,12 +15752,12 @@ static x_robotics_manip_internal_Rig_T *c_RigidBodyTree_RigidBodyTree_e
     cartesian_waypoints_planner_B.iv[3] = 0;
     cartesian_waypoints_planner_B.iv[4] = 0;
     cartesian_waypoints_planner_B.iv[5] = 0;
-    for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-         cartesian_waypoints_planner_B.b_kstr_f < 6;
-         cartesian_waypoints_planner_B.b_kstr_f++) {
-      cartesian_waypoints_planner_B.msubspace_data[cartesian_waypoints_planner_B.b_kstr_f]
+    for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+         cartesian_waypoints_planner_B.b_kstr_g < 6;
+         cartesian_waypoints_planner_B.b_kstr_g++) {
+      cartesian_waypoints_planner_B.msubspace_data[cartesian_waypoints_planner_B.b_kstr_g]
         =
-        cartesian_waypoints_planner_B.iv[cartesian_waypoints_planner_B.b_kstr_f];
+        cartesian_waypoints_planner_B.iv[cartesian_waypoints_planner_B.b_kstr_g];
     }
 
     cartesian_waypoints_planner_B.poslim_data[0] = -3.1415926535897931;
@@ -15057,12 +15776,12 @@ static x_robotics_manip_internal_Rig_T *c_RigidBodyTree_RigidBodyTree_e
     cartesian_waypoints_planner_B.iv[3] = 0;
     cartesian_waypoints_planner_B.iv[4] = 0;
     cartesian_waypoints_planner_B.iv[5] = 1;
-    for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-         cartesian_waypoints_planner_B.b_kstr_f < 6;
-         cartesian_waypoints_planner_B.b_kstr_f++) {
-      cartesian_waypoints_planner_B.msubspace_data[cartesian_waypoints_planner_B.b_kstr_f]
+    for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+         cartesian_waypoints_planner_B.b_kstr_g < 6;
+         cartesian_waypoints_planner_B.b_kstr_g++) {
+      cartesian_waypoints_planner_B.msubspace_data[cartesian_waypoints_planner_B.b_kstr_g]
         =
-        cartesian_waypoints_planner_B.iv[cartesian_waypoints_planner_B.b_kstr_f];
+        cartesian_waypoints_planner_B.iv[cartesian_waypoints_planner_B.b_kstr_g];
     }
 
     cartesian_waypoints_planner_B.poslim_data[0] = -0.5;
@@ -15075,10 +15794,10 @@ static x_robotics_manip_internal_Rig_T *c_RigidBodyTree_RigidBodyTree_e
     break;
 
    default:
-    for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-         cartesian_waypoints_planner_B.b_kstr_f < 6;
-         cartesian_waypoints_planner_B.b_kstr_f++) {
-      cartesian_waypoints_planner_B.msubspace_data[cartesian_waypoints_planner_B.b_kstr_f]
+    for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+         cartesian_waypoints_planner_B.b_kstr_g < 6;
+         cartesian_waypoints_planner_B.b_kstr_g++) {
+      cartesian_waypoints_planner_B.msubspace_data[cartesian_waypoints_planner_B.b_kstr_g]
         = 0;
     }
 
@@ -15092,40 +15811,40 @@ static x_robotics_manip_internal_Rig_T *c_RigidBodyTree_RigidBodyTree_e
     break;
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f = iobj_15->MotionSubspace->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_g = iobj_15->MotionSubspace->size[0] *
     iobj_15->MotionSubspace->size[1];
   iobj_15->MotionSubspace->size[0] = 6;
   iobj_15->MotionSubspace->size[1] = 1;
   cartes_emxEnsureCapacity_real_T(iobj_15->MotionSubspace,
-    cartesian_waypoints_planner_B.b_kstr_f);
-  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-       cartesian_waypoints_planner_B.b_kstr_f < 6;
-       cartesian_waypoints_planner_B.b_kstr_f++) {
-    iobj_15->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_f] =
-      cartesian_waypoints_planner_B.msubspace_data[cartesian_waypoints_planner_B.b_kstr_f];
+    cartesian_waypoints_planner_B.b_kstr_g);
+  for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+       cartesian_waypoints_planner_B.b_kstr_g < 6;
+       cartesian_waypoints_planner_B.b_kstr_g++) {
+    iobj_15->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_g] =
+      cartesian_waypoints_planner_B.msubspace_data[cartesian_waypoints_planner_B.b_kstr_g];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f = iobj_15->PositionLimitsInternal->
+  cartesian_waypoints_planner_B.b_kstr_g = iobj_15->PositionLimitsInternal->
     size[0] * iobj_15->PositionLimitsInternal->size[1];
   iobj_15->PositionLimitsInternal->size[0] = 1;
   iobj_15->PositionLimitsInternal->size[1] = 2;
   cartes_emxEnsureCapacity_real_T(iobj_15->PositionLimitsInternal,
-    cartesian_waypoints_planner_B.b_kstr_f);
-  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-       cartesian_waypoints_planner_B.b_kstr_f < 2;
-       cartesian_waypoints_planner_B.b_kstr_f++) {
-    iobj_15->PositionLimitsInternal->data[cartesian_waypoints_planner_B.b_kstr_f]
+    cartesian_waypoints_planner_B.b_kstr_g);
+  for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+       cartesian_waypoints_planner_B.b_kstr_g < 2;
+       cartesian_waypoints_planner_B.b_kstr_g++) {
+    iobj_15->PositionLimitsInternal->data[cartesian_waypoints_planner_B.b_kstr_g]
       =
-      cartesian_waypoints_planner_B.poslim_data[cartesian_waypoints_planner_B.b_kstr_f];
+      cartesian_waypoints_planner_B.poslim_data[cartesian_waypoints_planner_B.b_kstr_g];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_f = iobj_15->HomePositionInternal->size[0];
+  cartesian_waypoints_planner_B.b_kstr_g = iobj_15->HomePositionInternal->size[0];
   iobj_15->HomePositionInternal->size[0] = 1;
   cartes_emxEnsureCapacity_real_T(iobj_15->HomePositionInternal,
-    cartesian_waypoints_planner_B.b_kstr_f);
-  for (cartesian_waypoints_planner_B.b_kstr_f = 0;
-       cartesian_waypoints_planner_B.b_kstr_f < 1;
-       cartesian_waypoints_planner_B.b_kstr_f++) {
+    cartesian_waypoints_planner_B.b_kstr_g);
+  for (cartesian_waypoints_planner_B.b_kstr_g = 0;
+       cartesian_waypoints_planner_B.b_kstr_g < 1;
+       cartesian_waypoints_planner_B.b_kstr_g++) {
     iobj_15->HomePositionInternal->data[0] = 0.0;
   }
 
@@ -15140,11 +15859,11 @@ static x_robotics_manip_internal_Rig_T *c_RigidBodyTree_RigidBodyTree_e
   return b_obj;
 }
 
-static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
-  (c_rigidBodyJoint_cartesian_wa_T *obj, const emxArray_char_T_cartesian_way_T
+static c_rigidBodyJoint_cartesian__e_T *c_rigidBodyJoint_rigidBodyJoint
+  (c_rigidBodyJoint_cartesian__e_T *obj, const emxArray_char_T_cartesian_way_T
    *jname, const emxArray_char_T_cartesian_way_T *jtype)
 {
-  c_rigidBodyJoint_cartesian_wa_T *b_obj;
+  c_rigidBodyJoint_cartesian__e_T *b_obj;
   emxArray_char_T_cartesian_way_T *switch_expression;
   static const int8_T tmp[16] = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1
   };
@@ -15195,10 +15914,10 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
   obj->NameInternal->size[1] = jname->size[1];
   cartes_emxEnsureCapacity_char_T(obj->NameInternal,
     cartesian_waypoints_planner_B.minnanb);
-  cartesian_waypoints_planner_B.loop_ub_n = jname->size[0] * jname->size[1] - 1;
+  cartesian_waypoints_planner_B.loop_ub_pd = jname->size[0] * jname->size[1] - 1;
   for (cartesian_waypoints_planner_B.minnanb = 0;
        cartesian_waypoints_planner_B.minnanb <=
-       cartesian_waypoints_planner_B.loop_ub_n;
+       cartesian_waypoints_planner_B.loop_ub_pd;
        cartesian_waypoints_planner_B.minnanb++) {
     obj->NameInternal->data[cartesian_waypoints_planner_B.minnanb] = jname->
       data[cartesian_waypoints_planner_B.minnanb];
@@ -15217,31 +15936,31 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
   guard3 = false;
   guard4 = false;
   if (jtype->size[1] <= 8) {
-    cartesian_waypoints_planner_B.loop_ub_n = jtype->size[1];
+    cartesian_waypoints_planner_B.loop_ub_pd = jtype->size[1];
     for (cartesian_waypoints_planner_B.minnanb = 0;
          cartesian_waypoints_planner_B.minnanb < 8;
          cartesian_waypoints_planner_B.minnanb++) {
-      cartesian_waypoints_planner_B.b_my[cartesian_waypoints_planner_B.minnanb] =
+      cartesian_waypoints_planner_B.b_d3[cartesian_waypoints_planner_B.minnanb] =
         tmp_0[cartesian_waypoints_planner_B.minnanb];
     }
 
-    cartesian_waypoints_planner_B.b_bool_f = false;
+    cartesian_waypoints_planner_B.b_bool_is = false;
     cartesian_waypoints_planner_B.minnanb = jtype->size[1];
     if (cartesian_waypoints_planner_B.minnanb >= 8) {
       cartesian_waypoints_planner_B.minnanb = 8;
     }
 
     guard11 = false;
-    if (cartesian_waypoints_planner_B.loop_ub_n <=
+    if (cartesian_waypoints_planner_B.loop_ub_pd <=
         cartesian_waypoints_planner_B.minnanb) {
       if (cartesian_waypoints_planner_B.minnanb <
-          cartesian_waypoints_planner_B.loop_ub_n) {
-        cartesian_waypoints_planner_B.loop_ub_n =
+          cartesian_waypoints_planner_B.loop_ub_pd) {
+        cartesian_waypoints_planner_B.loop_ub_pd =
           cartesian_waypoints_planner_B.minnanb;
       }
 
       cartesian_waypoints_planner_B.minnanb =
-        cartesian_waypoints_planner_B.loop_ub_n - 1;
+        cartesian_waypoints_planner_B.loop_ub_pd - 1;
       guard11 = true;
     } else {
       if (jtype->size[1] == 8) {
@@ -15251,37 +15970,37 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
     }
 
     if (guard11) {
-      cartesian_waypoints_planner_B.loop_ub_n = 1;
+      cartesian_waypoints_planner_B.loop_ub_pd = 1;
       do {
         exitg1 = 0;
-        if (cartesian_waypoints_planner_B.loop_ub_n - 1 <=
+        if (cartesian_waypoints_planner_B.loop_ub_pd - 1 <=
             cartesian_waypoints_planner_B.minnanb) {
           cartesian_waypoints_planner_B.kstr =
-            cartesian_waypoints_planner_B.loop_ub_n - 1;
+            cartesian_waypoints_planner_B.loop_ub_pd - 1;
           if (tmp_3[static_cast<uint8_T>(jtype->
                data[cartesian_waypoints_planner_B.kstr]) & 127] != tmp_3[
               static_cast<int32_T>
-              (cartesian_waypoints_planner_B.b_my[cartesian_waypoints_planner_B.kstr])])
+              (cartesian_waypoints_planner_B.b_d3[cartesian_waypoints_planner_B.kstr])])
           {
             exitg1 = 1;
           } else {
-            cartesian_waypoints_planner_B.loop_ub_n++;
+            cartesian_waypoints_planner_B.loop_ub_pd++;
           }
         } else {
-          cartesian_waypoints_planner_B.b_bool_f = true;
+          cartesian_waypoints_planner_B.b_bool_is = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (cartesian_waypoints_planner_B.b_bool_f) {
+    if (cartesian_waypoints_planner_B.b_bool_is) {
       if (jtype->size[1] == 8) {
         cartesian_waypoints_planner_B.nmatched = 1;
         cartesian_waypoints_planner_B.partial_match_size_idx_1 = 8;
         for (cartesian_waypoints_planner_B.minnanb = 0;
              cartesian_waypoints_planner_B.minnanb < 8;
              cartesian_waypoints_planner_B.minnanb++) {
-          cartesian_waypoints_planner_B.b_m4[cartesian_waypoints_planner_B.minnanb]
+          cartesian_waypoints_planner_B.b_m[cartesian_waypoints_planner_B.minnanb]
             =
             cartesian_waypoints_planner_B.vstr[cartesian_waypoints_planner_B.minnanb];
         }
@@ -15321,31 +16040,31 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
     }
 
     if (jtype->size[1] <= 9) {
-      cartesian_waypoints_planner_B.loop_ub_n = jtype->size[1];
+      cartesian_waypoints_planner_B.loop_ub_pd = jtype->size[1];
       for (cartesian_waypoints_planner_B.minnanb = 0;
            cartesian_waypoints_planner_B.minnanb < 9;
            cartesian_waypoints_planner_B.minnanb++) {
-        cartesian_waypoints_planner_B.b_m4[cartesian_waypoints_planner_B.minnanb]
+        cartesian_waypoints_planner_B.b_m[cartesian_waypoints_planner_B.minnanb]
           = tmp_1[cartesian_waypoints_planner_B.minnanb];
       }
 
-      cartesian_waypoints_planner_B.b_bool_f = false;
+      cartesian_waypoints_planner_B.b_bool_is = false;
       cartesian_waypoints_planner_B.minnanb = jtype->size[1];
       if (cartesian_waypoints_planner_B.minnanb >= 9) {
         cartesian_waypoints_planner_B.minnanb = 9;
       }
 
       guard11 = false;
-      if (cartesian_waypoints_planner_B.loop_ub_n <=
+      if (cartesian_waypoints_planner_B.loop_ub_pd <=
           cartesian_waypoints_planner_B.minnanb) {
         if (cartesian_waypoints_planner_B.minnanb <
-            cartesian_waypoints_planner_B.loop_ub_n) {
-          cartesian_waypoints_planner_B.loop_ub_n =
+            cartesian_waypoints_planner_B.loop_ub_pd) {
+          cartesian_waypoints_planner_B.loop_ub_pd =
             cartesian_waypoints_planner_B.minnanb;
         }
 
         cartesian_waypoints_planner_B.minnanb =
-          cartesian_waypoints_planner_B.loop_ub_n - 1;
+          cartesian_waypoints_planner_B.loop_ub_pd - 1;
         guard11 = true;
       } else {
         if (jtype->size[1] == 9) {
@@ -15355,37 +16074,37 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
       }
 
       if (guard11) {
-        cartesian_waypoints_planner_B.loop_ub_n = 1;
+        cartesian_waypoints_planner_B.loop_ub_pd = 1;
         do {
           exitg1 = 0;
-          if (cartesian_waypoints_planner_B.loop_ub_n - 1 <=
+          if (cartesian_waypoints_planner_B.loop_ub_pd - 1 <=
               cartesian_waypoints_planner_B.minnanb) {
             cartesian_waypoints_planner_B.kstr =
-              cartesian_waypoints_planner_B.loop_ub_n - 1;
+              cartesian_waypoints_planner_B.loop_ub_pd - 1;
             if (tmp_3[static_cast<uint8_T>(jtype->
                  data[cartesian_waypoints_planner_B.kstr]) & 127] != tmp_3[
                 static_cast<int32_T>
-                (cartesian_waypoints_planner_B.b_m4[cartesian_waypoints_planner_B.kstr])])
+                (cartesian_waypoints_planner_B.b_m[cartesian_waypoints_planner_B.kstr])])
             {
               exitg1 = 1;
             } else {
-              cartesian_waypoints_planner_B.loop_ub_n++;
+              cartesian_waypoints_planner_B.loop_ub_pd++;
             }
           } else {
-            cartesian_waypoints_planner_B.b_bool_f = true;
+            cartesian_waypoints_planner_B.b_bool_is = true;
             exitg1 = 1;
           }
         } while (exitg1 == 0);
       }
 
-      if (cartesian_waypoints_planner_B.b_bool_f) {
+      if (cartesian_waypoints_planner_B.b_bool_is) {
         if (jtype->size[1] == 9) {
           cartesian_waypoints_planner_B.nmatched = 1;
           cartesian_waypoints_planner_B.partial_match_size_idx_1 = 9;
           for (cartesian_waypoints_planner_B.minnanb = 0;
                cartesian_waypoints_planner_B.minnanb < 9;
                cartesian_waypoints_planner_B.minnanb++) {
-            cartesian_waypoints_planner_B.b_m4[cartesian_waypoints_planner_B.minnanb]
+            cartesian_waypoints_planner_B.b_m[cartesian_waypoints_planner_B.minnanb]
               =
               cartesian_waypoints_planner_B.b_vstr[cartesian_waypoints_planner_B.minnanb];
           }
@@ -15422,31 +16141,31 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
     }
 
     if (jtype->size[1] <= 5) {
-      cartesian_waypoints_planner_B.loop_ub_n = jtype->size[1];
+      cartesian_waypoints_planner_B.loop_ub_pd = jtype->size[1];
       for (cartesian_waypoints_planner_B.minnanb = 0;
            cartesian_waypoints_planner_B.minnanb < 5;
            cartesian_waypoints_planner_B.minnanb++) {
-        cartesian_waypoints_planner_B.b_fc[cartesian_waypoints_planner_B.minnanb]
+        cartesian_waypoints_planner_B.b_jo[cartesian_waypoints_planner_B.minnanb]
           = tmp_2[cartesian_waypoints_planner_B.minnanb];
       }
 
-      cartesian_waypoints_planner_B.b_bool_f = false;
+      cartesian_waypoints_planner_B.b_bool_is = false;
       cartesian_waypoints_planner_B.minnanb = jtype->size[1];
       if (cartesian_waypoints_planner_B.minnanb >= 5) {
         cartesian_waypoints_planner_B.minnanb = 5;
       }
 
       guard11 = false;
-      if (cartesian_waypoints_planner_B.loop_ub_n <=
+      if (cartesian_waypoints_planner_B.loop_ub_pd <=
           cartesian_waypoints_planner_B.minnanb) {
         if (cartesian_waypoints_planner_B.minnanb <
-            cartesian_waypoints_planner_B.loop_ub_n) {
-          cartesian_waypoints_planner_B.loop_ub_n =
+            cartesian_waypoints_planner_B.loop_ub_pd) {
+          cartesian_waypoints_planner_B.loop_ub_pd =
             cartesian_waypoints_planner_B.minnanb;
         }
 
         cartesian_waypoints_planner_B.minnanb =
-          cartesian_waypoints_planner_B.loop_ub_n - 1;
+          cartesian_waypoints_planner_B.loop_ub_pd - 1;
         guard11 = true;
       } else {
         if (jtype->size[1] == 5) {
@@ -15456,37 +16175,37 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
       }
 
       if (guard11) {
-        cartesian_waypoints_planner_B.loop_ub_n = 1;
+        cartesian_waypoints_planner_B.loop_ub_pd = 1;
         do {
           exitg1 = 0;
-          if (cartesian_waypoints_planner_B.loop_ub_n - 1 <=
+          if (cartesian_waypoints_planner_B.loop_ub_pd - 1 <=
               cartesian_waypoints_planner_B.minnanb) {
             cartesian_waypoints_planner_B.kstr =
-              cartesian_waypoints_planner_B.loop_ub_n - 1;
+              cartesian_waypoints_planner_B.loop_ub_pd - 1;
             if (tmp_3[static_cast<uint8_T>(jtype->
                  data[cartesian_waypoints_planner_B.kstr]) & 127] != tmp_3[
                 static_cast<int32_T>
-                (cartesian_waypoints_planner_B.b_fc[cartesian_waypoints_planner_B.kstr])])
+                (cartesian_waypoints_planner_B.b_jo[cartesian_waypoints_planner_B.kstr])])
             {
               exitg1 = 1;
             } else {
-              cartesian_waypoints_planner_B.loop_ub_n++;
+              cartesian_waypoints_planner_B.loop_ub_pd++;
             }
           } else {
-            cartesian_waypoints_planner_B.b_bool_f = true;
+            cartesian_waypoints_planner_B.b_bool_is = true;
             exitg1 = 1;
           }
         } while (exitg1 == 0);
       }
 
-      if (cartesian_waypoints_planner_B.b_bool_f) {
+      if (cartesian_waypoints_planner_B.b_bool_is) {
         if (jtype->size[1] == 5) {
           cartesian_waypoints_planner_B.nmatched = 1;
           cartesian_waypoints_planner_B.partial_match_size_idx_1 = 5;
           for (cartesian_waypoints_planner_B.minnanb = 0;
                cartesian_waypoints_planner_B.minnanb < 5;
                cartesian_waypoints_planner_B.minnanb++) {
-            cartesian_waypoints_planner_B.b_m4[cartesian_waypoints_planner_B.minnanb]
+            cartesian_waypoints_planner_B.b_m[cartesian_waypoints_planner_B.minnanb]
               =
               cartesian_waypoints_planner_B.c_vstr[cartesian_waypoints_planner_B.minnanb];
           }
@@ -15517,12 +16236,12 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
     if (cartesian_waypoints_planner_B.nmatched == 0) {
       cartesian_waypoints_planner_B.partial_match_size_idx_1 = 0;
     } else {
-      cartesian_waypoints_planner_B.loop_ub_n =
+      cartesian_waypoints_planner_B.loop_ub_pd =
         cartesian_waypoints_planner_B.partial_match_size_idx_1 - 1;
-      if (0 <= cartesian_waypoints_planner_B.loop_ub_n) {
-        memcpy(&cartesian_waypoints_planner_B.b_m4[0],
+      if (0 <= cartesian_waypoints_planner_B.loop_ub_pd) {
+        memcpy(&cartesian_waypoints_planner_B.b_m[0],
                &cartesian_waypoints_planner_B.partial_match_data[0],
-               (cartesian_waypoints_planner_B.loop_ub_n + 1) * sizeof(char_T));
+               (cartesian_waypoints_planner_B.loop_ub_pd + 1) * sizeof(char_T));
       }
     }
   }
@@ -15531,12 +16250,12 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
        (cartesian_waypoints_planner_B.partial_match_size_idx_1 == 0))) {
     cartesian_waypoints_planner_B.partial_match_size_idx_1 = 0;
   } else {
-    cartesian_waypoints_planner_B.loop_ub_n =
+    cartesian_waypoints_planner_B.loop_ub_pd =
       cartesian_waypoints_planner_B.partial_match_size_idx_1 - 1;
-    if (0 <= cartesian_waypoints_planner_B.loop_ub_n) {
+    if (0 <= cartesian_waypoints_planner_B.loop_ub_pd) {
       memcpy(&cartesian_waypoints_planner_B.partial_match_data[0],
-             &cartesian_waypoints_planner_B.b_m4[0],
-             (cartesian_waypoints_planner_B.loop_ub_n + 1) * sizeof(char_T));
+             &cartesian_waypoints_planner_B.b_m[0],
+             (cartesian_waypoints_planner_B.loop_ub_pd + 1) * sizeof(char_T));
     }
   }
 
@@ -15545,11 +16264,11 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
   obj->Type->size[1] = cartesian_waypoints_planner_B.partial_match_size_idx_1;
   cartes_emxEnsureCapacity_char_T(obj->Type,
     cartesian_waypoints_planner_B.minnanb);
-  cartesian_waypoints_planner_B.loop_ub_n =
+  cartesian_waypoints_planner_B.loop_ub_pd =
     cartesian_waypoints_planner_B.partial_match_size_idx_1 - 1;
   for (cartesian_waypoints_planner_B.minnanb = 0;
        cartesian_waypoints_planner_B.minnanb <=
-       cartesian_waypoints_planner_B.loop_ub_n;
+       cartesian_waypoints_planner_B.loop_ub_pd;
        cartesian_waypoints_planner_B.minnanb++) {
     obj->Type->data[cartesian_waypoints_planner_B.minnanb] =
       cartesian_waypoints_planner_B.partial_match_data[cartesian_waypoints_planner_B.minnanb];
@@ -15562,11 +16281,11 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
   switch_expression->size[1] = obj->Type->size[1];
   cartes_emxEnsureCapacity_char_T(switch_expression,
     cartesian_waypoints_planner_B.minnanb);
-  cartesian_waypoints_planner_B.loop_ub_n = obj->Type->size[0] * obj->Type->
-    size[1] - 1;
+  cartesian_waypoints_planner_B.loop_ub_pd = obj->Type->size[0] * obj->
+    Type->size[1] - 1;
   for (cartesian_waypoints_planner_B.minnanb = 0;
        cartesian_waypoints_planner_B.minnanb <=
-       cartesian_waypoints_planner_B.loop_ub_n;
+       cartesian_waypoints_planner_B.loop_ub_pd;
        cartesian_waypoints_planner_B.minnanb++) {
     switch_expression->data[cartesian_waypoints_planner_B.minnanb] = obj->
       Type->data[cartesian_waypoints_planner_B.minnanb];
@@ -15575,65 +16294,65 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
   for (cartesian_waypoints_planner_B.minnanb = 0;
        cartesian_waypoints_planner_B.minnanb < 8;
        cartesian_waypoints_planner_B.minnanb++) {
-    cartesian_waypoints_planner_B.b_my[cartesian_waypoints_planner_B.minnanb] =
+    cartesian_waypoints_planner_B.b_d3[cartesian_waypoints_planner_B.minnanb] =
       tmp_0[cartesian_waypoints_planner_B.minnanb];
   }
 
-  cartesian_waypoints_planner_B.b_bool_f = false;
+  cartesian_waypoints_planner_B.b_bool_is = false;
   if (switch_expression->size[1] == 8) {
-    cartesian_waypoints_planner_B.loop_ub_n = 1;
+    cartesian_waypoints_planner_B.loop_ub_pd = 1;
     do {
       exitg1 = 0;
-      if (cartesian_waypoints_planner_B.loop_ub_n - 1 < 8) {
+      if (cartesian_waypoints_planner_B.loop_ub_pd - 1 < 8) {
         cartesian_waypoints_planner_B.kstr =
-          cartesian_waypoints_planner_B.loop_ub_n - 1;
+          cartesian_waypoints_planner_B.loop_ub_pd - 1;
         if (switch_expression->data[cartesian_waypoints_planner_B.kstr] !=
-            cartesian_waypoints_planner_B.b_my[cartesian_waypoints_planner_B.kstr])
+            cartesian_waypoints_planner_B.b_d3[cartesian_waypoints_planner_B.kstr])
         {
           exitg1 = 1;
         } else {
-          cartesian_waypoints_planner_B.loop_ub_n++;
+          cartesian_waypoints_planner_B.loop_ub_pd++;
         }
       } else {
-        cartesian_waypoints_planner_B.b_bool_f = true;
+        cartesian_waypoints_planner_B.b_bool_is = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (cartesian_waypoints_planner_B.b_bool_f) {
+  if (cartesian_waypoints_planner_B.b_bool_is) {
     cartesian_waypoints_planner_B.minnanb = 0;
   } else {
     for (cartesian_waypoints_planner_B.minnanb = 0;
          cartesian_waypoints_planner_B.minnanb < 9;
          cartesian_waypoints_planner_B.minnanb++) {
-      cartesian_waypoints_planner_B.b_m4[cartesian_waypoints_planner_B.minnanb] =
+      cartesian_waypoints_planner_B.b_m[cartesian_waypoints_planner_B.minnanb] =
         tmp_1[cartesian_waypoints_planner_B.minnanb];
     }
 
-    cartesian_waypoints_planner_B.b_bool_f = false;
+    cartesian_waypoints_planner_B.b_bool_is = false;
     if (switch_expression->size[1] == 9) {
-      cartesian_waypoints_planner_B.loop_ub_n = 1;
+      cartesian_waypoints_planner_B.loop_ub_pd = 1;
       do {
         exitg1 = 0;
-        if (cartesian_waypoints_planner_B.loop_ub_n - 1 < 9) {
+        if (cartesian_waypoints_planner_B.loop_ub_pd - 1 < 9) {
           cartesian_waypoints_planner_B.kstr =
-            cartesian_waypoints_planner_B.loop_ub_n - 1;
+            cartesian_waypoints_planner_B.loop_ub_pd - 1;
           if (switch_expression->data[cartesian_waypoints_planner_B.kstr] !=
-              cartesian_waypoints_planner_B.b_m4[cartesian_waypoints_planner_B.kstr])
+              cartesian_waypoints_planner_B.b_m[cartesian_waypoints_planner_B.kstr])
           {
             exitg1 = 1;
           } else {
-            cartesian_waypoints_planner_B.loop_ub_n++;
+            cartesian_waypoints_planner_B.loop_ub_pd++;
           }
         } else {
-          cartesian_waypoints_planner_B.b_bool_f = true;
+          cartesian_waypoints_planner_B.b_bool_is = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (cartesian_waypoints_planner_B.b_bool_f) {
+    if (cartesian_waypoints_planner_B.b_bool_is) {
       cartesian_waypoints_planner_B.minnanb = 1;
     } else {
       cartesian_waypoints_planner_B.minnanb = -1;
@@ -15652,13 +16371,13 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
     for (cartesian_waypoints_planner_B.minnanb = 0;
          cartesian_waypoints_planner_B.minnanb < 6;
          cartesian_waypoints_planner_B.minnanb++) {
-      cartesian_waypoints_planner_B.msubspace_data_m[cartesian_waypoints_planner_B.minnanb]
+      cartesian_waypoints_planner_B.msubspace_data_pt[cartesian_waypoints_planner_B.minnanb]
         =
         cartesian_waypoints_planner_B.iv3[cartesian_waypoints_planner_B.minnanb];
     }
 
-    cartesian_waypoints_planner_B.poslim_data_p[0] = -3.1415926535897931;
-    cartesian_waypoints_planner_B.poslim_data_p[1] = 3.1415926535897931;
+    cartesian_waypoints_planner_B.poslim_data_e[0] = -3.1415926535897931;
+    cartesian_waypoints_planner_B.poslim_data_e[1] = 3.1415926535897931;
     obj->VelocityNumber = 1.0;
     obj->PositionNumber = 1.0;
     obj->JointAxisInternal[0] = 0.0;
@@ -15676,13 +16395,13 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
     for (cartesian_waypoints_planner_B.minnanb = 0;
          cartesian_waypoints_planner_B.minnanb < 6;
          cartesian_waypoints_planner_B.minnanb++) {
-      cartesian_waypoints_planner_B.msubspace_data_m[cartesian_waypoints_planner_B.minnanb]
+      cartesian_waypoints_planner_B.msubspace_data_pt[cartesian_waypoints_planner_B.minnanb]
         =
         cartesian_waypoints_planner_B.iv3[cartesian_waypoints_planner_B.minnanb];
     }
 
-    cartesian_waypoints_planner_B.poslim_data_p[0] = -0.5;
-    cartesian_waypoints_planner_B.poslim_data_p[1] = 0.5;
+    cartesian_waypoints_planner_B.poslim_data_e[0] = -0.5;
+    cartesian_waypoints_planner_B.poslim_data_e[1] = 0.5;
     obj->VelocityNumber = 1.0;
     obj->PositionNumber = 1.0;
     obj->JointAxisInternal[0] = 0.0;
@@ -15694,12 +16413,12 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
     for (cartesian_waypoints_planner_B.minnanb = 0;
          cartesian_waypoints_planner_B.minnanb < 6;
          cartesian_waypoints_planner_B.minnanb++) {
-      cartesian_waypoints_planner_B.msubspace_data_m[cartesian_waypoints_planner_B.minnanb]
+      cartesian_waypoints_planner_B.msubspace_data_pt[cartesian_waypoints_planner_B.minnanb]
         = 0;
     }
 
-    cartesian_waypoints_planner_B.poslim_data_p[0] = 0.0;
-    cartesian_waypoints_planner_B.poslim_data_p[1] = 0.0;
+    cartesian_waypoints_planner_B.poslim_data_e[0] = 0.0;
+    cartesian_waypoints_planner_B.poslim_data_e[1] = 0.0;
     obj->VelocityNumber = 0.0;
     obj->PositionNumber = 0.0;
     obj->JointAxisInternal[0] = 0.0;
@@ -15718,7 +16437,7 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
        cartesian_waypoints_planner_B.minnanb < 6;
        cartesian_waypoints_planner_B.minnanb++) {
     obj->MotionSubspace->data[cartesian_waypoints_planner_B.minnanb] =
-      cartesian_waypoints_planner_B.msubspace_data_m[cartesian_waypoints_planner_B.minnanb];
+      cartesian_waypoints_planner_B.msubspace_data_pt[cartesian_waypoints_planner_B.minnanb];
   }
 
   cartesian_waypoints_planner_B.minnanb = obj->PositionLimitsInternal->size[0] *
@@ -15731,7 +16450,7 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
        cartesian_waypoints_planner_B.minnanb < 2;
        cartesian_waypoints_planner_B.minnanb++) {
     obj->PositionLimitsInternal->data[cartesian_waypoints_planner_B.minnanb] =
-      cartesian_waypoints_planner_B.poslim_data_p[cartesian_waypoints_planner_B.minnanb];
+      cartesian_waypoints_planner_B.poslim_data_e[cartesian_waypoints_planner_B.minnanb];
   }
 
   cartesian_waypoints_planner_B.minnanb = obj->HomePositionInternal->size[0];
@@ -15748,12 +16467,12 @@ static c_rigidBodyJoint_cartesian_wa_T *c_rigidBodyJoint_rigidBodyJoint
 }
 
 static w_robotics_manip_internal_Rig_T *cartesian_waypoi_RigidBody_copy(const
-  v_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian_wa_T *iobj_0,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_1, w_robotics_manip_internal_Rig_T
+  v_robotics_manip_internal_Rig_T *obj, c_rigidBodyJoint_cartesian__e_T *iobj_0,
+  c_rigidBodyJoint_cartesian__e_T *iobj_1, w_robotics_manip_internal_Rig_T
   *iobj_2)
 {
   w_robotics_manip_internal_Rig_T *newbody;
-  c_rigidBodyJoint_cartesian_wa_T *newjoint;
+  c_rigidBodyJoint_cartesian__e_T *newjoint;
   emxArray_char_T_cartesian_way_T *jtype;
   emxArray_char_T_cartesian_way_T *jname;
   emxArray_real_T_cartesian_way_T *obj_0;
@@ -15770,166 +16489,166 @@ static w_robotics_manip_internal_Rig_T *cartesian_waypoi_RigidBody_copy(const
 
   int32_T exitg1;
   cartesian_waypoi_emxInit_char_T(&jtype, 2);
-  cartesian_waypoints_planner_B.b_kstr_hj = jtype->size[0] * jtype->size[1];
+  cartesian_waypoints_planner_B.b_kstr_d = jtype->size[0] * jtype->size[1];
   jtype->size[0] = 1;
   jtype->size[1] = obj->NameInternal->size[1];
-  cartes_emxEnsureCapacity_char_T(jtype, cartesian_waypoints_planner_B.b_kstr_hj);
-  cartesian_waypoints_planner_B.loop_ub_p = obj->NameInternal->size[0] *
+  cartes_emxEnsureCapacity_char_T(jtype, cartesian_waypoints_planner_B.b_kstr_d);
+  cartesian_waypoints_planner_B.loop_ub_kx = obj->NameInternal->size[0] *
     obj->NameInternal->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <=
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    jtype->data[cartesian_waypoints_planner_B.b_kstr_hj] = obj->
-      NameInternal->data[cartesian_waypoints_planner_B.b_kstr_hj];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <=
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    jtype->data[cartesian_waypoints_planner_B.b_kstr_d] = obj->
+      NameInternal->data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
   newbody = iobj_2;
-  cartesian_waypoints_planner_B.b_kstr_hj = iobj_2->NameInternal->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_d = iobj_2->NameInternal->size[0] *
     iobj_2->NameInternal->size[1];
   iobj_2->NameInternal->size[0] = 1;
   iobj_2->NameInternal->size[1] = jtype->size[1];
   cartes_emxEnsureCapacity_char_T(iobj_2->NameInternal,
-    cartesian_waypoints_planner_B.b_kstr_hj);
-  cartesian_waypoints_planner_B.loop_ub_p = jtype->size[0] * jtype->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <=
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    iobj_2->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_hj] =
-      jtype->data[cartesian_waypoints_planner_B.b_kstr_hj];
+    cartesian_waypoints_planner_B.b_kstr_d);
+  cartesian_waypoints_planner_B.loop_ub_kx = jtype->size[0] * jtype->size[1] - 1;
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <=
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    iobj_2->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_d] =
+      jtype->data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
   iobj_0->InTree = false;
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj < 16;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    iobj_0->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_hj] =
-      tmp[cartesian_waypoints_planner_B.b_kstr_hj];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 16;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    iobj_0->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_d] =
+      tmp[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj < 16;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    iobj_0->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_hj] =
-      tmp[cartesian_waypoints_planner_B.b_kstr_hj];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 16;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    iobj_0->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_d] =
+      tmp[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_hj = iobj_0->NameInternal->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_d = iobj_0->NameInternal->size[0] *
     iobj_0->NameInternal->size[1];
   iobj_0->NameInternal->size[0] = 1;
   iobj_0->NameInternal->size[1] = jtype->size[1] + 4;
   cartes_emxEnsureCapacity_char_T(iobj_0->NameInternal,
-    cartesian_waypoints_planner_B.b_kstr_hj);
-  cartesian_waypoints_planner_B.loop_ub_p = jtype->size[0] * jtype->size[1];
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    iobj_0->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_hj] =
-      jtype->data[cartesian_waypoints_planner_B.b_kstr_hj];
+    cartesian_waypoints_planner_B.b_kstr_d);
+  cartesian_waypoints_planner_B.loop_ub_kx = jtype->size[0] * jtype->size[1];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    iobj_0->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_d] =
+      jtype->data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  iobj_0->NameInternal->data[cartesian_waypoints_planner_B.loop_ub_p] = '_';
-  iobj_0->NameInternal->data[cartesian_waypoints_planner_B.loop_ub_p + 1] = 'j';
-  iobj_0->NameInternal->data[cartesian_waypoints_planner_B.loop_ub_p + 2] = 'n';
-  iobj_0->NameInternal->data[cartesian_waypoints_planner_B.loop_ub_p + 3] = 't';
-  cartesian_waypoints_planner_B.b_kstr_hj = iobj_0->Type->size[0] * iobj_0->
+  iobj_0->NameInternal->data[cartesian_waypoints_planner_B.loop_ub_kx] = '_';
+  iobj_0->NameInternal->data[cartesian_waypoints_planner_B.loop_ub_kx + 1] = 'j';
+  iobj_0->NameInternal->data[cartesian_waypoints_planner_B.loop_ub_kx + 2] = 'n';
+  iobj_0->NameInternal->data[cartesian_waypoints_planner_B.loop_ub_kx + 3] = 't';
+  cartesian_waypoints_planner_B.b_kstr_d = iobj_0->Type->size[0] * iobj_0->
     Type->size[1];
   iobj_0->Type->size[0] = 1;
   iobj_0->Type->size[1] = 5;
   cartes_emxEnsureCapacity_char_T(iobj_0->Type,
-    cartesian_waypoints_planner_B.b_kstr_hj);
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj < 5;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    iobj_0->Type->data[cartesian_waypoints_planner_B.b_kstr_hj] =
-      tmp_0[cartesian_waypoints_planner_B.b_kstr_hj];
+    cartesian_waypoints_planner_B.b_kstr_d);
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 5;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    iobj_0->Type->data[cartesian_waypoints_planner_B.b_kstr_d] =
+      tmp_0[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_hj = jtype->size[0] * jtype->size[1];
+  cartesian_waypoints_planner_B.b_kstr_d = jtype->size[0] * jtype->size[1];
   jtype->size[0] = 1;
   jtype->size[1] = iobj_0->Type->size[1];
-  cartes_emxEnsureCapacity_char_T(jtype, cartesian_waypoints_planner_B.b_kstr_hj);
-  cartesian_waypoints_planner_B.loop_ub_p = iobj_0->Type->size[0] * iobj_0->
-    Type->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <=
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    jtype->data[cartesian_waypoints_planner_B.b_kstr_hj] = iobj_0->Type->
-      data[cartesian_waypoints_planner_B.b_kstr_hj];
+  cartes_emxEnsureCapacity_char_T(jtype, cartesian_waypoints_planner_B.b_kstr_d);
+  cartesian_waypoints_planner_B.loop_ub_kx = iobj_0->Type->size[0] *
+    iobj_0->Type->size[1] - 1;
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <=
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    jtype->data[cartesian_waypoints_planner_B.b_kstr_d] = iobj_0->Type->
+      data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj < 8;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    cartesian_waypoints_planner_B.b_i[cartesian_waypoints_planner_B.b_kstr_hj] =
-      tmp_1[cartesian_waypoints_planner_B.b_kstr_hj];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 8;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    cartesian_waypoints_planner_B.b_nr[cartesian_waypoints_planner_B.b_kstr_d] =
+      tmp_1[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  cartesian_waypoints_planner_B.b_bool_nq = false;
+  cartesian_waypoints_planner_B.b_bool_eb = false;
   if (jtype->size[1] == 8) {
-    cartesian_waypoints_planner_B.b_kstr_hj = 1;
+    cartesian_waypoints_planner_B.b_kstr_d = 1;
     do {
       exitg1 = 0;
-      if (cartesian_waypoints_planner_B.b_kstr_hj - 1 < 8) {
-        cartesian_waypoints_planner_B.loop_ub_p =
-          cartesian_waypoints_planner_B.b_kstr_hj - 1;
-        if (jtype->data[cartesian_waypoints_planner_B.loop_ub_p] !=
-            cartesian_waypoints_planner_B.b_i[cartesian_waypoints_planner_B.loop_ub_p])
+      if (cartesian_waypoints_planner_B.b_kstr_d - 1 < 8) {
+        cartesian_waypoints_planner_B.loop_ub_kx =
+          cartesian_waypoints_planner_B.b_kstr_d - 1;
+        if (jtype->data[cartesian_waypoints_planner_B.loop_ub_kx] !=
+            cartesian_waypoints_planner_B.b_nr[cartesian_waypoints_planner_B.loop_ub_kx])
         {
           exitg1 = 1;
         } else {
-          cartesian_waypoints_planner_B.b_kstr_hj++;
+          cartesian_waypoints_planner_B.b_kstr_d++;
         }
       } else {
-        cartesian_waypoints_planner_B.b_bool_nq = true;
+        cartesian_waypoints_planner_B.b_bool_eb = true;
         exitg1 = 1;
       }
     } while (exitg1 == 0);
   }
 
-  if (cartesian_waypoints_planner_B.b_bool_nq) {
-    cartesian_waypoints_planner_B.b_kstr_hj = 0;
+  if (cartesian_waypoints_planner_B.b_bool_eb) {
+    cartesian_waypoints_planner_B.b_kstr_d = 0;
   } else {
-    for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-         cartesian_waypoints_planner_B.b_kstr_hj < 9;
-         cartesian_waypoints_planner_B.b_kstr_hj++) {
-      cartesian_waypoints_planner_B.b_h[cartesian_waypoints_planner_B.b_kstr_hj]
-        = tmp_2[cartesian_waypoints_planner_B.b_kstr_hj];
+    for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+         cartesian_waypoints_planner_B.b_kstr_d < 9;
+         cartesian_waypoints_planner_B.b_kstr_d++) {
+      cartesian_waypoints_planner_B.b_i[cartesian_waypoints_planner_B.b_kstr_d] =
+        tmp_2[cartesian_waypoints_planner_B.b_kstr_d];
     }
 
-    cartesian_waypoints_planner_B.b_bool_nq = false;
+    cartesian_waypoints_planner_B.b_bool_eb = false;
     if (jtype->size[1] == 9) {
-      cartesian_waypoints_planner_B.b_kstr_hj = 1;
+      cartesian_waypoints_planner_B.b_kstr_d = 1;
       do {
         exitg1 = 0;
-        if (cartesian_waypoints_planner_B.b_kstr_hj - 1 < 9) {
-          cartesian_waypoints_planner_B.loop_ub_p =
-            cartesian_waypoints_planner_B.b_kstr_hj - 1;
-          if (jtype->data[cartesian_waypoints_planner_B.loop_ub_p] !=
-              cartesian_waypoints_planner_B.b_h[cartesian_waypoints_planner_B.loop_ub_p])
+        if (cartesian_waypoints_planner_B.b_kstr_d - 1 < 9) {
+          cartesian_waypoints_planner_B.loop_ub_kx =
+            cartesian_waypoints_planner_B.b_kstr_d - 1;
+          if (jtype->data[cartesian_waypoints_planner_B.loop_ub_kx] !=
+              cartesian_waypoints_planner_B.b_i[cartesian_waypoints_planner_B.loop_ub_kx])
           {
             exitg1 = 1;
           } else {
-            cartesian_waypoints_planner_B.b_kstr_hj++;
+            cartesian_waypoints_planner_B.b_kstr_d++;
           }
         } else {
-          cartesian_waypoints_planner_B.b_bool_nq = true;
+          cartesian_waypoints_planner_B.b_bool_eb = true;
           exitg1 = 1;
         }
       } while (exitg1 == 0);
     }
 
-    if (cartesian_waypoints_planner_B.b_bool_nq) {
-      cartesian_waypoints_planner_B.b_kstr_hj = 1;
+    if (cartesian_waypoints_planner_B.b_bool_eb) {
+      cartesian_waypoints_planner_B.b_kstr_d = 1;
     } else {
-      cartesian_waypoints_planner_B.b_kstr_hj = -1;
+      cartesian_waypoints_planner_B.b_kstr_d = -1;
     }
   }
 
-  switch (cartesian_waypoints_planner_B.b_kstr_hj) {
+  switch (cartesian_waypoints_planner_B.b_kstr_d) {
    case 0:
     cartesian_waypoints_planner_B.iv2[0] = 0;
     cartesian_waypoints_planner_B.iv2[1] = 0;
@@ -15937,16 +16656,16 @@ static w_robotics_manip_internal_Rig_T *cartesian_waypoi_RigidBody_copy(const
     cartesian_waypoints_planner_B.iv2[3] = 0;
     cartesian_waypoints_planner_B.iv2[4] = 0;
     cartesian_waypoints_planner_B.iv2[5] = 0;
-    for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-         cartesian_waypoints_planner_B.b_kstr_hj < 6;
-         cartesian_waypoints_planner_B.b_kstr_hj++) {
-      cartesian_waypoints_planner_B.msubspace_data_p[cartesian_waypoints_planner_B.b_kstr_hj]
+    for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+         cartesian_waypoints_planner_B.b_kstr_d < 6;
+         cartesian_waypoints_planner_B.b_kstr_d++) {
+      cartesian_waypoints_planner_B.msubspace_data_p[cartesian_waypoints_planner_B.b_kstr_d]
         =
-        cartesian_waypoints_planner_B.iv2[cartesian_waypoints_planner_B.b_kstr_hj];
+        cartesian_waypoints_planner_B.iv2[cartesian_waypoints_planner_B.b_kstr_d];
     }
 
-    cartesian_waypoints_planner_B.poslim_data_ct[0] = -3.1415926535897931;
-    cartesian_waypoints_planner_B.poslim_data_ct[1] = 3.1415926535897931;
+    cartesian_waypoints_planner_B.poslim_data_a[0] = -3.1415926535897931;
+    cartesian_waypoints_planner_B.poslim_data_a[1] = 3.1415926535897931;
     iobj_0->VelocityNumber = 1.0;
     iobj_0->PositionNumber = 1.0;
     iobj_0->JointAxisInternal[0] = 0.0;
@@ -15961,16 +16680,16 @@ static w_robotics_manip_internal_Rig_T *cartesian_waypoi_RigidBody_copy(const
     cartesian_waypoints_planner_B.iv2[3] = 0;
     cartesian_waypoints_planner_B.iv2[4] = 0;
     cartesian_waypoints_planner_B.iv2[5] = 1;
-    for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-         cartesian_waypoints_planner_B.b_kstr_hj < 6;
-         cartesian_waypoints_planner_B.b_kstr_hj++) {
-      cartesian_waypoints_planner_B.msubspace_data_p[cartesian_waypoints_planner_B.b_kstr_hj]
+    for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+         cartesian_waypoints_planner_B.b_kstr_d < 6;
+         cartesian_waypoints_planner_B.b_kstr_d++) {
+      cartesian_waypoints_planner_B.msubspace_data_p[cartesian_waypoints_planner_B.b_kstr_d]
         =
-        cartesian_waypoints_planner_B.iv2[cartesian_waypoints_planner_B.b_kstr_hj];
+        cartesian_waypoints_planner_B.iv2[cartesian_waypoints_planner_B.b_kstr_d];
     }
 
-    cartesian_waypoints_planner_B.poslim_data_ct[0] = -0.5;
-    cartesian_waypoints_planner_B.poslim_data_ct[1] = 0.5;
+    cartesian_waypoints_planner_B.poslim_data_a[0] = -0.5;
+    cartesian_waypoints_planner_B.poslim_data_a[1] = 0.5;
     iobj_0->VelocityNumber = 1.0;
     iobj_0->PositionNumber = 1.0;
     iobj_0->JointAxisInternal[0] = 0.0;
@@ -15979,15 +16698,15 @@ static w_robotics_manip_internal_Rig_T *cartesian_waypoi_RigidBody_copy(const
     break;
 
    default:
-    for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-         cartesian_waypoints_planner_B.b_kstr_hj < 6;
-         cartesian_waypoints_planner_B.b_kstr_hj++) {
-      cartesian_waypoints_planner_B.msubspace_data_p[cartesian_waypoints_planner_B.b_kstr_hj]
+    for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+         cartesian_waypoints_planner_B.b_kstr_d < 6;
+         cartesian_waypoints_planner_B.b_kstr_d++) {
+      cartesian_waypoints_planner_B.msubspace_data_p[cartesian_waypoints_planner_B.b_kstr_d]
         = 0;
     }
 
-    cartesian_waypoints_planner_B.poslim_data_ct[0] = 0.0;
-    cartesian_waypoints_planner_B.poslim_data_ct[1] = 0.0;
+    cartesian_waypoints_planner_B.poslim_data_a[0] = 0.0;
+    cartesian_waypoints_planner_B.poslim_data_a[1] = 0.0;
     iobj_0->VelocityNumber = 0.0;
     iobj_0->PositionNumber = 0.0;
     iobj_0->JointAxisInternal[0] = 0.0;
@@ -15996,194 +16715,194 @@ static w_robotics_manip_internal_Rig_T *cartesian_waypoi_RigidBody_copy(const
     break;
   }
 
-  cartesian_waypoints_planner_B.b_kstr_hj = iobj_0->MotionSubspace->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_d = iobj_0->MotionSubspace->size[0] *
     iobj_0->MotionSubspace->size[1];
   iobj_0->MotionSubspace->size[0] = 6;
   iobj_0->MotionSubspace->size[1] = 1;
   cartes_emxEnsureCapacity_real_T(iobj_0->MotionSubspace,
-    cartesian_waypoints_planner_B.b_kstr_hj);
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj < 6;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    iobj_0->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_hj] =
-      cartesian_waypoints_planner_B.msubspace_data_p[cartesian_waypoints_planner_B.b_kstr_hj];
+    cartesian_waypoints_planner_B.b_kstr_d);
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 6;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    iobj_0->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_d] =
+      cartesian_waypoints_planner_B.msubspace_data_p[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_hj = iobj_0->PositionLimitsInternal->
-    size[0] * iobj_0->PositionLimitsInternal->size[1];
+  cartesian_waypoints_planner_B.b_kstr_d = iobj_0->PositionLimitsInternal->size
+    [0] * iobj_0->PositionLimitsInternal->size[1];
   iobj_0->PositionLimitsInternal->size[0] = 1;
   iobj_0->PositionLimitsInternal->size[1] = 2;
   cartes_emxEnsureCapacity_real_T(iobj_0->PositionLimitsInternal,
-    cartesian_waypoints_planner_B.b_kstr_hj);
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj < 2;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    iobj_0->PositionLimitsInternal->data[cartesian_waypoints_planner_B.b_kstr_hj]
+    cartesian_waypoints_planner_B.b_kstr_d);
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 2;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    iobj_0->PositionLimitsInternal->data[cartesian_waypoints_planner_B.b_kstr_d]
       =
-      cartesian_waypoints_planner_B.poslim_data_ct[cartesian_waypoints_planner_B.b_kstr_hj];
+      cartesian_waypoints_planner_B.poslim_data_a[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_hj = iobj_0->HomePositionInternal->size[0];
+  cartesian_waypoints_planner_B.b_kstr_d = iobj_0->HomePositionInternal->size[0];
   iobj_0->HomePositionInternal->size[0] = 1;
   cartes_emxEnsureCapacity_real_T(iobj_0->HomePositionInternal,
-    cartesian_waypoints_planner_B.b_kstr_hj);
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj < 1;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
+    cartesian_waypoints_planner_B.b_kstr_d);
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 1;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
     iobj_0->HomePositionInternal->data[0] = 0.0;
   }
 
   iobj_2->JointInternal = iobj_0;
   iobj_2->Index = -1.0;
   iobj_2->ParentIndex = -1.0;
-  cartesian_waypoints_planner_B.b_kstr_hj = jtype->size[0] * jtype->size[1];
+  cartesian_waypoints_planner_B.b_kstr_d = jtype->size[0] * jtype->size[1];
   jtype->size[0] = 1;
   jtype->size[1] = obj->JointInternal.Type->size[1];
-  cartes_emxEnsureCapacity_char_T(jtype, cartesian_waypoints_planner_B.b_kstr_hj);
-  cartesian_waypoints_planner_B.loop_ub_p = obj->JointInternal.Type->size[0] *
+  cartes_emxEnsureCapacity_char_T(jtype, cartesian_waypoints_planner_B.b_kstr_d);
+  cartesian_waypoints_planner_B.loop_ub_kx = obj->JointInternal.Type->size[0] *
     obj->JointInternal.Type->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <=
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    jtype->data[cartesian_waypoints_planner_B.b_kstr_hj] =
-      obj->JointInternal.Type->data[cartesian_waypoints_planner_B.b_kstr_hj];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <=
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    jtype->data[cartesian_waypoints_planner_B.b_kstr_d] =
+      obj->JointInternal.Type->data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
   cartesian_waypoi_emxInit_char_T(&jname, 2);
-  cartesian_waypoints_planner_B.b_kstr_hj = jname->size[0] * jname->size[1];
+  cartesian_waypoints_planner_B.b_kstr_d = jname->size[0] * jname->size[1];
   jname->size[0] = 1;
   jname->size[1] = obj->JointInternal.NameInternal->size[1];
-  cartes_emxEnsureCapacity_char_T(jname, cartesian_waypoints_planner_B.b_kstr_hj);
-  cartesian_waypoints_planner_B.loop_ub_p = obj->
+  cartes_emxEnsureCapacity_char_T(jname, cartesian_waypoints_planner_B.b_kstr_d);
+  cartesian_waypoints_planner_B.loop_ub_kx = obj->
     JointInternal.NameInternal->size[0] * obj->JointInternal.NameInternal->size
     [1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <=
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    jname->data[cartesian_waypoints_planner_B.b_kstr_hj] =
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <=
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    jname->data[cartesian_waypoints_planner_B.b_kstr_d] =
       obj->JointInternal.NameInternal->
-      data[cartesian_waypoints_planner_B.b_kstr_hj];
+      data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
   newjoint = c_rigidBodyJoint_rigidBodyJoint(iobj_1, jname, jtype);
-  cartesian_waypoints_planner_B.b_kstr_hj = jtype->size[0] * jtype->size[1];
+  cartesian_waypoints_planner_B.b_kstr_d = jtype->size[0] * jtype->size[1];
   jtype->size[0] = 1;
   jtype->size[1] = obj->JointInternal.NameInternal->size[1];
-  cartes_emxEnsureCapacity_char_T(jtype, cartesian_waypoints_planner_B.b_kstr_hj);
-  cartesian_waypoints_planner_B.loop_ub_p = obj->
+  cartes_emxEnsureCapacity_char_T(jtype, cartesian_waypoints_planner_B.b_kstr_d);
+  cartesian_waypoints_planner_B.loop_ub_kx = obj->
     JointInternal.NameInternal->size[0] * obj->JointInternal.NameInternal->size
     [1] - 1;
   cartesian_waypoi_emxFree_char_T(&jname);
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <=
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    jtype->data[cartesian_waypoints_planner_B.b_kstr_hj] =
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <=
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    jtype->data[cartesian_waypoints_planner_B.b_kstr_d] =
       obj->JointInternal.NameInternal->
-      data[cartesian_waypoints_planner_B.b_kstr_hj];
+      data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
   if (jtype->size[1] != 0) {
-    cartesian_waypoints_planner_B.b_kstr_hj = jtype->size[0] * jtype->size[1];
+    cartesian_waypoints_planner_B.b_kstr_d = jtype->size[0] * jtype->size[1];
     jtype->size[0] = 1;
     jtype->size[1] = obj->JointInternal.NameInternal->size[1];
     cartes_emxEnsureCapacity_char_T(jtype,
-      cartesian_waypoints_planner_B.b_kstr_hj);
-    cartesian_waypoints_planner_B.loop_ub_p = obj->
+      cartesian_waypoints_planner_B.b_kstr_d);
+    cartesian_waypoints_planner_B.loop_ub_kx = obj->
       JointInternal.NameInternal->size[0] * obj->
       JointInternal.NameInternal->size[1] - 1;
-    for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-         cartesian_waypoints_planner_B.b_kstr_hj <=
-         cartesian_waypoints_planner_B.loop_ub_p;
-         cartesian_waypoints_planner_B.b_kstr_hj++) {
-      jtype->data[cartesian_waypoints_planner_B.b_kstr_hj] =
+    for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+         cartesian_waypoints_planner_B.b_kstr_d <=
+         cartesian_waypoints_planner_B.loop_ub_kx;
+         cartesian_waypoints_planner_B.b_kstr_d++) {
+      jtype->data[cartesian_waypoints_planner_B.b_kstr_d] =
         obj->JointInternal.NameInternal->
-        data[cartesian_waypoints_planner_B.b_kstr_hj];
+        data[cartesian_waypoints_planner_B.b_kstr_d];
     }
 
     if (!newjoint->InTree) {
-      cartesian_waypoints_planner_B.b_kstr_hj = newjoint->NameInternal->size[0] *
+      cartesian_waypoints_planner_B.b_kstr_d = newjoint->NameInternal->size[0] *
         newjoint->NameInternal->size[1];
       newjoint->NameInternal->size[0] = 1;
       newjoint->NameInternal->size[1] = jtype->size[1];
       cartes_emxEnsureCapacity_char_T(newjoint->NameInternal,
-        cartesian_waypoints_planner_B.b_kstr_hj);
-      cartesian_waypoints_planner_B.loop_ub_p = jtype->size[0] * jtype->size[1]
+        cartesian_waypoints_planner_B.b_kstr_d);
+      cartesian_waypoints_planner_B.loop_ub_kx = jtype->size[0] * jtype->size[1]
         - 1;
-      for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-           cartesian_waypoints_planner_B.b_kstr_hj <=
-           cartesian_waypoints_planner_B.loop_ub_p;
-           cartesian_waypoints_planner_B.b_kstr_hj++) {
-        newjoint->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_hj] =
-          jtype->data[cartesian_waypoints_planner_B.b_kstr_hj];
+      for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+           cartesian_waypoints_planner_B.b_kstr_d <=
+           cartesian_waypoints_planner_B.loop_ub_kx;
+           cartesian_waypoints_planner_B.b_kstr_d++) {
+        newjoint->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_d] =
+          jtype->data[cartesian_waypoints_planner_B.b_kstr_d];
       }
     }
   }
 
   cartesian_waypoi_emxFree_char_T(&jtype);
   cartesian_waypoi_emxInit_real_T(&obj_0, 1);
-  cartesian_waypoints_planner_B.loop_ub_p =
+  cartesian_waypoints_planner_B.loop_ub_kx =
     obj->JointInternal.PositionLimitsInternal->size[0] *
     obj->JointInternal.PositionLimitsInternal->size[1];
-  cartesian_waypoints_planner_B.b_kstr_hj = newjoint->
+  cartesian_waypoints_planner_B.b_kstr_d = newjoint->
     PositionLimitsInternal->size[0] * newjoint->PositionLimitsInternal->size[1];
   newjoint->PositionLimitsInternal->size[0] =
     obj->JointInternal.PositionLimitsInternal->size[0];
   newjoint->PositionLimitsInternal->size[1] = 2;
   cartes_emxEnsureCapacity_real_T(newjoint->PositionLimitsInternal,
-    cartesian_waypoints_planner_B.b_kstr_hj);
-  cartesian_waypoints_planner_B.b_kstr_hj = obj_0->size[0];
-  obj_0->size[0] = cartesian_waypoints_planner_B.loop_ub_p;
-  cartes_emxEnsureCapacity_real_T(obj_0, cartesian_waypoints_planner_B.b_kstr_hj);
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    obj_0->data[cartesian_waypoints_planner_B.b_kstr_hj] =
+    cartesian_waypoints_planner_B.b_kstr_d);
+  cartesian_waypoints_planner_B.b_kstr_d = obj_0->size[0];
+  obj_0->size[0] = cartesian_waypoints_planner_B.loop_ub_kx;
+  cartes_emxEnsureCapacity_real_T(obj_0, cartesian_waypoints_planner_B.b_kstr_d);
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    obj_0->data[cartesian_waypoints_planner_B.b_kstr_d] =
       obj->JointInternal.PositionLimitsInternal->
-      data[cartesian_waypoints_planner_B.b_kstr_hj];
+      data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  cartesian_waypoints_planner_B.loop_ub_p = obj_0->size[0];
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
+  cartesian_waypoints_planner_B.loop_ub_kx = obj_0->size[0];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
     newjoint->PositionLimitsInternal->
-      data[cartesian_waypoints_planner_B.b_kstr_hj] = obj_0->
-      data[cartesian_waypoints_planner_B.b_kstr_hj];
+      data[cartesian_waypoints_planner_B.b_kstr_d] = obj_0->
+      data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
   cartesian_waypoi_emxFree_real_T(&obj_0);
   cartesian_waypoi_emxInit_real_T(&obj_1, 1);
-  cartesian_waypoints_planner_B.b_kstr_hj = obj_1->size[0];
+  cartesian_waypoints_planner_B.b_kstr_d = obj_1->size[0];
   obj_1->size[0] = obj->JointInternal.HomePositionInternal->size[0];
-  cartes_emxEnsureCapacity_real_T(obj_1, cartesian_waypoints_planner_B.b_kstr_hj);
-  cartesian_waypoints_planner_B.loop_ub_p =
+  cartes_emxEnsureCapacity_real_T(obj_1, cartesian_waypoints_planner_B.b_kstr_d);
+  cartesian_waypoints_planner_B.loop_ub_kx =
     obj->JointInternal.HomePositionInternal->size[0];
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    obj_1->data[cartesian_waypoints_planner_B.b_kstr_hj] =
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    obj_1->data[cartesian_waypoints_planner_B.b_kstr_d] =
       obj->JointInternal.HomePositionInternal->
-      data[cartesian_waypoints_planner_B.b_kstr_hj];
+      data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  cartesian_waypoints_planner_B.b_kstr_hj = newjoint->HomePositionInternal->
-    size[0];
+  cartesian_waypoints_planner_B.b_kstr_d = newjoint->HomePositionInternal->size
+    [0];
   newjoint->HomePositionInternal->size[0] = obj_1->size[0];
   cartes_emxEnsureCapacity_real_T(newjoint->HomePositionInternal,
-    cartesian_waypoints_planner_B.b_kstr_hj);
-  cartesian_waypoints_planner_B.loop_ub_p = obj_1->size[0];
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    newjoint->HomePositionInternal->data[cartesian_waypoints_planner_B.b_kstr_hj]
-      = obj_1->data[cartesian_waypoints_planner_B.b_kstr_hj];
+    cartesian_waypoints_planner_B.b_kstr_d);
+  cartesian_waypoints_planner_B.loop_ub_kx = obj_1->size[0];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    newjoint->HomePositionInternal->data[cartesian_waypoints_planner_B.b_kstr_d]
+      = obj_1->data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
   cartesian_waypoi_emxFree_real_T(&obj_1);
@@ -16197,65 +16916,65 @@ static w_robotics_manip_internal_Rig_T *cartesian_waypoi_RigidBody_copy(const
   newjoint->JointAxisInternal[1] = cartesian_waypoints_planner_B.obj_idx_1;
   newjoint->JointAxisInternal[2] = cartesian_waypoints_planner_B.obj_idx_2;
   cartesian_waypoi_emxInit_real_T(&obj_2, 1);
-  cartesian_waypoints_planner_B.loop_ub_p = obj->
+  cartesian_waypoints_planner_B.loop_ub_kx = obj->
     JointInternal.MotionSubspace->size[0] * obj->
     JointInternal.MotionSubspace->size[1];
-  cartesian_waypoints_planner_B.b_kstr_hj = newjoint->MotionSubspace->size[0] *
+  cartesian_waypoints_planner_B.b_kstr_d = newjoint->MotionSubspace->size[0] *
     newjoint->MotionSubspace->size[1];
   newjoint->MotionSubspace->size[0] = 6;
   newjoint->MotionSubspace->size[1] = obj->JointInternal.MotionSubspace->size[1];
   cartes_emxEnsureCapacity_real_T(newjoint->MotionSubspace,
-    cartesian_waypoints_planner_B.b_kstr_hj);
-  cartesian_waypoints_planner_B.b_kstr_hj = obj_2->size[0];
-  obj_2->size[0] = cartesian_waypoints_planner_B.loop_ub_p;
-  cartes_emxEnsureCapacity_real_T(obj_2, cartesian_waypoints_planner_B.b_kstr_hj);
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    obj_2->data[cartesian_waypoints_planner_B.b_kstr_hj] =
+    cartesian_waypoints_planner_B.b_kstr_d);
+  cartesian_waypoints_planner_B.b_kstr_d = obj_2->size[0];
+  obj_2->size[0] = cartesian_waypoints_planner_B.loop_ub_kx;
+  cartes_emxEnsureCapacity_real_T(obj_2, cartesian_waypoints_planner_B.b_kstr_d);
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    obj_2->data[cartesian_waypoints_planner_B.b_kstr_d] =
       obj->JointInternal.MotionSubspace->
-      data[cartesian_waypoints_planner_B.b_kstr_hj];
+      data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  cartesian_waypoints_planner_B.loop_ub_p = obj_2->size[0];
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj <
-       cartesian_waypoints_planner_B.loop_ub_p;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    newjoint->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_hj] =
-      obj_2->data[cartesian_waypoints_planner_B.b_kstr_hj];
+  cartesian_waypoints_planner_B.loop_ub_kx = obj_2->size[0];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d <
+       cartesian_waypoints_planner_B.loop_ub_kx;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    newjoint->MotionSubspace->data[cartesian_waypoints_planner_B.b_kstr_d] =
+      obj_2->data[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
   cartesian_waypoi_emxFree_real_T(&obj_2);
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj < 16;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    cartesian_waypoints_planner_B.obj[cartesian_waypoints_planner_B.b_kstr_hj] =
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 16;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    cartesian_waypoints_planner_B.obj[cartesian_waypoints_planner_B.b_kstr_d] =
       obj->
-      JointInternal.JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_hj];
+      JointInternal.JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj < 16;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    newjoint->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_hj] =
-      cartesian_waypoints_planner_B.obj[cartesian_waypoints_planner_B.b_kstr_hj];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 16;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    newjoint->JointToParentTransform[cartesian_waypoints_planner_B.b_kstr_d] =
+      cartesian_waypoints_planner_B.obj[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj < 16;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    cartesian_waypoints_planner_B.obj[cartesian_waypoints_planner_B.b_kstr_hj] =
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 16;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    cartesian_waypoints_planner_B.obj[cartesian_waypoints_planner_B.b_kstr_d] =
       obj->
-      JointInternal.ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_hj];
+      JointInternal.ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_hj = 0;
-       cartesian_waypoints_planner_B.b_kstr_hj < 16;
-       cartesian_waypoints_planner_B.b_kstr_hj++) {
-    newjoint->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_hj] =
-      cartesian_waypoints_planner_B.obj[cartesian_waypoints_planner_B.b_kstr_hj];
+  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
+       cartesian_waypoints_planner_B.b_kstr_d < 16;
+       cartesian_waypoints_planner_B.b_kstr_d++) {
+    newjoint->ChildToJointTransform[cartesian_waypoints_planner_B.b_kstr_d] =
+      cartesian_waypoints_planner_B.obj[cartesian_waypoints_planner_B.b_kstr_d];
   }
 
   iobj_2->JointInternal = newjoint;
@@ -16264,12 +16983,12 @@ static w_robotics_manip_internal_Rig_T *cartesian_waypoi_RigidBody_copy(const
 
 static void cartesian_RigidBodyTree_addBody(x_robotics_manip_internal_Rig_T *obj,
   v_robotics_manip_internal_Rig_T *bodyin, const emxArray_char_T_cartesian_way_T
-  *parentName, c_rigidBodyJoint_cartesian_wa_T *iobj_0,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_1, w_robotics_manip_internal_Rig_T
+  *parentName, c_rigidBodyJoint_cartesian__e_T *iobj_0,
+  c_rigidBodyJoint_cartesian__e_T *iobj_1, w_robotics_manip_internal_Rig_T
   *iobj_2)
 {
   w_robotics_manip_internal_Rig_T *body;
-  c_rigidBodyJoint_cartesian_wa_T *jnt;
+  c_rigidBodyJoint_cartesian__e_T *jnt;
   emxArray_char_T_cartesian_way_T *bname;
   static const char_T tmp[5] = { 'f', 'i', 'x', 'e', 'd' };
 
@@ -16277,99 +16996,99 @@ static void cartesian_RigidBodyTree_addBody(x_robotics_manip_internal_Rig_T *obj
   int32_T exitg2;
   cartesian_waypoi_emxInit_char_T(&bname, 2);
   cartesian_waypoints_planner_B.pid = -1.0;
-  cartesian_waypoints_planner_B.b_kstr_d = bname->size[0] * bname->size[1];
+  cartesian_waypoints_planner_B.b_kstr_c = bname->size[0] * bname->size[1];
   bname->size[0] = 1;
   bname->size[1] = obj->Base.NameInternal->size[1];
-  cartes_emxEnsureCapacity_char_T(bname, cartesian_waypoints_planner_B.b_kstr_d);
-  cartesian_waypoints_planner_B.loop_ub_b = obj->Base.NameInternal->size[0] *
+  cartes_emxEnsureCapacity_char_T(bname, cartesian_waypoints_planner_B.b_kstr_c);
+  cartesian_waypoints_planner_B.loop_ub_k = obj->Base.NameInternal->size[0] *
     obj->Base.NameInternal->size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
-       cartesian_waypoints_planner_B.b_kstr_d <=
-       cartesian_waypoints_planner_B.loop_ub_b;
-       cartesian_waypoints_planner_B.b_kstr_d++) {
-    bname->data[cartesian_waypoints_planner_B.b_kstr_d] = obj->
-      Base.NameInternal->data[cartesian_waypoints_planner_B.b_kstr_d];
+  for (cartesian_waypoints_planner_B.b_kstr_c = 0;
+       cartesian_waypoints_planner_B.b_kstr_c <=
+       cartesian_waypoints_planner_B.loop_ub_k;
+       cartesian_waypoints_planner_B.b_kstr_c++) {
+    bname->data[cartesian_waypoints_planner_B.b_kstr_c] = obj->
+      Base.NameInternal->data[cartesian_waypoints_planner_B.b_kstr_c];
   }
 
   if (cartesian_waypoints_plan_strcmp(bname, parentName)) {
     cartesian_waypoints_planner_B.pid = 0.0;
   } else {
-    cartesian_waypoints_planner_B.b_index_c = obj->NumBodies;
-    cartesian_waypoints_planner_B.b_i_i = 0;
+    cartesian_waypoints_planner_B.b_index_f = obj->NumBodies;
+    cartesian_waypoints_planner_B.b_i_gr = 0;
     exitg1 = false;
-    while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_i <=
+    while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_gr <=
                          static_cast<int32_T>
-                         (cartesian_waypoints_planner_B.b_index_c) - 1)) {
-      body = obj->Bodies[cartesian_waypoints_planner_B.b_i_i];
-      cartesian_waypoints_planner_B.b_kstr_d = bname->size[0] * bname->size[1];
+                         (cartesian_waypoints_planner_B.b_index_f) - 1)) {
+      body = obj->Bodies[cartesian_waypoints_planner_B.b_i_gr];
+      cartesian_waypoints_planner_B.b_kstr_c = bname->size[0] * bname->size[1];
       bname->size[0] = 1;
       bname->size[1] = body->NameInternal->size[1];
       cartes_emxEnsureCapacity_char_T(bname,
-        cartesian_waypoints_planner_B.b_kstr_d);
-      cartesian_waypoints_planner_B.loop_ub_b = body->NameInternal->size[0] *
+        cartesian_waypoints_planner_B.b_kstr_c);
+      cartesian_waypoints_planner_B.loop_ub_k = body->NameInternal->size[0] *
         body->NameInternal->size[1] - 1;
-      for (cartesian_waypoints_planner_B.b_kstr_d = 0;
-           cartesian_waypoints_planner_B.b_kstr_d <=
-           cartesian_waypoints_planner_B.loop_ub_b;
-           cartesian_waypoints_planner_B.b_kstr_d++) {
-        bname->data[cartesian_waypoints_planner_B.b_kstr_d] = body->
-          NameInternal->data[cartesian_waypoints_planner_B.b_kstr_d];
+      for (cartesian_waypoints_planner_B.b_kstr_c = 0;
+           cartesian_waypoints_planner_B.b_kstr_c <=
+           cartesian_waypoints_planner_B.loop_ub_k;
+           cartesian_waypoints_planner_B.b_kstr_c++) {
+        bname->data[cartesian_waypoints_planner_B.b_kstr_c] = body->
+          NameInternal->data[cartesian_waypoints_planner_B.b_kstr_c];
       }
 
       if (cartesian_waypoints_plan_strcmp(bname, parentName)) {
         cartesian_waypoints_planner_B.pid = static_cast<real_T>
-          (cartesian_waypoints_planner_B.b_i_i) + 1.0;
+          (cartesian_waypoints_planner_B.b_i_gr) + 1.0;
         exitg1 = true;
       } else {
-        cartesian_waypoints_planner_B.b_i_i++;
+        cartesian_waypoints_planner_B.b_i_gr++;
       }
     }
   }
 
-  cartesian_waypoints_planner_B.b_index_c = obj->NumBodies + 1.0;
+  cartesian_waypoints_planner_B.b_index_f = obj->NumBodies + 1.0;
   body = cartesian_waypoi_RigidBody_copy(bodyin, iobj_1, iobj_0, iobj_2);
-  obj->Bodies[static_cast<int32_T>(cartesian_waypoints_planner_B.b_index_c) - 1]
+  obj->Bodies[static_cast<int32_T>(cartesian_waypoints_planner_B.b_index_f) - 1]
     = body;
-  body->Index = cartesian_waypoints_planner_B.b_index_c;
+  body->Index = cartesian_waypoints_planner_B.b_index_f;
   body->ParentIndex = cartesian_waypoints_planner_B.pid;
   body->JointInternal->InTree = true;
   obj->NumBodies++;
   jnt = body->JointInternal;
-  cartesian_waypoints_planner_B.b_kstr_d = bname->size[0] * bname->size[1];
+  cartesian_waypoints_planner_B.b_kstr_c = bname->size[0] * bname->size[1];
   bname->size[0] = 1;
   bname->size[1] = jnt->Type->size[1];
-  cartes_emxEnsureCapacity_char_T(bname, cartesian_waypoints_planner_B.b_kstr_d);
-  cartesian_waypoints_planner_B.loop_ub_b = jnt->Type->size[0] * jnt->Type->
+  cartes_emxEnsureCapacity_char_T(bname, cartesian_waypoints_planner_B.b_kstr_c);
+  cartesian_waypoints_planner_B.loop_ub_k = jnt->Type->size[0] * jnt->Type->
     size[1] - 1;
-  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
-       cartesian_waypoints_planner_B.b_kstr_d <=
-       cartesian_waypoints_planner_B.loop_ub_b;
-       cartesian_waypoints_planner_B.b_kstr_d++) {
-    bname->data[cartesian_waypoints_planner_B.b_kstr_d] = jnt->Type->
-      data[cartesian_waypoints_planner_B.b_kstr_d];
+  for (cartesian_waypoints_planner_B.b_kstr_c = 0;
+       cartesian_waypoints_planner_B.b_kstr_c <=
+       cartesian_waypoints_planner_B.loop_ub_k;
+       cartesian_waypoints_planner_B.b_kstr_c++) {
+    bname->data[cartesian_waypoints_planner_B.b_kstr_c] = jnt->Type->
+      data[cartesian_waypoints_planner_B.b_kstr_c];
   }
 
-  for (cartesian_waypoints_planner_B.b_kstr_d = 0;
-       cartesian_waypoints_planner_B.b_kstr_d < 5;
-       cartesian_waypoints_planner_B.b_kstr_d++) {
-    cartesian_waypoints_planner_B.b_k1[cartesian_waypoints_planner_B.b_kstr_d] =
-      tmp[cartesian_waypoints_planner_B.b_kstr_d];
+  for (cartesian_waypoints_planner_B.b_kstr_c = 0;
+       cartesian_waypoints_planner_B.b_kstr_c < 5;
+       cartesian_waypoints_planner_B.b_kstr_c++) {
+    cartesian_waypoints_planner_B.b_dv[cartesian_waypoints_planner_B.b_kstr_c] =
+      tmp[cartesian_waypoints_planner_B.b_kstr_c];
   }
 
   cartesian_waypoints_planner_B.b_bool_i = false;
   if (bname->size[1] == 5) {
-    cartesian_waypoints_planner_B.b_kstr_d = 1;
+    cartesian_waypoints_planner_B.b_kstr_c = 1;
     do {
       exitg2 = 0;
-      if (cartesian_waypoints_planner_B.b_kstr_d - 1 < 5) {
-        cartesian_waypoints_planner_B.loop_ub_b =
-          cartesian_waypoints_planner_B.b_kstr_d - 1;
-        if (bname->data[cartesian_waypoints_planner_B.loop_ub_b] !=
-            cartesian_waypoints_planner_B.b_k1[cartesian_waypoints_planner_B.loop_ub_b])
+      if (cartesian_waypoints_planner_B.b_kstr_c - 1 < 5) {
+        cartesian_waypoints_planner_B.loop_ub_k =
+          cartesian_waypoints_planner_B.b_kstr_c - 1;
+        if (bname->data[cartesian_waypoints_planner_B.loop_ub_k] !=
+            cartesian_waypoints_planner_B.b_dv[cartesian_waypoints_planner_B.loop_ub_k])
         {
           exitg2 = 1;
         } else {
-          cartesian_waypoints_planner_B.b_kstr_d++;
+          cartesian_waypoints_planner_B.b_kstr_c++;
         }
       } else {
         cartesian_waypoints_planner_B.b_bool_i = true;
@@ -16382,26 +17101,26 @@ static void cartesian_RigidBodyTree_addBody(x_robotics_manip_internal_Rig_T *obj
   if (!cartesian_waypoints_planner_B.b_bool_i) {
     obj->NumNonFixedBodies++;
     jnt = body->JointInternal;
-    cartesian_waypoints_planner_B.b_kstr_d = static_cast<int32_T>(body->Index) -
+    cartesian_waypoints_planner_B.b_kstr_c = static_cast<int32_T>(body->Index) -
       1;
-    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_d] =
+    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_c] =
       obj->PositionNumber + 1.0;
-    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_d + 8] =
+    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_c + 8] =
       obj->PositionNumber + jnt->PositionNumber;
     jnt = body->JointInternal;
-    cartesian_waypoints_planner_B.b_kstr_d = static_cast<int32_T>(body->Index) -
+    cartesian_waypoints_planner_B.b_kstr_c = static_cast<int32_T>(body->Index) -
       1;
-    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_d] =
+    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_c] =
       obj->VelocityNumber + 1.0;
-    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_d + 8] =
+    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_c + 8] =
       obj->VelocityNumber + jnt->VelocityNumber;
   } else {
-    cartesian_waypoints_planner_B.b_kstr_d = static_cast<int32_T>(body->Index);
-    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_d - 1] = 0.0;
-    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_d + 7] = -1.0;
-    cartesian_waypoints_planner_B.b_kstr_d = static_cast<int32_T>(body->Index);
-    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_d - 1] = 0.0;
-    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_d + 7] = -1.0;
+    cartesian_waypoints_planner_B.b_kstr_c = static_cast<int32_T>(body->Index);
+    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_c - 1] = 0.0;
+    obj->PositionDoFMap[cartesian_waypoints_planner_B.b_kstr_c + 7] = -1.0;
+    cartesian_waypoints_planner_B.b_kstr_c = static_cast<int32_T>(body->Index);
+    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_c - 1] = 0.0;
+    obj->VelocityDoFMap[cartesian_waypoints_planner_B.b_kstr_c + 7] = -1.0;
   }
 
   jnt = body->JointInternal;
@@ -16422,23 +17141,23 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
   *iobj_10, w_robotics_manip_internal_Rig_T *iobj_11,
   w_robotics_manip_internal_Rig_T *iobj_12, w_robotics_manip_internal_Rig_T
   *iobj_13, w_robotics_manip_internal_Rig_T *iobj_14,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_15, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_16, c_rigidBodyJoint_cartesian_wa_T *iobj_17,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_18, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_19, c_rigidBodyJoint_cartesian_wa_T *iobj_20,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_21, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_22, c_rigidBodyJoint_cartesian_wa_T *iobj_23,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_24, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_25, c_rigidBodyJoint_cartesian_wa_T *iobj_26,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_27, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_28, c_rigidBodyJoint_cartesian_wa_T *iobj_29,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_30, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_31, c_rigidBodyJoint_cartesian_wa_T *iobj_32,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_33, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_34, c_rigidBodyJoint_cartesian_wa_T *iobj_35,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_36, c_rigidBodyJoint_cartesian_wa_T
-  *iobj_37, c_rigidBodyJoint_cartesian_wa_T *iobj_38,
-  c_rigidBodyJoint_cartesian_wa_T *iobj_39, w_robotics_manip_internal_Rig_T
+  c_rigidBodyJoint_cartesian__e_T *iobj_15, c_rigidBodyJoint_cartesian__e_T
+  *iobj_16, c_rigidBodyJoint_cartesian__e_T *iobj_17,
+  c_rigidBodyJoint_cartesian__e_T *iobj_18, c_rigidBodyJoint_cartesian__e_T
+  *iobj_19, c_rigidBodyJoint_cartesian__e_T *iobj_20,
+  c_rigidBodyJoint_cartesian__e_T *iobj_21, c_rigidBodyJoint_cartesian__e_T
+  *iobj_22, c_rigidBodyJoint_cartesian__e_T *iobj_23,
+  c_rigidBodyJoint_cartesian__e_T *iobj_24, c_rigidBodyJoint_cartesian__e_T
+  *iobj_25, c_rigidBodyJoint_cartesian__e_T *iobj_26,
+  c_rigidBodyJoint_cartesian__e_T *iobj_27, c_rigidBodyJoint_cartesian__e_T
+  *iobj_28, c_rigidBodyJoint_cartesian__e_T *iobj_29,
+  c_rigidBodyJoint_cartesian__e_T *iobj_30, c_rigidBodyJoint_cartesian__e_T
+  *iobj_31, c_rigidBodyJoint_cartesian__e_T *iobj_32,
+  c_rigidBodyJoint_cartesian__e_T *iobj_33, c_rigidBodyJoint_cartesian__e_T
+  *iobj_34, c_rigidBodyJoint_cartesian__e_T *iobj_35,
+  c_rigidBodyJoint_cartesian__e_T *iobj_36, c_rigidBodyJoint_cartesian__e_T
+  *iobj_37, c_rigidBodyJoint_cartesian__e_T *iobj_38,
+  c_rigidBodyJoint_cartesian__e_T *iobj_39, w_robotics_manip_internal_Rig_T
   *iobj_40, x_robotics_manip_internal_Rig_T *iobj_41)
 {
   x_robotics_manip_internal_Rig_T *newrobot;
@@ -16446,14 +17165,14 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
   v_robotics_manip_internal_Rig_T *parent;
   emxArray_char_T_cartesian_way_T *b_basename;
   w_robotics_manip_internal_Rig_T *body_0;
-  c_rigidBodyJoint_cartesian_wa_T *jnt;
+  c_rigidBodyJoint_cartesian__e_T *jnt;
   emxArray_char_T_cartesian_way_T *bname;
   static const char_T tmp[5] = { 'f', 'i', 'x', 'e', 'd' };
 
   boolean_T exitg1;
   int32_T exitg2;
   cartesian_waypoi_emxInit_char_T(&b_basename, 2);
-  newrobot = c_RigidBodyTree_RigidBodyTree_e(iobj_41, iobj_0, iobj_1, iobj_2,
+  newrobot = RigidBodyTree_RigidBodyTree_ev(iobj_41, iobj_0, iobj_1, iobj_2,
     iobj_3, iobj_4, iobj_5, iobj_6, iobj_15, iobj_16, iobj_17, iobj_18, iobj_19,
     iobj_20, iobj_21, iobj_22, iobj_39, iobj_40);
   cartesian_waypoints_planner_B.b_kstr_h = b_basename->size[0] *
@@ -16462,11 +17181,11 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
   b_basename->size[1] = rigidbodytree->Base.NameInternal->size[1];
   cartes_emxEnsureCapacity_char_T(b_basename,
     cartesian_waypoints_planner_B.b_kstr_h);
-  cartesian_waypoints_planner_B.loop_ub_hp = rigidbodytree->
+  cartesian_waypoints_planner_B.loop_ub_m = rigidbodytree->
     Base.NameInternal->size[0] * rigidbodytree->Base.NameInternal->size[1] - 1;
   for (cartesian_waypoints_planner_B.b_kstr_h = 0;
        cartesian_waypoints_planner_B.b_kstr_h <=
-       cartesian_waypoints_planner_B.loop_ub_hp;
+       cartesian_waypoints_planner_B.loop_ub_m;
        cartesian_waypoints_planner_B.b_kstr_h++) {
     b_basename->data[cartesian_waypoints_planner_B.b_kstr_h] =
       rigidbodytree->Base.NameInternal->
@@ -16474,69 +17193,69 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
   }
 
   cartesian_waypoi_emxInit_char_T(&bname, 2);
-  cartesian_waypoints_planner_B.bid_l = -1.0;
+  cartesian_waypoints_planner_B.bid_e = -1.0;
   cartesian_waypoints_planner_B.b_kstr_h = bname->size[0] * bname->size[1];
   bname->size[0] = 1;
   bname->size[1] = newrobot->Base.NameInternal->size[1];
   cartes_emxEnsureCapacity_char_T(bname, cartesian_waypoints_planner_B.b_kstr_h);
-  cartesian_waypoints_planner_B.loop_ub_hp = newrobot->Base.NameInternal->size[0]
+  cartesian_waypoints_planner_B.loop_ub_m = newrobot->Base.NameInternal->size[0]
     * newrobot->Base.NameInternal->size[1] - 1;
   for (cartesian_waypoints_planner_B.b_kstr_h = 0;
        cartesian_waypoints_planner_B.b_kstr_h <=
-       cartesian_waypoints_planner_B.loop_ub_hp;
+       cartesian_waypoints_planner_B.loop_ub_m;
        cartesian_waypoints_planner_B.b_kstr_h++) {
     bname->data[cartesian_waypoints_planner_B.b_kstr_h] =
       newrobot->Base.NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
   }
 
   if (cartesian_waypoints_plan_strcmp(bname, b_basename)) {
-    cartesian_waypoints_planner_B.bid_l = 0.0;
+    cartesian_waypoints_planner_B.bid_e = 0.0;
   } else {
     cartesian_waypoints_planner_B.b_index = newrobot->NumBodies;
-    cartesian_waypoints_planner_B.b_i_n = 0;
+    cartesian_waypoints_planner_B.b_i_i = 0;
     exitg1 = false;
-    while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_n <=
+    while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_i <=
                          static_cast<int32_T>
                          (cartesian_waypoints_planner_B.b_index) - 1)) {
-      body_0 = newrobot->Bodies[cartesian_waypoints_planner_B.b_i_n];
+      body_0 = newrobot->Bodies[cartesian_waypoints_planner_B.b_i_i];
       cartesian_waypoints_planner_B.b_kstr_h = bname->size[0] * bname->size[1];
       bname->size[0] = 1;
       bname->size[1] = body_0->NameInternal->size[1];
       cartes_emxEnsureCapacity_char_T(bname,
         cartesian_waypoints_planner_B.b_kstr_h);
-      cartesian_waypoints_planner_B.loop_ub_hp = body_0->NameInternal->size[0] *
+      cartesian_waypoints_planner_B.loop_ub_m = body_0->NameInternal->size[0] *
         body_0->NameInternal->size[1] - 1;
       for (cartesian_waypoints_planner_B.b_kstr_h = 0;
            cartesian_waypoints_planner_B.b_kstr_h <=
-           cartesian_waypoints_planner_B.loop_ub_hp;
+           cartesian_waypoints_planner_B.loop_ub_m;
            cartesian_waypoints_planner_B.b_kstr_h++) {
         bname->data[cartesian_waypoints_planner_B.b_kstr_h] =
           body_0->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
       }
 
       if (cartesian_waypoints_plan_strcmp(bname, b_basename)) {
-        cartesian_waypoints_planner_B.bid_l = static_cast<real_T>
-          (cartesian_waypoints_planner_B.b_i_n) + 1.0;
+        cartesian_waypoints_planner_B.bid_e = static_cast<real_T>
+          (cartesian_waypoints_planner_B.b_i_i) + 1.0;
         exitg1 = true;
       } else {
-        cartesian_waypoints_planner_B.b_i_n++;
+        cartesian_waypoints_planner_B.b_i_i++;
       }
     }
   }
 
-  if ((!(cartesian_waypoints_planner_B.bid_l == 0.0)) &&
-      (cartesian_waypoints_planner_B.bid_l < 0.0)) {
+  if ((!(cartesian_waypoints_planner_B.bid_e == 0.0)) &&
+      (cartesian_waypoints_planner_B.bid_e < 0.0)) {
     cartesian_waypoints_planner_B.b_kstr_h = newrobot->Base.NameInternal->size[0]
       * newrobot->Base.NameInternal->size[1];
     newrobot->Base.NameInternal->size[0] = 1;
     newrobot->Base.NameInternal->size[1] = b_basename->size[1];
     cartes_emxEnsureCapacity_char_T(newrobot->Base.NameInternal,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = b_basename->size[0] *
+    cartesian_waypoints_planner_B.loop_ub_m = b_basename->size[0] *
       b_basename->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       newrobot->Base.NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h] =
         b_basename->data[cartesian_waypoints_planner_B.b_kstr_h];
@@ -16545,10 +17264,10 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
 
   if (1.0 <= rigidbodytree->NumBodies) {
     body = rigidbodytree->Bodies[0];
-    cartesian_waypoints_planner_B.bid_l = body->ParentIndex;
-    if (cartesian_waypoints_planner_B.bid_l > 0.0) {
+    cartesian_waypoints_planner_B.bid_e = body->ParentIndex;
+    if (cartesian_waypoints_planner_B.bid_e > 0.0) {
       parent = rigidbodytree->Bodies[static_cast<int32_T>
-        (cartesian_waypoints_planner_B.bid_l) - 1];
+        (cartesian_waypoints_planner_B.bid_e) - 1];
     } else {
       parent = &rigidbodytree->Base;
     }
@@ -16558,11 +17277,11 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     bname->size[1] = parent->NameInternal->size[1];
     cartes_emxEnsureCapacity_char_T(bname,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = parent->NameInternal->size[0] *
+    cartesian_waypoints_planner_B.loop_ub_m = parent->NameInternal->size[0] *
       parent->NameInternal->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       bname->data[cartesian_waypoints_planner_B.b_kstr_h] = parent->
         NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
@@ -16574,10 +17293,10 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
 
   if (2.0 <= rigidbodytree->NumBodies) {
     body = rigidbodytree->Bodies[1];
-    cartesian_waypoints_planner_B.bid_l = body->ParentIndex;
-    if (cartesian_waypoints_planner_B.bid_l > 0.0) {
+    cartesian_waypoints_planner_B.bid_e = body->ParentIndex;
+    if (cartesian_waypoints_planner_B.bid_e > 0.0) {
       parent = rigidbodytree->Bodies[static_cast<int32_T>
-        (cartesian_waypoints_planner_B.bid_l) - 1];
+        (cartesian_waypoints_planner_B.bid_e) - 1];
     } else {
       parent = &rigidbodytree->Base;
     }
@@ -16587,11 +17306,11 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     bname->size[1] = parent->NameInternal->size[1];
     cartes_emxEnsureCapacity_char_T(bname,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = parent->NameInternal->size[0] *
+    cartesian_waypoints_planner_B.loop_ub_m = parent->NameInternal->size[0] *
       parent->NameInternal->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       bname->data[cartesian_waypoints_planner_B.b_kstr_h] = parent->
         NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
@@ -16603,10 +17322,10 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
 
   if (3.0 <= rigidbodytree->NumBodies) {
     body = rigidbodytree->Bodies[2];
-    cartesian_waypoints_planner_B.bid_l = body->ParentIndex;
-    if (cartesian_waypoints_planner_B.bid_l > 0.0) {
+    cartesian_waypoints_planner_B.bid_e = body->ParentIndex;
+    if (cartesian_waypoints_planner_B.bid_e > 0.0) {
       parent = rigidbodytree->Bodies[static_cast<int32_T>
-        (cartesian_waypoints_planner_B.bid_l) - 1];
+        (cartesian_waypoints_planner_B.bid_e) - 1];
     } else {
       parent = &rigidbodytree->Base;
     }
@@ -16616,11 +17335,11 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     bname->size[1] = parent->NameInternal->size[1];
     cartes_emxEnsureCapacity_char_T(bname,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = parent->NameInternal->size[0] *
+    cartesian_waypoints_planner_B.loop_ub_m = parent->NameInternal->size[0] *
       parent->NameInternal->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       bname->data[cartesian_waypoints_planner_B.b_kstr_h] = parent->
         NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
@@ -16632,10 +17351,10 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
 
   if (4.0 <= rigidbodytree->NumBodies) {
     body = rigidbodytree->Bodies[3];
-    cartesian_waypoints_planner_B.bid_l = body->ParentIndex;
-    if (cartesian_waypoints_planner_B.bid_l > 0.0) {
+    cartesian_waypoints_planner_B.bid_e = body->ParentIndex;
+    if (cartesian_waypoints_planner_B.bid_e > 0.0) {
       parent = rigidbodytree->Bodies[static_cast<int32_T>
-        (cartesian_waypoints_planner_B.bid_l) - 1];
+        (cartesian_waypoints_planner_B.bid_e) - 1];
     } else {
       parent = &rigidbodytree->Base;
     }
@@ -16645,11 +17364,11 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     bname->size[1] = parent->NameInternal->size[1];
     cartes_emxEnsureCapacity_char_T(bname,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = parent->NameInternal->size[0] *
+    cartesian_waypoints_planner_B.loop_ub_m = parent->NameInternal->size[0] *
       parent->NameInternal->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       bname->data[cartesian_waypoints_planner_B.b_kstr_h] = parent->
         NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
@@ -16661,10 +17380,10 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
 
   if (5.0 <= rigidbodytree->NumBodies) {
     body = rigidbodytree->Bodies[4];
-    cartesian_waypoints_planner_B.bid_l = body->ParentIndex;
-    if (cartesian_waypoints_planner_B.bid_l > 0.0) {
+    cartesian_waypoints_planner_B.bid_e = body->ParentIndex;
+    if (cartesian_waypoints_planner_B.bid_e > 0.0) {
       parent = rigidbodytree->Bodies[static_cast<int32_T>
-        (cartesian_waypoints_planner_B.bid_l) - 1];
+        (cartesian_waypoints_planner_B.bid_e) - 1];
     } else {
       parent = &rigidbodytree->Base;
     }
@@ -16674,11 +17393,11 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     bname->size[1] = parent->NameInternal->size[1];
     cartes_emxEnsureCapacity_char_T(bname,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = parent->NameInternal->size[0] *
+    cartesian_waypoints_planner_B.loop_ub_m = parent->NameInternal->size[0] *
       parent->NameInternal->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       bname->data[cartesian_waypoints_planner_B.b_kstr_h] = parent->
         NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
@@ -16690,10 +17409,10 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
 
   if (6.0 <= rigidbodytree->NumBodies) {
     body = rigidbodytree->Bodies[5];
-    cartesian_waypoints_planner_B.bid_l = body->ParentIndex;
-    if (cartesian_waypoints_planner_B.bid_l > 0.0) {
+    cartesian_waypoints_planner_B.bid_e = body->ParentIndex;
+    if (cartesian_waypoints_planner_B.bid_e > 0.0) {
       parent = rigidbodytree->Bodies[static_cast<int32_T>
-        (cartesian_waypoints_planner_B.bid_l) - 1];
+        (cartesian_waypoints_planner_B.bid_e) - 1];
     } else {
       parent = &rigidbodytree->Base;
     }
@@ -16703,11 +17422,11 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     bname->size[1] = parent->NameInternal->size[1];
     cartes_emxEnsureCapacity_char_T(bname,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = parent->NameInternal->size[0] *
+    cartesian_waypoints_planner_B.loop_ub_m = parent->NameInternal->size[0] *
       parent->NameInternal->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       bname->data[cartesian_waypoints_planner_B.b_kstr_h] = parent->
         NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
@@ -16719,10 +17438,10 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
 
   if (7.0 <= rigidbodytree->NumBodies) {
     body = rigidbodytree->Bodies[6];
-    cartesian_waypoints_planner_B.bid_l = body->ParentIndex;
-    if (cartesian_waypoints_planner_B.bid_l > 0.0) {
+    cartesian_waypoints_planner_B.bid_e = body->ParentIndex;
+    if (cartesian_waypoints_planner_B.bid_e > 0.0) {
       parent = rigidbodytree->Bodies[static_cast<int32_T>
-        (cartesian_waypoints_planner_B.bid_l) - 1];
+        (cartesian_waypoints_planner_B.bid_e) - 1];
     } else {
       parent = &rigidbodytree->Base;
     }
@@ -16732,65 +17451,65 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     bname->size[1] = parent->NameInternal->size[1];
     cartes_emxEnsureCapacity_char_T(bname,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = parent->NameInternal->size[0] *
+    cartesian_waypoints_planner_B.loop_ub_m = parent->NameInternal->size[0] *
       parent->NameInternal->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       bname->data[cartesian_waypoints_planner_B.b_kstr_h] = parent->
         NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
     }
 
-    cartesian_waypoints_planner_B.bid_l = -1.0;
+    cartesian_waypoints_planner_B.bid_e = -1.0;
     cartesian_waypoints_planner_B.b_kstr_h = b_basename->size[0] *
       b_basename->size[1];
     b_basename->size[0] = 1;
     b_basename->size[1] = newrobot->Base.NameInternal->size[1];
     cartes_emxEnsureCapacity_char_T(b_basename,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = newrobot->Base.NameInternal->
-      size[0] * newrobot->Base.NameInternal->size[1] - 1;
+    cartesian_waypoints_planner_B.loop_ub_m = newrobot->Base.NameInternal->size
+      [0] * newrobot->Base.NameInternal->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       b_basename->data[cartesian_waypoints_planner_B.b_kstr_h] =
         newrobot->Base.NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
     }
 
     if (cartesian_waypoints_plan_strcmp(b_basename, bname)) {
-      cartesian_waypoints_planner_B.bid_l = 0.0;
+      cartesian_waypoints_planner_B.bid_e = 0.0;
     } else {
       cartesian_waypoints_planner_B.b_index = newrobot->NumBodies;
-      cartesian_waypoints_planner_B.b_i_n = 0;
+      cartesian_waypoints_planner_B.b_i_i = 0;
       exitg1 = false;
-      while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_n <=
+      while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_i <=
                            static_cast<int32_T>
                            (cartesian_waypoints_planner_B.b_index) - 1)) {
-        body_0 = newrobot->Bodies[cartesian_waypoints_planner_B.b_i_n];
+        body_0 = newrobot->Bodies[cartesian_waypoints_planner_B.b_i_i];
         cartesian_waypoints_planner_B.b_kstr_h = b_basename->size[0] *
           b_basename->size[1];
         b_basename->size[0] = 1;
         b_basename->size[1] = body_0->NameInternal->size[1];
         cartes_emxEnsureCapacity_char_T(b_basename,
           cartesian_waypoints_planner_B.b_kstr_h);
-        cartesian_waypoints_planner_B.loop_ub_hp = body_0->NameInternal->size[0]
-          * body_0->NameInternal->size[1] - 1;
+        cartesian_waypoints_planner_B.loop_ub_m = body_0->NameInternal->size[0] *
+          body_0->NameInternal->size[1] - 1;
         for (cartesian_waypoints_planner_B.b_kstr_h = 0;
              cartesian_waypoints_planner_B.b_kstr_h <=
-             cartesian_waypoints_planner_B.loop_ub_hp;
+             cartesian_waypoints_planner_B.loop_ub_m;
              cartesian_waypoints_planner_B.b_kstr_h++) {
           b_basename->data[cartesian_waypoints_planner_B.b_kstr_h] =
             body_0->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
         }
 
         if (cartesian_waypoints_plan_strcmp(b_basename, bname)) {
-          cartesian_waypoints_planner_B.bid_l = static_cast<real_T>
-            (cartesian_waypoints_planner_B.b_i_n) + 1.0;
+          cartesian_waypoints_planner_B.bid_e = static_cast<real_T>
+            (cartesian_waypoints_planner_B.b_i_i) + 1.0;
           exitg1 = true;
         } else {
-          cartesian_waypoints_planner_B.b_i_n++;
+          cartesian_waypoints_planner_B.b_i_i++;
         }
       }
     }
@@ -16800,7 +17519,7 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     newrobot->Bodies[static_cast<int32_T>(cartesian_waypoints_planner_B.b_index)
       - 1] = body_0;
     body_0->Index = cartesian_waypoints_planner_B.b_index;
-    body_0->ParentIndex = cartesian_waypoints_planner_B.bid_l;
+    body_0->ParentIndex = cartesian_waypoints_planner_B.bid_e;
     body_0->JointInternal->InTree = true;
     newrobot->NumBodies++;
     jnt = body_0->JointInternal;
@@ -16809,11 +17528,11 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     bname->size[1] = jnt->Type->size[1];
     cartes_emxEnsureCapacity_char_T(bname,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = jnt->Type->size[0] * jnt->
+    cartesian_waypoints_planner_B.loop_ub_m = jnt->Type->size[0] * jnt->
       Type->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       bname->data[cartesian_waypoints_planner_B.b_kstr_h] = jnt->Type->
         data[cartesian_waypoints_planner_B.b_kstr_h];
@@ -16822,33 +17541,33 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h < 5;
          cartesian_waypoints_planner_B.b_kstr_h++) {
-      cartesian_waypoints_planner_B.b_fz[cartesian_waypoints_planner_B.b_kstr_h]
+      cartesian_waypoints_planner_B.b_ji[cartesian_waypoints_planner_B.b_kstr_h]
         = tmp[cartesian_waypoints_planner_B.b_kstr_h];
     }
 
-    cartesian_waypoints_planner_B.b_bool_p = false;
+    cartesian_waypoints_planner_B.b_bool_m = false;
     if (bname->size[1] == 5) {
       cartesian_waypoints_planner_B.b_kstr_h = 1;
       do {
         exitg2 = 0;
         if (cartesian_waypoints_planner_B.b_kstr_h - 1 < 5) {
-          cartesian_waypoints_planner_B.loop_ub_hp =
+          cartesian_waypoints_planner_B.loop_ub_m =
             cartesian_waypoints_planner_B.b_kstr_h - 1;
-          if (bname->data[cartesian_waypoints_planner_B.loop_ub_hp] !=
-              cartesian_waypoints_planner_B.b_fz[cartesian_waypoints_planner_B.loop_ub_hp])
+          if (bname->data[cartesian_waypoints_planner_B.loop_ub_m] !=
+              cartesian_waypoints_planner_B.b_ji[cartesian_waypoints_planner_B.loop_ub_m])
           {
             exitg2 = 1;
           } else {
             cartesian_waypoints_planner_B.b_kstr_h++;
           }
         } else {
-          cartesian_waypoints_planner_B.b_bool_p = true;
+          cartesian_waypoints_planner_B.b_bool_m = true;
           exitg2 = 1;
         }
       } while (exitg2 == 0);
     }
 
-    if (!cartesian_waypoints_planner_B.b_bool_p) {
+    if (!cartesian_waypoints_planner_B.b_bool_m) {
       newrobot->NumNonFixedBodies++;
       jnt = body_0->JointInternal;
       cartesian_waypoints_planner_B.b_kstr_h = static_cast<int32_T>
@@ -16885,10 +17604,10 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
 
   if (8.0 <= rigidbodytree->NumBodies) {
     body = rigidbodytree->Bodies[7];
-    cartesian_waypoints_planner_B.bid_l = body->ParentIndex;
-    if (cartesian_waypoints_planner_B.bid_l > 0.0) {
+    cartesian_waypoints_planner_B.bid_e = body->ParentIndex;
+    if (cartesian_waypoints_planner_B.bid_e > 0.0) {
       parent = rigidbodytree->Bodies[static_cast<int32_T>
-        (cartesian_waypoints_planner_B.bid_l) - 1];
+        (cartesian_waypoints_planner_B.bid_e) - 1];
     } else {
       parent = &rigidbodytree->Base;
     }
@@ -16898,65 +17617,65 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     bname->size[1] = parent->NameInternal->size[1];
     cartes_emxEnsureCapacity_char_T(bname,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = parent->NameInternal->size[0] *
+    cartesian_waypoints_planner_B.loop_ub_m = parent->NameInternal->size[0] *
       parent->NameInternal->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       bname->data[cartesian_waypoints_planner_B.b_kstr_h] = parent->
         NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
     }
 
-    cartesian_waypoints_planner_B.bid_l = -1.0;
+    cartesian_waypoints_planner_B.bid_e = -1.0;
     cartesian_waypoints_planner_B.b_kstr_h = b_basename->size[0] *
       b_basename->size[1];
     b_basename->size[0] = 1;
     b_basename->size[1] = newrobot->Base.NameInternal->size[1];
     cartes_emxEnsureCapacity_char_T(b_basename,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = newrobot->Base.NameInternal->
-      size[0] * newrobot->Base.NameInternal->size[1] - 1;
+    cartesian_waypoints_planner_B.loop_ub_m = newrobot->Base.NameInternal->size
+      [0] * newrobot->Base.NameInternal->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       b_basename->data[cartesian_waypoints_planner_B.b_kstr_h] =
         newrobot->Base.NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
     }
 
     if (cartesian_waypoints_plan_strcmp(b_basename, bname)) {
-      cartesian_waypoints_planner_B.bid_l = 0.0;
+      cartesian_waypoints_planner_B.bid_e = 0.0;
     } else {
       cartesian_waypoints_planner_B.b_index = newrobot->NumBodies;
-      cartesian_waypoints_planner_B.b_i_n = 0;
+      cartesian_waypoints_planner_B.b_i_i = 0;
       exitg1 = false;
-      while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_n <=
+      while ((!exitg1) && (cartesian_waypoints_planner_B.b_i_i <=
                            static_cast<int32_T>
                            (cartesian_waypoints_planner_B.b_index) - 1)) {
-        body_0 = newrobot->Bodies[cartesian_waypoints_planner_B.b_i_n];
+        body_0 = newrobot->Bodies[cartesian_waypoints_planner_B.b_i_i];
         cartesian_waypoints_planner_B.b_kstr_h = b_basename->size[0] *
           b_basename->size[1];
         b_basename->size[0] = 1;
         b_basename->size[1] = body_0->NameInternal->size[1];
         cartes_emxEnsureCapacity_char_T(b_basename,
           cartesian_waypoints_planner_B.b_kstr_h);
-        cartesian_waypoints_planner_B.loop_ub_hp = body_0->NameInternal->size[0]
-          * body_0->NameInternal->size[1] - 1;
+        cartesian_waypoints_planner_B.loop_ub_m = body_0->NameInternal->size[0] *
+          body_0->NameInternal->size[1] - 1;
         for (cartesian_waypoints_planner_B.b_kstr_h = 0;
              cartesian_waypoints_planner_B.b_kstr_h <=
-             cartesian_waypoints_planner_B.loop_ub_hp;
+             cartesian_waypoints_planner_B.loop_ub_m;
              cartesian_waypoints_planner_B.b_kstr_h++) {
           b_basename->data[cartesian_waypoints_planner_B.b_kstr_h] =
             body_0->NameInternal->data[cartesian_waypoints_planner_B.b_kstr_h];
         }
 
         if (cartesian_waypoints_plan_strcmp(b_basename, bname)) {
-          cartesian_waypoints_planner_B.bid_l = static_cast<real_T>
-            (cartesian_waypoints_planner_B.b_i_n) + 1.0;
+          cartesian_waypoints_planner_B.bid_e = static_cast<real_T>
+            (cartesian_waypoints_planner_B.b_i_i) + 1.0;
           exitg1 = true;
         } else {
-          cartesian_waypoints_planner_B.b_i_n++;
+          cartesian_waypoints_planner_B.b_i_i++;
         }
       }
     }
@@ -16966,7 +17685,7 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     newrobot->Bodies[static_cast<int32_T>(cartesian_waypoints_planner_B.b_index)
       - 1] = body_0;
     body_0->Index = cartesian_waypoints_planner_B.b_index;
-    body_0->ParentIndex = cartesian_waypoints_planner_B.bid_l;
+    body_0->ParentIndex = cartesian_waypoints_planner_B.bid_e;
     body_0->JointInternal->InTree = true;
     newrobot->NumBodies++;
     jnt = body_0->JointInternal;
@@ -16975,11 +17694,11 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     bname->size[1] = jnt->Type->size[1];
     cartes_emxEnsureCapacity_char_T(bname,
       cartesian_waypoints_planner_B.b_kstr_h);
-    cartesian_waypoints_planner_B.loop_ub_hp = jnt->Type->size[0] * jnt->
+    cartesian_waypoints_planner_B.loop_ub_m = jnt->Type->size[0] * jnt->
       Type->size[1] - 1;
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h <=
-         cartesian_waypoints_planner_B.loop_ub_hp;
+         cartesian_waypoints_planner_B.loop_ub_m;
          cartesian_waypoints_planner_B.b_kstr_h++) {
       bname->data[cartesian_waypoints_planner_B.b_kstr_h] = jnt->Type->
         data[cartesian_waypoints_planner_B.b_kstr_h];
@@ -16988,33 +17707,33 @@ static void inverseKinematics_set_RigidBody(b_inverseKinematics_cartesian_T *obj
     for (cartesian_waypoints_planner_B.b_kstr_h = 0;
          cartesian_waypoints_planner_B.b_kstr_h < 5;
          cartesian_waypoints_planner_B.b_kstr_h++) {
-      cartesian_waypoints_planner_B.b_fz[cartesian_waypoints_planner_B.b_kstr_h]
+      cartesian_waypoints_planner_B.b_ji[cartesian_waypoints_planner_B.b_kstr_h]
         = tmp[cartesian_waypoints_planner_B.b_kstr_h];
     }
 
-    cartesian_waypoints_planner_B.b_bool_p = false;
+    cartesian_waypoints_planner_B.b_bool_m = false;
     if (bname->size[1] == 5) {
       cartesian_waypoints_planner_B.b_kstr_h = 1;
       do {
         exitg2 = 0;
         if (cartesian_waypoints_planner_B.b_kstr_h - 1 < 5) {
-          cartesian_waypoints_planner_B.loop_ub_hp =
+          cartesian_waypoints_planner_B.loop_ub_m =
             cartesian_waypoints_planner_B.b_kstr_h - 1;
-          if (bname->data[cartesian_waypoints_planner_B.loop_ub_hp] !=
-              cartesian_waypoints_planner_B.b_fz[cartesian_waypoints_planner_B.loop_ub_hp])
+          if (bname->data[cartesian_waypoints_planner_B.loop_ub_m] !=
+              cartesian_waypoints_planner_B.b_ji[cartesian_waypoints_planner_B.loop_ub_m])
           {
             exitg2 = 1;
           } else {
             cartesian_waypoints_planner_B.b_kstr_h++;
           }
         } else {
-          cartesian_waypoints_planner_B.b_bool_p = true;
+          cartesian_waypoints_planner_B.b_bool_m = true;
           exitg2 = 1;
         }
       } while (exitg2 == 0);
     }
 
-    if (!cartesian_waypoints_planner_B.b_bool_p) {
+    if (!cartesian_waypoints_planner_B.b_bool_m) {
       newrobot->NumNonFixedBodies++;
       jnt = body_0->JointInternal;
       cartesian_waypoints_planner_B.b_kstr_h = static_cast<int32_T>
@@ -17084,178 +17803,1462 @@ static h_robotics_core_internal_Damp_T *DampedBFGSwGradientProjection_D
   return b_obj;
 }
 
+static void emxInitStruct_c_rigidBodyJoint1(c_rigidBodyJoint_cartesian_wa_T
+  *pStruct)
+{
+  cartesian_waypoi_emxInit_char_T(&pStruct->Type, 2);
+}
+
+static void emxInitStruct_o_robotics_manip_(o_robotics_manip_internal_Rig_T
+  *pStruct)
+{
+  cartesian_waypoi_emxInit_char_T(&pStruct->NameInternal, 2);
+  emxInitStruct_c_rigidBodyJoint1(&pStruct->JointInternal);
+}
+
+static void emxInitStruct_p_robotics_manip_(p_robotics_manip_internal_Rig_T
+  *pStruct)
+{
+  emxInitStruct_o_robotics_manip_(&pStruct->Base);
+}
+
+static void emxInitStruct_robotics_slmani_e(robotics_slmanip_internal_blo_T
+  *pStruct)
+{
+  emxInitStruct_p_robotics_manip_(&pStruct->TreeInternal);
+}
+
+static void emxInitStruct_n_robotics_manip_(n_robotics_manip_internal_Rig_T
+  *pStruct)
+{
+  cartesian_waypoi_emxInit_char_T(&pStruct->NameInternal, 2);
+  emxInitStruct_c_rigidBodyJoint1(&pStruct->JointInternal);
+}
+
+static n_robotics_manip_internal_Rig_T *cartesian_w_RigidBody_RigidBody
+  (n_robotics_manip_internal_Rig_T *obj)
+{
+  n_robotics_manip_internal_Rig_T *b_obj;
+  emxArray_char_T_cartesian_way_T *switch_expression;
+  boolean_T b_bool;
+  int32_T b_kstr;
+  char_T b[8];
+  char_T b_0[9];
+  int32_T loop_ub;
+  static const char_T tmp[13] = { 'e', 'd', 'o', '_', 'b', 'a', 's', 'e', '_',
+    'l', 'i', 'n', 'k' };
+
+  static const char_T tmp_0[5] = { 'f', 'i', 'x', 'e', 'd' };
+
+  static const char_T tmp_1[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+
+  static const char_T tmp_2[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
+
+  static const real_T tmp_3[16] = { 1.0, 0.0, -0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
+
+  static const real_T tmp_4[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
+
+  int32_T exitg1;
+  b_obj = obj;
+  b_kstr = obj->NameInternal->size[0] * obj->NameInternal->size[1];
+  obj->NameInternal->size[0] = 1;
+  obj->NameInternal->size[1] = 13;
+  cartes_emxEnsureCapacity_char_T(obj->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 13; b_kstr++) {
+    obj->NameInternal->data[b_kstr] = tmp[b_kstr];
+  }
+
+  obj->ParentIndex = 0.0;
+  b_kstr = obj->JointInternal.Type->size[0] * obj->JointInternal.Type->size[1];
+  obj->JointInternal.Type->size[0] = 1;
+  obj->JointInternal.Type->size[1] = 5;
+  cartes_emxEnsureCapacity_char_T(obj->JointInternal.Type, b_kstr);
+  for (b_kstr = 0; b_kstr < 5; b_kstr++) {
+    obj->JointInternal.Type->data[b_kstr] = tmp_0[b_kstr];
+  }
+
+  cartesian_waypoi_emxInit_char_T(&switch_expression, 2);
+  b_kstr = switch_expression->size[0] * switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = obj->JointInternal.Type->size[1];
+  cartes_emxEnsureCapacity_char_T(switch_expression, b_kstr);
+  loop_ub = obj->JointInternal.Type->size[0] * obj->JointInternal.Type->size[1]
+    - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    switch_expression->data[b_kstr] = obj->JointInternal.Type->data[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    b[b_kstr] = tmp_1[b_kstr];
+  }
+
+  b_bool = false;
+  if (switch_expression->size[1] == 8) {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        loop_ub = b_kstr - 1;
+        if (switch_expression->data[loop_ub] != b[loop_ub]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (b_bool) {
+    b_kstr = 0;
+  } else {
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      b_0[b_kstr] = tmp_2[b_kstr];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] == 9) {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          loop_ub = b_kstr - 1;
+          if (switch_expression->data[loop_ub] != b_0[loop_ub]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      b_kstr = 1;
+    } else {
+      b_kstr = -1;
+    }
+  }
+
+  cartesian_waypoi_emxFree_char_T(&switch_expression);
+  switch (b_kstr) {
+   case 0:
+    obj->JointInternal.PositionNumber = 1.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    obj->JointInternal.PositionNumber = 1.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    obj->JointInternal.PositionNumber = 0.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal.JointToParentTransform[b_kstr] = tmp_3[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal.ChildToJointTransform[b_kstr] = tmp_4[b_kstr];
+  }
+
+  obj->JointInternal.JointAxisInternal[0] = 0.0;
+  obj->JointInternal.JointAxisInternal[1] = 0.0;
+  obj->JointInternal.JointAxisInternal[2] = 0.0;
+  return b_obj;
+}
+
+static n_robotics_manip_internal_Rig_T *cartesian_RigidBody_RigidBody_e
+  (n_robotics_manip_internal_Rig_T *obj)
+{
+  n_robotics_manip_internal_Rig_T *b_obj;
+  emxArray_char_T_cartesian_way_T *switch_expression;
+  boolean_T b_bool;
+  int32_T b_kstr;
+  char_T b[8];
+  char_T b_0[9];
+  int32_T loop_ub;
+  static const char_T tmp[10] = { 'e', 'd', 'o', '_', 'l', 'i', 'n', 'k', '_',
+    '1' };
+
+  static const char_T tmp_0[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+
+  static const char_T tmp_1[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
+
+  static const real_T tmp_2[16] = { 1.0, 0.0, -0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.337, 1.0 };
+
+  static const real_T tmp_3[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
+
+  int32_T exitg1;
+  b_obj = obj;
+  b_kstr = obj->NameInternal->size[0] * obj->NameInternal->size[1];
+  obj->NameInternal->size[0] = 1;
+  obj->NameInternal->size[1] = 10;
+  cartes_emxEnsureCapacity_char_T(obj->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 10; b_kstr++) {
+    obj->NameInternal->data[b_kstr] = tmp[b_kstr];
+  }
+
+  obj->ParentIndex = 1.0;
+  b_kstr = obj->JointInternal.Type->size[0] * obj->JointInternal.Type->size[1];
+  obj->JointInternal.Type->size[0] = 1;
+  obj->JointInternal.Type->size[1] = 8;
+  cartes_emxEnsureCapacity_char_T(obj->JointInternal.Type, b_kstr);
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    obj->JointInternal.Type->data[b_kstr] = tmp_0[b_kstr];
+  }
+
+  cartesian_waypoi_emxInit_char_T(&switch_expression, 2);
+  b_kstr = switch_expression->size[0] * switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = obj->JointInternal.Type->size[1];
+  cartes_emxEnsureCapacity_char_T(switch_expression, b_kstr);
+  loop_ub = obj->JointInternal.Type->size[0] * obj->JointInternal.Type->size[1]
+    - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    switch_expression->data[b_kstr] = obj->JointInternal.Type->data[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    b[b_kstr] = tmp_0[b_kstr];
+  }
+
+  b_bool = false;
+  if (switch_expression->size[1] == 8) {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        loop_ub = b_kstr - 1;
+        if (switch_expression->data[loop_ub] != b[loop_ub]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (b_bool) {
+    b_kstr = 0;
+  } else {
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      b_0[b_kstr] = tmp_1[b_kstr];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] == 9) {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          loop_ub = b_kstr - 1;
+          if (switch_expression->data[loop_ub] != b_0[loop_ub]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      b_kstr = 1;
+    } else {
+      b_kstr = -1;
+    }
+  }
+
+  cartesian_waypoi_emxFree_char_T(&switch_expression);
+  switch (b_kstr) {
+   case 0:
+    obj->JointInternal.PositionNumber = 1.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    obj->JointInternal.PositionNumber = 1.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    obj->JointInternal.PositionNumber = 0.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal.JointToParentTransform[b_kstr] = tmp_2[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal.ChildToJointTransform[b_kstr] = tmp_3[b_kstr];
+  }
+
+  obj->JointInternal.JointAxisInternal[0] = 0.0;
+  obj->JointInternal.JointAxisInternal[1] = 0.0;
+  obj->JointInternal.JointAxisInternal[2] = 1.0;
+  return b_obj;
+}
+
+static n_robotics_manip_internal_Rig_T *cartesia_RigidBody_RigidBody_ev
+  (n_robotics_manip_internal_Rig_T *obj)
+{
+  n_robotics_manip_internal_Rig_T *b_obj;
+  emxArray_char_T_cartesian_way_T *switch_expression;
+  boolean_T b_bool;
+  int32_T b_kstr;
+  char_T b[8];
+  char_T b_0[9];
+  int32_T loop_ub;
+  static const char_T tmp[10] = { 'e', 'd', 'o', '_', 'l', 'i', 'n', 'k', '_',
+    '2' };
+
+  static const char_T tmp_0[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+
+  static const char_T tmp_1[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
+
+  static const real_T tmp_2[16] = { 1.0, 0.0, -0.0, 0.0, 0.0,
+    4.8965888601467475E-12, 1.0, 0.0, 0.0, -1.0, 4.8965888601467475E-12, 0.0,
+    0.0, 0.0, 0.0, 1.0 };
+
+  static const real_T tmp_3[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
+
+  int32_T exitg1;
+  b_obj = obj;
+  b_kstr = obj->NameInternal->size[0] * obj->NameInternal->size[1];
+  obj->NameInternal->size[0] = 1;
+  obj->NameInternal->size[1] = 10;
+  cartes_emxEnsureCapacity_char_T(obj->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 10; b_kstr++) {
+    obj->NameInternal->data[b_kstr] = tmp[b_kstr];
+  }
+
+  obj->ParentIndex = 2.0;
+  b_kstr = obj->JointInternal.Type->size[0] * obj->JointInternal.Type->size[1];
+  obj->JointInternal.Type->size[0] = 1;
+  obj->JointInternal.Type->size[1] = 8;
+  cartes_emxEnsureCapacity_char_T(obj->JointInternal.Type, b_kstr);
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    obj->JointInternal.Type->data[b_kstr] = tmp_0[b_kstr];
+  }
+
+  cartesian_waypoi_emxInit_char_T(&switch_expression, 2);
+  b_kstr = switch_expression->size[0] * switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = obj->JointInternal.Type->size[1];
+  cartes_emxEnsureCapacity_char_T(switch_expression, b_kstr);
+  loop_ub = obj->JointInternal.Type->size[0] * obj->JointInternal.Type->size[1]
+    - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    switch_expression->data[b_kstr] = obj->JointInternal.Type->data[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    b[b_kstr] = tmp_0[b_kstr];
+  }
+
+  b_bool = false;
+  if (switch_expression->size[1] == 8) {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        loop_ub = b_kstr - 1;
+        if (switch_expression->data[loop_ub] != b[loop_ub]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (b_bool) {
+    b_kstr = 0;
+  } else {
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      b_0[b_kstr] = tmp_1[b_kstr];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] == 9) {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          loop_ub = b_kstr - 1;
+          if (switch_expression->data[loop_ub] != b_0[loop_ub]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      b_kstr = 1;
+    } else {
+      b_kstr = -1;
+    }
+  }
+
+  cartesian_waypoi_emxFree_char_T(&switch_expression);
+  switch (b_kstr) {
+   case 0:
+    obj->JointInternal.PositionNumber = 1.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    obj->JointInternal.PositionNumber = 1.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    obj->JointInternal.PositionNumber = 0.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal.JointToParentTransform[b_kstr] = tmp_2[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal.ChildToJointTransform[b_kstr] = tmp_3[b_kstr];
+  }
+
+  obj->JointInternal.JointAxisInternal[0] = 0.0;
+  obj->JointInternal.JointAxisInternal[1] = 0.0;
+  obj->JointInternal.JointAxisInternal[2] = -1.0;
+  return b_obj;
+}
+
+static n_robotics_manip_internal_Rig_T *cartesi_RigidBody_RigidBody_evq
+  (n_robotics_manip_internal_Rig_T *obj)
+{
+  n_robotics_manip_internal_Rig_T *b_obj;
+  emxArray_char_T_cartesian_way_T *switch_expression;
+  boolean_T b_bool;
+  int32_T b_kstr;
+  char_T b[8];
+  char_T b_0[9];
+  int32_T loop_ub;
+  static const char_T tmp[10] = { 'e', 'd', 'o', '_', 'l', 'i', 'n', 'k', '_',
+    '3' };
+
+  static const char_T tmp_0[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+
+  static const char_T tmp_1[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
+
+  static const real_T tmp_2[16] = { 1.0, 2.0682310711021444E-13,
+    2.0682310711021444E-13, 0.0, 2.0682310711021444E-13, -1.0, -0.0, 0.0,
+    2.0682310711021444E-13, 4.2775797634723234E-26, -1.0, 0.0, 0.0, 0.2105, 0.0,
+    1.0 };
+
+  static const real_T tmp_3[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
+
+  int32_T exitg1;
+  b_obj = obj;
+  b_kstr = obj->NameInternal->size[0] * obj->NameInternal->size[1];
+  obj->NameInternal->size[0] = 1;
+  obj->NameInternal->size[1] = 10;
+  cartes_emxEnsureCapacity_char_T(obj->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 10; b_kstr++) {
+    obj->NameInternal->data[b_kstr] = tmp[b_kstr];
+  }
+
+  obj->ParentIndex = 3.0;
+  b_kstr = obj->JointInternal.Type->size[0] * obj->JointInternal.Type->size[1];
+  obj->JointInternal.Type->size[0] = 1;
+  obj->JointInternal.Type->size[1] = 8;
+  cartes_emxEnsureCapacity_char_T(obj->JointInternal.Type, b_kstr);
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    obj->JointInternal.Type->data[b_kstr] = tmp_0[b_kstr];
+  }
+
+  cartesian_waypoi_emxInit_char_T(&switch_expression, 2);
+  b_kstr = switch_expression->size[0] * switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = obj->JointInternal.Type->size[1];
+  cartes_emxEnsureCapacity_char_T(switch_expression, b_kstr);
+  loop_ub = obj->JointInternal.Type->size[0] * obj->JointInternal.Type->size[1]
+    - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    switch_expression->data[b_kstr] = obj->JointInternal.Type->data[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    b[b_kstr] = tmp_0[b_kstr];
+  }
+
+  b_bool = false;
+  if (switch_expression->size[1] == 8) {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        loop_ub = b_kstr - 1;
+        if (switch_expression->data[loop_ub] != b[loop_ub]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (b_bool) {
+    b_kstr = 0;
+  } else {
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      b_0[b_kstr] = tmp_1[b_kstr];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] == 9) {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          loop_ub = b_kstr - 1;
+          if (switch_expression->data[loop_ub] != b_0[loop_ub]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      b_kstr = 1;
+    } else {
+      b_kstr = -1;
+    }
+  }
+
+  cartesian_waypoi_emxFree_char_T(&switch_expression);
+  switch (b_kstr) {
+   case 0:
+    obj->JointInternal.PositionNumber = 1.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    obj->JointInternal.PositionNumber = 1.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    obj->JointInternal.PositionNumber = 0.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal.JointToParentTransform[b_kstr] = tmp_2[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal.ChildToJointTransform[b_kstr] = tmp_3[b_kstr];
+  }
+
+  obj->JointInternal.JointAxisInternal[0] = 0.0;
+  obj->JointInternal.JointAxisInternal[1] = 0.0;
+  obj->JointInternal.JointAxisInternal[2] = 1.0;
+  return b_obj;
+}
+
+static n_robotics_manip_internal_Rig_T *cartes_RigidBody_RigidBody_evqu
+  (n_robotics_manip_internal_Rig_T *obj)
+{
+  n_robotics_manip_internal_Rig_T *b_obj;
+  emxArray_char_T_cartesian_way_T *switch_expression;
+  boolean_T b_bool;
+  int32_T b_kstr;
+  char_T b[8];
+  char_T b_0[9];
+  int32_T loop_ub;
+  static const char_T tmp[10] = { 'e', 'd', 'o', '_', 'l', 'i', 'n', 'k', '_',
+    '4' };
+
+  static const char_T tmp_0[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+
+  static const char_T tmp_1[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
+
+  static const real_T tmp_2[16] = { 1.0, 0.0, -0.0, 0.0, 0.0,
+    4.8965888601467475E-12, 1.0, 0.0, 0.0, -1.0, 4.8965888601467475E-12, 0.0,
+    0.0, -0.268, 0.0, 1.0 };
+
+  static const real_T tmp_3[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
+
+  int32_T exitg1;
+  b_obj = obj;
+  b_kstr = obj->NameInternal->size[0] * obj->NameInternal->size[1];
+  obj->NameInternal->size[0] = 1;
+  obj->NameInternal->size[1] = 10;
+  cartes_emxEnsureCapacity_char_T(obj->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 10; b_kstr++) {
+    obj->NameInternal->data[b_kstr] = tmp[b_kstr];
+  }
+
+  obj->ParentIndex = 4.0;
+  b_kstr = obj->JointInternal.Type->size[0] * obj->JointInternal.Type->size[1];
+  obj->JointInternal.Type->size[0] = 1;
+  obj->JointInternal.Type->size[1] = 8;
+  cartes_emxEnsureCapacity_char_T(obj->JointInternal.Type, b_kstr);
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    obj->JointInternal.Type->data[b_kstr] = tmp_0[b_kstr];
+  }
+
+  cartesian_waypoi_emxInit_char_T(&switch_expression, 2);
+  b_kstr = switch_expression->size[0] * switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = obj->JointInternal.Type->size[1];
+  cartes_emxEnsureCapacity_char_T(switch_expression, b_kstr);
+  loop_ub = obj->JointInternal.Type->size[0] * obj->JointInternal.Type->size[1]
+    - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    switch_expression->data[b_kstr] = obj->JointInternal.Type->data[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    b[b_kstr] = tmp_0[b_kstr];
+  }
+
+  b_bool = false;
+  if (switch_expression->size[1] == 8) {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        loop_ub = b_kstr - 1;
+        if (switch_expression->data[loop_ub] != b[loop_ub]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (b_bool) {
+    b_kstr = 0;
+  } else {
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      b_0[b_kstr] = tmp_1[b_kstr];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] == 9) {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          loop_ub = b_kstr - 1;
+          if (switch_expression->data[loop_ub] != b_0[loop_ub]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      b_kstr = 1;
+    } else {
+      b_kstr = -1;
+    }
+  }
+
+  cartesian_waypoi_emxFree_char_T(&switch_expression);
+  switch (b_kstr) {
+   case 0:
+    obj->JointInternal.PositionNumber = 1.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    obj->JointInternal.PositionNumber = 1.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    obj->JointInternal.PositionNumber = 0.0;
+    obj->JointInternal.JointAxisInternal[0] = 0.0;
+    obj->JointInternal.JointAxisInternal[1] = 0.0;
+    obj->JointInternal.JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal.JointToParentTransform[b_kstr] = tmp_2[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    obj->JointInternal.ChildToJointTransform[b_kstr] = tmp_3[b_kstr];
+  }
+
+  obj->JointInternal.JointAxisInternal[0] = 0.0;
+  obj->JointInternal.JointAxisInternal[1] = 0.0;
+  obj->JointInternal.JointAxisInternal[2] = 1.0;
+  return b_obj;
+}
+
+static p_robotics_manip_internal_Rig_T *car_RigidBodyTree_RigidBodyTree
+  (p_robotics_manip_internal_Rig_T *obj, n_robotics_manip_internal_Rig_T *iobj_0,
+   n_robotics_manip_internal_Rig_T *iobj_1, n_robotics_manip_internal_Rig_T
+   *iobj_2, n_robotics_manip_internal_Rig_T *iobj_3,
+   n_robotics_manip_internal_Rig_T *iobj_4, n_robotics_manip_internal_Rig_T
+   *iobj_5, n_robotics_manip_internal_Rig_T *iobj_6,
+   n_robotics_manip_internal_Rig_T *iobj_7)
+{
+  p_robotics_manip_internal_Rig_T *b_obj;
+  o_robotics_manip_internal_Rig_T *obj_0;
+  emxArray_char_T_cartesian_way_T *switch_expression;
+  boolean_T b_bool;
+  int32_T b_kstr;
+  char_T b[8];
+  char_T b_0[9];
+  int32_T loop_ub;
+  static const char_T tmp[10] = { 'e', 'd', 'o', '_', 'l', 'i', 'n', 'k', '_',
+    '5' };
+
+  static const char_T tmp_0[8] = { 'r', 'e', 'v', 'o', 'l', 'u', 't', 'e' };
+
+  static const char_T tmp_1[9] = { 'p', 'r', 'i', 's', 'm', 'a', 't', 'i', 'c' };
+
+  static const real_T tmp_2[16] = { 1.0, 0.0, -0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
+
+  static const real_T tmp_3[16] = { 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0 };
+
+  static const char_T tmp_4[10] = { 'e', 'd', 'o', '_', 'l', 'i', 'n', 'k', '_',
+    '6' };
+
+  static const real_T tmp_5[16] = { 1.0, 0.0, -0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0,
+    0.0, 1.0, 0.0, 0.0, 0.0, 0.1745, 1.0 };
+
+  static const char_T tmp_6[11] = { 'e', 'd', 'o', '_', 'l', 'i', 'n', 'k', '_',
+    'e', 'e' };
+
+  static const char_T tmp_7[5] = { 'f', 'i', 'x', 'e', 'd' };
+
+  static const char_T tmp_8[5] = { 'w', 'o', 'r', 'l', 'd' };
+
+  int32_T exitg1;
+  b_obj = obj;
+  obj->Bodies[0] = cartesian_w_RigidBody_RigidBody(iobj_0);
+  obj->Bodies[1] = cartesian_RigidBody_RigidBody_e(iobj_7);
+  obj->Bodies[2] = cartesia_RigidBody_RigidBody_ev(iobj_1);
+  obj->Bodies[3] = cartesi_RigidBody_RigidBody_evq(iobj_2);
+  obj->Bodies[4] = cartes_RigidBody_RigidBody_evqu(iobj_3);
+  b_kstr = iobj_4->NameInternal->size[0] * iobj_4->NameInternal->size[1];
+  iobj_4->NameInternal->size[0] = 1;
+  iobj_4->NameInternal->size[1] = 10;
+  cartes_emxEnsureCapacity_char_T(iobj_4->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 10; b_kstr++) {
+    iobj_4->NameInternal->data[b_kstr] = tmp[b_kstr];
+  }
+
+  iobj_4->ParentIndex = 5.0;
+  b_kstr = iobj_4->JointInternal.Type->size[0] * iobj_4->
+    JointInternal.Type->size[1];
+  iobj_4->JointInternal.Type->size[0] = 1;
+  iobj_4->JointInternal.Type->size[1] = 8;
+  cartes_emxEnsureCapacity_char_T(iobj_4->JointInternal.Type, b_kstr);
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    iobj_4->JointInternal.Type->data[b_kstr] = tmp_0[b_kstr];
+  }
+
+  cartesian_waypoi_emxInit_char_T(&switch_expression, 2);
+  b_kstr = switch_expression->size[0] * switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = iobj_4->JointInternal.Type->size[1];
+  cartes_emxEnsureCapacity_char_T(switch_expression, b_kstr);
+  loop_ub = iobj_4->JointInternal.Type->size[0] * iobj_4->
+    JointInternal.Type->size[1] - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    switch_expression->data[b_kstr] = iobj_4->JointInternal.Type->data[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    b[b_kstr] = tmp_0[b_kstr];
+  }
+
+  b_bool = false;
+  if (switch_expression->size[1] == 8) {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        loop_ub = b_kstr - 1;
+        if (switch_expression->data[loop_ub] != b[loop_ub]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (b_bool) {
+    b_kstr = 0;
+  } else {
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      b_0[b_kstr] = tmp_1[b_kstr];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] == 9) {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          loop_ub = b_kstr - 1;
+          if (switch_expression->data[loop_ub] != b_0[loop_ub]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      b_kstr = 1;
+    } else {
+      b_kstr = -1;
+    }
+  }
+
+  switch (b_kstr) {
+   case 0:
+    iobj_4->JointInternal.PositionNumber = 1.0;
+    iobj_4->JointInternal.JointAxisInternal[0] = 0.0;
+    iobj_4->JointInternal.JointAxisInternal[1] = 0.0;
+    iobj_4->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    iobj_4->JointInternal.PositionNumber = 1.0;
+    iobj_4->JointInternal.JointAxisInternal[0] = 0.0;
+    iobj_4->JointInternal.JointAxisInternal[1] = 0.0;
+    iobj_4->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    iobj_4->JointInternal.PositionNumber = 0.0;
+    iobj_4->JointInternal.JointAxisInternal[0] = 0.0;
+    iobj_4->JointInternal.JointAxisInternal[1] = 0.0;
+    iobj_4->JointInternal.JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    iobj_4->JointInternal.JointToParentTransform[b_kstr] = tmp_2[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    iobj_4->JointInternal.ChildToJointTransform[b_kstr] = tmp_3[b_kstr];
+  }
+
+  iobj_4->JointInternal.JointAxisInternal[0] = 0.0;
+  iobj_4->JointInternal.JointAxisInternal[1] = 1.0;
+  iobj_4->JointInternal.JointAxisInternal[2] = 0.0;
+  obj->Bodies[5] = iobj_4;
+  b_kstr = iobj_5->NameInternal->size[0] * iobj_5->NameInternal->size[1];
+  iobj_5->NameInternal->size[0] = 1;
+  iobj_5->NameInternal->size[1] = 10;
+  cartes_emxEnsureCapacity_char_T(iobj_5->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 10; b_kstr++) {
+    iobj_5->NameInternal->data[b_kstr] = tmp_4[b_kstr];
+  }
+
+  iobj_5->ParentIndex = 6.0;
+  b_kstr = iobj_5->JointInternal.Type->size[0] * iobj_5->
+    JointInternal.Type->size[1];
+  iobj_5->JointInternal.Type->size[0] = 1;
+  iobj_5->JointInternal.Type->size[1] = 8;
+  cartes_emxEnsureCapacity_char_T(iobj_5->JointInternal.Type, b_kstr);
+  for (b_kstr = 0; b_kstr < 8; b_kstr++) {
+    iobj_5->JointInternal.Type->data[b_kstr] = tmp_0[b_kstr];
+  }
+
+  b_kstr = switch_expression->size[0] * switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = iobj_5->JointInternal.Type->size[1];
+  cartes_emxEnsureCapacity_char_T(switch_expression, b_kstr);
+  loop_ub = iobj_5->JointInternal.Type->size[0] * iobj_5->
+    JointInternal.Type->size[1] - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    switch_expression->data[b_kstr] = iobj_5->JointInternal.Type->data[b_kstr];
+  }
+
+  b_bool = false;
+  if (switch_expression->size[1] == 8) {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        loop_ub = b_kstr - 1;
+        if (switch_expression->data[loop_ub] != b[loop_ub]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (b_bool) {
+    b_kstr = 0;
+  } else {
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      b_0[b_kstr] = tmp_1[b_kstr];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] == 9) {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          loop_ub = b_kstr - 1;
+          if (switch_expression->data[loop_ub] != b_0[loop_ub]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      b_kstr = 1;
+    } else {
+      b_kstr = -1;
+    }
+  }
+
+  switch (b_kstr) {
+   case 0:
+    iobj_5->JointInternal.PositionNumber = 1.0;
+    iobj_5->JointInternal.JointAxisInternal[0] = 0.0;
+    iobj_5->JointInternal.JointAxisInternal[1] = 0.0;
+    iobj_5->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    iobj_5->JointInternal.PositionNumber = 1.0;
+    iobj_5->JointInternal.JointAxisInternal[0] = 0.0;
+    iobj_5->JointInternal.JointAxisInternal[1] = 0.0;
+    iobj_5->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    iobj_5->JointInternal.PositionNumber = 0.0;
+    iobj_5->JointInternal.JointAxisInternal[0] = 0.0;
+    iobj_5->JointInternal.JointAxisInternal[1] = 0.0;
+    iobj_5->JointInternal.JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    iobj_5->JointInternal.JointToParentTransform[b_kstr] = tmp_5[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    iobj_5->JointInternal.ChildToJointTransform[b_kstr] = tmp_3[b_kstr];
+  }
+
+  iobj_5->JointInternal.JointAxisInternal[0] = 0.0;
+  iobj_5->JointInternal.JointAxisInternal[1] = 0.0;
+  iobj_5->JointInternal.JointAxisInternal[2] = 1.0;
+  obj->Bodies[6] = iobj_5;
+  b_kstr = iobj_6->NameInternal->size[0] * iobj_6->NameInternal->size[1];
+  iobj_6->NameInternal->size[0] = 1;
+  iobj_6->NameInternal->size[1] = 11;
+  cartes_emxEnsureCapacity_char_T(iobj_6->NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 11; b_kstr++) {
+    iobj_6->NameInternal->data[b_kstr] = tmp_6[b_kstr];
+  }
+
+  iobj_6->ParentIndex = 7.0;
+  b_kstr = iobj_6->JointInternal.Type->size[0] * iobj_6->
+    JointInternal.Type->size[1];
+  iobj_6->JointInternal.Type->size[0] = 1;
+  iobj_6->JointInternal.Type->size[1] = 5;
+  cartes_emxEnsureCapacity_char_T(iobj_6->JointInternal.Type, b_kstr);
+  for (b_kstr = 0; b_kstr < 5; b_kstr++) {
+    iobj_6->JointInternal.Type->data[b_kstr] = tmp_7[b_kstr];
+  }
+
+  b_kstr = switch_expression->size[0] * switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = iobj_6->JointInternal.Type->size[1];
+  cartes_emxEnsureCapacity_char_T(switch_expression, b_kstr);
+  loop_ub = iobj_6->JointInternal.Type->size[0] * iobj_6->
+    JointInternal.Type->size[1] - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    switch_expression->data[b_kstr] = iobj_6->JointInternal.Type->data[b_kstr];
+  }
+
+  b_bool = false;
+  if (switch_expression->size[1] == 8) {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        loop_ub = b_kstr - 1;
+        if (switch_expression->data[loop_ub] != b[loop_ub]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (b_bool) {
+    b_kstr = 0;
+  } else {
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      b_0[b_kstr] = tmp_1[b_kstr];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] == 9) {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          loop_ub = b_kstr - 1;
+          if (switch_expression->data[loop_ub] != b_0[loop_ub]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      b_kstr = 1;
+    } else {
+      b_kstr = -1;
+    }
+  }
+
+  switch (b_kstr) {
+   case 0:
+    iobj_6->JointInternal.PositionNumber = 1.0;
+    iobj_6->JointInternal.JointAxisInternal[0] = 0.0;
+    iobj_6->JointInternal.JointAxisInternal[1] = 0.0;
+    iobj_6->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    iobj_6->JointInternal.PositionNumber = 1.0;
+    iobj_6->JointInternal.JointAxisInternal[0] = 0.0;
+    iobj_6->JointInternal.JointAxisInternal[1] = 0.0;
+    iobj_6->JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    iobj_6->JointInternal.PositionNumber = 0.0;
+    iobj_6->JointInternal.JointAxisInternal[0] = 0.0;
+    iobj_6->JointInternal.JointAxisInternal[1] = 0.0;
+    iobj_6->JointInternal.JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    iobj_6->JointInternal.JointToParentTransform[b_kstr] = tmp_2[b_kstr];
+  }
+
+  for (b_kstr = 0; b_kstr < 16; b_kstr++) {
+    iobj_6->JointInternal.ChildToJointTransform[b_kstr] = tmp_3[b_kstr];
+  }
+
+  iobj_6->JointInternal.JointAxisInternal[0] = 0.0;
+  iobj_6->JointInternal.JointAxisInternal[1] = 0.0;
+  iobj_6->JointInternal.JointAxisInternal[2] = 0.0;
+  obj->Bodies[7] = iobj_6;
+  obj->NumBodies = 8.0;
+  obj->PositionNumber = 6.0;
+  obj_0 = &obj->Base;
+  b_kstr = obj->Base.NameInternal->size[0] * obj->Base.NameInternal->size[1];
+  obj->Base.NameInternal->size[0] = 1;
+  obj->Base.NameInternal->size[1] = 5;
+  cartes_emxEnsureCapacity_char_T(obj->Base.NameInternal, b_kstr);
+  for (b_kstr = 0; b_kstr < 5; b_kstr++) {
+    obj->Base.NameInternal->data[b_kstr] = tmp_8[b_kstr];
+  }
+
+  b_kstr = obj->Base.JointInternal.Type->size[0] * obj->
+    Base.JointInternal.Type->size[1];
+  obj->Base.JointInternal.Type->size[0] = 1;
+  obj->Base.JointInternal.Type->size[1] = 5;
+  cartes_emxEnsureCapacity_char_T(obj->Base.JointInternal.Type, b_kstr);
+  for (b_kstr = 0; b_kstr < 5; b_kstr++) {
+    obj_0->JointInternal.Type->data[b_kstr] = tmp_7[b_kstr];
+  }
+
+  b_kstr = switch_expression->size[0] * switch_expression->size[1];
+  switch_expression->size[0] = 1;
+  switch_expression->size[1] = obj->Base.JointInternal.Type->size[1];
+  cartes_emxEnsureCapacity_char_T(switch_expression, b_kstr);
+  loop_ub = obj->Base.JointInternal.Type->size[0] * obj->
+    Base.JointInternal.Type->size[1] - 1;
+  for (b_kstr = 0; b_kstr <= loop_ub; b_kstr++) {
+    switch_expression->data[b_kstr] = obj_0->JointInternal.Type->data[b_kstr];
+  }
+
+  b_bool = false;
+  if (switch_expression->size[1] == 8) {
+    b_kstr = 1;
+    do {
+      exitg1 = 0;
+      if (b_kstr - 1 < 8) {
+        loop_ub = b_kstr - 1;
+        if (switch_expression->data[loop_ub] != b[loop_ub]) {
+          exitg1 = 1;
+        } else {
+          b_kstr++;
+        }
+      } else {
+        b_bool = true;
+        exitg1 = 1;
+      }
+    } while (exitg1 == 0);
+  }
+
+  if (b_bool) {
+    b_kstr = 0;
+  } else {
+    for (b_kstr = 0; b_kstr < 9; b_kstr++) {
+      b_0[b_kstr] = tmp_1[b_kstr];
+    }
+
+    b_bool = false;
+    if (switch_expression->size[1] == 9) {
+      b_kstr = 1;
+      do {
+        exitg1 = 0;
+        if (b_kstr - 1 < 9) {
+          loop_ub = b_kstr - 1;
+          if (switch_expression->data[loop_ub] != b_0[loop_ub]) {
+            exitg1 = 1;
+          } else {
+            b_kstr++;
+          }
+        } else {
+          b_bool = true;
+          exitg1 = 1;
+        }
+      } while (exitg1 == 0);
+    }
+
+    if (b_bool) {
+      b_kstr = 1;
+    } else {
+      b_kstr = -1;
+    }
+  }
+
+  cartesian_waypoi_emxFree_char_T(&switch_expression);
+  switch (b_kstr) {
+   case 0:
+    obj->Base.JointInternal.PositionNumber = 1.0;
+    obj->Base.JointInternal.JointAxisInternal[0] = 0.0;
+    obj->Base.JointInternal.JointAxisInternal[1] = 0.0;
+    obj->Base.JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   case 1:
+    obj->Base.JointInternal.PositionNumber = 1.0;
+    obj->Base.JointInternal.JointAxisInternal[0] = 0.0;
+    obj->Base.JointInternal.JointAxisInternal[1] = 0.0;
+    obj->Base.JointInternal.JointAxisInternal[2] = 1.0;
+    break;
+
+   default:
+    obj->Base.JointInternal.PositionNumber = 0.0;
+    obj->Base.JointInternal.JointAxisInternal[0] = 0.0;
+    obj->Base.JointInternal.JointAxisInternal[1] = 0.0;
+    obj->Base.JointInternal.JointAxisInternal[2] = 0.0;
+    break;
+  }
+
+  return b_obj;
+}
+
 // Model step function
 void cartesian_waypoints_planner_step(void)
 {
-  robotics_slmanip_internal_blo_T *obj;
+  robotics_slmanip_internal_b_e_T *obj;
+  emxArray_f_cell_wrap_cartesia_T *obj_e;
+  boolean_T exitg1;
 
-  // MATLABSystem: '<S7>/Get Parameter'
+  // MATLABSystem: '<S11>/Get Parameter'
   ParamGet_cartesian_waypoints_planner_346.get_parameter
-    (&cartesian_waypoints_planner_B.value_al);
+    (&cartesian_waypoints_planner_B.value_h);
 
-  // MATLABSystem: '<S10>/Get Parameter'
+  // MATLABSystem: '<S15>/Get Parameter'
   ParamGet_cartesian_waypoints_planner_288.get_parameter
     (&cartesian_waypoints_planner_B.c_n);
 
-  // MATLABSystem: '<S10>/Get Parameter1'
+  // MATLABSystem: '<S15>/Get Parameter1'
   ParamGet_cartesian_waypoints_planner_289.get_parameter
-    (&cartesian_waypoints_planner_B.value_j);
+    (&cartesian_waypoints_planner_B.value);
 
-  // MATLABSystem: '<S10>/Get Parameter2'
+  // MATLABSystem: '<S15>/Get Parameter2'
   ParamGet_cartesian_waypoints_planner_290.get_parameter
-    (&cartesian_waypoints_planner_B.value_f);
-
-  // MATLABSystem: '<S10>/Get Parameter3'
-  ParamGet_cartesian_waypoints_planner_291.get_parameter
-    (&cartesian_waypoints_planner_B.value_a);
-
-  // MATLABSystem: '<S10>/Get Parameter4'
-  ParamGet_cartesian_waypoints_planner_292.get_parameter
-    (&cartesian_waypoints_planner_B.value_g);
-
-  // MATLABSystem: '<S10>/Get Parameter5'
-  ParamGet_cartesian_waypoints_planner_293.get_parameter
     (&cartesian_waypoints_planner_B.value_n);
 
-  // MATLABSystem: '<S10>/Get Parameter6'
+  // MATLABSystem: '<S15>/Get Parameter3'
+  ParamGet_cartesian_waypoints_planner_291.get_parameter
+    (&cartesian_waypoints_planner_B.value_k);
+
+  // MATLABSystem: '<S15>/Get Parameter4'
+  ParamGet_cartesian_waypoints_planner_292.get_parameter
+    (&cartesian_waypoints_planner_B.value_n3);
+
+  // MATLABSystem: '<S15>/Get Parameter5'
+  ParamGet_cartesian_waypoints_planner_293.get_parameter
+    (&cartesian_waypoints_planner_B.value_o);
+
+  // MATLABSystem: '<S15>/Get Parameter6'
   ParamGet_cartesian_waypoints_planner_294.get_parameter
-    (&cartesian_waypoints_planner_B.value_d);
+    (&cartesian_waypoints_planner_B.value_g);
 
-  // MATLABSystem: '<S11>/Get Parameter'
+  // MATLABSystem: '<S16>/Get Parameter'
   ParamGet_cartesian_waypoints_planner_300.get_parameter
-    (&cartesian_waypoints_planner_B.value_na);
-
-  // MATLABSystem: '<S11>/Get Parameter1'
-  ParamGet_cartesian_waypoints_planner_301.get_parameter
     (&cartesian_waypoints_planner_B.value_c);
 
-  // MATLABSystem: '<S11>/Get Parameter2'
-  ParamGet_cartesian_waypoints_planner_302.get_parameter
-    (&cartesian_waypoints_planner_B.value_fx);
+  // MATLABSystem: '<S16>/Get Parameter1'
+  ParamGet_cartesian_waypoints_planner_301.get_parameter
+    (&cartesian_waypoints_planner_B.value_cj);
 
-  // MATLABSystem: '<S11>/Get Parameter3'
+  // MATLABSystem: '<S16>/Get Parameter2'
+  ParamGet_cartesian_waypoints_planner_302.get_parameter
+    (&cartesian_waypoints_planner_B.value_m);
+
+  // MATLABSystem: '<S16>/Get Parameter3'
   ParamGet_cartesian_waypoints_planner_303.get_parameter
     (&cartesian_waypoints_planner_B.theta0);
 
-  // MATLABSystem: '<S11>/Get Parameter4'
+  // MATLABSystem: '<S16>/Get Parameter4'
   ParamGet_cartesian_waypoints_planner_304.get_parameter
-    (&cartesian_waypoints_planner_B.value_p);
+    (&cartesian_waypoints_planner_B.value_j);
 
-  // MATLABSystem: '<S11>/Get Parameter5'
+  // MATLABSystem: '<S16>/Get Parameter5'
   ParamGet_cartesian_waypoints_planner_305.get_parameter
     (&cartesian_waypoints_planner_B.dp);
 
-  // MATLABSystem: '<S11>/Get Parameter6'
+  // MATLABSystem: '<S16>/Get Parameter6'
   ParamGet_cartesian_waypoints_planner_306.get_parameter
     (&cartesian_waypoints_planner_B.d_n);
 
   // MATLAB Function: '<Root>/MATLAB Function' incorporates:
   //   Delay: '<Root>/Delay3'
-  //   MATLABSystem: '<S10>/Get Parameter'
-  //   MATLABSystem: '<S10>/Get Parameter1'
-  //   MATLABSystem: '<S10>/Get Parameter2'
-  //   MATLABSystem: '<S10>/Get Parameter3'
-  //   MATLABSystem: '<S10>/Get Parameter4'
-  //   MATLABSystem: '<S10>/Get Parameter5'
-  //   MATLABSystem: '<S10>/Get Parameter6'
   //   MATLABSystem: '<S11>/Get Parameter'
-  //   MATLABSystem: '<S11>/Get Parameter1'
-  //   MATLABSystem: '<S11>/Get Parameter2'
-  //   MATLABSystem: '<S11>/Get Parameter3'
-  //   MATLABSystem: '<S11>/Get Parameter4'
-  //   MATLABSystem: '<S11>/Get Parameter5'
-  //   MATLABSystem: '<S11>/Get Parameter6'
-  //   MATLABSystem: '<S7>/Get Parameter'
+  //   MATLABSystem: '<S15>/Get Parameter'
+  //   MATLABSystem: '<S15>/Get Parameter1'
+  //   MATLABSystem: '<S15>/Get Parameter2'
+  //   MATLABSystem: '<S15>/Get Parameter3'
+  //   MATLABSystem: '<S15>/Get Parameter4'
+  //   MATLABSystem: '<S15>/Get Parameter5'
+  //   MATLABSystem: '<S15>/Get Parameter6'
+  //   MATLABSystem: '<S16>/Get Parameter'
+  //   MATLABSystem: '<S16>/Get Parameter1'
+  //   MATLABSystem: '<S16>/Get Parameter2'
+  //   MATLABSystem: '<S16>/Get Parameter3'
+  //   MATLABSystem: '<S16>/Get Parameter4'
+  //   MATLABSystem: '<S16>/Get Parameter5'
+  //   MATLABSystem: '<S16>/Get Parameter6'
 
-  if (cartesian_waypoints_planner_B.value_al > 20) {
-    cartesian_waypoints_planner_B.value_al = 20;
+  if (cartesian_waypoints_planner_B.value_h > 20) {
+    cartesian_waypoints_planner_B.value_h = 20;
   }
 
-  cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p = 0.0;
-  cartesian_waypoints_planner_B.b_n = 0.0;
-  cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n = 0.0;
+  cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k = 0.0;
+  cartesian_waypoints_planner_B.b_n_p = 0.0;
+  cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m = 0.0;
   cartesian_waypoints_planner_B.quat_fin_c = 0.0;
   cartesian_waypoints_planner_B.vec[0] = 0.0;
   cartesian_waypoints_planner_B.vec[1] = 0.0;
   cartesian_waypoints_planner_B.vec[2] = 0.0;
   if (cartesian_waypoints_planner_DW.Delay3_DSTATE <= 1.0) {
     cartesian_waypoints_planner_B.vec[0] = cartesian_waypoints_planner_B.c_n;
-    cartesian_waypoints_planner_B.vec[1] = cartesian_waypoints_planner_B.value_j;
-    cartesian_waypoints_planner_B.vec[2] = cartesian_waypoints_planner_B.value_f;
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p =
-      cartesian_waypoints_planner_B.value_a;
-    cartesian_waypoints_planner_B.b_n = cartesian_waypoints_planner_B.value_g;
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n =
-      cartesian_waypoints_planner_B.value_n;
+    cartesian_waypoints_planner_B.vec[1] = cartesian_waypoints_planner_B.value;
+    cartesian_waypoints_planner_B.vec[2] = cartesian_waypoints_planner_B.value_n;
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k =
+      cartesian_waypoints_planner_B.value_k;
+    cartesian_waypoints_planner_B.b_n_p = cartesian_waypoints_planner_B.value_n3;
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m =
+      cartesian_waypoints_planner_B.value_o;
     cartesian_waypoints_planner_B.quat_fin_c =
-      cartesian_waypoints_planner_B.value_d;
+      cartesian_waypoints_planner_B.value_g;
   } else if (cartesian_waypoints_planner_DW.Delay3_DSTATE <
-             cartesian_waypoints_planner_B.value_al) {
+             cartesian_waypoints_planner_B.value_h) {
     cartesian_waypoints_planner_B.vec[0] =
-      (cartesian_waypoints_planner_B.value_na -
-       cartesian_waypoints_planner_B.c_n) / static_cast<real_T>
-      (cartesian_waypoints_planner_B.value_al) *
+      (cartesian_waypoints_planner_B.value_c - cartesian_waypoints_planner_B.c_n)
+      / static_cast<real_T>(cartesian_waypoints_planner_B.value_h) *
       cartesian_waypoints_planner_DW.Delay3_DSTATE +
       cartesian_waypoints_planner_B.c_n;
     cartesian_waypoints_planner_B.vec[1] =
-      (cartesian_waypoints_planner_B.value_c -
-       cartesian_waypoints_planner_B.value_j) / static_cast<real_T>
-      (cartesian_waypoints_planner_B.value_al) *
+      (cartesian_waypoints_planner_B.value_cj -
+       cartesian_waypoints_planner_B.value) / static_cast<real_T>
+      (cartesian_waypoints_planner_B.value_h) *
       cartesian_waypoints_planner_DW.Delay3_DSTATE +
-      cartesian_waypoints_planner_B.value_j;
+      cartesian_waypoints_planner_B.value;
     cartesian_waypoints_planner_B.vec[2] =
-      (cartesian_waypoints_planner_B.value_fx -
-       cartesian_waypoints_planner_B.value_f) / static_cast<real_T>
-      (cartesian_waypoints_planner_B.value_al) *
+      (cartesian_waypoints_planner_B.value_m -
+       cartesian_waypoints_planner_B.value_n) / static_cast<real_T>
+      (cartesian_waypoints_planner_B.value_h) *
       cartesian_waypoints_planner_DW.Delay3_DSTATE +
-      cartesian_waypoints_planner_B.value_f;
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p =
+      cartesian_waypoints_planner_B.value_n;
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k =
       cartesian_waypoints_planner_DW.Delay3_DSTATE / static_cast<real_T>
-      (cartesian_waypoints_planner_B.value_al);
-    cartesian_waypoints_planner_B.b_n = sqrt
-      (((cartesian_waypoints_planner_B.value_a *
-         cartesian_waypoints_planner_B.value_a +
-         cartesian_waypoints_planner_B.value_g *
-         cartesian_waypoints_planner_B.value_g) +
-        cartesian_waypoints_planner_B.value_n *
-        cartesian_waypoints_planner_B.value_n) +
-       cartesian_waypoints_planner_B.value_d *
-       cartesian_waypoints_planner_B.value_d);
-    cartesian_waypoints_planner_B.value_a /= cartesian_waypoints_planner_B.b_n;
-    cartesian_waypoints_planner_B.value_g /= cartesian_waypoints_planner_B.b_n;
-    cartesian_waypoints_planner_B.value_n /= cartesian_waypoints_planner_B.b_n;
-    cartesian_waypoints_planner_B.value_d /= cartesian_waypoints_planner_B.b_n;
+      (cartesian_waypoints_planner_B.value_h);
+    cartesian_waypoints_planner_B.b_n_p = sqrt
+      (((cartesian_waypoints_planner_B.value_k *
+         cartesian_waypoints_planner_B.value_k +
+         cartesian_waypoints_planner_B.value_n3 *
+         cartesian_waypoints_planner_B.value_n3) +
+        cartesian_waypoints_planner_B.value_o *
+        cartesian_waypoints_planner_B.value_o) +
+       cartesian_waypoints_planner_B.value_g *
+       cartesian_waypoints_planner_B.value_g);
+    cartesian_waypoints_planner_B.value_k /= cartesian_waypoints_planner_B.b_n_p;
+    cartesian_waypoints_planner_B.value_n3 /=
+      cartesian_waypoints_planner_B.b_n_p;
+    cartesian_waypoints_planner_B.value_o /= cartesian_waypoints_planner_B.b_n_p;
+    cartesian_waypoints_planner_B.value_g /= cartesian_waypoints_planner_B.b_n_p;
     cartesian_waypoints_planner_B.c_n = sqrt
       (((cartesian_waypoints_planner_B.theta0 *
          cartesian_waypoints_planner_B.theta0 +
-         cartesian_waypoints_planner_B.value_p *
-         cartesian_waypoints_planner_B.value_p) +
+         cartesian_waypoints_planner_B.value_j *
+         cartesian_waypoints_planner_B.value_j) +
         cartesian_waypoints_planner_B.dp * cartesian_waypoints_planner_B.dp) +
        cartesian_waypoints_planner_B.d_n * cartesian_waypoints_planner_B.d_n);
-    cartesian_waypoints_planner_B.b_n = cartesian_waypoints_planner_B.theta0 /
+    cartesian_waypoints_planner_B.b_n_p = cartesian_waypoints_planner_B.theta0 /
       cartesian_waypoints_planner_B.c_n;
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n =
-      cartesian_waypoints_planner_B.value_p / cartesian_waypoints_planner_B.c_n;
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m =
+      cartesian_waypoints_planner_B.value_j / cartesian_waypoints_planner_B.c_n;
     cartesian_waypoints_planner_B.quat_fin_c = cartesian_waypoints_planner_B.dp /
       cartesian_waypoints_planner_B.c_n;
     cartesian_waypoints_planner_B.d_n /= cartesian_waypoints_planner_B.c_n;
-    cartesian_waypoints_planner_B.dp = ((cartesian_waypoints_planner_B.value_a *
-      cartesian_waypoints_planner_B.b_n + cartesian_waypoints_planner_B.value_g *
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n) +
-      cartesian_waypoints_planner_B.value_n *
+    cartesian_waypoints_planner_B.dp = ((cartesian_waypoints_planner_B.value_k *
+      cartesian_waypoints_planner_B.b_n_p +
+      cartesian_waypoints_planner_B.value_n3 *
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m) +
+      cartesian_waypoints_planner_B.value_o *
       cartesian_waypoints_planner_B.quat_fin_c) +
-      cartesian_waypoints_planner_B.value_d * cartesian_waypoints_planner_B.d_n;
+      cartesian_waypoints_planner_B.value_g * cartesian_waypoints_planner_B.d_n;
     if (cartesian_waypoints_planner_B.dp < 0.0) {
-      car_quaternioncg_parenReference(cartesian_waypoints_planner_B.b_n,
-        cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n,
+      car_quaternioncg_parenReference(cartesian_waypoints_planner_B.b_n_p,
+        cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m,
         cartesian_waypoints_planner_B.quat_fin_c,
-        cartesian_waypoints_planner_B.d_n, &cartesian_waypoints_planner_B.b_n,
-        &cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n,
+        cartesian_waypoints_planner_B.d_n, &cartesian_waypoints_planner_B.b_n_p,
+        &cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m,
         &cartesian_waypoints_planner_B.quat_fin_c,
         &cartesian_waypoints_planner_B.d_n);
-      cartesian_waypoints_planner_B.b_n = -cartesian_waypoints_planner_B.b_n;
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n =
-        -cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n;
+      cartesian_waypoints_planner_B.b_n_p = -cartesian_waypoints_planner_B.b_n_p;
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m =
+        -cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m;
       cartesian_waypoints_planner_B.quat_fin_c =
         -cartesian_waypoints_planner_B.quat_fin_c;
       cartesian_waypoints_planner_B.d_n = -cartesian_waypoints_planner_B.d_n;
@@ -17269,76 +19272,78 @@ void cartesian_waypoints_planner_step(void)
     cartesian_waypoints_planner_B.theta0 = acos(cartesian_waypoints_planner_B.dp);
     cartesian_waypoints_planner_B.dp = 1.0 / sin
       (cartesian_waypoints_planner_B.theta0);
-    cartesian_waypoints_planner_B.value_p = sin((1.0 -
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p) *
+    cartesian_waypoints_planner_B.value_j = sin((1.0 -
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k) *
       cartesian_waypoints_planner_B.theta0);
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p = sin
-      (cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p *
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k = sin
+      (cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k *
        cartesian_waypoints_planner_B.theta0);
-    cartesian_waypoints_planner_B.b_n *=
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p;
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n *=
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p;
+    cartesian_waypoints_planner_B.b_n_p *=
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k;
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m *=
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k;
     cartesian_waypoints_planner_B.quat_fin_c *=
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p;
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k;
     cartesian_waypoints_planner_B.d_n *=
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p;
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p =
-      (cartesian_waypoints_planner_B.value_p *
-       cartesian_waypoints_planner_B.value_a + cartesian_waypoints_planner_B.b_n)
-      * cartesian_waypoints_planner_B.dp;
-    cartesian_waypoints_planner_B.b_n = (cartesian_waypoints_planner_B.value_p *
-      cartesian_waypoints_planner_B.value_g +
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n) *
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k;
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k =
+      (cartesian_waypoints_planner_B.value_j *
+       cartesian_waypoints_planner_B.value_k +
+       cartesian_waypoints_planner_B.b_n_p) * cartesian_waypoints_planner_B.dp;
+    cartesian_waypoints_planner_B.b_n_p = (cartesian_waypoints_planner_B.value_j
+      * cartesian_waypoints_planner_B.value_n3 +
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m) *
       cartesian_waypoints_planner_B.dp;
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n =
-      (cartesian_waypoints_planner_B.value_p *
-       cartesian_waypoints_planner_B.value_n +
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m =
+      (cartesian_waypoints_planner_B.value_j *
+       cartesian_waypoints_planner_B.value_o +
        cartesian_waypoints_planner_B.quat_fin_c) *
       cartesian_waypoints_planner_B.dp;
     cartesian_waypoints_planner_B.quat_fin_c =
-      (cartesian_waypoints_planner_B.value_p *
-       cartesian_waypoints_planner_B.value_d + cartesian_waypoints_planner_B.d_n)
+      (cartesian_waypoints_planner_B.value_j *
+       cartesian_waypoints_planner_B.value_g + cartesian_waypoints_planner_B.d_n)
       * cartesian_waypoints_planner_B.dp;
     if (rtIsInf(cartesian_waypoints_planner_B.dp)) {
-      car_quaternioncg_parenReference(cartesian_waypoints_planner_B.value_a,
+      car_quaternioncg_parenReference(cartesian_waypoints_planner_B.value_k,
+        cartesian_waypoints_planner_B.value_n3,
+        cartesian_waypoints_planner_B.value_o,
         cartesian_waypoints_planner_B.value_g,
-        cartesian_waypoints_planner_B.value_n,
-        cartesian_waypoints_planner_B.value_d,
-        &cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p,
-        &cartesian_waypoints_planner_B.b_n,
-        &cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n,
+        &cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k,
+        &cartesian_waypoints_planner_B.b_n_p,
+        &cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m,
         &cartesian_waypoints_planner_B.quat_fin_c);
     }
 
     cartesian_waypoints_planner_B.d_n = sqrt
-      (((cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p *
-         cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p +
-         cartesian_waypoints_planner_B.b_n * cartesian_waypoints_planner_B.b_n)
-        + cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n *
-        cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n) +
+      (((cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k *
+         cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k +
+         cartesian_waypoints_planner_B.b_n_p *
+         cartesian_waypoints_planner_B.b_n_p) +
+        cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m *
+        cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m) +
        cartesian_waypoints_planner_B.quat_fin_c *
        cartesian_waypoints_planner_B.quat_fin_c);
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p /=
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k /=
       cartesian_waypoints_planner_B.d_n;
-    cartesian_waypoints_planner_B.b_n /= cartesian_waypoints_planner_B.d_n;
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n /=
+    cartesian_waypoints_planner_B.b_n_p /= cartesian_waypoints_planner_B.d_n;
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m /=
       cartesian_waypoints_planner_B.d_n;
     cartesian_waypoints_planner_B.quat_fin_c /=
       cartesian_waypoints_planner_B.d_n;
   } else {
     if (cartesian_waypoints_planner_DW.Delay3_DSTATE >=
-        cartesian_waypoints_planner_B.value_al) {
+        cartesian_waypoints_planner_B.value_h) {
       cartesian_waypoints_planner_B.vec[0] =
-        cartesian_waypoints_planner_B.value_na;
-      cartesian_waypoints_planner_B.vec[1] =
         cartesian_waypoints_planner_B.value_c;
+      cartesian_waypoints_planner_B.vec[1] =
+        cartesian_waypoints_planner_B.value_cj;
       cartesian_waypoints_planner_B.vec[2] =
-        cartesian_waypoints_planner_B.value_fx;
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p =
+        cartesian_waypoints_planner_B.value_m;
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k =
         cartesian_waypoints_planner_B.theta0;
-      cartesian_waypoints_planner_B.b_n = cartesian_waypoints_planner_B.value_p;
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n =
+      cartesian_waypoints_planner_B.b_n_p =
+        cartesian_waypoints_planner_B.value_j;
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m =
         cartesian_waypoints_planner_B.dp;
       cartesian_waypoints_planner_B.quat_fin_c =
         cartesian_waypoints_planner_B.d_n;
@@ -17351,84 +19356,84 @@ void cartesian_waypoints_planner_step(void)
   //   MATLAB Function: '<Root>/MATLAB Function'
 
   cartesian_waypoints_planner_B.d_n = 1.0 / sqrt
-    (((cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p *
-       cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p +
-       cartesian_waypoints_planner_B.b_n * cartesian_waypoints_planner_B.b_n) +
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n *
-      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n) +
+    (((cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k *
+       cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k +
+       cartesian_waypoints_planner_B.b_n_p * cartesian_waypoints_planner_B.b_n_p)
+      + cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m *
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m) +
      cartesian_waypoints_planner_B.quat_fin_c *
      cartesian_waypoints_planner_B.quat_fin_c);
-  cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p *=
+  cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k *=
     cartesian_waypoints_planner_B.d_n;
-  cartesian_waypoints_planner_B.b_n *= cartesian_waypoints_planner_B.d_n;
-  cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n *=
+  cartesian_waypoints_planner_B.b_n_p *= cartesian_waypoints_planner_B.d_n;
+  cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m *=
     cartesian_waypoints_planner_B.d_n;
   cartesian_waypoints_planner_B.d_n *= cartesian_waypoints_planner_B.quat_fin_c;
   cartesian_waypoints_planner_B.quat_fin_c = cartesian_waypoints_planner_B.d_n *
     cartesian_waypoints_planner_B.d_n;
   cartesian_waypoints_planner_B.dp =
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n *
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n;
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m *
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m;
   cartesian_waypoints_planner_B.tempR[0] = 1.0 -
     (cartesian_waypoints_planner_B.dp + cartesian_waypoints_planner_B.quat_fin_c)
     * 2.0;
-  cartesian_waypoints_planner_B.value_a = cartesian_waypoints_planner_B.b_n *
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n;
-  cartesian_waypoints_planner_B.value_p =
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p *
+  cartesian_waypoints_planner_B.value_k = cartesian_waypoints_planner_B.b_n_p *
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m;
+  cartesian_waypoints_planner_B.value_j =
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k *
     cartesian_waypoints_planner_B.d_n;
   cartesian_waypoints_planner_B.tempR[1] =
-    (cartesian_waypoints_planner_B.value_a -
-     cartesian_waypoints_planner_B.value_p) * 2.0;
-  cartesian_waypoints_planner_B.value_g = cartesian_waypoints_planner_B.b_n *
+    (cartesian_waypoints_planner_B.value_k -
+     cartesian_waypoints_planner_B.value_j) * 2.0;
+  cartesian_waypoints_planner_B.value_n3 = cartesian_waypoints_planner_B.b_n_p *
     cartesian_waypoints_planner_B.d_n;
   cartesian_waypoints_planner_B.theta0 =
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p *
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n;
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k *
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m;
   cartesian_waypoints_planner_B.tempR[2] =
-    (cartesian_waypoints_planner_B.value_g +
+    (cartesian_waypoints_planner_B.value_n3 +
      cartesian_waypoints_planner_B.theta0) * 2.0;
   cartesian_waypoints_planner_B.tempR[3] =
-    (cartesian_waypoints_planner_B.value_a +
-     cartesian_waypoints_planner_B.value_p) * 2.0;
-  cartesian_waypoints_planner_B.value_a = cartesian_waypoints_planner_B.b_n *
-    cartesian_waypoints_planner_B.b_n;
+    (cartesian_waypoints_planner_B.value_k +
+     cartesian_waypoints_planner_B.value_j) * 2.0;
+  cartesian_waypoints_planner_B.value_k = cartesian_waypoints_planner_B.b_n_p *
+    cartesian_waypoints_planner_B.b_n_p;
   cartesian_waypoints_planner_B.tempR[4] = 1.0 -
-    (cartesian_waypoints_planner_B.value_a +
+    (cartesian_waypoints_planner_B.value_k +
      cartesian_waypoints_planner_B.quat_fin_c) * 2.0;
   cartesian_waypoints_planner_B.quat_fin_c =
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__n *
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m *
     cartesian_waypoints_planner_B.d_n;
-  cartesian_waypoints_planner_B.value_p =
-    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__p *
-    cartesian_waypoints_planner_B.b_n;
+  cartesian_waypoints_planner_B.value_j =
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k *
+    cartesian_waypoints_planner_B.b_n_p;
   cartesian_waypoints_planner_B.tempR[5] =
     (cartesian_waypoints_planner_B.quat_fin_c -
-     cartesian_waypoints_planner_B.value_p) * 2.0;
+     cartesian_waypoints_planner_B.value_j) * 2.0;
   cartesian_waypoints_planner_B.tempR[6] =
-    (cartesian_waypoints_planner_B.value_g -
+    (cartesian_waypoints_planner_B.value_n3 -
      cartesian_waypoints_planner_B.theta0) * 2.0;
   cartesian_waypoints_planner_B.tempR[7] =
     (cartesian_waypoints_planner_B.quat_fin_c +
-     cartesian_waypoints_planner_B.value_p) * 2.0;
+     cartesian_waypoints_planner_B.value_j) * 2.0;
   cartesian_waypoints_planner_B.tempR[8] = 1.0 -
-    (cartesian_waypoints_planner_B.value_a + cartesian_waypoints_planner_B.dp) *
+    (cartesian_waypoints_planner_B.value_k + cartesian_waypoints_planner_B.dp) *
     2.0;
-  for (cartesian_waypoints_planner_B.value_al = 0;
-       cartesian_waypoints_planner_B.value_al < 3;
-       cartesian_waypoints_planner_B.value_al++) {
+  for (cartesian_waypoints_planner_B.value_h = 0;
+       cartesian_waypoints_planner_B.value_h < 3;
+       cartesian_waypoints_planner_B.value_h++) {
     cartesian_waypoints_planner_B.subsa_idx_1 =
-      cartesian_waypoints_planner_B.value_al + 1;
+      cartesian_waypoints_planner_B.value_h + 1;
     cartesian_waypoints_planner_B.R[cartesian_waypoints_planner_B.subsa_idx_1 -
       1] = cartesian_waypoints_planner_B.tempR
       [(cartesian_waypoints_planner_B.subsa_idx_1 - 1) * 3];
     cartesian_waypoints_planner_B.subsa_idx_1 =
-      cartesian_waypoints_planner_B.value_al + 1;
+      cartesian_waypoints_planner_B.value_h + 1;
     cartesian_waypoints_planner_B.R[cartesian_waypoints_planner_B.subsa_idx_1 +
       2] = cartesian_waypoints_planner_B.tempR
       [(cartesian_waypoints_planner_B.subsa_idx_1 - 1) * 3 + 1];
     cartesian_waypoints_planner_B.subsa_idx_1 =
-      cartesian_waypoints_planner_B.value_al + 1;
+      cartesian_waypoints_planner_B.value_h + 1;
     cartesian_waypoints_planner_B.R[cartesian_waypoints_planner_B.subsa_idx_1 +
       5] = cartesian_waypoints_planner_B.tempR
       [(cartesian_waypoints_planner_B.subsa_idx_1 - 1) * 3 + 2];
@@ -17436,47 +19441,46 @@ void cartesian_waypoints_planner_step(void)
 
   memset(&cartesian_waypoints_planner_B.out[0], 0, sizeof(real_T) << 4U);
   cartesian_waypoints_planner_B.out[15] = 1.0;
-  for (cartesian_waypoints_planner_B.value_al = 0;
-       cartesian_waypoints_planner_B.value_al < 3;
-       cartesian_waypoints_planner_B.value_al++) {
+  for (cartesian_waypoints_planner_B.value_h = 0;
+       cartesian_waypoints_planner_B.value_h < 3;
+       cartesian_waypoints_planner_B.value_h++) {
     cartesian_waypoints_planner_B.subsa_idx_1 =
-      cartesian_waypoints_planner_B.value_al << 2;
+      cartesian_waypoints_planner_B.value_h << 2;
     cartesian_waypoints_planner_B.out[cartesian_waypoints_planner_B.subsa_idx_1]
       = cartesian_waypoints_planner_B.R[3 *
-      cartesian_waypoints_planner_B.value_al];
+      cartesian_waypoints_planner_B.value_h];
     cartesian_waypoints_planner_B.out[cartesian_waypoints_planner_B.subsa_idx_1
       + 1] = cartesian_waypoints_planner_B.R[3 *
-      cartesian_waypoints_planner_B.value_al + 1];
+      cartesian_waypoints_planner_B.value_h + 1];
     cartesian_waypoints_planner_B.out[cartesian_waypoints_planner_B.subsa_idx_1
       + 2] = cartesian_waypoints_planner_B.R[3 *
-      cartesian_waypoints_planner_B.value_al + 2];
-    cartesian_waypoints_planner_B.out[cartesian_waypoints_planner_B.value_al +
-      12] =
-      cartesian_waypoints_planner_B.vec[cartesian_waypoints_planner_B.value_al];
+      cartesian_waypoints_planner_B.value_h + 2];
+    cartesian_waypoints_planner_B.out[cartesian_waypoints_planner_B.value_h + 12]
+      = cartesian_waypoints_planner_B.vec[cartesian_waypoints_planner_B.value_h];
   }
 
-  // MATLABSystem: '<S2>/MATLAB System' incorporates:
+  // MATLABSystem: '<S3>/MATLAB System' incorporates:
   //   Delay: '<Root>/Delay'
   //   MATLABSystem: '<Root>/Coordinate Transformation Conversion3'
-  //   MATLABSystem: '<S8>/Get Parameter'
-  //   MATLABSystem: '<S8>/Get Parameter1'
-  //   MATLABSystem: '<S8>/Get Parameter2'
-  //   MATLABSystem: '<S8>/Get Parameter3'
-  //   MATLABSystem: '<S8>/Get Parameter4'
-  //   MATLABSystem: '<S8>/Get Parameter5'
+  //   MATLABSystem: '<S12>/Get Parameter'
+  //   MATLABSystem: '<S12>/Get Parameter1'
+  //   MATLABSystem: '<S12>/Get Parameter2'
+  //   MATLABSystem: '<S12>/Get Parameter3'
+  //   MATLABSystem: '<S12>/Get Parameter4'
+  //   MATLABSystem: '<S12>/Get Parameter5'
 
   ParamGet_cartesian_waypoints_planner_312.get_parameter
-    (&cartesian_waypoints_planner_B.value[0]);
+    (&cartesian_waypoints_planner_B.q[0]);
   ParamGet_cartesian_waypoints_planner_313.get_parameter
-    (&cartesian_waypoints_planner_B.value[1]);
+    (&cartesian_waypoints_planner_B.q[1]);
   ParamGet_cartesian_waypoints_planner_314.get_parameter
-    (&cartesian_waypoints_planner_B.value[2]);
+    (&cartesian_waypoints_planner_B.q[2]);
   ParamGet_cartesian_waypoints_planner_315.get_parameter
-    (&cartesian_waypoints_planner_B.value[3]);
+    (&cartesian_waypoints_planner_B.q[3]);
   ParamGet_cartesian_waypoints_planner_316.get_parameter
-    (&cartesian_waypoints_planner_B.value[4]);
+    (&cartesian_waypoints_planner_B.q[4]);
   ParamGet_cartesian_waypoints_planner_317.get_parameter
-    (&cartesian_waypoints_planner_B.value[5]);
+    (&cartesian_waypoints_planner_B.q[5]);
   obj = &cartesian_waypoints_planner_DW.obj;
   if (cartesian_waypoints_planner_DW.obj.IKInternal.isInitialized != 1) {
     cartesian_waypoints_planner_DW.obj.IKInternal.isSetupComplete = false;
@@ -17488,66 +19492,364 @@ void cartesian_waypoints_planner_step(void)
   }
 
   cart_inverseKinematics_stepImpl(&obj->IKInternal,
-    cartesian_waypoints_planner_B.out, cartesian_waypoints_planner_B.value,
+    cartesian_waypoints_planner_B.out, cartesian_waypoints_planner_B.q,
     cartesian_waypoints_planner_DW.Delay_DSTATE,
     cartesian_waypoints_planner_B.b_varargout_1);
 
   // MATLAB Function: '<Root>/MATLAB Function2' incorporates:
   //   Delay: '<Root>/Delay1'
   //   Delay: '<Root>/Delay2'
-  //   MATLABSystem: '<S2>/MATLAB System'
+  //   MATLABSystem: '<S3>/MATLAB System'
 
   if ((cartesian_waypoints_planner_DW.Delay1_DSTATE >= 1.0) &&
       (cartesian_waypoints_planner_DW.Delay1_DSTATE <= 20.0)) {
-    cartesian_waypoints_planner_B.value_al = static_cast<int32_T>
+    cartesian_waypoints_planner_B.value_h = static_cast<int32_T>
       (cartesian_waypoints_planner_DW.Delay1_DSTATE);
     for (cartesian_waypoints_planner_B.subsa_idx_1 = 0;
          cartesian_waypoints_planner_B.subsa_idx_1 < 6;
          cartesian_waypoints_planner_B.subsa_idx_1++) {
       cartesian_waypoints_planner_DW.Delay2_DSTATE[cartesian_waypoints_planner_B.subsa_idx_1
-        + 6 * (cartesian_waypoints_planner_B.value_al - 1)] =
+        + 6 * (cartesian_waypoints_planner_B.value_h - 1)] =
         cartesian_waypoints_planner_B.b_varargout_1[cartesian_waypoints_planner_B.subsa_idx_1];
     }
   }
 
+  cartesian_w_emxInit_f_cell_wrap(&obj_e, 2);
+
+  // MATLAB Function: '<Root>/MATLAB Function2' incorporates:
+  //   Delay: '<Root>/Delay1'
+
   cartesian_waypoints_planner_DW.Delay1_DSTATE++;
 
-  // MATLABSystem: '<S9>/Set Parameter' incorporates:
+  // MATLABSystem: '<S2>/MATLAB System' incorporates:
+  //   MATLABSystem: '<S3>/MATLAB System'
+
+  RigidBodyTree_forwardKinematics
+    (&cartesian_waypoints_planner_DW.obj_e.TreeInternal,
+     cartesian_waypoints_planner_B.b_varargout_1, obj_e);
+
+  // Outputs for Atomic SubSystem: '<Root>/Subscribe1'
+  // MATLABSystem: '<S10>/SourceBlock'
+  cartesian_waypoints_planner_B.b_varargout_1_b =
+    Sub_cartesian_waypoints_planner_384.getLatestMessage
+    (&cartesian_waypoints_planner_B.b_varargout_2);
+
+  // End of Outputs for SubSystem: '<Root>/Subscribe1'
+  cartesian_w_emxFree_f_cell_wrap(&obj_e);
+
+  // Outputs for Atomic SubSystem: '<Root>/Subscribe1'
+  // Outputs for Enabled SubSystem: '<S10>/Enabled Subsystem' incorporates:
+  //   EnablePort: '<S14>/Enable'
+
+  // MATLABSystem: '<S10>/SourceBlock' incorporates:
+  //   Inport: '<S14>/In1'
+
+  if (cartesian_waypoints_planner_B.b_varargout_1_b) {
+    cartesian_waypoints_planner_B.In1 =
+      cartesian_waypoints_planner_B.b_varargout_2;
+  }
+
+  // End of Outputs for SubSystem: '<S10>/Enabled Subsystem'
+  // End of Outputs for SubSystem: '<Root>/Subscribe1'
+
+  // MATLABSystem: '<Root>/Get Parameter'
+  ParamGet_cartesian_waypoints_planner_378.get_parameter
+    (&cartesian_waypoints_planner_B.c_n);
+
+  // MATLAB Function: '<Root>/MATLAB Function3' incorporates:
+  //   MATLABSystem: '<Root>/Get Parameter'
+
+  cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k =
+    (cartesian_waypoints_planner_B.In1.Clock_.Nsec / 1.0E+9 +
+     cartesian_waypoints_planner_B.In1.Clock_.Sec) -
+    cartesian_waypoints_planner_B.c_n;
+  if (cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k < 0.0) {
+    cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k = 0.0;
+  }
+
+  // End of MATLAB Function: '<Root>/MATLAB Function3'
+
+  // MATLABSystem: '<Root>/Get Parameter1'
+  ParamGet_cartesian_waypoints_planner_379.get_parameter
+    (&cartesian_waypoints_planner_B.c_n);
+
+  // MATLABSystem: '<Root>/Get Parameter2'
+  ParamGet_cartesian_waypoints_planner_380.get_parameter
+    (&cartesian_waypoints_planner_B.value);
+
+  // MATLAB Function: '<Root>/MATLAB Function4' incorporates:
+  //   Delay: '<Root>/Delay2'
+  //   MATLABSystem: '<Root>/Get Parameter1'
+  //   MATLABSystem: '<Root>/Get Parameter2'
+
+  for (cartesian_waypoints_planner_B.value_h = 0;
+       cartesian_waypoints_planner_B.value_h < 6;
+       cartesian_waypoints_planner_B.value_h++) {
+    cartesian_waypoints_planner_B.q[cartesian_waypoints_planner_B.value_h] =
+      cartesian_waypoints_planner_DW.Delay2_DSTATE[cartesian_waypoints_planner_B.value_h];
+    cartesian_waypoints_planner_B.qd[cartesian_waypoints_planner_B.value_h] =
+      0.0;
+    cartesian_waypoints_planner_B.qdd[cartesian_waypoints_planner_B.value_h] =
+      0.0;
+    cartesian_waypoints_planner_B.max_vel[cartesian_waypoints_planner_B.value_h]
+      = cartesian_waypoints_planner_B.c_n;
+    cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.value_h] =
+      cartesian_waypoints_planner_B.value;
+  }
+
+  memset(&cartesian_waypoints_planner_B.t[0], 0, 342U * sizeof(real_T));
+  for (cartesian_waypoints_planner_B.value_h = 0;
+       cartesian_waypoints_planner_B.value_h < 6;
+       cartesian_waypoints_planner_B.value_h++) {
+    cartesian_waypoints_planner_B.b_n_p =
+      cartesian_waypoints_planner_B.max_vel[cartesian_waypoints_planner_B.value_h]
+      / cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.value_h];
+    for (cartesian_waypoints_planner_B.subsa_idx_1 = 0;
+         cartesian_waypoints_planner_B.subsa_idx_1 < 19;
+         cartesian_waypoints_planner_B.subsa_idx_1++) {
+      cartesian_waypoints_planner_B.dist_tmp = 6 *
+        cartesian_waypoints_planner_B.subsa_idx_1 +
+        cartesian_waypoints_planner_B.value_h;
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m =
+        cartesian_waypoints_planner_DW.Delay2_DSTATE
+        [(cartesian_waypoints_planner_B.subsa_idx_1 + 1) * 6 +
+        cartesian_waypoints_planner_B.value_h] -
+        cartesian_waypoints_planner_DW.Delay2_DSTATE[cartesian_waypoints_planner_B.dist_tmp];
+      if (cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m < 0.0) {
+        cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.dist_tmp]
+          = -1.0;
+      } else if (cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m >
+                 0.0) {
+        cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.dist_tmp]
+          = 1.0;
+      } else if (cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m ==
+                 0.0) {
+        cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.dist_tmp]
+          = 0.0;
+      } else {
+        cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.dist_tmp]
+          = (rtNaN);
+      }
+
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m = fabs
+        (cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m);
+      cartesian_waypoints_planner_B.d_n = cartesian_waypoints_planner_B.b_n_p *
+        cartesian_waypoints_planner_B.max_vel[cartesian_waypoints_planner_B.value_h];
+      if (cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m <
+          cartesian_waypoints_planner_B.d_n) {
+        cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m = sqrt
+          (cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m /
+           cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.value_h]);
+        cartesian_waypoints_planner_B.t[cartesian_waypoints_planner_B.dist_tmp +
+          114] = 0.0;
+        cartesian_waypoints_planner_B.t[cartesian_waypoints_planner_B.dist_tmp] =
+          cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m;
+        cartesian_waypoints_planner_B.t[(cartesian_waypoints_planner_B.value_h +
+          6 * cartesian_waypoints_planner_B.subsa_idx_1) + 228] =
+          cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m;
+        cartesian_waypoints_planner_B.act_max_vel[cartesian_waypoints_planner_B.dist_tmp]
+          = cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m *
+          cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.value_h];
+      } else {
+        cartesian_waypoints_planner_B.t[cartesian_waypoints_planner_B.dist_tmp] =
+          cartesian_waypoints_planner_B.b_n_p;
+        cartesian_waypoints_planner_B.t[cartesian_waypoints_planner_B.dist_tmp +
+          228] = cartesian_waypoints_planner_B.b_n_p;
+        cartesian_waypoints_planner_B.t[(cartesian_waypoints_planner_B.value_h +
+          6 * cartesian_waypoints_planner_B.subsa_idx_1) + 114] =
+          (cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m -
+           cartesian_waypoints_planner_B.d_n) /
+          cartesian_waypoints_planner_B.max_vel[cartesian_waypoints_planner_B.value_h];
+        cartesian_waypoints_planner_B.act_max_vel[cartesian_waypoints_planner_B.dist_tmp]
+          =
+          cartesian_waypoints_planner_B.max_vel[cartesian_waypoints_planner_B.value_h];
+      }
+    }
+  }
+
+  for (cartesian_waypoints_planner_B.dist_tmp = 0;
+       cartesian_waypoints_planner_B.dist_tmp < 6;
+       cartesian_waypoints_planner_B.dist_tmp++) {
+    cartesian_waypoints_planner_B.b_n_p =
+      cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__k;
+    cartesian_waypoints_planner_B.b_j_f = 0;
+    while ((cartesian_waypoints_planner_B.b_j_f < 19) &&
+           (!(cartesian_waypoints_planner_B.b_n_p <= 0.0))) {
+      cartesian_waypoints_planner_B.k_j = 0;
+      exitg1 = false;
+      while ((!exitg1) && (cartesian_waypoints_planner_B.k_j < 3)) {
+        cartesian_waypoints_planner_B.value_h = 6 *
+          cartesian_waypoints_planner_B.b_j_f +
+          cartesian_waypoints_planner_B.dist_tmp;
+        cartesian_waypoints_planner_B.subsa_idx_1 =
+          cartesian_waypoints_planner_B.value_h + 114 *
+          cartesian_waypoints_planner_B.k_j;
+        cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m =
+          cartesian_waypoints_planner_B.b_n_p -
+          cartesian_waypoints_planner_B.t[cartesian_waypoints_planner_B.subsa_idx_1];
+        if (cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m <= 0.0)
+        {
+          switch (cartesian_waypoints_planner_B.k_j + 1) {
+           case 1:
+            cartesian_waypoints_planner_B.q[cartesian_waypoints_planner_B.dist_tmp]
+              += 0.5 *
+              cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.dist_tmp]
+              * (cartesian_waypoints_planner_B.b_n_p *
+                 cartesian_waypoints_planner_B.b_n_p) *
+              cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h];
+            cartesian_waypoints_planner_B.qd[cartesian_waypoints_planner_B.dist_tmp]
+              =
+              cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h]
+              * (cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.dist_tmp]
+                 * cartesian_waypoints_planner_B.b_n_p);
+            cartesian_waypoints_planner_B.qdd[cartesian_waypoints_planner_B.dist_tmp]
+              =
+              cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h]
+              * cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.dist_tmp];
+            cartesian_waypoints_planner_B.b_n_p =
+              cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m;
+            break;
+
+           case 2:
+            cartesian_waypoints_planner_B.q[cartesian_waypoints_planner_B.dist_tmp]
+              +=
+              cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h]
+              * (cartesian_waypoints_planner_B.act_max_vel[cartesian_waypoints_planner_B.dist_tmp]
+                 * cartesian_waypoints_planner_B.b_n_p);
+            cartesian_waypoints_planner_B.qd[cartesian_waypoints_planner_B.dist_tmp]
+              =
+              cartesian_waypoints_planner_B.act_max_vel[cartesian_waypoints_planner_B.dist_tmp]
+              * cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.dist_tmp];
+            cartesian_waypoints_planner_B.qdd[cartesian_waypoints_planner_B.dist_tmp]
+              = 0.0;
+            cartesian_waypoints_planner_B.b_n_p =
+              cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m;
+            break;
+
+           default:
+            cartesian_waypoints_planner_B.q[cartesian_waypoints_planner_B.dist_tmp]
+              +=
+              (cartesian_waypoints_planner_B.act_max_vel[cartesian_waypoints_planner_B.b_j_f]
+               * cartesian_waypoints_planner_B.b_n_p - 0.5 *
+               cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.dist_tmp]
+               * (cartesian_waypoints_planner_B.b_n_p *
+                  cartesian_waypoints_planner_B.b_n_p)) *
+              cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h];
+            cartesian_waypoints_planner_B.qd[cartesian_waypoints_planner_B.dist_tmp]
+              =
+              (cartesian_waypoints_planner_B.act_max_vel[cartesian_waypoints_planner_B.dist_tmp]
+               - cartesian_waypoints_planner_B.b_n_p *
+               cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.dist_tmp])
+              * cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h];
+            cartesian_waypoints_planner_B.qdd[cartesian_waypoints_planner_B.dist_tmp]
+              =
+              cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h]
+              * -cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.dist_tmp];
+            cartesian_waypoints_planner_B.b_n_p =
+              cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m;
+            break;
+          }
+
+          exitg1 = true;
+        } else {
+          cartesian_waypoints_planner_B.b_n_p =
+            cartesian_waypoints_planner_B.rtb_TmpSignalConversionAtSFu__m;
+          switch (cartesian_waypoints_planner_B.k_j + 1) {
+           case 1:
+            cartesian_waypoints_planner_B.q[cartesian_waypoints_planner_B.dist_tmp]
+              +=
+              cartesian_waypoints_planner_B.t[cartesian_waypoints_planner_B.subsa_idx_1]
+              * cartesian_waypoints_planner_B.t[cartesian_waypoints_planner_B.subsa_idx_1]
+              * (0.5 *
+                 cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.dist_tmp])
+              * cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h];
+            cartesian_waypoints_planner_B.qd[cartesian_waypoints_planner_B.dist_tmp]
+              =
+              cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h]
+              * cartesian_waypoints_planner_B.act_max_vel[cartesian_waypoints_planner_B.dist_tmp];
+            cartesian_waypoints_planner_B.qdd[cartesian_waypoints_planner_B.dist_tmp]
+              =
+              cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h]
+              * cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.dist_tmp];
+            break;
+
+           case 2:
+            cartesian_waypoints_planner_B.q[cartesian_waypoints_planner_B.dist_tmp]
+              +=
+              cartesian_waypoints_planner_B.t[cartesian_waypoints_planner_B.subsa_idx_1]
+              * cartesian_waypoints_planner_B.act_max_vel[cartesian_waypoints_planner_B.dist_tmp]
+              * cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h];
+            cartesian_waypoints_planner_B.qd[cartesian_waypoints_planner_B.dist_tmp]
+              =
+              cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h]
+              * cartesian_waypoints_planner_B.act_max_vel[cartesian_waypoints_planner_B.dist_tmp];
+            cartesian_waypoints_planner_B.qdd[cartesian_waypoints_planner_B.dist_tmp]
+              = 0.0;
+            break;
+
+           default:
+            cartesian_waypoints_planner_B.q[cartesian_waypoints_planner_B.dist_tmp]
+              +=
+              (cartesian_waypoints_planner_B.t[cartesian_waypoints_planner_B.subsa_idx_1]
+               * cartesian_waypoints_planner_B.act_max_vel[cartesian_waypoints_planner_B.dist_tmp]
+               - cartesian_waypoints_planner_B.t[cartesian_waypoints_planner_B.subsa_idx_1]
+               * cartesian_waypoints_planner_B.t[cartesian_waypoints_planner_B.subsa_idx_1]
+               * (0.5 *
+                  cartesian_waypoints_planner_B.acc[cartesian_waypoints_planner_B.dist_tmp]))
+              * cartesian_waypoints_planner_B.signes[cartesian_waypoints_planner_B.value_h];
+            cartesian_waypoints_planner_B.qd[cartesian_waypoints_planner_B.dist_tmp]
+              = 0.0;
+            cartesian_waypoints_planner_B.qdd[cartesian_waypoints_planner_B.dist_tmp]
+              = 0.0;
+            break;
+          }
+
+          cartesian_waypoints_planner_B.k_j++;
+        }
+      }
+
+      cartesian_waypoints_planner_B.b_j_f++;
+    }
+  }
+
+  // End of MATLAB Function: '<Root>/MATLAB Function4'
+
+  // MATLABSystem: '<S13>/Set Parameter' incorporates:
   //   Delay: '<Root>/Delay2'
   //   MATLAB Function: '<Root>/MATLAB Function2'
 
   ParamSet_cartesian_waypoints_planner_364.set_parameter
     (cartesian_waypoints_planner_DW.Delay2_DSTATE[2]);
 
-  // MATLABSystem: '<S9>/Set Parameter1' incorporates:
+  // MATLABSystem: '<S13>/Set Parameter1' incorporates:
   //   Delay: '<Root>/Delay2'
   //   MATLAB Function: '<Root>/MATLAB Function2'
 
   ParamSet_cartesian_waypoints_planner_365.set_parameter
     (cartesian_waypoints_planner_DW.Delay2_DSTATE[3]);
 
-  // MATLABSystem: '<S9>/Set Parameter2' incorporates:
+  // MATLABSystem: '<S13>/Set Parameter2' incorporates:
   //   Delay: '<Root>/Delay2'
   //   MATLAB Function: '<Root>/MATLAB Function2'
 
   ParamSet_cartesian_waypoints_planner_366.set_parameter
     (cartesian_waypoints_planner_DW.Delay2_DSTATE[4]);
 
-  // MATLABSystem: '<S9>/Set Parameter3' incorporates:
+  // MATLABSystem: '<S13>/Set Parameter3' incorporates:
   //   Delay: '<Root>/Delay2'
   //   MATLAB Function: '<Root>/MATLAB Function2'
 
   ParamSet_cartesian_waypoints_planner_371.set_parameter
     (cartesian_waypoints_planner_DW.Delay2_DSTATE[5]);
 
-  // MATLABSystem: '<S9>/Set Parameter4' incorporates:
+  // MATLABSystem: '<S13>/Set Parameter4' incorporates:
   //   Delay: '<Root>/Delay2'
   //   MATLAB Function: '<Root>/MATLAB Function2'
 
   ParamSet_cartesian_waypoints_planner_372.set_parameter
     (cartesian_waypoints_planner_DW.Delay2_DSTATE[1]);
 
-  // MATLABSystem: '<S9>/Set Parameter5' incorporates:
+  // MATLABSystem: '<S13>/Set Parameter5' incorporates:
   //   Delay: '<Root>/Delay2'
   //   MATLAB Function: '<Root>/MATLAB Function2'
 
@@ -17555,49 +19857,50 @@ void cartesian_waypoints_planner_step(void)
     (cartesian_waypoints_planner_DW.Delay2_DSTATE[0]);
 
   // MATLAB Function: '<Root>/MATLAB Function1' incorporates:
+  //   BusAssignment: '<Root>/Bus Assignment'
   //   Constant: '<S1>/Constant'
-  //   Delay: '<Root>/Delay2'
 
   cartesian_waypoints_planner_B.msg =
     cartesian_waypoints_planner_P.Constant_Value;
-  for (cartesian_waypoints_planner_B.value_al = 0;
-       cartesian_waypoints_planner_B.value_al < 6;
-       cartesian_waypoints_planner_B.value_al++) {
-    for (cartesian_waypoints_planner_B.subsa_idx_1 = 0;
-         cartesian_waypoints_planner_B.subsa_idx_1 < 20;
-         cartesian_waypoints_planner_B.subsa_idx_1++) {
-      cartesian_waypoints_planner_B.msg.Data[cartesian_waypoints_planner_B.value_al
-        * 20 + cartesian_waypoints_planner_B.subsa_idx_1] = static_cast<real32_T>
-        (cartesian_waypoints_planner_DW.Delay2_DSTATE[6 *
-         cartesian_waypoints_planner_B.subsa_idx_1 +
-         cartesian_waypoints_planner_B.value_al]);
-    }
+
+  // BusAssignment: '<Root>/Bus Assignment' incorporates:
+  //   MATLAB Function: '<Root>/MATLAB Function1'
+
+  cartesian_waypoints_planner_B.msg.TimeFromStart.Sec =
+    cartesian_waypoints_planner_B.In1.Clock_.Sec;
+  cartesian_waypoints_planner_B.msg.TimeFromStart.Nsec =
+    cartesian_waypoints_planner_B.In1.Clock_.Nsec;
+
+  // MATLAB Function: '<Root>/MATLAB Function1'
+  cartesian_waypoints_planner_B.msg.Velocities_SL_Info.CurrentLength = 6U;
+  cartesian_waypoints_planner_B.msg.Positions_SL_Info.CurrentLength = 6U;
+  cartesian_waypoints_planner_B.msg.Accelerations_SL_Info.CurrentLength = 6U;
+  for (cartesian_waypoints_planner_B.value_h = 0;
+       cartesian_waypoints_planner_B.value_h < 6;
+       cartesian_waypoints_planner_B.value_h++) {
+    cartesian_waypoints_planner_B.msg.Velocities[cartesian_waypoints_planner_B.value_h]
+      = cartesian_waypoints_planner_B.qd[cartesian_waypoints_planner_B.value_h];
+    cartesian_waypoints_planner_B.msg.Positions[cartesian_waypoints_planner_B.value_h]
+      = cartesian_waypoints_planner_B.q[cartesian_waypoints_planner_B.value_h];
+    cartesian_waypoints_planner_B.msg.Accelerations[cartesian_waypoints_planner_B.value_h]
+      = cartesian_waypoints_planner_B.qdd[cartesian_waypoints_planner_B.value_h];
   }
 
-  cartesian_waypoints_planner_B.msg.Data_SL_Info.CurrentLength = 120U;
-  cartesian_waypoints_planner_B.msg.Layout.Dim_SL_Info.CurrentLength = 2U;
-  cartesian_waypoints_planner_B.msg.Layout.Dim[0].Size = 20U;
-  cartesian_waypoints_planner_B.msg.Layout.Dim[0].Stride = 120U;
-  cartesian_waypoints_planner_B.msg.Layout.Dim[1].Size = 6U;
-  cartesian_waypoints_planner_B.msg.Layout.Dim[1].Stride = 6U;
-
-  // End of MATLAB Function: '<Root>/MATLAB Function1'
-
   // Outputs for Atomic SubSystem: '<Root>/Publish'
-  // MATLABSystem: '<S6>/SinkBlock'
-  Pub_cartesian_waypoints_planner_344.publish(&cartesian_waypoints_planner_B.msg);
+  // MATLABSystem: '<S9>/SinkBlock'
+  Pub_cartesian_waypoints_planner_392.publish(&cartesian_waypoints_planner_B.msg);
 
   // End of Outputs for SubSystem: '<Root>/Publish'
 
   // Update for Delay: '<Root>/Delay' incorporates:
-  //   MATLABSystem: '<S2>/MATLAB System'
+  //   MATLABSystem: '<S3>/MATLAB System'
 
-  for (cartesian_waypoints_planner_B.value_al = 0;
-       cartesian_waypoints_planner_B.value_al < 6;
-       cartesian_waypoints_planner_B.value_al++) {
-    cartesian_waypoints_planner_DW.Delay_DSTATE[cartesian_waypoints_planner_B.value_al]
+  for (cartesian_waypoints_planner_B.value_h = 0;
+       cartesian_waypoints_planner_B.value_h < 6;
+       cartesian_waypoints_planner_B.value_h++) {
+    cartesian_waypoints_planner_DW.Delay_DSTATE[cartesian_waypoints_planner_B.value_h]
       =
-      cartesian_waypoints_planner_B.b_varargout_1[cartesian_waypoints_planner_B.value_al];
+      cartesian_waypoints_planner_B.b_varargout_1[cartesian_waypoints_planner_B.value_h];
   }
 
   // End of Update for Delay: '<Root>/Delay'
@@ -17612,77 +19915,88 @@ void cartesian_waypoints_planner_initialize(void)
   rt_InitInfAndNaN(sizeof(real_T));
 
   {
-    robotics_slmanip_internal_blo_T *obj;
+    robotics_slmanip_internal_b_e_T *obj;
     b_inverseKinematics_cartesian_T *obj_0;
     h_robotics_core_internal_Damp_T *obj_1;
-    static const char_T tmp[16] = { '/', 'j', 'o', 'i', 'n', 't', '_', 'w', 'a',
-      'y', 'p', 'o', 'i', 'n', 't', 's' };
+    static const char_T tmp[6] = { '/', 'c', 'l', 'o', 'c', 'k' };
 
-    static const char_T tmp_0[9] = { '/', 'n', '_', 'p', 'o', 'i', 'n', 't', 's'
+    static const char_T tmp_0[17] = { '/', 'j', 'o', 'i', 'n', 't', '_', 't',
+      'r', 'a', 'j', 'e', 'c', 't', 'o', 'r', 'y' };
+
+    static const char_T tmp_1[9] = { '/', 'n', '_', 'p', 'o', 'i', 'n', 't', 's'
     };
 
-    static const char_T tmp_1[5] = { '/', 'p', 'i', '_', 'x' };
+    static const char_T tmp_2[5] = { '/', 'p', 'i', '_', 'x' };
 
-    static const char_T tmp_2[5] = { '/', 'p', 'i', '_', 'y' };
+    static const char_T tmp_3[5] = { '/', 'p', 'i', '_', 'y' };
 
-    static const char_T tmp_3[5] = { '/', 'p', 'i', '_', 'z' };
+    static const char_T tmp_4[5] = { '/', 'p', 'i', '_', 'z' };
 
-    static const char_T tmp_4[5] = { '/', 'o', 'i', '_', 'x' };
+    static const char_T tmp_5[5] = { '/', 'o', 'i', '_', 'x' };
 
-    static const char_T tmp_5[5] = { '/', 'o', 'i', '_', 'y' };
+    static const char_T tmp_6[5] = { '/', 'o', 'i', '_', 'y' };
 
-    static const char_T tmp_6[5] = { '/', 'o', 'i', '_', 'z' };
+    static const char_T tmp_7[5] = { '/', 'o', 'i', '_', 'z' };
 
-    static const char_T tmp_7[5] = { '/', 'o', 'i', '_', 'w' };
+    static const char_T tmp_8[5] = { '/', 'o', 'i', '_', 'w' };
 
-    static const char_T tmp_8[5] = { '/', 'p', 'f', '_', 'x' };
+    static const char_T tmp_9[5] = { '/', 'p', 'f', '_', 'x' };
 
-    static const char_T tmp_9[5] = { '/', 'p', 'f', '_', 'y' };
+    static const char_T tmp_a[5] = { '/', 'p', 'f', '_', 'y' };
 
-    static const char_T tmp_a[5] = { '/', 'p', 'f', '_', 'z' };
+    static const char_T tmp_b[5] = { '/', 'p', 'f', '_', 'z' };
 
-    static const char_T tmp_b[5] = { '/', 'o', 'f', '_', 'x' };
+    static const char_T tmp_c[5] = { '/', 'o', 'f', '_', 'x' };
 
-    static const char_T tmp_c[5] = { '/', 'o', 'f', '_', 'y' };
+    static const char_T tmp_d[5] = { '/', 'o', 'f', '_', 'y' };
 
-    static const char_T tmp_d[5] = { '/', 'o', 'f', '_', 'z' };
+    static const char_T tmp_e[5] = { '/', 'o', 'f', '_', 'z' };
 
-    static const char_T tmp_e[5] = { '/', 'o', 'f', '_', 'w' };
-
-    static const char_T tmp_f[10] = { '/', 'w', 'e', 'i', 'g', 'h', 't', '_',
-      'o', 'x' };
+    static const char_T tmp_f[5] = { '/', 'o', 'f', '_', 'w' };
 
     static const char_T tmp_g[10] = { '/', 'w', 'e', 'i', 'g', 'h', 't', '_',
-      'o', 'y' };
+      'o', 'x' };
 
     static const char_T tmp_h[10] = { '/', 'w', 'e', 'i', 'g', 'h', 't', '_',
-      'o', 'z' };
+      'o', 'y' };
 
     static const char_T tmp_i[10] = { '/', 'w', 'e', 'i', 'g', 'h', 't', '_',
-      'p', 'x' };
+      'o', 'z' };
 
     static const char_T tmp_j[10] = { '/', 'w', 'e', 'i', 'g', 'h', 't', '_',
-      'p', 'y' };
+      'p', 'x' };
 
     static const char_T tmp_k[10] = { '/', 'w', 'e', 'i', 'g', 'h', 't', '_',
+      'p', 'y' };
+
+    static const char_T tmp_l[10] = { '/', 'w', 'e', 'i', 'g', 'h', 't', '_',
       'p', 'z' };
 
-    static const char_T tmp_l[11] = { '/', 'q', '3', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_m[12] = { '/', 's', 't', 'a', 'r', 't', '_', 'd',
+      'e', 'l', 'a', 'y' };
+
+    static const char_T tmp_n[12] = { '/', 'm', 'a', 'x', '_', 'a', 'n', 'g',
+      '_', 'v', 'e', 'l' };
+
+    static const char_T tmp_o[12] = { '/', 'm', 'a', 'x', '_', 'a', 'n', 'g',
+      '_', 'a', 'c', 'c' };
+
+    static const char_T tmp_p[11] = { '/', 'q', '3', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
-    static const char_T tmp_m[11] = { '/', 'q', '4', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_q[11] = { '/', 'q', '4', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
-    static const char_T tmp_n[11] = { '/', 'q', '5', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_r[11] = { '/', 'q', '5', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
-    static const char_T tmp_o[11] = { '/', 'q', '6', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_s[11] = { '/', 'q', '6', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
-    static const char_T tmp_p[11] = { '/', 'q', '2', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_t[11] = { '/', 'q', '2', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
-    static const char_T tmp_q[11] = { '/', 'q', '1', '_', 'i', 'n', 'i', 't',
+    static const char_T tmp_u[11] = { '/', 'q', '1', '_', 'i', 'n', 'i', 't',
       'i', 'a', 'l' };
 
     // InitializeConditions for Delay: '<Root>/Delay2'
@@ -17694,438 +20008,458 @@ void cartesian_waypoints_planner_initialize(void)
     cartesian_waypoints_planner_DW.Delay3_DSTATE =
       cartesian_waypoints_planner_P.Delay3_InitialCondition;
 
-    // InitializeConditions for Delay: '<Root>/Delay'
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 6;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_DW.Delay_DSTATE[cartesian_waypoints_planner_B.i_e]
-        =
-        cartesian_waypoints_planner_P.Delay_InitialCondition[cartesian_waypoints_planner_B.i_e];
-    }
-
-    // End of InitializeConditions for Delay: '<Root>/Delay'
-
     // InitializeConditions for Delay: '<Root>/Delay1'
     cartesian_waypoints_planner_DW.Delay1_DSTATE =
       cartesian_waypoints_planner_P.Delay1_InitialCondition;
 
-    // SystemInitialize for Atomic SubSystem: '<Root>/Publish'
-    // Start for MATLABSystem: '<S6>/SinkBlock'
-    cartesian_waypoints_planner_DW.obj_b.matlabCodegenIsDeleted = false;
-    cartesian_waypoints_planner_DW.obj_b.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 16;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv[cartesian_waypoints_planner_B.i_e] =
-        tmp[cartesian_waypoints_planner_B.i_e];
+    // SystemInitialize for Atomic SubSystem: '<Root>/Subscribe1'
+    // SystemInitialize for Enabled SubSystem: '<S10>/Enabled Subsystem'
+    // SystemInitialize for Outport: '<S14>/Out1'
+    cartesian_waypoints_planner_B.In1 = cartesian_waypoints_planner_P.Out1_Y0;
+
+    // End of SystemInitialize for SubSystem: '<S10>/Enabled Subsystem'
+
+    // Start for MATLABSystem: '<S10>/SourceBlock'
+    cartesian_waypoints_planner_DW.obj_pt.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_pt.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 6;
+         cartesian_waypoints_planner_B.i_k++) {
+      // InitializeConditions for Delay: '<Root>/Delay'
+      cartesian_waypoints_planner_DW.Delay_DSTATE[cartesian_waypoints_planner_B.i_k]
+        =
+        cartesian_waypoints_planner_P.Delay_InitialCondition[cartesian_waypoints_planner_B.i_k];
+
+      // Start for MATLABSystem: '<S10>/SourceBlock'
+      cartesian_waypoints_planner_B.cv5[cartesian_waypoints_planner_B.i_k] =
+        tmp[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv[16] = '\x00';
-    Pub_cartesian_waypoints_planner_344.createPublisher
+    // Start for MATLABSystem: '<S10>/SourceBlock'
+    cartesian_waypoints_planner_B.cv5[6] = '\x00';
+    Sub_cartesian_waypoints_planner_384.createSubscriber
+      (cartesian_waypoints_planner_B.cv5, 1);
+    cartesian_waypoints_planner_DW.obj_pt.isSetupComplete = true;
+
+    // End of SystemInitialize for SubSystem: '<Root>/Subscribe1'
+
+    // SystemInitialize for Atomic SubSystem: '<Root>/Publish'
+    // Start for MATLABSystem: '<S9>/SinkBlock'
+    cartesian_waypoints_planner_DW.obj_b.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_b.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 17;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv[cartesian_waypoints_planner_B.i_k] =
+        tmp_0[cartesian_waypoints_planner_B.i_k];
+    }
+
+    cartesian_waypoints_planner_B.cv[17] = '\x00';
+    Pub_cartesian_waypoints_planner_392.createPublisher
       (cartesian_waypoints_planner_B.cv, 1);
     cartesian_waypoints_planner_DW.obj_b.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S6>/SinkBlock'
+    // End of Start for MATLABSystem: '<S9>/SinkBlock'
     // End of SystemInitialize for SubSystem: '<Root>/Publish'
 
-    // Start for MATLABSystem: '<S7>/Get Parameter'
+    // Start for MATLABSystem: '<S11>/Get Parameter'
     cartesian_waypoints_planner_DW.obj_eq.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_eq.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 9;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_e] =
-        tmp_0[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 9;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_k] =
+        tmp_1[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv3[9] = '\x00';
+    cartesian_waypoints_planner_B.cv4[9] = '\x00';
     ParamGet_cartesian_waypoints_planner_346.initialize
-      (cartesian_waypoints_planner_B.cv3);
+      (cartesian_waypoints_planner_B.cv4);
     ParamGet_cartesian_waypoints_planner_346.initialize_error_codes(0, 1, 2, 3);
-    ParamGet_cartesian_waypoints_planner_346.set_initial_value(10);
+    ParamGet_cartesian_waypoints_planner_346.set_initial_value(3);
     cartesian_waypoints_planner_DW.obj_eq.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S7>/Get Parameter'
+    // End of Start for MATLABSystem: '<S11>/Get Parameter'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter'
+    // Start for MATLABSystem: '<S15>/Get Parameter'
     cartesian_waypoints_planner_DW.obj_i.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_i.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_1[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_2[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_288.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_288.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_288.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_i.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter'
+    // End of Start for MATLABSystem: '<S15>/Get Parameter'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter1'
+    // Start for MATLABSystem: '<S15>/Get Parameter1'
     cartesian_waypoints_planner_DW.obj_db.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_db.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_2[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_3[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_289.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_289.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_289.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_db.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter1'
+    // End of Start for MATLABSystem: '<S15>/Get Parameter1'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter2'
+    // Start for MATLABSystem: '<S15>/Get Parameter2'
     cartesian_waypoints_planner_DW.obj_oq.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_oq.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_3[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_4[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_290.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_290.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_290.set_initial_value(0.99);
     cartesian_waypoints_planner_DW.obj_oq.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter2'
+    // End of Start for MATLABSystem: '<S15>/Get Parameter2'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter3'
-    cartesian_waypoints_planner_DW.obj_es.matlabCodegenIsDeleted = false;
-    cartesian_waypoints_planner_DW.obj_es.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_4[cartesian_waypoints_planner_B.i_e];
+    // Start for MATLABSystem: '<S15>/Get Parameter3'
+    cartesian_waypoints_planner_DW.obj_esa.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_esa.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_5[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_291.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_291.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_291.set_initial_value(0.0);
-    cartesian_waypoints_planner_DW.obj_es.isSetupComplete = true;
+    cartesian_waypoints_planner_DW.obj_esa.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter3'
+    // End of Start for MATLABSystem: '<S15>/Get Parameter3'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter4'
+    // Start for MATLABSystem: '<S15>/Get Parameter4'
     cartesian_waypoints_planner_DW.obj_f4.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_f4.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_5[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_6[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_292.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_292.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_292.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_f4.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter4'
+    // End of Start for MATLABSystem: '<S15>/Get Parameter4'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter5'
+    // Start for MATLABSystem: '<S15>/Get Parameter5'
     cartesian_waypoints_planner_DW.obj_en.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_en.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_6[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_7[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_293.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_293.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_293.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_en.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter5'
+    // End of Start for MATLABSystem: '<S15>/Get Parameter5'
 
-    // Start for MATLABSystem: '<S10>/Get Parameter6'
+    // Start for MATLABSystem: '<S15>/Get Parameter6'
     cartesian_waypoints_planner_DW.obj_l0.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_l0.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_7[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_8[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_294.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_294.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_294.set_initial_value(1.0);
     cartesian_waypoints_planner_DW.obj_l0.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S10>/Get Parameter6'
+    // End of Start for MATLABSystem: '<S15>/Get Parameter6'
 
-    // Start for MATLABSystem: '<S11>/Get Parameter'
+    // Start for MATLABSystem: '<S16>/Get Parameter'
     cartesian_waypoints_planner_DW.obj_mb.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_mb.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_8[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_9[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_300.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_300.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_300.set_initial_value(0.3);
     cartesian_waypoints_planner_DW.obj_mb.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S11>/Get Parameter'
+    // End of Start for MATLABSystem: '<S16>/Get Parameter'
 
-    // Start for MATLABSystem: '<S11>/Get Parameter1'
+    // Start for MATLABSystem: '<S16>/Get Parameter1'
     cartesian_waypoints_planner_DW.obj_c.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_c.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_9[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_a[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_301.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_301.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_301.set_initial_value(0.3);
     cartesian_waypoints_planner_DW.obj_c.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S11>/Get Parameter1'
+    // End of Start for MATLABSystem: '<S16>/Get Parameter1'
 
-    // Start for MATLABSystem: '<S11>/Get Parameter2'
+    // Start for MATLABSystem: '<S16>/Get Parameter2'
     cartesian_waypoints_planner_DW.obj_f.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_f.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_a[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_b[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_302.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_302.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_302.set_initial_value(0.3);
     cartesian_waypoints_planner_DW.obj_f.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S11>/Get Parameter2'
+    // End of Start for MATLABSystem: '<S16>/Get Parameter2'
 
-    // Start for MATLABSystem: '<S11>/Get Parameter3'
+    // Start for MATLABSystem: '<S16>/Get Parameter3'
     cartesian_waypoints_planner_DW.obj_e0.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_e0.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_b[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_c[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_303.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_303.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_303.set_initial_value(0.39);
     cartesian_waypoints_planner_DW.obj_e0.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S11>/Get Parameter3'
+    // End of Start for MATLABSystem: '<S16>/Get Parameter3'
 
-    // Start for MATLABSystem: '<S11>/Get Parameter4'
+    // Start for MATLABSystem: '<S16>/Get Parameter4'
     cartesian_waypoints_planner_DW.obj_a.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_a.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_c[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_d[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_304.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_304.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_304.set_initial_value(0.89);
     cartesian_waypoints_planner_DW.obj_a.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S11>/Get Parameter4'
+    // End of Start for MATLABSystem: '<S16>/Get Parameter4'
 
-    // Start for MATLABSystem: '<S11>/Get Parameter5'
+    // Start for MATLABSystem: '<S16>/Get Parameter5'
     cartesian_waypoints_planner_DW.obj_p.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_p.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_d[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_e[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_305.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_305.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_305.set_initial_value(0.2);
     cartesian_waypoints_planner_DW.obj_p.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S11>/Get Parameter5'
+    // End of Start for MATLABSystem: '<S16>/Get Parameter5'
 
-    // Start for MATLABSystem: '<S11>/Get Parameter6'
+    // Start for MATLABSystem: '<S16>/Get Parameter6'
     cartesian_waypoints_planner_DW.obj_l.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_l.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 5;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv4[cartesian_waypoints_planner_B.i_e] =
-        tmp_e[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 5;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv6[cartesian_waypoints_planner_B.i_k] =
+        tmp_f[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv4[5] = '\x00';
+    cartesian_waypoints_planner_B.cv6[5] = '\x00';
     ParamGet_cartesian_waypoints_planner_306.initialize
-      (cartesian_waypoints_planner_B.cv4);
+      (cartesian_waypoints_planner_B.cv6);
     ParamGet_cartesian_waypoints_planner_306.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_306.set_initial_value(-0.12);
     cartesian_waypoints_planner_DW.obj_l.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S11>/Get Parameter6'
+    // End of Start for MATLABSystem: '<S16>/Get Parameter6'
 
-    // Start for MATLABSystem: '<S8>/Get Parameter'
-    cartesian_waypoints_planner_DW.obj_e.matlabCodegenIsDeleted = false;
-    cartesian_waypoints_planner_DW.obj_e.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 10;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
-        tmp_f[cartesian_waypoints_planner_B.i_e];
+    // Start for MATLABSystem: '<S12>/Get Parameter'
+    cartesian_waypoints_planner_DW.obj_es.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_es.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 10;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_k] =
+        tmp_g[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv2[10] = '\x00';
+    cartesian_waypoints_planner_B.cv3[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_312.initialize
-      (cartesian_waypoints_planner_B.cv2);
+      (cartesian_waypoints_planner_B.cv3);
     ParamGet_cartesian_waypoints_planner_312.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_312.set_initial_value(0.0);
-    cartesian_waypoints_planner_DW.obj_e.isSetupComplete = true;
+    cartesian_waypoints_planner_DW.obj_es.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S8>/Get Parameter'
+    // End of Start for MATLABSystem: '<S12>/Get Parameter'
 
-    // Start for MATLABSystem: '<S8>/Get Parameter1'
+    // Start for MATLABSystem: '<S12>/Get Parameter1'
     cartesian_waypoints_planner_DW.obj_d.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_d.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 10;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
-        tmp_g[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 10;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_k] =
+        tmp_h[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv2[10] = '\x00';
+    cartesian_waypoints_planner_B.cv3[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_313.initialize
-      (cartesian_waypoints_planner_B.cv2);
+      (cartesian_waypoints_planner_B.cv3);
     ParamGet_cartesian_waypoints_planner_313.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_313.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_d.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S8>/Get Parameter1'
+    // End of Start for MATLABSystem: '<S12>/Get Parameter1'
 
-    // Start for MATLABSystem: '<S8>/Get Parameter2'
+    // Start for MATLABSystem: '<S12>/Get Parameter2'
     cartesian_waypoints_planner_DW.obj_m.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_m.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 10;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
-        tmp_h[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 10;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_k] =
+        tmp_i[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv2[10] = '\x00';
+    cartesian_waypoints_planner_B.cv3[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_314.initialize
-      (cartesian_waypoints_planner_B.cv2);
+      (cartesian_waypoints_planner_B.cv3);
     ParamGet_cartesian_waypoints_planner_314.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_314.set_initial_value(0.0);
     cartesian_waypoints_planner_DW.obj_m.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S8>/Get Parameter2'
+    // End of Start for MATLABSystem: '<S12>/Get Parameter2'
 
-    // Start for MATLABSystem: '<S8>/Get Parameter3'
+    // Start for MATLABSystem: '<S12>/Get Parameter3'
     cartesian_waypoints_planner_DW.obj_h.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_h.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 10;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
-        tmp_i[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 10;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_k] =
+        tmp_j[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv2[10] = '\x00';
+    cartesian_waypoints_planner_B.cv3[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_315.initialize
-      (cartesian_waypoints_planner_B.cv2);
+      (cartesian_waypoints_planner_B.cv3);
     ParamGet_cartesian_waypoints_planner_315.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_315.set_initial_value(1.0);
     cartesian_waypoints_planner_DW.obj_h.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S8>/Get Parameter3'
+    // End of Start for MATLABSystem: '<S12>/Get Parameter3'
 
-    // Start for MATLABSystem: '<S8>/Get Parameter4'
+    // Start for MATLABSystem: '<S12>/Get Parameter4'
     cartesian_waypoints_planner_DW.obj_mf.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_mf.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 10;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
-        tmp_j[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 10;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_k] =
+        tmp_k[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv2[10] = '\x00';
+    cartesian_waypoints_planner_B.cv3[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_316.initialize
-      (cartesian_waypoints_planner_B.cv2);
+      (cartesian_waypoints_planner_B.cv3);
     ParamGet_cartesian_waypoints_planner_316.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_316.set_initial_value(1.0);
     cartesian_waypoints_planner_DW.obj_mf.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S8>/Get Parameter4'
+    // End of Start for MATLABSystem: '<S12>/Get Parameter4'
 
-    // Start for MATLABSystem: '<S8>/Get Parameter5'
+    // Start for MATLABSystem: '<S12>/Get Parameter5'
     cartesian_waypoints_planner_DW.obj_o.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_o.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 10;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_e] =
-        tmp_k[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 10;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv3[cartesian_waypoints_planner_B.i_k] =
+        tmp_l[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv2[10] = '\x00';
+    cartesian_waypoints_planner_B.cv3[10] = '\x00';
     ParamGet_cartesian_waypoints_planner_317.initialize
-      (cartesian_waypoints_planner_B.cv2);
+      (cartesian_waypoints_planner_B.cv3);
     ParamGet_cartesian_waypoints_planner_317.initialize_error_codes(0, 1, 2, 3);
     ParamGet_cartesian_waypoints_planner_317.set_initial_value(1.0);
     cartesian_waypoints_planner_DW.obj_o.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S8>/Get Parameter5'
+    // End of Start for MATLABSystem: '<S12>/Get Parameter5'
     emxInitStruct_robotics_slmanip_(&cartesian_waypoints_planner_DW.obj);
     emxInitStruct_c_rigidBodyJoint(&cartesian_waypoints_planner_DW.gobj_1);
     emxInitStruct_c_rigidBodyJoint(&cartesian_waypoints_planner_DW.gobj_50);
@@ -18231,7 +20565,7 @@ void cartesian_waypoints_planner_initialize(void)
     emxInitStruct_v_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_90);
     emxInitStruct_v_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_89);
 
-    // Start for MATLABSystem: '<S2>/MATLAB System'
+    // Start for MATLABSystem: '<S3>/MATLAB System'
     cartesian_waypoints_planner_DW.obj.IKInternal.matlabCodegenIsDeleted = true;
     cartesian_waypoints_planner_DW.obj.matlabCodegenIsDeleted = true;
     cartesian_wa_eml_rand_mt19937ar(cartesian_waypoints_planner_DW.state_m);
@@ -18239,7 +20573,7 @@ void cartesian_waypoints_planner_initialize(void)
     cartesian_waypoints_planner_DW.obj.matlabCodegenIsDeleted = false;
     obj = &cartesian_waypoints_planner_DW.obj;
     cartesian_waypoints_planner_DW.obj.isInitialized = 1;
-    car_RigidBodyTree_RigidBodyTree
+    c_RigidBodyTree_RigidBodyTree_e
       (&cartesian_waypoints_planner_DW.obj.TreeInternal,
        &cartesian_waypoints_planner_DW.gobj_90,
        &cartesian_waypoints_planner_DW.gobj_91,
@@ -18305,180 +20639,268 @@ void cartesian_waypoints_planner_initialize(void)
     obj_1->RandomRestart = false;
     obj_1->StepTolerance = 1.0E-14;
     obj_0->matlabCodegenIsDeleted = false;
+    emxInitStruct_robotics_slmani_e(&cartesian_waypoints_planner_DW.obj_e);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_1_b);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_16_b);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_15_o);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_14_a);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_13_o);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_12_h);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_11_f);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_10_n);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_9_d);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_8_g);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_7_a);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_6_d);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_5_d);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_4_p);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_3_d);
+    emxInitStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_2_h);
 
-    // Start for MATLABSystem: '<S9>/Set Parameter'
+    // Start for MATLABSystem: '<S2>/MATLAB System'
+    cartesian_waypoints_planner_DW.obj_e.isInitialized = 0;
+    cartesian_waypoints_planner_DW.obj_e.isInitialized = 1;
+    car_RigidBodyTree_RigidBodyTree
+      (&cartesian_waypoints_planner_DW.obj_e.TreeInternal,
+       &cartesian_waypoints_planner_DW.gobj_2_h,
+       &cartesian_waypoints_planner_DW.gobj_4_p,
+       &cartesian_waypoints_planner_DW.gobj_5_d,
+       &cartesian_waypoints_planner_DW.gobj_6_d,
+       &cartesian_waypoints_planner_DW.gobj_7_a,
+       &cartesian_waypoints_planner_DW.gobj_8_g,
+       &cartesian_waypoints_planner_DW.gobj_9_d,
+       &cartesian_waypoints_planner_DW.gobj_3_d);
+
+    // Start for MATLABSystem: '<Root>/Get Parameter'
+    cartesian_waypoints_planner_DW.obj_it.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_it.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 12;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_k] =
+        tmp_m[cartesian_waypoints_planner_B.i_k];
+    }
+
+    cartesian_waypoints_planner_B.cv1[12] = '\x00';
+    ParamGet_cartesian_waypoints_planner_378.initialize
+      (cartesian_waypoints_planner_B.cv1);
+    ParamGet_cartesian_waypoints_planner_378.initialize_error_codes(0, 1, 2, 3);
+    ParamGet_cartesian_waypoints_planner_378.set_initial_value(10.0);
+    cartesian_waypoints_planner_DW.obj_it.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<Root>/Get Parameter'
+
+    // Start for MATLABSystem: '<Root>/Get Parameter1'
+    cartesian_waypoints_planner_DW.obj_k.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_k.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 12;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_k] =
+        tmp_n[cartesian_waypoints_planner_B.i_k];
+    }
+
+    cartesian_waypoints_planner_B.cv1[12] = '\x00';
+    ParamGet_cartesian_waypoints_planner_379.initialize
+      (cartesian_waypoints_planner_B.cv1);
+    ParamGet_cartesian_waypoints_planner_379.initialize_error_codes(0, 1, 2, 3);
+    ParamGet_cartesian_waypoints_planner_379.set_initial_value(1.0);
+    cartesian_waypoints_planner_DW.obj_k.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<Root>/Get Parameter1'
+
+    // Start for MATLABSystem: '<Root>/Get Parameter2'
+    cartesian_waypoints_planner_DW.obj_fn.matlabCodegenIsDeleted = false;
+    cartesian_waypoints_planner_DW.obj_fn.isInitialized = 1;
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 12;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_k] =
+        tmp_o[cartesian_waypoints_planner_B.i_k];
+    }
+
+    cartesian_waypoints_planner_B.cv1[12] = '\x00';
+    ParamGet_cartesian_waypoints_planner_380.initialize
+      (cartesian_waypoints_planner_B.cv1);
+    ParamGet_cartesian_waypoints_planner_380.initialize_error_codes(0, 1, 2, 3);
+    ParamGet_cartesian_waypoints_planner_380.set_initial_value(0.5);
+    cartesian_waypoints_planner_DW.obj_fn.isSetupComplete = true;
+
+    // End of Start for MATLABSystem: '<Root>/Get Parameter2'
+
+    // Start for MATLABSystem: '<S13>/Set Parameter'
     cartesian_waypoints_planner_DW.obj_fb.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_fb.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 11;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
-        tmp_l[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 11;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_k] =
+        tmp_p[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    cartesian_waypoints_planner_B.cv2[11] = '\x00';
     ParamSet_cartesian_waypoints_planner_364.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     cartesian_waypoints_planner_DW.obj_fb.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Set Parameter'
+    // End of Start for MATLABSystem: '<S13>/Set Parameter'
 
-    // Start for MATLABSystem: '<S9>/Set Parameter1'
+    // Start for MATLABSystem: '<S13>/Set Parameter1'
     cartesian_waypoints_planner_DW.obj_dr.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_dr.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 11;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
-        tmp_m[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 11;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_k] =
+        tmp_q[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    cartesian_waypoints_planner_B.cv2[11] = '\x00';
     ParamSet_cartesian_waypoints_planner_365.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     cartesian_waypoints_planner_DW.obj_dr.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Set Parameter1'
+    // End of Start for MATLABSystem: '<S13>/Set Parameter1'
 
-    // Start for MATLABSystem: '<S9>/Set Parameter2'
+    // Start for MATLABSystem: '<S13>/Set Parameter2'
     cartesian_waypoints_planner_DW.obj_a5.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_a5.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 11;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
-        tmp_n[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 11;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_k] =
+        tmp_r[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    cartesian_waypoints_planner_B.cv2[11] = '\x00';
     ParamSet_cartesian_waypoints_planner_366.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     cartesian_waypoints_planner_DW.obj_a5.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Set Parameter2'
+    // End of Start for MATLABSystem: '<S13>/Set Parameter2'
 
-    // Start for MATLABSystem: '<S9>/Set Parameter3'
+    // Start for MATLABSystem: '<S13>/Set Parameter3'
     cartesian_waypoints_planner_DW.obj_hu.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_hu.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 11;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
-        tmp_o[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 11;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_k] =
+        tmp_s[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    cartesian_waypoints_planner_B.cv2[11] = '\x00';
     ParamSet_cartesian_waypoints_planner_371.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     cartesian_waypoints_planner_DW.obj_hu.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Set Parameter3'
+    // End of Start for MATLABSystem: '<S13>/Set Parameter3'
 
-    // Start for MATLABSystem: '<S9>/Set Parameter4'
+    // Start for MATLABSystem: '<S13>/Set Parameter4'
     cartesian_waypoints_planner_DW.obj_o1.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_o1.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 11;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
-        tmp_p[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 11;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_k] =
+        tmp_t[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    cartesian_waypoints_planner_B.cv2[11] = '\x00';
     ParamSet_cartesian_waypoints_planner_372.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     cartesian_waypoints_planner_DW.obj_o1.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Set Parameter4'
+    // End of Start for MATLABSystem: '<S13>/Set Parameter4'
 
-    // Start for MATLABSystem: '<S9>/Set Parameter5'
+    // Start for MATLABSystem: '<S13>/Set Parameter5'
     cartesian_waypoints_planner_DW.obj_ap.matlabCodegenIsDeleted = false;
     cartesian_waypoints_planner_DW.obj_ap.isInitialized = 1;
-    for (cartesian_waypoints_planner_B.i_e = 0;
-         cartesian_waypoints_planner_B.i_e < 11;
-         cartesian_waypoints_planner_B.i_e++) {
-      cartesian_waypoints_planner_B.cv1[cartesian_waypoints_planner_B.i_e] =
-        tmp_q[cartesian_waypoints_planner_B.i_e];
+    for (cartesian_waypoints_planner_B.i_k = 0;
+         cartesian_waypoints_planner_B.i_k < 11;
+         cartesian_waypoints_planner_B.i_k++) {
+      cartesian_waypoints_planner_B.cv2[cartesian_waypoints_planner_B.i_k] =
+        tmp_u[cartesian_waypoints_planner_B.i_k];
     }
 
-    cartesian_waypoints_planner_B.cv1[11] = '\x00';
+    cartesian_waypoints_planner_B.cv2[11] = '\x00';
     ParamSet_cartesian_waypoints_planner_373.initialize
-      (cartesian_waypoints_planner_B.cv1);
+      (cartesian_waypoints_planner_B.cv2);
     cartesian_waypoints_planner_DW.obj_ap.isSetupComplete = true;
 
-    // End of Start for MATLABSystem: '<S9>/Set Parameter5'
+    // End of Start for MATLABSystem: '<S13>/Set Parameter5'
   }
 }
 
 // Model terminate function
 void cartesian_waypoints_planner_terminate(void)
 {
-  // Terminate for MATLABSystem: '<S7>/Get Parameter'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_eq);
-
-  // Terminate for MATLABSystem: '<S10>/Get Parameter'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_i);
-
-  // Terminate for MATLABSystem: '<S10>/Get Parameter1'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_db);
-
-  // Terminate for MATLABSystem: '<S10>/Get Parameter2'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_oq);
-
-  // Terminate for MATLABSystem: '<S10>/Get Parameter3'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_es);
-
-  // Terminate for MATLABSystem: '<S10>/Get Parameter4'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_f4);
-
-  // Terminate for MATLABSystem: '<S10>/Get Parameter5'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_en);
-
-  // Terminate for MATLABSystem: '<S10>/Get Parameter6'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_l0);
-
   // Terminate for MATLABSystem: '<S11>/Get Parameter'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_mb);
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_eq);
 
-  // Terminate for MATLABSystem: '<S11>/Get Parameter1'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_c);
+  // Terminate for MATLABSystem: '<S15>/Get Parameter'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_i);
 
-  // Terminate for MATLABSystem: '<S11>/Get Parameter2'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_f);
+  // Terminate for MATLABSystem: '<S15>/Get Parameter1'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_db);
 
-  // Terminate for MATLABSystem: '<S11>/Get Parameter3'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_e0);
+  // Terminate for MATLABSystem: '<S15>/Get Parameter2'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_oq);
 
-  // Terminate for MATLABSystem: '<S11>/Get Parameter4'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_a);
+  // Terminate for MATLABSystem: '<S15>/Get Parameter3'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_esa);
 
-  // Terminate for MATLABSystem: '<S11>/Get Parameter5'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_p);
+  // Terminate for MATLABSystem: '<S15>/Get Parameter4'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_f4);
 
-  // Terminate for MATLABSystem: '<S11>/Get Parameter6'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_l);
+  // Terminate for MATLABSystem: '<S15>/Get Parameter5'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_en);
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_e);
+  // Terminate for MATLABSystem: '<S15>/Get Parameter6'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_l0);
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter1'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_d);
+  // Terminate for MATLABSystem: '<S16>/Get Parameter'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_mb);
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter2'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_m);
+  // Terminate for MATLABSystem: '<S16>/Get Parameter1'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_c);
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter3'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_h);
+  // Terminate for MATLABSystem: '<S16>/Get Parameter2'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_f);
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter4'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_mf);
+  // Terminate for MATLABSystem: '<S16>/Get Parameter3'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_e0);
 
-  // Terminate for MATLABSystem: '<S8>/Get Parameter5'
-  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj_o);
+  // Terminate for MATLABSystem: '<S16>/Get Parameter4'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_a);
 
-  // Terminate for MATLABSystem: '<S2>/MATLAB System'
-  matlabCodegenHandle_matlabCod_e(&cartesian_waypoints_planner_DW.obj);
-  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj.IKInternal);
+  // Terminate for MATLABSystem: '<S16>/Get Parameter5'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_p);
+
+  // Terminate for MATLABSystem: '<S16>/Get Parameter6'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_l);
+
+  // Terminate for MATLABSystem: '<S12>/Get Parameter'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_es);
+
+  // Terminate for MATLABSystem: '<S12>/Get Parameter1'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_d);
+
+  // Terminate for MATLABSystem: '<S12>/Get Parameter2'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_m);
+
+  // Terminate for MATLABSystem: '<S12>/Get Parameter3'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_h);
+
+  // Terminate for MATLABSystem: '<S12>/Get Parameter4'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_mf);
+
+  // Terminate for MATLABSystem: '<S12>/Get Parameter5'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_o);
+
+  // Terminate for MATLABSystem: '<S3>/MATLAB System'
+  matlabCodegenHandle_matlab_evqu(&cartesian_waypoints_planner_DW.obj);
+  matlabCodegenHandle_matlabC_evq(&cartesian_waypoints_planner_DW.obj.IKInternal);
   emxFreeStruct_robotics_slmanip_(&cartesian_waypoints_planner_DW.obj);
   emxFreeStruct_c_rigidBodyJoint(&cartesian_waypoints_planner_DW.gobj_1);
   emxFreeStruct_c_rigidBodyJoint(&cartesian_waypoints_planner_DW.gobj_50);
@@ -18583,28 +21005,60 @@ void cartesian_waypoints_planner_terminate(void)
   emxFreeStruct_v_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_91);
   emxFreeStruct_v_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_90);
   emxFreeStruct_v_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_89);
+  emxFreeStruct_robotics_slmani_e(&cartesian_waypoints_planner_DW.obj_e);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_1_b);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_16_b);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_15_o);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_14_a);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_13_o);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_12_h);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_11_f);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_10_n);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_9_d);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_8_g);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_7_a);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_6_d);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_5_d);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_4_p);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_3_d);
+  emxFreeStruct_n_robotics_manip_(&cartesian_waypoints_planner_DW.gobj_2_h);
 
-  // Terminate for MATLABSystem: '<S9>/Set Parameter'
-  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_fb);
+  // Terminate for Atomic SubSystem: '<Root>/Subscribe1'
+  // Terminate for MATLABSystem: '<S10>/SourceBlock'
+  matlabCodegenHandle_matl_evqusn(&cartesian_waypoints_planner_DW.obj_pt);
 
-  // Terminate for MATLABSystem: '<S9>/Set Parameter1'
-  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_dr);
+  // End of Terminate for SubSystem: '<Root>/Subscribe1'
 
-  // Terminate for MATLABSystem: '<S9>/Set Parameter2'
-  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_a5);
+  // Terminate for MATLABSystem: '<Root>/Get Parameter'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_it);
 
-  // Terminate for MATLABSystem: '<S9>/Set Parameter3'
-  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_hu);
+  // Terminate for MATLABSystem: '<Root>/Get Parameter1'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_k);
 
-  // Terminate for MATLABSystem: '<S9>/Set Parameter4'
-  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_o1);
+  // Terminate for MATLABSystem: '<Root>/Get Parameter2'
+  matlabCodegenHandle_matlabCodeg(&cartesian_waypoints_planner_DW.obj_fn);
 
-  // Terminate for MATLABSystem: '<S9>/Set Parameter5'
-  cartesian_way_matlabCodegenHa_a(&cartesian_waypoints_planner_DW.obj_ap);
+  // Terminate for MATLABSystem: '<S13>/Set Parameter'
+  cartesian_way_matlabCodegenHa_j(&cartesian_waypoints_planner_DW.obj_fb);
+
+  // Terminate for MATLABSystem: '<S13>/Set Parameter1'
+  cartesian_way_matlabCodegenHa_j(&cartesian_waypoints_planner_DW.obj_dr);
+
+  // Terminate for MATLABSystem: '<S13>/Set Parameter2'
+  cartesian_way_matlabCodegenHa_j(&cartesian_waypoints_planner_DW.obj_a5);
+
+  // Terminate for MATLABSystem: '<S13>/Set Parameter3'
+  cartesian_way_matlabCodegenHa_j(&cartesian_waypoints_planner_DW.obj_hu);
+
+  // Terminate for MATLABSystem: '<S13>/Set Parameter4'
+  cartesian_way_matlabCodegenHa_j(&cartesian_waypoints_planner_DW.obj_o1);
+
+  // Terminate for MATLABSystem: '<S13>/Set Parameter5'
+  cartesian_way_matlabCodegenHa_j(&cartesian_waypoints_planner_DW.obj_ap);
 
   // Terminate for Atomic SubSystem: '<Root>/Publish'
-  // Terminate for MATLABSystem: '<S6>/SinkBlock'
-  matlabCodegenHandle_matlabCo_ev(&cartesian_waypoints_planner_DW.obj_b);
+  // Terminate for MATLABSystem: '<S9>/SinkBlock'
+  matlabCodegenHandle_matla_evqus(&cartesian_waypoints_planner_DW.obj_b);
 
   // End of Terminate for SubSystem: '<Root>/Publish'
 }

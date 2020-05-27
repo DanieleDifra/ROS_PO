@@ -41,7 +41,7 @@
   <node pkg="dynamic_simulation" type="dynamic_simulation_node" name="dynamic_simulation"/>
   <node pkg="forward_kinematics" type="forward_kinematics_node" name="forward_kinematics"/>
   <node pkg="cartesian_waypoints_planner" type="cartesian_waypoints_planner_node" name="cartesian_waypoints_planner"/>
-  <node pkg="controller_cartesian" type="controller_cartesian_node" name="controller_cartesian"/>
+  <node pkg="controller_joint" type="controller_joint_node" name="controller_joint"/>
  
   
 </launch>
