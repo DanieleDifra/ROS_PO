@@ -29,11 +29,11 @@
 <tr name="9" id="9">
 <td><a id="l9" class='ln'>9</a></td><td><span class="ct">//</span></td></tr>
 <tr name="10" id="10">
-<td><a id="l10" class='ln'>10</a></td><td><span class="ct">// Model version                  : 1.183</span></td></tr>
+<td><a id="l10" class='ln'>10</a></td><td><span class="ct">// Model version                  : 1.186</span></td></tr>
 <tr name="11" id="11">
 <td><a id="l11" class='ln'>11</a></td><td><span class="ct">// Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019</span></td></tr>
 <tr name="12" id="12">
-<td><a id="l12" class='ln'>12</a></td><td><span class="ct">// C/C++ source code generated on : Wed May 27 16:30:19 2020</span></td></tr>
+<td><a id="l12" class='ln'>12</a></td><td><span class="ct">// C/C++ source code generated on : Wed May 27 21:08:31 2020</span></td></tr>
 <tr name="13" id="13">
 <td><a id="l13" class='ln'>13</a></td><td><span class="ct">//</span></td></tr>
 <tr name="14" id="14">
@@ -925,773 +925,505 @@
 <tr name="457" id="457">
 <td><a id="l457" class='ln'>457</a></td><td></td></tr>
 <tr name="458" id="458">
-<td><a id="l458" class='ln'>458</a></td><td><span class="pp">#ifndef</span> <a id="458c9" class="tk">struct_tag_8EP4ctv7s0SDnh3V6WCLOG</a></td></tr>
+<td><a id="l458" class='ln'>458</a></td><td><span class="pp">#ifndef</span> <a id="458c9" class="tk">struct_tag_a9w8IowFHzogdOiVBZxs7</a></td></tr>
 <tr name="459" id="459">
-<td><a id="l459" class='ln'>459</a></td><td><span class="pp">#define</span> <a id="459c9" class="tk">struct_tag_8EP4ctv7s0SDnh3V6WCLOG</a></td></tr>
+<td><a id="l459" class='ln'>459</a></td><td><span class="pp">#define</span> <a id="459c9" class="tk">struct_tag_a9w8IowFHzogdOiVBZxs7</a></td></tr>
 <tr name="460" id="460">
 <td><a id="l460" class='ln'>460</a></td><td></td></tr>
 <tr name="461" id="461">
-<td><a id="l461" class='ln'>461</a></td><td><span class="kw">struct</span> <a id="461c8" class="tk">tag_8EP4ctv7s0SDnh3V6WCLOG</a></td></tr>
+<td><a id="l461" class='ln'>461</a></td><td><span class="kw">struct</span> <a id="461c8" class="tk">tag_a9w8IowFHzogdOiVBZxs7</a></td></tr>
 <tr name="462" id="462">
 <td><a id="l462" class='ln'>462</a></td><td><span class="br">{</span></td></tr>
 <tr name="463" id="463">
-<td><a id="l463" class='ln'>463</a></td><td>  <a id="463c3" class="tk">real_T</a> <a id="463c10" class="tk">f1</a>[16];</td></tr>
+<td><a id="l463" class='ln'>463</a></td><td>  <a id="463c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="463c35" class="tk">*</a><a id="463c36" class="tk">Type</a>;</td></tr>
 <tr name="464" id="464">
-<td><a id="l464" class='ln'>464</a></td><td><span class="br">}</span>;</td></tr>
+<td><a id="l464" class='ln'>464</a></td><td>  <a id="464c3" class="tk">real_T</a> <a id="464c10" class="tk">VelocityNumber</a>;</td></tr>
 <tr name="465" id="465">
-<td><a id="l465" class='ln'>465</a></td><td></td></tr>
+<td><a id="l465" class='ln'>465</a></td><td>  <a id="465c3" class="tk">real_T</a> <a id="465c10" class="tk">PositionNumber</a>;</td></tr>
 <tr name="466" id="466">
-<td><a id="l466" class='ln'>466</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_8EP4ctv7s0SDnh3V6WCLOG</span></td></tr>
+<td><a id="l466" class='ln'>466</a></td><td>  <a id="466c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="466c35" class="tk">*</a><a id="466c36" class="tk">MotionSubspace</a>;</td></tr>
 <tr name="467" id="467">
-<td><a id="l467" class='ln'>467</a></td><td></td></tr>
+<td><a id="l467" class='ln'>467</a></td><td>  <a id="467c3" class="tk">boolean_T</a> <a id="467c13" class="tk">InTree</a>;</td></tr>
 <tr name="468" id="468">
-<td><a id="l468" class='ln'>468</a></td><td><span class="pp">#ifndef</span> <a id="468c9" class="tk">typedef_f_cell_wrap_cartesian_waypoin_T</a></td></tr>
+<td><a id="l468" class='ln'>468</a></td><td>  <a id="468c3" class="tk">real_T</a> <a id="468c10" class="tk">JointToParentTransform</a>[16];</td></tr>
 <tr name="469" id="469">
-<td><a id="l469" class='ln'>469</a></td><td><span class="pp">#define</span> <a id="469c9" class="tk">typedef_f_cell_wrap_cartesian_waypoin_T</a></td></tr>
+<td><a id="l469" class='ln'>469</a></td><td>  <a id="469c3" class="tk">real_T</a> <a id="469c10" class="tk">ChildToJointTransform</a>[16];</td></tr>
 <tr name="470" id="470">
-<td><a id="l470" class='ln'>470</a></td><td></td></tr>
+<td><a id="l470" class='ln'>470</a></td><td>  <a id="470c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="470c35" class="tk">*</a><a id="470c36" class="tk">NameInternal</a>;</td></tr>
 <tr name="471" id="471">
-<td><a id="l471" class='ln'>471</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="471c16" class="tk">tag_8EP4ctv7s0SDnh3V6WCLOG</a> <a id="471c43" class="tk">f_cell_wrap_cartesian_waypoin_T</a>;</td></tr>
+<td><a id="l471" class='ln'>471</a></td><td>  <a id="471c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="471c35" class="tk">*</a><a id="471c36" class="tk">PositionLimitsInternal</a>;</td></tr>
 <tr name="472" id="472">
-<td><a id="l472" class='ln'>472</a></td><td></td></tr>
+<td><a id="l472" class='ln'>472</a></td><td>  <a id="472c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="472c35" class="tk">*</a><a id="472c36" class="tk">HomePositionInternal</a>;</td></tr>
 <tr name="473" id="473">
-<td><a id="l473" class='ln'>473</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_f_cell_wrap_cartesian_waypoin_T</span></td></tr>
+<td><a id="l473" class='ln'>473</a></td><td>  <a id="473c3" class="tk">real_T</a> <a id="473c10" class="tk">JointAxisInternal</a>[3];</td></tr>
 <tr name="474" id="474">
-<td><a id="l474" class='ln'>474</a></td><td></td></tr>
+<td><a id="l474" class='ln'>474</a></td><td><span class="br">}</span>;</td></tr>
 <tr name="475" id="475">
-<td><a id="l475" class='ln'>475</a></td><td><span class="pp">#ifndef</span> <a id="475c9" class="tk">struct_tag_2xAJzS7rvIyFzfuC7FOGlD</a></td></tr>
+<td><a id="l475" class='ln'>475</a></td><td></td></tr>
 <tr name="476" id="476">
-<td><a id="l476" class='ln'>476</a></td><td><span class="pp">#define</span> <a id="476c9" class="tk">struct_tag_2xAJzS7rvIyFzfuC7FOGlD</a></td></tr>
+<td><a id="l476" class='ln'>476</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_a9w8IowFHzogdOiVBZxs7</span></td></tr>
 <tr name="477" id="477">
 <td><a id="l477" class='ln'>477</a></td><td></td></tr>
 <tr name="478" id="478">
-<td><a id="l478" class='ln'>478</a></td><td><span class="kw">struct</span> <a id="478c8" class="tk">tag_2xAJzS7rvIyFzfuC7FOGlD</a></td></tr>
+<td><a id="l478" class='ln'>478</a></td><td><span class="pp">#ifndef</span> <a id="478c9" class="tk">typedef_c_rigidBodyJoint_cartesian_wa_T</a></td></tr>
 <tr name="479" id="479">
-<td><a id="l479" class='ln'>479</a></td><td><span class="br">{</span></td></tr>
+<td><a id="l479" class='ln'>479</a></td><td><span class="pp">#define</span> <a id="479c9" class="tk">typedef_c_rigidBodyJoint_cartesian_wa_T</a></td></tr>
 <tr name="480" id="480">
-<td><a id="l480" class='ln'>480</a></td><td>  <a id="480c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="480c35" class="tk">*</a><a id="480c36" class="tk">Type</a>;</td></tr>
+<td><a id="l480" class='ln'>480</a></td><td></td></tr>
 <tr name="481" id="481">
-<td><a id="l481" class='ln'>481</a></td><td>  <a id="481c3" class="tk">real_T</a> <a id="481c10" class="tk">PositionNumber</a>;</td></tr>
+<td><a id="l481" class='ln'>481</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="481c16" class="tk">tag_a9w8IowFHzogdOiVBZxs7</a> <a id="481c42" class="tk">c_rigidBodyJoint_cartesian_wa_T</a>;</td></tr>
 <tr name="482" id="482">
-<td><a id="l482" class='ln'>482</a></td><td>  <a id="482c3" class="tk">real_T</a> <a id="482c10" class="tk">JointToParentTransform</a>[16];</td></tr>
+<td><a id="l482" class='ln'>482</a></td><td></td></tr>
 <tr name="483" id="483">
-<td><a id="l483" class='ln'>483</a></td><td>  <a id="483c3" class="tk">real_T</a> <a id="483c10" class="tk">ChildToJointTransform</a>[16];</td></tr>
+<td><a id="l483" class='ln'>483</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_c_rigidBodyJoint_cartesian_wa_T</span></td></tr>
 <tr name="484" id="484">
-<td><a id="l484" class='ln'>484</a></td><td>  <a id="484c3" class="tk">real_T</a> <a id="484c10" class="tk">JointAxisInternal</a>[3];</td></tr>
+<td><a id="l484" class='ln'>484</a></td><td></td></tr>
 <tr name="485" id="485">
-<td><a id="l485" class='ln'>485</a></td><td><span class="br">}</span>;</td></tr>
+<td><a id="l485" class='ln'>485</a></td><td><span class="pp">#ifndef</span> <a id="485c9" class="tk">struct_tag_Ba6v2kM2i80AQ3teGuWbQD</a></td></tr>
 <tr name="486" id="486">
-<td><a id="l486" class='ln'>486</a></td><td></td></tr>
+<td><a id="l486" class='ln'>486</a></td><td><span class="pp">#define</span> <a id="486c9" class="tk">struct_tag_Ba6v2kM2i80AQ3teGuWbQD</a></td></tr>
 <tr name="487" id="487">
-<td><a id="l487" class='ln'>487</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_2xAJzS7rvIyFzfuC7FOGlD</span></td></tr>
+<td><a id="l487" class='ln'>487</a></td><td></td></tr>
 <tr name="488" id="488">
-<td><a id="l488" class='ln'>488</a></td><td></td></tr>
+<td><a id="l488" class='ln'>488</a></td><td><span class="kw">struct</span> <a id="488c8" class="tk">tag_Ba6v2kM2i80AQ3teGuWbQD</a></td></tr>
 <tr name="489" id="489">
-<td><a id="l489" class='ln'>489</a></td><td><span class="pp">#ifndef</span> <a id="489c9" class="tk">typedef_c_rigidBodyJoint_cartesian_wa_T</a></td></tr>
+<td><a id="l489" class='ln'>489</a></td><td><span class="br">{</span></td></tr>
 <tr name="490" id="490">
-<td><a id="l490" class='ln'>490</a></td><td><span class="pp">#define</span> <a id="490c9" class="tk">typedef_c_rigidBodyJoint_cartesian_wa_T</a></td></tr>
+<td><a id="l490" class='ln'>490</a></td><td>  <a id="490c3" class="tk">real_T</a> <a id="490c10" class="tk">Index</a>;</td></tr>
 <tr name="491" id="491">
-<td><a id="l491" class='ln'>491</a></td><td></td></tr>
+<td><a id="l491" class='ln'>491</a></td><td>  <a id="491c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="491c35" class="tk">*</a><a id="491c36" class="tk">NameInternal</a>;</td></tr>
 <tr name="492" id="492">
-<td><a id="l492" class='ln'>492</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="492c16" class="tk">tag_2xAJzS7rvIyFzfuC7FOGlD</a> <a id="492c43" class="tk">c_rigidBodyJoint_cartesian_wa_T</a>;</td></tr>
+<td><a id="l492" class='ln'>492</a></td><td>  <a id="492c3" class="tk">c_rigidBodyJoint_cartesian_wa_T</a> <a id="492c35" class="tk">JointInternal</a>;</td></tr>
 <tr name="493" id="493">
-<td><a id="l493" class='ln'>493</a></td><td></td></tr>
+<td><a id="l493" class='ln'>493</a></td><td>  <a id="493c3" class="tk">real_T</a> <a id="493c10" class="tk">ParentIndex</a>;</td></tr>
 <tr name="494" id="494">
-<td><a id="l494" class='ln'>494</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_c_rigidBodyJoint_cartesian_wa_T</span></td></tr>
+<td><a id="l494" class='ln'>494</a></td><td>  <a id="494c3" class="tk">real_T</a> <a id="494c10" class="tk">MassInternal</a>;</td></tr>
 <tr name="495" id="495">
-<td><a id="l495" class='ln'>495</a></td><td></td></tr>
+<td><a id="l495" class='ln'>495</a></td><td>  <a id="495c3" class="tk">real_T</a> <a id="495c10" class="tk">CenterOfMassInternal</a>[3];</td></tr>
 <tr name="496" id="496">
-<td><a id="l496" class='ln'>496</a></td><td><span class="pp">#ifndef</span> <a id="496c9" class="tk">struct_tag_BPMfb1nwAW0cVckEDiFVnG</a></td></tr>
+<td><a id="l496" class='ln'>496</a></td><td>  <a id="496c3" class="tk">real_T</a> <a id="496c10" class="tk">InertiaInternal</a>[9];</td></tr>
 <tr name="497" id="497">
-<td><a id="l497" class='ln'>497</a></td><td><span class="pp">#define</span> <a id="497c9" class="tk">struct_tag_BPMfb1nwAW0cVckEDiFVnG</a></td></tr>
+<td><a id="l497" class='ln'>497</a></td><td>  <a id="497c3" class="tk">real_T</a> <a id="497c10" class="tk">SpatialInertia</a>[36];</td></tr>
 <tr name="498" id="498">
-<td><a id="l498" class='ln'>498</a></td><td></td></tr>
+<td><a id="l498" class='ln'>498</a></td><td><span class="br">}</span>;</td></tr>
 <tr name="499" id="499">
-<td><a id="l499" class='ln'>499</a></td><td><span class="kw">struct</span> <a id="499c8" class="tk">tag_BPMfb1nwAW0cVckEDiFVnG</a></td></tr>
+<td><a id="l499" class='ln'>499</a></td><td></td></tr>
 <tr name="500" id="500">
-<td><a id="l500" class='ln'>500</a></td><td><span class="br">{</span></td></tr>
+<td><a id="l500" class='ln'>500</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_Ba6v2kM2i80AQ3teGuWbQD</span></td></tr>
 <tr name="501" id="501">
-<td><a id="l501" class='ln'>501</a></td><td>  <a id="501c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="501c35" class="tk">*</a><a id="501c36" class="tk">NameInternal</a>;</td></tr>
+<td><a id="l501" class='ln'>501</a></td><td></td></tr>
 <tr name="502" id="502">
-<td><a id="l502" class='ln'>502</a></td><td>  <a id="502c3" class="tk">c_rigidBodyJoint_cartesian_wa_T</a> <a id="502c35" class="tk">JointInternal</a>;</td></tr>
+<td><a id="l502" class='ln'>502</a></td><td><span class="pp">#ifndef</span> <a id="502c9" class="tk">typedef_v_robotics_manip_internal_Rig_T</a></td></tr>
 <tr name="503" id="503">
-<td><a id="l503" class='ln'>503</a></td><td>  <a id="503c3" class="tk">real_T</a> <a id="503c10" class="tk">ParentIndex</a>;</td></tr>
+<td><a id="l503" class='ln'>503</a></td><td><span class="pp">#define</span> <a id="503c9" class="tk">typedef_v_robotics_manip_internal_Rig_T</a></td></tr>
 <tr name="504" id="504">
-<td><a id="l504" class='ln'>504</a></td><td><span class="br">}</span>;</td></tr>
+<td><a id="l504" class='ln'>504</a></td><td></td></tr>
 <tr name="505" id="505">
-<td><a id="l505" class='ln'>505</a></td><td></td></tr>
+<td><a id="l505" class='ln'>505</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="505c16" class="tk">tag_Ba6v2kM2i80AQ3teGuWbQD</a> <a id="505c43" class="tk">v_robotics_manip_internal_Rig_T</a>;</td></tr>
 <tr name="506" id="506">
-<td><a id="l506" class='ln'>506</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_BPMfb1nwAW0cVckEDiFVnG</span></td></tr>
+<td><a id="l506" class='ln'>506</a></td><td></td></tr>
 <tr name="507" id="507">
-<td><a id="l507" class='ln'>507</a></td><td></td></tr>
+<td><a id="l507" class='ln'>507</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_v_robotics_manip_internal_Rig_T</span></td></tr>
 <tr name="508" id="508">
-<td><a id="l508" class='ln'>508</a></td><td><span class="pp">#ifndef</span> <a id="508c9" class="tk">typedef_n_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l508" class='ln'>508</a></td><td></td></tr>
 <tr name="509" id="509">
-<td><a id="l509" class='ln'>509</a></td><td><span class="pp">#define</span> <a id="509c9" class="tk">typedef_n_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l509" class='ln'>509</a></td><td><span class="pp">#ifndef</span> <a id="509c9" class="tk">struct_tag_0AxmFhqo47Mw76v4Vj4AdE</a></td></tr>
 <tr name="510" id="510">
-<td><a id="l510" class='ln'>510</a></td><td></td></tr>
+<td><a id="l510" class='ln'>510</a></td><td><span class="pp">#define</span> <a id="510c9" class="tk">struct_tag_0AxmFhqo47Mw76v4Vj4AdE</a></td></tr>
 <tr name="511" id="511">
-<td><a id="l511" class='ln'>511</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="511c16" class="tk">tag_BPMfb1nwAW0cVckEDiFVnG</a> <a id="511c43" class="tk">n_robotics_manip_internal_Rig_T</a>;</td></tr>
+<td><a id="l511" class='ln'>511</a></td><td></td></tr>
 <tr name="512" id="512">
-<td><a id="l512" class='ln'>512</a></td><td></td></tr>
+<td><a id="l512" class='ln'>512</a></td><td><span class="kw">struct</span> <a id="512c8" class="tk">tag_0AxmFhqo47Mw76v4Vj4AdE</a></td></tr>
 <tr name="513" id="513">
-<td><a id="l513" class='ln'>513</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_n_robotics_manip_internal_Rig_T</span></td></tr>
+<td><a id="l513" class='ln'>513</a></td><td><span class="br">{</span></td></tr>
 <tr name="514" id="514">
-<td><a id="l514" class='ln'>514</a></td><td></td></tr>
+<td><a id="l514" class='ln'>514</a></td><td>  <a id="514c3" class="tk">real_T</a> <a id="514c10" class="tk">Index</a>;</td></tr>
 <tr name="515" id="515">
-<td><a id="l515" class='ln'>515</a></td><td><span class="pp">#ifndef</span> <a id="515c9" class="tk">struct_tag_EpnOXkcFkOFmcaZiu2CuCD</a></td></tr>
+<td><a id="l515" class='ln'>515</a></td><td>  <a id="515c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="515c35" class="tk">*</a><a id="515c36" class="tk">NameInternal</a>;</td></tr>
 <tr name="516" id="516">
-<td><a id="l516" class='ln'>516</a></td><td><span class="pp">#define</span> <a id="516c9" class="tk">struct_tag_EpnOXkcFkOFmcaZiu2CuCD</a></td></tr>
+<td><a id="l516" class='ln'>516</a></td><td>  <a id="516c3" class="tk">c_rigidBodyJoint_cartesian_wa_T</a> <a id="516c35" class="tk">*</a><a id="516c36" class="tk">JointInternal</a>;</td></tr>
 <tr name="517" id="517">
-<td><a id="l517" class='ln'>517</a></td><td></td></tr>
+<td><a id="l517" class='ln'>517</a></td><td>  <a id="517c3" class="tk">real_T</a> <a id="517c10" class="tk">ParentIndex</a>;</td></tr>
 <tr name="518" id="518">
-<td><a id="l518" class='ln'>518</a></td><td><span class="kw">struct</span> <a id="518c8" class="tk">tag_EpnOXkcFkOFmcaZiu2CuCD</a></td></tr>
+<td><a id="l518" class='ln'>518</a></td><td><span class="br">}</span>;</td></tr>
 <tr name="519" id="519">
-<td><a id="l519" class='ln'>519</a></td><td><span class="br">{</span></td></tr>
+<td><a id="l519" class='ln'>519</a></td><td></td></tr>
 <tr name="520" id="520">
-<td><a id="l520" class='ln'>520</a></td><td>  <a id="520c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="520c35" class="tk">*</a><a id="520c36" class="tk">NameInternal</a>;</td></tr>
+<td><a id="l520" class='ln'>520</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_0AxmFhqo47Mw76v4Vj4AdE</span></td></tr>
 <tr name="521" id="521">
-<td><a id="l521" class='ln'>521</a></td><td>  <a id="521c3" class="tk">c_rigidBodyJoint_cartesian_wa_T</a> <a id="521c35" class="tk">JointInternal</a>;</td></tr>
+<td><a id="l521" class='ln'>521</a></td><td></td></tr>
 <tr name="522" id="522">
-<td><a id="l522" class='ln'>522</a></td><td><span class="br">}</span>;</td></tr>
+<td><a id="l522" class='ln'>522</a></td><td><span class="pp">#ifndef</span> <a id="522c9" class="tk">typedef_w_robotics_manip_internal_Rig_T</a></td></tr>
 <tr name="523" id="523">
-<td><a id="l523" class='ln'>523</a></td><td></td></tr>
+<td><a id="l523" class='ln'>523</a></td><td><span class="pp">#define</span> <a id="523c9" class="tk">typedef_w_robotics_manip_internal_Rig_T</a></td></tr>
 <tr name="524" id="524">
-<td><a id="l524" class='ln'>524</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_EpnOXkcFkOFmcaZiu2CuCD</span></td></tr>
+<td><a id="l524" class='ln'>524</a></td><td></td></tr>
 <tr name="525" id="525">
-<td><a id="l525" class='ln'>525</a></td><td></td></tr>
+<td><a id="l525" class='ln'>525</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="525c16" class="tk">tag_0AxmFhqo47Mw76v4Vj4AdE</a> <a id="525c43" class="tk">w_robotics_manip_internal_Rig_T</a>;</td></tr>
 <tr name="526" id="526">
-<td><a id="l526" class='ln'>526</a></td><td><span class="pp">#ifndef</span> <a id="526c9" class="tk">typedef_o_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l526" class='ln'>526</a></td><td></td></tr>
 <tr name="527" id="527">
-<td><a id="l527" class='ln'>527</a></td><td><span class="pp">#define</span> <a id="527c9" class="tk">typedef_o_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l527" class='ln'>527</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_w_robotics_manip_internal_Rig_T</span></td></tr>
 <tr name="528" id="528">
 <td><a id="l528" class='ln'>528</a></td><td></td></tr>
 <tr name="529" id="529">
-<td><a id="l529" class='ln'>529</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="529c16" class="tk">tag_EpnOXkcFkOFmcaZiu2CuCD</a> <a id="529c43" class="tk">o_robotics_manip_internal_Rig_T</a>;</td></tr>
+<td><a id="l529" class='ln'>529</a></td><td><span class="pp">#ifndef</span> <a id="529c9" class="tk">struct_tag_GB8Etqd6oGuOYCER5vjKxC</a></td></tr>
 <tr name="530" id="530">
-<td><a id="l530" class='ln'>530</a></td><td></td></tr>
+<td><a id="l530" class='ln'>530</a></td><td><span class="pp">#define</span> <a id="530c9" class="tk">struct_tag_GB8Etqd6oGuOYCER5vjKxC</a></td></tr>
 <tr name="531" id="531">
-<td><a id="l531" class='ln'>531</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_o_robotics_manip_internal_Rig_T</span></td></tr>
+<td><a id="l531" class='ln'>531</a></td><td></td></tr>
 <tr name="532" id="532">
-<td><a id="l532" class='ln'>532</a></td><td></td></tr>
+<td><a id="l532" class='ln'>532</a></td><td><span class="kw">struct</span> <a id="532c8" class="tk">tag_GB8Etqd6oGuOYCER5vjKxC</a></td></tr>
 <tr name="533" id="533">
-<td><a id="l533" class='ln'>533</a></td><td><span class="pp">#ifndef</span> <a id="533c9" class="tk">struct_tag_30tOpKFHjBx7LOwU1qyzZE</a></td></tr>
+<td><a id="l533" class='ln'>533</a></td><td><span class="br">{</span></td></tr>
 <tr name="534" id="534">
-<td><a id="l534" class='ln'>534</a></td><td><span class="pp">#define</span> <a id="534c9" class="tk">struct_tag_30tOpKFHjBx7LOwU1qyzZE</a></td></tr>
+<td><a id="l534" class='ln'>534</a></td><td>  <a id="534c3" class="tk">real_T</a> <a id="534c10" class="tk">NumBodies</a>;</td></tr>
 <tr name="535" id="535">
-<td><a id="l535" class='ln'>535</a></td><td></td></tr>
+<td><a id="l535" class='ln'>535</a></td><td>  <a id="535c3" class="tk">w_robotics_manip_internal_Rig_T</a> <a id="535c35" class="tk">Base</a>;</td></tr>
 <tr name="536" id="536">
-<td><a id="l536" class='ln'>536</a></td><td><span class="kw">struct</span> <a id="536c8" class="tk">tag_30tOpKFHjBx7LOwU1qyzZE</a></td></tr>
+<td><a id="l536" class='ln'>536</a></td><td>  <a id="536c3" class="tk">w_robotics_manip_internal_Rig_T</a> <a id="536c35" class="tk">*</a><a id="536c36" class="tk">Bodies</a>[8];</td></tr>
 <tr name="537" id="537">
-<td><a id="l537" class='ln'>537</a></td><td><span class="br">{</span></td></tr>
+<td><a id="l537" class='ln'>537</a></td><td>  <a id="537c3" class="tk">real_T</a> <a id="537c10" class="tk">NumNonFixedBodies</a>;</td></tr>
 <tr name="538" id="538">
-<td><a id="l538" class='ln'>538</a></td><td>  <a id="538c3" class="tk">real_T</a> <a id="538c10" class="tk">NumBodies</a>;</td></tr>
+<td><a id="l538" class='ln'>538</a></td><td>  <a id="538c3" class="tk">real_T</a> <a id="538c10" class="tk">PositionNumber</a>;</td></tr>
 <tr name="539" id="539">
-<td><a id="l539" class='ln'>539</a></td><td>  <a id="539c3" class="tk">o_robotics_manip_internal_Rig_T</a> <a id="539c35" class="tk">Base</a>;</td></tr>
+<td><a id="l539" class='ln'>539</a></td><td>  <a id="539c3" class="tk">real_T</a> <a id="539c10" class="tk">VelocityNumber</a>;</td></tr>
 <tr name="540" id="540">
-<td><a id="l540" class='ln'>540</a></td><td>  <a id="540c3" class="tk">n_robotics_manip_internal_Rig_T</a> <a id="540c35" class="tk">*</a><a id="540c36" class="tk">Bodies</a>[8];</td></tr>
+<td><a id="l540" class='ln'>540</a></td><td>  <a id="540c3" class="tk">real_T</a> <a id="540c10" class="tk">PositionDoFMap</a>[16];</td></tr>
 <tr name="541" id="541">
-<td><a id="l541" class='ln'>541</a></td><td>  <a id="541c3" class="tk">real_T</a> <a id="541c10" class="tk">PositionNumber</a>;</td></tr>
+<td><a id="l541" class='ln'>541</a></td><td>  <a id="541c3" class="tk">real_T</a> <a id="541c10" class="tk">VelocityDoFMap</a>[16];</td></tr>
 <tr name="542" id="542">
 <td><a id="l542" class='ln'>542</a></td><td><span class="br">}</span>;</td></tr>
 <tr name="543" id="543">
 <td><a id="l543" class='ln'>543</a></td><td></td></tr>
 <tr name="544" id="544">
-<td><a id="l544" class='ln'>544</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_30tOpKFHjBx7LOwU1qyzZE</span></td></tr>
+<td><a id="l544" class='ln'>544</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_GB8Etqd6oGuOYCER5vjKxC</span></td></tr>
 <tr name="545" id="545">
 <td><a id="l545" class='ln'>545</a></td><td></td></tr>
 <tr name="546" id="546">
-<td><a id="l546" class='ln'>546</a></td><td><span class="pp">#ifndef</span> <a id="546c9" class="tk">typedef_p_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l546" class='ln'>546</a></td><td><span class="pp">#ifndef</span> <a id="546c9" class="tk">typedef_x_robotics_manip_internal_Rig_T</a></td></tr>
 <tr name="547" id="547">
-<td><a id="l547" class='ln'>547</a></td><td><span class="pp">#define</span> <a id="547c9" class="tk">typedef_p_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l547" class='ln'>547</a></td><td><span class="pp">#define</span> <a id="547c9" class="tk">typedef_x_robotics_manip_internal_Rig_T</a></td></tr>
 <tr name="548" id="548">
 <td><a id="l548" class='ln'>548</a></td><td></td></tr>
 <tr name="549" id="549">
-<td><a id="l549" class='ln'>549</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="549c16" class="tk">tag_30tOpKFHjBx7LOwU1qyzZE</a> <a id="549c43" class="tk">p_robotics_manip_internal_Rig_T</a>;</td></tr>
+<td><a id="l549" class='ln'>549</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="549c16" class="tk">tag_GB8Etqd6oGuOYCER5vjKxC</a> <a id="549c43" class="tk">x_robotics_manip_internal_Rig_T</a>;</td></tr>
 <tr name="550" id="550">
 <td><a id="l550" class='ln'>550</a></td><td></td></tr>
 <tr name="551" id="551">
-<td><a id="l551" class='ln'>551</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_p_robotics_manip_internal_Rig_T</span></td></tr>
+<td><a id="l551" class='ln'>551</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_x_robotics_manip_internal_Rig_T</span></td></tr>
 <tr name="552" id="552">
 <td><a id="l552" class='ln'>552</a></td><td></td></tr>
 <tr name="553" id="553">
-<td><a id="l553" class='ln'>553</a></td><td><span class="pp">#ifndef</span> <a id="553c9" class="tk">struct_tag_OhlsWxsKBuXkrIadR09rYF</a></td></tr>
+<td><a id="l553" class='ln'>553</a></td><td><span class="pp">#ifndef</span> <a id="553c9" class="tk">struct_tag_KnC6mlO1VBfnPbaet73v2G</a></td></tr>
 <tr name="554" id="554">
-<td><a id="l554" class='ln'>554</a></td><td><span class="pp">#define</span> <a id="554c9" class="tk">struct_tag_OhlsWxsKBuXkrIadR09rYF</a></td></tr>
+<td><a id="l554" class='ln'>554</a></td><td><span class="pp">#define</span> <a id="554c9" class="tk">struct_tag_KnC6mlO1VBfnPbaet73v2G</a></td></tr>
 <tr name="555" id="555">
 <td><a id="l555" class='ln'>555</a></td><td></td></tr>
 <tr name="556" id="556">
-<td><a id="l556" class='ln'>556</a></td><td><span class="kw">struct</span> <a id="556c8" class="tk">tag_OhlsWxsKBuXkrIadR09rYF</a></td></tr>
+<td><a id="l556" class='ln'>556</a></td><td><span class="kw">struct</span> <a id="556c8" class="tk">tag_KnC6mlO1VBfnPbaet73v2G</a></td></tr>
 <tr name="557" id="557">
 <td><a id="l557" class='ln'>557</a></td><td><span class="br">{</span></td></tr>
 <tr name="558" id="558">
-<td><a id="l558" class='ln'>558</a></td><td>  <a id="558c3" class="tk">int32_T</a> <a id="558c11" class="tk">isInitialized</a>;</td></tr>
+<td><a id="l558" class='ln'>558</a></td><td>  <a id="558c3" class="tk">x_robotics_manip_internal_Rig_T</a> <a id="558c35" class="tk">*</a><a id="558c36" class="tk">Robot</a>;</td></tr>
 <tr name="559" id="559">
-<td><a id="l559" class='ln'>559</a></td><td>  <a id="559c3" class="tk">p_robotics_manip_internal_Rig_T</a> <a id="559c35" class="tk">TreeInternal</a>;</td></tr>
+<td><a id="l559" class='ln'>559</a></td><td>  <a id="559c3" class="tk">real_T</a> <a id="559c10" class="tk">WeightMatrix</a>[36];</td></tr>
 <tr name="560" id="560">
-<td><a id="l560" class='ln'>560</a></td><td><span class="br">}</span>;</td></tr>
+<td><a id="l560" class='ln'>560</a></td><td>  <a id="560c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="560c35" class="tk">*</a><a id="560c36" class="tk">BodyName</a>;</td></tr>
 <tr name="561" id="561">
-<td><a id="l561" class='ln'>561</a></td><td></td></tr>
+<td><a id="l561" class='ln'>561</a></td><td>  <a id="561c3" class="tk">real_T</a> <a id="561c10" class="tk">Tform</a>[16];</td></tr>
 <tr name="562" id="562">
-<td><a id="l562" class='ln'>562</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_OhlsWxsKBuXkrIadR09rYF</span></td></tr>
+<td><a id="l562" class='ln'>562</a></td><td>  <a id="562c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="562c35" class="tk">*</a><a id="562c36" class="tk">ErrTemp</a>;</td></tr>
 <tr name="563" id="563">
-<td><a id="l563" class='ln'>563</a></td><td></td></tr>
+<td><a id="l563" class='ln'>563</a></td><td>  <a id="563c3" class="tk">real_T</a> <a id="563c10" class="tk">CostTemp</a>;</td></tr>
 <tr name="564" id="564">
-<td><a id="l564" class='ln'>564</a></td><td><span class="pp">#ifndef</span> <a id="564c9" class="tk">typedef_robotics_slmanip_internal_blo_T</a></td></tr>
+<td><a id="l564" class='ln'>564</a></td><td>  <a id="564c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="564c35" class="tk">*</a><a id="564c36" class="tk">GradTemp</a>;</td></tr>
 <tr name="565" id="565">
-<td><a id="l565" class='ln'>565</a></td><td><span class="pp">#define</span> <a id="565c9" class="tk">typedef_robotics_slmanip_internal_blo_T</a></td></tr>
+<td><a id="l565" class='ln'>565</a></td><td><span class="br">}</span>;</td></tr>
 <tr name="566" id="566">
 <td><a id="l566" class='ln'>566</a></td><td></td></tr>
 <tr name="567" id="567">
-<td><a id="l567" class='ln'>567</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="567c16" class="tk">tag_OhlsWxsKBuXkrIadR09rYF</a> <a id="567c43" class="tk">robotics_slmanip_internal_blo_T</a>;</td></tr>
+<td><a id="l567" class='ln'>567</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_KnC6mlO1VBfnPbaet73v2G</span></td></tr>
 <tr name="568" id="568">
 <td><a id="l568" class='ln'>568</a></td><td></td></tr>
 <tr name="569" id="569">
-<td><a id="l569" class='ln'>569</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_robotics_slmanip_internal_blo_T</span></td></tr>
+<td><a id="l569" class='ln'>569</a></td><td><span class="pp">#ifndef</span> <a id="569c9" class="tk">typedef_f_robotics_manip_internal_IKE_T</a></td></tr>
 <tr name="570" id="570">
-<td><a id="l570" class='ln'>570</a></td><td></td></tr>
+<td><a id="l570" class='ln'>570</a></td><td><span class="pp">#define</span> <a id="570c9" class="tk">typedef_f_robotics_manip_internal_IKE_T</a></td></tr>
 <tr name="571" id="571">
-<td><a id="l571" class='ln'>571</a></td><td><span class="pp">#ifndef</span> <a id="571c9" class="tk">struct_tag_a9w8IowFHzogdOiVBZxs7</a></td></tr>
+<td><a id="l571" class='ln'>571</a></td><td></td></tr>
 <tr name="572" id="572">
-<td><a id="l572" class='ln'>572</a></td><td><span class="pp">#define</span> <a id="572c9" class="tk">struct_tag_a9w8IowFHzogdOiVBZxs7</a></td></tr>
+<td><a id="l572" class='ln'>572</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="572c16" class="tk">tag_KnC6mlO1VBfnPbaet73v2G</a> <a id="572c43" class="tk">f_robotics_manip_internal_IKE_T</a>;</td></tr>
 <tr name="573" id="573">
 <td><a id="l573" class='ln'>573</a></td><td></td></tr>
 <tr name="574" id="574">
-<td><a id="l574" class='ln'>574</a></td><td><span class="kw">struct</span> <a id="574c8" class="tk">tag_a9w8IowFHzogdOiVBZxs7</a></td></tr>
+<td><a id="l574" class='ln'>574</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_f_robotics_manip_internal_IKE_T</span></td></tr>
 <tr name="575" id="575">
-<td><a id="l575" class='ln'>575</a></td><td><span class="br">{</span></td></tr>
+<td><a id="l575" class='ln'>575</a></td><td></td></tr>
 <tr name="576" id="576">
-<td><a id="l576" class='ln'>576</a></td><td>  <a id="576c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="576c35" class="tk">*</a><a id="576c36" class="tk">Type</a>;</td></tr>
+<td><a id="l576" class='ln'>576</a></td><td><span class="pp">#ifndef</span> <a id="576c9" class="tk">struct_tag_qVc3czRnWHHteds2In6P4B</a></td></tr>
 <tr name="577" id="577">
-<td><a id="l577" class='ln'>577</a></td><td>  <a id="577c3" class="tk">real_T</a> <a id="577c10" class="tk">VelocityNumber</a>;</td></tr>
+<td><a id="l577" class='ln'>577</a></td><td><span class="pp">#define</span> <a id="577c9" class="tk">struct_tag_qVc3czRnWHHteds2In6P4B</a></td></tr>
 <tr name="578" id="578">
-<td><a id="l578" class='ln'>578</a></td><td>  <a id="578c3" class="tk">real_T</a> <a id="578c10" class="tk">PositionNumber</a>;</td></tr>
+<td><a id="l578" class='ln'>578</a></td><td></td></tr>
 <tr name="579" id="579">
-<td><a id="l579" class='ln'>579</a></td><td>  <a id="579c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="579c35" class="tk">*</a><a id="579c36" class="tk">MotionSubspace</a>;</td></tr>
+<td><a id="l579" class='ln'>579</a></td><td><span class="kw">struct</span> <a id="579c8" class="tk">tag_qVc3czRnWHHteds2In6P4B</a></td></tr>
 <tr name="580" id="580">
-<td><a id="l580" class='ln'>580</a></td><td>  <a id="580c3" class="tk">boolean_T</a> <a id="580c13" class="tk">InTree</a>;</td></tr>
+<td><a id="l580" class='ln'>580</a></td><td><span class="br">{</span></td></tr>
 <tr name="581" id="581">
-<td><a id="l581" class='ln'>581</a></td><td>  <a id="581c3" class="tk">real_T</a> <a id="581c10" class="tk">JointToParentTransform</a>[16];</td></tr>
+<td><a id="l581" class='ln'>581</a></td><td>  <a id="581c3" class="tk">char_T</a> <a id="581c10" class="tk">Name</a>[22];</td></tr>
 <tr name="582" id="582">
-<td><a id="l582" class='ln'>582</a></td><td>  <a id="582c3" class="tk">real_T</a> <a id="582c10" class="tk">ChildToJointTransform</a>[16];</td></tr>
+<td><a id="l582" class='ln'>582</a></td><td>  <a id="582c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="582c35" class="tk">*</a><a id="582c36" class="tk">ConstraintMatrix</a>;</td></tr>
 <tr name="583" id="583">
-<td><a id="l583" class='ln'>583</a></td><td>  <a id="583c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="583c35" class="tk">*</a><a id="583c36" class="tk">NameInternal</a>;</td></tr>
+<td><a id="l583" class='ln'>583</a></td><td>  <a id="583c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="583c35" class="tk">*</a><a id="583c36" class="tk">ConstraintBound</a>;</td></tr>
 <tr name="584" id="584">
-<td><a id="l584" class='ln'>584</a></td><td>  <a id="584c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="584c35" class="tk">*</a><a id="584c36" class="tk">PositionLimitsInternal</a>;</td></tr>
+<td><a id="l584" class='ln'>584</a></td><td>  <a id="584c3" class="tk">boolean_T</a> <a id="584c13" class="tk">ConstraintsOn</a>;</td></tr>
 <tr name="585" id="585">
-<td><a id="l585" class='ln'>585</a></td><td>  <a id="585c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="585c35" class="tk">*</a><a id="585c36" class="tk">HomePositionInternal</a>;</td></tr>
+<td><a id="l585" class='ln'>585</a></td><td>  <a id="585c3" class="tk">real_T</a> <a id="585c10" class="tk">SolutionTolerance</a>;</td></tr>
 <tr name="586" id="586">
-<td><a id="l586" class='ln'>586</a></td><td>  <a id="586c3" class="tk">real_T</a> <a id="586c10" class="tk">JointAxisInternal</a>[3];</td></tr>
+<td><a id="l586" class='ln'>586</a></td><td>  <a id="586c3" class="tk">boolean_T</a> <a id="586c13" class="tk">RandomRestart</a>;</td></tr>
 <tr name="587" id="587">
-<td><a id="l587" class='ln'>587</a></td><td><span class="br">}</span>;</td></tr>
+<td><a id="l587" class='ln'>587</a></td><td>  <a id="587c3" class="tk">f_robotics_manip_internal_IKE_T</a> <a id="587c35" class="tk">*</a><a id="587c36" class="tk">ExtraArgs</a>;</td></tr>
 <tr name="588" id="588">
-<td><a id="l588" class='ln'>588</a></td><td></td></tr>
+<td><a id="l588" class='ln'>588</a></td><td>  <a id="588c3" class="tk">real_T</a> <a id="588c10" class="tk">MaxNumIteration</a>;</td></tr>
 <tr name="589" id="589">
-<td><a id="l589" class='ln'>589</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_a9w8IowFHzogdOiVBZxs7</span></td></tr>
+<td><a id="l589" class='ln'>589</a></td><td>  <a id="589c3" class="tk">real_T</a> <a id="589c10" class="tk">MaxTime</a>;</td></tr>
 <tr name="590" id="590">
-<td><a id="l590" class='ln'>590</a></td><td></td></tr>
+<td><a id="l590" class='ln'>590</a></td><td>  <a id="590c3" class="tk">real_T</a> <a id="590c10" class="tk">SeedInternal</a>[6];</td></tr>
 <tr name="591" id="591">
-<td><a id="l591" class='ln'>591</a></td><td><span class="pp">#ifndef</span> <a id="591c9" class="tk">typedef_c_rigidBodyJoint_cartesian__e_T</a></td></tr>
+<td><a id="l591" class='ln'>591</a></td><td>  <a id="591c3" class="tk">real_T</a> <a id="591c10" class="tk">MaxTimeInternal</a>;</td></tr>
 <tr name="592" id="592">
-<td><a id="l592" class='ln'>592</a></td><td><span class="pp">#define</span> <a id="592c9" class="tk">typedef_c_rigidBodyJoint_cartesian__e_T</a></td></tr>
+<td><a id="l592" class='ln'>592</a></td><td>  <a id="592c3" class="tk">real_T</a> <a id="592c10" class="tk">MaxNumIterationInternal</a>;</td></tr>
 <tr name="593" id="593">
-<td><a id="l593" class='ln'>593</a></td><td></td></tr>
+<td><a id="l593" class='ln'>593</a></td><td>  <a id="593c3" class="tk">real_T</a> <a id="593c10" class="tk">StepTolerance</a>;</td></tr>
 <tr name="594" id="594">
-<td><a id="l594" class='ln'>594</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="594c16" class="tk">tag_a9w8IowFHzogdOiVBZxs7</a> <a id="594c42" class="tk">c_rigidBodyJoint_cartesian__e_T</a>;</td></tr>
+<td><a id="l594" class='ln'>594</a></td><td>  <a id="594c3" class="tk">f_robotics_core_internal_Syst_T</a> <a id="594c35" class="tk">TimeObj</a>;</td></tr>
 <tr name="595" id="595">
-<td><a id="l595" class='ln'>595</a></td><td></td></tr>
+<td><a id="l595" class='ln'>595</a></td><td>  <a id="595c3" class="tk">real_T</a> <a id="595c10" class="tk">GradientTolerance</a>;</td></tr>
 <tr name="596" id="596">
-<td><a id="l596" class='ln'>596</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_c_rigidBodyJoint_cartesian__e_T</span></td></tr>
+<td><a id="l596" class='ln'>596</a></td><td>  <a id="596c3" class="tk">real_T</a> <a id="596c10" class="tk">ArmijoRuleBeta</a>;</td></tr>
 <tr name="597" id="597">
-<td><a id="l597" class='ln'>597</a></td><td></td></tr>
+<td><a id="l597" class='ln'>597</a></td><td>  <a id="597c3" class="tk">real_T</a> <a id="597c10" class="tk">ArmijoRuleSigma</a>;</td></tr>
 <tr name="598" id="598">
-<td><a id="l598" class='ln'>598</a></td><td><span class="pp">#ifndef</span> <a id="598c9" class="tk">struct_tag_Ba6v2kM2i80AQ3teGuWbQD</a></td></tr>
+<td><a id="l598" class='ln'>598</a></td><td>  <a id="598c3" class="tk">f_robotics_core_internal_Syst_T</a> <a id="598c35" class="tk">TimeObjInternal</a>;</td></tr>
 <tr name="599" id="599">
-<td><a id="l599" class='ln'>599</a></td><td><span class="pp">#define</span> <a id="599c9" class="tk">struct_tag_Ba6v2kM2i80AQ3teGuWbQD</a></td></tr>
+<td><a id="l599" class='ln'>599</a></td><td><span class="br">}</span>;</td></tr>
 <tr name="600" id="600">
 <td><a id="l600" class='ln'>600</a></td><td></td></tr>
 <tr name="601" id="601">
-<td><a id="l601" class='ln'>601</a></td><td><span class="kw">struct</span> <a id="601c8" class="tk">tag_Ba6v2kM2i80AQ3teGuWbQD</a></td></tr>
+<td><a id="l601" class='ln'>601</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_qVc3czRnWHHteds2In6P4B</span></td></tr>
 <tr name="602" id="602">
-<td><a id="l602" class='ln'>602</a></td><td><span class="br">{</span></td></tr>
+<td><a id="l602" class='ln'>602</a></td><td></td></tr>
 <tr name="603" id="603">
-<td><a id="l603" class='ln'>603</a></td><td>  <a id="603c3" class="tk">real_T</a> <a id="603c10" class="tk">Index</a>;</td></tr>
+<td><a id="l603" class='ln'>603</a></td><td><span class="pp">#ifndef</span> <a id="603c9" class="tk">typedef_h_robotics_core_internal_Damp_T</a></td></tr>
 <tr name="604" id="604">
-<td><a id="l604" class='ln'>604</a></td><td>  <a id="604c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="604c35" class="tk">*</a><a id="604c36" class="tk">NameInternal</a>;</td></tr>
+<td><a id="l604" class='ln'>604</a></td><td><span class="pp">#define</span> <a id="604c9" class="tk">typedef_h_robotics_core_internal_Damp_T</a></td></tr>
 <tr name="605" id="605">
-<td><a id="l605" class='ln'>605</a></td><td>  <a id="605c3" class="tk">c_rigidBodyJoint_cartesian__e_T</a> <a id="605c35" class="tk">JointInternal</a>;</td></tr>
+<td><a id="l605" class='ln'>605</a></td><td></td></tr>
 <tr name="606" id="606">
-<td><a id="l606" class='ln'>606</a></td><td>  <a id="606c3" class="tk">real_T</a> <a id="606c10" class="tk">ParentIndex</a>;</td></tr>
+<td><a id="l606" class='ln'>606</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="606c16" class="tk">tag_qVc3czRnWHHteds2In6P4B</a> <a id="606c43" class="tk">h_robotics_core_internal_Damp_T</a>;</td></tr>
 <tr name="607" id="607">
-<td><a id="l607" class='ln'>607</a></td><td>  <a id="607c3" class="tk">real_T</a> <a id="607c10" class="tk">MassInternal</a>;</td></tr>
+<td><a id="l607" class='ln'>607</a></td><td></td></tr>
 <tr name="608" id="608">
-<td><a id="l608" class='ln'>608</a></td><td>  <a id="608c3" class="tk">real_T</a> <a id="608c10" class="tk">CenterOfMassInternal</a>[3];</td></tr>
+<td><a id="l608" class='ln'>608</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_h_robotics_core_internal_Damp_T</span></td></tr>
 <tr name="609" id="609">
-<td><a id="l609" class='ln'>609</a></td><td>  <a id="609c3" class="tk">real_T</a> <a id="609c10" class="tk">InertiaInternal</a>[9];</td></tr>
+<td><a id="l609" class='ln'>609</a></td><td></td></tr>
 <tr name="610" id="610">
-<td><a id="l610" class='ln'>610</a></td><td>  <a id="610c3" class="tk">real_T</a> <a id="610c10" class="tk">SpatialInertia</a>[36];</td></tr>
+<td><a id="l610" class='ln'>610</a></td><td><span class="pp">#ifndef</span> <a id="610c9" class="tk">struct_tag_uH0N8Zuc6JP0FtQwOfy7kE</a></td></tr>
 <tr name="611" id="611">
-<td><a id="l611" class='ln'>611</a></td><td><span class="br">}</span>;</td></tr>
+<td><a id="l611" class='ln'>611</a></td><td><span class="pp">#define</span> <a id="611c9" class="tk">struct_tag_uH0N8Zuc6JP0FtQwOfy7kE</a></td></tr>
 <tr name="612" id="612">
 <td><a id="l612" class='ln'>612</a></td><td></td></tr>
 <tr name="613" id="613">
-<td><a id="l613" class='ln'>613</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_Ba6v2kM2i80AQ3teGuWbQD</span></td></tr>
+<td><a id="l613" class='ln'>613</a></td><td><span class="kw">struct</span> <a id="613c8" class="tk">tag_uH0N8Zuc6JP0FtQwOfy7kE</a></td></tr>
 <tr name="614" id="614">
-<td><a id="l614" class='ln'>614</a></td><td></td></tr>
+<td><a id="l614" class='ln'>614</a></td><td><span class="br">{</span></td></tr>
 <tr name="615" id="615">
-<td><a id="l615" class='ln'>615</a></td><td><span class="pp">#ifndef</span> <a id="615c9" class="tk">typedef_v_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l615" class='ln'>615</a></td><td>  <a id="615c3" class="tk">real_T</a> <a id="615c10" class="tk">NumBodies</a>;</td></tr>
 <tr name="616" id="616">
-<td><a id="l616" class='ln'>616</a></td><td><span class="pp">#define</span> <a id="616c9" class="tk">typedef_v_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l616" class='ln'>616</a></td><td>  <a id="616c3" class="tk">v_robotics_manip_internal_Rig_T</a> <a id="616c35" class="tk">Base</a>;</td></tr>
 <tr name="617" id="617">
-<td><a id="l617" class='ln'>617</a></td><td></td></tr>
+<td><a id="l617" class='ln'>617</a></td><td>  <a id="617c3" class="tk">real_T</a> <a id="617c10" class="tk">Gravity</a>[3];</td></tr>
 <tr name="618" id="618">
-<td><a id="l618" class='ln'>618</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="618c16" class="tk">tag_Ba6v2kM2i80AQ3teGuWbQD</a> <a id="618c43" class="tk">v_robotics_manip_internal_Rig_T</a>;</td></tr>
+<td><a id="l618" class='ln'>618</a></td><td>  <a id="618c3" class="tk">v_robotics_manip_internal_Rig_T</a> <a id="618c35" class="tk">*</a><a id="618c36" class="tk">Bodies</a>[8];</td></tr>
 <tr name="619" id="619">
-<td><a id="l619" class='ln'>619</a></td><td></td></tr>
+<td><a id="l619" class='ln'>619</a></td><td><span class="br">}</span>;</td></tr>
 <tr name="620" id="620">
-<td><a id="l620" class='ln'>620</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_v_robotics_manip_internal_Rig_T</span></td></tr>
+<td><a id="l620" class='ln'>620</a></td><td></td></tr>
 <tr name="621" id="621">
-<td><a id="l621" class='ln'>621</a></td><td></td></tr>
+<td><a id="l621" class='ln'>621</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_uH0N8Zuc6JP0FtQwOfy7kE</span></td></tr>
 <tr name="622" id="622">
-<td><a id="l622" class='ln'>622</a></td><td><span class="pp">#ifndef</span> <a id="622c9" class="tk">struct_tag_0AxmFhqo47Mw76v4Vj4AdE</a></td></tr>
+<td><a id="l622" class='ln'>622</a></td><td></td></tr>
 <tr name="623" id="623">
-<td><a id="l623" class='ln'>623</a></td><td><span class="pp">#define</span> <a id="623c9" class="tk">struct_tag_0AxmFhqo47Mw76v4Vj4AdE</a></td></tr>
+<td><a id="l623" class='ln'>623</a></td><td><span class="pp">#ifndef</span> <a id="623c9" class="tk">typedef_y_robotics_manip_internal_Rig_T</a></td></tr>
 <tr name="624" id="624">
-<td><a id="l624" class='ln'>624</a></td><td></td></tr>
+<td><a id="l624" class='ln'>624</a></td><td><span class="pp">#define</span> <a id="624c9" class="tk">typedef_y_robotics_manip_internal_Rig_T</a></td></tr>
 <tr name="625" id="625">
-<td><a id="l625" class='ln'>625</a></td><td><span class="kw">struct</span> <a id="625c8" class="tk">tag_0AxmFhqo47Mw76v4Vj4AdE</a></td></tr>
+<td><a id="l625" class='ln'>625</a></td><td></td></tr>
 <tr name="626" id="626">
-<td><a id="l626" class='ln'>626</a></td><td><span class="br">{</span></td></tr>
+<td><a id="l626" class='ln'>626</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="626c16" class="tk">tag_uH0N8Zuc6JP0FtQwOfy7kE</a> <a id="626c43" class="tk">y_robotics_manip_internal_Rig_T</a>;</td></tr>
 <tr name="627" id="627">
-<td><a id="l627" class='ln'>627</a></td><td>  <a id="627c3" class="tk">real_T</a> <a id="627c10" class="tk">Index</a>;</td></tr>
+<td><a id="l627" class='ln'>627</a></td><td></td></tr>
 <tr name="628" id="628">
-<td><a id="l628" class='ln'>628</a></td><td>  <a id="628c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="628c35" class="tk">*</a><a id="628c36" class="tk">NameInternal</a>;</td></tr>
+<td><a id="l628" class='ln'>628</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_y_robotics_manip_internal_Rig_T</span></td></tr>
 <tr name="629" id="629">
-<td><a id="l629" class='ln'>629</a></td><td>  <a id="629c3" class="tk">c_rigidBodyJoint_cartesian__e_T</a> <a id="629c35" class="tk">*</a><a id="629c36" class="tk">JointInternal</a>;</td></tr>
+<td><a id="l629" class='ln'>629</a></td><td></td></tr>
 <tr name="630" id="630">
-<td><a id="l630" class='ln'>630</a></td><td>  <a id="630c3" class="tk">real_T</a> <a id="630c10" class="tk">ParentIndex</a>;</td></tr>
+<td><a id="l630" class='ln'>630</a></td><td><span class="pp">#ifndef</span> <a id="630c9" class="tk">struct_tag_etdDPy7RU0or6X7LBQh1x</a></td></tr>
 <tr name="631" id="631">
-<td><a id="l631" class='ln'>631</a></td><td><span class="br">}</span>;</td></tr>
+<td><a id="l631" class='ln'>631</a></td><td><span class="pp">#define</span> <a id="631c9" class="tk">struct_tag_etdDPy7RU0or6X7LBQh1x</a></td></tr>
 <tr name="632" id="632">
 <td><a id="l632" class='ln'>632</a></td><td></td></tr>
 <tr name="633" id="633">
-<td><a id="l633" class='ln'>633</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_0AxmFhqo47Mw76v4Vj4AdE</span></td></tr>
+<td><a id="l633" class='ln'>633</a></td><td><span class="kw">struct</span> <a id="633c8" class="tk">tag_etdDPy7RU0or6X7LBQh1x</a></td></tr>
 <tr name="634" id="634">
-<td><a id="l634" class='ln'>634</a></td><td></td></tr>
+<td><a id="l634" class='ln'>634</a></td><td><span class="br">{</span></td></tr>
 <tr name="635" id="635">
-<td><a id="l635" class='ln'>635</a></td><td><span class="pp">#ifndef</span> <a id="635c9" class="tk">typedef_w_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l635" class='ln'>635</a></td><td>  <a id="635c3" class="tk">boolean_T</a> <a id="635c13" class="tk">matlabCodegenIsDeleted</a>;</td></tr>
 <tr name="636" id="636">
-<td><a id="l636" class='ln'>636</a></td><td><span class="pp">#define</span> <a id="636c9" class="tk">typedef_w_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l636" class='ln'>636</a></td><td>  <a id="636c3" class="tk">int32_T</a> <a id="636c11" class="tk">isInitialized</a>;</td></tr>
 <tr name="637" id="637">
-<td><a id="l637" class='ln'>637</a></td><td></td></tr>
+<td><a id="l637" class='ln'>637</a></td><td>  <a id="637c3" class="tk">boolean_T</a> <a id="637c13" class="tk">isSetupComplete</a>;</td></tr>
 <tr name="638" id="638">
-<td><a id="l638" class='ln'>638</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="638c16" class="tk">tag_0AxmFhqo47Mw76v4Vj4AdE</a> <a id="638c43" class="tk">w_robotics_manip_internal_Rig_T</a>;</td></tr>
+<td><a id="l638" class='ln'>638</a></td><td>  <a id="638c3" class="tk">h_robotics_core_internal_Damp_T</a> <a id="638c35" class="tk">*</a><a id="638c36" class="tk">Solver</a>;</td></tr>
 <tr name="639" id="639">
-<td><a id="l639" class='ln'>639</a></td><td></td></tr>
+<td><a id="l639" class='ln'>639</a></td><td>  <a id="639c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="639c35" class="tk">*</a><a id="639c36" class="tk">Limits</a>;</td></tr>
 <tr name="640" id="640">
-<td><a id="l640" class='ln'>640</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_w_robotics_manip_internal_Rig_T</span></td></tr>
+<td><a id="l640" class='ln'>640</a></td><td>  <a id="640c3" class="tk">x_robotics_manip_internal_Rig_T</a> <a id="640c35" class="tk">*</a><a id="640c36" class="tk">RigidBodyTreeInternal</a>;</td></tr>
 <tr name="641" id="641">
-<td><a id="l641" class='ln'>641</a></td><td></td></tr>
+<td><a id="l641" class='ln'>641</a></td><td><span class="br">}</span>;</td></tr>
 <tr name="642" id="642">
-<td><a id="l642" class='ln'>642</a></td><td><span class="pp">#ifndef</span> <a id="642c9" class="tk">struct_tag_GB8Etqd6oGuOYCER5vjKxC</a></td></tr>
+<td><a id="l642" class='ln'>642</a></td><td></td></tr>
 <tr name="643" id="643">
-<td><a id="l643" class='ln'>643</a></td><td><span class="pp">#define</span> <a id="643c9" class="tk">struct_tag_GB8Etqd6oGuOYCER5vjKxC</a></td></tr>
+<td><a id="l643" class='ln'>643</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_etdDPy7RU0or6X7LBQh1x</span></td></tr>
 <tr name="644" id="644">
 <td><a id="l644" class='ln'>644</a></td><td></td></tr>
 <tr name="645" id="645">
-<td><a id="l645" class='ln'>645</a></td><td><span class="kw">struct</span> <a id="645c8" class="tk">tag_GB8Etqd6oGuOYCER5vjKxC</a></td></tr>
+<td><a id="l645" class='ln'>645</a></td><td><span class="pp">#ifndef</span> <a id="645c9" class="tk">typedef_b_inverseKinematics_cartesian_T</a></td></tr>
 <tr name="646" id="646">
-<td><a id="l646" class='ln'>646</a></td><td><span class="br">{</span></td></tr>
+<td><a id="l646" class='ln'>646</a></td><td><span class="pp">#define</span> <a id="646c9" class="tk">typedef_b_inverseKinematics_cartesian_T</a></td></tr>
 <tr name="647" id="647">
-<td><a id="l647" class='ln'>647</a></td><td>  <a id="647c3" class="tk">real_T</a> <a id="647c10" class="tk">NumBodies</a>;</td></tr>
+<td><a id="l647" class='ln'>647</a></td><td></td></tr>
 <tr name="648" id="648">
-<td><a id="l648" class='ln'>648</a></td><td>  <a id="648c3" class="tk">w_robotics_manip_internal_Rig_T</a> <a id="648c35" class="tk">Base</a>;</td></tr>
+<td><a id="l648" class='ln'>648</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="648c16" class="tk">tag_etdDPy7RU0or6X7LBQh1x</a> <a id="648c42" class="tk">b_inverseKinematics_cartesian_T</a>;</td></tr>
 <tr name="649" id="649">
-<td><a id="l649" class='ln'>649</a></td><td>  <a id="649c3" class="tk">w_robotics_manip_internal_Rig_T</a> <a id="649c35" class="tk">*</a><a id="649c36" class="tk">Bodies</a>[8];</td></tr>
+<td><a id="l649" class='ln'>649</a></td><td></td></tr>
 <tr name="650" id="650">
-<td><a id="l650" class='ln'>650</a></td><td>  <a id="650c3" class="tk">real_T</a> <a id="650c10" class="tk">NumNonFixedBodies</a>;</td></tr>
+<td><a id="l650" class='ln'>650</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_b_inverseKinematics_cartesian_T</span></td></tr>
 <tr name="651" id="651">
-<td><a id="l651" class='ln'>651</a></td><td>  <a id="651c3" class="tk">real_T</a> <a id="651c10" class="tk">PositionNumber</a>;</td></tr>
+<td><a id="l651" class='ln'>651</a></td><td></td></tr>
 <tr name="652" id="652">
-<td><a id="l652" class='ln'>652</a></td><td>  <a id="652c3" class="tk">real_T</a> <a id="652c10" class="tk">VelocityNumber</a>;</td></tr>
+<td><a id="l652" class='ln'>652</a></td><td><span class="pp">#ifndef</span> <a id="652c9" class="tk">struct_tag_sxjfBB9iGq1brg4yDDoQjB</a></td></tr>
 <tr name="653" id="653">
-<td><a id="l653" class='ln'>653</a></td><td>  <a id="653c3" class="tk">real_T</a> <a id="653c10" class="tk">PositionDoFMap</a>[16];</td></tr>
+<td><a id="l653" class='ln'>653</a></td><td><span class="pp">#define</span> <a id="653c9" class="tk">struct_tag_sxjfBB9iGq1brg4yDDoQjB</a></td></tr>
 <tr name="654" id="654">
-<td><a id="l654" class='ln'>654</a></td><td>  <a id="654c3" class="tk">real_T</a> <a id="654c10" class="tk">VelocityDoFMap</a>[16];</td></tr>
+<td><a id="l654" class='ln'>654</a></td><td></td></tr>
 <tr name="655" id="655">
-<td><a id="l655" class='ln'>655</a></td><td><span class="br">}</span>;</td></tr>
+<td><a id="l655" class='ln'>655</a></td><td><span class="kw">struct</span> <a id="655c8" class="tk">tag_sxjfBB9iGq1brg4yDDoQjB</a></td></tr>
 <tr name="656" id="656">
-<td><a id="l656" class='ln'>656</a></td><td></td></tr>
+<td><a id="l656" class='ln'>656</a></td><td><span class="br">{</span></td></tr>
 <tr name="657" id="657">
-<td><a id="l657" class='ln'>657</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_GB8Etqd6oGuOYCER5vjKxC</span></td></tr>
+<td><a id="l657" class='ln'>657</a></td><td>  <a id="657c3" class="tk">boolean_T</a> <a id="657c13" class="tk">matlabCodegenIsDeleted</a>;</td></tr>
 <tr name="658" id="658">
-<td><a id="l658" class='ln'>658</a></td><td></td></tr>
+<td><a id="l658" class='ln'>658</a></td><td>  <a id="658c3" class="tk">int32_T</a> <a id="658c11" class="tk">isInitialized</a>;</td></tr>
 <tr name="659" id="659">
-<td><a id="l659" class='ln'>659</a></td><td><span class="pp">#ifndef</span> <a id="659c9" class="tk">typedef_x_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l659" class='ln'>659</a></td><td>  <a id="659c3" class="tk">y_robotics_manip_internal_Rig_T</a> <a id="659c35" class="tk">TreeInternal</a>;</td></tr>
 <tr name="660" id="660">
-<td><a id="l660" class='ln'>660</a></td><td><span class="pp">#define</span> <a id="660c9" class="tk">typedef_x_robotics_manip_internal_Rig_T</a></td></tr>
+<td><a id="l660" class='ln'>660</a></td><td>  <a id="660c3" class="tk">b_inverseKinematics_cartesian_T</a> <a id="660c35" class="tk">IKInternal</a>;</td></tr>
 <tr name="661" id="661">
-<td><a id="l661" class='ln'>661</a></td><td></td></tr>
+<td><a id="l661" class='ln'>661</a></td><td><span class="br">}</span>;</td></tr>
 <tr name="662" id="662">
-<td><a id="l662" class='ln'>662</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="662c16" class="tk">tag_GB8Etqd6oGuOYCER5vjKxC</a> <a id="662c43" class="tk">x_robotics_manip_internal_Rig_T</a>;</td></tr>
+<td><a id="l662" class='ln'>662</a></td><td></td></tr>
 <tr name="663" id="663">
-<td><a id="l663" class='ln'>663</a></td><td></td></tr>
+<td><a id="l663" class='ln'>663</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_sxjfBB9iGq1brg4yDDoQjB</span></td></tr>
 <tr name="664" id="664">
-<td><a id="l664" class='ln'>664</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_x_robotics_manip_internal_Rig_T</span></td></tr>
+<td><a id="l664" class='ln'>664</a></td><td></td></tr>
 <tr name="665" id="665">
-<td><a id="l665" class='ln'>665</a></td><td></td></tr>
+<td><a id="l665" class='ln'>665</a></td><td><span class="pp">#ifndef</span> <a id="665c9" class="tk">typedef_robotics_slmanip_internal_blo_T</a></td></tr>
 <tr name="666" id="666">
-<td><a id="l666" class='ln'>666</a></td><td><span class="pp">#ifndef</span> <a id="666c9" class="tk">struct_tag_KnC6mlO1VBfnPbaet73v2G</a></td></tr>
+<td><a id="l666" class='ln'>666</a></td><td><span class="pp">#define</span> <a id="666c9" class="tk">typedef_robotics_slmanip_internal_blo_T</a></td></tr>
 <tr name="667" id="667">
-<td><a id="l667" class='ln'>667</a></td><td><span class="pp">#define</span> <a id="667c9" class="tk">struct_tag_KnC6mlO1VBfnPbaet73v2G</a></td></tr>
+<td><a id="l667" class='ln'>667</a></td><td></td></tr>
 <tr name="668" id="668">
-<td><a id="l668" class='ln'>668</a></td><td></td></tr>
+<td><a id="l668" class='ln'>668</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="668c16" class="tk">tag_sxjfBB9iGq1brg4yDDoQjB</a> <a id="668c43" class="tk">robotics_slmanip_internal_blo_T</a>;</td></tr>
 <tr name="669" id="669">
-<td><a id="l669" class='ln'>669</a></td><td><span class="kw">struct</span> <a id="669c8" class="tk">tag_KnC6mlO1VBfnPbaet73v2G</a></td></tr>
+<td><a id="l669" class='ln'>669</a></td><td></td></tr>
 <tr name="670" id="670">
-<td><a id="l670" class='ln'>670</a></td><td><span class="br">{</span></td></tr>
+<td><a id="l670" class='ln'>670</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_robotics_slmanip_internal_blo_T</span></td></tr>
 <tr name="671" id="671">
-<td><a id="l671" class='ln'>671</a></td><td>  <a id="671c3" class="tk">x_robotics_manip_internal_Rig_T</a> <a id="671c35" class="tk">*</a><a id="671c36" class="tk">Robot</a>;</td></tr>
+<td><a id="l671" class='ln'>671</a></td><td></td></tr>
 <tr name="672" id="672">
-<td><a id="l672" class='ln'>672</a></td><td>  <a id="672c3" class="tk">real_T</a> <a id="672c10" class="tk">WeightMatrix</a>[36];</td></tr>
+<td><a id="l672" class='ln'>672</a></td><td><span class="pp">#ifndef</span> <a id="672c9" class="tk">typedef_c_robotics_core_internal_NLPS_T</a></td></tr>
 <tr name="673" id="673">
-<td><a id="l673" class='ln'>673</a></td><td>  <a id="673c3" class="tk">emxArray_char_T_cartesian_way_T</a> <a id="673c35" class="tk">*</a><a id="673c36" class="tk">BodyName</a>;</td></tr>
+<td><a id="l673" class='ln'>673</a></td><td><span class="pp">#define</span> <a id="673c9" class="tk">typedef_c_robotics_core_internal_NLPS_T</a></td></tr>
 <tr name="674" id="674">
-<td><a id="l674" class='ln'>674</a></td><td>  <a id="674c3" class="tk">real_T</a> <a id="674c10" class="tk">Tform</a>[16];</td></tr>
+<td><a id="l674" class='ln'>674</a></td><td></td></tr>
 <tr name="675" id="675">
-<td><a id="l675" class='ln'>675</a></td><td>  <a id="675c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="675c35" class="tk">*</a><a id="675c36" class="tk">ErrTemp</a>;</td></tr>
+<td><a id="l675" class='ln'>675</a></td><td><span class="kw">typedef</span> <a id="675c9" class="tk">int32_T</a> <a id="675c17" class="tk">c_robotics_core_internal_NLPS_T</a>;</td></tr>
 <tr name="676" id="676">
-<td><a id="l676" class='ln'>676</a></td><td>  <a id="676c3" class="tk">real_T</a> <a id="676c10" class="tk">CostTemp</a>;</td></tr>
+<td><a id="l676" class='ln'>676</a></td><td></td></tr>
 <tr name="677" id="677">
-<td><a id="l677" class='ln'>677</a></td><td>  <a id="677c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="677c35" class="tk">*</a><a id="677c36" class="tk">GradTemp</a>;</td></tr>
+<td><a id="l677" class='ln'>677</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_c_robotics_core_internal_NLPS_T</span></td></tr>
 <tr name="678" id="678">
-<td><a id="l678" class='ln'>678</a></td><td><span class="br">}</span>;</td></tr>
+<td><a id="l678" class='ln'>678</a></td><td></td></tr>
 <tr name="679" id="679">
-<td><a id="l679" class='ln'>679</a></td><td></td></tr>
+<td><a id="l679" class='ln'>679</a></td><td><span class="pp">#ifndef</span> <a id="679c9" class="tk">robotics_core_internal_NLPSolverExitFlags_constants</a></td></tr>
 <tr name="680" id="680">
-<td><a id="l680" class='ln'>680</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_KnC6mlO1VBfnPbaet73v2G</span></td></tr>
+<td><a id="l680" class='ln'>680</a></td><td><span class="pp">#define</span> <a id="680c9" class="tk">robotics_core_internal_NLPSolverExitFlags_constants</a></td></tr>
 <tr name="681" id="681">
 <td><a id="l681" class='ln'>681</a></td><td></td></tr>
 <tr name="682" id="682">
-<td><a id="l682" class='ln'>682</a></td><td><span class="pp">#ifndef</span> <a id="682c9" class="tk">typedef_f_robotics_manip_internal_IKE_T</a></td></tr>
+<td><a id="l682" class='ln'>682</a></td><td><span class="ct">// enum robotics_core_internal_NLPSolverExitFlags</span></td></tr>
 <tr name="683" id="683">
-<td><a id="l683" class='ln'>683</a></td><td><span class="pp">#define</span> <a id="683c9" class="tk">typedef_f_robotics_manip_internal_IKE_T</a></td></tr>
+<td><a id="l683" class='ln'>683</a></td><td><span class="kw">const</span> <a id="683c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="683c39" class="tk">LocalMinimumFound</a> = 1;</td></tr>
 <tr name="684" id="684">
-<td><a id="l684" class='ln'>684</a></td><td></td></tr>
+<td><a id="l684" class='ln'>684</a></td><td><span class="kw">const</span> <a id="684c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="684c39" class="tk">IterationLimitExceeded</a> = 2;</td></tr>
 <tr name="685" id="685">
-<td><a id="l685" class='ln'>685</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="685c16" class="tk">tag_KnC6mlO1VBfnPbaet73v2G</a> <a id="685c43" class="tk">f_robotics_manip_internal_IKE_T</a>;</td></tr>
+<td><a id="l685" class='ln'>685</a></td><td><span class="kw">const</span> <a id="685c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="685c39" class="tk">TimeLimitExceeded</a> = 3;</td></tr>
 <tr name="686" id="686">
-<td><a id="l686" class='ln'>686</a></td><td></td></tr>
+<td><a id="l686" class='ln'>686</a></td><td><span class="kw">const</span> <a id="686c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="686c39" class="tk">StepSizeBelowMinimum</a> = 4;</td></tr>
 <tr name="687" id="687">
-<td><a id="l687" class='ln'>687</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_f_robotics_manip_internal_IKE_T</span></td></tr>
+<td><a id="l687" class='ln'>687</a></td><td><span class="kw">const</span> <a id="687c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="687c39" class="tk">ChangeInErrorBelowMinimum</a> = 5;</td></tr>
 <tr name="688" id="688">
-<td><a id="l688" class='ln'>688</a></td><td></td></tr>
+<td><a id="l688" class='ln'>688</a></td><td><span class="kw">const</span> <a id="688c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="688c39" class="tk">SearchDirectionInvalid</a> = 6;</td></tr>
 <tr name="689" id="689">
-<td><a id="l689" class='ln'>689</a></td><td><span class="pp">#ifndef</span> <a id="689c9" class="tk">struct_tag_qVc3czRnWHHteds2In6P4B</a></td></tr>
+<td><a id="l689" class='ln'>689</a></td><td><span class="kw">const</span> <a id="689c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="689c39" class="tk">HessianNotPositiveSemidefinite</a> = 7;</td></tr>
 <tr name="690" id="690">
-<td><a id="l690" class='ln'>690</a></td><td><span class="pp">#define</span> <a id="690c9" class="tk">struct_tag_qVc3czRnWHHteds2In6P4B</a></td></tr>
+<td><a id="l690" class='ln'>690</a></td><td><span class="kw">const</span> <a id="690c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="690c39" class="tk">TrustRegionRadiusBelowMinimum</a> = 8;</td></tr>
 <tr name="691" id="691">
 <td><a id="l691" class='ln'>691</a></td><td></td></tr>
 <tr name="692" id="692">
-<td><a id="l692" class='ln'>692</a></td><td><span class="kw">struct</span> <a id="692c8" class="tk">tag_qVc3czRnWHHteds2In6P4B</a></td></tr>
+<td><a id="l692" class='ln'>692</a></td><td><span class="pp">#endif</span>                     <span class="ct">//robotics_core_internal_NLPSolverExitFlags_constants</span></td></tr>
 <tr name="693" id="693">
-<td><a id="l693" class='ln'>693</a></td><td><span class="br">{</span></td></tr>
+<td><a id="l693" class='ln'>693</a></td><td></td></tr>
 <tr name="694" id="694">
-<td><a id="l694" class='ln'>694</a></td><td>  <a id="694c3" class="tk">char_T</a> <a id="694c10" class="tk">Name</a>[22];</td></tr>
+<td><a id="l694" class='ln'>694</a></td><td><span class="ct">// Parameters (default storage)</span></td></tr>
 <tr name="695" id="695">
-<td><a id="l695" class='ln'>695</a></td><td>  <a id="695c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="695c35" class="tk">*</a><a id="695c36" class="tk">ConstraintMatrix</a>;</td></tr>
+<td><a id="l695" class='ln'>695</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="695c16" class="tk">P_cartesian_waypoints_planner_T_</a> <a id="695c49" class="tk">P_cartesian_waypoints_planner_T</a>;</td></tr>
 <tr name="696" id="696">
-<td><a id="l696" class='ln'>696</a></td><td>  <a id="696c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="696c35" class="tk">*</a><a id="696c36" class="tk">ConstraintBound</a>;</td></tr>
+<td><a id="l696" class='ln'>696</a></td><td></td></tr>
 <tr name="697" id="697">
-<td><a id="l697" class='ln'>697</a></td><td>  <a id="697c3" class="tk">boolean_T</a> <a id="697c13" class="tk">ConstraintsOn</a>;</td></tr>
+<td><a id="l697" class='ln'>697</a></td><td><span class="ct">// Forward declaration for rtModel</span></td></tr>
 <tr name="698" id="698">
-<td><a id="l698" class='ln'>698</a></td><td>  <a id="698c3" class="tk">real_T</a> <a id="698c10" class="tk">SolutionTolerance</a>;</td></tr>
+<td><a id="l698" class='ln'>698</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="698c16" class="tk">tag_RTM_cartesian_waypoints_p_T</a> <a id="698c48" class="tk">RT_MODEL_cartesian_waypoints__T</a>;</td></tr>
 <tr name="699" id="699">
-<td><a id="l699" class='ln'>699</a></td><td>  <a id="699c3" class="tk">boolean_T</a> <a id="699c13" class="tk">RandomRestart</a>;</td></tr>
+<td><a id="l699" class='ln'>699</a></td><td></td></tr>
 <tr name="700" id="700">
-<td><a id="l700" class='ln'>700</a></td><td>  <a id="700c3" class="tk">f_robotics_manip_internal_IKE_T</a> <a id="700c35" class="tk">*</a><a id="700c36" class="tk">ExtraArgs</a>;</td></tr>
+<td><a id="l700" class='ln'>700</a></td><td><span class="pp">#endif</span>                       <span class="ct">// RTW_HEADER_cartesian_waypoints_planner_types_h_</span></td></tr>
 <tr name="701" id="701">
-<td><a id="l701" class='ln'>701</a></td><td>  <a id="701c3" class="tk">real_T</a> <a id="701c10" class="tk">MaxNumIteration</a>;</td></tr>
+<td><a id="l701" class='ln'>701</a></td><td></td></tr>
 <tr name="702" id="702">
-<td><a id="l702" class='ln'>702</a></td><td>  <a id="702c3" class="tk">real_T</a> <a id="702c10" class="tk">MaxTime</a>;</td></tr>
+<td><a id="l702" class='ln'>702</a></td><td><span class="ct">//</span></td></tr>
 <tr name="703" id="703">
-<td><a id="l703" class='ln'>703</a></td><td>  <a id="703c3" class="tk">real_T</a> <a id="703c10" class="tk">SeedInternal</a>[6];</td></tr>
+<td><a id="l703" class='ln'>703</a></td><td><span class="ct">// File trailer for generated code.</span></td></tr>
 <tr name="704" id="704">
-<td><a id="l704" class='ln'>704</a></td><td>  <a id="704c3" class="tk">real_T</a> <a id="704c10" class="tk">MaxTimeInternal</a>;</td></tr>
+<td><a id="l704" class='ln'>704</a></td><td><span class="ct">//</span></td></tr>
 <tr name="705" id="705">
-<td><a id="l705" class='ln'>705</a></td><td>  <a id="705c3" class="tk">real_T</a> <a id="705c10" class="tk">MaxNumIterationInternal</a>;</td></tr>
+<td><a id="l705" class='ln'>705</a></td><td><span class="ct">// [EOF]</span></td></tr>
 <tr name="706" id="706">
-<td><a id="l706" class='ln'>706</a></td><td>  <a id="706c3" class="tk">real_T</a> <a id="706c10" class="tk">StepTolerance</a>;</td></tr>
+<td><a id="l706" class='ln'>706</a></td><td><span class="ct">//</span></td></tr>
 <tr name="707" id="707">
-<td><a id="l707" class='ln'>707</a></td><td>  <a id="707c3" class="tk">f_robotics_core_internal_Syst_T</a> <a id="707c35" class="tk">TimeObj</a>;</td></tr>
-<tr name="708" id="708">
-<td><a id="l708" class='ln'>708</a></td><td>  <a id="708c3" class="tk">real_T</a> <a id="708c10" class="tk">GradientTolerance</a>;</td></tr>
-<tr name="709" id="709">
-<td><a id="l709" class='ln'>709</a></td><td>  <a id="709c3" class="tk">real_T</a> <a id="709c10" class="tk">ArmijoRuleBeta</a>;</td></tr>
-<tr name="710" id="710">
-<td><a id="l710" class='ln'>710</a></td><td>  <a id="710c3" class="tk">real_T</a> <a id="710c10" class="tk">ArmijoRuleSigma</a>;</td></tr>
-<tr name="711" id="711">
-<td><a id="l711" class='ln'>711</a></td><td>  <a id="711c3" class="tk">f_robotics_core_internal_Syst_T</a> <a id="711c35" class="tk">TimeObjInternal</a>;</td></tr>
-<tr name="712" id="712">
-<td><a id="l712" class='ln'>712</a></td><td><span class="br">}</span>;</td></tr>
-<tr name="713" id="713">
-<td><a id="l713" class='ln'>713</a></td><td></td></tr>
-<tr name="714" id="714">
-<td><a id="l714" class='ln'>714</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_qVc3czRnWHHteds2In6P4B</span></td></tr>
-<tr name="715" id="715">
-<td><a id="l715" class='ln'>715</a></td><td></td></tr>
-<tr name="716" id="716">
-<td><a id="l716" class='ln'>716</a></td><td><span class="pp">#ifndef</span> <a id="716c9" class="tk">typedef_h_robotics_core_internal_Damp_T</a></td></tr>
-<tr name="717" id="717">
-<td><a id="l717" class='ln'>717</a></td><td><span class="pp">#define</span> <a id="717c9" class="tk">typedef_h_robotics_core_internal_Damp_T</a></td></tr>
-<tr name="718" id="718">
-<td><a id="l718" class='ln'>718</a></td><td></td></tr>
-<tr name="719" id="719">
-<td><a id="l719" class='ln'>719</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="719c16" class="tk">tag_qVc3czRnWHHteds2In6P4B</a> <a id="719c43" class="tk">h_robotics_core_internal_Damp_T</a>;</td></tr>
-<tr name="720" id="720">
-<td><a id="l720" class='ln'>720</a></td><td></td></tr>
-<tr name="721" id="721">
-<td><a id="l721" class='ln'>721</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_h_robotics_core_internal_Damp_T</span></td></tr>
-<tr name="722" id="722">
-<td><a id="l722" class='ln'>722</a></td><td></td></tr>
-<tr name="723" id="723">
-<td><a id="l723" class='ln'>723</a></td><td><span class="pp">#ifndef</span> <a id="723c9" class="tk">struct_tag_uH0N8Zuc6JP0FtQwOfy7kE</a></td></tr>
-<tr name="724" id="724">
-<td><a id="l724" class='ln'>724</a></td><td><span class="pp">#define</span> <a id="724c9" class="tk">struct_tag_uH0N8Zuc6JP0FtQwOfy7kE</a></td></tr>
-<tr name="725" id="725">
-<td><a id="l725" class='ln'>725</a></td><td></td></tr>
-<tr name="726" id="726">
-<td><a id="l726" class='ln'>726</a></td><td><span class="kw">struct</span> <a id="726c8" class="tk">tag_uH0N8Zuc6JP0FtQwOfy7kE</a></td></tr>
-<tr name="727" id="727">
-<td><a id="l727" class='ln'>727</a></td><td><span class="br">{</span></td></tr>
-<tr name="728" id="728">
-<td><a id="l728" class='ln'>728</a></td><td>  <a id="728c3" class="tk">real_T</a> <a id="728c10" class="tk">NumBodies</a>;</td></tr>
-<tr name="729" id="729">
-<td><a id="l729" class='ln'>729</a></td><td>  <a id="729c3" class="tk">v_robotics_manip_internal_Rig_T</a> <a id="729c35" class="tk">Base</a>;</td></tr>
-<tr name="730" id="730">
-<td><a id="l730" class='ln'>730</a></td><td>  <a id="730c3" class="tk">real_T</a> <a id="730c10" class="tk">Gravity</a>[3];</td></tr>
-<tr name="731" id="731">
-<td><a id="l731" class='ln'>731</a></td><td>  <a id="731c3" class="tk">v_robotics_manip_internal_Rig_T</a> <a id="731c35" class="tk">*</a><a id="731c36" class="tk">Bodies</a>[8];</td></tr>
-<tr name="732" id="732">
-<td><a id="l732" class='ln'>732</a></td><td><span class="br">}</span>;</td></tr>
-<tr name="733" id="733">
-<td><a id="l733" class='ln'>733</a></td><td></td></tr>
-<tr name="734" id="734">
-<td><a id="l734" class='ln'>734</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_uH0N8Zuc6JP0FtQwOfy7kE</span></td></tr>
-<tr name="735" id="735">
-<td><a id="l735" class='ln'>735</a></td><td></td></tr>
-<tr name="736" id="736">
-<td><a id="l736" class='ln'>736</a></td><td><span class="pp">#ifndef</span> <a id="736c9" class="tk">typedef_y_robotics_manip_internal_Rig_T</a></td></tr>
-<tr name="737" id="737">
-<td><a id="l737" class='ln'>737</a></td><td><span class="pp">#define</span> <a id="737c9" class="tk">typedef_y_robotics_manip_internal_Rig_T</a></td></tr>
-<tr name="738" id="738">
-<td><a id="l738" class='ln'>738</a></td><td></td></tr>
-<tr name="739" id="739">
-<td><a id="l739" class='ln'>739</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="739c16" class="tk">tag_uH0N8Zuc6JP0FtQwOfy7kE</a> <a id="739c43" class="tk">y_robotics_manip_internal_Rig_T</a>;</td></tr>
-<tr name="740" id="740">
-<td><a id="l740" class='ln'>740</a></td><td></td></tr>
-<tr name="741" id="741">
-<td><a id="l741" class='ln'>741</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_y_robotics_manip_internal_Rig_T</span></td></tr>
-<tr name="742" id="742">
-<td><a id="l742" class='ln'>742</a></td><td></td></tr>
-<tr name="743" id="743">
-<td><a id="l743" class='ln'>743</a></td><td><span class="pp">#ifndef</span> <a id="743c9" class="tk">struct_tag_etdDPy7RU0or6X7LBQh1x</a></td></tr>
-<tr name="744" id="744">
-<td><a id="l744" class='ln'>744</a></td><td><span class="pp">#define</span> <a id="744c9" class="tk">struct_tag_etdDPy7RU0or6X7LBQh1x</a></td></tr>
-<tr name="745" id="745">
-<td><a id="l745" class='ln'>745</a></td><td></td></tr>
-<tr name="746" id="746">
-<td><a id="l746" class='ln'>746</a></td><td><span class="kw">struct</span> <a id="746c8" class="tk">tag_etdDPy7RU0or6X7LBQh1x</a></td></tr>
-<tr name="747" id="747">
-<td><a id="l747" class='ln'>747</a></td><td><span class="br">{</span></td></tr>
-<tr name="748" id="748">
-<td><a id="l748" class='ln'>748</a></td><td>  <a id="748c3" class="tk">boolean_T</a> <a id="748c13" class="tk">matlabCodegenIsDeleted</a>;</td></tr>
-<tr name="749" id="749">
-<td><a id="l749" class='ln'>749</a></td><td>  <a id="749c3" class="tk">int32_T</a> <a id="749c11" class="tk">isInitialized</a>;</td></tr>
-<tr name="750" id="750">
-<td><a id="l750" class='ln'>750</a></td><td>  <a id="750c3" class="tk">boolean_T</a> <a id="750c13" class="tk">isSetupComplete</a>;</td></tr>
-<tr name="751" id="751">
-<td><a id="l751" class='ln'>751</a></td><td>  <a id="751c3" class="tk">h_robotics_core_internal_Damp_T</a> <a id="751c35" class="tk">*</a><a id="751c36" class="tk">Solver</a>;</td></tr>
-<tr name="752" id="752">
-<td><a id="l752" class='ln'>752</a></td><td>  <a id="752c3" class="tk">emxArray_real_T_cartesian_way_T</a> <a id="752c35" class="tk">*</a><a id="752c36" class="tk">Limits</a>;</td></tr>
-<tr name="753" id="753">
-<td><a id="l753" class='ln'>753</a></td><td>  <a id="753c3" class="tk">x_robotics_manip_internal_Rig_T</a> <a id="753c35" class="tk">*</a><a id="753c36" class="tk">RigidBodyTreeInternal</a>;</td></tr>
-<tr name="754" id="754">
-<td><a id="l754" class='ln'>754</a></td><td><span class="br">}</span>;</td></tr>
-<tr name="755" id="755">
-<td><a id="l755" class='ln'>755</a></td><td></td></tr>
-<tr name="756" id="756">
-<td><a id="l756" class='ln'>756</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_etdDPy7RU0or6X7LBQh1x</span></td></tr>
-<tr name="757" id="757">
-<td><a id="l757" class='ln'>757</a></td><td></td></tr>
-<tr name="758" id="758">
-<td><a id="l758" class='ln'>758</a></td><td><span class="pp">#ifndef</span> <a id="758c9" class="tk">typedef_b_inverseKinematics_cartesian_T</a></td></tr>
-<tr name="759" id="759">
-<td><a id="l759" class='ln'>759</a></td><td><span class="pp">#define</span> <a id="759c9" class="tk">typedef_b_inverseKinematics_cartesian_T</a></td></tr>
-<tr name="760" id="760">
-<td><a id="l760" class='ln'>760</a></td><td></td></tr>
-<tr name="761" id="761">
-<td><a id="l761" class='ln'>761</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="761c16" class="tk">tag_etdDPy7RU0or6X7LBQh1x</a> <a id="761c42" class="tk">b_inverseKinematics_cartesian_T</a>;</td></tr>
-<tr name="762" id="762">
-<td><a id="l762" class='ln'>762</a></td><td></td></tr>
-<tr name="763" id="763">
-<td><a id="l763" class='ln'>763</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_b_inverseKinematics_cartesian_T</span></td></tr>
-<tr name="764" id="764">
-<td><a id="l764" class='ln'>764</a></td><td></td></tr>
-<tr name="765" id="765">
-<td><a id="l765" class='ln'>765</a></td><td><span class="pp">#ifndef</span> <a id="765c9" class="tk">struct_tag_sxjfBB9iGq1brg4yDDoQjB</a></td></tr>
-<tr name="766" id="766">
-<td><a id="l766" class='ln'>766</a></td><td><span class="pp">#define</span> <a id="766c9" class="tk">struct_tag_sxjfBB9iGq1brg4yDDoQjB</a></td></tr>
-<tr name="767" id="767">
-<td><a id="l767" class='ln'>767</a></td><td></td></tr>
-<tr name="768" id="768">
-<td><a id="l768" class='ln'>768</a></td><td><span class="kw">struct</span> <a id="768c8" class="tk">tag_sxjfBB9iGq1brg4yDDoQjB</a></td></tr>
-<tr name="769" id="769">
-<td><a id="l769" class='ln'>769</a></td><td><span class="br">{</span></td></tr>
-<tr name="770" id="770">
-<td><a id="l770" class='ln'>770</a></td><td>  <a id="770c3" class="tk">boolean_T</a> <a id="770c13" class="tk">matlabCodegenIsDeleted</a>;</td></tr>
-<tr name="771" id="771">
-<td><a id="l771" class='ln'>771</a></td><td>  <a id="771c3" class="tk">int32_T</a> <a id="771c11" class="tk">isInitialized</a>;</td></tr>
-<tr name="772" id="772">
-<td><a id="l772" class='ln'>772</a></td><td>  <a id="772c3" class="tk">y_robotics_manip_internal_Rig_T</a> <a id="772c35" class="tk">TreeInternal</a>;</td></tr>
-<tr name="773" id="773">
-<td><a id="l773" class='ln'>773</a></td><td>  <a id="773c3" class="tk">b_inverseKinematics_cartesian_T</a> <a id="773c35" class="tk">IKInternal</a>;</td></tr>
-<tr name="774" id="774">
-<td><a id="l774" class='ln'>774</a></td><td><span class="br">}</span>;</td></tr>
-<tr name="775" id="775">
-<td><a id="l775" class='ln'>775</a></td><td></td></tr>
-<tr name="776" id="776">
-<td><a id="l776" class='ln'>776</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_tag_sxjfBB9iGq1brg4yDDoQjB</span></td></tr>
-<tr name="777" id="777">
-<td><a id="l777" class='ln'>777</a></td><td></td></tr>
-<tr name="778" id="778">
-<td><a id="l778" class='ln'>778</a></td><td><span class="pp">#ifndef</span> <a id="778c9" class="tk">typedef_robotics_slmanip_internal_b_e_T</a></td></tr>
-<tr name="779" id="779">
-<td><a id="l779" class='ln'>779</a></td><td><span class="pp">#define</span> <a id="779c9" class="tk">typedef_robotics_slmanip_internal_b_e_T</a></td></tr>
-<tr name="780" id="780">
-<td><a id="l780" class='ln'>780</a></td><td></td></tr>
-<tr name="781" id="781">
-<td><a id="l781" class='ln'>781</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="781c16" class="tk">tag_sxjfBB9iGq1brg4yDDoQjB</a> <a id="781c43" class="tk">robotics_slmanip_internal_b_e_T</a>;</td></tr>
-<tr name="782" id="782">
-<td><a id="l782" class='ln'>782</a></td><td></td></tr>
-<tr name="783" id="783">
-<td><a id="l783" class='ln'>783</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_robotics_slmanip_internal_b_e_T</span></td></tr>
-<tr name="784" id="784">
-<td><a id="l784" class='ln'>784</a></td><td></td></tr>
-<tr name="785" id="785">
-<td><a id="l785" class='ln'>785</a></td><td><span class="pp">#ifndef</span> <a id="785c9" class="tk">struct_emxArray_tag_8EP4ctv7s0SDnh3V6W</a></td></tr>
-<tr name="786" id="786">
-<td><a id="l786" class='ln'>786</a></td><td><span class="pp">#define</span> <a id="786c9" class="tk">struct_emxArray_tag_8EP4ctv7s0SDnh3V6W</a></td></tr>
-<tr name="787" id="787">
-<td><a id="l787" class='ln'>787</a></td><td></td></tr>
-<tr name="788" id="788">
-<td><a id="l788" class='ln'>788</a></td><td><span class="kw">struct</span> <a id="788c8" class="tk">emxArray_tag_8EP4ctv7s0SDnh3V6W</a></td></tr>
-<tr name="789" id="789">
-<td><a id="l789" class='ln'>789</a></td><td><span class="br">{</span></td></tr>
-<tr name="790" id="790">
-<td><a id="l790" class='ln'>790</a></td><td>  <a id="790c3" class="tk">f_cell_wrap_cartesian_waypoin_T</a> <a id="790c35" class="tk">*</a><a id="790c36" class="tk">data</a>;</td></tr>
-<tr name="791" id="791">
-<td><a id="l791" class='ln'>791</a></td><td>  <a id="791c3" class="tk">int32_T</a> <a id="791c11" class="tk">*</a><a id="791c12" class="tk">size</a>;</td></tr>
-<tr name="792" id="792">
-<td><a id="l792" class='ln'>792</a></td><td>  <a id="792c3" class="tk">int32_T</a> <a id="792c11" class="tk">allocatedSize</a>;</td></tr>
-<tr name="793" id="793">
-<td><a id="l793" class='ln'>793</a></td><td>  <a id="793c3" class="tk">int32_T</a> <a id="793c11" class="tk">numDimensions</a>;</td></tr>
-<tr name="794" id="794">
-<td><a id="l794" class='ln'>794</a></td><td>  <a id="794c3" class="tk">boolean_T</a> <a id="794c13" class="tk">canFreeData</a>;</td></tr>
-<tr name="795" id="795">
-<td><a id="l795" class='ln'>795</a></td><td><span class="br">}</span>;</td></tr>
-<tr name="796" id="796">
-<td><a id="l796" class='ln'>796</a></td><td></td></tr>
-<tr name="797" id="797">
-<td><a id="l797" class='ln'>797</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//struct_emxArray_tag_8EP4ctv7s0SDnh3V6W</span></td></tr>
-<tr name="798" id="798">
-<td><a id="l798" class='ln'>798</a></td><td></td></tr>
-<tr name="799" id="799">
-<td><a id="l799" class='ln'>799</a></td><td><span class="pp">#ifndef</span> <a id="799c9" class="tk">typedef_emxArray_f_cell_wrap_cartesia_T</a></td></tr>
-<tr name="800" id="800">
-<td><a id="l800" class='ln'>800</a></td><td><span class="pp">#define</span> <a id="800c9" class="tk">typedef_emxArray_f_cell_wrap_cartesia_T</a></td></tr>
-<tr name="801" id="801">
-<td><a id="l801" class='ln'>801</a></td><td></td></tr>
-<tr name="802" id="802">
-<td><a id="l802" class='ln'>802</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="802c16" class="tk">emxArray_tag_8EP4ctv7s0SDnh3V6W</a> <a id="802c48" class="tk">emxArray_f_cell_wrap_cartesia_T</a>;</td></tr>
-<tr name="803" id="803">
-<td><a id="l803" class='ln'>803</a></td><td></td></tr>
-<tr name="804" id="804">
-<td><a id="l804" class='ln'>804</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_emxArray_f_cell_wrap_cartesia_T</span></td></tr>
-<tr name="805" id="805">
-<td><a id="l805" class='ln'>805</a></td><td></td></tr>
-<tr name="806" id="806">
-<td><a id="l806" class='ln'>806</a></td><td><span class="pp">#ifndef</span> <a id="806c9" class="tk">typedef_c_robotics_core_internal_NLPS_T</a></td></tr>
-<tr name="807" id="807">
-<td><a id="l807" class='ln'>807</a></td><td><span class="pp">#define</span> <a id="807c9" class="tk">typedef_c_robotics_core_internal_NLPS_T</a></td></tr>
-<tr name="808" id="808">
-<td><a id="l808" class='ln'>808</a></td><td></td></tr>
-<tr name="809" id="809">
-<td><a id="l809" class='ln'>809</a></td><td><span class="kw">typedef</span> <a id="809c9" class="tk">int32_T</a> <a id="809c17" class="tk">c_robotics_core_internal_NLPS_T</a>;</td></tr>
-<tr name="810" id="810">
-<td><a id="l810" class='ln'>810</a></td><td></td></tr>
-<tr name="811" id="811">
-<td><a id="l811" class='ln'>811</a></td><td><span class="pp">#endif</span>                                 <span class="ct">//typedef_c_robotics_core_internal_NLPS_T</span></td></tr>
-<tr name="812" id="812">
-<td><a id="l812" class='ln'>812</a></td><td></td></tr>
-<tr name="813" id="813">
-<td><a id="l813" class='ln'>813</a></td><td><span class="pp">#ifndef</span> <a id="813c9" class="tk">robotics_core_internal_NLPSolverExitFlags_constants</a></td></tr>
-<tr name="814" id="814">
-<td><a id="l814" class='ln'>814</a></td><td><span class="pp">#define</span> <a id="814c9" class="tk">robotics_core_internal_NLPSolverExitFlags_constants</a></td></tr>
-<tr name="815" id="815">
-<td><a id="l815" class='ln'>815</a></td><td></td></tr>
-<tr name="816" id="816">
-<td><a id="l816" class='ln'>816</a></td><td><span class="ct">// enum robotics_core_internal_NLPSolverExitFlags</span></td></tr>
-<tr name="817" id="817">
-<td><a id="l817" class='ln'>817</a></td><td><span class="kw">const</span> <a id="817c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="817c39" class="tk">LocalMinimumFound</a> = 1;</td></tr>
-<tr name="818" id="818">
-<td><a id="l818" class='ln'>818</a></td><td><span class="kw">const</span> <a id="818c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="818c39" class="tk">IterationLimitExceeded</a> = 2;</td></tr>
-<tr name="819" id="819">
-<td><a id="l819" class='ln'>819</a></td><td><span class="kw">const</span> <a id="819c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="819c39" class="tk">TimeLimitExceeded</a> = 3;</td></tr>
-<tr name="820" id="820">
-<td><a id="l820" class='ln'>820</a></td><td><span class="kw">const</span> <a id="820c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="820c39" class="tk">StepSizeBelowMinimum</a> = 4;</td></tr>
-<tr name="821" id="821">
-<td><a id="l821" class='ln'>821</a></td><td><span class="kw">const</span> <a id="821c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="821c39" class="tk">ChangeInErrorBelowMinimum</a> = 5;</td></tr>
-<tr name="822" id="822">
-<td><a id="l822" class='ln'>822</a></td><td><span class="kw">const</span> <a id="822c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="822c39" class="tk">SearchDirectionInvalid</a> = 6;</td></tr>
-<tr name="823" id="823">
-<td><a id="l823" class='ln'>823</a></td><td><span class="kw">const</span> <a id="823c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="823c39" class="tk">HessianNotPositiveSemidefinite</a> = 7;</td></tr>
-<tr name="824" id="824">
-<td><a id="l824" class='ln'>824</a></td><td><span class="kw">const</span> <a id="824c7" class="tk">c_robotics_core_internal_NLPS_T</a> <a id="824c39" class="tk">TrustRegionRadiusBelowMinimum</a> = 8;</td></tr>
-<tr name="825" id="825">
-<td><a id="l825" class='ln'>825</a></td><td></td></tr>
-<tr name="826" id="826">
-<td><a id="l826" class='ln'>826</a></td><td><span class="pp">#endif</span>                     <span class="ct">//robotics_core_internal_NLPSolverExitFlags_constants</span></td></tr>
-<tr name="827" id="827">
-<td><a id="l827" class='ln'>827</a></td><td></td></tr>
-<tr name="828" id="828">
-<td><a id="l828" class='ln'>828</a></td><td><span class="ct">// Parameters (default storage)</span></td></tr>
-<tr name="829" id="829">
-<td><a id="l829" class='ln'>829</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="829c16" class="tk">P_cartesian_waypoints_planner_T_</a> <a id="829c49" class="tk">P_cartesian_waypoints_planner_T</a>;</td></tr>
-<tr name="830" id="830">
-<td><a id="l830" class='ln'>830</a></td><td></td></tr>
-<tr name="831" id="831">
-<td><a id="l831" class='ln'>831</a></td><td><span class="ct">// Forward declaration for rtModel</span></td></tr>
-<tr name="832" id="832">
-<td><a id="l832" class='ln'>832</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <a id="832c16" class="tk">tag_RTM_cartesian_waypoints_p_T</a> <a id="832c48" class="tk">RT_MODEL_cartesian_waypoints__T</a>;</td></tr>
-<tr name="833" id="833">
-<td><a id="l833" class='ln'>833</a></td><td></td></tr>
-<tr name="834" id="834">
-<td><a id="l834" class='ln'>834</a></td><td><span class="pp">#endif</span>                       <span class="ct">// RTW_HEADER_cartesian_waypoints_planner_types_h_</span></td></tr>
-<tr name="835" id="835">
-<td><a id="l835" class='ln'>835</a></td><td></td></tr>
-<tr name="836" id="836">
-<td><a id="l836" class='ln'>836</a></td><td><span class="ct">//</span></td></tr>
-<tr name="837" id="837">
-<td><a id="l837" class='ln'>837</a></td><td><span class="ct">// File trailer for generated code.</span></td></tr>
-<tr name="838" id="838">
-<td><a id="l838" class='ln'>838</a></td><td><span class="ct">//</span></td></tr>
-<tr name="839" id="839">
-<td><a id="l839" class='ln'>839</a></td><td><span class="ct">// [EOF]</span></td></tr>
-<tr name="840" id="840">
-<td><a id="l840" class='ln'>840</a></td><td><span class="ct">//</span></td></tr>
-<tr name="841" id="841">
-<td><a id="l841" class='ln'>841</a></td><td></td></tr>
+<td><a id="l707" class='ln'>707</a></td><td></td></tr>
 </table>
 </pre>
 </body>

@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'joint_trajectory_planner'.
 //
-// Model version                  : 1.10
+// Model version                  : 1.11
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 27 15:51:41 2020
+// C/C++ source code generated on : Wed May 27 21:36:26 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -46,6 +46,8 @@ typedef struct {
   real_T dCoeffs[72];
   real_T ddCoeffs[72];
   real_T coefsWithFlatStart[48];
+  real_T d_t[36];
+  real_T steps[36];
   real_T coefMat[24];
   real_T newSegmentCoeffs[24];
   real_T t[18];
@@ -55,11 +57,7 @@ typedef struct {
   real_T MatrixConcatenate[12];        // '<S2>/Matrix Concatenate'
   real_T max_vel[6];
   real_T acc[6];
-  real_T act_max_vel[6];
   real_T signes[6];
-  real_T qdd[6];                       // '<Root>/MATLAB Function3'
-  real_T qd[6];                        // '<Root>/MATLAB Function3'
-  real_T q[6];                         // '<Root>/MATLAB Function3'
   real_T dv[6];
   real_T dv1[6];
   real_T dv2[6];
@@ -75,10 +73,12 @@ typedef struct {
   real_T signal2[2];
   real_T wayPoints[2];
   real_T varargin_2[2];
+  real_T time;
   real_T delayed_time;
   real_T t_up;
-  real_T dist;
   real_T t1;
+  real_T dist;
+  real_T value;
   real_T d;
   real_T finalTime;
   real_T u0;
@@ -88,8 +88,9 @@ typedef struct {
   real_T evalPointVector_idx_2;
   real_T d1;
   real_T xloc;
-  int32_T b_k;
+  int32_T value_m;
   int32_T i;
+  int32_T rtb_q_tmp;
 } B_joint_trajectory_planner_T;
 
 // Block states (default storage) for system '<Root>'
@@ -226,7 +227,7 @@ extern "C" {
 //  '<S2>'   : 'joint_trajectory_planner/Get Parameters'
 //  '<S3>'   : 'joint_trajectory_planner/MATLAB Function'
 //  '<S4>'   : 'joint_trajectory_planner/MATLAB Function1'
-//  '<S5>'   : 'joint_trajectory_planner/MATLAB Function3'
+//  '<S5>'   : 'joint_trajectory_planner/MATLAB Function4'
 //  '<S6>'   : 'joint_trajectory_planner/Publish'
 //  '<S7>'   : 'joint_trajectory_planner/Subscribe'
 //  '<S8>'   : 'joint_trajectory_planner/Get Parameters/Subsystem'

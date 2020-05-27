@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'joint_trajectory_planner'.
 //
-// Model version                  : 1.10
+// Model version                  : 1.11
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 27 15:51:41 2020
+// C/C++ source code generated on : Wed May 27 21:36:26 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -497,15 +497,15 @@ void joint_trajectory_planner_step(void)
 
   // MATLABSystem: '<S2>/Get Parameter'
   ParamGet_joint_trajectory_planner_26.get_parameter
-    (&joint_trajectory_planner_B.t_up);
+    (&joint_trajectory_planner_B.t1);
 
   // MATLAB Function: '<Root>/MATLAB Function1' incorporates:
   //   MATLABSystem: '<S2>/Get Parameter'
 
-  joint_trajectory_planner_B.t1 = joint_trajectory_planner_B.In1.Clock_.Nsec /
+  joint_trajectory_planner_B.time = joint_trajectory_planner_B.In1.Clock_.Nsec /
     1.0E+9 + joint_trajectory_planner_B.In1.Clock_.Sec;
-  joint_trajectory_planner_B.delayed_time = joint_trajectory_planner_B.t1 -
-    joint_trajectory_planner_B.t_up;
+  joint_trajectory_planner_B.delayed_time = joint_trajectory_planner_B.time -
+    joint_trajectory_planner_B.t1;
   if (joint_trajectory_planner_B.delayed_time < 0.0) {
     joint_trajectory_planner_B.delayed_time = 0.0;
   }
@@ -558,24 +558,24 @@ void joint_trajectory_planner_step(void)
 
   ParamGet_joint_trajectory_planner_49.get_parameter
     (&joint_trajectory_planner_B.signal2[1]);
-  joint_trajectory_planner_B.signal2[0] = joint_trajectory_planner_B.t_up;
+  joint_trajectory_planner_B.signal2[0] = joint_trajectory_planner_B.t1;
 
   // MATLABSystem: '<Root>/Polynomial Trajectory' incorporates:
   //   MATLAB Function: '<Root>/MATLAB Function1'
 
   b_varargout_1 = false;
   p = true;
-  joint_trajectory_planner_B.b_k = 0;
+  joint_trajectory_planner_B.i = 0;
   exitg1 = false;
-  while ((!exitg1) && (joint_trajectory_planner_B.b_k < 12)) {
-    if (!(joint_trajectory_planner_DW.obj.VelocityBoundaryCondition[joint_trajectory_planner_B.b_k]
+  while ((!exitg1) && (joint_trajectory_planner_B.i < 12)) {
+    if (!(joint_trajectory_planner_DW.obj.VelocityBoundaryCondition[joint_trajectory_planner_B.i]
           ==
-          joint_trajectory_planner_P.PolynomialTrajectory_VelocityBo[joint_trajectory_planner_B.b_k]))
+          joint_trajectory_planner_P.PolynomialTrajectory_VelocityBo[joint_trajectory_planner_B.i]))
     {
       p = false;
       exitg1 = true;
     } else {
-      joint_trajectory_planner_B.b_k++;
+      joint_trajectory_planner_B.i++;
     }
   }
 
@@ -604,42 +604,49 @@ void joint_trajectory_planner_step(void)
     joint_trajectory_planner_B.unusedU3, joint_trajectory_planner_B.pp_breaks,
     joint_trajectory_planner_B.pp_coefs);
   PolyTrajSys_computePPDerivative(joint_trajectory_planner_B.pp_breaks,
-    joint_trajectory_planner_B.pp_coefs, joint_trajectory_planner_B.t1,
+    joint_trajectory_planner_B.pp_coefs, joint_trajectory_planner_B.time,
     joint_trajectory_planner_B.ppd_breaks, joint_trajectory_planner_B.ppd_coefs,
     joint_trajectory_planner_B.ppdd_breaks,
     joint_trajectory_planner_B.ppdd_coefs);
 
   // MATLABSystem: '<S2>/Get Parameter4'
   ParamGet_joint_trajectory_planner_50.get_parameter
-    (&joint_trajectory_planner_B.b_k);
+    (&joint_trajectory_planner_B.value_m);
 
   // MATLABSystem: '<S2>/Get Parameter2'
   ParamGet_joint_trajectory_planner_28.get_parameter
-    (&joint_trajectory_planner_B.t_up);
+    (&joint_trajectory_planner_B.t1);
 
   // MATLABSystem: '<S2>/Get Parameter1'
   ParamGet_joint_trajectory_planner_27.get_parameter
-    (&joint_trajectory_planner_B.dist);
+    (&joint_trajectory_planner_B.value);
 
-  // MATLAB Function: '<Root>/MATLAB Function3' incorporates:
+  // MATLAB Function: '<Root>/MATLAB Function4' incorporates:
+  //   MATLAB Function: '<Root>/MATLAB Function1'
   //   MATLABSystem: '<S2>/Get Parameter1'
   //   MATLABSystem: '<S2>/Get Parameter2'
 
   for (joint_trajectory_planner_B.i = 0; joint_trajectory_planner_B.i < 6;
        joint_trajectory_planner_B.i++) {
-    joint_trajectory_planner_B.q[joint_trajectory_planner_B.i] =
-      joint_trajectory_planner_B.MatrixConcatenate[joint_trajectory_planner_B.i];
-    joint_trajectory_planner_B.qd[joint_trajectory_planner_B.i] = 0.0;
-    joint_trajectory_planner_B.qdd[joint_trajectory_planner_B.i] = 0.0;
     joint_trajectory_planner_B.max_vel[joint_trajectory_planner_B.i] =
-      joint_trajectory_planner_B.t_up;
+      joint_trajectory_planner_B.t1;
     joint_trajectory_planner_B.acc[joint_trajectory_planner_B.i] =
-      joint_trajectory_planner_B.dist;
+      joint_trajectory_planner_B.value;
   }
 
   memset(&joint_trajectory_planner_B.t[0], 0, 18U * sizeof(real_T));
+  for (joint_trajectory_planner_B.i = 0; joint_trajectory_planner_B.i < 36;
+       joint_trajectory_planner_B.i++) {
+    joint_trajectory_planner_B.d_t[joint_trajectory_planner_B.i] = 0.0;
+    joint_trajectory_planner_B.steps[joint_trajectory_planner_B.i] = 1.0;
+  }
+
   for (joint_trajectory_planner_B.i = 0; joint_trajectory_planner_B.i < 6;
        joint_trajectory_planner_B.i++) {
+    joint_trajectory_planner_B.t1 =
+      joint_trajectory_planner_B.d_t[joint_trajectory_planner_B.i];
+    joint_trajectory_planner_B.value =
+      joint_trajectory_planner_B.steps[joint_trajectory_planner_B.i];
     joint_trajectory_planner_B.t_up =
       joint_trajectory_planner_B.max_vel[joint_trajectory_planner_B.i] /
       joint_trajectory_planner_B.acc[joint_trajectory_planner_B.i];
@@ -668,9 +675,6 @@ void joint_trajectory_planner_step(void)
         joint_trajectory_planner_B.t_up;
       joint_trajectory_planner_B.t[joint_trajectory_planner_B.i + 12] =
         joint_trajectory_planner_B.t_up;
-      joint_trajectory_planner_B.act_max_vel[joint_trajectory_planner_B.i] =
-        joint_trajectory_planner_B.t_up *
-        joint_trajectory_planner_B.acc[joint_trajectory_planner_B.i];
     } else {
       joint_trajectory_planner_B.t[joint_trajectory_planner_B.i] =
         joint_trajectory_planner_B.t_up;
@@ -679,9 +683,28 @@ void joint_trajectory_planner_step(void)
       joint_trajectory_planner_B.t[joint_trajectory_planner_B.i + 6] =
         (joint_trajectory_planner_B.dist - joint_trajectory_planner_B.d) /
         joint_trajectory_planner_B.max_vel[joint_trajectory_planner_B.i];
-      joint_trajectory_planner_B.act_max_vel[joint_trajectory_planner_B.i] =
-        joint_trajectory_planner_B.max_vel[joint_trajectory_planner_B.i];
     }
+
+    joint_trajectory_planner_B.dist =
+      joint_trajectory_planner_B.t[joint_trajectory_planner_B.i + 6];
+    joint_trajectory_planner_B.d =
+      joint_trajectory_planner_B.t[joint_trajectory_planner_B.i + 12];
+    if (((joint_trajectory_planner_B.delayed_time -
+          joint_trajectory_planner_B.t[joint_trajectory_planner_B.i]) -
+         joint_trajectory_planner_B.dist) - joint_trajectory_planner_B.d >= 0.0)
+    {
+      joint_trajectory_planner_B.value =
+        joint_trajectory_planner_B.steps[joint_trajectory_planner_B.i] + 1.0;
+      joint_trajectory_planner_B.t1 =
+        ((joint_trajectory_planner_B.d_t[joint_trajectory_planner_B.i] +
+          joint_trajectory_planner_B.t[joint_trajectory_planner_B.i]) +
+         joint_trajectory_planner_B.dist) + joint_trajectory_planner_B.d;
+    }
+
+    joint_trajectory_planner_B.steps[joint_trajectory_planner_B.i] =
+      joint_trajectory_planner_B.value;
+    joint_trajectory_planner_B.d_t[joint_trajectory_planner_B.i] =
+      joint_trajectory_planner_B.t1;
   }
 
   // MATLAB Function: '<Root>/MATLAB Function' incorporates:
@@ -704,14 +727,14 @@ void joint_trajectory_planner_step(void)
   // Switch: '<Root>/Switch' incorporates:
   //   MATLABSystem: '<S2>/Get Parameter4'
 
-  b_varargout_1 = (joint_trajectory_planner_B.b_k >
+  b_varargout_1 = (joint_trajectory_planner_B.value_m >
                    joint_trajectory_planner_P.Switch_Threshold);
 
   // MATLABSystem: '<Root>/Polynomial Trajectory' incorporates:
   //   MATLAB Function: '<Root>/MATLAB Function1'
 
   joint_trajectory_planne_ppval_a(joint_trajectory_planner_B.ppd_breaks,
-    joint_trajectory_planner_B.ppd_coefs, joint_trajectory_planner_B.t1,
+    joint_trajectory_planner_B.ppd_coefs, joint_trajectory_planner_B.time,
     joint_trajectory_planner_B.dv);
 
   // MATLAB Function: '<Root>/MATLAB Function'
@@ -720,14 +743,14 @@ void joint_trajectory_planner_step(void)
   // Switch: '<Root>/Switch1' incorporates:
   //   MATLABSystem: '<S2>/Get Parameter4'
 
-  p = (joint_trajectory_planner_B.b_k >
+  p = (joint_trajectory_planner_B.value_m >
        joint_trajectory_planner_P.Switch1_Threshold);
 
   // MATLABSystem: '<Root>/Polynomial Trajectory' incorporates:
   //   MATLAB Function: '<Root>/MATLAB Function1'
 
   joint_trajectory_planne_ppval_a(joint_trajectory_planner_B.pp_breaks,
-    joint_trajectory_planner_B.pp_coefs, joint_trajectory_planner_B.t1,
+    joint_trajectory_planner_B.pp_coefs, joint_trajectory_planner_B.time,
     joint_trajectory_planner_B.dv1);
 
   // MATLAB Function: '<Root>/MATLAB Function'
@@ -736,157 +759,132 @@ void joint_trajectory_planner_step(void)
   // Switch: '<Root>/Switch2' incorporates:
   //   MATLABSystem: '<S2>/Get Parameter4'
 
-  value = (joint_trajectory_planner_B.b_k >
+  value = (joint_trajectory_planner_B.value_m >
            joint_trajectory_planner_P.Switch2_Threshold);
 
   // MATLABSystem: '<Root>/Polynomial Trajectory' incorporates:
   //   MATLAB Function: '<Root>/MATLAB Function1'
 
   joint_trajectory_planne_ppval_a(joint_trajectory_planner_B.ppdd_breaks,
-    joint_trajectory_planner_B.ppdd_coefs, joint_trajectory_planner_B.t1,
+    joint_trajectory_planner_B.ppdd_coefs, joint_trajectory_planner_B.time,
     joint_trajectory_planner_B.dv2);
-  for (joint_trajectory_planner_B.b_k = 0; joint_trajectory_planner_B.b_k < 6;
-       joint_trajectory_planner_B.b_k++) {
-    // MATLAB Function: '<Root>/MATLAB Function3' incorporates:
+  for (joint_trajectory_planner_B.value_m = 0;
+       joint_trajectory_planner_B.value_m < 6;
+       joint_trajectory_planner_B.value_m++) {
+    // MATLAB Function: '<Root>/MATLAB Function4' incorporates:
     //   MATLAB Function: '<Root>/MATLAB Function1'
 
-    joint_trajectory_planner_B.t1 = joint_trajectory_planner_B.delayed_time;
-    joint_trajectory_planner_B.i = 0;
-    exitg1 = false;
-    while ((!exitg1) && (joint_trajectory_planner_B.i < 3)) {
-      tmp = 6 * joint_trajectory_planner_B.i + joint_trajectory_planner_B.b_k;
+    joint_trajectory_planner_B.t1 = joint_trajectory_planner_B.delayed_time -
+      joint_trajectory_planner_B.d_t[joint_trajectory_planner_B.value_m];
+    joint_trajectory_planner_B.rtb_q_tmp = (static_cast<int32_T>
+      (joint_trajectory_planner_B.steps[joint_trajectory_planner_B.value_m]) - 1)
+      * 6 + joint_trajectory_planner_B.value_m;
+    if (joint_trajectory_planner_B.steps[joint_trajectory_planner_B.value_m] ==
+        2.0) {
+      joint_trajectory_planner_B.time =
+        joint_trajectory_planner_B.MatrixConcatenate[joint_trajectory_planner_B.value_m
+        + 6];
+      joint_trajectory_planner_B.t1 = 0.0;
+      joint_trajectory_planner_B.value = 0.0;
+    } else if (joint_trajectory_planner_B.t1 <= 0.0) {
+      joint_trajectory_planner_B.time =
+        joint_trajectory_planner_B.MatrixConcatenate[joint_trajectory_planner_B.rtb_q_tmp];
+      joint_trajectory_planner_B.t1 = 0.0;
+      joint_trajectory_planner_B.value = 0.0;
+    } else {
       joint_trajectory_planner_B.dist = joint_trajectory_planner_B.t1 -
-        joint_trajectory_planner_B.t[tmp];
+        joint_trajectory_planner_B.t[joint_trajectory_planner_B.rtb_q_tmp];
       if (joint_trajectory_planner_B.dist < 0.0) {
-        switch (joint_trajectory_planner_B.i + 1) {
-         case 1:
-          joint_trajectory_planner_B.q[joint_trajectory_planner_B.b_k] += 0.5 *
-            joint_trajectory_planner_B.acc[joint_trajectory_planner_B.b_k] *
-            (joint_trajectory_planner_B.t1 * joint_trajectory_planner_B.t1) *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          joint_trajectory_planner_B.qd[joint_trajectory_planner_B.b_k] =
-            joint_trajectory_planner_B.acc[joint_trajectory_planner_B.b_k] *
-            joint_trajectory_planner_B.t1 *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          joint_trajectory_planner_B.qdd[joint_trajectory_planner_B.b_k] =
-            joint_trajectory_planner_B.acc[joint_trajectory_planner_B.b_k] *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          break;
-
-         case 2:
-          joint_trajectory_planner_B.q[joint_trajectory_planner_B.b_k] +=
-            joint_trajectory_planner_B.max_vel[joint_trajectory_planner_B.b_k] *
-            joint_trajectory_planner_B.t1 *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          joint_trajectory_planner_B.qd[joint_trajectory_planner_B.b_k] =
-            joint_trajectory_planner_B.max_vel[joint_trajectory_planner_B.b_k] *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          joint_trajectory_planner_B.qdd[joint_trajectory_planner_B.b_k] = 0.0;
-          break;
-
-         default:
-          joint_trajectory_planner_B.q[joint_trajectory_planner_B.b_k] +=
-            (joint_trajectory_planner_B.act_max_vel[0] *
-             joint_trajectory_planner_B.t1 - 0.5 *
-             joint_trajectory_planner_B.acc[joint_trajectory_planner_B.b_k] *
-             (joint_trajectory_planner_B.t1 * joint_trajectory_planner_B.t1)) *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          joint_trajectory_planner_B.qd[joint_trajectory_planner_B.b_k] =
-            (joint_trajectory_planner_B.act_max_vel[joint_trajectory_planner_B.b_k]
-             - joint_trajectory_planner_B.t1 *
-             joint_trajectory_planner_B.acc[joint_trajectory_planner_B.b_k]) *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          joint_trajectory_planner_B.qdd[joint_trajectory_planner_B.b_k] =
-            -joint_trajectory_planner_B.acc[joint_trajectory_planner_B.b_k] *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          break;
-        }
-
-        exitg1 = true;
+        joint_trajectory_planner_B.time = 0.5 *
+          joint_trajectory_planner_B.acc[joint_trajectory_planner_B.value_m] *
+          (joint_trajectory_planner_B.t1 * joint_trajectory_planner_B.t1) *
+          joint_trajectory_planner_B.signes[joint_trajectory_planner_B.value_m]
+          + joint_trajectory_planner_B.MatrixConcatenate[joint_trajectory_planner_B.rtb_q_tmp];
+        joint_trajectory_planner_B.t1 =
+          joint_trajectory_planner_B.acc[joint_trajectory_planner_B.value_m] *
+          joint_trajectory_planner_B.t1 *
+          joint_trajectory_planner_B.signes[joint_trajectory_planner_B.value_m];
+        joint_trajectory_planner_B.value =
+          joint_trajectory_planner_B.acc[joint_trajectory_planner_B.value_m] *
+          joint_trajectory_planner_B.signes[joint_trajectory_planner_B.value_m];
       } else {
-        joint_trajectory_planner_B.t1 = joint_trajectory_planner_B.dist;
-        switch (joint_trajectory_planner_B.i + 1) {
-         case 1:
-          joint_trajectory_planner_B.q[joint_trajectory_planner_B.b_k] +=
-            joint_trajectory_planner_B.t[tmp] * joint_trajectory_planner_B.t[tmp]
-            * (0.5 *
-               joint_trajectory_planner_B.acc[joint_trajectory_planner_B.b_k]) *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          joint_trajectory_planner_B.qd[joint_trajectory_planner_B.b_k] =
-            joint_trajectory_planner_B.act_max_vel[joint_trajectory_planner_B.b_k]
-            * joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          joint_trajectory_planner_B.qdd[joint_trajectory_planner_B.b_k] =
-            joint_trajectory_planner_B.acc[joint_trajectory_planner_B.b_k] *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          break;
-
-         case 2:
-          joint_trajectory_planner_B.q[joint_trajectory_planner_B.b_k] +=
-            joint_trajectory_planner_B.t[tmp] *
-            joint_trajectory_planner_B.max_vel[joint_trajectory_planner_B.b_k] *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          joint_trajectory_planner_B.qd[joint_trajectory_planner_B.b_k] =
-            joint_trajectory_planner_B.act_max_vel[joint_trajectory_planner_B.b_k]
-            * joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          joint_trajectory_planner_B.qdd[joint_trajectory_planner_B.b_k] = 0.0;
-          break;
-
-         default:
-          joint_trajectory_planner_B.q[joint_trajectory_planner_B.b_k] +=
-            (joint_trajectory_planner_B.t[tmp] *
-             joint_trajectory_planner_B.act_max_vel[joint_trajectory_planner_B.b_k]
-             - joint_trajectory_planner_B.t[tmp] *
-             joint_trajectory_planner_B.t[tmp] * (0.5 *
-              joint_trajectory_planner_B.acc[joint_trajectory_planner_B.b_k])) *
-            joint_trajectory_planner_B.signes[joint_trajectory_planner_B.b_k];
-          joint_trajectory_planner_B.qd[joint_trajectory_planner_B.b_k] = 0.0;
-          joint_trajectory_planner_B.qdd[joint_trajectory_planner_B.b_k] = 0.0;
-          break;
-        }
-
+        joint_trajectory_planner_B.i = joint_trajectory_planner_B.rtb_q_tmp + 6;
+        joint_trajectory_planner_B.dist -=
+          joint_trajectory_planner_B.t[joint_trajectory_planner_B.i];
         if (joint_trajectory_planner_B.dist < 0.0) {
-          exitg1 = true;
+          joint_trajectory_planner_B.time =
+            (joint_trajectory_planner_B.t[joint_trajectory_planner_B.rtb_q_tmp] /
+             2.0 + joint_trajectory_planner_B.t1) *
+            joint_trajectory_planner_B.max_vel[joint_trajectory_planner_B.value_m]
+            * joint_trajectory_planner_B.signes[joint_trajectory_planner_B.value_m]
+            + joint_trajectory_planner_B.MatrixConcatenate[joint_trajectory_planner_B.rtb_q_tmp];
+          joint_trajectory_planner_B.t1 =
+            joint_trajectory_planner_B.max_vel[joint_trajectory_planner_B.value_m]
+            * joint_trajectory_planner_B.signes[joint_trajectory_planner_B.value_m];
+          joint_trajectory_planner_B.value = 0.0;
         } else {
-          joint_trajectory_planner_B.i++;
+          tmp = joint_trajectory_planner_B.rtb_q_tmp + 12;
+          if (joint_trajectory_planner_B.dist - joint_trajectory_planner_B.t[tmp]
+              < 0.0) {
+            joint_trajectory_planner_B.t1 =
+              ((joint_trajectory_planner_B.t[joint_trajectory_planner_B.i] +
+                joint_trajectory_planner_B.t[joint_trajectory_planner_B.rtb_q_tmp])
+               + joint_trajectory_planner_B.t[tmp]) -
+              joint_trajectory_planner_B.t1;
+            joint_trajectory_planner_B.time =
+              joint_trajectory_planner_B.MatrixConcatenate[(static_cast<int32_T>
+              (joint_trajectory_planner_B.steps[joint_trajectory_planner_B.value_m]
+               + 1.0) - 1) * 6 + joint_trajectory_planner_B.value_m] - 0.5 *
+              joint_trajectory_planner_B.acc[joint_trajectory_planner_B.value_m]
+              * (joint_trajectory_planner_B.t1 * joint_trajectory_planner_B.t1) *
+              joint_trajectory_planner_B.signes[joint_trajectory_planner_B.value_m];
+            joint_trajectory_planner_B.t1 = joint_trajectory_planner_B.t1 *
+              joint_trajectory_planner_B.acc[joint_trajectory_planner_B.value_m]
+              * joint_trajectory_planner_B.signes[joint_trajectory_planner_B.value_m];
+            joint_trajectory_planner_B.value =
+              -joint_trajectory_planner_B.acc[joint_trajectory_planner_B.value_m]
+              * joint_trajectory_planner_B.signes[joint_trajectory_planner_B.value_m];
+          } else {
+            joint_trajectory_planner_B.time =
+              joint_trajectory_planner_B.MatrixConcatenate[joint_trajectory_planner_B.rtb_q_tmp];
+            joint_trajectory_planner_B.t1 = 0.0;
+            joint_trajectory_planner_B.value = 0.0;
+          }
         }
       }
-    }
-
-    if (joint_trajectory_planner_B.delayed_time == 0.0) {
-      joint_trajectory_planner_B.qdd[joint_trajectory_planner_B.b_k] = 0.0;
     }
 
     // Switch: '<Root>/Switch'
     if (b_varargout_1) {
       // MATLAB Function: '<Root>/MATLAB Function'
-      joint_trajectory_planner_B.msg.Velocities[joint_trajectory_planner_B.b_k] =
-        joint_trajectory_planner_B.dv[joint_trajectory_planner_B.b_k];
+      joint_trajectory_planner_B.msg.Velocities[joint_trajectory_planner_B.value_m]
+        = joint_trajectory_planner_B.dv[joint_trajectory_planner_B.value_m];
     } else {
       // MATLAB Function: '<Root>/MATLAB Function'
-      joint_trajectory_planner_B.msg.Velocities[joint_trajectory_planner_B.b_k] =
-        joint_trajectory_planner_B.qd[joint_trajectory_planner_B.b_k];
+      joint_trajectory_planner_B.msg.Velocities[joint_trajectory_planner_B.value_m]
+        = joint_trajectory_planner_B.t1;
     }
 
     // Switch: '<Root>/Switch1'
     if (p) {
       // MATLAB Function: '<Root>/MATLAB Function'
-      joint_trajectory_planner_B.msg.Positions[joint_trajectory_planner_B.b_k] =
-        joint_trajectory_planner_B.dv1[joint_trajectory_planner_B.b_k];
+      joint_trajectory_planner_B.msg.Positions[joint_trajectory_planner_B.value_m]
+        = joint_trajectory_planner_B.dv1[joint_trajectory_planner_B.value_m];
     } else {
       // MATLAB Function: '<Root>/MATLAB Function'
-      joint_trajectory_planner_B.msg.Positions[joint_trajectory_planner_B.b_k] =
-        joint_trajectory_planner_B.q[joint_trajectory_planner_B.b_k];
+      joint_trajectory_planner_B.msg.Positions[joint_trajectory_planner_B.value_m]
+        = joint_trajectory_planner_B.time;
     }
 
     // Switch: '<Root>/Switch2'
     if (value) {
       // MATLAB Function: '<Root>/MATLAB Function'
-      joint_trajectory_planner_B.msg.Accelerations[joint_trajectory_planner_B.b_k]
-        = joint_trajectory_planner_B.dv2[joint_trajectory_planner_B.b_k];
+      joint_trajectory_planner_B.msg.Accelerations[joint_trajectory_planner_B.value_m]
+        = joint_trajectory_planner_B.dv2[joint_trajectory_planner_B.value_m];
     } else {
       // MATLAB Function: '<Root>/MATLAB Function'
-      joint_trajectory_planner_B.msg.Accelerations[joint_trajectory_planner_B.b_k]
-        = joint_trajectory_planner_B.qdd[joint_trajectory_planner_B.b_k];
+      joint_trajectory_planner_B.msg.Accelerations[joint_trajectory_planner_B.value_m]
+        = joint_trajectory_planner_B.value;
     }
   }
 

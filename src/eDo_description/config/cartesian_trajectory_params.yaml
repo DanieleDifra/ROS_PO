@@ -1,5 +1,4 @@
-start_delay: 5.0
-tf: 80
+start_delay: 2.0
 
 pi_x: -0.3
 pi_y: -0.3

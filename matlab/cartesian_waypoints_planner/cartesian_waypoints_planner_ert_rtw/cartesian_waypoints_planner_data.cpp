@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cartesian_waypoints_planner'.
 //
-// Model version                  : 1.183
+// Model version                  : 1.186
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 27 16:30:19 2020
+// C/C++ source code generated on : Wed May 27 21:08:31 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -100,7 +100,7 @@ P_cartesian_waypoints_planner_T cartesian_waypoints_planner_P = {
   },
 
   // Computed Parameter: Out1_Y0
-  //  Referenced by: '<S14>/Out1'
+  //  Referenced by: '<S13>/Out1'
 
   {
     {
@@ -110,7 +110,7 @@ P_cartesian_waypoints_planner_T cartesian_waypoints_planner_P = {
   },
 
   // Computed Parameter: Constant_Value_d
-  //  Referenced by: '<S10>/Constant'
+  //  Referenced by: '<S9>/Constant'
 
   {
     {

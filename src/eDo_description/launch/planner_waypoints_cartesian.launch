@@ -1,0 +1,46 @@
+<?xml version="1.0"?> 
+<launch>
+  <arg
+    name="model" />
+  <param 
+  name="use_sim_time" 
+  value="true"/>
+  
+  <arg name="hardware_interface" default="hardware_interface/PositionJointInterface"/>
+  <arg name="robot_name" default="edo"/>
+  <arg name="origin_xyz" default="'0 0 0'"/> <!-- Note the syntax to pass a vector -->
+  <arg name="origin_rpy" default="'0 0 0'"/>
+
+  <rosparam command="load" file="$(find edo_description)/config/joint_names_edo_sim.yaml" />
+  <rosparam command="load" file="$(find edo_description)/config/cartesian_trajectory_params.yaml" />
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find edo_description)/urdf/edo.urdf.xacro' hardware_interface:=$(arg hardware_interface) robot_name:=$(arg robot_name) origin_xyz:=$(arg origin_xyz) origin_rpy:=$(arg origin_rpy)" />   
+    
+  <!-- Run the robot state publisher node -->
+  <group ns="$(arg robot_name)">
+    <!-- Robot state publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+      <param name="publish_frequency" type="double" value="50.0" />
+      <param name="tf_prefix" type="string" value="" />
+    </node>
+  </group>
+
+  <remap from="/joint_states" to="/edo/joint_states"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" >
+  </node>
+  <!-- Run rviz -->
+  
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    args="-d $(find edo_description)/edo.rviz" />
+
+  <!-- Run the kinematic simulator -->
+  
+  <node pkg="kinematic_simulation" type="kinematic_simulation_node" name="kinematic_simulation"/>
+  <node pkg="forward_kinematics" type="forward_kinematics_node" name="forward_kinematics"/>
+  <node pkg="cartesian_waypoints_planner" type="cartesian_waypoints_planner_node" name="cartesian_waypoints_planner"/>
+ 
+  
+</launch>
