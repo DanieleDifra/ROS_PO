@@ -11,7 +11,6 @@ close all
 
 rosinit
 
-%% Load robot object from URDF
 robot=importrobot('../src/eDo_description/urdf/edo.urdf');
 
 default_name_1 = uint8('edo_joint_1');

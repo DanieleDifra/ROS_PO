@@ -2,7 +2,7 @@ start_delay: 2.0
 max_ang_vel: 1.0
 max_ang_acc: 0.5
 
-n_points: 5
+n_points: 2
 
 pi_x: 0.0
 pi_y: 0.0

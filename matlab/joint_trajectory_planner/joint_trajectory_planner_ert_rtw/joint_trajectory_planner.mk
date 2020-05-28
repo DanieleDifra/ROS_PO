@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'joint_trajectory_planner'. 
 ## 
 ## Makefile     : joint_trajectory_planner.mk
-## Generated on : Wed May 27 21:36:33 2020
+## Generated on : Thu May 28 15:59:57 2020
 ## MATLAB Coder version: 5.0 (R2020a)
 ## 
 ## Build Info:
@@ -27,7 +27,7 @@ MATLAB_ROOT               = /usr/local/MATLAB/R2020a
 MATLAB_BIN                = /usr/local/MATLAB/R2020a/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/glnxa64
 MASTER_ANCHOR_DIR         = 
-START_DIR                 = /home/paolo/ROS_PO/matlab/joint_trajectory_planner
+START_DIR                 = /home/difra/ROS_PO/matlab/joint_trajectory_planner
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0

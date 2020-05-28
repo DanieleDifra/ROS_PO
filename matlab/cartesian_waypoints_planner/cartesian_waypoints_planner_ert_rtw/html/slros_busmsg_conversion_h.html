@@ -19,51 +19,91 @@
 <tr name="4" id="4">
 <td><a id="l4" class='ln'>4</a></td><td><span class="pp">#include &lt;ros/ros.h&gt;</span></td></tr>
 <tr name="5" id="5">
-<td><a id="l5" class='ln'>5</a></td><td><span class="pp">#include &lt;ros/duration.h&gt;</span></td></tr>
+<td><a id="l5" class='ln'>5</a></td><td><span class="pp">#include &lt;geometry_msgs/Point.h&gt;</span></td></tr>
 <tr name="6" id="6">
-<td><a id="l6" class='ln'>6</a></td><td><span class="pp">#include &lt;ros/time.h&gt;</span></td></tr>
+<td><a id="l6" class='ln'>6</a></td><td><span class="pp">#include &lt;geometry_msgs/Pose.h&gt;</span></td></tr>
 <tr name="7" id="7">
-<td><a id="l7" class='ln'>7</a></td><td><span class="pp">#include &lt;rosgraph_msgs/Clock.h&gt;</span></td></tr>
+<td><a id="l7" class='ln'>7</a></td><td><span class="pp">#include &lt;geometry_msgs/PoseStamped.h&gt;</span></td></tr>
 <tr name="8" id="8">
-<td><a id="l8" class='ln'>8</a></td><td><span class="pp">#include &lt;trajectory_msgs/JointTrajectoryPoint.h&gt;</span></td></tr>
+<td><a id="l8" class='ln'>8</a></td><td><span class="pp">#include &lt;geometry_msgs/Quaternion.h&gt;</span></td></tr>
 <tr name="9" id="9">
-<td><a id="l9" class='ln'>9</a></td><td><span class="pp">#include "cartesian_waypoints_planner_types.h"</span></td></tr>
+<td><a id="l9" class='ln'>9</a></td><td><span class="pp">#include &lt;ros/duration.h&gt;</span></td></tr>
 <tr name="10" id="10">
-<td><a id="l10" class='ln'>10</a></td><td><span class="pp">#include "slros_msgconvert_utils.h"</span></td></tr>
+<td><a id="l10" class='ln'>10</a></td><td><span class="pp">#include &lt;ros/time.h&gt;</span></td></tr>
 <tr name="11" id="11">
-<td><a id="l11" class='ln'>11</a></td><td></td></tr>
+<td><a id="l11" class='ln'>11</a></td><td><span class="pp">#include &lt;rosgraph_msgs/Clock.h&gt;</span></td></tr>
 <tr name="12" id="12">
-<td><a id="l12" class='ln'>12</a></td><td></td></tr>
+<td><a id="l12" class='ln'>12</a></td><td><span class="pp">#include &lt;std_msgs/Header.h&gt;</span></td></tr>
 <tr name="13" id="13">
-<td><a id="l13" class='ln'>13</a></td><td><span class="kw">void</span> <a id="13c6" class="tk">convertFromBus</a>(<a id="13c21" class="tk">ros</a>::<a id="13c26" class="tk">Duration</a><a id="13c34" class="tk">*</a> <a id="13c36" class="tk">msgPtr</a>, <a id="13c44" class="tk">SL_Bus_cartesian_waypoints_planner_ros_time_Duration</a> <span class="kw">const</span><a id="13c102" class="tk">*</a> <a id="13c104" class="tk">busPtr</a>);</td></tr>
+<td><a id="l13" class='ln'>13</a></td><td><span class="pp">#include &lt;trajectory_msgs/JointTrajectoryPoint.h&gt;</span></td></tr>
 <tr name="14" id="14">
-<td><a id="l14" class='ln'>14</a></td><td><span class="kw">void</span> <a id="14c6" class="tk">convertToBus</a>(<a id="14c19" class="tk">SL_Bus_cartesian_waypoints_planner_ros_time_Duration</a><a id="14c71" class="tk">*</a> <a id="14c73" class="tk">busPtr</a>, <a id="14c81" class="tk">ros</a>::<a id="14c86" class="tk">Duration</a> <span class="kw">const</span><a id="14c100" class="tk">*</a> <a id="14c102" class="tk">msgPtr</a>);</td></tr>
+<td><a id="l14" class='ln'>14</a></td><td><span class="pp">#include "cartesian_waypoints_planner_types.h"</span></td></tr>
 <tr name="15" id="15">
-<td><a id="l15" class='ln'>15</a></td><td></td></tr>
+<td><a id="l15" class='ln'>15</a></td><td><span class="pp">#include "slros_msgconvert_utils.h"</span></td></tr>
 <tr name="16" id="16">
-<td><a id="l16" class='ln'>16</a></td><td><span class="kw">void</span> <a id="16c6" class="tk">convertFromBus</a>(<a id="16c21" class="tk">ros</a>::<a id="16c26" class="tk">Time</a><a id="16c30" class="tk">*</a> <a id="16c32" class="tk">msgPtr</a>, <a id="16c40" class="tk">SL_Bus_cartesian_waypoints_planner_ros_time_Time</a> <span class="kw">const</span><a id="16c94" class="tk">*</a> <a id="16c96" class="tk">busPtr</a>);</td></tr>
+<td><a id="l16" class='ln'>16</a></td><td></td></tr>
 <tr name="17" id="17">
-<td><a id="l17" class='ln'>17</a></td><td><span class="kw">void</span> <a id="17c6" class="tk">convertToBus</a>(<a id="17c19" class="tk">SL_Bus_cartesian_waypoints_planner_ros_time_Time</a><a id="17c67" class="tk">*</a> <a id="17c69" class="tk">busPtr</a>, <a id="17c77" class="tk">ros</a>::<a id="17c82" class="tk">Time</a> <span class="kw">const</span><a id="17c92" class="tk">*</a> <a id="17c94" class="tk">msgPtr</a>);</td></tr>
+<td><a id="l17" class='ln'>17</a></td><td></td></tr>
 <tr name="18" id="18">
-<td><a id="l18" class='ln'>18</a></td><td></td></tr>
+<td><a id="l18" class='ln'>18</a></td><td><span class="kw">void</span> <a id="18c6" class="tk">convertFromBus</a>(<a id="18c21" class="tk">geometry_msgs</a>::<a id="18c36" class="tk">Point</a><a id="18c41" class="tk">*</a> <a id="18c43" class="tk">msgPtr</a>, <a id="18c51" class="tk">SL_Bus_cartesian_waypoints_planner_geometry_msgs_Point</a> <span class="kw">const</span><a id="18c111" class="tk">*</a> <a id="18c113" class="tk">busPtr</a>);</td></tr>
 <tr name="19" id="19">
-<td><a id="l19" class='ln'>19</a></td><td><span class="kw">void</span> <a id="19c6" class="tk">convertFromBus</a>(<a id="19c21" class="tk">rosgraph_msgs</a>::<a id="19c36" class="tk">Clock</a><a id="19c41" class="tk">*</a> <a id="19c43" class="tk">msgPtr</a>, <a id="19c51" class="tk">SL_Bus_cartesian_waypoints_planner_rosgraph_msgs_Clock</a> <span class="kw">const</span><a id="19c111" class="tk">*</a> <a id="19c113" class="tk">busPtr</a>);</td></tr>
+<td><a id="l19" class='ln'>19</a></td><td><span class="kw">void</span> <a id="19c6" class="tk">convertToBus</a>(<a id="19c19" class="tk">SL_Bus_cartesian_waypoints_planner_geometry_msgs_Point</a><a id="19c73" class="tk">*</a> <a id="19c75" class="tk">busPtr</a>, <a id="19c83" class="tk">geometry_msgs</a>::<a id="19c98" class="tk">Point</a> <span class="kw">const</span><a id="19c109" class="tk">*</a> <a id="19c111" class="tk">msgPtr</a>);</td></tr>
 <tr name="20" id="20">
-<td><a id="l20" class='ln'>20</a></td><td><span class="kw">void</span> <a id="20c6" class="tk">convertToBus</a>(<a id="20c19" class="tk">SL_Bus_cartesian_waypoints_planner_rosgraph_msgs_Clock</a><a id="20c73" class="tk">*</a> <a id="20c75" class="tk">busPtr</a>, <a id="20c83" class="tk">rosgraph_msgs</a>::<a id="20c98" class="tk">Clock</a> <span class="kw">const</span><a id="20c109" class="tk">*</a> <a id="20c111" class="tk">msgPtr</a>);</td></tr>
+<td><a id="l20" class='ln'>20</a></td><td></td></tr>
 <tr name="21" id="21">
-<td><a id="l21" class='ln'>21</a></td><td></td></tr>
+<td><a id="l21" class='ln'>21</a></td><td><span class="kw">void</span> <a id="21c6" class="tk">convertFromBus</a>(<a id="21c21" class="tk">geometry_msgs</a>::<a id="21c36" class="tk">Pose</a><a id="21c40" class="tk">*</a> <a id="21c42" class="tk">msgPtr</a>, <a id="21c50" class="tk">SL_Bus_cartesian_waypoints_planner_geometry_msgs_Pose</a> <span class="kw">const</span><a id="21c109" class="tk">*</a> <a id="21c111" class="tk">busPtr</a>);</td></tr>
 <tr name="22" id="22">
-<td><a id="l22" class='ln'>22</a></td><td><span class="kw">void</span> <a id="22c6" class="tk">convertFromBus</a>(<a id="22c21" class="tk">trajectory_msgs</a>::<a id="22c38" class="tk">JointTrajectoryPoint</a><a id="22c58" class="tk">*</a> <a id="22c60" class="tk">msgPtr</a>, <a id="22c68" class="tk">SL_Bus_cartesian_waypoints_plann_JointTrajectoryPoint_rocwzq</a> <span class="kw">const</span><a id="22c134" class="tk">*</a> <a id="22c136" class="tk">busPtr</a>);</td></tr>
+<td><a id="l22" class='ln'>22</a></td><td><span class="kw">void</span> <a id="22c6" class="tk">convertToBus</a>(<a id="22c19" class="tk">SL_Bus_cartesian_waypoints_planner_geometry_msgs_Pose</a><a id="22c72" class="tk">*</a> <a id="22c74" class="tk">busPtr</a>, <a id="22c82" class="tk">geometry_msgs</a>::<a id="22c97" class="tk">Pose</a> <span class="kw">const</span><a id="22c107" class="tk">*</a> <a id="22c109" class="tk">msgPtr</a>);</td></tr>
 <tr name="23" id="23">
-<td><a id="l23" class='ln'>23</a></td><td><span class="kw">void</span> <a id="23c6" class="tk">convertToBus</a>(<a id="23c19" class="tk">SL_Bus_cartesian_waypoints_plann_JointTrajectoryPoint_rocwzq</a><a id="23c79" class="tk">*</a> <a id="23c81" class="tk">busPtr</a>, <a id="23c89" class="tk">trajectory_msgs</a>::<a id="23c106" class="tk">JointTrajectoryPoint</a> <span class="kw">const</span><a id="23c132" class="tk">*</a> <a id="23c134" class="tk">msgPtr</a>);</td></tr>
+<td><a id="l23" class='ln'>23</a></td><td></td></tr>
 <tr name="24" id="24">
-<td><a id="l24" class='ln'>24</a></td><td></td></tr>
+<td><a id="l24" class='ln'>24</a></td><td><span class="kw">void</span> <a id="24c6" class="tk">convertFromBus</a>(<a id="24c21" class="tk">geometry_msgs</a>::<a id="24c36" class="tk">PoseStamped</a><a id="24c47" class="tk">*</a> <a id="24c49" class="tk">msgPtr</a>, <a id="24c57" class="tk">SL_Bus_cartesian_waypoints_plann_PoseStamped_hk4udn</a> <span class="kw">const</span><a id="24c114" class="tk">*</a> <a id="24c116" class="tk">busPtr</a>);</td></tr>
 <tr name="25" id="25">
-<td><a id="l25" class='ln'>25</a></td><td></td></tr>
+<td><a id="l25" class='ln'>25</a></td><td><span class="kw">void</span> <a id="25c6" class="tk">convertToBus</a>(<a id="25c19" class="tk">SL_Bus_cartesian_waypoints_plann_PoseStamped_hk4udn</a><a id="25c70" class="tk">*</a> <a id="25c72" class="tk">busPtr</a>, <a id="25c80" class="tk">geometry_msgs</a>::<a id="25c95" class="tk">PoseStamped</a> <span class="kw">const</span><a id="25c112" class="tk">*</a> <a id="25c114" class="tk">msgPtr</a>);</td></tr>
 <tr name="26" id="26">
-<td><a id="l26" class='ln'>26</a></td><td><span class="pp">#endif</span></td></tr>
+<td><a id="l26" class='ln'>26</a></td><td></td></tr>
 <tr name="27" id="27">
-<td><a id="l27" class='ln'>27</a></td><td></td></tr>
+<td><a id="l27" class='ln'>27</a></td><td><span class="kw">void</span> <a id="27c6" class="tk">convertFromBus</a>(<a id="27c21" class="tk">geometry_msgs</a>::<a id="27c36" class="tk">Quaternion</a><a id="27c46" class="tk">*</a> <a id="27c48" class="tk">msgPtr</a>, <a id="27c56" class="tk">SL_Bus_cartesian_waypoints_planner_geometry_msgs_Quaternion</a> <span class="kw">const</span><a id="27c121" class="tk">*</a> <a id="27c123" class="tk">busPtr</a>);</td></tr>
+<tr name="28" id="28">
+<td><a id="l28" class='ln'>28</a></td><td><span class="kw">void</span> <a id="28c6" class="tk">convertToBus</a>(<a id="28c19" class="tk">SL_Bus_cartesian_waypoints_planner_geometry_msgs_Quaternion</a><a id="28c78" class="tk">*</a> <a id="28c80" class="tk">busPtr</a>, <a id="28c88" class="tk">geometry_msgs</a>::<a id="28c103" class="tk">Quaternion</a> <span class="kw">const</span><a id="28c119" class="tk">*</a> <a id="28c121" class="tk">msgPtr</a>);</td></tr>
+<tr name="29" id="29">
+<td><a id="l29" class='ln'>29</a></td><td></td></tr>
+<tr name="30" id="30">
+<td><a id="l30" class='ln'>30</a></td><td><span class="kw">void</span> <a id="30c6" class="tk">convertFromBus</a>(<a id="30c21" class="tk">ros</a>::<a id="30c26" class="tk">Duration</a><a id="30c34" class="tk">*</a> <a id="30c36" class="tk">msgPtr</a>, <a id="30c44" class="tk">SL_Bus_cartesian_waypoints_planner_ros_time_Duration</a> <span class="kw">const</span><a id="30c102" class="tk">*</a> <a id="30c104" class="tk">busPtr</a>);</td></tr>
+<tr name="31" id="31">
+<td><a id="l31" class='ln'>31</a></td><td><span class="kw">void</span> <a id="31c6" class="tk">convertToBus</a>(<a id="31c19" class="tk">SL_Bus_cartesian_waypoints_planner_ros_time_Duration</a><a id="31c71" class="tk">*</a> <a id="31c73" class="tk">busPtr</a>, <a id="31c81" class="tk">ros</a>::<a id="31c86" class="tk">Duration</a> <span class="kw">const</span><a id="31c100" class="tk">*</a> <a id="31c102" class="tk">msgPtr</a>);</td></tr>
+<tr name="32" id="32">
+<td><a id="l32" class='ln'>32</a></td><td></td></tr>
+<tr name="33" id="33">
+<td><a id="l33" class='ln'>33</a></td><td><span class="kw">void</span> <a id="33c6" class="tk">convertFromBus</a>(<a id="33c21" class="tk">ros</a>::<a id="33c26" class="tk">Time</a><a id="33c30" class="tk">*</a> <a id="33c32" class="tk">msgPtr</a>, <a id="33c40" class="tk">SL_Bus_cartesian_waypoints_planner_ros_time_Time</a> <span class="kw">const</span><a id="33c94" class="tk">*</a> <a id="33c96" class="tk">busPtr</a>);</td></tr>
+<tr name="34" id="34">
+<td><a id="l34" class='ln'>34</a></td><td><span class="kw">void</span> <a id="34c6" class="tk">convertToBus</a>(<a id="34c19" class="tk">SL_Bus_cartesian_waypoints_planner_ros_time_Time</a><a id="34c67" class="tk">*</a> <a id="34c69" class="tk">busPtr</a>, <a id="34c77" class="tk">ros</a>::<a id="34c82" class="tk">Time</a> <span class="kw">const</span><a id="34c92" class="tk">*</a> <a id="34c94" class="tk">msgPtr</a>);</td></tr>
+<tr name="35" id="35">
+<td><a id="l35" class='ln'>35</a></td><td></td></tr>
+<tr name="36" id="36">
+<td><a id="l36" class='ln'>36</a></td><td><span class="kw">void</span> <a id="36c6" class="tk">convertFromBus</a>(<a id="36c21" class="tk">rosgraph_msgs</a>::<a id="36c36" class="tk">Clock</a><a id="36c41" class="tk">*</a> <a id="36c43" class="tk">msgPtr</a>, <a id="36c51" class="tk">SL_Bus_cartesian_waypoints_planner_rosgraph_msgs_Clock</a> <span class="kw">const</span><a id="36c111" class="tk">*</a> <a id="36c113" class="tk">busPtr</a>);</td></tr>
+<tr name="37" id="37">
+<td><a id="l37" class='ln'>37</a></td><td><span class="kw">void</span> <a id="37c6" class="tk">convertToBus</a>(<a id="37c19" class="tk">SL_Bus_cartesian_waypoints_planner_rosgraph_msgs_Clock</a><a id="37c73" class="tk">*</a> <a id="37c75" class="tk">busPtr</a>, <a id="37c83" class="tk">rosgraph_msgs</a>::<a id="37c98" class="tk">Clock</a> <span class="kw">const</span><a id="37c109" class="tk">*</a> <a id="37c111" class="tk">msgPtr</a>);</td></tr>
+<tr name="38" id="38">
+<td><a id="l38" class='ln'>38</a></td><td></td></tr>
+<tr name="39" id="39">
+<td><a id="l39" class='ln'>39</a></td><td><span class="kw">void</span> <a id="39c6" class="tk">convertFromBus</a>(<a id="39c21" class="tk">std_msgs</a>::<a id="39c31" class="tk">Header</a><a id="39c37" class="tk">*</a> <a id="39c39" class="tk">msgPtr</a>, <a id="39c47" class="tk">SL_Bus_cartesian_waypoints_planner_std_msgs_Header</a> <span class="kw">const</span><a id="39c103" class="tk">*</a> <a id="39c105" class="tk">busPtr</a>);</td></tr>
+<tr name="40" id="40">
+<td><a id="l40" class='ln'>40</a></td><td><span class="kw">void</span> <a id="40c6" class="tk">convertToBus</a>(<a id="40c19" class="tk">SL_Bus_cartesian_waypoints_planner_std_msgs_Header</a><a id="40c69" class="tk">*</a> <a id="40c71" class="tk">busPtr</a>, <a id="40c79" class="tk">std_msgs</a>::<a id="40c89" class="tk">Header</a> <span class="kw">const</span><a id="40c101" class="tk">*</a> <a id="40c103" class="tk">msgPtr</a>);</td></tr>
+<tr name="41" id="41">
+<td><a id="l41" class='ln'>41</a></td><td></td></tr>
+<tr name="42" id="42">
+<td><a id="l42" class='ln'>42</a></td><td><span class="kw">void</span> <a id="42c6" class="tk">convertFromBus</a>(<a id="42c21" class="tk">trajectory_msgs</a>::<a id="42c38" class="tk">JointTrajectoryPoint</a><a id="42c58" class="tk">*</a> <a id="42c60" class="tk">msgPtr</a>, <a id="42c68" class="tk">SL_Bus_cartesian_waypoints_plann_JointTrajectoryPoint_rocwzq</a> <span class="kw">const</span><a id="42c134" class="tk">*</a> <a id="42c136" class="tk">busPtr</a>);</td></tr>
+<tr name="43" id="43">
+<td><a id="l43" class='ln'>43</a></td><td><span class="kw">void</span> <a id="43c6" class="tk">convertToBus</a>(<a id="43c19" class="tk">SL_Bus_cartesian_waypoints_plann_JointTrajectoryPoint_rocwzq</a><a id="43c79" class="tk">*</a> <a id="43c81" class="tk">busPtr</a>, <a id="43c89" class="tk">trajectory_msgs</a>::<a id="43c106" class="tk">JointTrajectoryPoint</a> <span class="kw">const</span><a id="43c132" class="tk">*</a> <a id="43c134" class="tk">msgPtr</a>);</td></tr>
+<tr name="44" id="44">
+<td><a id="l44" class='ln'>44</a></td><td></td></tr>
+<tr name="45" id="45">
+<td><a id="l45" class='ln'>45</a></td><td></td></tr>
+<tr name="46" id="46">
+<td><a id="l46" class='ln'>46</a></td><td><span class="pp">#endif</span></td></tr>
+<tr name="47" id="47">
+<td><a id="l47" class='ln'>47</a></td><td></td></tr>
 </table>
 </pre>
 </body>

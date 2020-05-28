@@ -9,6 +9,9 @@ SimulinkSubscriber<rosgraph_msgs::Clock, SL_Bus_cartesian_waypoints_planner_rosg
 // For Block cartesian_waypoints_planner/Publish
 SimulinkPublisher<trajectory_msgs::JointTrajectoryPoint, SL_Bus_cartesian_waypoints_plann_JointTrajectoryPoint_rocwzq> Pub_cartesian_waypoints_planner_392;
 
+// For Block cartesian_waypoints_planner/Publish cartesian reference/Publish1
+SimulinkPublisher<geometry_msgs::PoseStamped, SL_Bus_cartesian_waypoints_plann_PoseStamped_hk4udn> Pub_cartesian_waypoints_planner_425;
+
 // For Block cartesian_waypoints_planner/Get Parameter
 SimulinkParameterGetter<real64_T, double> ParamGet_cartesian_waypoints_planner_378;
 

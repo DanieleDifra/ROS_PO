@@ -9,7 +9,7 @@
 //
 // Model version                  : 1.11
 // Simulink Coder version         : 9.3 (R2020a) 18-Nov-2019
-// C/C++ source code generated on : Wed May 27 21:36:26 2020
+// C/C++ source code generated on : Thu May 28 15:59:49 2020
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -812,9 +812,9 @@ void joint_trajectory_planner_step(void)
         joint_trajectory_planner_B.dist -=
           joint_trajectory_planner_B.t[joint_trajectory_planner_B.i];
         if (joint_trajectory_planner_B.dist < 0.0) {
-          joint_trajectory_planner_B.time =
-            (joint_trajectory_planner_B.t[joint_trajectory_planner_B.rtb_q_tmp] /
-             2.0 + joint_trajectory_planner_B.t1) *
+          joint_trajectory_planner_B.time = (joint_trajectory_planner_B.t1 -
+            joint_trajectory_planner_B.t[joint_trajectory_planner_B.rtb_q_tmp] /
+            2.0) *
             joint_trajectory_planner_B.max_vel[joint_trajectory_planner_B.value_m]
             * joint_trajectory_planner_B.signes[joint_trajectory_planner_B.value_m]
             + joint_trajectory_planner_B.MatrixConcatenate[joint_trajectory_planner_B.rtb_q_tmp];
