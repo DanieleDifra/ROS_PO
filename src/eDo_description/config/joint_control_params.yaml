@@ -9,12 +9,12 @@ q4_initial: 0.0
 q5_initial: 0.0
 q6_initial: 0.0
 
-q1_final: 6.28
-q2_final: 6.28
-q3_final: 6.28
-q4_final: 6.28
-q5_final: 6.28
-q6_final: 6.28
+q1_final: 1.57
+q2_final: 1.57
+q3_final: -0.785
+q4_final: 1.57
+q5_final: 1.57
+q6_final: 1.57
 
 pos_control_1: 0.2
 pos_control_2: 0.2
