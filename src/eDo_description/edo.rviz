@@ -100,7 +100,7 @@ Visualization Manager:
         edo_link_ee:
           Alpha: 1
           Show Axes: false
-          Show Trail: false
+          Show Trail: true
           Value: true
         world:
           Alpha: 1
